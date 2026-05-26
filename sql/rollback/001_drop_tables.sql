@@ -1,0 +1,10 @@
+﻿DROP TABLE IF EXISTS notices;
+DROP TABLE IF EXISTS consultations;
+DROP TABLE IF EXISTS before_after_cases;
+DROP TABLE IF EXISTS event_options;
+DROP TABLE IF EXISTS events;
+DROP TABLE IF EXISTS videos;
+DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS pages;
+DROP TABLE IF EXISTS menus;
+DROP TABLE IF EXISTS site_settings;
