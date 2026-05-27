@@ -4,25 +4,40 @@ import Link from 'next/link';
 import { Button } from '../ui/Button';
 
 export function JinStorySection() {
+  const realVideos = [
+    {
+      title: '[KNN건강튜브] 체질에 맞춰 뺀다! 한방 다이어트의 모든 것!',
+      thumbnailUrl: 'https://i.ytimg.com/vi/jw-MfFAtVlY/hqdefault.jpg',
+      videoUrl: 'https://youtu.be/jw-MfFAtVlY',
+    },
+    {
+      title: '[닥터스] 한방 해독치료 대박 비법 공개! (부산 진한의원 / 051-714-0040)',
+      thumbnailUrl: 'https://i.ytimg.com/vi/jIitb2gBDL8/hqdefault.jpg',
+      videoUrl: 'https://youtu.be/jIitb2gBDL8',
+    }
+  ];
+
   const mockVideos = Array.from({ length: 8 }).map((_, i) => ({
     id: i + 1,
-    title: `진한의원 다이어트 스토리 ${i + 1}편`,
-    thumbnailUrl: '/images/story/jin_story.png',
-    videoUrl: '#',
+    title: realVideos[i % 2].title,
+    thumbnailUrl: realVideos[i % 2].thumbnailUrl,
+    videoUrl: realVideos[i % 2].videoUrl,
   }));
 
   return (
     <section className="py-24 bg-white">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <SectionTitle 
-          subtitle="Jin Story"
-          title={<>방송 출연 및<br/>건강 정보 콘텐츠</>} 
+          subtitle="JIN STORY"
+          title="영상으로 전하는 건강한 감량 이야기"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {mockVideos.map((video) => (
             <Link 
               key={video.id} 
               href={video.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group block rounded-2xl overflow-hidden bg-gray-50 hover:shadow-md transition-shadow"
             >
               <div className="aspect-video bg-gray-200 relative">
@@ -30,11 +45,6 @@ export function JinStorySection() {
                   className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
                   style={{ backgroundImage: `url(${video.thumbnailUrl})` }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
-                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg">
-                    ▶
-                  </div>
-                </div>
               </div>
               <div className="p-4">
                 <p className="font-medium text-gray-900 line-clamp-2">{video.title}</p>

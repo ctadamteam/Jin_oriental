@@ -11,6 +11,9 @@
   "dependencies": {
     "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.106.1",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "lucide-react": "^1.16.0",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -24,5 +27,22 @@
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "진한의원 공식 홈페이지 1차 구축 프로젝트입니다. Next.js App Router와 Tailwind CSS를 활용하여 구축되며, 향후 Supabase 및 Vercel을 통한 확장을 고려하여 설계되었습니다.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctadamteam/Jin_oriental.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctadamteam/Jin_oriental/issues"
+  },
+  "homepage": "https://github.com/ctadamteam/Jin_oriental#readme"
 }
