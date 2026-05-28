@@ -66,7 +66,7 @@ export function PrescriptionCheckSection() {
   const strokeDashoffset = circumference - (progress / 100) * circumference;
 
   return (
-    <section className="py-24 bg-[#FAFAFA] relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       <div className="absolute right-0 top-0 w-1/3 h-full bg-[url('/images/recipe/recipe_before.png')] bg-cover bg-left opacity-5" />
       
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">

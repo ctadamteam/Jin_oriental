@@ -1,0 +1,81 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('https://cdn.jsdelivr.net/gh/fonts/paperlogy/Paperlogy-8ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 72 81% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 75 43% 92%;
+    --secondary-foreground: 72 81% 36%;
+
+    --muted: 0 0% 97%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 75 43% 92%;
+    --accent-foreground: 72 81% 36%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 72 81% 36%;
+
+    --radius: 0.5rem;
+
+    /* Brand */
+    --brand: 72 81% 36%;
+    --brand-light: 75 43% 92%;
+    --brand-pale: 75 30% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre, code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+.font-paperlogy {
+  font-family: 'Paperlogy', 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+}
+
+.font-pretendard {
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+}
