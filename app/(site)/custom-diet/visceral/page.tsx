@@ -12,7 +12,6 @@ export default function Index() {
       <MedicineSection />
       <AbdominalExamSection />
       <WhyExamImportantSection />
-      <FooterSection />
     </main>
   );
 }
