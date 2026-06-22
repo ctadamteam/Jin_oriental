@@ -66,7 +66,7 @@ export function Header() {
                   {menu.title}
                 </Link>
                 {/* Dropdown placeholder with safe hover area */}
-                <div className="absolute left-0 top-full hidden w-48 flex-col pt-2 group-hover:flex">
+                <div className="absolute -left-6 top-full hidden w-48 flex-col pt-2 group-hover:flex">
                   <div className="flex flex-col rounded-md bg-white p-2 shadow-lg border border-gray-100">
                     {menu.subMenus.map((sub) => (
                       <Link

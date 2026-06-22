@@ -17,7 +17,7 @@ export function JinStorySection() {
     }
   ];
 
-  const mockVideos = Array.from({ length: 8 }).map((_, i) => ({
+  const mockVideos = Array.from({ length: 6 }).map((_, i) => ({
     id: i + 1,
     title: realVideos[i % 2].title,
     thumbnailUrl: realVideos[i % 2].thumbnailUrl,
@@ -31,7 +31,7 @@ export function JinStorySection() {
           subtitle="JIN STORY"
           title="영상으로 전하는 건강한 감량 이야기"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1320px] mx-auto">
           {mockVideos.map((video) => (
             <Link 
               key={video.id} 

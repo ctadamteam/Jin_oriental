@@ -19,6 +19,12 @@
     font-weight: 500;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
 
 :root {
   --background: #ffffff;
@@ -32,6 +38,7 @@
   --color-sub: #F0F2E7;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-paperlogy: Paperlogy, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

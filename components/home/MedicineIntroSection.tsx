@@ -12,21 +12,57 @@ import { SectionTitle } from '../common/SectionTitle';
 const banners = [
   {
     id: 1,
-    imageUrl: '/images/medicine/med_01.png', 
-    alt: '진한의원 새해 첫 이벤트 배사라정',
-    link: '/diet-medicine/slim'
+    imageUrl: '/images/medicine/med_01.jpg',
+    alt: '진 다이어트 한약 01',
+    link: '#'
   },
   {
     id: 2,
-    imageUrl: '/images/medicine/med_02.png',
-    alt: '진한의원 첫 이벤트 자궁미인',
-    link: '/diet-medicine/zero'
+    imageUrl: '/images/medicine/med_02.jpg',
+    alt: '진 다이어트 한약 02',
+    link: '#'
   },
   {
     id: 3,
-    imageUrl: '/images/medicine/med_01.png',
-    alt: '진한의원 슬림환 / 습담탕',
-    link: '/diet-medicine/slim'
+    imageUrl: '/images/medicine/med_03.jpg',
+    alt: '진 다이어트 한약 03',
+    link: '#'
+  },
+  {
+    id: 4,
+    imageUrl: '/images/medicine/med_04.jpg',
+    alt: '진 다이어트 한약 04',
+    link: '#'
+  },
+  {
+    id: 5,
+    imageUrl: '/images/medicine/med_05.jpg',
+    alt: '진 다이어트 한약 05',
+    link: '#'
+  },
+  {
+    id: 6,
+    imageUrl: '/images/medicine/med_06.jpg',
+    alt: '진 다이어트 한약 06',
+    link: '#'
+  },
+  {
+    id: 7,
+    imageUrl: '/images/medicine/med_07.jpg',
+    alt: '진 다이어트 한약 07',
+    link: '#'
+  },
+  {
+    id: 8,
+    imageUrl: '/images/medicine/med_08.jpg',
+    alt: '진 다이어트 한약 08',
+    link: '#'
+  },
+  {
+    id: 9,
+    imageUrl: '/images/medicine/med_09.jpg',
+    alt: '진 다이어트 한약 09',
+    link: '#'
   }
 ];
 
@@ -73,15 +109,15 @@ export function MedicineIntroSection() {
           title="체질별 맞춤 처방, 진 다이어트 한약"
         />
         
-        <div className="relative group mt-12">
+        <div className="relative group mt-12 max-w-[1320px] mx-auto">
           
           {/* Viewport */}
-          <div className="overflow-hidden rounded-3xl" ref={emblaRef}>
+          <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex touch-pan-y">
               {banners.map((banner) => (
                 <div className="flex-[0_0_100%] min-w-0 relative" key={banner.id}>
                   {/* Aspect ratio can be adjusted based on the actual banner image size. (e.g. 21:9 or 16:9) */}
-                  <Link href={banner.link} className="block w-full aspect-[2/1] bg-gray-100 relative overflow-hidden">
+                  <Link href={banner.link} className="block w-full aspect-[1200/523] bg-gray-100 relative overflow-hidden">
                     <div 
                       className="absolute inset-0 bg-cover bg-center"
                       style={{ backgroundImage: `url(${banner.imageUrl})` }}
@@ -108,23 +144,22 @@ export function MedicineIntroSection() {
           >
             <ChevronRight size={28} strokeWidth={2.5} />
           </button>
+        </div>
 
-          {/* Pagination Indicators */}
-          <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
-            {scrollSnaps.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => scrollTo(index)}
-                className={`transition-all duration-300 ${
-                  index === selectedIndex 
-                    ? 'w-2.5 h-2.5 bg-white border border-white' 
-                    : 'w-2.5 h-2.5 bg-transparent border border-white/70 hover:bg-white/40'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-          
+        {/* Pagination Indicators */}
+        <div className="flex justify-center gap-2.5 mt-8">
+          {scrollSnaps.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className={`transition-all duration-300 rounded-full h-2.5 ${
+                index === selectedIndex 
+                  ? 'w-6 bg-[#8BA612]' 
+                  : 'w-2.5 bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

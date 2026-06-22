@@ -6,18 +6,22 @@ import { BeforeAfterSection } from '@/components/home/BeforeAfterSection';
 import { JinStorySection } from '@/components/home/JinStorySection';
 import { EventMenuSection } from '@/components/home/EventMenuSection';
 import { PrescriptionCheckSection } from '@/components/home/PrescriptionCheckSection';
+import { InformationSection } from '@/components/home/InformationSection';
+import MainPopup from '@/components/common/MainPopup';
 
 export default function Home() {
   return (
     <>
+      <MainPopup />
       <MainHeroSection />
-      <DoctorProfileSection />
-      <ReviewSection />
+      {/* <DoctorProfileSection /> */}
       <MedicineIntroSection />
-      <BeforeAfterSection />
+      <ReviewSection />
+      {/* <BeforeAfterSection /> */}
       <JinStorySection />
-      <EventMenuSection />
-      <PrescriptionCheckSection />
+      <InformationSection />
+      {/* <EventMenuSection /> */}
+      {/* <PrescriptionCheckSection /> */}
     </>
   );
 }

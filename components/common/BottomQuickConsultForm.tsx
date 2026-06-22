@@ -1,22 +1,33 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Input } from '../ui/Input';
+import { User, Calendar, Phone, Check, ArrowRight, ChevronUp } from 'lucide-react';
 
 export function BottomQuickConsultForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     age: '',
-    gender: '',
+    gender: '', // 'M' or 'F'
     phone: '',
     agree: false,
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.gender) {
+      alert('성별을 선택해 주세요.');
+      return;
+    }
     alert('상담 신청이 접수되었습니다. (API 연결 예정)');
     setIsOpen(false);
+    setFormData({
+      name: '',
+      age: '',
+      gender: '',
+      phone: '',
+      agree: false,
+    });
   };
 
   return (
@@ -24,99 +35,183 @@ export function BottomQuickConsultForm() {
       {/* Toggle Tab */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full bg-[var(--color-primary)] text-white py-3 flex flex-col items-center justify-center cursor-pointer hover:bg-opacity-95 transition-colors border-t border-white/10"
+        className="group w-full bg-gradient-to-r from-[#8BA612] to-[#71860E] text-white py-3 flex flex-row items-center justify-center gap-2 cursor-pointer hover:from-[#94b115] hover:to-[#7b9210] transition-all duration-300 border-t border-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] relative z-20"
       >
-        {isOpen ? (
-          <>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            <span className="text-[15px] font-bold mt-1">빠른 상담 신청 닫기</span>
-          </>
-        ) : (
-          <>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-            <span className="text-[15px] font-bold mt-1">빠른 상담 신청하기</span>
-          </>
-        )}
+        <span className="text-[14px] font-extrabold tracking-tight">
+          {isOpen ? '빠른 상담 신청 닫기' : '빠른 상담 신청하기'}
+        </span>
+        <ChevronUp 
+          size={16} 
+          className={`transition-transform duration-500 ease-in-out ${isOpen ? 'rotate-180' : 'rotate-0'}`} 
+        />
       </button>
 
       {/* Expandable Form Content */}
       <div 
-        className={`bg-[var(--color-primary)] overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+        className={`backdrop-blur-md bg-[#353C2D]/95 overflow-hidden transition-[max-height,opacity] duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] ${
+          isOpen 
+            ? 'max-h-[500px] opacity-100 border-t border-[#f0f2e7]/20 shadow-[0_-15px_40px_rgba(0,0,0,0.2)] pointer-events-auto' 
+            : 'max-h-0 h-0 opacity-0 border-t-0 border-transparent shadow-none pointer-events-none'
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-8 pt-4">
-          <p className="text-center text-white/90 text-sm mb-6">
-            간단한 정보를 남겨주시면, 전문 상담원이 빠르게 연락드리겠습니다.
-          </p>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-              
-              <Input 
-                placeholder="이름" 
-                required 
-                type="text"
-                value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
-                className="w-full md:w-48 bg-white border-none rounded-xl h-11 text-gray-900"
-              />
-              
-              <Input 
-                type="number" 
-                placeholder="나이" 
-                required
-                value={formData.age}
-                onChange={(e) => setFormData({...formData, age: e.target.value})}
-                className="w-full md:w-32 bg-white border-none rounded-xl h-11 text-gray-900"
-              />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-8 pt-6">
+          {/* Header Title Section */}
+          <div 
+            style={{ transitionDelay: '0ms' }}
+            className={`flex flex-col items-center mb-6 transition-all duration-500 ease-out transform ${
+              isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+            }`}
+          >
+            <p className="text-white text-[14px] md:text-[15px] font-extrabold tracking-tight text-center max-w-xl">
+              간단한 정보만 남겨주시면, 전문 상담원이 신속하게 연락드리겠습니다.
+            </p>
+          </div>
 
-              <div className="flex items-center justify-center gap-6 h-11 text-white text-sm whitespace-nowrap w-full md:w-auto px-2">
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input 
-                    type="radio" 
-                    name="gender" 
-                    value="M" 
-                    required
-                    className="accent-gray-900 w-4 h-4"
-                    onChange={(e) => setFormData({...formData, gender: e.target.value})}
-                  /> 남
-                </label>
-                <div className="w-px h-4 bg-white/30"></div>
-                <label className="flex items-center gap-2 cursor-pointer">
-                  <input 
-                    type="radio" 
-                    name="gender" 
-                    value="F" 
-                    required
-                    className="accent-gray-900 w-4 h-4"
-                    onChange={(e) => setFormData({...formData, gender: e.target.value})}
-                  /> 여
-                </label>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 lg:gap-5">
+              
+              {/* Name Input */}
+              <div 
+                style={{ transitionDelay: '40ms' }}
+                className={`relative w-full md:w-36 group transition-all duration-500 ease-out transform ${
+                  isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+                }`}
+              >
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8BA612] group-focus-within:text-[#71860E] transition-colors duration-200 pointer-events-none z-10">
+                  <User size={16} />
+                </span>
+                <input 
+                  type="text"
+                  placeholder="이름"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full pl-10 pr-4 h-12 bg-white/95 hover:bg-white border border-white/10 focus:border-white rounded-xl text-gray-900 text-sm font-bold placeholder-gray-400 focus:shadow-[0_4px_20px_rgba(0,0,0,0.15)] focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300"
+                />
+              </div>
+              
+              {/* Age Input */}
+              <div 
+                style={{ transitionDelay: '80ms' }}
+                className={`relative w-full md:w-24 group transition-all duration-500 ease-out transform ${
+                  isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+                }`}
+              >
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8BA612] group-focus-within:text-[#71860E] transition-colors duration-200 pointer-events-none z-10">
+                  <Calendar size={16} />
+                </span>
+                <input 
+                  type="number"
+                  placeholder="나이"
+                  required
+                  value={formData.age}
+                  onChange={(e) => setFormData({...formData, age: e.target.value})}
+                  className="w-full pl-10 pr-4 h-12 bg-white/95 hover:bg-white border border-white/10 focus:border-white rounded-xl text-gray-900 text-sm font-bold placeholder-gray-400 focus:shadow-[0_4px_20px_rgba(0,0,0,0.15)] focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                />
               </div>
 
-              <Input 
-                placeholder="연락처 ('-' 제외)" 
-                required 
-                type="tel"
-                value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                className="w-full md:w-64 bg-white border-none rounded-xl h-11 text-gray-900"
-              />
+              {/* Segmented Gender Toggle Tabs (Premium UI Upgrade) */}
+              <div 
+                style={{ transitionDelay: '120ms' }}
+                className={`relative flex items-center justify-between w-full md:w-40 h-12 bg-white/95 p-1 rounded-xl border border-white/10 shrink-0 overflow-hidden select-none transition-all duration-500 ease-out transform ${
+                  isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setFormData({...formData, gender: 'M'})}
+                  className={`relative z-10 w-1/2 h-full rounded-lg text-sm font-extrabold transition-all duration-300 text-center ${
+                    formData.gender === 'M' 
+                      ? 'text-white' 
+                      : 'text-gray-500 hover:text-gray-800'
+                  }`}
+                >
+                  남성
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFormData({...formData, gender: 'F'})}
+                  className={`relative z-10 w-1/2 h-full rounded-lg text-sm font-extrabold transition-all duration-300 text-center ${
+                    formData.gender === 'F' 
+                      ? 'text-white' 
+                      : 'text-gray-500 hover:text-gray-800'
+                  }`}
+                >
+                  여성
+                </button>
 
-              <button type="submit" className="w-full md:w-48 bg-gray-900 hover:bg-black text-white font-bold h-11 rounded-xl transition-colors shrink-0">
-                상담 신청하기
+                {/* Sliding Indicator Background */}
+                <div 
+                  className={`absolute top-1 bottom-1 left-1 rounded-lg bg-[#8BA612] shadow-sm transition-all duration-300 ease-out pointer-events-none ${
+                    formData.gender === 'M' 
+                      ? 'w-[calc(50%-4px)] translate-x-0 opacity-100' 
+                      : formData.gender === 'F' 
+                        ? 'w-[calc(50%-4px)] translate-x-full opacity-100' 
+                        : 'w-0 opacity-0'
+                  }`}
+                />
+              </div>
+
+              {/* Contact Info Input */}
+              <div 
+                style={{ transitionDelay: '160ms' }}
+                className={`relative w-full md:w-56 group transition-all duration-500 ease-out transform ${
+                  isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+                }`}
+              >
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8BA612] group-focus-within:text-[#71860E] transition-colors duration-200 pointer-events-none z-10">
+                  <Phone size={16} />
+                </span>
+                <input 
+                  type="tel"
+                  placeholder="연락처 ('-' 제외)"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="w-full pl-10 pr-4 h-12 bg-white/95 hover:bg-white border border-white/10 focus:border-white rounded-xl text-gray-900 text-sm font-bold placeholder-gray-400 focus:shadow-[0_4px_20px_rgba(0,0,0,0.15)] focus:outline-none focus:ring-4 focus:ring-white/30 transition-all duration-300"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button 
+                type="submit" 
+                style={{ transitionDelay: '200ms' }}
+                className={`group w-full md:w-44 bg-[#8BA612] hover:bg-[#71860E] text-white text-sm font-extrabold h-12 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.4)] transform active:translate-y-0 cursor-pointer flex items-center justify-center gap-2 border border-white/10 shrink-0 transition-all duration-500 ease-out ${
+                  isOpen ? 'translate-y-0 opacity-100 hover:-translate-y-0.5' : 'translate-y-3 opacity-0'
+                }`}
+              >
+                <span>상담 신청하기</span>
+                <ArrowRight size={16} className="translate-x-0 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
             
-            <div className="flex justify-center mt-4">
-              <label className="flex items-center gap-2 text-white/90 text-sm cursor-pointer hover:text-white transition-colors">
-                <input 
-                  type="checkbox" 
-                  required
-                  checked={formData.agree}
-                  className="accent-gray-900 w-4 h-4"
-                  onChange={(e) => setFormData({...formData, agree: e.target.checked})}
-                /> 개인정보 수집 및 이용방침에 동의합니다.
+            {/* Agreement Checkbox */}
+            <div 
+              style={{ transitionDelay: '240ms' }}
+              className={`flex justify-center mt-3 transition-all duration-500 ease-out transform ${
+                isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+              }`}
+            >
+              <label className="group flex items-center gap-3 text-white/95 text-[12px] font-bold cursor-pointer select-none hover:text-white transition-colors duration-200">
+                <div className="relative flex items-center justify-center">
+                  <input 
+                    type="checkbox" 
+                    required
+                    checked={formData.agree}
+                    onChange={(e) => setFormData({...formData, agree: e.target.checked})}
+                    className="sr-only"
+                  />
+                  <div 
+                    className={`w-5 h-5 rounded-md border transition-all duration-200 flex items-center justify-center ${
+                      formData.agree 
+                        ? 'bg-white border-white text-[#8BA612] shadow-[0_2px_8px_rgba(0,0,0,0.15)]' 
+                        : 'bg-white/20 border-white/30 text-transparent hover:bg-white/30'
+                    }`}
+                  >
+                    <Check size={14} strokeWidth={4} className={`transition-transform duration-200 ${formData.agree ? 'scale-100' : 'scale-0'}`} />
+                  </div>
+                </div>
+                <span>개인정보 수집 및 이용방침에 동의합니다.</span>
               </label>
             </div>
           </form>

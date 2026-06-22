@@ -36,7 +36,7 @@ export function SideQuickMenu() {
   ];
 
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-1 bg-white p-2.5 rounded-[20px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100">
+    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col bg-white border border-gray-200 shadow-[0_8px_35px_rgba(0,0,0,0.08)] rounded-[20px] overflow-hidden divide-y divide-gray-100">
       {menus.map((menu, i) => {
         const Icon = menu.Icon;
         return (
@@ -45,10 +45,10 @@ export function SideQuickMenu() {
             href={menu.href}
             target={menu.href.startsWith('http') ? '_blank' : '_self'}
             rel={menu.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            className="group flex flex-col items-center justify-center w-[88px] h-[92px] rounded-2xl hover:bg-gray-50 text-[12px] font-bold text-gray-700 text-center transition-all duration-300"
+            className="group flex flex-col items-center justify-center w-[86px] h-[83px] hover:bg-gray-50 text-[11px] font-bold text-gray-800 text-center transition-colors duration-300"
           >
-            <div className="w-12 h-12 bg-[var(--color-sub)] rounded-full mb-2 flex items-center justify-center text-[var(--color-primary)] group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors duration-300 shadow-sm">
-              <Icon size={22} />
+            <div className="mb-1.5 text-gray-800 group-hover:text-[var(--color-primary)] transition-colors duration-300">
+              <Icon size={27} />
             </div>
             {menu.label}
           </Link>
