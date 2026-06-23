@@ -34,7 +34,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #99B61E;
+  --color-primary: #A8CC1D;
   --color-sub: #F0F2E7;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

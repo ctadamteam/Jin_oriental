@@ -39,7 +39,7 @@ export default function BellyComorbiditySlider() {
     <section className="relative bg-gradient-to-br from-[#121410] via-[#1A1D16] to-[#0E100D] py-16 md:py-20 lg:py-24 overflow-hidden border-b border-[#2C3125]">
       {/* Dynamic Background Glows */}
       <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full bg-[#708A12]/5 blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full bg-[#7FA110]/5 blur-[150px] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 z-10">
         {/* Male obesity model image aligned to the bottom of the section */}
@@ -63,7 +63,7 @@ export default function BellyComorbiditySlider() {
             onClick={() => setActiveTab(0)}
             className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold transition-all duration-300 ${
               activeTab === 0
-                ? 'bg-gradient-to-br from-primary to-[#8EA913] text-white shadow-lg shadow-primary/10'
+                ? 'bg-gradient-to-br from-primary to-[#9AB81B] text-white shadow-lg shadow-primary/10'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -73,7 +73,7 @@ export default function BellyComorbiditySlider() {
             onClick={() => setActiveTab(1)}
             className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold transition-all duration-300 ${
               activeTab === 1
-                ? 'bg-gradient-to-br from-primary to-[#8EA913] text-white shadow-lg shadow-primary/10'
+                ? 'bg-gradient-to-br from-primary to-[#9AB81B] text-white shadow-lg shadow-primary/10'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
