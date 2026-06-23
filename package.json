@@ -28,7 +28,8 @@
     "eslint-config-next": "16.2.6",
     "jimp": "^1.6.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^54.14.5"
   },
   "description": "진한의원 공식 홈페이지 1차 구축 프로젝트입니다. Next.js App Router와 Tailwind CSS를 활용하여 구축되며, 향후 Supabase 및 Vercel을 통한 확장을 고려하여 설계되었습니다.",
   "main": "index.js",

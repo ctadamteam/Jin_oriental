@@ -34,8 +34,8 @@ export default function AbdominalComparisonSlider() {
             onClick={() => setActiveTab(0)}
             className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold transition-all duration-300 ${
               activeTab === 0
-                ? 'bg-[#5A654D] text-white shadow-lg shadow-[#5A654D]/10'
-                : 'text-[#6E7560] hover:text-[#5A654D]'
+                ? 'bg-[#6F7B5E] text-white shadow-lg shadow-[#6F7B5E]/10'
+                : 'text-[#818974] hover:text-[#6F7B5E]'
             }`}
           >
             건강한 사람의 복강
@@ -45,7 +45,7 @@ export default function AbdominalComparisonSlider() {
             className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold transition-all duration-300 ${
               activeTab === 1
                 ? 'bg-primary text-white shadow-lg shadow-primary/20'
-                : 'text-[#6E7560] hover:text-primary'
+                : 'text-[#818974] hover:text-primary'
             }`}
           >
             내장비만인의 복강
@@ -67,7 +67,7 @@ export default function AbdominalComparisonSlider() {
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center h-full">
               <div className="mb-6">
-                <span className="inline-block bg-[#5A654D] text-white rounded-full px-5 py-2 text-sm md:text-base lg:text-lg font-bold">
+                <span className="inline-block bg-[#6F7B5E] text-white rounded-full px-5 py-2 text-sm md:text-base lg:text-lg font-bold">
                   건강한 사람의 복강
                 </span>
               </div>
@@ -141,7 +141,7 @@ export default function AbdominalComparisonSlider() {
                   >
                     <span className="flex-shrink-0 mt-1">
                       <svg width="7" height="7" viewBox="0 0 9 9" fill="none">
-                        <circle cx="4.5" cy="4.5" r="4.5" fill="#8BA612" />
+                        <circle cx="4.5" cy="4.5" r="4.5" fill="#99B61E" />
                       </svg>
                     </span>
                     <p

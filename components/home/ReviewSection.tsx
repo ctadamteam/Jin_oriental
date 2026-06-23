@@ -1382,7 +1382,7 @@ export function ReviewSection() {
               onClick={() => scrollTo(index)}
               className={`transition-all duration-300 rounded-full h-2.5 ${
                 index === selectedIndex 
-                  ? 'w-6 bg-[#8BA612]' 
+                  ? 'w-6 bg-[#99B61E]' 
                   : 'w-2.5 bg-gray-300 hover:bg-gray-400'
               }`}
               aria-label={`Go to slide ${index + 1}`}

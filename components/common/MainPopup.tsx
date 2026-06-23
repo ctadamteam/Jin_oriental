@@ -33,7 +33,7 @@ export default function MainPopup() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-[3px] p-4 animate-fade-in">
       {/* 팝업 카드 */}
-      <div className="relative w-full max-w-[1080px] bg-[#5A654D] rounded-none overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.35)] flex flex-col md:flex-row border border-[#5A654D]/40">
+      <div className="relative w-full max-w-[1080px] bg-[#6F7B5E] rounded-none overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.35)] flex flex-col md:flex-row border border-[#6F7B5E]/40">
         
         {/* 우측 상단 닫기 X 버튼 (데스크톱 및 공통) */}
         <button 
@@ -45,14 +45,14 @@ export default function MainPopup() {
         </button>
  
         {/* 좌측 탭바 (모바일은 상단 가로바) */}
-        <div className="w-full md:w-[240px] bg-[#464F3B] flex flex-row md:flex-col justify-between md:pt-0 md:pb-6 border-b md:border-b-0 md:border-r border-[#5A654D]/50 shrink-0">
+        <div className="w-full md:w-[240px] bg-[#5C664F] flex flex-row md:flex-col justify-between md:pt-0 md:pb-6 border-b md:border-b-0 md:border-r border-[#6F7B5E]/50 shrink-0">
           <div className="w-full flex flex-row md:flex-col justify-start">
             <button 
               onClick={() => setActiveTab(0)}
               className={`flex-1 md:flex-initial py-4.5 md:py-5 px-4 md:px-6 text-center md:text-left text-xs md:text-sm lg:text-base font-bold transition-all relative ${
                 activeTab === 0 
-                  ? 'bg-[#F0F2E7] text-[#464F3B] md:rounded-r-none' 
-                  : 'text-slate-200 hover:text-white hover:bg-[#8BA612]/20'
+                  ? 'bg-[#F0F2E7] text-[#5C664F] md:rounded-r-none' 
+                  : 'text-slate-200 hover:text-white hover:bg-[#99B61E]/20'
               }`}
             >
               방송안내
@@ -61,8 +61,8 @@ export default function MainPopup() {
               onClick={() => setActiveTab(1)}
               className={`flex-1 md:flex-initial py-4.5 md:py-5 px-4 md:px-6 text-center md:text-left text-xs md:text-sm lg:text-base font-bold transition-all relative ${
                 activeTab === 1 
-                  ? 'bg-[#F0F2E7] text-[#464F3B] md:rounded-r-none' 
-                  : 'text-slate-200 hover:text-white hover:bg-[#8BA612]/20'
+                  ? 'bg-[#F0F2E7] text-[#5C664F] md:rounded-r-none' 
+                  : 'text-slate-200 hover:text-white hover:bg-[#99B61E]/20'
               }`}
             >
               이벤트바로가기
@@ -71,8 +71,8 @@ export default function MainPopup() {
               onClick={() => setActiveTab(2)}
               className={`flex-1 md:flex-initial py-4.5 md:py-5 px-4 md:px-6 text-center md:text-left text-xs md:text-sm lg:text-base font-bold transition-all relative ${
                 activeTab === 2 
-                  ? 'bg-[#F0F2E7] text-[#464F3B] md:rounded-r-none' 
-                  : 'text-slate-200 hover:text-white hover:bg-[#8BA612]/20'
+                  ? 'bg-[#F0F2E7] text-[#5C664F] md:rounded-r-none' 
+                  : 'text-slate-200 hover:text-white hover:bg-[#99B61E]/20'
               }`}
             >
               비대면 다이어트한약
@@ -203,13 +203,13 @@ export default function MainPopup() {
  
             {/* 3. 비대면 다이어트한약 탭 */}
             {activeTab === 2 && (
-              <div className="w-full h-full bg-gradient-to-br from-[#5A654D] via-[#6E7860] to-[#4C5541] p-6 md:p-8 lg:p-9 text-white flex flex-col justify-between relative overflow-hidden select-none">
+              <div className="w-full h-full bg-gradient-to-br from-[#6F7B5E] via-[#818C74] to-[#606A53] p-6 md:p-8 lg:p-9 text-white flex flex-col justify-between relative overflow-hidden select-none">
                 {/* 올리브 나뭇잎 질감의 배경 장식 */}
-                <div className="absolute top-1/2 -left-12 w-48 h-48 rounded-full bg-[#8BA612]/10 blur-xl pointer-events-none" />
+                <div className="absolute top-1/2 -left-12 w-48 h-48 rounded-full bg-[#99B61E]/10 blur-xl pointer-events-none" />
                 <div className="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-[#FAFAFA]/5 blur-lg pointer-events-none" />
- 
+
                 <div className="flex-1 flex flex-col justify-center z-10">
-                  <div className="inline-block bg-[#8BA612] text-white rounded-full px-4 py-1 text-[10px] md:text-xs font-bold w-fit mb-3">
+                  <div className="inline-block bg-[#99B61E] text-white rounded-full px-4 py-1 text-[10px] md:text-xs font-bold w-fit mb-3">
                     방문 없는 간편 처방
                   </div>
                   
@@ -221,15 +221,15 @@ export default function MainPopup() {
                   {/* 세부 특징 목록 */}
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-start gap-2 text-xs md:text-sm text-slate-200">
-                      <span className="text-[#8BA612] mt-0.5">✔</span>
+                      <span className="text-[#99B61E] mt-0.5">✔</span>
                       <span><strong>전화 비대면 진료</strong> 및 상세 한의학적 진단 설문 진행</span>
                     </li>
                     <li className="flex items-start gap-2 text-xs md:text-sm text-slate-200">
-                      <span className="text-[#8BA612] mt-0.5">✔</span>
+                      <span className="text-[#99B61E] mt-0.5">✔</span>
                       <span>환자 개인별 <strong>체질/식습관 맞춤</strong> 1:1 한약 조제</span>
                     </li>
                     <li className="flex items-start gap-2 text-xs md:text-sm text-slate-200">
-                      <span className="text-[#8BA612] mt-0.5">✔</span>
+                      <span className="text-[#99B61E] mt-0.5">✔</span>
                       <span>원격 한약 배송 규격에 따른 <strong>꼼꼼한 안심 직송</strong> 서비스</span>
                     </li>
                   </ul>
@@ -237,7 +237,7 @@ export default function MainPopup() {
                   <div>
                     <a 
                       href="/diet-medicine"
-                      className="inline-flex items-center justify-center bg-[#8BA612] hover:bg-[#99B61E] text-white font-bold px-7 py-2.5 rounded-full text-xs md:text-sm shadow-md transition-all hover:scale-[1.03] cursor-pointer"
+                      className="inline-flex items-center justify-center bg-[#99B61E] hover:bg-[#A2C020] text-white font-bold px-7 py-2.5 rounded-full text-xs md:text-sm shadow-md transition-all hover:scale-[1.03] cursor-pointer"
                     >
                       비대면 처방 알아보기
                     </a>
@@ -249,13 +249,13 @@ export default function MainPopup() {
           </div>
  
           {/* 하단 오늘하루보지않기 바 (기능성 편의) */}
-          <div className="bg-[#3A4232] text-slate-200 text-xs px-5 py-3.5 md:py-4 flex justify-between items-center border-t border-[#5A654D]/40 select-none">
+          <div className="bg-[#4F5943] text-slate-200 text-xs px-5 py-3.5 md:py-4 flex justify-between items-center border-t border-[#6F7B5E]/40 select-none">
             <button 
               onClick={toggleHideToday} 
               className="hover:text-white flex items-center gap-2 transition-all cursor-pointer font-medium"
             >
               <div className={`w-4 h-4 border rounded flex items-center justify-center transition-all ${
-                isHideToday ? 'bg-[#8BA612] border-[#8BA612] text-white' : 'border-slate-500'
+                isHideToday ? 'bg-[#99B61E] border-[#99B61E] text-white' : 'border-slate-500'
               }`}>
                 {isHideToday && (
                   <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
@@ -267,7 +267,7 @@ export default function MainPopup() {
             </button>
             <button 
               onClick={handleClose} 
-              className="hover:text-white font-bold transition-all px-4 py-1.5 bg-[#5A654D] hover:bg-[#8BA612] text-white rounded-md cursor-pointer border border-[#8BA612]/20"
+              className="hover:text-white font-bold transition-all px-4 py-1.5 bg-[#6F7B5E] hover:bg-[#99B61E] text-white rounded-md cursor-pointer border border-[#99B61E]/20"
             >
               닫기
             </button>

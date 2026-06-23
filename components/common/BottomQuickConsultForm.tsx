@@ -35,7 +35,7 @@ export function BottomQuickConsultForm() {
       {/* Toggle Tab */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="group w-full bg-gradient-to-r from-[#8BA612] to-[#71860E] text-white py-3 flex flex-row items-center justify-center gap-2 cursor-pointer hover:from-[#94b115] hover:to-[#7b9210] transition-all duration-300 border-t border-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] relative z-20"
+        className="group w-full bg-gradient-to-r from-[#99B61E] to-[#809919] text-white py-3 flex flex-row items-center justify-center gap-2 cursor-pointer hover:from-[#A2C020] hover:to-[#8B9E1B] transition-all duration-300 border-t border-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] relative z-20"
       >
         <span className="text-[14px] font-extrabold tracking-tight">
           {isOpen ? '빠른 상담 신청 닫기' : '빠른 상담 신청하기'}
@@ -48,7 +48,7 @@ export function BottomQuickConsultForm() {
 
       {/* Expandable Form Content */}
       <div 
-        className={`backdrop-blur-md bg-[#353C2D]/95 overflow-hidden transition-[max-height,opacity] duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] ${
+        className={`backdrop-blur-md bg-[#48523C]/95 overflow-hidden transition-[max-height,opacity] duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] ${
           isOpen 
             ? 'max-h-[500px] opacity-100 border-t border-[#f0f2e7]/20 shadow-[0_-15px_40px_rgba(0,0,0,0.2)] pointer-events-auto' 
             : 'max-h-0 h-0 opacity-0 border-t-0 border-transparent shadow-none pointer-events-none'
@@ -77,7 +77,7 @@ export function BottomQuickConsultForm() {
                   isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
                 }`}
               >
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8BA612] group-focus-within:text-[#71860E] transition-colors duration-200 pointer-events-none z-10">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#99B61E] group-focus-within:text-[#809919] transition-colors duration-200 pointer-events-none z-10">
                   <User size={16} />
                 </span>
                 <input 
@@ -97,7 +97,7 @@ export function BottomQuickConsultForm() {
                   isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
                 }`}
               >
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8BA612] group-focus-within:text-[#71860E] transition-colors duration-200 pointer-events-none z-10">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#99B61E] group-focus-within:text-[#809919] transition-colors duration-200 pointer-events-none z-10">
                   <Calendar size={16} />
                 </span>
                 <input 
@@ -142,7 +142,7 @@ export function BottomQuickConsultForm() {
 
                 {/* Sliding Indicator Background */}
                 <div 
-                  className={`absolute top-1 bottom-1 left-1 rounded-lg bg-[#8BA612] shadow-sm transition-all duration-300 ease-out pointer-events-none ${
+                  className={`absolute top-1 bottom-1 left-1 rounded-lg bg-[#99B61E] shadow-sm transition-all duration-300 ease-out pointer-events-none ${
                     formData.gender === 'M' 
                       ? 'w-[calc(50%-4px)] translate-x-0 opacity-100' 
                       : formData.gender === 'F' 
@@ -159,7 +159,7 @@ export function BottomQuickConsultForm() {
                   isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
                 }`}
               >
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8BA612] group-focus-within:text-[#71860E] transition-colors duration-200 pointer-events-none z-10">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#99B61E] group-focus-within:text-[#809919] transition-colors duration-200 pointer-events-none z-10">
                   <Phone size={16} />
                 </span>
                 <input 
@@ -176,7 +176,7 @@ export function BottomQuickConsultForm() {
               <button 
                 type="submit" 
                 style={{ transitionDelay: '200ms' }}
-                className={`group w-full md:w-44 bg-[#8BA612] hover:bg-[#71860E] text-white text-sm font-extrabold h-12 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.4)] transform active:translate-y-0 cursor-pointer flex items-center justify-center gap-2 border border-white/10 shrink-0 transition-all duration-500 ease-out ${
+                className={`group w-full md:w-44 bg-[#99B61E] hover:bg-[#809919] text-white text-sm font-extrabold h-12 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.4)] transform active:translate-y-0 cursor-pointer flex items-center justify-center gap-2 border border-white/10 shrink-0 transition-all duration-500 ease-out ${
                   isOpen ? 'translate-y-0 opacity-100 hover:-translate-y-0.5' : 'translate-y-3 opacity-0'
                 }`}
               >
@@ -204,7 +204,7 @@ export function BottomQuickConsultForm() {
                   <div 
                     className={`w-5 h-5 rounded-md border transition-all duration-200 flex items-center justify-center ${
                       formData.agree 
-                        ? 'bg-white border-white text-[#8BA612] shadow-[0_2px_8px_rgba(0,0,0,0.15)]' 
+                        ? 'bg-white border-white text-[#99B61E] shadow-[0_2px_8px_rgba(0,0,0,0.15)]' 
                         : 'bg-white/20 border-white/30 text-transparent hover:bg-white/30'
                     }`}
                   >
