@@ -17,7 +17,7 @@ export function SectionTitle({ title, subtitle, align = 'center', className = ''
   return (
     <div className={`mb-12 ${alignMap[align]} ${className}`}>
       {subtitle && (
-        <span className="block mb-3 text-[13pt] font-bold text-[var(--color-primary)] tracking-widest uppercase">
+        <span className="block mb-3 text-[13pt] font-bold text-primary-medium tracking-widest uppercase">
           {subtitle}
         </span>
       )}

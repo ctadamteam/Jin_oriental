@@ -23,6 +23,12 @@ const BANNERS = [
     imageUrl: '/images/main/hero_banner_03.jpg',
     alt: '진한의원 해독 치료 배너',
     link: '#'
+  },
+  {
+    id: 4,
+    imageUrl: '/images/main/hero_banner_04.jpg',
+    alt: '진한의원 후기 배너',
+    link: '#'
   }
 ];
 
@@ -107,7 +113,7 @@ export function MainHeroSection() {
             onClick={() => scrollTo(index)}
             className={`transition-all duration-300 rounded-full h-2.5 ${
               index === selectedIndex 
-                ? 'w-6 bg-[#171717]' 
+                ? 'w-6 bg-primary-dark' 
                 : 'w-2.5 bg-white/60 hover:bg-white/90'
             }`}
             aria-label={`Go to slide ${index + 1}`}

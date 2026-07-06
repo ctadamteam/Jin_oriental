@@ -22,38 +22,42 @@ export default function Index() {
 /* ────────────────── HERO ────────────────── */
 function HeroSection() {
   return (
-    <section className="relative bg-[#F0F2E7] overflow-hidden min-h-[480px] md:min-h-[600px] lg:min-h-[645px]">
-      {/* background blurred image */}
-      <img
-        src="/images/personal/visceral-fat/visceral-fat-1.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover mix-blend-overlay blur-xl opacity-60 pointer-events-none select-none"
-      />
-      <div className="relative max-w-[1920px] mx-auto px-6 md:px-16 lg:pl-16 lg:pr-32 flex flex-col lg:flex-row items-center justify-between min-h-[480px] md:min-h-[600px] lg:min-h-[645px]">
+    <section className="relative bg-gradient-to-br from-[#C6EC2A] via-[#BEE622] to-[#A3C81C] overflow-hidden min-h-[480px] md:min-h-[600px] lg:min-h-[645px]">
+      {/* JIN CLINIC Watermark - positioned behind the model */}
+      <div className="absolute inset-0 flex items-center justify-center lg:justify-start lg:pl-20 pointer-events-none select-none overflow-hidden">
+        <span className="font-paperlogy text-[130px] md:text-[200px] lg:text-[270px] font-extrabold text-primary-dark/[0.04] tracking-widest leading-none select-none">
+          JIN CLINIC
+        </span>
+      </div>
+
+      {/* Studio spotlight (white glow behind model) */}
+      <div className="absolute left-[10%] lg:left-[5%] bottom-0 w-[400px] h-[400px] lg:w-[650px] lg:h-[650px] rounded-full bg-white/20 blur-[120px] pointer-events-none" />
+
+      <div className="relative max-w-[1920px] mx-auto px-6 md:px-16 lg:pl-16 lg:pr-32 flex flex-col lg:flex-row items-center justify-between min-h-[480px] md:min-h-[600px] lg:min-h-[645px] z-10">
         {/* left image */}
         <div className="w-full lg:w-[35%] flex-shrink-0 flex justify-center lg:justify-start lg:self-end pt-10 lg:pt-0">
           <img
             src="/images/personal/visceral-fat/visceral-fat-model-new.png"
             alt="내장지방형 비만"
-            className="w-full max-w-[320px] md:max-w-[450px] lg:max-w-none lg:w-auto lg:h-[645px] lg:-ml-20 object-cover filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] scale-100 origin-bottom"
+            className="w-full max-w-[320px] md:max-w-[450px] lg:max-w-none lg:w-auto lg:h-[645px] lg:-ml-20 object-cover filter drop-shadow-[15px_15px_15px_rgba(0,0,0,0.25)] scale-100 origin-bottom"
           />
         </div>
         {/* right text */}
         <div className="w-full lg:w-[50%] flex-shrink-0 flex flex-col justify-center py-12 lg:py-0 lg:pl-0 lg:-ml-12 z-10">
           <p
-            className="font-paperlogy text-primary text-xl md:text-2xl lg:text-[34px] font-normal mb-1 md:mb-2"
+            className="font-paperlogy text-primary-dark/85 text-xl md:text-2xl lg:text-[34px] font-normal mb-1 md:mb-2"
             style={{ letterSpacing: '-0.05em' }}
           >
             뱃살 먼저 감량되는 내장 다이어트
           </p>
           <h1
-            className="font-paperlogy text-primary font-extrabold text-5xl md:text-7xl lg:text-[100px] leading-none mb-6 md:mb-8"
+            className="font-paperlogy text-primary-dark font-extrabold text-5xl md:text-7xl lg:text-[100px] leading-none mb-6 md:mb-8"
             style={{ letterSpacing: '-0.05em' }}
           >
             내장지방형 비만
           </h1>
           <p
-            className="text-primary text-[15.2px] md:text-[19px] lg:text-[26.6px] leading-[1.4] max-w-[780px]"
+            className="text-black text-[15.2px] md:text-[19px] lg:text-[26.6px] leading-[1.4] max-w-[780px]"
             style={{ letterSpacing: '-0.05em' }}
           >
             만성피로, 소화장애, 부종, 대사성 질환을 유발하는 내장지방을 <br className="hidden lg:block" />
@@ -88,7 +92,7 @@ function NormalPersonIcon() {
 
 function ObesePersonIcon() {
   return (
-    <svg width="120" height="120" viewBox="0 0 233 233" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 select-none pointer-events-none filter drop-shadow-[0_10px_25px_rgba(168,204,29,0.12)]">
+    <svg width="120" height="120" viewBox="0 0 233 233" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 select-none pointer-events-none filter drop-shadow-[0_10px_25px_rgba(168,204,30,0.12)]">
       {/* 바깥 흰색 테두리 레이어 (머리와 몸통 통합) */}
       <g fill="white" stroke="white" strokeWidth="12" strokeLinejoin="round" strokeLinecap="round">
         <ellipse cx="116.5" cy="56" rx="23" ry="29" />
@@ -96,7 +100,7 @@ function ObesePersonIcon() {
       </g>
 
       {/* 내부 연두색 실루엣 레이어 */}
-      <g fill="#A8CC1D">
+      <g fill="#A8CC1E">
         <ellipse cx="116.5" cy="56" rx="23" ry="29" />
         <ellipse cx="116.5" cy="142" rx="64" ry="60" />
       </g>
@@ -110,7 +114,7 @@ function ObesePersonIcon() {
 
 function AbdominalObesePersonIcon() {
   return (
-    <svg width="120" height="120" viewBox="0 0 233 233" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 select-none pointer-events-none filter drop-shadow-[0_10px_25px_rgba(168,204,29,0.12)]">
+    <svg width="120" height="120" viewBox="0 0 233 233" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 select-none pointer-events-none filter drop-shadow-[0_10px_25px_rgba(168,204,30,0.12)]">
       {/* 바깥 흰색 테두리 레이어 (머리와 몸통 통합) */}
       <g fill="white" stroke="white" strokeWidth="12" strokeLinejoin="round" strokeLinecap="round">
         <ellipse cx="116.5" cy="56" rx="23" ry="29" />
@@ -118,7 +122,7 @@ function AbdominalObesePersonIcon() {
       </g>
 
       {/* 내부 연두색 실루엣 레이어 */}
-      <g fill="#A8CC1D">
+      <g fill="#A8CC1E">
         <ellipse cx="116.5" cy="56" rx="23" ry="29" />
         <ellipse cx="116.5" cy="142" rx="64" ry="60" />
       </g>
@@ -146,7 +150,7 @@ function StatisticsSection() {
           <div className="flex flex-col md:flex-row gap-8 md:gap-6 lg:gap-8 justify-around items-stretch">
             
             {/* Obesity stat (좌측) */}
-            <div className="flex-1 flex flex-col items-center bg-white rounded-[28px] pt-4 pb-6 px-8 md:pt-5 md:pb-8 md:px-10 shadow-[0_12px_40px_rgba(168,204,29,0.06)] border border-[#A8CC1D]/5">
+            <div className="flex-1 flex flex-col items-center bg-white rounded-[28px] pt-4 pb-6 px-8 md:pt-5 md:pb-8 md:px-10 shadow-[0_12px_40px_rgba(168,204,30,0.06)] border border-[#A8CC1E]/5">
               {/* 입체적 피규어 스테이지 (상단) */}
               <div className="relative w-full max-w-[220px] md:max-w-[260px] lg:max-w-[280px] h-[110px] md:h-[140px] lg:h-[160px] flex justify-center items-end mb-4">
                 {/* 뒤쪽 보통체형 2명 (오프셋 배치, 축소, 블러, 반투명) */}
@@ -164,12 +168,12 @@ function StatisticsSection() {
               {/* 설명 텍스트 (하단 중앙) */}
               <div className="text-center">
                 <p className="text-[#8F9682] text-[14px] md:text-[16.5px] lg:text-[18px] mb-1 tracking-tight font-medium">성인 3명 중 1명</p>
-                <p className="text-primary font-extrabold text-[27px] md:text-[45px] leading-none tracking-[-0.07em]">비만</p>
+                <p className="font-extrabold text-[27px] md:text-[45px] leading-none tracking-[-0.07em]" style={{ color: '#A8CC1E' }}>비만</p>
               </div>
             </div>
 
             {/* Abdominal obesity stat (우측) */}
-            <div className="flex-1 flex flex-col items-center bg-white rounded-[28px] pt-4 pb-6 px-8 md:pt-5 md:pb-8 md:px-10 shadow-[0_12px_40px_rgba(168,204,29,0.06)] border border-[#A8CC1D]/5">
+            <div className="flex-1 flex flex-col items-center bg-white rounded-[28px] pt-4 pb-6 px-8 md:pt-5 md:pb-8 md:px-10 shadow-[0_12px_40px_rgba(168,204,30,0.06)] border border-[#A8CC1E]/5">
               {/* 입체적 피규어 스테이지 (상단) */}
               <div className="relative w-full max-w-[280px] md:max-w-[340px] lg:max-w-[380px] h-[110px] md:h-[140px] lg:h-[160px] flex justify-center items-end mb-4">
                 {/* 뒤쪽 보통체형 4명 (대칭식 입체 오프셋 배치, 축소, 블러, 반투명) */}
@@ -195,7 +199,7 @@ function StatisticsSection() {
               {/* 설명 텍스트 (하단 중앙) */}
               <div className="text-center">
                 <p className="text-[#8F9682] text-[14px] md:text-[16.5px] lg:text-[18px] mb-1 tracking-tight font-medium">성인 5명 중 1명</p>
-                <p className="text-primary font-extrabold text-[27px] md:text-[45px] leading-none tracking-[-0.07em]">복부비만</p>
+                <p className="font-extrabold text-[27px] md:text-[45px] leading-none tracking-[-0.07em]" style={{ color: '#A8CC1E' }}>복부비만</p>
               </div>
             </div>
 
@@ -390,18 +394,18 @@ function ViscFatExplainSection() {
         {/* Bottom info card - Premium Split Panel */}
         <div className="relative rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-gray-100/80">
           {/* Subtle dot pattern background */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, #A8CC1D 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, #BEE622 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
           
           <div className="relative grid grid-cols-1 md:grid-cols-2">
             {/* 내장지방 Panel */}
-            <div className="relative bg-gradient-to-br from-[#F0F2E7] via-[#ECEEE2] to-[#E5E8D8] p-6 md:p-8 flex items-center gap-8 overflow-hidden">
+            <div className="relative bg-gradient-to-br from-[#F4F6EA] via-[#ECEEE2] to-[#E5E8D8] p-6 md:p-8 flex items-center gap-8 overflow-hidden">
               <div className="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-primary/[0.04]" />
               <div className="absolute -right-2 -bottom-2 w-24 h-24 rounded-full bg-primary/[0.06]" />
               
               <div className="relative flex-shrink-0">
                 {/* Outer ring glow */}
                 <div className="absolute -inset-1.5 rounded-full bg-primary/10 blur-sm" />
-                <div className="relative w-20 h-20 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-primary via-[#9AB81B] to-[#7FA110] flex flex-col items-center justify-center shadow-[0_8px_24px_rgba(168, 204, 29, 0.3)]">
+                <div className="relative w-20 h-20 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-primary via-[#9AB81B] to-[#7FA110] flex flex-col items-center justify-center shadow-[0_8px_24px_rgba(190, 230, 34, 0.3)]">
                   <span className="text-white font-extrabold text-2xl md:text-4xl leading-none tracking-tight mt-0.5">2cm</span>
                   <span className="text-white/80 text-xs md:text-base font-medium mt-0.5">이하</span>
                 </div>

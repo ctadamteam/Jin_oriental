@@ -110,20 +110,27 @@ export default function VisFatSliderSection() {
 
   return (
     <section className="bg-white py-16 md:py-20 lg:py-24 w-full overflow-x-hidden">
-      {/* 1. Tabs Section */}
+      {/* 1. Tabs Section - matching Section 6 pill style */}
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center gap-1 bg-[#F4F5F0] p-1.5 rounded-full border border-gray-100 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] max-w-full overflow-x-auto no-scrollbar">
+          <div className="relative inline-flex items-center gap-1 bg-[#F4F5F0] p-1.5 rounded-full border border-gray-100 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] max-w-full overflow-x-auto no-scrollbar">
+            {/* Sliding Pill Background */}
+            <div
+              className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-primary shadow-[0_4px_12px_rgba(139,166,18,0.25)] transition-all duration-500 cubic-bezier(0.25, 1, 0.5, 1) w-[120px] sm:w-[130px] md:w-[150px] lg:w-[180px]"
+              style={{
+                transform: `translateX(calc(${selectedIndex} * (100% + 4px)))`,
+              }}
+            />
             {tabs.map((tab, idx) => {
               const isActive = selectedIndex === idx;
               return (
                 <button
                   key={idx}
                   onClick={() => scrollTo(idx)}
-                  className={`flex items-center px-5 py-3 rounded-full text-xs md:text-sm lg:text-base font-bold whitespace-nowrap transition-all duration-300 ${
+                  className={`relative z-10 flex items-center justify-center px-2 py-3 rounded-full text-xs md:text-sm lg:text-base font-bold whitespace-nowrap transition-colors duration-300 w-[120px] sm:w-[130px] md:w-[150px] lg:w-[180px] ${
                     isActive
-                      ? 'bg-primary text-white shadow-[0_4px_12px_rgba(139,166,18,0.25)]'
-                      : 'text-gray-500 hover:text-primary'
+                      ? 'text-white'
+                      : 'text-gray-500 hover:text-primary-dark'
                   }`}
                 >
                   <span>{tab.title}</span>
@@ -162,7 +169,7 @@ export default function VisFatSliderSection() {
                     </p>
 
                     <p className="text-black text-[14.4px] md:text-[18px] lg:text-[27px] leading-relaxed max-w-4xl mx-auto mb-8" style={{ letterSpacing: '-0.05em' }}>
-                      건강하기 위해서는 <strong className="text-primary">반드시 뱃살을 제거</strong>해야 하며<br className="hidden md:block" />
+                      건강하기 위해서는 <strong style={{ color: '#A8CC1E' }}>반드시 뱃살을 제거</strong>해야 하며<br className="hidden md:block" />
                       배가 불룩한 중년이 배가 나온 중년보다 더 건강하다고 볼 수 없습니다.
                     </p>
                   </div>
@@ -373,47 +380,55 @@ export default function VisFatSliderSection() {
                             </svg>
                           </div>
                         </div>
-                        <div className="bg-primary text-white text-center py-2 text-sm md:text-base lg:text-lg">내장지방 과다</div>
+                        <div className="bg-primary text-primary-dark font-bold text-center py-2 text-sm md:text-base lg:text-lg">내장지방 과다</div>
                       </div>
                     </div>
                   </div>
 
                   {/* 2cm Pinch Criteria Card */}
-                  <div className="relative rounded-2xl overflow-hidden border border-gray-150 shadow-[0_4px_12px_rgba(0,0,0,0.01)] max-w-5xl mx-auto w-full">
-                    <div className="relative grid grid-cols-1 md:grid-cols-2">
-                      <div className="relative bg-gradient-to-br from-[#F0F2E7] via-[#ECEEE2] to-[#E5E8D8] p-4 flex items-center gap-5 overflow-hidden">
-                        <div className="absolute -right-8 -bottom-8 w-24 h-24 rounded-full bg-primary/[0.03]" />
+                  <div className="relative overflow-hidden max-w-5xl mx-auto w-full">
+                    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4">
+                      
+                      {/* Left: 2cm 이하 (배경 연회색, 테두리 삭제, 박스라운드 rounded-sm) */}
+                      <div className="relative bg-[#F4F5F0] rounded-sm p-4 flex items-center gap-5 overflow-hidden">
                         <div className="relative flex-shrink-0">
-                          <div className="absolute -inset-0.5 rounded-xl bg-primary/10 blur-sm" />
-                          <div className="relative w-24 h-9 md:w-28 md:h-11 rounded-xl bg-gradient-to-br from-primary via-[#7A9510] to-[#5C7A00] flex items-center justify-center gap-1.5 shadow-md">
-                            <span className="text-white font-extrabold text-sm md:text-base leading-none mt-0.5">2cm</span>
-                            <span className="text-white/80 text-sm md:text-base font-medium leading-none mt-0.5">이하</span>
+                          {/* 뱃지 라운드를 박스에 맞춰 rounded-sm으로 조정, 폰트 키우고 색상 흰색(text-white) 적용, 그림자(shadow-sm) 제거 */}
+                          <div className="relative w-32 h-11 md:w-36 md:h-13 rounded-sm bg-primary flex items-center justify-center gap-2">
+                            <span className="text-white font-extrabold text-lg md:text-xl lg:text-2xl leading-none mt-0.5">2cm</span>
+                            <span className="text-white font-bold text-base md:text-lg lg:text-xl leading-none mt-0.5">이하</span>
                           </div>
                         </div>
                         <div className="relative z-10">
-                          <p className="text-black font-bold text-lg md:text-xl" style={{ letterSpacing: '-0.03em' }}>내장지방</p>
+                          {/* 내장지방 폰트 확대, 굵기 medium으로 변경 */}
+                          <p className="text-black font-medium text-xl md:text-2xl lg:text-3xl" style={{ letterSpacing: '-0.03em' }}>내장지방</p>
                         </div>
                       </div>
 
-                      <div className="relative bg-gradient-to-br from-white via-[#FAFBF7] to-[#F4F6EE] p-4 flex items-center gap-5 overflow-hidden border-t md:border-t-0 md:border-l border-gray-150">
-                        <div className="absolute -right-8 -bottom-8 w-24 h-24 rounded-full bg-primary/[0.03]" />
+                      {/* Right: 2cm 이상 (배경 연회색, 테두리 삭제, 박스라운드 rounded-sm, 화살표 녹색 동그라미 적용) */}
+                      <div className="relative bg-[#F4F5F0] rounded-sm p-4 flex items-center gap-5 overflow-hidden">
                         <div className="relative flex-shrink-0">
-                          <div className="absolute -inset-0.5 rounded-xl bg-primary/10 blur-sm" />
-                          <div className="relative w-24 h-9 md:w-28 md:h-11 rounded-xl bg-gradient-to-br from-primary via-[#7A9510] to-[#5C7A00] flex items-center justify-center gap-1.5 shadow-md">
-                            <span className="text-white font-extrabold text-sm md:text-base leading-none mt-0.5">2cm</span>
-                            <span className="text-white/80 text-sm md:text-base font-medium leading-none mt-0.5">이상</span>
+                          {/* 뱃지 라운드를 박스에 맞춰 rounded-sm으로 조정, 폰트 키우고 색상 흰색(text-white) 적용, 그림자(shadow-sm) 제거 */}
+                          <div className="relative w-32 h-11 md:w-36 md:h-13 rounded-sm bg-primary flex items-center justify-center gap-2">
+                            <span className="text-white font-extrabold text-lg md:text-xl lg:text-2xl leading-none mt-0.5">2cm</span>
+                            <span className="text-white font-bold text-base md:text-lg lg:text-xl leading-none mt-0.5">이상</span>
                           </div>
                         </div>
-                        <div className="relative z-10">
-                          <p className="text-black font-bold text-lg md:text-xl" style={{ letterSpacing: '-0.03em' }}>피하지방 <span className="text-primary">↑</span></p>
+                        <div className="relative z-10 flex items-center gap-2.5">
+                          {/* 피하지방 폰트 확대, 굵기 medium으로 변경 */}
+                          <p className="text-black font-medium text-xl md:text-2xl lg:text-3xl" style={{ letterSpacing: '-0.03em' }}>피하지방</p>
+                          {/* 동그라미+화살표 크기를 w-7 h-7로 키우고 화살표 색상을 흰색(text-white)으로 적용, 그림자(shadow-sm) 제거 */}
+                          <span className="w-7 h-7 rounded-full bg-primary flex items-center justify-center flex-shrink-0 select-none">
+                            <span className="text-white text-xs md:text-sm lg:text-base font-black leading-none mt-[-1px]">↑</span>
+                          </span>
                         </div>
                       </div>
+
                     </div>
                   </div>
 
                   <p className="text-center text-black text-[14.4px] md:text-[18px] lg:text-[27px] leading-relaxed max-w-4xl mx-auto mt-4" style={{ letterSpacing: '-0.05em' }}>
                     내장지방의 증가는 혈액 내 지질 수치의 증가로 이어져<br className="hidden md:block" />
-                    <strong className="text-primary font-bold">콜레스테롤 혈증 → 동맥경화 → 고혈압 → 뇌혈류장애, 심장혈관질환으로<br className="hidden md:block" />
+                    <strong className="font-bold" style={{ color: '#A8CC1E' }}>콜레스테롤 혈증 → 동맥경화 → 고혈압 → 뇌혈류장애, 심장혈관질환으로<br className="hidden md:block" />
                     진행할 수 있어</strong> 복강 내 여유 공간을 감소시켜<br className="hidden md:block" />
                     혈류-림프순환 장애와 위장관 운동성 저하를 유발하게 됩니다.
                   </p>
@@ -438,7 +453,7 @@ export default function VisFatSliderSection() {
                         <div className="w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full bg-[#ECEEE2] flex items-center justify-center relative">
                           <img src={c.img} alt={c.label} className={`w-full h-full object-contain p-1 transition-transform duration-300 ${c.imgScale || ''}`} />
                         </div>
-                        <div className="bg-primary text-white rounded-full px-8 py-2 text-lg md:text-xl lg:text-[24px] font-bold shadow-sm">{c.label}</div>
+                        <div className="bg-primary text-white rounded-full px-8 py-2 text-lg md:text-xl lg:text-[24px] font-bold">{c.label}</div>
                       </div>
                     ))}
                   </div>

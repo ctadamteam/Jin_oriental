@@ -1222,14 +1222,17 @@ export function ReviewSection() {
                     <div 
                       className="absolute pointer-events-auto text-center select-text cursor-text review-card-selection-overlay"
                       style={{
-                        left: '11.25%',
+                        left: '5.05%',
                         top: '58.13%',
                         width: '20.17%',
                         height: '4.59%',
-                        zIndex: 2,
+                        zIndex: 15,
                       }}
                     >
-                      <div className="text-[1.5cqw] font-normal tracking-tight text-transparent whitespace-nowrap leading-none select-text cursor-text">
+                      <div 
+                        className="text-[1.5cqw] font-normal tracking-tight text-transparent whitespace-nowrap leading-none select-text cursor-text"
+                        style={{ color: 'transparent' }}
+                      >
                         진한의원의 진짜리뷰만 모아모아!
                       </div>
                     </div>
@@ -1237,14 +1240,17 @@ export function ReviewSection() {
                     <div 
                       className="absolute pointer-events-auto text-center select-text cursor-text review-card-selection-overlay"
                       style={{
-                        left: '9.08%',
+                        left: '2.88%',
                         top: '62.33%',
                         width: '24.50%',
                         height: '15.68%',
-                        zIndex: 2,
+                        zIndex: 15,
                       }}
                     >
-                      <div className="text-[6.0cqw] font-extrabold tracking-tight text-transparent whitespace-nowrap leading-none select-text cursor-text">
+                      <div 
+                        className="text-[6.0cqw] font-extrabold tracking-tight text-transparent whitespace-nowrap leading-none select-text cursor-text"
+                        style={{ color: 'transparent' }}
+                      >
                         베스트리뷰
                       </div>
                     </div>
@@ -1252,17 +1258,23 @@ export function ReviewSection() {
                     <div 
                       className="absolute pointer-events-auto text-center select-text cursor-text review-card-selection-overlay"
                       style={{
-                        left: '11.25%',
+                        left: '5.05%',
                         top: '80.11%',
                         width: '20.17%',
                         height: '8.41%',
-                        zIndex: 2,
+                        zIndex: 15,
                       }}
                     >
-                      <div className="text-[1.33cqw] font-normal tracking-tight text-transparent whitespace-nowrap leading-[1.3] select-text cursor-text">
+                      <div 
+                        className="text-[1.33cqw] font-normal tracking-tight text-transparent whitespace-nowrap leading-[1.3] select-text cursor-text"
+                        style={{ color: 'transparent' }}
+                      >
                         #한방다이어트 #해독 #자율신경계
                       </div>
-                      <div className="text-[1.33cqw] font-normal tracking-tight text-transparent whitespace-nowrap leading-[1.3] select-text cursor-text">
+                      <div 
+                        className="text-[1.33cqw] font-normal tracking-tight text-transparent whitespace-nowrap leading-[1.3] select-text cursor-text"
+                        style={{ color: 'transparent' }}
+                      >
                         #미주란 #붓기제로 #슬림탕 #슬림환
                       </div>
                     </div>
@@ -1279,7 +1291,7 @@ export function ReviewSection() {
                           height: card.style.height,
                           transform: card.rotation ? `rotate(${card.rotation}deg)` : undefined,
                           transformOrigin: 'top left',
-                          zIndex: 2,
+                          zIndex: 15,
                           boxSizing: 'border-box',
                           backgroundColor: 'rgba(255, 255, 255, 0.001)',
                           willChange: 'transform',
@@ -1382,7 +1394,7 @@ export function ReviewSection() {
               onClick={() => scrollTo(index)}
               className={`transition-all duration-300 rounded-full h-2.5 ${
                 index === selectedIndex 
-                  ? 'w-6 bg-[#A8CC1D]' 
+                  ? 'w-6 bg-[#BEE622]' 
                   : 'w-2.5 bg-gray-300 hover:bg-gray-400'
               }`}
               aria-label={`Go to slide ${index + 1}`}

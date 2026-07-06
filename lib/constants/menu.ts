@@ -13,7 +13,7 @@ export const MENUS = [
     subMenus: [
       { title: "슬림환/습담탕", href: "/diet-medicine/slim" },
       { title: "붓기제로ㆍ배사라정", href: "/diet-medicine/zero" },
-      { title: "슬림톡(빼빼정ㆍ감비정)", href: "/diet-medicine/tok" },
+      { title: "슬림톡(삭뺀다정ㆍ블랙정)", href: "/diet-medicine/tok" },
       { title: "올인원", href: "/diet-medicine/allinone" },
       { title: "원인 치료 한약", href: "/diet-medicine/cause" },
     ],
@@ -24,12 +24,12 @@ export const MENUS = [
     subMenus: [
       { title: "해독 다이어트", href: "/custom-diet/detox" },
       { title: "내장지방형 비만", href: "/custom-diet/visceral" },
-      { title: "고도 비만", href: "/custom-diet/obesity" },
-      { title: "체질별 다이어트", href: "/custom-diet/constitution" },
       { title: "부종형 비만", href: "/custom-diet/edema" },
       { title: "자율신경성 비만", href: "/custom-diet/autonomic" },
-      { title: "산후 비만", href: "/custom-diet/postpartum" },
       { title: "중년 비만", href: "/custom-diet/middle-age" },
+      { title: "고도 비만", href: "/custom-diet/obesity" },
+      { title: "산후 비만", href: "/custom-diet/postpartum" },
+      { title: "체질별 다이어트", href: "/custom-diet/constitution" },
     ],
   },
   {
@@ -37,6 +37,7 @@ export const MENUS = [
     href: "/women-postpartum",
     subMenus: [
       { title: "산후조리", href: "/women-postpartum/care" },
+      { title: "유산후조리", href: "/women-postpartum/miscarriage" },
       { title: "생리불순ㆍ생리통", href: "/women-postpartum/menstruation" },
       { title: "갱년기 증후군", href: "/women-postpartum/menopause" },
     ],
@@ -45,10 +46,11 @@ export const MENUS = [
     title: "피부 클리닉",
     href: "/skin-clinic",
     subMenus: [
-      { title: "매선(실 리프팅)", href: "/skin-clinic/lifting" },
-      { title: "액소좀(모공ㆍ피부결)", href: "/skin-clinic/exosome" },
-      { title: "미주란(잔주름ㆍ속건조)", href: "/skin-clinic/mijuran" },
-      { title: "샤인모드(심부볼ㆍ이중턱ㆍ얼굴축소)", href: "/skin-clinic/shine" },
+      { title: "매선(실리프팅 - 주름 및 쳐짐개선)", href: "/skin-clinic/lifting" },
+      { title: "엑소좀(모공 및 흉터/피부결개선)", href: "/skin-clinic/exosome" },
+      { title: "벨라콜(피부탄력 및 콜라겐 재생 촉진)", href: "/skin-clinic/bellacoll" },
+      { title: "미주란(잔주름, 속건조)", href: "/skin-clinic/mijuran" },
+      { title: "샤인모드(심부볼, 이중턱, 얼굴축소)", href: "/skin-clinic/shine" },
     ],
   },
   {

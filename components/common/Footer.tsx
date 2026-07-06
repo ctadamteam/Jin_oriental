@@ -29,7 +29,7 @@ export function Footer() {
               <li className="flex justify-between"><span>목 요 일</span> <span>{SITE_CONFIG.hours.thursday}</span></li>
               <li className="flex justify-between"><span>토 / 공휴일</span> <span>{SITE_CONFIG.hours.weekend}</span></li>
               <li className="flex justify-between"><span>점 심 시 간</span> <span>{SITE_CONFIG.hours.lunch}</span></li>
-              <li className="text-[var(--color-primary)] font-medium mt-2">{SITE_CONFIG.hours.closed}</li>
+              <li className="text-primary-medium font-medium mt-2">{SITE_CONFIG.hours.closed}</li>
             </ul>
           </div>
         </div>

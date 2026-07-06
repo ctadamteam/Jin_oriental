@@ -11,7 +11,7 @@ export function Button({ variant = 'primary', size = 'md', className = '', child
   const variants = {
     primary: 'bg-[var(--color-primary)] text-white hover:opacity-90',
     secondary: 'bg-[var(--color-sub)] text-black hover:opacity-90',
-    outline: 'border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white',
+    outline: 'border-2 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-primary-dark',
     ghost: 'hover:bg-gray-100 text-gray-700',
   };
 

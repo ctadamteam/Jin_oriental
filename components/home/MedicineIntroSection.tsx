@@ -154,7 +154,7 @@ export function MedicineIntroSection() {
               onClick={() => scrollTo(index)}
               className={`transition-all duration-300 rounded-full h-2.5 ${
                 index === selectedIndex 
-                  ? 'w-6 bg-[#A8CC1D]' 
+                  ? 'w-6 bg-[#BEE622]' 
                   : 'w-2.5 bg-gray-300 hover:bg-gray-400'
               }`}
               aria-label={`Go to slide ${index + 1}`}

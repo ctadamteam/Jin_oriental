@@ -36,7 +36,7 @@ export default function BellyComorbiditySlider() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-[#121410] via-[#1A1D16] to-[#0E100D] py-16 md:py-20 lg:py-24 overflow-hidden border-b border-[#2C3125]">
+    <section className="relative bg-gradient-to-br from-[#0E1403] via-[#151E04] to-[#080B02] py-16 md:py-20 lg:py-24 overflow-hidden border-b border-[#182305]">
       {/* Dynamic Background Glows */}
       <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] rounded-full bg-[#7FA110]/5 blur-[150px] pointer-events-none" />
@@ -61,20 +61,20 @@ export default function BellyComorbiditySlider() {
         <div className="max-w-xl mx-auto flex p-1 bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.3)] mb-12">
           <button
             onClick={() => setActiveTab(0)}
-            className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold transition-all duration-300 ${
+            className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold ${
               activeTab === 0
-                ? 'bg-gradient-to-br from-primary to-[#9AB81B] text-white shadow-lg shadow-primary/10'
-                : 'text-gray-400 hover:text-white'
+                ? 'bg-gradient-to-br from-primary to-[#9AB81B] text-primary-dark shadow-lg shadow-primary/10'
+                : 'text-gray-400'
             }`}
           >
             나잇살 원인
           </button>
           <button
             onClick={() => setActiveTab(1)}
-            className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold transition-all duration-300 ${
+            className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold ${
               activeTab === 1
-                ? 'bg-gradient-to-br from-primary to-[#9AB81B] text-white shadow-lg shadow-primary/10'
-                : 'text-gray-400 hover:text-white'
+                ? 'bg-gradient-to-br from-primary to-[#9AB81B] text-primary-dark shadow-lg shadow-primary/10'
+                : 'text-gray-400'
             }`}
           >
             복부비만 동반질환
@@ -86,7 +86,7 @@ export default function BellyComorbiditySlider() {
           
           {/* SLIDE 1: Aging Belly Section */}
           <div
-            className={`w-full transition-all duration-500 ease-out transform absolute inset-0 flex flex-col justify-center ${
+            className={`w-full transition-[opacity,transform] duration-500 ease-out transform absolute inset-0 flex flex-col justify-center ${
               activeTab === 0
                 ? 'opacity-100 scale-100 translate-x-0 pointer-events-auto z-10'
                 : 'opacity-0 scale-95 -translate-x-10 pointer-events-none z-0'
@@ -150,7 +150,7 @@ export default function BellyComorbiditySlider() {
                 {symptoms.map((s) => (
                   <div key={s.num} className="flex gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
                     <div className="w-7 h-7 md:w-9 md:h-9 bg-primary flex items-center justify-center flex-shrink-0 mt-0.5 rounded-lg shadow-md">
-                      <span className="text-white font-extrabold text-sm md:text-lg">{s.num}</span>
+                      <span className="text-primary-dark font-extrabold text-sm md:text-lg">{s.num}</span>
                     </div>
                     <div>
                       <p className="text-white font-bold text-base md:text-lg lg:text-[22px]" style={{ letterSpacing: '-0.05em' }}>{s.title}</p>
@@ -164,7 +164,7 @@ export default function BellyComorbiditySlider() {
 
           {/* SLIDE 2: Comorbidity Section */}
           <div
-            className={`w-full transition-all duration-500 ease-out transform absolute inset-0 flex flex-col justify-center ${
+            className={`w-full transition-[opacity,transform] duration-500 ease-out transform absolute inset-0 flex flex-col justify-center ${
               activeTab === 1
                 ? 'opacity-100 scale-100 translate-x-0 pointer-events-auto z-10'
                 : 'opacity-0 scale-95 translate-x-10 pointer-events-none z-0'

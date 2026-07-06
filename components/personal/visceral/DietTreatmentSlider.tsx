@@ -103,7 +103,7 @@ export default function DietTreatmentSlider() {
     {
       name: '수독환',
       img: '/images/personal/visceral-fat/visceral-fat-16.png',
-      description: '몸 안의 수독(水독)을 끌어내고 몸이 붓는 부종을 치료하는 데 처방됩니다.',
+      description: '몸 안의 수독(水毒)을 끌어내고 몸이 붓는 부종을 치료하는 데 처방됩니다.',
       tags: ['부종', '현기증', '소변이 시원치 않는 증상'],
     },
     {
@@ -209,19 +209,25 @@ export default function DietTreatmentSlider() {
   return (
     <section className="bg-white py-16 md:py-20 lg:py-24 w-full overflow-x-hidden border-b border-gray-200">
       {/* 1. Tabs Section - matching Section 3 pill style */}
-      <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center gap-1 bg-[#F4F5F0] p-1.5 rounded-full border border-gray-100 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] max-w-full overflow-x-auto no-scrollbar">
+          <div className="relative inline-flex items-center gap-1 bg-[#F4F5F0] p-1.5 rounded-full border border-gray-100 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] max-w-full overflow-x-auto no-scrollbar">
+            {/* Sliding Pill Background */}
+            <div
+              className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-primary shadow-[0_4px_12px_rgba(139,166,18,0.25)] transition-all duration-500 cubic-bezier(0.25, 1, 0.5, 1) w-[120px] sm:w-[130px] md:w-[150px] lg:w-[180px]"
+              style={{
+                transform: `translateX(calc(${selectedIndex} * (100% + 4px)))`,
+              }}
+            />
             {tabs.map((tab, idx) => {
               const isActive = selectedIndex === idx;
               return (
                 <button
                   key={idx}
                   onClick={() => scrollTo(idx)}
-                  className={`flex items-center px-5 py-3 rounded-full text-xs md:text-sm lg:text-base font-bold whitespace-nowrap transition-all duration-300 ${
+                  className={`relative z-10 flex items-center justify-center px-2 py-3 rounded-full text-xs md:text-sm lg:text-base font-bold whitespace-nowrap transition-colors duration-300 w-[120px] sm:w-[130px] md:w-[150px] lg:w-[180px] ${
                     isActive
-                      ? 'bg-primary text-white shadow-[0_4px_12px_rgba(139,166,18,0.25)]'
-                      : 'text-gray-500 hover:text-primary'
+                      ? 'text-white'
+                      : 'text-gray-500 hover:text-primary-dark'
                   }`}
                 >
                   <span>{tab.title}</span>
@@ -230,7 +236,6 @@ export default function DietTreatmentSlider() {
             })}
           </div>
         </div>
-      </div>
 
       {/* 2. Slider Viewport Container (Embla Carousel) */}
       <div className="relative w-full overflow-hidden">
@@ -301,27 +306,27 @@ export default function DietTreatmentSlider() {
                   {/* SVG 지시선 연결 */}
                   <svg viewBox="0 0 840 560" className="absolute inset-0 w-full h-full pointer-events-none">
                     {/* 간 */}
-                    <path d="M 245 220 L 330 220 L 404 270" stroke="#A8CC1D" strokeWidth="1.2" fill="none" opacity="0.6" />
+                    <path d="M 245 220 L 330 220 L 404 270" stroke="#BEE622" strokeWidth="1.2" fill="none" opacity="0.6" />
                     {/* 소장 */}
-                    <path d="M 245 366 L 330 366 L 442 381" stroke="#A8CC1D" strokeWidth="1.2" fill="none" opacity="0.6" />
+                    <path d="M 245 366 L 330 366 L 442 381" stroke="#BEE622" strokeWidth="1.2" fill="none" opacity="0.6" />
                     {/* 명치부근 */}
-                    <path d="M 620 85 L 560 85 L 450 206" stroke="#A8CC1D" strokeWidth="1.2" fill="none" opacity="0.6" />
+                    <path d="M 620 85 L 560 85 L 450 206" stroke="#BEE622" strokeWidth="1.2" fill="none" opacity="0.6" />
                     {/* 위 */}
-                    <path d="M 620 226 L 560 226 L 492 280" stroke="#A8CC1D" strokeWidth="1.2" fill="none" opacity="0.6" />
+                    <path d="M 620 226 L 560 226 L 492 280" stroke="#BEE622" strokeWidth="1.2" fill="none" opacity="0.6" />
                     {/* 대장 */}
-                    <path d="M 620 346 L 560 346 L 502 375" stroke="#A8CC1D" strokeWidth="1.2" fill="none" opacity="0.6" />
+                    <path d="M 620 346 L 560 346 L 502 375" stroke="#BEE622" strokeWidth="1.2" fill="none" opacity="0.6" />
                     {/* 자궁 */}
-                    <path d="M 620 440 L 560 440 L 450 445" stroke="#A8CC1D" strokeWidth="1.2" fill="none" opacity="0.6" />
+                    <path d="M 620 440 L 560 440 L 450 445" stroke="#BEE622" strokeWidth="1.2" fill="none" opacity="0.6" />
                   </svg>
 
                   {/* 6개 진찰 핀 포인트 */}
                   {Object.entries(pinPositions).map(([key, pos]) => (
                     <div
                       key={key}
-                      className="absolute w-4 h-4 rounded-full border border-[#A8CC1D] bg-white flex items-center justify-center -translate-x-1/2 -translate-y-1/2 shadow-[0_2px_4px_rgba(0,0,0,0.1)] z-20"
+                      className="absolute w-4 h-4 rounded-full border border-[#BEE622] bg-white flex items-center justify-center -translate-x-1/2 -translate-y-1/2 shadow-[0_2px_4px_rgba(0,0,0,0.1)] z-20"
                       style={{ top: pos.top, left: pos.left }}
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#A8CC1D]" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#BEE622]" />
                     </div>
                   ))}
 
@@ -338,13 +343,13 @@ export default function DietTreatmentSlider() {
                     return (
                       <div key={item.key} style={positionStyle} className="text-left flex flex-col items-start">
                         <div className="flex items-baseline gap-2.5 mb-2 justify-start">
-                          <h4 className="text-[#A8CC1D] text-2xl lg:text-[27px] font-bold font-pretendard">{item.organ}</h4>
+                          <h4 className="text-[#BEE622] text-2xl lg:text-[27px] font-bold font-pretendard">{item.organ}</h4>
                           {item.location && <span className="text-gray-400 text-sm lg:text-[18px] font-semibold">{item.location}</span>}
                         </div>
 
                         {item.tags.length > 0 && (
                           <div className="mb-2.5 flex justify-start">
-                            <span className={`inline-block bg-[#A8CC1D] text-white text-xs lg:text-[16px] font-bold py-1 ${isLeft ? 'w-[270px]' : 'w-[240px] lg:w-[270px]'} text-left px-3 rounded-none`}>
+                            <span className={`inline-block bg-[#BEE622] text-white text-xs lg:text-[16px] font-bold py-1 ${isLeft ? 'w-[270px]' : 'w-[240px] lg:w-[270px]'} text-left px-3 rounded-none`}>
                               {item.tags.join(' ')}
                             </span>
                           </div>
@@ -373,10 +378,10 @@ export default function DietTreatmentSlider() {
                     {Object.entries(pinPositions).map(([key, pos]) => (
                       <div
                         key={key}
-                        className="absolute w-3.5 h-3.5 rounded-full border border-[#A8CC1D] bg-white flex items-center justify-center -translate-x-1/2 -translate-y-1/2 shadow-sm z-25"
+                        className="absolute w-3.5 h-3.5 rounded-full border border-[#BEE622] bg-white flex items-center justify-center -translate-x-1/2 -translate-y-1/2 shadow-sm z-25"
                         style={{ top: pos.top, left: pos.left }}
                       >
-                        <div className="w-1.2 h-1.2 rounded-full bg-[#A8CC1D]" />
+                        <div className="w-1.2 h-1.2 rounded-full bg-[#BEE622]" />
                       </div>
                     ))}
                   </div>
@@ -384,12 +389,12 @@ export default function DietTreatmentSlider() {
                   {/* 모바일 텍스트 목록 (2열 그리드 또는 1열) */}
                   <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {examItems.map((item) => (
-                      <div key={item.key} className="border-l-2 border-[#A8CC1D] pl-4 py-1.5 bg-slate-50/50 rounded-r-xl">
+                      <div key={item.key} className="border-l-2 border-[#BEE622] pl-4 py-1.5 bg-slate-50/50 rounded-r-xl">
                         <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                          <h4 className="text-[#A8CC1D] text-xl lg:text-[23px] font-bold font-pretendard">{item.organ}</h4>
+                          <h4 className="text-[#BEE622] text-xl lg:text-[23px] font-bold font-pretendard">{item.organ}</h4>
                           {item.location && <span className="text-gray-400 text-sm lg:text-[16px] font-medium">{item.location}</span>}
                           {item.tags.length > 0 && (
-                            <span className="bg-[#A8CC1D] text-white text-xs lg:text-[14px] py-0.5 w-[150px] text-left px-2.5 rounded-none font-bold">
+                            <span className="bg-[#BEE622] text-white text-xs lg:text-[14px] py-0.5 w-[150px] text-left px-2.5 rounded-none font-bold">
                               {item.tags.join(' ')}
                             </span>
                           )}
@@ -445,7 +450,7 @@ export default function DietTreatmentSlider() {
                 {/* Clinical significance card */}
                 <div className="mt-12 bg-slate-50/50 rounded-2xl border border-gray-100 p-6 md:p-8">
                   <div className="flex justify-center mb-8">
-                    <div className="bg-primary/10 border border-primary/20 text-primary px-8 py-2.5 rounded-full text-base md:text-xl font-bold">
+                    <div className="bg-primary text-white px-8 py-2.5 rounded-full text-base md:text-xl font-bold">
                       복부의 <span className="font-bold">임상적 의미</span>
                     </div>
                   </div>

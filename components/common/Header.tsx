@@ -62,7 +62,7 @@ export function Header() {
           <nav className="hidden space-x-8 lg:flex">
             {MENUS.map((menu) => (
               <div key={menu.title} className="group relative">
-                <Link href={menu.href} className="text-sm font-medium text-gray-700 hover:text-[var(--color-primary)]">
+                <Link href={menu.href} className="text-sm font-medium text-gray-700 hover:text-black">
                   {menu.title}
                 </Link>
                 {/* Dropdown placeholder with safe hover area */}
@@ -72,7 +72,7 @@ export function Header() {
                       <Link
                         key={sub.title}
                         href={sub.href}
-                        className="rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[var(--color-primary)]"
+                        className="rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
                       >
                         {sub.title}
                       </Link>
@@ -88,7 +88,7 @@ export function Header() {
             <div className="hidden lg:flex items-center gap-4">
               <button 
                 onClick={() => setIsSearchOpen(true)}
-                className="text-gray-600 hover:text-[var(--color-primary)] transition-colors"
+                className="text-gray-600 hover:text-black transition-colors"
               >
                 <Search size={20} />
               </button>
@@ -106,7 +106,7 @@ export function Header() {
               ) : (
                 <button 
                   onClick={() => setIsLoginOpen(true)}
-                  className="flex items-center gap-1 text-sm text-gray-600 hover:text-[var(--color-primary)] transition-colors"
+                  className="flex items-center gap-1 text-sm text-gray-600 hover:text-black transition-colors"
                 >
                   <User size={20} />
                   <span>로그인</span>
@@ -145,16 +145,16 @@ export function Header() {
               />
               <button 
                 type="submit"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[var(--color-primary)] transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black transition-colors"
               >
                 <Search size={32} />
               </button>
             </form>
             <div className="mt-12 flex gap-4 text-sm text-gray-500">
               <span className="font-bold text-gray-900">추천 검색어</span>
-              <button onClick={() => setSearchQuery('다이어트 한약')} className="hover:text-[var(--color-primary)]">#다이어트 한약</button>
-              <button onClick={() => setSearchQuery('배사라정')} className="hover:text-[var(--color-primary)]">#배사라정</button>
-              <button onClick={() => setSearchQuery('산후조리')} className="hover:text-[var(--color-primary)]">#산후조리</button>
+              <button onClick={() => setSearchQuery('다이어트 한약')} className="hover:text-black">#다이어트 한약</button>
+              <button onClick={() => setSearchQuery('배사라정')} className="hover:text-black">#배사라정</button>
+              <button onClick={() => setSearchQuery('산후조리')} className="hover:text-black">#산후조리</button>
             </div>
           </div>
         </div>

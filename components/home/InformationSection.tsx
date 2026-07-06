@@ -31,7 +31,7 @@ export function InformationSection() {
             <div className="flex flex-col gap-10 w-fit">
               {/* Address */}
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                <h3 className="text-xl font-bold text-[var(--color-primary)] shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">주소</h3>
+                <h3 className="text-xl font-bold text-primary-medium shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">주소</h3>
                 <p className="text-gray-700 text-[18px] leading-relaxed font-medium">
                   부산광역시 해운대구 좌동 1479-2 엘리움 빌딩 6층
                 </p>
@@ -39,7 +39,7 @@ export function InformationSection() {
 
               {/* Business Hours */}
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                <h3 className="text-xl font-bold text-[var(--color-primary)] shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">진료시간</h3>
+                <h3 className="text-xl font-bold text-primary-medium shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">진료시간</h3>
                 <div className="flex-1 w-full">
                   <ul className="text-[17px] text-gray-700 space-y-4 w-full">
                     <li className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6">
@@ -59,7 +59,7 @@ export function InformationSection() {
                       <span className="text-left font-medium">오후 1시 ~ 오후 2시</span>
                     </li>
                   </ul>
-                  <p className="mt-5 text-[var(--color-primary)] font-bold text-[17px]">
+                  <p className="mt-5 text-primary-medium font-bold text-[17px]">
                     *일요일은 휴진입니다.
                   </p>
                 </div>
@@ -67,7 +67,7 @@ export function InformationSection() {
 
               {/* Contact */}
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                <h3 className="text-xl font-bold text-[var(--color-primary)] shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">연락처</h3>
+                <h3 className="text-xl font-bold text-primary-medium shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">연락처</h3>
                 <p className="text-gray-800 text-[18px] font-bold tracking-wide mt-0.5">
                   051.714.0040 / 010.7686.0041
                 </p>

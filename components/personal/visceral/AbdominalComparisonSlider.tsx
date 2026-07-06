@@ -35,7 +35,7 @@ export default function AbdominalComparisonSlider() {
             className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold transition-all duration-300 ${
               activeTab === 0
                 ? 'bg-[#7E8E6E] text-white shadow-lg shadow-[#7E8E6E]/10'
-                : 'text-[#8F9682] hover:text-[#7E8E6E]'
+                : 'text-[#8F9682]'
             }`}
           >
             건강한 사람의 복강
@@ -45,7 +45,7 @@ export default function AbdominalComparisonSlider() {
             className={`flex-1 py-3.5 px-4 rounded-xl text-sm md:text-base lg:text-lg font-bold transition-all duration-300 ${
               activeTab === 1
                 ? 'bg-primary text-white shadow-lg shadow-primary/20'
-                : 'text-[#8F9682] hover:text-primary'
+                : 'text-[#8F9682]'
             }`}
           >
             내장비만인의 복강
@@ -141,7 +141,7 @@ export default function AbdominalComparisonSlider() {
                   >
                     <span className="flex-shrink-0 mt-1">
                       <svg width="7" height="7" viewBox="0 0 9 9" fill="none">
-                        <circle cx="4.5" cy="4.5" r="4.5" fill="#A8CC1D" />
+                        <circle cx="4.5" cy="4.5" r="4.5" fill="#BEE622" />
                       </svg>
                     </span>
                     <p
