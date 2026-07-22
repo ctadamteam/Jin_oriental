@@ -20,7 +20,7 @@ export default function DetoxDietPage() {
           />
         </div>
         <div className="flex flex-col justify-center p-6 md:py-8 md:px-[32px]">
-          <p className="text-sm md:text-[15px] text-[#cfc5bd] tracking-tight mb-2">1:1 체질별 맞춤</p>
+          <p className="text-sm md:text-[15px] text-[#c7bbb1] tracking-tight mb-2">1:1 체질별 맞춤</p>
           <h2 className="w-full text-3xl md:text-[54px] leading-tight mb-4 tracking-tight">
             <span className="font-bold text-[#A5C614] block">해독</span>
             <b className="text-white font-normal block">다이어트</b>
