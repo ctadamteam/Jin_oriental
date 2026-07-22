@@ -154,71 +154,70 @@ export default function DetoxDietPage() {
               
               {/* Step 1 */}
               <div className="flex flex-col items-center w-full md:w-1/4 relative">
-                <p className="text-sm md:text-base text-gray-200 mb-6 break-keep h-10 flex items-end justify-center font-light">잘못된 식습관과 피부를 통해<br/>외부독소가 유입</p>
+                <p className="text-sm md:text-[18px] text-gray-200 mb-6 break-keep h-[60px] flex items-end justify-center font-normal leading-snug">잘못된 식습관과 피부를 통해<br/>외부독소가 유입</p>
                 <div className="relative flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-10 relative z-10 shadow-lg">01</div>
-                  {/* 수직선 */}
-                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[40px] bg-white z-0"></div>
+                  {/* 수직선 (끊어짐 방지) */}
+                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[46px] bg-white z-0"></div>
                   
-                  {/* 큰 원 (SVG 적용) */}
-                  <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
-                    {/* SVG 2px 얇은 전체 원 및 8px 두꺼운 180도 반원 */}
+                  {/* 큰 원 (10% 축소 적용) */}
+                  <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
-                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6" />
+                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" />
                        <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
                     </svg>
-                    <span className="relative z-10 text-base md:text-lg font-bold">독소유입</span>
+                    <span className="relative z-10 text-base md:text-[20px] font-bold">독소유입</span>
                   </div>
                 </div>
               </div>
 
               {/* Step 2 */}
               <div className="flex flex-col items-center w-full md:w-1/4 relative">
-                <p className="text-sm md:text-base text-gray-200 mb-6 break-keep h-10 flex items-end justify-center font-light">몸속에 지방, 특히 내장지방이 쌓임</p>
+                <p className="text-sm md:text-[18px] text-gray-200 mb-6 break-keep h-[60px] flex items-end justify-center font-normal leading-snug">몸속에 지방, 특히 내장지방이 쌓임</p>
                 <div className="relative flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-10 relative z-10 shadow-lg">02</div>
-                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[40px] bg-white z-0"></div>
+                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[46px] bg-white z-0"></div>
                   
-                  <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
+                  <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
-                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6" />
+                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" />
                        <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
                     </svg>
-                    <span className="relative z-10 text-base md:text-lg font-bold leading-snug">체내지방<br/>축적</span>
+                    <span className="relative z-10 text-base md:text-[20px] font-bold leading-snug">체내지방<br/>축적</span>
                   </div>
                 </div>
               </div>
 
               {/* Step 3 */}
               <div className="flex flex-col items-center w-full md:w-1/4 relative">
-                <p className="text-sm md:text-base text-gray-200 mb-6 break-keep h-10 flex items-end justify-center font-light">독소로부터 염증물질이 분비되어<br/>염증이 발생</p>
+                <p className="text-sm md:text-[18px] text-gray-200 mb-6 break-keep h-[60px] flex items-end justify-center font-normal leading-snug">독소로부터 염증물질이 분비되어<br/>염증이 발생</p>
                 <div className="relative flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-10 relative z-10 shadow-lg">03</div>
-                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[40px] bg-white z-0"></div>
+                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[46px] bg-white z-0"></div>
                   
-                  <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
+                  <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
-                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6" />
+                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" />
                        <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
                     </svg>
-                    <span className="relative z-10 text-base md:text-lg font-bold leading-snug">염증물질<br/>분비</span>
+                    <span className="relative z-10 text-base md:text-[20px] font-bold leading-snug">염증물질<br/>분비</span>
                   </div>
                 </div>
               </div>
 
               {/* Step 4 */}
               <div className="flex flex-col items-center w-full md:w-1/4 relative">
-                <p className="text-sm md:text-base text-gray-200 mb-6 break-keep h-10 flex items-end justify-center font-light">비만, 만성피로, 탈모, 피부질환 등<br/>각종 증상이 발생</p>
+                <p className="text-sm md:text-[18px] text-gray-200 mb-6 break-keep h-[60px] flex items-end justify-center font-normal leading-snug">비만, 만성피로, 탈모, 피부질환 등<br/>각종 증상이 발생</p>
                 <div className="relative flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-10 relative z-10 shadow-lg">04</div>
-                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[40px] bg-white z-0"></div>
+                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[46px] bg-white z-0"></div>
                   
-                  <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
+                  <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
-                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6" />
+                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" />
                        <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
                     </svg>
-                    <span className="relative z-10 text-base md:text-lg font-bold leading-snug">각종질병<br/>발생</span>
+                    <span className="relative z-10 text-base md:text-[20px] font-bold leading-snug">각종질병<br/>발생</span>
                   </div>
                 </div>
               </div>
