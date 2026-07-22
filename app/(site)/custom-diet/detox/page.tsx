@@ -77,42 +77,42 @@ export default function DetoxDietPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
             {/* Item 1 */}
             <div className="flex flex-col items-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-yellow-400 flex items-center justify-center mb-6 shadow-sm overflow-hidden relative">
+              <div className="w-full max-w-[260px] h-32 md:h-36 rounded-3xl bg-yellow-400 flex items-center justify-center mb-5 shadow-sm overflow-hidden relative">
                  <Image src="/images/personal/detox_section_3_1.png" alt="아이콘 1" fill className="object-cover scale-110" />
               </div>
               <p className="text-sm md:text-[18px] text-gray-700 break-keep leading-snug">이유 없이 몸이 무겁고 피곤해요</p>
             </div>
             {/* Item 2 */}
             <div className="flex flex-col items-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-yellow-400 flex items-center justify-center mb-6 shadow-sm overflow-hidden relative">
+              <div className="w-full max-w-[260px] h-32 md:h-36 rounded-3xl bg-yellow-400 flex items-center justify-center mb-5 shadow-sm overflow-hidden relative">
                  <Image src="/images/personal/detox_section_3_2.png" alt="아이콘 2" fill className="object-cover scale-110" />
               </div>
               <p className="text-sm md:text-[18px] text-gray-700 break-keep leading-snug">먹는 양에 비해 살이 많이 찌거나<br/>운동을 해도 살이 잘 빠지지 않아요</p>
             </div>
             {/* Item 3 */}
             <div className="flex flex-col items-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-yellow-400 flex items-center justify-center mb-6 shadow-sm overflow-hidden relative">
+              <div className="w-full max-w-[260px] h-32 md:h-36 rounded-3xl bg-yellow-400 flex items-center justify-center mb-5 shadow-sm overflow-hidden relative">
                  <Image src="/images/personal/detox_section_3_3.png" alt="아이콘 3" fill className="object-cover scale-110" />
               </div>
               <p className="text-sm md:text-[18px] text-gray-700 break-keep leading-snug">피부가 가렵거나 여드름이 있거나<br/>다른 피부 질환이 있어요</p>
             </div>
             {/* Item 4 */}
             <div className="flex flex-col items-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-yellow-400 flex items-center justify-center mb-6 shadow-sm overflow-hidden relative">
+              <div className="w-full max-w-[260px] h-32 md:h-36 rounded-3xl bg-yellow-400 flex items-center justify-center mb-5 shadow-sm overflow-hidden relative">
                  <Image src="/images/personal/detox_section_3_4.png" alt="아이콘 4" fill className="object-cover scale-110" />
               </div>
               <p className="text-sm md:text-[18px] text-gray-700 break-keep leading-snug">팔, 다리가 자주 저리고<br/>쥐가 나며 잘 부어요</p>
             </div>
             {/* Item 5 */}
             <div className="flex flex-col items-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-yellow-400 flex items-center justify-center mb-6 shadow-sm overflow-hidden relative">
+              <div className="w-full max-w-[260px] h-32 md:h-36 rounded-3xl bg-yellow-400 flex items-center justify-center mb-5 shadow-sm overflow-hidden relative">
                  <Image src="/images/personal/detox_section_3_5.png" alt="아이콘 5" fill className="object-cover scale-110" />
               </div>
               <p className="text-sm md:text-[18px] text-gray-700 break-keep leading-snug">잦은 설사나 변비로 고생하고<br/>있어요</p>
             </div>
             {/* Item 6 */}
             <div className="flex flex-col items-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-yellow-400 flex items-center justify-center mb-6 shadow-sm overflow-hidden relative">
+              <div className="w-full max-w-[260px] h-32 md:h-36 rounded-3xl bg-yellow-400 flex items-center justify-center mb-5 shadow-sm overflow-hidden relative">
                  <Image src="/images/personal/detox_section_3_6.png" alt="아이콘 6" fill className="object-cover scale-110" />
               </div>
               <p className="text-sm md:text-[18px] text-gray-700 break-keep leading-snug">두피에 염증이 생기고,<br/>모발이 많이 빠져요</p>
