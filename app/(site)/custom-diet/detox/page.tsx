@@ -4,31 +4,30 @@ export default function DetoxDietPage() {
   return (
     <main className="w-full bg-white font-sans text-gray-800">
       <div className="mx-auto w-full max-w-[1000px] overflow-hidden">
-      {/* 1. Hero Section (상단 메인 타이틀) */}
-      <section className="w-full h-[460px] md:h-[560px] relative bg-[#3a332d]">
-        <div className="absolute inset-0 flex flex-col md:flex-row">
-          <div className="w-full md:w-[55%] h-1/2 md:h-full relative">
-            <Image 
-              src="/images/personal/detox_title.jpg" 
-              alt="진한의원 해독프로그램 진료" 
-              fill 
-              className="object-cover object-left"
-              priority
-            />
-          </div>
-          <div className="w-full md:w-[45%] h-1/2 md:h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 text-white relative overflow-hidden">
-            <div className="relative z-10">
-              <div className="inline-block border border-white/40 text-white/80 text-xs md:text-sm px-3 py-1 mb-4 rounded-full font-light tracking-widest">
-                1:1 체질별 맞춤
-              </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 tracking-tight">진 한 의 원</h1>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#A5C614] tracking-tight">해독 다이어트</h2>
-              <p className="text-xs md:text-sm lg:text-base text-gray-300 leading-relaxed break-keep font-light opacity-90">
-                개개인의 체질, 체형, 신진대사 등 몸의 각 기관에 따라 진단을 내려 치료법을 달리하여 진행하는 해독프로그램입니다.
-              </p>
-            </div>
-            {/* [슬라이스 필요] 우측 배경 패턴 (만약 패턴 이미지가 있다면 여기에 Absolute 로 추가) */}
-          </div>
+      {/* 1. Hero Section (상단 메인 타이틀 - 중년비만 레이아웃 적용) */}
+      <header className="py-4 border-b border-dashed border-gray-300 mb-2">
+        <h1 className="text-3xl md:text-[38px] font-serif text-gray-900 tracking-tighter leading-none font-normal">해독 다이어트</h1>
+      </header>
+
+      <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#433124] text-white mb-8">
+        <div className="relative w-full h-[250px] md:h-full overflow-hidden">
+          <Image 
+            src="/images/personal/detox_title.jpg" 
+            alt="진한의원 해독프로그램 진료" 
+            fill 
+            className="object-cover object-left"
+            priority
+          />
+        </div>
+        <div className="flex flex-col justify-start p-6 md:pt-[58px] md:pl-[37px] md:pr-4">
+          <p className="text-sm md:text-[15px] text-[#cfc5bd] tracking-tight mb-2">1:1 체질별 맞춤 해독프로그램!</p>
+          <h2 className="grid grid-cols-2 gap-x-12 text-3xl md:text-[55px] font-normal text-[#ffec55] leading-none mb-4">
+            <span>해</span><span>독</span>
+            <b className="col-span-2 mt-3 text-white text-3xl md:text-[55px] font-normal tracking-[10px] whitespace-nowrap block">다이어트</b>
+          </h2>
+          <p className="text-xs text-white/90 leading-relaxed break-keep font-light opacity-90">
+            개개인의 체질, 체형, 신진대사 등 몸의 각 기관에 따라 진단을 내려 치료법을 달리하여 진행하는 해독프로그램입니다.
+          </p>
         </div>
       </section>
 
