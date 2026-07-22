@@ -147,8 +147,8 @@ export default function DetoxDietPage() {
           </h2>
           
           <div className="relative w-full">
-            {/* 가로 점선 (PC에서만 보임) */}
-            <div className="hidden md:block absolute top-[85px] left-[12%] right-[12%] h-0 border-t-[3px] border-dotted border-white/40 z-0"></div>
+            {/* 가로 점선 (PC에서만 보임 - 숫자 뱃지 중앙 통과) */}
+            <div className="hidden md:block absolute top-[107px] left-[12%] right-[12%] h-0 border-t-[3px] border-dotted border-white/40 z-0"></div>
             
             <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 md:gap-4 relative z-10">
               
