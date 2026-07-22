@@ -37,26 +37,26 @@ export default function DetoxDietPage() {
           <h2 className="text-3xl md:text-5xl font-medium text-gray-800 tracking-tight">진한의원 <span className="text-[#A5C614] font-bold">해독요법</span></h2>
         </div>
         
-        <div className="flex flex-col md:flex-row items-center gap-10">
-          <div className="w-full md:w-3/5">
-            <h3 className="text-2xl md:text-[30px] font-light text-gray-800 mb-6 leading-tight break-keep tracking-tight">
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+          <div className="w-full md:w-[67%]">
+            <h3 className="text-2xl md:text-[38px] font-light text-gray-800 mb-3 leading-tight break-keep tracking-tight whitespace-nowrap lg:whitespace-normal">
               한의학에서 말하는 <strong className="font-bold text-gray-900">독소</strong>란 무엇인가요?
             </h3>
-            <div className="mb-8">
-              <p className="text-gray-700 leading-relaxed break-keep text-base md:text-lg underline underline-offset-4 decoration-gray-400">
+            <div className="mb-6">
+              <p className="text-gray-700 leading-relaxed break-keep text-base md:text-[20px] underline underline-offset-4 decoration-gray-400">
                 독소는 일상생활 속에서 유입되는 <strong className="font-bold text-black">외부 독소</strong>와 인체에서 끊임없이 만들어 내는 대사산물과 노폐물인 <strong className="font-bold text-black">내부 독소</strong>가 있습니다.
               </p>
             </div>
-            <div className="text-gray-600 leading-relaxed break-keep text-sm md:text-base space-y-4">
-              <p>
+            <div className="text-gray-600 leading-relaxed break-keep space-y-2">
+              <p className="text-sm md:text-[18px]">
                 한의학적으로는 위장관에 쌓이는 식적, 조직 내에 쌓여있는 습담, 혈액 내에 쌓여있는 어혈 등으로 독소를 분류합니다. 현대인들은 과도한 스트레스, 잘못된 생활습관, 갖가지 셀 수 없는 인공 독소에 노출되어 있어서 <strong className="text-black bg-[#fff4b0] px-1 py-[1px] font-bold">과거에 비해 독소의 유입량, 생산량은 많아지는데 비해 독소를 처리하고 배출하는 능력은 감퇴되었습니다.</strong>
               </p>
-              <p className="text-base md:text-lg text-gray-800 font-normal pt-2">
+              <p className="text-base md:text-[20px] text-gray-800 font-normal pt-1">
                 이는 체내 갖가지 손상과 불편한 증상들, 나아가 여러 질환을 유발하는 씨앗의 역할을 합니다.
               </p>
             </div>
           </div>
-          <div className="w-full md:w-2/5 relative h-[350px] md:h-[450px]">
+          <div className="w-full md:w-[33%] relative h-[350px] md:h-[450px]">
             <Image 
               src="/images/personal/detox_section_1.png" 
               alt="인체 실루엣 및 독소 그래픽" 
