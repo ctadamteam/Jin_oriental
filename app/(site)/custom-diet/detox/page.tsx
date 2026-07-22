@@ -234,7 +234,7 @@ export default function DetoxDietPage() {
             <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight mb-2">해독한약의 <strong className="font-bold text-[#A5C614]">치료기전</strong></h2>
           </div>
           
-          <div className="relative flex flex-col items-center justify-center w-full -mt-[150px]">
+          <div className="relative flex flex-col items-center justify-center w-full -mt-[100px]">
             {/* Desktop Layout */}
             <div className="hidden md:block relative w-full max-w-5xl h-[700px] lg:h-[800px]">
               {/* 배경 이미지 (가운데 인체 일러스트) */}
