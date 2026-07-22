@@ -39,23 +39,19 @@ export default function DetoxDietPage() {
         
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="w-full md:w-3/5">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 leading-tight break-keep tracking-tight">
-              한의학에서 말하는 <span className="font-bold relative inline-block">
-                독소
-                {/* 텍스트 하단 형광펜 효과 */}
-                <span className="absolute bottom-1 left-0 w-full h-[40%] bg-[#A5C614]/20 -z-10"></span>
-              </span>란 무엇인가요?
+            <h3 className="text-2xl md:text-[38px] font-light text-gray-800 mb-6 leading-tight break-keep tracking-tight">
+              한의학에서 말하는 <strong className="font-bold text-gray-900">독소</strong>란 무엇인가요?
             </h3>
-            <p className="text-gray-700 mb-8 leading-relaxed break-keep text-lg">
-              <span className="border-b-2 border-gray-400 font-medium pb-1 inline-block">
+            <div className="border-b border-gray-400 pb-2 mb-8">
+              <p className="text-gray-700 leading-relaxed break-keep text-base md:text-lg">
                 독소는 일상생활 속에서 유입되는 <strong className="font-bold text-black">외부 독소</strong>와 인체에서 끊임없이 만들어 내는 대사산물과 노폐물인 <strong className="font-bold text-black">내부 독소</strong>가 있습니다.
-              </span>
-            </p>
+              </p>
+            </div>
             <div className="text-gray-600 leading-relaxed break-keep text-sm md:text-base space-y-4">
               <p>
-                한의학적으로는 위장관에 쌓이는 식적, 조직 내에 쌓여있는 습담, 혈액 내에 쌓여있는 어혈 등으로 독소를 분류합니다. 현대인들은 과도한 스트레스, 잘못된 생활습관, 갖가지 알 수 없는 인공 독소에 노출되어 있어서 <strong className="text-black bg-yellow-100/60 px-1 py-0.5 rounded-sm">과거에 비해 독소의 유입량, 생성량은 많아지는데 비해 독소를 처리하고 배출하는 능력은 약화되었습니다.</strong>
+                한의학적으로는 위장관에 쌓이는 식적, 조직 내에 쌓여있는 습담, 혈액 내에 쌓여있는 어혈 등으로 독소를 분류합니다. 현대인들은 과도한 스트레스, 잘못된 생활습관, 갖가지 셀 수 없는 인공 독소에 노출되어 있어서 <strong className="text-black bg-[#ffed00] px-1 py-0.5 font-bold">과거에 비해 독소의 유입량, 생산량은 많아지는데 비해 독소를 처리하고 배출하는 능력은 감퇴되었습니다.</strong>
               </p>
-              <p className="text-base md:text-lg text-gray-800 font-medium pt-2">
+              <p className="text-base md:text-lg text-gray-800 font-normal pt-2">
                 이는 체내 갖가지 손상과 불편한 증상들, 나아가 여러 질환을 유발하는 씨앗의 역할을 합니다.
               </p>
             </div>
