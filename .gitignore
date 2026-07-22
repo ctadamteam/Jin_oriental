@@ -42,3 +42,16 @@ next-env.d.ts
 _figma_exports/  
 scratch_*
 .vercel
+.pnpm-store/
+
+# temp analysis scripts and OCR data
+*.mjs
+*.traineddata
+ocr_*.json
+ocr_*.tsv
+raw_*.json
+full_raw_mem_ocr.json
+hero_section.txt
+original_creation.txt
+restore.txt
+get_size.js

@@ -27,7 +27,7 @@ export const MENUS = [
       { title: "부종형 비만", href: "/custom-diet/edema" },
       { title: "자율신경성 비만", href: "/custom-diet/autonomic" },
       { title: "중년 비만", href: "/custom-diet/middle-age" },
-      { title: "고도 비만", href: "/custom-diet/obesity" },
+      { title: "고도 비만", href: "/custom-diet/severe" },
       { title: "산후 비만", href: "/custom-diet/postpartum" },
       { title: "체질별 다이어트", href: "/custom-diet/constitution" },
     ],

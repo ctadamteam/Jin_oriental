@@ -1,6 +1,7 @@
 allowBuilds:
   esbuild: true
   sharp: true
+  tesseract.js: set this to true or false
   unrs-resolver: true
 ignoredBuiltDependencies:
   - sharp
