@@ -142,8 +142,8 @@ export default function DetoxDietPage() {
         </div>
 
         <div className="w-full max-w-5xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-16 md:mb-24 tracking-tight">
-            몸 속에 독소가 쌓일 때 생기는 <span className="text-[#A5C614]">각종 이상 증상들</span>
+          <h2 className="text-2xl md:text-[38px] font-light mb-16 md:mb-24 tracking-tight">
+            몸 속에 독소가 쌓일 때 생기는 <strong className="font-bold text-[#A5C614]">각종 이상 증상들</strong>
           </h2>
           
           <div className="relative w-full">
