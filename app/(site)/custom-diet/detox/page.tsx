@@ -162,9 +162,9 @@ export default function DetoxDietPage() {
                   
                   {/* 큰 원 (SVG 적용) */}
                   <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
-                    <div className="absolute inset-0 rounded-full border border-white/20"></div>
-                    {/* SVG 두꺼운 180도 반원: r=44 (C=276.5), 180도 = 138 - 8(caps) = 130 */}
+                    {/* SVG 2px 얇은 전체 원 및 8px 두꺼운 180도 반원 */}
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
+                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6" />
                        <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
                     </svg>
                     <span className="relative z-10 text-base md:text-lg font-bold">독소유입</span>
@@ -180,8 +180,8 @@ export default function DetoxDietPage() {
                   <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[40px] bg-white z-0"></div>
                   
                   <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
-                    <div className="absolute inset-0 rounded-full border border-white/20"></div>
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
+                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6" />
                        <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
                     </svg>
                     <span className="relative z-10 text-base md:text-lg font-bold leading-snug">체내지방<br/>축적</span>
@@ -197,8 +197,8 @@ export default function DetoxDietPage() {
                   <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[40px] bg-white z-0"></div>
                   
                   <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
-                    <div className="absolute inset-0 rounded-full border border-white/20"></div>
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
+                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6" />
                        <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
                     </svg>
                     <span className="relative z-10 text-base md:text-lg font-bold leading-snug">염증물질<br/>분비</span>
@@ -214,8 +214,8 @@ export default function DetoxDietPage() {
                   <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[40px] bg-white z-0"></div>
                   
                   <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
-                    <div className="absolute inset-0 rounded-full border border-white/20"></div>
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
+                       <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.6" />
                        <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
                     </svg>
                     <span className="relative z-10 text-base md:text-lg font-bold leading-snug">각종질병<br/>발생</span>
