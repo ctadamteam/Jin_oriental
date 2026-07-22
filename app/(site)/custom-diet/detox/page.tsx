@@ -39,7 +39,7 @@ export default function DetoxDietPage() {
         
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="w-full md:w-3/5">
-            <h3 className="text-2xl md:text-[38px] font-light text-gray-800 mb-6 leading-tight break-keep tracking-tight">
+            <h3 className="text-2xl md:text-[30px] font-light text-gray-800 mb-6 leading-tight break-keep tracking-tight">
               한의학에서 말하는 <strong className="font-bold text-gray-900">독소</strong>란 무엇인가요?
             </h3>
             <div className="border-b border-gray-400 pb-2 mb-8">
