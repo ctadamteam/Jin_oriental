@@ -156,9 +156,9 @@ export default function DetoxDietPage() {
               <div className="flex flex-col items-center w-full md:w-1/4 relative">
                 <p className="text-sm md:text-[18px] text-gray-200 mb-2 break-keep h-[75px] flex items-end justify-center font-normal leading-snug text-center">잘못된 식습관과<br/>피부를 통해<br/>외부독소가 유입</p>
                 <div className="relative flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-7 relative z-10 shadow-lg">01</div>
-                  {/* 수직선 (더 길게 연장) */}
-                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[34px] bg-white z-0"></div>
+                  <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-[41px] relative z-10 shadow-lg">01</div>
+                  {/* 수직선 (13px 연장) */}
+                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[47px] bg-white z-0"></div>
                   
                   {/* 큰 원 */}
                   <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
@@ -175,8 +175,8 @@ export default function DetoxDietPage() {
               <div className="flex flex-col items-center w-full md:w-1/4 relative">
                 <p className="text-sm md:text-[18px] text-gray-200 mb-2 break-keep h-[75px] flex items-end justify-center font-normal leading-snug text-center">몸속에 지방,<br/>특히 내장지방이<br/>쌓임</p>
                 <div className="relative flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-7 relative z-10 shadow-lg">02</div>
-                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[34px] bg-white z-0"></div>
+                  <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-[41px] relative z-10 shadow-lg">02</div>
+                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[47px] bg-white z-0"></div>
                   
                   <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
@@ -192,8 +192,8 @@ export default function DetoxDietPage() {
               <div className="flex flex-col items-center w-full md:w-1/4 relative">
                 <p className="text-sm md:text-[18px] text-gray-200 mb-2 break-keep h-[75px] flex items-end justify-center font-normal leading-snug text-center">독소로부터<br/>염증물질이 분비되어<br/>염증이 발생</p>
                 <div className="relative flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-7 relative z-10 shadow-lg">03</div>
-                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[34px] bg-white z-0"></div>
+                  <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-[41px] relative z-10 shadow-lg">03</div>
+                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[47px] bg-white z-0"></div>
                   
                   <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
@@ -209,8 +209,8 @@ export default function DetoxDietPage() {
               <div className="flex flex-col items-center w-full md:w-1/4 relative">
                 <p className="text-sm md:text-[18px] text-gray-200 mb-2 break-keep h-[75px] flex items-end justify-center font-normal leading-snug text-center">비만, 만성피로, 탈모,<br/>피부질환 등<br/>각종 증상이 발생</p>
                 <div className="relative flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-7 relative z-10 shadow-lg">04</div>
-                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[34px] bg-white z-0"></div>
+                  <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-[41px] relative z-10 shadow-lg">04</div>
+                  <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[47px] bg-white z-0"></div>
                   
                   <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
