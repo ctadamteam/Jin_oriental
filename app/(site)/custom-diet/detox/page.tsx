@@ -49,7 +49,7 @@ export default function DetoxDietPage() {
             </div>
             <div className="text-gray-600 leading-relaxed break-keep text-sm md:text-base space-y-4">
               <p>
-                한의학적으로는 위장관에 쌓이는 식적, 조직 내에 쌓여있는 습담, 혈액 내에 쌓여있는 어혈 등으로 독소를 분류합니다. 현대인들은 과도한 스트레스, 잘못된 생활습관, 갖가지 셀 수 없는 인공 독소에 노출되어 있어서 <strong className="text-black bg-[#ffed00] px-1 py-0.5 font-bold">과거에 비해 독소의 유입량, 생산량은 많아지는데 비해 독소를 처리하고 배출하는 능력은 감퇴되었습니다.</strong>
+                한의학적으로는 위장관에 쌓이는 식적, 조직 내에 쌓여있는 습담, 혈액 내에 쌓여있는 어혈 등으로 독소를 분류합니다. 현대인들은 과도한 스트레스, 잘못된 생활습관, 갖가지 셀 수 없는 인공 독소에 노출되어 있어서 <strong className="text-black bg-[#fff4b0] px-1 py-0.5 font-bold">과거에 비해 독소의 유입량, 생산량은 많아지는데 비해 독소를 처리하고 배출하는 능력은 감퇴되었습니다.</strong>
               </p>
               <p className="text-base md:text-lg text-gray-800 font-normal pt-2">
                 이는 체내 갖가지 손상과 불편한 증상들, 나아가 여러 질환을 유발하는 씨앗의 역할을 합니다.
