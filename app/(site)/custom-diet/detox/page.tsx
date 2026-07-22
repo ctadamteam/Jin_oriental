@@ -157,14 +157,14 @@ export default function DetoxDietPage() {
                 <p className="text-sm md:text-[18px] text-gray-200 mb-2 break-keep h-[75px] flex items-end justify-center font-normal leading-snug text-center">잘못된 식습관과<br/>피부를 통해<br/>외부독소가 유입</p>
                 <div className="relative flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-[#f4f4f4] text-[#3a332d] font-bold text-xl flex items-center justify-center mb-[41px] relative z-10 shadow-lg">01</div>
-                  {/* 수직선 (13px 연장) */}
+                  {/* 수직선 */}
                   <div className="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-[2px] h-[47px] bg-white z-0"></div>
                   
                   {/* 큰 원 */}
                   <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
                        <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" />
-                       <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
+                       <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="12" strokeLinecap="round" strokeDasharray="126 276.5" />
                     </svg>
                     <span className="relative z-10 text-base md:text-[20px] font-bold">독소유입</span>
                   </div>
@@ -181,7 +181,7 @@ export default function DetoxDietPage() {
                   <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
                        <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" />
-                       <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
+                       <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="12" strokeLinecap="round" strokeDasharray="126 276.5" />
                     </svg>
                     <span className="relative z-10 text-base md:text-[20px] font-bold leading-snug">체내지방<br/>축적</span>
                   </div>
@@ -198,7 +198,7 @@ export default function DetoxDietPage() {
                   <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
                        <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" />
-                       <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
+                       <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="12" strokeLinecap="round" strokeDasharray="126 276.5" />
                     </svg>
                     <span className="relative z-10 text-base md:text-[20px] font-bold leading-snug">염증물질<br/>분비</span>
                   </div>
@@ -215,7 +215,7 @@ export default function DetoxDietPage() {
                   <div className="relative w-32 h-32 md:w-36 md:h-36 flex items-center justify-center">
                     <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 100 100">
                        <circle cx="50" cy="50" r="43" fill="none" stroke="#ffffff" strokeWidth="2" />
-                       <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="8" strokeLinecap="round" strokeDasharray="130 276.5" />
+                       <circle cx="50" cy="50" r="44" fill="none" stroke="#f4f4f4" strokeWidth="12" strokeLinecap="round" strokeDasharray="126 276.5" />
                     </svg>
                     <span className="relative z-10 text-base md:text-[20px] font-bold leading-snug">각종질병<br/>발생</span>
                   </div>
