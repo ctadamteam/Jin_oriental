@@ -231,7 +231,7 @@ export default function DetoxDietPage() {
       <section className="w-full py-16 md:py-24 bg-white overflow-hidden">
         <div className="w-full max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 tracking-tight mb-2">해독한약의 <span className="text-[#A5C614]">치료기전</span></h2>
+            <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight mb-2">해독한약의 <strong className="font-bold text-[#A5C614]">치료기전</strong></h2>
           </div>
           
           <div className="relative flex flex-col items-center justify-center w-full mt-10">
