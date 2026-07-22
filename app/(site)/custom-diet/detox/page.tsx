@@ -42,8 +42,8 @@ export default function DetoxDietPage() {
             <h3 className="text-2xl md:text-[30px] font-light text-gray-800 mb-6 leading-tight break-keep tracking-tight">
               한의학에서 말하는 <strong className="font-bold text-gray-900">독소</strong>란 무엇인가요?
             </h3>
-            <div className="border-b border-gray-400 pb-2 mb-8">
-              <p className="text-gray-700 leading-relaxed break-keep text-base md:text-lg">
+            <div className="mb-8">
+              <p className="text-gray-700 leading-relaxed break-keep text-base md:text-lg underline underline-offset-4 decoration-gray-400">
                 독소는 일상생활 속에서 유입되는 <strong className="font-bold text-black">외부 독소</strong>와 인체에서 끊임없이 만들어 내는 대사산물과 노폐물인 <strong className="font-bold text-black">내부 독소</strong>가 있습니다.
               </p>
             </div>
