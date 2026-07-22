@@ -32,7 +32,7 @@ export default function DetoxDietPage() {
       </section>
 
       {/* 2. Intro Section (독소란 무엇인가요?) */}
-      <section className="w-full max-w-5xl mx-auto px-4 py-16 md:py-24">
+      <section className="w-full max-w-5xl mx-auto px-4 pt-16 pb-8 md:pt-24 md:pb-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-medium text-gray-800 tracking-tight">진한의원 <span className="text-[#A5C614] font-bold">해독요법</span></h2>
         </div>
@@ -68,7 +68,7 @@ export default function DetoxDietPage() {
       </section>
 
       {/* 3. Target Audience (이런 분들께 추천합니다) */}
-      <section className="w-full py-16 md:py-24 bg-white">
+      <section className="w-full pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="w-full max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight mb-12">
             해독요법! <strong className="font-bold text-gray-900">이런분들께 추천</strong>합니다
