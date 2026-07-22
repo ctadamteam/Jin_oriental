@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function SevereObesityDietPage() {
   return (
     <main className="font-pretendard overflow-x-hidden bg-[#faf6f3]">
+      <div className="mx-auto w-full max-w-[1000px] overflow-hidden">
       <HeroSection />
       <FiveCoreSection />
       <IntroSection />
@@ -16,6 +16,7 @@ export default function SevereObesityDietPage() {
       <ProgramStep3Section />
       <ProgramStep4Section />
       <FooterSection />
+      </div>
     </main>
   );
 }

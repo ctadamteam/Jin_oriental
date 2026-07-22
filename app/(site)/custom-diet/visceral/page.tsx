@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function VisceralFatPage() {
   return (
     <main className="w-full bg-white font-sans text-gray-800 overflow-x-hidden">
+      <div className="mx-auto w-full max-w-[1000px] overflow-hidden">
       <HeroSection />
       <StatsSection />
       <ReasonSection />
@@ -15,6 +15,7 @@ export default function VisceralFatPage() {
       <DiagnosisSection />
       <DiagnosisReasonSection />
       <FooterSection />
+      </div>
     </main>
   );
 }

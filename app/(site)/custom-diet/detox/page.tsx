@@ -3,6 +3,7 @@ import Image from 'next/image';
 export default function DetoxDietPage() {
   return (
     <main className="w-full bg-white font-sans text-gray-800">
+      <div className="mx-auto w-full max-w-[1000px] overflow-hidden">
       {/* 1. Hero Section (상단 메인 타이틀) */}
       <section className="w-full h-[460px] md:h-[560px] relative bg-[#3a332d]">
         <div className="absolute inset-0 flex flex-col md:flex-row">
@@ -809,7 +810,7 @@ export default function DetoxDietPage() {
            </div>
         </div>
       </section>
-      
+      </div>
     </main>
   );
 }
