@@ -19,13 +19,13 @@ export default function DetoxDietPage() {
             priority
           />
         </div>
-        <div className="flex flex-col justify-start p-6 md:pt-[58px] md:pl-[37px] md:pr-4">
-          <p className="text-sm md:text-[15px] text-[#cfc5bd] tracking-tight mb-2">1:1 체질별 맞춤 해독프로그램!</p>
-          <h2 className="grid grid-cols-2 gap-x-12 text-3xl md:text-[55px] font-normal text-[#ffec55] leading-none mb-4">
+        <div className="flex flex-col justify-start p-6 md:pt-[50px] md:px-[32px]">
+          <p className="text-sm md:text-[15px] text-[#cfc5bd] tracking-tight mb-2">1:1 체질별 맞춤</p>
+          <h2 className="grid grid-cols-2 gap-x-12 text-3xl md:text-[54px] font-bold text-[#ffec55] leading-none mb-4">
             <span>해</span><span>독</span>
-            <b className="col-span-2 mt-3 text-white text-3xl md:text-[55px] font-normal tracking-[10px] whitespace-nowrap block">다이어트</b>
+            <b className="col-span-2 mt-2 text-white text-3xl md:text-[54px] font-bold tracking-[14px] whitespace-nowrap block">다이어트</b>
           </h2>
-          <p className="text-xs text-white/90 leading-relaxed break-keep font-light opacity-90">
+          <p className="text-xs md:text-[13px] text-white/90 leading-relaxed break-keep font-light opacity-90">
             개개인의 체질, 체형, 신진대사 등 몸의 각 기관에 따라 진단을 내려 치료법을 달리하여 진행하는 해독프로그램입니다.
           </p>
         </div>
