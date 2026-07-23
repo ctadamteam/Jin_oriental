@@ -248,7 +248,7 @@ export default function DetoxDietPage() {
               <div className="absolute top-[20%] lg:top-[24%] left-[20%] lg:left-[22%] z-10 translate-x-[80px] translate-y-[20px]">
                 <div className="text-2xl font-extrabold text-[#3a332d]">간</div>
               </div>
-              <div className="absolute top-[20%] lg:top-[24%] left-0 lg:left-[2%] w-[260px] lg:w-[320px] z-10 flex text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep">
+              <div className="absolute top-[20%] lg:top-[24%] left-0 lg:left-[2%] w-[260px] lg:w-[320px] z-10 flex text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep translate-y-[30px]">
                 <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
                 <div>시호, 청피, 치자 등으로 쓸개즙 분비를 촉진하고, 소엽, 곽향 등으로 <span className="bg-[#fff4b0] px-1">스트레스로 인한 장의 억제·흥분을 조절합니다</span>.</div>
               </div>
