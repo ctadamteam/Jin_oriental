@@ -384,7 +384,7 @@ export default function DetoxDietPage() {
             <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight">해독 효능이 있는 <strong className="font-bold text-[#A5C614]">한약재</strong></h2>
           </div>
           
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 max-w-4xl mx-auto">
             {/* 한약재 1 */}
             <div className="flex flex-col md:flex-row bg-white border border-gray-200 p-6 items-center gap-6">
               <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 relative rounded-lg overflow-hidden border border-gray-100">
