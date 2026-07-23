@@ -248,7 +248,7 @@ export default function DetoxDietPage() {
               <div className="absolute top-[20%] lg:top-[24%] left-[20%] lg:left-[22%] z-10 translate-x-[80px] translate-y-[20px]">
                 <div className="text-2xl font-extrabold text-[#3a332d]">간</div>
               </div>
-              <div className="absolute top-[20%] lg:top-[24%] left-0 lg:left-[2%] w-[260px] lg:w-[320px] z-10 flex text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep translate-y-[60px]">
+              <div className="absolute top-[20%] lg:top-[24%] left-0 lg:left-[2%] w-[260px] lg:w-[320px] z-10 flex text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep translate-y-[60px]">
                 <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
                 <div>시호, 청피, 치자 등으로 쓸개즙 분비를 촉진하고, 소엽, 곽향 등으로 <span className="bg-[#fff4b0] px-1">스트레스로 인한 장의 억제·흥분을 조절합니다</span>.</div>
               </div>
@@ -257,7 +257,7 @@ export default function DetoxDietPage() {
               <div className="absolute top-[48%] lg:top-[50%] left-[22%] lg:left-[26%] z-10 translate-x-[10px] -translate-y-[15px]">
                 <div className="text-2xl font-extrabold text-[#3a332d]">대장</div>
               </div>
-              <div className="absolute top-[56%] lg:top-[58%] left-0 lg:left-[2%] w-[260px] lg:w-[320px] z-10 flex flex-col gap-3 text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep -translate-y-[35px]">
+              <div className="absolute top-[56%] lg:top-[58%] left-0 lg:left-[2%] w-[260px] lg:w-[320px] z-10 flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep -translate-y-[35px]">
                 <div className="flex">
                   <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
                   <div>대황, 망초 등의 약재로 <span className="bg-[#fff4b0] px-1">숙변을 제거</span>하고 대장의 염증을 <span className="bg-[#fff4b0] px-1">치료합니다</span>.</div>
@@ -269,7 +269,7 @@ export default function DetoxDietPage() {
               </div>
 
               {/* 오른쪽: 위 */}
-              <div className="absolute top-[16%] lg:top-[20%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep translate-x-[10px] translate-y-[30px]">
+              <div className="absolute top-[10%] lg:top-[12%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep translate-x-[10px]">
                 <div className="flex relative">
                   <div className="absolute right-full top-[-4px] mr-3 text-2xl font-extrabold text-[#3a332d]">위</div>
                   <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
@@ -290,7 +290,7 @@ export default function DetoxDietPage() {
               </div>
 
               {/* 오른쪽: 소장 */}
-              <div className="absolute top-[68%] lg:top-[72%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep translate-x-[30px] translate-y-[10px]">
+              <div className="absolute top-[72%] lg:top-[75%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep translate-x-[30px]">
                 <div className="flex relative">
                   <div className="absolute right-full top-[-4px] mr-3 text-2xl font-extrabold text-[#3a332d]">소장</div>
                   <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
@@ -313,7 +313,7 @@ export default function DetoxDietPage() {
                 {/* 간 */}
                 <div>
                   <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>간</h4>
-                  <div className="flex text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep">
+                  <div className="flex text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep">
                     <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
                     <div>시호, 청피, 치자 등으로 쓸개즙 분비를 촉진하고, 소엽, 곽향 등으로 <span className="bg-[#fff4b0] px-1">스트레스로 인한 장의 억제·흥분을 조절합니다</span>.</div>
                   </div>
@@ -322,7 +322,7 @@ export default function DetoxDietPage() {
                 {/* 대장 */}
                 <div>
                   <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>대장</h4>
-                  <div className="flex flex-col gap-3 text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep">
+                  <div className="flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep">
                     <div className="flex">
                       <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
                       <div>대황, 망초 등의 약재로 <span className="bg-[#fff4b0] px-1">숙변을 제거</span>하고 대장의 염증을 <span className="bg-[#fff4b0] px-1">치료합니다</span>.</div>
@@ -337,7 +337,7 @@ export default function DetoxDietPage() {
                 {/* 위 */}
                 <div>
                   <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>위</h4>
-                  <div className="flex flex-col gap-3 text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep">
+                  <div className="flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep">
                     <div className="flex">
                       <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
                       <div>인삼, 건강, 육계 등으로 위장의 혈관을 확장하고 혈행순환을 개선하여, <span className="bg-[#fff4b0] px-1">염증 치료 및 진정·진통 작용을 합니다</span>.</div>
@@ -360,7 +360,7 @@ export default function DetoxDietPage() {
                 {/* 소장 */}
                 <div>
                   <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>소장</h4>
-                  <div className="flex flex-col gap-3 text-sm md:text-[16px] text-gray-700 leading-relaxed break-keep">
+                  <div className="flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep">
                     <div className="flex">
                       <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
                       <div>백작약, 진피, 목향 등으로 장의 긴장을 풀어 장기들의 혈액순환을 촉진하고, <span className="bg-[#fff4b0] px-1">장의 운동성을 향상</span>시켜 줍니다.</div>
