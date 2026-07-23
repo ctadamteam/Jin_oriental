@@ -3,23 +3,37 @@ import Image from 'next/image';
 const causeLeft = ['임신전 과체중', '임신중 과도한 영양 섭취 및 활동량 감소', '임신중독증', '신진대사 및 수분대사저하'];
 const causeRight = ['산후우울증으로 인한 스트레스성 폭식', '모유수유로 인한 갈증과 허기', '모유수유 중단', '성급한 재임신', '산후부종'];
 
-const causeDetails = [
-  ['01', '임산부가 섭취하는 영양소의 20%만 태아에게 전달되고 나머지 80%는 모체에 지방의 형태로 저장되므로, 굳이 많은 영양을 섭취한다고 해서 태아에게 다 전달되는 것이 아니어서 임신 전에 비해 평균 하루 300kcal정도만 더 드셔서 임신 중에 오히려 살이 과도하게 찌지 않도록 주의를 하는 것이 좋습니다.'],
-  ['02', '난산을 하거나 진통 시간이 길어서 체력 소모가 많은 산모, 신진대사와 수분대사가 저하된 산모들일수록 산후부종이 심해지는데 산후 부종이 효과적으로 제거되지 못하면 산후 비만으로 이어지기도 합니다.'],
-  ['03', '모유를 수유하는 것만으로 하루 500~1000kcal가 소모되며, 또한 모유수유는 자궁수축에도 도움을 주어 복부가 탄력있게 감소되도록 작용하는데 모유수유를 시작하면 수유하는 분에 비해 체중감량 속도가 떨어지게 됩니다. 하지만 모유수유를 하면서 생긴 갈증과 허기로 인해 열량을 과잉 섭취하면 오히려 산후비만을 악화시킬 수 있습니다.'],
-  ['04', '산후 우울감으로 인해 먹는 것에 대한 보상 심리가 생기고, 대개는 칼로리 높은 고지방 식품을 찾아 섭취하여 임신 중 체중증가가 채 회복되지 못한 상태에서 체중이 더 늘어나는 상황에 놓이게 됩니다.'],
-];
-
 const effects = [
   ['PP_03.png', '낮은 자존감 및 우울감', '85%는 일시적인 산후우울증\n10~20%는 수개월에서 1년이상 지속'],
-  ['PP_04.png', '산후풍', '손목, 허리, 골반 통증과 말초혈행장애로\n인한 수족냉증과 저림'],
+  ['PP_04.png', '산후풍', '손목, 허리, 골반 통증과\n말초혈행장애로 인한\n수족냉증과 저림'],
   ['PP_05.png', '생리불순 및 다낭성 난소증후군', '체지방 과다로 인해 호르몬 불균형\n생리 횟수와 양의 감소로 인해\n부종과 체중 증가'],
   ['PP_06.png', '갑상선 기능 저하', '신진 대사와 관련된 갑상선에\n과부하 유발'],
   ['PP_07.png', '만성피로', '과체중으로 인해 살림과 육아가 더\n힘겨워지고 늘 몸이 무겁고 피곤함'],
   ['PP_08.png', '체온이상', '이유 없이 땀이 나고 몸이 무력해짐'],
 ];
 
-const records = ['PP_11.png', 'PP_12.png', 'PP_13.png', 'PP_14.png', 'PP_15.png', 'PP_16.png'];
+const caseStudies = [
+  {
+    caseLabel: '환자 CASE 1',
+    profile: '30대 여성 | 만삭 166cm / 75kg',
+    summary: ['산후다이어트 시작 64kg', '산후다이어트한약 4개월 복용 뒤 55.8kg', '현재 계속 유지 중'],
+    stages: [
+      { label: '산후다이어트 시작', weight: '64kg', image: 'PP_11.png' },
+      { label: '산후다이어트한약 4개월 복용 뒤', weight: '55.8kg', date: '(2016.10.25 기준)', image: 'PP_12.png' },
+      { label: '현재 계속 유지중', image: 'PP_13.png' },
+    ],
+  },
+  {
+    caseLabel: '환자 CASE 2',
+    profile: '20대 여성 | 만삭 165cm / 69kg',
+    summary: ['산후다이어트 시작 61.5kg', '산후다이어트한약 3개월 복용 뒤 48.9kg', '현재 계속 유지 중'],
+    stages: [
+      { label: '산후다이어트 시작', weight: '61.5kg', image: 'PP_14.png' },
+      { label: '산후다이어트한약 3개월 복용 뒤', weight: '48.9kg', date: '(2017.01.04 기준)', image: 'PP_15.png' },
+      { label: '현재 계속 유지중', image: 'PP_16.png' },
+    ],
+  },
+];
 
 const researchStudies = [
   {
@@ -42,13 +56,13 @@ const researchStudies = [
   },
 ];
 
-const mechanism = [
-  ['척추', '두충, 우슬, 오가피, 오약 등의 약재로 약해진 척추·인대를 보강하고 산후풍을 예방하고 치료합니다.', 'orange'],
-  ['림프', '복령, 백출, 의이인 등의 약재로 림프 순환을 촉진하여 노폐물 제거와 부종 감소', 'blue'],
-  ['난소', '당귀, 숙지황 등의 약재로 혈의 생성을 촉진하고 호르몬의 회복을 도와줍니다. 건강, 육계, 파고지, 소회향 등의 약재로 골반장기내의 혈관을 확장하고, 혈류순환 촉진을 통해 복부를 따뜻하게 해줍니다.', 'mint'],
-  ['자궁', '천궁, 도인, 홍화 등의 약재로 자궁내막과 질 주위에 혈행순환을 증가하고, 자궁수축이 잘 되도록 하여 오로배출을 촉진하여 출산 후 골반내 상처가 빨리 아물도록 도와줍니다.', 'coral'],
-  ['손,발', '계지, 세신, 방풍 등의 약재로 말초 혈관 확장과 순환 개선을 통해 수족 냉증, 저림 개선', 'green'],
-  ['장', '백출, 복령, 목통 등의 약재로 임신·출산 기간 동안 복부 주변 장기의 불필요한 독을 줄여주고, 목향, 곽향, 대복피, 향기 등의 약재로 장기의 운동능력 향상과 기능을 향상시킵니다.', 'pink'],
+const mechanismText = [
+  ['척추', '두충, 우슬, 오가피, 오약 등의 약재로 약해진 인대·관절을 보강하고 산후풍을 예방하고 치료합니다.', 'spine'],
+  ['림프', '복령, 백출, 의이인 등의 약재로 림프 순환을 촉진하여 노폐물 제거와 부종 감소', 'lymph'],
+  ['장', '백출, 복령, 목통 등의 약재로 임신·출산 기간 동안 복부 주변 장기의 불필요한 부종을 줄여주고 목향, 곽향, 대복피, 향기 등의 약재로 장기의 운동능력 향상과 기능을 향상시킵니다.', 'intestine'],
+  ['난소', '당귀, 숙지황 등의 약재로 혈의 생성을 촉진하고 호르몬의 회복을 도와줍니다. 건강, 육계, 파고지, 소회향 등의 약재로 골반장기 내의 혈관을 확장하고, 혈류순환 촉진을 통해 복부를 따뜻하게 해줍니다.', 'ovary'],
+  ['자궁', '천궁, 도인, 홍화 등의 약재로 자궁내막과 질 주위에 혈행순환을 증가하고, 자궁수축이 잘 되도록 하여 오로배출을 촉진하여 출산 후 골반내 상처가 빨리 아물도록 도와줍니다.', 'uterus'],
+  ['손, 발', '계지, 세신, 방풍 등의 약재로 말초 혈관 확장과 순환 개선을 통해 수족 냉증, 저림 개선', 'hands'],
 ];
 
 const lifestyleRules = [
@@ -58,8 +72,8 @@ const lifestyleRules = [
   ['04', '출산 후에는 과격한 운동보다는 집 근처에서 하루 30분~1시간 정도 가볍게 산책을 해주시고, 실내에서 맨손체조와 가벼운 스트레칭을 매일 습관처럼 해주는 것이 좋습니다.'],
 ];
 
-function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
-  return <h2 className={`pp-section-title ${light ? 'pp-section-title--light' : ''}`}>{children}</h2>;
+function SectionTitle({ children, light = false, className = '' }: { children: React.ReactNode; light?: boolean; className?: string }) {
+  return <h2 className={`pp-section-title ${light ? 'pp-section-title--light' : ''} ${className}`}>{children}</h2>;
 }
 
 function Emphasis({ children }: { children: React.ReactNode }) {
@@ -74,7 +88,7 @@ export default function PostpartumDietPage() {
 
         <section className="pp-hero">
           <div className="pp-hero-photo"><Image src="/images/postpartum/PP_01.png" alt="아기를 안은 산모" fill priority sizes="(max-width: 1000px) 64vw, 639px" unoptimized /></div>
-          <div className="pp-hero-copy"><p>건강과 미를 동시에 회복하는</p><h2><em>산 후 비 만</em><br />다이어트</h2><span>출산 후 감량은 산후부종과 산후풍에 대한<br />우선적인 관리가 필요하며, 일반 다이어트와는<br />달리 산모의 상태와 특성을 고려하여 안전하고<br />건강하게 감량할 수 있도록 해야 합니다.</span></div>
+          <div className="pp-hero-copy"><p>건강과 미를 동시에 회복하는</p><h2><em>산후비만</em><span>다이어트</span></h2><p className="pp-hero-description">출산 후 감량은 산후부종과 산후풍에 대한<br />우선적인 관리가 필요하며, 일반 다이어트와는<br />달리 산모의 상태와 특성을 고려하여 안전하고<br />건강하게 감량할 수 있도록 해야 합니다.</p></div>
         </section>
 
         <section className="pp-definition">
@@ -84,15 +98,15 @@ export default function PostpartumDietPage() {
 
           <div className="pp-stat-photo">
             <Image src="/images/postpartum/postpartum-belly.png" alt="" fill sizes="1000px" unoptimized />
-            <div className="pp-stat-copy"><p>통계에 따르면 <strong>산모의 <i>80%</i>가</strong> 산후 비만에 해당합니다.</p><small>하지만 일반인들처럼 운동을 하거나 식사량을 무턱대고 줄이기엔 산후풍에 대한 우려나 모유양의 감소, 체력 저하 등을 초래하기 때문에 산모들의 상태와 특성을 세심하게 고려하여 <b>안전하고 건강하게 감량할 수 있도록 하는 방법들이 필요합니다.</b></small></div>
+            <div className="pp-stat-copy"><p>통계에 따르면 <strong>산모의 <i>80%</i>가 산후비만</strong>에 해당합니다.</p><small>하지만 일반인들처럼 운동을 하거나 식사량을 무턱대고 줄이기엔 산후풍에 대한 우려나 모유양의 감소, 체력 저하 등을 초래하기 때문에 산모들의 상태와 특성을 세심하게 고려하여 <b>안전하고 건강하게 감량할 수 있도록 하는 방법들이 필요합니다.</b></small></div>
             <div className="pp-stat-figure"><Image src="/images/postpartum/postpartum-belly.png" alt="사과를 든 산후 체형 관리 이미지" fill sizes="420px" unoptimized /></div>
           </div>
 
           <div className="pp-weight-box">
             <div className="pp-weight-heading"><i /><h3>임신중 12kg<br />몸무게 증가의 원인</h3></div>
             <div className="pp-weight-tables">
-              <table><caption>태아 관련 증가분(kg)</caption><tbody><tr><th>태아</th><td>3</td></tr><tr><th>태반</th><td>0.6~0.65</td></tr><tr><th>양수</th><td>0.8~1</td></tr><tr><th>-</th><td /></tr><tr><th>-</th><td /></tr></tbody></table>
-              <table><caption>산모 관련 증가분(kg)</caption><tbody><tr><th>자궁</th><td>1</td></tr><tr><th>유방</th><td>0.5</td></tr><tr><th>혈액</th><td>1.2</td></tr><tr className="pp-yellow"><th>부종</th><td>1.5</td></tr><tr className="pp-yellow"><th>지방질</th><td>3</td></tr></tbody></table>
+              <table><caption>태아 관련 증가분(kg)</caption><tbody><tr><th>태아</th><td>3</td></tr><tr className="pp-pink"><th>태반</th><td>0.6~0.65</td></tr><tr><th>양수</th><td>0.8~1</td></tr><tr className="pp-pink"><th>-</th><td /></tr><tr><th>-</th><td /></tr></tbody></table>
+              <table><caption>산모 관련 증가분(kg)</caption><tbody><tr><th>자궁</th><td>1</td></tr><tr className="pp-pink"><th>유방</th><td>0.5</td></tr><tr><th>혈액</th><td>1.2</td></tr><tr className="pp-yellow"><th>부종</th><td>1.5</td></tr><tr className="pp-yellow"><th>지방질</th><td>3</td></tr></tbody></table>
             </div>
           </div>
           <p className="pp-definition-bottom">출산 후 3~6개월이 지나도록 정상 체중으로 돌아가지 못하면 <strong>산후 비만으로 발전</strong>될 가능성이 높습니다.<br />출산 후에는 체내 수분의 증가로 인해 출산 시 아기와 양수, 태반 등이 다 빠져나오더라도 산모는 여전히 임신 전보다 5~7kg 정도 많은 몸무게를 지니게 되므로 자칫 산후 3~6개월이 지나더라도 잉여 체중이 그대로 지속되는 분들이 많습니다.<br /><Emphasis>너무 많이 체중이 늘어난다면 출산 후 6개월이 경과하더라도 자연적으로 회복할 수 있는 범위를 넘어가게 되면 잉여 지방이 산후 비만의 원인이 됩니다.</Emphasis></p>
@@ -102,30 +116,36 @@ export default function PostpartumDietPage() {
           <SectionTitle>산후 비만의 <strong>원인</strong></SectionTitle>
           <div className="pp-cause-orbit">
             <div className="pp-cause-list pp-cause-list--left">{causeLeft.map((item, index) => <p key={item}><i>0{index + 1}</i>{item}</p>)}</div>
-            <div className="pp-cause-person"><Image src="/images/postpartum/PP_02.png" alt="산후 비만 원인" width={127} height={347} unoptimized /><strong>산후 비만의<br />원인</strong></div>
+            <div className="pp-cause-person"><Image src="/images/postpartum/PP_02.png" alt="산후 비만 원인" width={127} height={347} unoptimized /><strong><span>산후비만의</span><span>원인</span></strong></div>
             <div className="pp-cause-list pp-cause-list--right">{causeRight.map((item, index) => <p key={item}><i>0{index + 5}</i>{item}</p>)}</div>
           </div>
-          <div className="pp-cause-details">{causeDetails.map(([number, text]) => <article key={number}><b>{number}</b><p>{text}</p></article>)}<div className="pp-cause-center">산후비만의<br /><strong>이유</strong></div></div>
+          <div className="pp-cause-details">
+            <article><b>01</b><p>임산부가 섭취하는 영양소의 20%만 태아에게 전달되고 <Emphasis>나머지 80%는 모체에 지방의 형태로 저장되므로, 굳이 많은 영양을 섭취한다고 해서 태아에게 다 전달되는 것이 아니어서</Emphasis> 임신 전에 비해 평균 하루 300kcal정도만 더 드셔서 임신 중에 오히려 살이 과도하게 찌지 않도록 주의를 하는 것이 좋습니다.</p></article>
+            <article><b>02</b><p><Emphasis>난산을 하거나 진통 시간이 길어서 체력 소모가 많은 산모, 신진대사와 수분대사가 저하된 산모들일수록 산후부종이 심해지는데 산후 부종이 효과적으로 제거되지 못하면 산후 비만으로 이어지기도 합니다.</Emphasis></p></article>
+            <article><b>03</b><p>모유를 수유하는 것만으로 하루 500~1000kcal가 소모되며, 또한 모유수유는 자궁수축에도 도움을 주어 복부가 탄력 있게 감소되도록 작용합니다. <Emphasis>하지만 모유수유를 하면서 생긴 갈증과 허기로 인해 열량을 과잉 섭취하면 오히려 산후비만을 악화시킬 수 있습니다.</Emphasis></p></article>
+            <article><b>04</b><p>산후 우울감으로 인해 먹는 것에 대한 보상 심리가 생기고, 대개는 칼로리 높은 고지방 식품을 찾아 섭취하여 임신 중 체중증가가 채 회복되지 못한 상태에서 체중이 더 늘어나는 상황에 놓이게 됩니다.</p></article>
+            <div className="pp-cause-center"><span>산후비만의</span><strong>이유</strong></div>
+          </div>
         </section>
 
         <section className="pp-effects">
           <SectionTitle>산후 비만의 <strong>영향</strong></SectionTitle>
-          <div className="pp-effect-grid">{effects.map(([image, title, text]) => <article key={title}><Image src={`/images/postpartum/${image}`} alt={title} width={256} height={193} unoptimized /><h3>{title}</h3><p>{text}</p></article>)}</div>
+          <div className="pp-effect-grid">{effects.map(([image, title, text]) => <article key={title}><div className="pp-effect-card"><Image src={`/images/postpartum/${image}`} alt={title} width={256} height={193} unoptimized /><h3>{title}</h3></div><p>{text}</p></article>)}</div>
         </section>
 
         <section className="pp-benefits">
-          <div className="pp-benefit-copy"><i /><h2>출산후<br />다이어트의 효과</h2><ol>{['출산후 빠른 부종과 체중 감소', '산후풍의 예방과 치료', '자궁, 난소 및 비뇨기계의 빠른 회복', '산후 우울증 예방', '체력과 면역력 증가'].map((item, index) => <li key={item}><b>0{index + 1}</b>{item}</li>)}</ol></div>
+          <div className="pp-benefit-copy"><i /><h2>출산 후<br />다이어트의 효과</h2><ol>{['출산후 빠른 부종과 체중 감소', '산후풍의 예방과 치료', '자궁, 난소 및 비뇨기계의 빠른 회복', '산후 우울증 예방', '체력과 면역력 증가'].map((item, index) => <li key={item}><b>0{index + 1}</b>{item}</li>)}</ol></div>
           <Image src="/images/postpartum/PP_09.png" alt="아이를 안은 엄마" width={543} height={601} unoptimized />
         </section>
 
         <section className="pp-chart-section">
           <div className="pp-chart-stages"><b>01<br /><span>해독치료</span></b><b>02<br /><span>감량치료</span></b><b>03<br /><span>회복치료</span></b></div>
-          <div className="pp-chart-wrap"><svg viewBox="0 0 900 560" role="img" aria-label="산후 다이어트 치료 단계 그래프"><defs><pattern id="pp-grid" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M 13 0 L 0 0 0 13" fill="none" stroke="#d7c5c5" strokeWidth="1" /></pattern></defs><rect x="36" y="42" width="826" height="436" fill="url(#pp-grid)" /><g stroke="#fff" strokeWidth="3"><line x1="36" y1="478" x2="862" y2="478" /><line x1="36" y1="42" x2="36" y2="478" /></g><g stroke="#f5e7e7" strokeDasharray="4 5"><line x1="308" y1="42" x2="308" y2="478" /><line x1="584" y1="42" x2="584" y2="478" /></g><path d="M40 112 C185 118 224 268 343 348 S650 418 862 426" fill="none" stroke="#50d6c9" strokeWidth="4" /><path d="M40 136 C182 150 235 239 347 330 S642 402 862 413" fill="none" stroke="#6ecb70" strokeWidth="4" /><path d="M40 85 C180 154 223 250 346 330 S640 402 862 422" fill="none" stroke="#62aee5" strokeWidth="4" /><path d="M40 157 C164 209 234 364 355 412 S645 447 862 450" fill="none" stroke="#e84282" strokeWidth="4" /><path d="M40 438 C190 432 230 336 354 265 S642 142 862 108" fill="none" stroke="#755d51" strokeWidth="4" /><text x="15" y="156" fill="#fff" fontSize="17" transform="rotate(-90 15 156)">증상의 정도</text><text x="640" y="176" fill="#755d51" fontSize="18">체력, 면역력, 혈액순환, 대사 상승</text><text x="738" y="402" fill="#50c2b6" fontSize="17">체중</text><text x="638" y="423" fill="#5f9ad7" fontSize="16">부종, 순환장애, 무기력 감 등</text><text x="430" y="454" fill="#d43d7a" fontSize="16">복부 팽만감, 가스 등의 소화기 불편감</text><text x="285" y="515" fontSize="17">1개월</text><text x="560" y="515" fontSize="17">2개월</text><text x="835" y="515" fontSize="16">시간</text></svg></div>
+          <div className="pp-chart-wrap"><svg viewBox="0 0 900 560" role="img" aria-label="산후 다이어트 치료 단계 그래프"><defs><pattern id="pp-grid" width="13" height="13" patternUnits="userSpaceOnUse"><path d="M 13 0 L 0 0 0 13" fill="none" stroke="#d9d9d9" strokeWidth="1" /></pattern></defs><rect x="36" y="42" width="826" height="436" fill="#fff" /><rect x="36" y="42" width="826" height="436" fill="url(#pp-grid)" /><g stroke="#fff" strokeWidth="3"><line x1="36" y1="478" x2="862" y2="478" /><line x1="36" y1="42" x2="36" y2="478" /></g><g stroke="#d5d5d5" strokeDasharray="4 5"><line x1="308" y1="42" x2="308" y2="478" /><line x1="584" y1="42" x2="584" y2="478" /></g><path d="M40 112 C185 118 224 268 343 348 S650 418 862 426" fill="none" stroke="#50d6c9" strokeWidth="4" /><path d="M40 136 C182 150 235 239 347 330 S642 402 862 413" fill="none" stroke="#6ecb70" strokeWidth="4" /><path d="M40 85 C180 154 223 250 346 330 S640 402 862 422" fill="none" stroke="#62aee5" strokeWidth="4" /><path d="M40 157 C164 209 234 364 355 412 S645 447 862 450" fill="none" stroke="#e84282" strokeWidth="4" /><path d="M40 438 C190 432 230 336 354 265 S642 142 862 108" fill="none" stroke="#755d51" strokeWidth="4" /><text x="15" y="156" fill="#fff" fontSize="17" transform="rotate(-90 15 156)">증상의 정도</text><text x="640" y="176" fill="#755d51" fontSize="18">체력, 면역력, 혈액순환, 대사 상승</text><text x="738" y="402" fill="#50c2b6" fontSize="17">체중</text><text x="638" y="423" fill="#5f9ad7" fontSize="16">부종, 순환장애, 무기력 감 등</text><text x="430" y="454" fill="#d43d7a" fontSize="16">복부 팽만감, 가스 등의 소화기 불편감</text><text x="285" y="515" fill="#fff" fontSize="17">1개월</text><text x="560" y="515" fill="#fff" fontSize="17">2개월</text><text x="835" y="515" fill="#fff" fontSize="16">시간</text></svg></div>
         </section>
 
         <section className="pp-plus-diet">
           <Image src="/images/postpartum/PP_10.png" alt="산후 다이어트를 준비하는 여성" fill sizes="1000px" unoptimized />
-          <div><p>진한의원 플러스 마이너스 산후다이어트는<br />일반적인 다이어트와는 접근 방식이 <strong>다릅니다.</strong></p><span>일반적인 다이어트는 식욕조절과 체지방 분해 등<br />과잉된 지방을 감량하는 것이 목적입니다.<br /><b>하지만 산후 비만의 경우는<br /><Emphasis>출산 후 떨어진 기력을 회복하는 치료(+)와<br />임신중 축적된 지방을 감량하는 다이어트(-)가<br />병행되어야 하는 체계적인 관리가 필요합니다.</Emphasis></b></span></div>
+          <div><p>진한의원 <strong>플러스 마이너스 산후다이어트</strong>는<br />일반적인 다이어트와는 <u>접근 방식이 <b>다릅니다.</b></u></p><span>일반적인 다이어트는 식욕조절과 체지방 분해 등<br />과잉된 지방을 감량하는 것이 목적입니다.<br /><b>하지만 산후 비만의 경우는<br /><Emphasis>출산 후 떨어진 기력을 회복하는 치료(+)와<br />임신중 축적된 지방을 감량하는 다이어트(-)가<br />병행되어야 하는 체계적인 관리가 필요합니다.</Emphasis></b></span></div>
         </section>
 
         <section className="pp-golden-time">
@@ -139,21 +159,26 @@ export default function PostpartumDietPage() {
         <section className="pp-results">
           <p className="pp-results-kicker">진한의원 산후 비만 다이어트</p>
           <SectionTitle>산후 비만 치료사례</SectionTitle>
-          <div className="pp-case-header"><b>환자 CASE1</b><p><strong>30대 여성</strong> | 만삭 166cm / 75kg<br /><span>산후다이어트 시작 64kg&nbsp; › &nbsp;산후다이어트한약 4개월 복용 뒤 55.8kg&nbsp; › &nbsp;현재 계속 유지 중</span></p></div>
-          <div className="pp-records">{records.map((record, index) => <div key={record}><Image src={`/images/postpartum/${record}`} alt={`산후 다이어트 체성분 변화 ${index + 1}`} width={930} height={409} loading="eager" unoptimized />{index === 2 && <div className="pp-case-header pp-case-header--second"><b>환자 CASE2</b><p><strong>20대 여성</strong> | 만삭 165cm / 69kg<br /><span>산후다이어트 시작 61.5kg&nbsp; › &nbsp;산후다이어트한약 3개월 복용 뒤 48.9kg&nbsp; › &nbsp;현재 계속 유지 중</span></p></div>}</div>)}</div>
+          <div className="pp-case-list">{caseStudies.map((caseStudy) => <article className="pp-case" key={caseStudy.caseLabel}>
+            <header className="pp-case-header"><b>{caseStudy.caseLabel}</b><p>{caseStudy.profile}</p><div className="pp-case-summary">{caseStudy.summary.map((item, index) => <span key={item}>{item}{index < caseStudy.summary.length - 1 && <i aria-hidden="true">›</i>}</span>)}</div></header>
+            <div className="pp-case-stages">{caseStudy.stages.map((stage, index) => <div className="pp-case-stage-wrap" key={stage.image}>
+              <div className="pp-case-stage"><p><span>{stage.label}</span>{stage.weight && <strong>{stage.weight}</strong>}{stage.date && <small>{stage.date}</small>}</p><Image src={`/images/postpartum/${stage.image}`} alt={`${caseStudy.caseLabel} ${stage.label}`} width={930} height={409} loading="eager" unoptimized /></div>
+              {index < caseStudy.stages.length - 1 && <i className="pp-down-arrow" aria-hidden="true">↓</i>}
+            </div>)}</div>
+          </article>)}</div>
         </section>
 
-        <section className="pp-treatment-goals"><SectionTitle>산후다이어트의 치료목표</SectionTitle><div>{[['PP_17.png', '01', '오로 및 산후 부종제거'], ['PP_18.png', '02', '근육, 뼈, 관절, 인대를 강화해서 산후풍의 예방과 치료'], ['PP_19.png', '03', '골반 내 장기의 회복 촉진과 임신 전 체형과 호르몬의 회복']].map(([image, number, text]) => <article key={number}><div><Image src={`/images/postpartum/${image}`} alt={text} width={240} height={240} unoptimized /><b>{number}</b></div><p>{text}</p></article>)}</div></section>
+        <section className="pp-treatment-goals"><SectionTitle>산후다이어트의 치료목표</SectionTitle><div>{[['PP_17.png', '01', '오로 및 산후 부종제거'], ['PP_18.png', '02', '근육, 뼈, 관절, 인대를 강화해서 산후풍의 예방과 치료'], ['PP_19.png', '03', '골반 내 장기의 회복 촉진과 임신 전 체형과 호르몬의 회복']].map(([image, number, text]) => <article key={number}><div><Image src={`/images/postpartum/${image}`} alt={text} width={240} height={240} unoptimized /><b aria-hidden="true">{number}</b></div><p>{text}</p></article>)}</div></section>
 
-        <section className="pp-mechanism"><SectionTitle>산후다이어트한약의 약리기전</SectionTitle><div className="pp-mechanism-map"><div className="pp-body"><span>산후<br />회복</span></div>{mechanism.map(([title, text, tone], index) => <article className={`pp-mechanism-callout pp-mechanism-callout--${tone} pp-mechanism-callout--${index + 1}`} key={title}><b>{title}</b><p>{text}</p></article>)}</div></section>
+        <section className="pp-mechanism"><SectionTitle>산후다이어트한약의 <strong>약리기전</strong></SectionTitle><figure className="pp-mechanism-figure"><Image src="/images/postpartum/PP_26.png" alt="산후다이어트한약의 약리기전" width={992} height={768} unoptimized /><figcaption>{mechanismText.map(([title, text, position]) => <p className={`pp-mechanism-text pp-mechanism-text--${position}`} key={title}><b>{title}</b> {text}</p>)}</figcaption></figure></section>
 
-        <section className="pp-treatment"><SectionTitle light>산후다이어트 치료</SectionTitle><div>{[['PP_20.png', '산후조리한약', '오로배출과 부종 감소 및 체력을 증가시켜 신체 기능의 정상화 촉진하고 신진대사를 활발히 하여 산후 다이어트를 할 수 있는 밑거름이 됩니다.'], ['PP_21.png', '슬림삼총사와 슬림탕', '식욕조절 및 체지방 감소와 더불어 기혈을 보하는 효과']].map(([image, title, text]) => <article key={title}><Image src={`/images/postpartum/${image}`} alt={title} width={406} height={302} unoptimized /><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+        <section className="pp-treatment"><SectionTitle light>산후다이어트 치료</SectionTitle><div>{[['PP_20.png', '산후조리한약', '오로배출과 부종 감소 및 체력을 증가시켜 신체 기능의 정상화 촉진하고 신진대사를 활발히 하여 산후 다이어트를 할 수 있는 밑거름이 됩니다.'], ['PP_21.png', '슬림삼총사와 슬림탕', '식욕조절 및 체지방 감소와 더불어 기혈을 보하는 효과']].map(([image, title, text]) => <article key={title}><div className="pp-treatment-visual"><Image src={`/images/postpartum/${image}`} alt={title} width={406} height={302} unoptimized /><h3>{title}</h3></div><p>{text}</p></article>)}</div></section>
 
-        <section className="pp-research"><SectionTitle>논문으로 증명된 한의학 치료 효과</SectionTitle><div>{researchStudies.map(({ image, title, citation, description }) => <article key={image}><Image src={`/images/postpartum/${image}`} alt="한의학 연구 논문" width={120} height={162} unoptimized /><p><b><Emphasis>{title}</Emphasis></b><span className="pp-research-citation">{citation}</span><span className="pp-research-description">{description}</span></p></article>)}</div></section>
+        <section className="pp-research"><SectionTitle>논문으로 증명된 <strong>한의학 치료 효과</strong></SectionTitle><div>{researchStudies.map(({ image, title, citation, description }) => <article key={image}><div className="pp-research-paper"><Image src={`/images/postpartum/${image}`} alt="한의학 연구 논문" width={120} height={162} unoptimized /></div><p><b><Emphasis>{title}</Emphasis></b><span className="pp-research-citation">{citation}</span><span className="pp-research-description">{description}</span></p></article>)}</div></section>
 
-        <section className="pp-qa"><h2><b>Q</b> 모유 수유 중 다이어트 약 복용이 안전한가요?</h2><div><b>A</b><p><strong>모유 수유 중에 엄마가 섭취한 약물 성분이 모유로 극소량이지만 나갈 수 있으므로<br />모유수유 중에는 <Emphasis>아기에게 전혀 해가 되지 않는 한약재만 쓰게 됩니다.</Emphasis></strong><br /><br />하지만, 모유수유 중에 복용할 수 있는 한약재와 모유수유를 중단한 이후의 한약재는 다소 차이가 있으며 출산 후<br /><Emphasis>다이어트는 되도록 출산 후 100일은 지나서 하시는 것을 권장드리며 그 이전에는 다이어트보다 산후조리가 더 우선적이며 제대로 산후조리를 하는 것이 산후 다이어트의 밑거름이 됩니다.</Emphasis></p></div></section>
+        <section className="pp-qa"><h2><b>Q</b> 모유 수유 중 <strong>다이어트 약 복용이 안전</strong>한가요?</h2><div><b>A</b><p><strong>모유 수유 중에 엄마가 섭취한 약물 성분이 모유로 극소량이지만 나갈 수 있으므로<br />모유수유 중에는 <Emphasis>아기에게 전혀 해가 되지 않는 한약재만 쓰게 됩니다.</Emphasis></strong><br /><br />하지만, 모유수유 중에 복용할 수 있는 한약재와 모유수유를 중단한 이후의 한약재는 다소 차이가 있으며 출산 후<br /><Emphasis>다이어트는 되도록 출산 후 100일은 지나서 하시는 것을 권장드리며 그 이전에는 다이어트보다 산후조리가 더 우선적이며 제대로 산후조리를 하는 것이 산후 다이어트의 밑거름이 됩니다.</Emphasis></p></div></section>
 
-        <section className="pp-prevention"><div className="pp-prevention-photo"><Image src="/images/postpartum/PP_25.png" alt="아기 신발을 든 임신부" fill sizes="480px" unoptimized /></div><div><SectionTitle>출산 후 비만을 예방하기 위한 생활 수칙</SectionTitle><h3>살이 찌기는 쉬워도 살을 빼기는 어렵기 때문에 무엇보다 <strong>살이 지나치게 찌지 않도록 예방하는 것이 제일 좋습니다.</strong></h3><p><Emphasis>산후비만을 예방하는 방법을 크게 임신 전, 임신 중, 출산 후 시기로 분류</Emphasis>하여 말씀드리면 임신시 표준체중에서 시작, 임신기간 중에도 적절한 체중 증가와, 출산 후 적극적인 모유수유와 정시정량 올바른 식사, 적절한 신체활동을 통한 자연스러운 체중감소로 나눌 수 있습니다.</p></div></section>
+        <section className="pp-prevention"><SectionTitle>출산 후 비만을 <strong>예방하기 위한 생활수칙</strong></SectionTitle><div className="pp-prevention-body"><div className="pp-prevention-photo"><Image src="/images/postpartum/PP_25.png" alt="아기 신발을 든 임신부" fill sizes="480px" unoptimized /></div><div><h3>살이 찌기는 쉬워도 살을 빼기는 어렵기 때문에 무엇보다 <strong>살이 지나치게 찌지 않도록 예방하는 것이 제일 좋습니다.</strong></h3><p><Emphasis>산후비만을 예방하는 방법을 크게 임신 전, 임신 중, 출산 후 시기로 분류</Emphasis>하여 말씀드리면 임신시 표준체중에서 시작, 임신기간 중에도 적절한 체중 증가와, 출산 후 적극적인 모유수유와 정시정량 올바른 식사, 적절한 신체활동을 통한 자연스러운 체중감소로 나눌 수 있습니다.</p></div></div></section>
 
         <section className="pp-rules">{lifestyleRules.map(([number, text]) => <article key={number}><b>{number}</b><p>{text}</p></article>)}</section>
       </article>
@@ -165,6 +190,32 @@ export default function PostpartumDietPage() {
       `}</style>
       <style>{`.pp-benefit-copy li:before{display:none}.pp-benefit-copy li b{width:48px;flex:none;color:#d17479;text-align:center;font-family:Georgia,serif;font-size:18px;font-style:italic;font-weight:400}.pp-stat-photo{display:block;height:420px;background:#e9eaec}.pp-stat-photo>img{z-index:0;object-fit:cover;object-position:center}.pp-stat-photo .pp-stat-copy{width:100%;box-sizing:border-box;padding:86px 80px 0;text-align:center}.pp-stat-photo .pp-stat-figure{display:none}@media(max-width:680px){.pp-stat-photo{height:345px}.pp-stat-photo .pp-stat-copy{width:100%;padding:40px 22px 0;background:linear-gradient(90deg,rgba(255,255,255,.88),rgba(255,255,255,.18))}.pp-stat-photo .pp-stat-copy>p{font-size:18px}.pp-stat-photo .pp-stat-copy small{font-size:12px}}`}</style>
       <style>{`.pp-effect-grid p{white-space:pre-line}.pp-golden-time>.pp-golden-detail{margin:-28px 0 53px;font-size:13px;line-height:1.78}.pp-results-kicker{margin:0 0 2px;color:#454545;text-align:center;font-size:15px;letter-spacing:6px}.pp-results .pp-section-title{margin-bottom:49px}.pp-treatment-goals p{min-height:42px;line-height:1.55}.pp-mechanism-callout--6{top:170px;left:0}.pp-mechanism-callout--pink b{background:#dd4d88}.pp-research-citation,.pp-research-description{display:block}.pp-research-citation{margin-top:5px;color:#555;font-size:12px}.pp-research-description{margin-top:14px}.pp-qa>div p strong{font-size:15px;line-height:1.75}.pp-prevention h3{margin:0 0 20px;color:#555;font-size:22px;font-weight:400;line-height:1.5;letter-spacing:-1.5px}.pp-prevention h3 strong{font-weight:700}.pp-rules p{word-break:keep-all}@media(max-width:680px){.pp-golden-time>.pp-golden-detail{margin:-18px 0 38px}.pp-results-kicker{font-size:12px;letter-spacing:3px}.pp-prevention h3{font-size:18px}}`}</style>
+      <style>{`
+        .pp-title h1{font-weight:700}
+        .pp-hero-copy h2{width:250px;font-weight:700}.pp-hero-copy h2 em{display:block}.pp-hero-copy h2>span{display:block;width:100%;margin-top:2px;padding-right:0;color:#fff;text-align:right;font-size:inherit;font-weight:700;letter-spacing:9px;line-height:1.05}.pp-hero-copy .pp-hero-description{display:block;margin:20px 0 0;color:#ddd5d1;font-size:14px;line-height:1.65;letter-spacing:-.65px}
+        .pp-section-title{font-size:38px;letter-spacing:-3px}.pp-definition>.pp-section-title{font-size:48px}.pp-definition>p{font-size:18px;line-height:1.7}.pp-definition .pp-definition-lead{font-size:20px;line-height:1.55}.pp-definition-bottom{font-size:18px!important;line-height:1.75!important}.pp-definition-bottom strong{font-size:20px}.pp-stat-photo{isolation:isolate}.pp-stat-photo:before{position:absolute;inset:0;z-index:1;background:rgba(255,255,255,.61);content:''}.pp-stat-photo>img{z-index:0}.pp-stat-photo .pp-stat-copy{position:relative;z-index:2;padding:76px 94px 0}.pp-stat-copy>p{font-family:'Times New Roman','Batang',serif;font-size:30px;line-height:1.35}.pp-stat-copy small{font-size:18px;line-height:1.7}.pp-weight-heading h3{font-size:38px;font-weight:600;line-height:1.22}.pp-weight-tables .pp-pink th,.pp-weight-tables .pp-pink td{background:#f7e6e8}.pp-weight-tables caption{font-size:18px}.pp-weight-tables th,.pp-weight-tables td{height:47px;font-size:18px}.pp-weight-tables td{font-size:24px}.pp-causes .pp-section-title,.pp-effects .pp-section-title,.pp-treatment-goals .pp-section-title,.pp-mechanism .pp-section-title,.pp-treatment .pp-section-title,.pp-research .pp-section-title{font-size:38px}.pp-cause-list{min-height:390px;gap:16px}.pp-cause-list p{min-height:72px;font-size:18px;line-height:1.35}.pp-cause-list i,.pp-cause-list--right i{order:initial;margin:0 18px;width:53px;flex:none;font-size:28px}.pp-cause-details article{min-height:290px;padding:30px 32px}.pp-cause-details article b{margin-bottom:14px;font-size:40px}.pp-cause-details article p{font-size:18px;line-height:1.62;letter-spacing:-1.1px}.pp-cause-center{width:150px;height:150px;font-size:22px}.pp-effect-card{overflow:hidden;border-radius:12px}.pp-effect-grid img{border-radius:0}.pp-effect-grid h3{padding:14px 6px;font-size:20px;font-weight:700}.pp-effect-grid p{min-height:78px;margin:13px 0 0;font-size:18px;line-height:1.42}.pp-benefit-copy h2{font-size:38px;line-height:1.15}.pp-benefit-copy li{min-height:57px;font-size:18px}.pp-benefit-copy li b{font-size:22px}.pp-plus-diet>div{width:auto;padding:99px 68px 0}.pp-plus-diet p{margin-bottom:54px;font-family:'Times New Roman','Batang',serif;font-size:38px;line-height:1.45;letter-spacing:-2.8px}.pp-plus-diet p strong{font-weight:700}.pp-plus-diet p u{text-underline-offset:8px;text-decoration-thickness:1px}.pp-plus-diet p u b{font-weight:700}.pp-plus-diet span{font-size:18px;line-height:1.8}.pp-plus-diet span b{font-size:20px;line-height:1.75}.pp-golden-time .pp-section-title{font-size:38px;font-weight:600}.pp-golden-time>p,.pp-golden-time>.pp-golden-detail{margin-right:0;margin-left:0;font-size:18px;line-height:1.75;text-align:left}.pp-golden-time>.pp-golden-detail{margin-top:-24px}.pp-timeline{gap:24px}.pp-timeline article{width:250px;min-height:300px;padding:28px 22px 48px}.pp-timeline article b,.pp-timeline h4{font-size:30px;font-weight:700;line-height:1.25}.pp-timeline h4{margin:0 0 20px}.pp-timeline p{font-size:18px;line-height:1.55}.pp-timeline span{bottom:-19px;padding:8px 5px;font-size:20px;text-align:center}.pp-results .pp-section-title{font-size:38px;font-weight:700}.pp-results-kicker{font-size:17px}.pp-case{padding-top:44px}.pp-case+.pp-case{margin-top:70px;border-top:1px solid rgba(89,95,107,.24)}.pp-case-header{margin:0 0 26px;text-align:center}.pp-case-header>b,.pp-case-header p{display:block;margin:0;color:#454545;font-size:30px;line-height:1.25}.pp-case-header>b{color:#e96a72;font-weight:700}.pp-case-stage{text-align:left}.pp-case-stage p{display:flex;min-height:42px;margin:0 0 10px;align-items:baseline;gap:10px;color:#3f4145;font-size:20px;line-height:1.45}.pp-case-stage p span{font-weight:700}.pp-case-stage p strong{color:#595b5f;font-size:20px}.pp-case-stage p small{color:#666;font-size:18px}.pp-case-stage img{display:block;width:100%;height:auto}.pp-down-arrow{display:block;width:14px;height:14px;margin:20px auto 24px;border-right:3px solid #5f5654;border-bottom:3px solid #5f5654;transform:rotate(45deg)}.pp-treatment-goals b{opacity:0;pointer-events:none}.pp-treatment-goals p{min-height:56px;font-size:18px;line-height:1.55}.pp-mechanism{padding-bottom:84px}.pp-mechanism .pp-section-title{margin-bottom:52px}.pp-mechanism-figure{position:relative;margin:0}.pp-mechanism-figure>img{display:block;width:100%;height:auto}.pp-mechanism-figure figcaption{position:absolute;inset:0}.pp-mechanism-text{position:absolute;margin:0;color:transparent;font-size:10pt;line-height:1.5;letter-spacing:-.55px;user-select:text}.pp-mechanism-text::selection{background:rgba(72,107,190,.35);color:transparent}.pp-mechanism-text--spine{top:15%;left:2%;width:27%}.pp-mechanism-text--lymph{top:17%;left:66%;width:31%}.pp-mechanism-text--intestine{top:42%;left:1%;width:27%}.pp-mechanism-text--ovary{top:45%;left:66%;width:32%}.pp-mechanism-text--uterus{top:70%;left:66%;width:32%}.pp-mechanism-text--hands{top:86%;left:4%;width:23%}.pp-treatment{padding-top:82px}.pp-treatment .pp-section-title{font-size:38px}.pp-treatment article{overflow:visible;border-radius:0;background:transparent}.pp-treatment-visual{position:relative;overflow:visible;background:#fff}.pp-treatment-visual img{display:block;width:100%;height:auto}.pp-treatment h3{position:absolute;right:10px;bottom:-31px;left:10px;margin:0;padding:12px 10px;border-radius:35px;background:#e4636c;color:#fff;font-size:20px;font-weight:700;line-height:1.3}.pp-treatment p{margin:0;padding:56px 22px 10px;color:#fff;font-size:18px;line-height:1.58}.pp-research .pp-section-title{font-size:38px}.pp-research article{grid-template-columns:136px 1fr;gap:31px}.pp-research-paper{position:relative;display:flex;width:136px;height:136px;align-items:center;justify-content:center}.pp-research-paper:before{position:absolute;width:136px;height:136px;border-radius:50%;background:#705858;content:''}.pp-research-paper img{position:relative;z-index:1}.pp-research p{font-size:18px;line-height:1.58}.pp-research p b{font-size:20px}.pp-research-citation{font-size:18px}.pp-research-description{margin-top:12px}.pp-qa{background:#f7f1f2}.pp-qa h2{font-family:'Times New Roman','Batang',serif;font-size:26px;line-height:1.4}.pp-qa h2>b{font-size:42px;font-weight:700}.pp-qa h2>strong{font-weight:700}.pp-qa>div p{font-size:18px;line-height:1.72}.pp-qa>div p>strong{font-size:20px;line-height:1.7}.pp-prevention{display:block;min-height:0;padding:76px 0 0;background:#fff6f6}.pp-prevention .pp-section-title{margin:0 0 48px;text-align:center;font-size:38px;line-height:1.3}.pp-prevention-body{display:grid;grid-template-columns:478px 1fr;align-items:center}.pp-prevention-photo{height:320px}.pp-prevention-body>div:last-child{padding:0 45px}.pp-prevention h3{font-size:20px;line-height:1.55}.pp-prevention p{font-size:18px;line-height:1.7}.pp-rules article{min-height:132px;padding:22px 28px}.pp-rules p{font-size:18px;line-height:1.65}
+        @media(max-width:680px){.pp-title h1{font-size:29px}.pp-hero-copy h2{width:auto}.pp-hero-copy h2>span{padding-right:0}.pp-hero-copy .pp-hero-description{font-size:14px}.pp-section-title,.pp-definition>.pp-section-title,.pp-causes .pp-section-title,.pp-effects .pp-section-title,.pp-treatment-goals .pp-section-title,.pp-mechanism .pp-section-title,.pp-treatment .pp-section-title,.pp-research .pp-section-title,.pp-golden-time .pp-section-title,.pp-results .pp-section-title,.pp-prevention .pp-section-title{font-size:30px}.pp-definition>p,.pp-definition .pp-definition-lead,.pp-definition-bottom{font-size:16px!important}.pp-definition .pp-definition-lead,.pp-definition-bottom strong{font-size:18px}.pp-stat-photo .pp-stat-copy{padding:40px 25px 0}.pp-stat-copy>p{font-size:23px}.pp-stat-copy small{font-size:15px}.pp-weight-heading h3{font-size:30px}.pp-weight-tables th,.pp-weight-tables td{height:36px;font-size:13px}.pp-weight-tables td{font-size:17px}.pp-cause-list p,.pp-cause-details article p,.pp-effect-grid p,.pp-benefit-copy li,.pp-plus-diet span,.pp-golden-time>p,.pp-golden-time>.pp-golden-detail,.pp-timeline p,.pp-treatment-goals p,.pp-treatment p,.pp-research p,.pp-research-citation,.pp-qa>div p,.pp-prevention p,.pp-rules p{font-size:15px}.pp-cause-details article{min-height:0}.pp-cause-center{display:flex}.pp-effect-grid h3{font-size:15px}.pp-benefit-copy h2,.pp-plus-diet p{font-size:30px}.pp-plus-diet>div{padding:56px 25px 0}.pp-timeline article{width:100%;min-height:230px}.pp-timeline article b,.pp-timeline h4{font-size:24px}.pp-timeline span{font-size:17px}.pp-case-header>b,.pp-case-header p{font-size:24px}.pp-case-stage p,.pp-case-stage p strong{font-size:16px}.pp-case-stage p small{font-size:14px}.pp-research article{grid-template-columns:92px 1fr;gap:14px}.pp-research-paper{width:92px;height:92px}.pp-research-paper:before{width:92px;height:92px}.pp-research-paper img{width:64px}.pp-qa h2{font-size:21px}.pp-qa h2>b{font-size:34px}.pp-qa>div p>strong{font-size:17px}.pp-prevention-body{grid-template-columns:1fr}.pp-prevention-photo{height:280px}.pp-prevention-body>div:last-child{padding:42px 25px}.pp-prevention h3{font-size:18px}.pp-rules article{min-height:0}.pp-mechanism-text{font-size:7pt}}
+      `}</style>
+      <style>{`
+        @font-face{font-family:'TheFaceShopInkLipquid';src:local('THEFACESHOP InkLipquid'),local('THEFACESHOP Ink Lipquid'),local('더페이스샵 잉크립퀴드');font-display:swap}
+        .pp-hero-copy h2{width:280px;letter-spacing:4px}.pp-hero-copy h2 em,.pp-hero-copy h2>span{letter-spacing:4px;text-align:right}.pp-stat-photo:before{background:rgba(255,255,255,.44)}.pp-stat-copy>p{color:#3d3938}.pp-stat-copy small{color:#4e4847;font-weight:500}.pp-stat-copy i{color:#a8c914}
+        .pp-cause-list i,.pp-cause-list--right i{width:39px;margin-right:9px;margin-left:12px}.pp-cause-person img{transform:translateY(100px)}.pp-cause-person strong{position:absolute;top:50%;width:180px;margin:0;transform:translateY(-300px);color:#5e3b3a;font-family:'TheFaceShopInkLipquid','Nanum Pen Script','Malgun Gothic',cursive;font-size:28px;line-height:1.16;letter-spacing:-1.5px}.pp-cause-person strong span{display:block}.pp-cause-center{display:flex;flex-direction:column;gap:3px;white-space:nowrap}.pp-cause-center span,.pp-cause-center strong{display:block}.pp-cause-details .pp-highlight{padding-bottom:2px;background:linear-gradient(transparent 45%,#fff039 45%,#fff039 93%,transparent 93%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+        .pp-effect-grid h3{font-size:18px}.pp-effect-grid p{font-size:17px;line-height:1.45}.pp-effect-grid article:nth-child(2) p{line-height:1.5}
+        .pp-benefit-copy li{width:342px}.pp-benefit-copy li:nth-child(3){white-space:nowrap}.pp-benefits>img{align-self:end;object-fit:contain;object-position:right bottom}
+        .pp-results-kicker,.pp-results .pp-section-title{margin-left:0;text-align:left}.pp-results-kicker{font-size:13px;letter-spacing:3px}.pp-results .pp-section-title{margin-bottom:30px;font-size:27px}.pp-case{padding-top:26px}.pp-case+.pp-case{margin-top:48px}.pp-case-header{margin-bottom:18px;text-align:left}.pp-case-header>b{font-size:15px;line-height:1.4}.pp-case-header p{font-size:19px;line-height:1.35}.pp-case-stage p{min-height:0;margin-bottom:8px;gap:7px;font-size:15px;line-height:1.35}.pp-case-stage p strong{font-size:15px}.pp-case-stage p small{font-size:13px}.pp-down-arrow{width:11px;height:11px;margin:16px auto 20px;border-width:2px}
+        .pp-qa .pp-highlight{padding:0 2px 3px;background:linear-gradient(transparent 42%,#f7e537 42%,#f7e537 96%,transparent 96%);color:#533e3c;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+        .pp-prevention{padding-bottom:56px;background:#fff}.pp-rules{margin-top:52px}
+        @media(max-width:680px){.pp-hero-copy h2{width:100%;letter-spacing:2px}.pp-hero-copy h2 em,.pp-hero-copy h2>span{letter-spacing:2px}.pp-cause-person strong{font-size:24px}.pp-cause-list i,.pp-cause-list--right i{width:33px;margin-right:5px;margin-left:7px}.pp-effect-grid h3{font-size:16px}.pp-effect-grid p{min-height:0;font-size:14px}.pp-benefit-copy li{width:100%;white-space:normal!important}.pp-results-kicker{font-size:10px}.pp-results .pp-section-title{font-size:20px}.pp-case-header>b{font-size:13px}.pp-case-header p{font-size:16px}.pp-case-stage p,.pp-case-stage p strong{font-size:13px}.pp-case-stage p small{font-size:11px}.pp-prevention{padding-bottom:38px}.pp-rules{margin-top:38px}}
+      `}</style>
+      <style>{`
+        .pp-hero-copy h2{transform:translateX(-58px)}.pp-cause-person strong{transform:translateY(-230px)}
+        .pp-timeline article b{font-family:Arial,'Malgun Gothic',sans-serif;font-weight:700}
+        .pp-results-kicker,.pp-results .pp-section-title{text-align:center}.pp-results .pp-section-title{margin-bottom:42px;font-size:38px}.pp-results-kicker{font-size:15px;letter-spacing:5px}.pp-case{padding-top:0}.pp-case+.pp-case{margin-top:68px;border-top:0}.pp-case-header{margin-bottom:16px;text-align:left}.pp-case-header>b{font-size:18px}.pp-case-header p{font-size:24px;line-height:1.3}.pp-case-summary{display:flex;max-width:100%;margin-top:6px;padding:5px 8px;align-items:center;gap:7px;overflow:hidden;background:#fff;color:#333;font-size:17px;font-weight:600;line-height:1.35;letter-spacing:-1px;white-space:nowrap}.pp-case-summary span{display:inline-flex;align-items:center;flex:none}.pp-case-summary i{margin-left:7px;color:#ed646c;font-size:25px;font-style:normal;line-height:.7}.pp-case-stage p{min-height:0;margin:0;gap:7px;font-size:17px;line-height:1.45}.pp-case-stage p strong{font-size:18px}.pp-case-stage p small{font-size:14px}.pp-down-arrow{display:block;width:auto;height:auto;margin:9px auto;color:#777;border:0;font-family:Arial,sans-serif;font-size:23px;font-style:normal;line-height:1;transform:none}
+        .pp-treatment-visual{background:transparent}.pp-treatment-visual>img{transform:translateX(-20px)}
+        .pp-research-paper:before{transform:translateY(25px)}
+        .pp-qa .pp-highlight{padding:1px 2px;background:linear-gradient(transparent 2%,#f7e537 2%,#f7e537 98%,transparent 98%)}
+        @media(max-width:680px){.pp-hero-copy h2{transform:translateX(-58px)}.pp-results .pp-section-title{font-size:30px}.pp-results-kicker{font-size:12px}.pp-case-header>b{font-size:15px}.pp-case-header p{font-size:19px}.pp-case-summary{gap:4px;padding:4px 5px;font-size:12px;letter-spacing:-.9px}.pp-case-summary i{margin-left:4px;font-size:18px}.pp-case-stage p{font-size:14px}.pp-case-stage p strong{font-size:15px}.pp-case-stage p small{font-size:12px}}
+      `}</style>
     </main>
   );
 }

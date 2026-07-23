@@ -132,6 +132,10 @@ export default function ConstitutionDietPage() {
                 <div className="ring-label ring-label--left">체지방<br /><strong>표준이상</strong></div>
                 <div className="ring-center">체중 60kg<br /><b>표준</b></div>
                 <div className="ring-label ring-label--right"><b>근육량</b><br /><strong>표준이하</strong></div>
+                <i className="ring-marker ring-marker--one" aria-hidden="true" />
+                <i className="ring-marker ring-marker--two" aria-hidden="true" />
+                <i className="ring-marker ring-marker--three" aria-hidden="true" />
+                <i className="ring-marker ring-marker--four" aria-hidden="true" />
               </div>
               <p>조금만 먹어도 살이 찌는 체질<br /><strong>기초대사량 낮음</strong></p>
             </div>
@@ -141,6 +145,10 @@ export default function ConstitutionDietPage() {
                 <div className="ring-label ring-label--left">체지방<br /><strong>표준이하</strong></div>
                 <div className="ring-center">체중 60kg<br /><b>표준</b></div>
                 <div className="ring-label ring-label--right"><b>근육량</b><br /><strong>표준이상</strong></div>
+                <i className="ring-marker ring-marker--one" aria-hidden="true" />
+                <i className="ring-marker ring-marker--two" aria-hidden="true" />
+                <i className="ring-marker ring-marker--three" aria-hidden="true" />
+                <i className="ring-marker ring-marker--four" aria-hidden="true" />
               </div>
               <p>근육량이 많고 체지방이 적은 체형<br /><strong>기초대사량 높음</strong></p>
             </div>
@@ -219,6 +227,18 @@ export default function ConstitutionDietPage() {
 
         <section className="diet-tip" aria-label="다이어트 프로그램 팁">
           <Image src="/images/che-diet/diet_tip_bg.jpg" alt="다이어트 프로그램 팁" width={1000} height={541} loading="eager" unoptimized />
+          <div className="diet-tip-seo" aria-label="다이어트 프로그램 팁">
+            <h2>DIET PROGRAM TIP!</h2>
+            <ol>
+              <li><h3>FOOD. 음식</h3><p><b>식욕조절</b><span>슬림환</span><span>진SS시럽</span></p></li>
+              <li><h3>EAT. 섭취</h3><p><b>체지방분해</b><span>슬림환</span><span>진SS시럽</span><b>탄수화물의 지방화 전환 방지</b><span>칼로리컷다운</span></p></li>
+              <li><h3>FAT. 체지방</h3></li>
+              <li><h3>SLIM. 배출/해독</h3><p><b>숙변배출, 장해독</b><span>장해독</span><span>숙변환</span><b>독소배출, 간해독</b><span>해독프로그램</span></p></li>
+            </ol>
+          </div>
+        </section>
+        <section className="constitution-footer-cta" aria-label="진한의원 비만 홈페이지 안내">
+          <Image src="/images/mid-age/MID_29.jpg" alt="진한의원 비만 홈페이지에서 확인" width={1000} height={500} loading="eager" unoptimized />
         </section>
       </article>
 
@@ -234,7 +254,6 @@ export default function ConstitutionDietPage() {
           width: min(100%, 1000px);
           margin: 0 auto;
           background: #fff;
-          box-shadow: 0 0 20px rgba(62, 42, 26, 0.035);
         }
         .page-heading {
           height: 68px;
@@ -308,10 +327,8 @@ export default function ConstitutionDietPage() {
         }
         .constitution-map img { width: 100%; height: auto; }
         .metabolism-grid {
-          position: absolute;
-          right: 58px;
-          bottom: 63px;
-          left: 58px;
+          position: relative;
+          margin: 64px -9px 0;
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 11px;
@@ -436,6 +453,74 @@ export default function ConstitutionDietPage() {
           .diet-tip { overflow-x: auto; }
           .diet-tip img { width: 1000px; max-width: none; transform-origin: left top; }
         }
+      `}</style>
+      <style>{`
+        .page-heading h1{font-family:Georgia,'Batang',serif;font-weight:700}
+
+        .constitution-hero{height:366px;grid-template-columns:639px 361px;margin-top:10px}
+        .hero-copy{padding:55px 0 0 32px;background:#4a352d}
+        .hero-kicker{margin:0 0 10px;color:#b9aaa4;font-size:15px;letter-spacing:-1px}
+        .hero-copy h2{font-size:52px;font-weight:400;line-height:1.15;letter-spacing:4px}
+        .hero-note{margin-top:20px;color:#ddd5d1;font-size:14px;line-height:1.65;letter-spacing:-.65px}
+
+        .constitution-intro{background:#fbf8f8}
+        .intro-copy h2{font-family:Georgia,'Batang',serif;font-size:48px;font-weight:400;letter-spacing:-4px}
+        .intro-copy p{font-family:Arial,'Malgun Gothic',sans-serif;font-size:18px;line-height:1.78;letter-spacing:-1.3px}
+        .constitution-map{top:0;right:0;width:100%;opacity:1;pointer-events:none}
+
+        .metabolism-card{display:grid;grid-template-rows:50px 333px auto;align-items:start}
+        .metabolism-card h3{display:flex;height:50px;box-sizing:border-box;margin:0;padding:0 8px;align-items:center;justify-content:center;background:repeating-linear-gradient(-45deg,#b49b89 0,#b49b89 2px,#ad927f 2px,#ad927f 4px);color:#fff;font-family:Georgia,'Batang',serif;font-size:18px;font-weight:600}
+        .metabolism-ring{width:290px;height:290px;margin:22px auto 21px;border:0;background:transparent}
+        .metabolism-ring::before{inset:9px;z-index:0;box-shadow:0 0 0 3px #fbf8f8}
+        .metabolism-ring--low::before{background:conic-gradient(from 30deg,#fbf8f8 0 1.7%,#754844 1.7% 33%,#fbf8f8 33% 34.7%,#d9d9d9 34.7% 98.3%,#fbf8f8 98.3% 100%)}
+        .metabolism-ring--high::before{background:conic-gradient(from 30deg,#fbf8f8 0 1.7%,#754844 1.7% 61%,#fbf8f8 61% 62.7%,#d9d9d9 62.7% 98.3%,#fbf8f8 98.3% 100%)}
+        .metabolism-ring::after{inset:92px;z-index:1;background:#fbf8f8}
+        .ring-center{z-index:2;top:116px;font-family:Arial,'Malgun Gothic',sans-serif;font-size:15px;line-height:1.65}
+        .ring-label{z-index:2;top:122px;font-family:Arial,'Malgun Gothic',sans-serif;font-size:15px;line-height:1.55}
+        .ring-label--left{left:42px}.ring-label--right{right:32px}
+        .ring-marker{position:absolute;z-index:3;display:block;width:11px;height:11px;border-radius:50%;background:#754844}
+        .metabolism-ring--high .ring-marker{background:#888}
+        .metabolism-ring--low .ring-marker--one{top:5px;left:91px}.metabolism-ring--low .ring-marker--two{top:12px;right:47px}.metabolism-ring--low .ring-marker--three{right:49px;bottom:8px}.metabolism-ring--low .ring-marker--four{bottom:23px;left:28px}
+        .metabolism-ring--high .ring-marker--one{top:5px;left:91px}.metabolism-ring--high .ring-marker--two{top:12px;right:47px}.metabolism-ring--high .ring-marker--three{right:49px;bottom:8px}.metabolism-ring--high .ring-marker--four{bottom:23px;left:28px}
+        .ring-marker--one::before{position:absolute;top:-5px;left:-91px;box-sizing:border-box;width:288px;height:288px;border:3px solid currentColor;border-radius:50%;color:#754844;content:'';transform:rotate(-13deg);-webkit-mask:conic-gradient(from 0deg,#000 0 112deg,transparent 112deg 160deg,#000 160deg 271deg,transparent 271deg);mask:conic-gradient(from 0deg,#000 0 112deg,transparent 112deg 160deg,#000 160deg 271deg,transparent 271deg)}
+        .metabolism-ring--high .ring-marker--one::before{color:#888;transform:rotate(31deg);-webkit-mask:conic-gradient(from 0deg,#000 0 104deg,transparent 104deg 154deg,#000 154deg 265deg,transparent 265deg);mask:conic-gradient(from 0deg,#000 0 104deg,transparent 104deg 154deg,#000 154deg 265deg,transparent 265deg)}
+        .metabolism-card>p{font-family:Arial,'Malgun Gothic',sans-serif;font-size:18px;font-weight:400;line-height:1.6}
+        .metabolism-card>p strong{font-size:19px}
+
+        .types-heading h2{font-size:38px;font-weight:700}
+        .type-inner{grid-template-columns:330px 1fr}.type-inner--reverse{grid-template-columns:1fr 330px}
+        .type-figure{min-height:464px}.type-figure img{height:440px}
+        .type-lead{font-family:'Batang',serif;font-size:20px;font-weight:400;line-height:1.65}
+        .type-description{font-family:Arial,'Malgun Gothic',sans-serif;font-size:18px;font-weight:400;line-height:1.78}
+
+        .program-section h2{display:table;width:fit-content;margin-right:auto;margin-left:auto;font-weight:700}
+        .program-section h2::after{width:100%;max-width:none}
+        .program-card h3{padding-bottom:9px;font-family:Arial,'Malgun Gothic',sans-serif;font-size:25px;font-weight:600;letter-spacing:-1.4px}
+        .program-card p{min-height:92px;font-family:Arial,'Malgun Gothic',sans-serif;font-size:18px;font-weight:400;line-height:1.6;letter-spacing:-1.1px}
+
+        .acupuncture-section h2{display:table;width:fit-content;margin-bottom:24px;font-weight:700}
+        .acupuncture-section h2::after{display:block;width:306px;height:5px;margin-top:8px;background:#67c7ce;content:''}
+        .acupuncture-intro{font-family:Arial,'Malgun Gothic',sans-serif;font-size:18px;line-height:1.65}
+        .ingredient-grid{gap:34px 42px}
+        .ingredient-grid>div{position:relative;min-height:86px;padding-left:76px}
+        .ingredient-grid>div::before{position:absolute;top:7px;left:12px;width:50px;height:50px;background:#e3eef0;content:'';transform:rotate(45deg)}
+        .ingredient-grid h3,.ingredient-grid p{position:relative;z-index:1;font-family:Arial,'Malgun Gothic',sans-serif}
+        .ingredient-grid h3{margin-bottom:7px;font-size:20px;font-weight:600}
+        .ingredient-grid p{font-size:18px;font-weight:400;line-height:1.55;letter-spacing:-1px}
+
+        .diet-tip{position:relative;overflow:hidden;line-height:0}.diet-tip>img{display:block;width:100%;height:auto}
+        .diet-tip-seo{position:absolute;inset:0;z-index:1;color:transparent;font-family:Arial,'Malgun Gothic',sans-serif;line-height:1.35;user-select:text}
+        .diet-tip-seo h2,.diet-tip-seo h3,.diet-tip-seo p{margin:0;color:transparent}.diet-tip-seo h2{position:absolute;top:1%;left:0;font-size:5.7vw;line-height:1}
+        .diet-tip-seo ol{margin:0;padding:0;list-style:none}.diet-tip-seo li{position:absolute;top:52%;width:21%;text-align:center}.diet-tip-seo li:nth-child(1){left:3%}.diet-tip-seo li:nth-child(2){left:27%}.diet-tip-seo li:nth-child(3){left:51%}.diet-tip-seo li:nth-child(4){left:75%}
+        .diet-tip-seo h3{font-size:20px}.diet-tip-seo p{margin-top:47px;font-size:17px;line-height:1.52}.diet-tip-seo b,.diet-tip-seo span{display:block;color:transparent}.diet-tip-seo b{margin-top:8px}.diet-tip-seo::selection,.diet-tip-seo *::selection{background:rgba(103,199,206,.45);color:transparent}
+        .constitution-footer-cta{line-height:0}.constitution-footer-cta img{display:block;width:100%;height:auto}
+
+        @media (max-width:1000px) and (min-width:721px){.constitution-hero{height:auto;grid-template-columns:63.9% 36.1%;aspect-ratio:2.73}.hero-copy{padding:12% 0 0 8.8%}.hero-kicker{font-size:1.5vw}.hero-copy h2{font-size:5.2vw;letter-spacing:.9vw}.hero-note{margin-top:5%;font-size:1.2vw}}
+        @media (max-width:720px){.constitution-hero{height:auto;grid-template-columns:1fr;aspect-ratio:auto}.hero-copy{min-height:250px;padding:35px 12% 38px}.hero-kicker{font-size:14px}.hero-copy h2{font-size:clamp(38px,11vw,52px);letter-spacing:4px}.hero-note{font-size:14px}.constitution-map{position:relative;top:auto;right:auto;width:130%;margin:-18px -15% 15px}.intro-copy h2{font-size:34px}.intro-copy p{font-size:15px}.metabolism-grid{margin:39px 0 0;grid-template-columns:1fr;gap:40px}.metabolism-card{grid-template-rows:50px 293px auto}.metabolism-ring{width:250px;height:250px}.metabolism-ring::after{inset:83px}.ring-center{top:99px;font-size:13px}.ring-label{top:105px;font-size:13px}.ring-label--left{left:33px}.ring-label--right{right:25px}.metabolism-ring--low .ring-marker--one,.metabolism-ring--high .ring-marker--one{top:3px;left:78px}.metabolism-ring--low .ring-marker--two,.metabolism-ring--high .ring-marker--two{top:10px;right:39px}.metabolism-ring--low .ring-marker--three,.metabolism-ring--high .ring-marker--three{right:41px;bottom:7px}.metabolism-ring--low .ring-marker--four,.metabolism-ring--high .ring-marker--four{bottom:18px;left:23px}.type-inner,.type-inner--reverse{display:flex;flex-direction:column}.type-figure{min-height:auto}.type-figure img{height:354px}.type-lead{font-size:18px}.type-description{font-size:15px}.program-section h2{font-size:32px}.program-card h3{font-size:23px}.program-card p{min-height:0;font-size:16px}.acupuncture-section h2::after{width:260px}.ingredient-grid>div{padding-left:63px}.ingredient-grid>div::before{left:8px;width:42px;height:42px}.ingredient-grid h3{font-size:18px}.ingredient-grid p{font-size:15px}.diet-tip-seo h2{font-size:5.7vw}.diet-tip-seo h3{font-size:2vw}.diet-tip-seo p{margin-top:9.4vw;font-size:1.7vw}.constitution-footer-cta{margin-top:0}}
+      `}</style>
+      <style>{`
+        .type-figure img[src="/images/che-diet/img03.png"]{height:475px}
+        @media (max-width:720px){.type-figure img[src="/images/che-diet/img03.png"]{height:383px}}
       `}</style>
     </div>
   );

@@ -52,19 +52,19 @@ const related = [
   ['PL_24.png', '정안침', '한방전통 침을 이용하여 얼굴부위에 분포하는 경락, 경혈, 경근, 경피를 자극하여, 피부 층의 기혈 순환을 촉진하고, 리프팅, 안면 부종, 혈색, 이중턱 등을 개선하여 어려고 화사한 얼굴로 바꿔주는 시술입니다.'],
 ];
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h2 className="lift-section-heading"><span />{children}<span /></h2>;
+function SectionHeading({ children, variant = '' }: { children: React.ReactNode; variant?: '' | 'lift-section-heading--slashes' | 'lift-section-heading--ornament' }) {
+  return <h2 className={`lift-section-heading ${variant}`}><span />{children}<span /></h2>;
 }
 
 export default function LiftingPage() {
   return (
     <main className="lift-page">
       <article className="lift-content">
-        <header className="lift-title"><b>眞</b><h1>매선</h1></header>
+        <header className="lift-title"><h1>매선</h1></header>
 
         <section className="lift-hero">
           <div className="lift-hero-doctor"><Image src="/images/lifting/PL_01.png" alt="해운대 진한의원 의료진" fill priority sizes="(max-width: 1000px) 66vw, 668px" unoptimized /></div>
-          <div className="lift-hero-copy"><p>자 연 스 럽 게 어 려 지 는</p><h2>다운에이징<br /><strong>한 방 매 선</strong></h2><div><b>탄력<br />UP</b><b>볼륨<br />UP</b><b>라인<br />UP</b></div></div>
+          <div className="lift-hero-copy"><p>자연스럽게 어려지는</p><h2>다운에이징<br /><strong>한방매선</strong></h2><div><b>탄력<br /><em>UP</em></b><b>볼륨<br /><em>UP</em></b><b>라인<br /><em>UP</em></b></div></div>
         </section>
 
         <section className="lift-intro">
@@ -73,23 +73,22 @@ export default function LiftingPage() {
         </section>
 
         {programmes.map((programme) => (
-          <section className="lift-programme" key={programme.title}>
-            <div className="lift-programme-hero"><Image src={`/images/lifting/${programme.image}`} alt={programme.title} fill sizes="1000px" unoptimized /><div><p>{programme.kicker}</p><h2>{programme.title}</h2>{programme.accent && <b>{programme.accent}</b>}<span>{programme.description}</span></div></div>
+          <section className={`lift-programme${programme.accent ? ' lift-programme--thorn' : ''}`} key={programme.title}>
+            <div className="lift-programme-hero"><Image src={`/images/lifting/${programme.image}`} alt={programme.title} fill sizes="1000px" unoptimized /><div><p>{programme.kicker}{programme.accent && <><br />{programme.title}</>}</p><h2>{programme.accent || programme.title}</h2><span>{programme.description}</span></div></div>
             <div className={`lift-technique-grid lift-technique-grid--${programme.cards.length}`}>{programme.cards.map(([image, title, text], index) => <article key={title}><header><i>{index + 1}</i><b>{title}</b></header><Image src={`/images/lifting/${image}`} alt={title} width={270} height={173} unoptimized /><p>{text}</p></article>)}</div>
           </section>
         ))}
 
         <section className="lift-solutions">
-          <SectionHeading>진한의원 부위별 맞춤 매선 솔루션</SectionHeading>
+          <SectionHeading variant="lift-section-heading--slashes">진한의원 부위별 맞춤 매선 솔루션</SectionHeading>
           <div className="lift-solution-grid">{solutions.map(([image, name, detail, price, discount, optionPrice]) => <article className={optionPrice ? 'lift-solution-card--dual-price' : undefined} key={name}><Image src={`/images/lifting/${image}`} alt={name} width={323} height={348} unoptimized /><div><h3>{name}<em>{discount}</em></h3><p>{detail}</p><b className={optionPrice ? 'lift-solution-price--primary' : undefined}><strong>{price}</strong>만원 부터~</b>{optionPrice && <b className="lift-solution-price--option"><strong>{optionPrice}</strong>만원 부터~</b>}</div></article>)}</div>
           <small>※ 한방성형의 경우 나이, 피부 처짐, 주름의 깊이에 따라 추가적인 시술이 더 들어 갈 수 있습니다.</small>
         </section>
 
         <section className="lift-three-up">
           <h2>피부 속 탄력을 채우는 <strong>3UP</strong> 전용매선 Point</h2>
-          <Image src="/images/lifting/PL_20.png" alt="매선 세대별 특징" width={760} height={265} unoptimized />
           <ol>
-            <li><b>1</b><div><h3>업그레이드된 피부 견인력으로 강력한 리프팅 효과</h3><p>진한의원의 3D파워매선은 기존에 사용되는 일차원적인 일반매선과 달리 강한 피부 견인력과 당김 효과가 있는 두 가닥 매선, 꼬임매선, 돌기매선 등 다양한 특수매선을 통해 피부 속 탄력의 힘을 목적으로 시키는 힘이 극대화된 시술 방법입니다.</p></div></li>
+            <li><b>1</b><div><h3>업그레이드된 피부 견인력으로 강력한 리프팅 효과</h3><p>진한의원의 3D파워매선은 기존에 사용되는 일차원적인 일반매선과 달리 강한 피부 견인력과 당김 효과가 있는 두 가닥 매선, 꼬임매선, 돌기매선 등 다양한 특수매선을 통해 피부 속 탄력의 힘을 목적으로 시키는 힘이 극대화된 시술 방법입니다.</p><Image src="/images/lifting/PL_20.png" alt="매선 세대별 특징" width={760} height={265} unoptimized /></div></li>
             <li><b>2</b><div><h3>내 얼굴에 꼭 맞는 맞춤형 매선</h3><p>환자의 과거 시술 내용 및 피부층의 두께, 탄력의 정도, 고민 부위, 시술의 목적에 따라 다양한 형태, 굵기, 길이의 매선을 효율적으로 사용하여 시술 효과와 만족도를 높입니다.</p></div></li>
             <li><b>3</b><div><h3>최상등급의 안전한 특수매선 사용</h3><p>진한의원의 매선침은 KFDA식약청에서 최고 안전 등급을 받은 가장 안전한 PDO (polydioxanone) 성분의 국내 자체 제작 매선만을 사용하여 안전하며 감염의 위험이 없습니다.</p></div></li>
             <li><b>4</b><div><h3>시술자의 섬세한 숙련도</h3><p>매선은 무조건 많은 실을 사용한다고 하여 좋은 효과를 기대할 수 있는 것이 아닙니다. 리프팅의 경우 개인에 따라 그 원인과 형태가 다르기 때문에 시술자의 숙련도에 따라 리프팅 효과와 유지기간이 결정된다 해도 과언이 아닙니다. 진한의원에서는 여성이 아름다움을 누구보다 잘 이해하는 여(女)원장의 다년간 숙련된 섬세한 매선 시술로 더욱 오래가고 아름다운 효과를 누리실 수 있습니다.</p></div></li>
@@ -102,7 +101,7 @@ export default function LiftingPage() {
         </section>
 
         <section className="lift-related">
-          <SectionHeading>함께하면 더욱 효과적인 시술</SectionHeading>
+          <SectionHeading variant="lift-section-heading--ornament">함께하면 더욱 효과적인 시술</SectionHeading>
           <div>{related.map(([image, title, text], index) => <article key={title}><h3><i>{index + 1}</i>{title}</h3><Image src={`/images/lifting/${image}`} alt={title} width={490} height={277} unoptimized /><p>{text}</p></article>)}</div>
         </section>
 
@@ -112,9 +111,9 @@ export default function LiftingPage() {
           ['PL_29.png', '팔자매선 Before', 'PL_30.png', '팔자매선 After'],
         ].map(([beforeImage, before, afterImage, after]) => <div className="lift-case-row" key={beforeImage}><article><b>{before}</b><Image src={`/images/lifting/${beforeImage}`} alt={before} width={426} height={265} unoptimized /></article><span>3개월 후<i>➜</i></span><article><b>{after}</b><Image src={`/images/lifting/${afterImage}`} alt={after} width={429} height={266} unoptimized /></article></div>)}</div><small>매선 시술은 출산, 붓기, 통증과 같은 부작용이 발생할 수 있으므로 상담 후 신중히 결정하시기 바랍니다.</small></section>
 
-        <section className="lift-miinsu"><Image src="/images/lifting/PL_31.jpg" alt="성형 수술, 레이저 시술 후 붓기에 미인수" fill sizes="1000px" unoptimized /><div><p>성형 후 붓기가 걱정되신다면?</p><h2>성형 수술, 레이저 시술 후 붓기에<br /><strong>미인수</strong></h2><ul><li>레이저 멍붓기 3일분(9포)<b>2만 7천원</b></li><li>눈 7일분(21포)<b>6만 3천원</b></li><li>코 10일분(30포)<b>9만원</b></li><li>코 14일분(42포)<b>12만 6천원</b></li><li>안면윤곽 및 가슴 1개월(90포)<b>27만원</b></li></ul></div><Image className="lift-miinsu-logo" src="/images/lifting/PL_35.png" alt="진한의원" width={707} height={62} unoptimized /></section>
+        <section className="lift-miinsu"><Image src="/images/lifting/PL_31.jpg" alt="성형 수술, 레이저 시술 후 붓기에 미인수" fill sizes="1000px" unoptimized /><div><p>성형 후 붓기가 걱정되신다면?</p><h2>성형 수술, 레이저 시술 후 붓기에<br /><strong>미인수</strong></h2><ul><li>레이저 멍붓기 3일분(9포)<b>2만 7천원</b></li><li>눈 7일분(21포)<b>6만 3천원</b></li><li>코 10일분(30포)<b>9만원</b></li><li>코 14일분(42포)<b>12만 6천원</b></li><li>안면윤곽 및 가슴 1개월(90포)<b>27만원</b></li></ul></div></section>
 
-        <section className="lift-quick"><h2>퀵 <strong>V라인 매선</strong></h2><p className="lift-quick-lead">진한의원의 놀라운 한개별 V라인 시술로 얼굴라인을 찾아드립니다.</p><div className="lift-quick-cards">{[['PL_32.png', '윤곽개선', '가볍게 처져있는\n얼굴 턱 라인'], ['PL_33.png', '산삼비만약침', '얼굴을 탄탄하게\n만들어준 이중턱'], ['PL_34.png', '사각턱약침', '각지고\n튀어나온 부위들']].map(([image, label, caption]) => <article key={label}><Image src={`/images/lifting/${image}`} alt={label} width={218} height={325} unoptimized /><span>{caption}</span><b>{label}</b></article>)}</div><p className="lift-quick-combo"><i>윤곽<br />매선</i><em>+</em><i>산삼<br />비만약침</i><em>+</em><i>사각턱<br />약침</i><strong>21<small>만원</small></strong></p><Image className="lift-quick-logo" src="/images/lifting/PL_35.png" alt="진한의원" width={707} height={62} unoptimized /></section>
+        <section className="lift-quick"><p className="lift-quick-kicker">QUICK<br />V LINE<br />LIFTING</p><h2>퀵 <strong>V라인 매선</strong></h2><p className="lift-quick-lead">진한의원의 놀라운 한개별 V라인 시술로 얼굴라인을 찾아드립니다.</p><div className="lift-quick-cards">{[['PL_32.png', '윤곽매선', '갸름해 지고싶은\n얼굴 턱 라인은'], ['PL_33.png', '산삼비만약침', '얼굴을 둔탁하게\n만들었던 이중턱은'], ['PL_34.png', '사각턱약침', '각지고\n튀어나온 부위는']].map(([image, label, caption]) => <article key={label}><Image src={`/images/lifting/${image}`} alt={label} width={218} height={325} unoptimized /><span>{caption}</span><b>{label}</b></article>)}</div><p className="lift-quick-combo"><i>윤곽<br />매선</i><em>+</em><i>산삼<br />비만약침</i><em>+</em><i>사각턱<br />약침</i><strong>21<small>만원</small></strong><small className="lift-quick-vat">*VAT별도</small></p><Image className="lift-quick-logo" src="/images/lifting/PL_35.png" alt="진한의원" width={707} height={62} unoptimized /></section>
       </article>
 
       <style>{`
@@ -137,6 +136,47 @@ export default function LiftingPage() {
       <style>{`
         .lift-solution-grid .lift-solution-card--dual-price>div{min-height:135px}.lift-solution-grid .lift-solution-price--primary{bottom:56px}.lift-solution-grid .lift-solution-price--option{bottom:14px}
         @media(max-width:680px){.lift-solution-grid .lift-solution-card--dual-price>div{min-height:106px}.lift-solution-grid .lift-solution-price--primary{bottom:39px}.lift-solution-grid .lift-solution-price--option{bottom:9px}}
+      `}</style>
+      <style>{`
+        .lift-title{border-bottom:0}.lift-title h1{margin-left:20px;font-weight:700}
+        .lift-hero-copy p{white-space:nowrap;letter-spacing:4px}.lift-hero-copy h2,.lift-hero-copy h2 strong{font-family:Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif}.lift-hero-copy b em{color:#fff1aa;font-size:14px;font-style:normal}
+
+        .lift-intro{border-bottom:1px solid #e5e5e5}.lift-intro + .lift-programme{padding-top:28px}.lift-intro p,.lift-intro p strong{color:#111}.lift-intro p{font-size:38px;line-height:1.25;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}.lift-intro h2{font-size:48px;font-weight:700}.lift-intro span{font-size:18px}
+
+        .lift-programme-hero>div{width:61%;padding:78px 0 0 76px}.lift-programme-hero>div:before{position:absolute;top:76px;left:48px;width:7px;height:112px;background:#1eb4ce;content:''}.lift-programme-hero p{margin:0;color:#59534f;font-size:25px;line-height:1.24;letter-spacing:-1.8px}.lift-programme-hero h2{margin:2px 0 0;color:#231f1c;font-size:38px;font-weight:700;letter-spacing:-3px}.lift-programme-hero span{margin-top:15px;color:#5e5b58;font-size:18px;line-height:1.62;letter-spacing:-1.15px}.lift-programme--thorn .lift-programme-hero h2{margin-top:2px}.lift-programme--thorn .lift-programme-hero p{line-height:1.2}
+
+        .lift-technique-grid,.lift-technique-grid--2,.lift-technique-grid--3{margin:0;padding:0;gap:0;border-top:4px solid #dc5c3f;border-bottom:4px solid #dc5c3f}.lift-technique-grid--2{grid-template-columns:repeat(2,1fr)}.lift-technique-grid--3{grid-template-columns:repeat(3,1fr)}.lift-technique-grid article{min-height:302px;border:0;border-right:1px solid #e8d9d3;background:#fff8f3}.lift-technique-grid article:last-child{border-right:0}.lift-technique-grid header{min-height:50px;box-sizing:border-box;padding:11px 0;justify-content:center;border-bottom:0;background:#ddcec8}.lift-technique-grid header i{width:21px;height:21px;background:#d94b2d;font-size:14px}.lift-technique-grid header b{font-size:18px}.lift-technique-grid article>img{width:auto;max-width:80%;height:160px;margin:28px auto 16px;object-fit:contain}.lift-technique-grid p{min-height:0;padding:0 40px 25px;color:#65605c;font-size:15px;line-height:1.58;letter-spacing:-1px}
+
+        .lift-section-heading{margin-bottom:42px;font-size:38px;font-weight:700;letter-spacing:-3.4px}.lift-section-heading--slashes span{height:18px;background:repeating-linear-gradient(106deg,#a2bd00 0 2px,transparent 2px 6px)}.lift-section-heading--slashes span:last-child{background:repeating-linear-gradient(74deg,#a2bd00 0 2px,transparent 2px 6px)}.lift-section-heading--ornament{position:relative;padding-top:22px}.lift-section-heading--ornament:before{position:absolute;top:-5px;left:50%;transform:translateX(-50%);color:#5d4b3a;content:'●  ●  ●  ●';font-size:13px;letter-spacing:7px}.lift-section-heading--ornament span{height:4px;background:#b5a67e}.lift-section-heading--ornament span:last-child{background:#b5a67e}
+
+        .lift-solution-grid article>div,.lift-solution-grid .lift-solution-card--dual-price>div{height:130px;min-height:130px;padding:0 15px 12px}.lift-solution-grid h3{min-height:45px}.lift-solution-grid p{padding-right:98px;font-size:10px}.lift-solution-grid article>div:after{position:absolute;right:85px;bottom:20px;color:#fff;content:'➜';font-size:20px;line-height:1}.lift-solution-grid .lift-solution-price--primary{bottom:56px}.lift-solution-grid .lift-solution-price--option{bottom:14px}.lift-solutions>small{font-size:13px;text-align:left}
+
+        .lift-three-up{padding-top:66px}.lift-three-up h2{position:relative;display:table;margin:0 auto 34px;padding:8px 25px;border-radius:28px;background:#6b5139;color:#fff;font-size:38px;font-weight:700;line-height:1.1}.lift-three-up h2:before,.lift-three-up h2:after{position:absolute;top:50%;width:160px;border-top:2px dashed #8d7156;content:''}.lift-three-up h2:before{right:100%}.lift-three-up h2:after{left:100%}.lift-three-up h2 strong{color:#f8d45c}.lift-three-up ol{gap:27px}.lift-three-up li{grid-template-columns:30px 1fr;gap:5px}.lift-three-up li>b{width:25px;height:25px;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;font-size:16px;font-weight:700}.lift-three-up h3{margin:0 0 7px;font-size:25px;font-weight:600;letter-spacing:-2px}.lift-three-up p{font-size:18px;line-height:1.58;letter-spacing:-1.1px}.lift-three-up li:first-child img{display:block;width:100%;height:auto;margin-top:22px}
+
+        .lift-advantages h2{font-size:38px}.lift-advantages>div{display:flex;justify-content:center}.lift-advantages article{width:235px;min-height:230px;margin-left:-18px;padding:30px 18px 23px;flex:0 0 235px}.lift-advantages article:first-child{margin-left:0}.lift-advantages b{font-size:25px;font-weight:600}.lift-advantages b::first-letter{color:#fff0a4}.lift-advantages p{color:#111;font-size:16px;line-height:1.55}
+
+        .lift-related h3{font-size:25px;font-weight:600}.lift-related h3 i{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;font-size:15px;font-style:normal;font-weight:700}.lift-related p{font-size:18px;line-height:1.58;letter-spacing:-1.1px}
+
+        .lift-cases .lift-section-heading{font-size:38px}.lift-case-row article>b{font-size:20px}.lift-cases>small{font-size:12px;font-weight:500}
+
+        .lift-miinsu{background:transparent}.lift-miinsu>img:first-child{object-fit:contain;object-position:center}.lift-miinsu p{margin-bottom:20px;line-height:.95}.lift-miinsu h2{line-height:1}.lift-miinsu h2 strong{margin-top:25px;line-height:.9}
+
+        .lift-quick{padding-top:125px}.lift-quick:after{display:none}.lift-quick-kicker{position:absolute;z-index:2;top:0;left:50%;display:flex;width:86px;height:78px;margin:0;align-items:center;justify-content:center;border:3px solid #ed8da6;border-radius:48%;box-sizing:border-box;background:#fff;color:#ed8da6;font-family:Arial,'Malgun Gothic',sans-serif;font-size:14px;font-weight:700;line-height:17px;letter-spacing:0;transform:translateX(-50%)}.lift-quick h2{font-family:'Times New Roman','Batang',serif;font-size:55px!important;font-weight:700;letter-spacing:-6px}.lift-quick h2 strong{font-family:'Times New Roman','Batang',serif;font-size:48px;font-weight:700}.lift-quick-cards article span{bottom:55px}.lift-quick-cards article b{font-family:'Batang','Malgun Gothic',serif;font-size:30px;line-height:1.1}.lift-quick-combo{position:relative}.lift-quick-combo i{background:#8fd0dc;font-family:'Batang','Malgun Gothic',serif;font-size:30px;font-weight:700}.lift-quick-combo strong{position:relative;box-sizing:border-box;border:4px solid #fff;background:#3e2d2d;clip-path:polygon(50% 0%,60% 4%,70% 1%,79% 8%,88% 9%,93% 18%,100% 27%,96% 37%,100% 47%,96% 57%,100% 67%,92% 77%,87% 88%,78% 92%,68% 100%,58% 96%,48% 100%,38% 96%,28% 100%,19% 92%,10% 88%,6% 78%,0 69%,4% 59%,0 49%,4% 39%,0 29%,8% 20%,12% 10%,23% 7%,32% 0%,42% 4%)}.lift-quick-vat{position:absolute;right:18px;bottom:17px;color:#fff;font-size:16px;font-weight:500}.lift-quick-logo{width:707px!important;max-width:100%;margin-top:0!important}
+
+        @media(max-width:680px){
+          .lift-title h1{margin-left:0}.lift-intro p{font-size:27px}.lift-intro h2{font-size:38px}.lift-intro span{font-size:16px}
+          .lift-programme-hero>div{width:100%;padding:48px 28px}.lift-programme-hero>div:before{top:47px;left:17px;height:108px}.lift-programme-hero p{font-size:20px}.lift-programme-hero h2{font-size:30px}.lift-programme-hero span{font-size:16px}
+          .lift-technique-grid--2,.lift-technique-grid--3{grid-template-columns:1fr}.lift-technique-grid article{min-height:0;border-right:0;border-bottom:1px solid #e8d9d3}.lift-technique-grid article:last-child{border-bottom:0}.lift-technique-grid p{font-size:14px}
+          .lift-section-heading{font-size:29px}.lift-section-heading--slashes span{height:12px}.lift-section-heading--ornament{padding-top:17px}.lift-section-heading--ornament:before{font-size:9px}.lift-three-up h2{font-size:24px}.lift-three-up h2:before,.lift-three-up h2:after{width:34px}.lift-three-up h3{font-size:21px}.lift-three-up p{font-size:16px}
+          .lift-advantages article{width:47%;min-height:180px;margin:-7px 0 0 -7px;flex-basis:47%}.lift-advantages b{font-size:20px}.lift-advantages p{font-size:14px}.lift-related h3{font-size:22px}.lift-related p{font-size:16px}.lift-cases .lift-section-heading{font-size:29px}.lift-case-row article>b{font-size:13px}
+          .lift-quick{padding-top:22vw}.lift-quick-kicker{width:14vw;height:13vw;border-width:.4vw;font-size:2.2vw;line-height:2.5vw}.lift-quick h2{font-size:12vw!important}.lift-quick h2 strong{font-size:10vw}.lift-quick-cards article span{bottom:7.8vw}.lift-quick-cards article b{font-size:4.3vw}.lift-quick-combo i{font-size:3.5vw}.lift-quick-vat{right:2.6vw;bottom:2.3vw;font-size:2.4vw}.lift-quick-logo{width:100%!important}
+        }
+      `}</style>
+      <style>{`
+        .lift-miinsu{height:auto;min-height:0;padding:0;aspect-ratio:1000 / 1415;background:transparent}
+        .lift-miinsu>img:first-child{width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center!important}
+        .lift-miinsu>div{position:absolute;z-index:1;inset:0;box-sizing:border-box;width:auto;padding:171px 0 0 123px}
+        @media(max-width:680px){.lift-miinsu{height:auto;min-height:0;aspect-ratio:1000 / 1415}.lift-miinsu>div{padding:17.1vw 0 0 12.3vw}}
       `}</style>
     </main>
   );

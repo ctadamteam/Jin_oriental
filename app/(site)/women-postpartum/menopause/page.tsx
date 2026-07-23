@@ -203,6 +203,64 @@ export default function MenopausePage() {
       <style>{`
         .meno-treatment{min-height:360px;padding:45px 0 0}.meno-treatment h2,.meno-treatment p{max-width:535px;z-index:2}.meno-treatment h2{font-size:36px}.meno-treatment p{font-size:14px;line-height:1.5}.meno-treatment-copy:after{top:-55px;right:8px;bottom:auto;z-index:1;color:#e4e4e4;font-size:300px;line-height:1;transform:scaleX(.5);transform-origin:right top}.meno-treatment>img{width:420px;margin:-45px 0 0}.meno-beginning{grid-template-columns:320px 1fr}.meno-beginning h2{line-height:1.18}.meno-beginning h2 strong,.meno-beginning h2 span{display:block;font-weight:400}.meno-beginning h2 strong{font-size:38px;letter-spacing:-3.6px}.meno-beginning h2 span{margin-top:6px;font-size:26px;letter-spacing:-2.6px}.meno-beginning p{max-width:550px;font-size:14px;line-height:1.5}@media(max-width:680px){.meno-treatment{padding-top:46px}.meno-treatment h2,.meno-treatment p{max-width:none}.meno-treatment h2{font-size:30px}.meno-treatment p{font-size:14px}.meno-treatment>img{width:min(72%,355px);margin:0 auto}.meno-beginning{grid-template-columns:1fr}.meno-beginning h2 strong{font-size:31px}.meno-beginning h2 span{font-size:24px}}
       `}</style>
+      <style>{`
+        .meno-title h1{font-weight:700}
+        .meno-hero{margin-top:8px}
+
+        .meno-intro{height:365px;background-position:right bottom}
+        .meno-intro-copy h2{font-size:25px;font-weight:700}
+        .meno-intro-rule{height:0;margin:7px 0 16px;border:0;border-top:3px double #aaa}
+        .meno-intro-copy .meno-intro-lead{font-size:20px;line-height:1.5;text-decoration:none}
+        .meno-intro-copy p{font-size:18px;line-height:1.65}
+
+        .meno-symptoms h2{font-size:30px;font-weight:700}
+        .meno-symptoms h2 span{font-size:38px;font-weight:700}
+        .meno-symptom-circle i{font-size:18px;font-style:normal;font-weight:400}
+        .meno-symptom-circle b{font-size:24px;font-weight:500}
+        .meno-symptom-grid p{font-size:18px}
+
+        .meno-treatment{min-height:560px;padding-bottom:30px}
+        .meno-treatment h2{font-family:'Batang','Times New Roman',serif;font-size:38px}
+        .meno-treatment p{font-family:'Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif;font-size:18px;line-height:1.65}
+        .meno-treatment-copy:after{content:'}'}
+
+        .meno-beginning{min-height:350px;padding-top:30px;padding-bottom:30px;background:#fff}
+        .meno-beginning-mark{align-items:center}
+        .meno-beginning-mark i:first-child,.meno-beginning-mark i:last-child{align-self:center;margin-right:0;margin-left:0}
+        .meno-beginning h2{font-family:'Batang','Times New Roman',serif}
+        .meno-beginning h2 strong{font-size:38px}
+        .meno-beginning h2 span{font-size:30px}
+        .meno-beginning p{font-family:'Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif;font-size:18px;line-height:1.65}
+
+        .meno-check h2{color:#ffde2c}
+        .meno-check h2 span{color:#fff}
+
+        .meno-system>p{padding:13px 35px;font-size:25px;line-height:1.25}
+        .meno-diagnosis h3{font-size:25px}
+        .meno-diagnosis h3 span{font-family:'Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif;font-weight:300}
+        .meno-diagnosis p{font-size:18px}
+
+        .meno-link-copy h3,.meno-link-card:nth-child(n+4) .meno-link-copy h3{font-size:22px;font-weight:600}
+        .meno-link-copy p,.meno-link-card:nth-child(n+4) .meno-link-copy p{font-size:18px;line-height:1.38}
+        .meno-link-phone{font-size:30px!important;font-weight:700!important}
+        .meno-link-phone span,.meno-link-phone b{font-weight:700}
+        .meno-link-card--phone small{font-size:13px;font-weight:500}
+        .meno-links{margin-bottom:36px}
+
+        @media(max-width:680px){
+          .meno-intro{height:auto;min-height:0;padding-bottom:340px;background-position:right bottom}
+          .meno-intro-copy h2{font-size:23px}
+          .meno-intro-copy .meno-intro-lead{font-size:18px}
+          .meno-intro-copy p{font-size:16px}
+          .meno-symptoms h2{font-size:27px}.meno-symptoms h2 span{font-size:33px}
+          .meno-symptom-circle i{font-size:16px}.meno-symptom-circle b{font-size:20px}.meno-symptom-grid p{font-size:16px}
+          .meno-treatment{min-height:0;padding-bottom:35px}.meno-treatment h2{font-size:30px}.meno-treatment p{font-size:16px}.meno-treatment-copy:after{display:none}
+          .meno-beginning{min-height:0}.meno-beginning h2 strong{font-size:31px}.meno-beginning h2 span{font-size:24px}.meno-beginning p{font-size:16px}
+          .meno-system>p{padding:13px 16px;font-size:20px}.meno-diagnosis h3{font-size:22px}.meno-diagnosis p{font-size:16px}
+          .meno-link-copy h3,.meno-link-card:nth-child(n+4) .meno-link-copy h3{font-size:20px}.meno-link-copy p,.meno-link-card:nth-child(n+4) .meno-link-copy p{font-size:16px}.meno-link-phone{font-size:28px!important}
+          .meno-links{margin-bottom:24px}
+        }
+      `}</style>
     </main>
   );
 }
