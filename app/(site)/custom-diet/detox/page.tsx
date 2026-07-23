@@ -420,7 +420,7 @@ export default function DetoxDietPage() {
                 <h3 className="text-xl font-bold text-gray-800 mb-2">의이인 [薏苡仁] : 조직간 독소 배출</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
                   우리가 잘 알고 있는 율무를 말하는 것으로, 이뇨, 진통, 진경, 강장작용이 있어 부종, 신경통, 류머티즘, 방광결석 등에 사용합니다.<br/>
-                  <strong className="bg-yellow-100/80 px-1 font-medium">- 이뇨작용이 있어 부종을 예방해주며, 비만을 튼튼하게 합니다.<br/>- 소화기를 보호하고 비장을 튼튼하게 하며 장내 독소를 배출시켜줍니다.</strong>
+                  <strong className="bg-[#fff4b0] px-1 py-[1px] font-normal text-gray-800">- 이뇨작용이 있어 부종을 예방해주며, 비만을 튼튼하게 합니다.<br/>- 소화기를 보호하고 비장을 튼튼하게 하며 장내 독소를 배출시켜줍니다.</strong>
                 </p>
               </div>
             </div>
@@ -434,7 +434,7 @@ export default function DetoxDietPage() {
                 <h3 className="text-xl font-bold text-gray-800 mb-2">천궁 [川芎] : 혈액정화</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
                   어혈은 탁한 피를 의미하며 체내에 머물러 혈액순환을 방해하는 독소입니다. 천궁은 이런 어혈을 풀어주고 혈액순환을 원활하게 해주며 통증을 완화하는 작용을 합니다.<br/>
-                  <strong className="bg-yellow-100/80 px-1 font-medium">- 혈액 내 노폐물 배출을 도와주고 혈액을 깨끗하게 도와줍니다.</strong>
+                  <strong className="bg-[#fff4b0] px-1 py-[1px] font-normal text-gray-800">- 혈액 내 노폐물 배출을 도와주고 혈액을 깨끗하게 도와줍니다.</strong>
                 </p>
               </div>
             </div>
@@ -448,7 +448,7 @@ export default function DetoxDietPage() {
                 <h3 className="text-xl font-bold text-gray-800 mb-2">작약 [芍藥] : 간 기능 개선</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
                   봄에 함박꽃이라 불리는 꽃을 피우는 작약의 뿌리로 진통, 해열, 진경, 이뇨, 항균작용이 뛰어납니다. 간 기능을 보호하고 위장염, 위경련 등에 효과적입니다.<br/>
-                  <strong className="bg-yellow-100/80 px-1 font-medium">- 피를 생성해주는 보혈 작용이 있어 월경통, 무월경, 빈혈에 효과적입니다.<br/>- 기혈순환과 혈액순환에 효과적입니다.</strong>
+                  <strong className="bg-[#fff4b0] px-1 py-[1px] font-normal text-gray-800">- 피를 생성해주는 보혈 작용이 있어 월경통, 무월경, 빈혈에 효과적입니다.<br/>- 기혈순환과 혈액순환에 효과적입니다.</strong>
                 </p>
               </div>
             </div>
