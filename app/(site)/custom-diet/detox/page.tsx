@@ -228,7 +228,7 @@ export default function DetoxDietPage() {
       </section>
 
       {/* 5. Mechanism Diagram (해독한약의 치료기전) */}
-      <section className="w-full py-16 md:py-24 bg-white overflow-hidden">
+      <section className="w-full pt-16 pb-8 md:pt-24 md:pb-12 bg-white overflow-hidden">
         <div className="w-full max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight mb-2">해독한약의 <strong className="font-bold text-[#A5C614]">치료기전</strong></h2>
@@ -378,7 +378,7 @@ export default function DetoxDietPage() {
       </section>
 
       {/* 6. Ingredients List (해독 효능이 있는 한약재) */}
-      <section className="w-full bg-[#f8f9f6] py-16 md:py-24">
+      <section className="w-full bg-[#f8f9f6] pt-8 pb-16 md:pt-12 md:pb-24">
         <div className="w-full max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight">해독 효능이 있는 <strong className="font-bold text-[#A5C614]">한약재</strong></h2>
