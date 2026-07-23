@@ -248,57 +248,57 @@ export default function DetoxDietPage() {
               <div className="absolute top-[20%] lg:top-[24%] left-[20%] lg:left-[22%] z-10 translate-x-[80px] translate-y-[20px]">
                 <div className="text-2xl font-extrabold text-[#3a332d]">간</div>
               </div>
-              <div className="absolute top-[20%] lg:top-[24%] left-0 lg:left-[2%] w-[230px] lg:w-[260px] z-10 flex text-[13px] lg:text-[14px] text-gray-700 leading-relaxed break-keep">
-                <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">1</div>
-                <div>시호, 청피, 치자 등으로 쓸개즙 분비를 촉진하고, 소엽, 곽향 등으로 <span className="bg-[#fff29e] px-1">스트레스로 인한 장의 억제·흥분을 조절합니다</span>.</div>
+              <div className="absolute top-[20%] lg:top-[24%] left-0 lg:left-[2%] w-[260px] lg:w-[320px] z-10 flex text-sm md:text-[18px] text-gray-700 leading-relaxed break-keep">
+                <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
+                <div>시호, 청피, 치자 등으로 쓸개즙 분비를 촉진하고, 소엽, 곽향 등으로 <span className="bg-[#fff4b0] px-1">스트레스로 인한 장의 억제·흥분을 조절합니다</span>.</div>
               </div>
 
               {/* 왼쪽: 대장 */}
               <div className="absolute top-[48%] lg:top-[50%] left-[22%] lg:left-[26%] z-10 translate-x-[10px] -translate-y-[15px]">
                 <div className="text-2xl font-extrabold text-[#3a332d]">대장</div>
               </div>
-              <div className="absolute top-[56%] lg:top-[58%] left-0 lg:left-[2%] w-[230px] lg:w-[260px] z-10 flex flex-col gap-3 text-[13px] lg:text-[14px] text-gray-700 leading-relaxed break-keep -translate-y-[35px]">
+              <div className="absolute top-[56%] lg:top-[58%] left-0 lg:left-[2%] w-[260px] lg:w-[320px] z-10 flex flex-col gap-3 text-sm md:text-[18px] text-gray-700 leading-relaxed break-keep -translate-y-[35px]">
                 <div className="flex">
-                  <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">1</div>
-                  <div>대황, 망초 등의 약재로 <span className="bg-[#fff29e] px-1">숙변을 제거</span>하고 대장의 염증을 <span className="bg-[#fff29e] px-1">치료합니다</span>.</div>
+                  <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
+                  <div>대황, 망초 등의 약재로 <span className="bg-[#fff4b0] px-1">숙변을 제거</span>하고 대장의 염증을 <span className="bg-[#fff4b0] px-1">치료합니다</span>.</div>
                 </div>
                 <div className="flex">
-                  <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">2</div>
-                  <div>육종용, 마자인 등으로 점액 성분을 공급하여 점막에 상처가 나지 않도록 도와주고 <span className="bg-[#fff29e] px-1">배변을 원활히 해줍니다</span>.</div>
+                  <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">2</div>
+                  <div>육종용, 마자인 등으로 점액 성분을 공급하여 점막에 상처가 나지 않도록 도와주고 <span className="bg-[#fff4b0] px-1">배변을 원활히 해줍니다</span>.</div>
                 </div>
               </div>
 
               {/* 오른쪽: 위 */}
-              <div className="absolute top-[16%] lg:top-[20%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-[13px] lg:text-[14px] text-gray-700 leading-relaxed break-keep -translate-x-[10px] translate-y-[30px]">
+              <div className="absolute top-[16%] lg:top-[20%] right-0 lg:right-[0%] w-[280px] lg:w-[360px] z-10 flex flex-col gap-3 text-sm md:text-[18px] text-gray-700 leading-relaxed break-keep -translate-x-[10px] translate-y-[30px]">
                 <div className="flex relative">
                   <div className="absolute right-full top-[-4px] mr-3 text-2xl font-extrabold text-[#3a332d]">위</div>
-                  <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">1</div>
-                  <div>인삼, 건강, 육계 등으로 위장의 혈관을 확장하고 혈행순환을 개선하여, <span className="bg-[#fff29e] px-1">염증 치료 및 진정·진통 작용을 합니다</span>.</div>
+                  <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
+                  <div>인삼, 건강, 육계 등으로 위장의 혈관을 확장하고 혈행순환을 개선하여, <span className="bg-[#fff4b0] px-1">염증 치료 및 진정·진통 작용을 합니다</span>.</div>
                 </div>
                 <div className="flex">
-                  <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">2</div>
-                  <div>창출, 진피, 지실 등 위벽이 정상보다 부어있는 것을 치료하고 위장 평활근의 <span className="bg-[#fff29e] px-1">과긴장을 이완시키고, 위의 연동운동 촉진을 통해 소화력을 향상</span>시켜줍니다.</div>
+                  <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">2</div>
+                  <div>창출, 진피, 지실 등 위벽이 정상보다 부어있는 것을 치료하고 위장 평활근의 <span className="bg-[#fff4b0] px-1">과긴장을 이완시키고, 위의 연동운동 촉진을 통해 소화력을 향상</span>시켜줍니다.</div>
                 </div>
                 <div className="flex">
-                  <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">3</div>
+                  <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">3</div>
                   <div>석창포, 익지인 등으로 위의 기능이 향상되어 소화액의 분비와 식욕을 촉진시킵니다.</div>
                 </div>
                 <div className="flex">
-                  <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">4</div>
-                  <div>석고, 모려 등으로 위산의 과다분비를 정상화 시키고 <span className="bg-[#fff29e] px-1">식도로 위산이 역류하지 않도록 해줍니다</span>.</div>
+                  <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">4</div>
+                  <div>석고, 모려 등으로 위산의 과다분비를 정상화 시키고 <span className="bg-[#fff4b0] px-1">식도로 위산이 역류하지 않도록 해줍니다</span>.</div>
                 </div>
               </div>
 
               {/* 오른쪽: 소장 */}
-              <div className="absolute top-[68%] lg:top-[72%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-[13px] lg:text-[14px] text-gray-700 leading-relaxed break-keep translate-x-[10px] translate-y-[10px]">
+              <div className="absolute top-[68%] lg:top-[72%] right-0 lg:right-[0%] w-[280px] lg:w-[360px] z-10 flex flex-col gap-3 text-sm md:text-[18px] text-gray-700 leading-relaxed break-keep translate-x-[10px] translate-y-[10px]">
                 <div className="flex relative">
                   <div className="absolute right-full top-[-4px] mr-3 text-2xl font-extrabold text-[#3a332d]">소장</div>
-                  <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">1</div>
-                  <div>백작약, 진피, 목향 등으로 장의 긴장을 풀어 장기들의 혈액순환을 촉진하고, <span className="bg-[#fff29e] px-1">장의 운동성을 향상</span>시켜 줍니다.</div>
+                  <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
+                  <div>백작약, 진피, 목향 등으로 장의 긴장을 풀어 장기들의 혈액순환을 촉진하고, <span className="bg-[#fff4b0] px-1">장의 운동성을 향상</span>시켜 줍니다.</div>
                 </div>
                 <div className="flex">
-                  <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">2</div>
-                  <div>목통, 택사, 복령 등의 약재로 소화 흡수를 돕고 장점막의 부종을 제거하여 <span className="bg-[#fff29e] px-1">림프순환을 촉진합니다</span>.</div>
+                  <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">2</div>
+                  <div>목통, 택사, 복령 등의 약재로 소화 흡수를 돕고 장점막의 부종을 제거하여 <span className="bg-[#fff4b0] px-1">림프순환을 촉진합니다</span>.</div>
                 </div>
               </div>
             </div>
@@ -313,23 +313,23 @@ export default function DetoxDietPage() {
                 {/* 간 */}
                 <div>
                   <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>간</h4>
-                  <div className="flex text-[14px] text-gray-700 leading-relaxed break-keep">
-                    <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">1</div>
-                    <div>시호, 청피, 치자 등으로 쓸개즙 분비를 촉진하고, 소엽, 곽향 등으로 <span className="bg-[#fff29e] px-1">스트레스로 인한 장의 억제·흥분을 조절합니다</span>.</div>
+                  <div className="flex text-sm md:text-[18px] text-gray-700 leading-relaxed break-keep">
+                    <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
+                    <div>시호, 청피, 치자 등으로 쓸개즙 분비를 촉진하고, 소엽, 곽향 등으로 <span className="bg-[#fff4b0] px-1">스트레스로 인한 장의 억제·흥분을 조절합니다</span>.</div>
                   </div>
                 </div>
 
                 {/* 대장 */}
                 <div>
                   <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>대장</h4>
-                  <div className="flex flex-col gap-3 text-[14px] text-gray-700 leading-relaxed break-keep">
+                  <div className="flex flex-col gap-3 text-sm md:text-[18px] text-gray-700 leading-relaxed break-keep">
                     <div className="flex">
-                      <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">1</div>
-                      <div>대황, 망초 등의 약재로 <span className="bg-[#fff29e] px-1">숙변을 제거</span>하고 대장의 염증을 <span className="bg-[#fff29e] px-1">치료합니다</span>.</div>
+                      <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
+                      <div>대황, 망초 등의 약재로 <span className="bg-[#fff4b0] px-1">숙변을 제거</span>하고 대장의 염증을 <span className="bg-[#fff4b0] px-1">치료합니다</span>.</div>
                     </div>
                     <div className="flex">
-                      <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">2</div>
-                      <div>육종용, 마자인 등으로 점액 성분을 공급하여 점막에 상처가 나지 않도록 도와주고 <span className="bg-[#fff29e] px-1">배변을 원활히 해줍니다</span>.</div>
+                      <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">2</div>
+                      <div>육종용, 마자인 등으로 점액 성분을 공급하여 점막에 상처가 나지 않도록 도와주고 <span className="bg-[#fff4b0] px-1">배변을 원활히 해줍니다</span>.</div>
                     </div>
                   </div>
                 </div>
@@ -337,22 +337,22 @@ export default function DetoxDietPage() {
                 {/* 위 */}
                 <div>
                   <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>위</h4>
-                  <div className="flex flex-col gap-3 text-[14px] text-gray-700 leading-relaxed break-keep">
+                  <div className="flex flex-col gap-3 text-sm md:text-[18px] text-gray-700 leading-relaxed break-keep">
                     <div className="flex">
-                      <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">1</div>
-                      <div>인삼, 건강, 육계 등으로 위장의 혈관을 확장하고 혈행순환을 개선하여, <span className="bg-[#fff29e] px-1">염증 치료 및 진정·진통 작용을 합니다</span>.</div>
+                      <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
+                      <div>인삼, 건강, 육계 등으로 위장의 혈관을 확장하고 혈행순환을 개선하여, <span className="bg-[#fff4b0] px-1">염증 치료 및 진정·진통 작용을 합니다</span>.</div>
                     </div>
                     <div className="flex">
-                      <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">2</div>
-                      <div>창출, 진피, 지실 등 위벽이 정상보다 부어있는 것을 치료하고 위장 평활근의 <span className="bg-[#fff29e] px-1">과긴장을 이완시키고, 위의 연동운동 촉진을 통해 소화력을 향상</span>시켜줍니다.</div>
+                      <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">2</div>
+                      <div>창출, 진피, 지실 등 위벽이 정상보다 부어있는 것을 치료하고 위장 평활근의 <span className="bg-[#fff4b0] px-1">과긴장을 이완시키고, 위의 연동운동 촉진을 통해 소화력을 향상</span>시켜줍니다.</div>
                     </div>
                     <div className="flex">
-                      <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">3</div>
+                      <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">3</div>
                       <div>석창포, 익지인 등으로 위의 기능이 향상되어 소화액의 분비와 식욕을 촉진시킵니다.</div>
                     </div>
                     <div className="flex">
-                      <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">4</div>
-                      <div>석고, 모려 등으로 위산의 과다분비를 정상화 시키고 <span className="bg-[#fff29e] px-1">식도로 위산이 역류하지 않도록 해줍니다</span>.</div>
+                      <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">4</div>
+                      <div>석고, 모려 등으로 위산의 과다분비를 정상화 시키고 <span className="bg-[#fff4b0] px-1">식도로 위산이 역류하지 않도록 해줍니다</span>.</div>
                     </div>
                   </div>
                 </div>
@@ -360,14 +360,14 @@ export default function DetoxDietPage() {
                 {/* 소장 */}
                 <div>
                   <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>소장</h4>
-                  <div className="flex flex-col gap-3 text-[14px] text-gray-700 leading-relaxed break-keep">
+                  <div className="flex flex-col gap-3 text-sm md:text-[18px] text-gray-700 leading-relaxed break-keep">
                     <div className="flex">
-                      <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">1</div>
-                      <div>백작약, 진피, 목향 등으로 장의 긴장을 풀어 장기들의 혈액순환을 촉진하고, <span className="bg-[#fff29e] px-1">장의 운동성을 향상</span>시켜 줍니다.</div>
+                      <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
+                      <div>백작약, 진피, 목향 등으로 장의 긴장을 풀어 장기들의 혈액순환을 촉진하고, <span className="bg-[#fff4b0] px-1">장의 운동성을 향상</span>시켜 줍니다.</div>
                     </div>
                     <div className="flex">
-                      <div className="w-[18px] h-[18px] shrink-0 bg-[#444] text-white flex items-center justify-center text-[11px] mt-1 mr-2 rounded-sm">2</div>
-                      <div>목통, 택사, 복령 등의 약재로 소화 흡수를 돕고 장점막의 부종을 제거하여 <span className="bg-[#fff29e] px-1">림프순환을 촉진합니다</span>.</div>
+                      <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">2</div>
+                      <div>목통, 택사, 복령 등의 약재로 소화 흡수를 돕고 장점막의 부종을 제거하여 <span className="bg-[#fff4b0] px-1">림프순환을 촉진합니다</span>.</div>
                     </div>
                   </div>
                 </div>
