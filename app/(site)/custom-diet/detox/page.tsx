@@ -71,7 +71,7 @@ export default function DetoxDietPage() {
       <section className="w-full pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="w-full max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight mb-12">
-            해독요법! <strong className="font-bold text-gray-900">이런분들께 추천</strong>합니다
+            해독요법! <strong className="font-bold text-[#A5C614]">이런분들께 추천</strong>합니다
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
