@@ -694,39 +694,47 @@ export default function DetoxDietPage() {
       </section>
 
       {/* 8. Quality Assurance (청정한약 시스템) */}
-      <section className="w-full pt-16 md:pt-24 bg-[#f9f9f9]">
-        <div className="w-full max-w-5xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h4 className="text-sm text-gray-400 mb-2">믿을 수 있는 진한의원</h4>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 tracking-tight">청정한약 시스템</h2>
-            <div className="w-12 h-1 bg-[#A5C614] mx-auto mt-6"></div>
-          </div>
+      <section className="w-full pt-16 md:pt-24 bg-white">
+        <div className="w-full max-w-5xl mx-auto px-4 text-center mb-12 md:mb-16">
+          <h4 className="text-sm md:text-base text-gray-400 font-normal mb-2">믿을 수 있는 진한의원</h4>
+          <h2 className="text-2xl md:text-[36px] font-bold text-[#1f2421] tracking-tight">청정한약 시스템</h2>
+          <div className="w-12 h-1 bg-[#8cb82b] mx-auto mt-4"></div>
         </div>
         
-        <div className="w-full relative h-[400px] flex">
-         {/* 좌측 박스 */}
-         <div className="w-1/2 h-full bg-[#e8eee1] relative overflow-hidden flex flex-col items-center justify-center border-r border-white/30">
-           <div className="relative z-10 flex flex-col items-center text-center">
-             <div className="w-24 h-24 md:w-32 md:h-32 bg-transparent relative flex items-center justify-center mb-6">
-               <Image src="/images/personal/detox_section_8_1.png" alt="GMP 마크" fill className="object-contain" unoptimized={true} />
-             </div>
-             <h3 className="text-xl md:text-2xl font-bold text-gray-800 tracking-wide">
-               GMP 식약청 인증한약사용과<br/>한약이력시스템 도입
-             </h3>
-           </div>
-            <div className="absolute top-4 left-4 text-[#d4dfc9] text-[10rem] font-bold leading-none z-0">1</div>
-         </div>
-         {/* 우측 박스 */}
-         <div className="w-1/2 h-full bg-[#e8e4db] relative overflow-hidden flex flex-col items-center justify-center">
-           <Image src="/images/personal/detox_section_8_2.jpg" alt="한약재 배경" fill className="object-cover z-0" unoptimized={true} />
-           <div className="absolute inset-0 bg-black/30 z-0"></div>
-           <div className="relative z-10 flex flex-col items-center text-center px-4">
-             <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">
-               믿을 수 있는 최고품질의<br/>청정약재만을 사용
-             </h3>
-           </div>
-           <div className="absolute top-4 right-4 text-white/50 text-[10rem] font-bold leading-none -z-0">2</div>
-         </div>
+        <div className="w-full flex flex-col md:flex-row min-h-[360px] md:min-h-[420px]">
+          {/* 좌측 박스 */}
+          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] bg-[#edf2e8] relative overflow-hidden flex flex-col items-center justify-center p-8">
+            {/* 배경 대형 숫자 1 */}
+            <div className="absolute top-2 left-4 text-[#d3e2cb] text-[120px] md:text-[170px] font-bold leading-none select-none z-0 pointer-events-none">
+              1
+            </div>
+            
+            <div className="relative z-10 flex flex-col items-center text-center">
+              <div className="w-36 h-36 md:w-44 md:h-44 relative flex items-center justify-center mb-6">
+                <Image src="/images/personal/detox_section_8_1.png" alt="GMP 식약청 인증 한약" fill className="object-contain" unoptimized={true} />
+              </div>
+              <h3 className="text-xl md:text-[24px] font-bold text-[#2a3028] tracking-tight leading-snug">
+                GMP 식약청 인증한약사용과<br />한약이력시스템 도입
+              </h3>
+            </div>
+          </div>
+
+          {/* 우측 박스 */}
+          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] relative overflow-hidden flex flex-col items-center justify-center p-8">
+            <Image src="/images/personal/detox_section_8_2.jpg" alt="청정약재 배경" fill className="object-cover z-0" unoptimized={true} />
+            <div className="absolute inset-0 bg-black/45 z-0"></div>
+            
+            {/* 배경 대형 숫자 2 */}
+            <div className="absolute top-2 right-4 text-white/35 text-[120px] md:text-[170px] font-bold leading-none select-none z-0 pointer-events-none">
+              2
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center text-center px-4">
+              <h3 className="text-xl md:text-[24px] font-bold text-white drop-shadow-md tracking-tight leading-snug">
+                믿을 수 있는 최고품질의<br />청정약재만을 사용
+              </h3>
+            </div>
+          </div>
         </div>
       </section>
 
