@@ -2,8 +2,9 @@ import Image from 'next/image';
 
 export default function VisceralFatPage() {
   return (
-    <main className="w-full bg-white font-sans text-gray-800 overflow-x-hidden">
-      <div className="mx-auto w-full max-w-[1000px] overflow-hidden">
+    <main className="visceral-page w-full bg-white font-sans text-gray-800 overflow-x-hidden">
+      <div className="visceral-content mx-auto w-full max-w-[1000px] overflow-hidden">
+      <header className="visceral-page-heading"><h1>내장지방형 비만</h1></header>
       <HeroSection />
       <StatsSection />
       <ReasonSection />
@@ -16,15 +17,29 @@ export default function VisceralFatPage() {
       <DiagnosisReasonSection />
       <FooterSection />
       </div>
+      <style>{`
+        .visceral-page{background:#fff;color:#333;font-family:Arial,'Malgun Gothic',sans-serif}.visceral-content{--visceral-inner-width:920px;width:min(100%,1000px);margin:0 auto;background:#fff}.visceral-page-heading{height:68px;display:flex;align-items:center;border-bottom:1px dotted #ddd}.visceral-page-heading h1{margin:0;color:#171717;font-family:Georgia,'Batang',serif;font-size:37px;font-weight:500;letter-spacing:-3px}
+        .visceral-hero{height:365px!important;margin-top:10px;background:#433124!important}.visceral-hero>.absolute{display:grid!important;grid-template-columns:672px 328px;flex-direction:unset!important}.visceral-hero-photo,.visceral-hero-copy{width:auto!important;height:auto!important}.visceral-hero-photo img{object-position:left center}.visceral-hero-copy{padding:32px!important;background:#433124}.visceral-hero-copy>div{max-width:100%!important}.visceral-hero-copy h1,.visceral-hero-copy h2{font-size:54px!important;line-height:1.02;letter-spacing:-4px!important}.visceral-hero-copy h1{margin-bottom:2px!important}.visceral-hero-copy h2{margin-bottom:20px!important}.visceral-hero-copy p{font-size:14px!important;line-height:1.6!important}
+        .visceral-stats>div,.visceral-causes>div,.visceral-what-is>div,.visceral-cavity-visual>div{max-width:880px}.visceral-stats>div{padding-right:48px;padding-left:48px}.visceral-stats>div>p{font-size:18px!important}.visceral-stats>div>.flex.justify-center p{font-size:38px!important}.visceral-reason>div{max-width:880px;padding-right:48px;padding-left:48px}.visceral-reason h2{font-size:38px!important}.visceral-reason h3{font-size:48px!important}.visceral-reason>div>div:nth-of-type(2){font-size:18px!important}.visceral-waist-guide{height:260px!important;max-width:760px!important}.visceral-waist-text{position:absolute!important;top:24px!important;width:32%!important;transform:none!important}.visceral-waist-text--male{left:16%!important}.visceral-waist-text--female{right:16%!important;left:auto!important;margin-top:0!important}.visceral-waist-text>div:first-child{width:auto!important;height:auto!important;margin:0 0 12px!important;background:transparent!important}.visceral-waist-text>div:first-child span{font-family:'Batang',serif;font-size:50px!important;font-weight:500}.visceral-waist-text>p:nth-of-type(1){margin-bottom:4px!important;color:#3a2a20!important;font-size:20px!important;font-weight:400!important}.visceral-waist-text>p:nth-of-type(2){font-family:'Arial Narrow',Arial,sans-serif;font-size:46px!important;line-height:1!important}.visceral-waist-text>p:nth-of-type(2) span:first-child{font-size:28px!important}
+        .visceral-causes{padding-right:0!important;padding-left:0!important}.visceral-causes>div{padding-right:48px;padding-left:48px}.visceral-causes h2,.visceral-what-is h2{font-size:48px!important}.visceral-causes>div>div:last-child p{font-size:18px!important}.visceral-what-is>div{padding-right:48px;padding-left:48px}.visceral-what-is>div>div:nth-of-type(2)>div>div:last-child{font-size:20px!important}.visceral-what-is h3{font-size:25px!important}.visceral-what-is h3+p{font-size:18px!important}.visceral-what-is h3+p+p{font-size:20px!important}
+        .visceral-cavity-visual{background:#fff!important}.visceral-cavity-visual>div{padding-right:48px;padding-left:48px}.visceral-cavity-visual h2{font-size:48px!important}.visceral-cavity-visual h2+div{gap:86px!important}.visceral-cavity-visual h2+div p{font-size:20px!important}.visceral-cavity-copy>div{padding:48px 64px!important}.visceral-cavity-copy>div>div{max-width:860px!important}.visceral-cavity-copy h3{font-size:23px!important}.visceral-cavity-copy p{font-size:18px!important;line-height:1.72!important}.visceral-cavity-copy .rounded-full{font-size:18px!important}
+        .visceral-process-main,.visceral-medicine>div,.visceral-diagnosis>div,.visceral-diagnosis-reason>div{max-width:920px!important;padding-right:24px!important;padding-left:24px!important}.visceral-process h2{font-size:48px!important}.visceral-process h2>span.block{font-size:38px!important}.visceral-process h2>span.block>span{display:inline-block;width:22px;height:14px;margin:0 11px;background:#a5c614;color:transparent!important;font-size:0!important;vertical-align:middle;clip-path:polygon(0 0,68% 0,68% 0,100% 50%,68% 100%,0 100%,26% 50%)}.visceral-process-main>div>p{font-size:18px!important}.visceral-process-main>div>div:nth-child(2) strong{font-size:18px!important}.visceral-process-main>div>div:nth-child(2) strong+p{font-size:17px!important}.visceral-comorbidities>div{max-width:920px!important;padding-right:24px!important;padding-left:24px!important}.visceral-comorbidities .w-40{width:168px!important;height:168px!important}.visceral-comorbidities .w-40+p{font-size:20px!important}.visceral-benefit p{font-size:35px!important;font-weight:400!important}.visceral-benefit p>span.block{font-size:48px!important;font-weight:700!important}
+        .visceral-medicine h2{font-size:38px!important}.visceral-medicine .flex.flex-col.gap-6{gap:16px!important}.visceral-medicine .grid.lg\\:grid-cols-4,.visceral-medicine .grid.lg\\:grid-cols-2{gap:16px!important;align-items:stretch}.visceral-medicine .grid.lg\\:grid-cols-4>div,.visceral-medicine .grid.lg\\:grid-cols-2>div{height:100%}
+        .visceral-diagnosis h2{font-size:48px!important}.visceral-diagnosis-highlight{padding-top:0!important;padding-bottom:0!important;line-height:1.12!important;margin-bottom:4px!important}.visceral-diagnosis-normal{font-weight:600!important}.visceral-diagnosis .grid{gap:40px 32px!important}.visceral-diagnosis-reason h2{font-size:48px!important}.visceral-diagnosis-reason p{font-size:16px!important}.visceral-diagnosis-reason h3{font-size:20px!important}.visceral-diagnosis-reason h3~div p:first-child{font-size:18px!important}.visceral-diagnosis-reason h3~div p:last-child{font-size:16px!important}
+        .visceral-stats>div,.visceral-reason>div,.visceral-causes>div,.visceral-what-is>div,.visceral-cavity-visual>div,.visceral-process-main,.visceral-medicine>div,.visceral-diagnosis>div,.visceral-diagnosis-reason>div{max-width:var(--visceral-inner-width)!important;padding-right:0!important;padding-left:0!important}.visceral-comorbidities,.visceral-benefit{width:100%!important;max-width:1000px!important;margin-right:auto!important;margin-left:auto!important;padding-right:0!important;padding-left:0!important}.visceral-comorbidities>div,.visceral-benefit>div{width:100%!important;max-width:1000px!important;padding-right:0!important;padding-left:0!important}.visceral-cavity-copy>div{padding-right:0!important;padding-left:0!important}.visceral-cavity-copy>div>div{max-width:var(--visceral-inner-width)!important}.visceral-diagnosis .grid>div,.visceral-diagnosis .grid>div>div{min-width:0}.visceral-diagnosis-highlight,.visceral-diagnosis-normal{max-width:100%;overflow-wrap:anywhere}
+        .visceral-footer{margin-bottom:64px;background:#fff!important}.visceral-footer-banner{min-height:0!important;line-height:0}.visceral-footer-banner>img{display:block;width:100%;height:auto}.visceral-footer-banner>div{display:none}
+        @media(max-width:1000px){.visceral-page-heading{padding:0 18px}.visceral-hero>.absolute{grid-template-columns:67.2% 32.8%}.visceral-hero-copy{padding:3.2vw!important}.visceral-hero-copy h1,.visceral-hero-copy h2{font-size:5.4vw!important}.visceral-waist-text--male{left:12%!important}.visceral-waist-text--female{right:12%!important}.visceral-cavity-visual h2+div{gap:7vw!important}}
+        @media(max-width:680px){.visceral-page-heading{height:58px;padding:0 18px}.visceral-page-heading h1{font-size:29px}.visceral-hero{height:auto!important}.visceral-hero>.absolute{display:flex!important}.visceral-hero-photo{height:250px!important}.visceral-hero-copy{min-height:250px;padding:38px 32px!important}.visceral-hero-copy h1,.visceral-hero-copy h2{font-size:43px!important}.visceral-stats>div,.visceral-reason>div,.visceral-causes>div,.visceral-what-is>div,.visceral-cavity-visual>div,.visceral-process-main,.visceral-medicine>div,.visceral-diagnosis>div,.visceral-diagnosis-reason>div{padding-right:22px!important;padding-left:22px!important}.visceral-comorbidities>div,.visceral-benefit>div{padding-right:0!important;padding-left:0!important}.visceral-stats>div>p,.visceral-reason>div>div:nth-of-type(2),.visceral-causes>div>div:last-child p{font-size:16px!important}.visceral-stats>div>.flex.justify-center p,.visceral-reason h2{font-size:30px!important}.visceral-reason h3,.visceral-causes h2,.visceral-what-is h2,.visceral-cavity-visual h2,.visceral-process h2,.visceral-diagnosis h2,.visceral-diagnosis-reason h2{font-size:34px!important}.visceral-waist-guide{height:370px!important}.visceral-waist-text{position:relative!important;top:auto!important;left:auto!important;right:auto!important;width:100%!important}.visceral-waist-text--female{margin-top:14px!important}.visceral-cavity-visual h2+div{gap:34px!important}.visceral-cavity-copy>div{padding:34px 22px!important}.visceral-process h2>span.block{font-size:28px!important}.visceral-process h2>span.block>span{width:17px;height:11px;margin:0 6px}.visceral-benefit p{font-size:25px!important}.visceral-benefit p>span.block{font-size:34px!important}.visceral-medicine h2{font-size:30px!important}.visceral-medicine .grid.lg\\:grid-cols-4,.visceral-medicine .grid.lg\\:grid-cols-2{gap:12px!important}.visceral-diagnosis h2,.visceral-diagnosis-reason h2{font-size:34px!important}.visceral-footer{margin-bottom:42px}}
+      `}</style>
     </main>
   );
 }
 
 function HeroSection() {
   return (
-    <section className="w-full h-[460px] md:h-[560px] relative bg-[#3a332d]">
+    <section className="visceral-hero w-full h-[460px] md:h-[560px] relative bg-[#3a332d]">
       <div className="absolute inset-0 flex flex-col md:flex-row">
-        <div className="w-full md:w-[55%] h-1/2 md:h-full relative">
+        <div className="visceral-hero-photo w-full md:w-[55%] h-1/2 md:h-full relative">
           <Image 
             src="/images/personal/visceral_title.jpg" 
             alt="내장지방형 비만 메인 이미지" 
@@ -33,7 +48,7 @@ function HeroSection() {
             priority
           />
         </div>
-        <div className="w-full md:w-[45%] h-1/2 md:h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 text-white relative overflow-hidden">
+        <div className="visceral-hero-copy w-full md:w-[45%] h-1/2 md:h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 text-white relative overflow-hidden">
           <div className="relative z-10 max-w-[90%] xl:max-w-[85%]">
             <div className="inline-block border border-white/40 text-white/80 text-xs md:text-sm px-3 py-1 mb-4 rounded-full font-light tracking-widest">
               뱃살 먼저 감량되는 내장 다이어트
@@ -52,7 +67,7 @@ function HeroSection() {
 
 function StatsSection() {
   return (
-    <section className="bg-[#f8f9f6] py-16 md:py-24">
+    <section className="visceral-stats bg-[#f8f9f6] py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-6">
         <p className="text-left text-gray-800 font-medium text-[15px] md:text-lg mb-12 leading-[1.8] break-keep tracking-tight">
           한 통계에 따르면 <strong className="bg-[#fff4b0] px-1 font-medium text-gray-800">성인 3명 중 한명은 비만</strong>이며, <strong className="bg-[#fff4b0] px-1 font-medium text-gray-800">성인 5명 중 한명은 복부비만</strong>이며 <strong className="bg-[#fff4b0] px-1 font-medium text-gray-800">50대 이상 유병율은 50대 이하에 비해 2배</strong>에 달합니다.
@@ -96,7 +111,7 @@ function StatsSection() {
 
 function ReasonSection() {
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="visceral-reason py-20 md:py-32 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-left mb-10">
           <h2 className="text-3xl md:text-4xl font-serif font-light text-gray-800 mb-2 tracking-tight">뱃살이 찌는 이유는 뭘까?</h2>
@@ -112,12 +127,12 @@ function ReasonSection() {
           </p>
         </div>
 
-        <div className="mt-16 w-full max-w-3xl mx-auto relative h-[180px] md:h-[260px]">
+        <div className="visceral-waist-guide mt-16 w-full max-w-3xl mx-auto relative h-[180px] md:h-[260px]">
           <Image src="/images/personal/nj_section3.png" alt="남녀 허리둘레 기준" fill className="object-contain" unoptimized={true} />
           
           <div className="absolute inset-0 flex flex-col md:flex-row justify-center items-center z-10 pointer-events-none">
             {/* 남자 영역 */}
-            <div className="w-full md:w-1/2 flex flex-col items-center pointer-events-auto -translate-x-[35px]">
+            <div className="visceral-waist-text visceral-waist-text--male w-full md:w-1/2 flex flex-col items-center pointer-events-auto -translate-x-[35px]">
                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#4a72b2]/10 flex items-center justify-center mb-3 md:mb-4">
                   <span className="text-[#4a72b2] text-2xl md:text-3xl font-bold">男</span>
                </div>
@@ -126,7 +141,7 @@ function ReasonSection() {
             </div>
             
             {/* 여자 영역 */}
-            <div className="w-full md:w-1/2 flex flex-col items-center pointer-events-auto mt-6 md:mt-0 translate-x-[45px]">
+            <div className="visceral-waist-text visceral-waist-text--female w-full md:w-1/2 flex flex-col items-center pointer-events-auto mt-6 md:mt-0 translate-x-[45px]">
                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#d92b2b]/10 flex items-center justify-center mb-3 md:mb-4">
                   <span className="text-[#d92b2b] text-2xl md:text-3xl font-bold">女</span>
                </div>
@@ -142,7 +157,7 @@ function ReasonSection() {
 
 function CauseSection() {
   return (
-    <section className="py-20 md:py-32 bg-[#f9f9f9] border-t border-gray-200">
+    <section className="visceral-causes py-20 md:py-32 bg-[#f9f9f9] border-t border-gray-200">
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-medium text-gray-800 mb-16 tracking-tight">
           <strong className="text-[#A5C614] font-black">내장지방</strong>은 왜 생기는 건가요?
@@ -181,7 +196,7 @@ function CauseSection() {
 
 function WhatIsSection() {
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="visceral-what-is py-20 md:py-32 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-medium text-center text-gray-800 mb-16 tracking-tight">
           <strong className="text-[#A5C614] font-black">내장지방</strong>은 무엇인가요?
@@ -291,7 +306,7 @@ function WhatIsSection() {
 function CavityComparisonSection() {
   return (
     <>
-      <section className="pt-20 md:pt-32 pb-20 bg-[#f9f9f9] border-t border-gray-200">
+      <section className="visceral-cavity-visual pt-20 md:pt-32 pb-20 bg-[#f9f9f9] border-t border-gray-200">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl md:text-5xl text-center mb-20 tracking-tight text-gray-900">
           <span className="font-medium">건강한 사람과 내장비만인의</span> <strong className="text-[#A5C614] font-black">복강비교</strong>
@@ -332,7 +347,7 @@ function CavityComparisonSection() {
         </div>
       </section>
 
-      <div className="w-full flex flex-col">
+      <div className="visceral-cavity-copy w-full flex flex-col">
         {/* 건강한 사람의 복강 설명 */}
         <div className="bg-[#5894e6] w-full py-12 px-6 md:px-0 text-white flex justify-center">
           <div className="w-full max-w-5xl text-left">
@@ -382,8 +397,8 @@ function CavityComparisonSection() {
 
 function ProcessSection() {
   return (
-    <section className="py-20 md:py-32 bg-white">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section className="visceral-process py-20 md:py-32 bg-white">
+      <div className="visceral-process-main max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl mb-8 leading-tight tracking-tight text-gray-900">
           <span className="font-medium">중년의</span> <strong className="text-[#A5C614] font-black">뱃살 증가</strong><br/>
           <span className="text-black text-2xl md:text-3xl mt-4 block font-bold"><span className="text-[#A5C614]">→</span> 소화기계의 과부하 <span className="text-[#A5C614]">→</span> 타장기의 혈류장애와 기능저하</span>
@@ -452,7 +467,7 @@ function ProcessSection() {
       </div>
 
       {/* Middle: Comorbidity (Full Width) */}
-      <div className="w-full bg-[#f9f9f9] py-16 md:py-24 border-y border-gray-100">
+      <div className="visceral-comorbidities w-full bg-[#f9f9f9] py-16 md:py-24 border-y border-gray-100">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
           <div className="flex flex-col gap-8 md:gap-12 w-full md:w-auto relative z-10 mb-10 md:mb-0">
              <div className="flex items-center gap-4">
@@ -523,7 +538,7 @@ function ProcessSection() {
       </div>
 
       {/* Bottom: Brand Color Box (Full Width, No Top Margin) */}
-      <div className="w-full bg-[#A5C614] text-white py-12 md:py-16 px-6 text-center shadow-sm">
+      <div className="visceral-benefit w-full bg-[#A5C614] text-white py-12 md:py-16 px-6 text-center shadow-sm">
         <div className="max-w-6xl mx-auto">
           <p className="text-[23px] md:text-[27px] font-medium break-keep leading-relaxed tracking-tight">
             뱃살의 감소 <span className="mx-2 md:mx-4 font-black">➡</span> 정상적인 위장기능의 회복과 내장지방의 감소 <br className="hidden md:block"/>
@@ -549,7 +564,7 @@ function MedicineSection() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="visceral-medicine py-20 md:py-32 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl mb-16 tracking-tight text-black">
           <span className="font-medium">내장지방을 빼기위한</span><br className="md:hidden"/> <span className="font-bold">특별한 노하우를 담은 치료한약</span>
@@ -670,7 +685,7 @@ function DiagnosisSection() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="visceral-diagnosis py-20 md:py-32 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-20 tracking-tight text-gray-900">장기별 불편 증상에 따른 복부 진찰법</h2>
         
@@ -682,9 +697,9 @@ function DiagnosisSection() {
               {item.align === 'left' && (
                 <div className="flex flex-col items-end text-right flex-1">
                   {item.highlights.map((h, i) => (
-                    <span key={i} className="bg-[#fff4b0] px-1 md:px-2 py-0.5 text-[16px] md:text-[19px] font-bold text-gray-800 mb-0.5 break-keep leading-snug">{h}</span>
+                    <span key={i} className="visceral-diagnosis-highlight bg-[#fff4b0] px-1 md:px-2 py-0.5 text-[16px] md:text-[19px] font-normal text-gray-800 mb-0.5 break-keep leading-snug">{h}</span>
                   ))}
-                  {item.normal && <span className="text-gray-700 font-medium text-[16px] md:text-[19px] mt-1 break-keep">{item.normal}</span>}
+                  {item.normal && <span className="visceral-diagnosis-normal text-gray-700 font-semibold text-[16px] md:text-[19px] mt-1 break-keep">{item.normal}</span>}
                 </div>
               )}
 
@@ -705,9 +720,9 @@ function DiagnosisSection() {
               {item.align === 'right' && (
                 <div className="flex flex-col items-start text-left flex-1">
                   {item.highlights.map((h, i) => (
-                    <span key={i} className="bg-[#fff4b0] px-1 md:px-2 py-0.5 text-[16px] md:text-[19px] font-bold text-gray-800 mb-0.5 break-keep leading-snug">{h}</span>
+                    <span key={i} className="visceral-diagnosis-highlight bg-[#fff4b0] px-1 md:px-2 py-0.5 text-[16px] md:text-[19px] font-normal text-gray-800 mb-0.5 break-keep leading-snug">{h}</span>
                   ))}
-                  {item.normal && <span className="text-gray-700 font-medium text-[16px] md:text-[19px] mt-1 break-keep">{item.normal}</span>}
+                  {item.normal && <span className="visceral-diagnosis-normal text-gray-700 font-semibold text-[16px] md:text-[19px] mt-1 break-keep">{item.normal}</span>}
                 </div>
               )}
 
@@ -721,7 +736,7 @@ function DiagnosisSection() {
 
 function DiagnosisReasonSection() {
   return (
-    <section className="py-20 md:py-32 bg-[#f9f9f9] border-t border-gray-200">
+    <section className="visceral-diagnosis-reason py-20 md:py-32 bg-[#f9f9f9] border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl md:text-5xl text-center mb-16 tracking-tight text-gray-900">
           <span className="font-bold">복부진찰법이</span> <span className="font-medium">중요한 이유?</span>
@@ -789,9 +804,9 @@ function DiagnosisReasonSection() {
 
 function FooterSection() {
   return (
-    <footer className="w-full relative bg-[#151c24]">
-       <div className="w-full relative aspect-[4/1] min-h-[200px] md:min-h-[300px] overflow-hidden">
-          <Image src="/images/personal/nj_section11.jpg" alt="진한의원 비만 배너" fill className="object-cover object-center" unoptimized={true} />
+    <footer className="visceral-footer w-full relative bg-[#151c24]">
+       <div className="visceral-footer-banner w-full relative overflow-hidden">
+          <Image src="/images/mid-age/MID_29.jpg" alt="진한의원 비만 홈페이지에서 확인" width={1000} height={500} className="w-full h-auto" unoptimized={true} />
           
           {/* SEO Text Overlay (Transparent, exactly over the image text) */}
           <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
