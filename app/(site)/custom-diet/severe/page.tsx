@@ -678,7 +678,7 @@ function ProgramStep2Section() {
 
 function ProgramStep3Section() {
   return (
-    <section className="pt-10 pb-12 bg-white px-6">
+    <section className="pt-10 pb-12 bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
            <div className="bg-[#A5C614] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">3단계</div>
@@ -857,7 +857,7 @@ function ProgramStep3Section() {
 
 function ProgramStep4Section() {
   return (
-    <section className="pt-12 pb-20 bg-white px-6">
+    <section className="pt-12 pb-20 bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto mb-8">
         <div className="flex items-center gap-4 mb-8">
            <div className="bg-[#A5C614] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px] shrink-0">4단계</div>
