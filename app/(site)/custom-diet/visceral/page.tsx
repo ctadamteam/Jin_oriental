@@ -4,7 +4,9 @@ export default function VisceralFatPage() {
   return (
     <main className="visceral-page w-full bg-white font-sans text-gray-800 overflow-x-hidden">
       <div className="visceral-content mx-auto w-full max-w-[1000px] overflow-hidden">
-      <header className="visceral-page-heading"><h1>내장지방형 비만</h1></header>
+      <header className="visceral-page-heading border-b border-dashed border-gray-300 mb-[8px]">
+        <h1 className="font-bold">내장지방형 비만</h1>
+      </header>
       <HeroSection />
       <StatsSection />
       <ReasonSection />
@@ -18,7 +20,7 @@ export default function VisceralFatPage() {
       <FooterSection />
       </div>
       <style>{`
-        .visceral-page{background:#fff;color:#333;font-family:Arial,'Malgun Gothic',sans-serif}.visceral-content{--visceral-inner-width:920px;width:min(100%,1000px);margin:0 auto;background:#fff}.visceral-page-heading{height:68px;display:flex;align-items:center;border-bottom:1px dotted #ddd}.visceral-page-heading h1{margin:0;color:#171717;font-family:Georgia,'Batang',serif;font-size:37px;font-weight:500;letter-spacing:-3px}
+        .visceral-page{background:#fff;color:#333;font-family:Arial,'Malgun Gothic',sans-serif}.visceral-content{--visceral-inner-width:920px;width:min(100%,1000px);margin:0 auto;background:#fff}.visceral-page-heading{height:68px;display:flex;align-items:center;border-bottom:1px dotted #ddd}.visceral-page-heading h1{margin:0;color:#171717;font-family:Georgia,'Batang',serif;font-size:37px;font-weight:700;letter-spacing:-3px}
         .visceral-hero{height:365px!important;margin-top:10px;background:#433124!important}.visceral-hero>.absolute{display:grid!important;grid-template-columns:672px 328px;flex-direction:unset!important}.visceral-hero-photo,.visceral-hero-copy{width:auto!important;height:auto!important}.visceral-hero-photo img{object-position:left center}.visceral-hero-copy{padding:32px!important;background:#433124}.visceral-hero-copy>div{max-width:100%!important}.visceral-hero-copy h1,.visceral-hero-copy h2{font-size:54px!important;line-height:1.02;letter-spacing:-4px!important}.visceral-hero-copy h1{margin-bottom:2px!important}.visceral-hero-copy h2{margin-bottom:20px!important}.visceral-hero-copy p{font-size:14px!important;line-height:1.6!important}
         .visceral-stats>div,.visceral-causes>div,.visceral-what-is>div,.visceral-cavity-visual>div{max-width:880px}.visceral-stats>div{padding-right:48px;padding-left:48px}.visceral-stats>div>p{font-size:18px!important}.visceral-stats>div>.flex.justify-center p{font-size:38px!important}.visceral-reason>div{max-width:880px;padding-right:48px;padding-left:48px}.visceral-reason h2{font-size:38px!important}.visceral-reason h3{font-size:48px!important}.visceral-reason>div>div:nth-of-type(2){font-size:18px!important}.visceral-waist-guide{height:260px!important;max-width:760px!important}.visceral-waist-text{position:absolute!important;top:24px!important;width:32%!important;transform:none!important}.visceral-waist-text--male{left:16%!important}.visceral-waist-text--female{right:16%!important;left:auto!important;margin-top:0!important}.visceral-waist-text>div:first-child{width:auto!important;height:auto!important;margin:0 0 12px!important;background:transparent!important}.visceral-waist-text>div:first-child span{font-family:'Batang',serif;font-size:50px!important;font-weight:500}.visceral-waist-text>p:nth-of-type(1){margin-bottom:4px!important;color:#3a2a20!important;font-size:20px!important;font-weight:400!important}.visceral-waist-text>p:nth-of-type(2){font-family:'Arial Narrow',Arial,sans-serif;font-size:46px!important;line-height:1!important}.visceral-waist-text>p:nth-of-type(2) span:first-child{font-size:28px!important}
         .visceral-causes{padding-right:0!important;padding-left:0!important}.visceral-causes>div{padding-right:48px;padding-left:48px}.visceral-causes h2,.visceral-what-is h2{font-size:48px!important}.visceral-causes>div>div:last-child p{font-size:18px!important}.visceral-what-is>div{padding-right:48px;padding-left:48px}.visceral-what-is>div>div:nth-of-type(2)>div>div:last-child{font-size:20px!important}.visceral-what-is h3{font-size:25px!important}.visceral-what-is h3+p{font-size:18px!important}.visceral-what-is h3+p+p{font-size:20px!important}
@@ -76,11 +78,11 @@ function StatsSection() {
                <Image src="/images/personal/nj_section2_1.png" alt="비만 실루엣" fill className="object-contain" unoptimized={true} />
              </div>
              <div className="absolute top-[26%] left-[calc(25%+40px)] -translate-x-1/2 -translate-y-1/2 scale-90 text-left text-white drop-shadow-md z-10 pointer-events-auto">
-                <p className="text-[15px] font-normal text-white mb-0.5">성인</p>
-                <p className="text-[20px] font-bold text-[#A5C614] tracking-tight leading-none mb-1">
-                  3명 <span className="text-[15px] font-normal text-white mx-0.5">중</span> 1명
+                <p className="text-[18px] font-normal text-white mb-0.5">성인</p>
+                <p className="text-[23px] font-bold text-[#A5C614] tracking-tight leading-none mb-1">
+                  3명 <span className="text-[18px] font-normal text-white mx-0.5">중</span> 1명
                 </p>
-                <p className="text-[20px] font-bold text-white leading-none mt-1">비만</p>
+                <p className="text-[23px] font-bold text-white leading-none mt-1">비만</p>
              </div>
           </div>
           
@@ -90,13 +92,13 @@ function StatsSection() {
                <Image src="/images/personal/nj_section2_2.png" alt="복부비만 실루엣" fill className="object-contain" unoptimized={true} />
              </div>
              <div className="absolute top-[calc(22%+10px)] left-[calc(32%+80px)] -translate-x-1/2 -translate-y-1/2 scale-90 text-left text-white drop-shadow-md z-10 pointer-events-auto">
-                <p className="text-[15px] font-normal text-white mb-0.5">성인</p>
-                <p className="text-[20px] font-bold text-[#A5C614] tracking-tight leading-none mb-1">
-                  5명 <span className="text-[15px] font-normal text-white mx-0.5">중</span> 1명
+                <p className="text-[18px] font-normal text-white mb-0.5">성인</p>
+                <p className="text-[23px] font-bold text-[#A5C614] tracking-tight leading-none mb-1">
+                  5명 <span className="text-[18px] font-normal text-white mx-0.5">중</span> 1명
                 </p>
-                <p className="text-[20px] font-bold text-white leading-none mt-1">복부비만</p>
-             </div>
-          </div>
+                <p className="text-[23px] font-bold text-white leading-none mt-1">복부비만</p>
+              </div>
+           </div>
         </div>
 
         <div className="flex justify-center">
@@ -117,13 +119,13 @@ function ReasonSection() {
           <h2 className="text-3xl md:text-4xl font-serif font-light text-gray-800 mb-2 tracking-tight">뱃살이 찌는 이유는 뭘까?</h2>
           <h3 className="text-5xl md:text-6xl font-serif font-bold tracking-tight text-[#A5C614]">원인은 내장지방!!</h3>
         </div>
-        <div className="text-left text-gray-500 text-[15px] md:text-lg leading-[1.8] break-keep mb-16">
+        <div className="text-left text-gray-500 text-[15px] md:text-lg leading-[1.8] break-keep mb-16 tracking-tight">
           <p className="mb-4">
             뱃살은 단순히 지방의 증가만을 의미하는 것이 아니라 내장 기능, 신진대사 저하를 의미하며 이전보다 뱃살의 증가는 건강의 이상신호를 의미합니다. 특히 중년층의 뱃살은 고혈압, 당뇨, 고지혈증 등 대사성 질환의 원인이 되므로
           </p>
           <p>
-            <strong className="bg-[#fff4b0] px-1 text-black font-medium">건강하기 위해서 반드시 뱃살은 제거되어야 하며 배가 날씬한 중년이 배가 나온 중년보다 더</strong><br className="hidden md:block"/>
-            <strong className="bg-[#fff4b0] px-1 text-black font-medium">건강하다고 해도 과언이 아니라고 할 수 있습니다.</strong>
+            <strong className="bg-[#fff4b0] px-1 text-black font-semibold">건강하기 위해서 반드시 뱃살은 제거되어야 하며 배가 날씬한 중년이 배가 나온 중년보다 더</strong><br className="hidden md:block"/>
+            <strong className="bg-[#fff4b0] px-1 text-black font-semibold">건강하다고 해도 과언이 아니라고 할 수 있습니다.</strong>
           </p>
         </div>
 
@@ -131,8 +133,8 @@ function ReasonSection() {
           <Image src="/images/personal/nj_section3.png" alt="남녀 허리둘레 기준" fill className="object-contain" unoptimized={true} />
           
           <div className="absolute inset-0 flex flex-col md:flex-row justify-center items-center z-10 pointer-events-none">
-            {/* 남자 영역 */}
-            <div className="visceral-waist-text visceral-waist-text--male w-full md:w-1/2 flex flex-col items-center pointer-events-auto -translate-x-[35px]">
+            {/* 남자 영역 (왼쪽으로 70px 이동) */}
+            <div className="visceral-waist-text visceral-waist-text--male w-full md:w-1/2 flex flex-col items-center pointer-events-auto -translate-x-[70px]">
                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#4a72b2]/10 flex items-center justify-center mb-3 md:mb-4">
                   <span className="text-[#4a72b2] text-2xl md:text-3xl font-bold">男</span>
                </div>
@@ -140,8 +142,8 @@ function ReasonSection() {
                <p className="text-4xl md:text-5xl font-black text-black tracking-tighter">90<span className="text-xl md:text-2xl font-bold text-black ml-1">cm</span> <span className="text-lg md:text-xl font-medium text-black">이상</span></p>
             </div>
             
-            {/* 여자 영역 */}
-            <div className="visceral-waist-text visceral-waist-text--female w-full md:w-1/2 flex flex-col items-center pointer-events-auto mt-6 md:mt-0 translate-x-[45px]">
+            {/* 여자 영역 (오른쪽으로 70px 이동) */}
+            <div className="visceral-waist-text visceral-waist-text--female w-full md:w-1/2 flex flex-col items-center pointer-events-auto mt-6 md:mt-0 translate-x-[70px]">
                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#d92b2b]/10 flex items-center justify-center mb-3 md:mb-4">
                   <span className="text-[#d92b2b] text-2xl md:text-3xl font-bold">女</span>
                </div>
@@ -157,10 +159,10 @@ function ReasonSection() {
 
 function CauseSection() {
   return (
-    <section className="visceral-causes py-20 md:py-32 bg-[#f9f9f9] border-t border-gray-200">
+    <section className="visceral-causes py-20 md:py-32 bg-white border-t border-gray-100">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-5xl font-medium text-gray-800 mb-16 tracking-tight">
-          <strong className="text-[#A5C614] font-black">내장지방</strong>은 왜 생기는 건가요?
+        <h2 className="text-2xl md:text-[38px] font-bold text-gray-900 mb-16 tracking-tight">
+          <strong className="text-[#A5C614]">내장지방</strong>은 왜 생기는 건가요?
         </h2>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
@@ -175,8 +177,8 @@ function CauseSection() {
                    unoptimized={true} 
                  />
               </div>
-              <div className="bg-[#f0f0f0] border-t border-gray-200 py-3 md:py-4 w-full flex items-center justify-center px-2">
-                <p className="font-bold text-gray-800 text-[15px] md:text-lg tracking-tight text-center">
+              <div className="bg-[#f0f0f0] border-t border-gray-200 py-2 md:py-2.5 w-full flex items-center justify-center px-2">
+                <p className="font-bold text-gray-800 text-[20px] tracking-tight text-center">
                   {item === '갱년기' ? '갱년기(성 호르몬 감소)' : item}
                 </p>
               </div>
@@ -186,9 +188,11 @@ function CauseSection() {
         
         <div className="text-left">
            <p className="text-gray-700 text-[15px] md:text-lg font-medium tracking-tight">
-             그 외, 흡연과 비활동성도 그렇지 않은 성인보다 <strong className="bg-[#fff4b0] px-1 text-black font-bold">1.2~1.3배 유병율</strong>을 올리게 됩니다.
+             그 외, 흡연과 비활동성도 그렇지 않은 성인보다 <strong className="bg-[#fff4b0] px-1 text-black font-semibold">1.2~1.3배 유병율</strong>을 올리게 됩니다.
            </p>
         </div>
+
+        <div className="w-full border-b border-dashed border-gray-300 mt-16"></div>
       </div>
     </section>
   );
@@ -197,13 +201,13 @@ function CauseSection() {
 function WhatIsSection() {
   return (
     <section className="visceral-what-is py-20 md:py-32 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl md:text-5xl font-medium text-center text-gray-800 mb-16 tracking-tight">
-          <strong className="text-[#A5C614] font-black">내장지방</strong>은 무엇인가요?
+      <div className="w-full max-w-[1000px] mx-auto px-0">
+        <h2 className="text-2xl md:text-[38px] font-bold text-center text-gray-900 mb-16 tracking-tight">
+          <strong className="text-[#A5C614]">내장지방</strong>은 무엇인가요?
         </h2>
 
-        {/* 2cm 이하 vs 2cm 이상 비교 이미지 */}
-        <div className="relative w-full max-w-5xl mx-auto mb-20">
+        {/* 2cm 이하 vs 2cm 이상 비교 이미지 (양옆 여백 없이 100% 가로 사이즈 확장) */}
+        <div className="relative w-full mb-20">
            <Image 
              src="/images/personal/nj_section5_1.jpg" 
              alt="피하지방 내장지방 비교" 
@@ -211,11 +215,12 @@ function WhatIsSection() {
              height={0}
              sizes="100vw"
              style={{ width: '100%', height: 'auto' }}
+             className="w-full h-auto block"
              unoptimized={true} 
            />
            
-           {/* 투명 텍스트 오버레이 (드래그 선택 가능) */}
-           <div className="absolute inset-0 z-10 pointer-events-none -translate-x-[30px] -translate-y-[10px]">
+           {/* 투명 텍스트 오버레이 (드래그 선택 가능 및 1:1 오프셋 재조정) */}
+           <div className="absolute inset-0 z-10 pointer-events-none">
              {/* 상단: 2cm 이하 (원 안) */}
              <div className="absolute top-[10%] left-[43%] -translate-x-[20px] -translate-y-[10px] pointer-events-auto flex flex-col items-center justify-center w-[10%] h-[15%]">
                <p className="text-transparent selection:bg-blue-500/30 selection:text-black font-bold text-[15px] md:text-[27px] leading-tight">2cm</p>
@@ -248,55 +253,52 @@ function WhatIsSection() {
            </div>
         </div>
 
-        {/* 단면도 비교 */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-20">
-           <div className="flex-1 bg-white border border-gray-200 shadow-[0_15px_40px_rgba(0,0,0,0.04)] flex flex-col">
-              <div className="w-full aspect-[3/2] bg-white relative p-4 md:p-6 flex items-center justify-center">
-                 <div className="relative w-full h-full">
-                    <Image src="/images/personal/nj_section5_2.png" alt="내장지방 정상 단면도" fill className="object-contain" unoptimized={true} />
-                    {/* 투명 텍스트 오버레이 (SEO 및 선택용) */}
-                    <div className="absolute inset-0 z-10 pointer-events-none">
-                      <div className="absolute top-[15%] left-[10%] pointer-events-auto">
-                        <span className="text-transparent selection:bg-blue-500/30 selection:text-black font-bold text-[16px]">피하지방</span>
+        {/* 단면도 비교 (연한 회색 배경 bg-[#f8f9f6]) */}
+        <div className="bg-[#f8f9f6] p-6 md:p-10 rounded-2xl mb-12">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-12">
+             <div className="flex-1 bg-white border border-gray-200 shadow-[0_15px_40px_rgba(0,0,0,0.04)] flex flex-col">
+                <div className="w-full aspect-[3/2] bg-white relative p-4 md:p-6 flex items-center justify-center">
+                   <div className="relative w-full h-full">
+                      <Image src="/images/personal/nj_section5_2.png" alt="내장지방 정상 단면도" fill className="object-contain" unoptimized={true} />
+                      <div className="absolute inset-0 z-10 pointer-events-none">
+                        <div className="absolute top-[15%] left-[10%] pointer-events-auto">
+                          <span className="text-transparent selection:bg-blue-500/30 selection:text-black font-bold text-[16px]">피하지방</span>
+                        </div>
+                        <div className="absolute top-[40%] right-[10%] pointer-events-auto">
+                           <span className="text-transparent selection:bg-blue-500/30 selection:text-black font-bold text-[16px]">내장지방</span>
+                        </div>
                       </div>
-                      <div className="absolute top-[40%] right-[10%] pointer-events-auto">
-                        <span className="text-transparent selection:bg-blue-500/30 selection:text-black font-bold text-[16px]">내장지방</span>
+                   </div>
+                </div>
+                <div className="w-full bg-[#5894e6] text-white text-center py-3.5 font-bold text-[20px] tracking-tight">내장지방 정상</div>
+             </div>
+             <div className="flex-1 bg-white border border-gray-200 shadow-[0_15px_40px_rgba(0,0,0,0.04)] flex flex-col">
+                <div className="w-full aspect-[3/2] bg-white relative p-4 md:p-6 flex items-center justify-center">
+                   <div className="relative w-full h-full">
+                      <Image src="/images/personal/nj_section5_3.png" alt="내장지방 과다 단면도" fill className="object-contain" unoptimized={true} />
+                      <div className="absolute inset-0 z-10 pointer-events-none">
+                        <div className="absolute top-[15%] left-[10%] pointer-events-auto">
+                          <span className="text-transparent selection:bg-blue-500/30 selection:text-black font-bold text-[16px]">피하지방</span>
+                        </div>
+                        <div className="absolute top-[40%] right-[10%] pointer-events-auto">
+                           <span className="text-transparent selection:bg-blue-500/30 selection:text-black font-bold text-[16px]">내장지방</span>
+                        </div>
                       </div>
-                    </div>
-                 </div>
-              </div>
-              <div className="w-full bg-[#5894e6] text-white text-center py-4 font-bold text-xl tracking-tight">내장지방 정상</div>
-           </div>
-           <div className="flex-1 bg-white border border-gray-200 shadow-[0_15px_40px_rgba(0,0,0,0.04)] flex flex-col">
-              <div className="w-full aspect-[3/2] bg-white relative p-4 md:p-6 flex items-center justify-center">
-                 <div className="relative w-full h-full">
-                    <Image src="/images/personal/nj_section5_3.png" alt="내장지방 과다 단면도" fill className="object-contain" unoptimized={true} />
-                    {/* 투명 텍스트 오버레이 (SEO 및 선택용) */}
-                    <div className="absolute inset-0 z-10 pointer-events-none">
-                      <div className="absolute top-[15%] left-[10%] pointer-events-auto">
-                        <span className="text-transparent selection:bg-blue-500/30 selection:text-black font-bold text-[16px]">피하지방</span>
-                      </div>
-                      <div className="absolute top-[40%] right-[10%] pointer-events-auto">
-                        <span className="text-transparent selection:bg-blue-500/30 selection:text-black font-bold text-[16px]">내장지방</span>
-                      </div>
-                    </div>
-                 </div>
-              </div>
-              <div className="w-full bg-[#fd6363] text-white text-center py-4 font-bold text-xl tracking-tight">내장지방 과다</div>
-           </div>
-        </div>
+                   </div>
+                </div>
+                <div className="w-full bg-[#fd6363] text-white text-center py-3.5 font-bold text-[20px] tracking-tight">내장지방 과다</div>
+             </div>
+          </div>
 
-        <div className="text-left">
-          <h3 className="text-[24px] md:text-[28px] font-black mb-6 text-gray-900 tracking-tight">체지방은 피하지방과 내장지방으로 나눠볼 수 있습니다.</h3>
-          <p className="text-gray-700 text-[15px] md:text-lg leading-[1.8] mb-8 break-keep font-medium">
-            내장지방은 복강 안 장기 사이 혹은 내장 벽에 존재하는 지방으로 주로 복부에 쌓이며, 내장지방이 증가할수록 배가 불룩하게<br className="hidden md:block"/>
-            나오나 손으로 꼬집었을 때 살집이 두껍게 잡히지 않습니다. 주로 중년층의 배둘레(허리둘레) 증가의 원인이 됩니다.
-          </p>
-          <p className="text-gray-900 font-bold text-[16.5px] md:text-[19.5px] leading-[1.8] break-keep">
-            내장지방의 증가는 혈액 내 지질 수치의 증가로 이어져<br/>
-            <strong className="bg-[#fff4b0] px-1 text-black font-bold">콜레스테롤 혈증 → 동맥경화 → 고혈압 → 뇌혈류장애, 심장혈관질환으로 진행할 수 있어</strong><br/>
-            복강내 여유 공간을 감소시켜 혈류·림프순환 장애와 위장관 운동성 저하를 유발하게 됩니다.
-          </p>
+           <div className="text-left space-y-3">
+             <h3 className="text-[22px] md:text-[25px] font-bold text-gray-900 tracking-tight">체지방은 피하지방과 내장지방으로 나눠볼 수 있습니다.</h3>
+             <p className="text-gray-700 text-[15px] md:text-base leading-relaxed break-keep font-medium tracking-tight">
+               내장지방은 복강 안 장기 사이 혹은 내장 벽에 존재하는 지방으로 주로 복부에 쌓이며, 내장지방이 증가할수록 배가 불룩하게 나오나 손으로 꼬집었을 때 살집이 두껍게 잡히지 않습니다. 주로 중년층의 배둘레(허리둘레) 증가의 원인이 됩니다.
+             </p>
+             <p className="text-gray-900 font-bold text-[16px] md:text-[18px] leading-relaxed break-keep tracking-tight pt-1">
+               내장지방의 증가는 혈액 내 지질 수치의 증가로 이어져 <strong className="bg-[#fff4b0] px-1 text-black font-bold">콜레스테롤 혈증 → 동맥경화 → 고혈압 → 뇌혈류장애, 심장혈관질환으로 진행할 수 있어</strong> 복강내 여유 공간을 감소시켜 혈류·림프순환 장애와 위장관 운동성 저하를 유발하게 됩니다.
+             </p>
+           </div>
         </div>
       </div>
     </section>
@@ -308,8 +310,8 @@ function CavityComparisonSection() {
     <>
       <section className="visceral-cavity-visual pt-20 md:pt-32 pb-20 bg-[#f9f9f9] border-t border-gray-200">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl md:text-5xl text-center mb-20 tracking-tight text-gray-900">
-          <span className="font-medium">건강한 사람과 내장비만인의</span> <strong className="text-[#A5C614] font-black">복강비교</strong>
+        <h2 className="text-2xl md:text-[38px] font-bold text-center mb-20 tracking-tight text-gray-900">
+          <span className="font-medium">건강한 사람과 내장비만인의</span> <strong className="text-[#A5C614]">복강비교</strong>
         </h2>
         
         <div className="flex flex-col md:flex-row gap-12 md:gap-20 justify-center">
@@ -351,8 +353,8 @@ function CavityComparisonSection() {
         {/* 건강한 사람의 복강 설명 */}
         <div className="bg-[#5894e6] w-full py-12 px-6 md:px-0 text-white flex justify-center">
           <div className="w-full max-w-5xl text-left">
-            <h3 className="text-2xl md:text-[28px] font-bold mb-6 text-white">건강한 사람의 복강</h3>
-            <p className="text-[16px] md:text-[19px] font-medium leading-[1.7] break-keep text-white/90">
+            <h3 className="text-2xl md:text-[28px] font-bold mb-6 text-white tracking-tight">건강한 사람의 복강</h3>
+            <p className="text-[16px] md:text-[19px] font-medium leading-[1.7] break-keep text-white/90 tracking-tight">
               식도 위 소장 대장 등의 有腔장기들은 장기 안이 음식물로 인해 가득차 있을수록 불편하고 기능이 떨어지며, 장기 안이 비어있을수록 장기의 운동성이 활발해져 효율적으로 내장지방을 연소하고 복강내 혈액 - 림프 흐름이 원활해집니다.
             </p>
           </div>
@@ -361,31 +363,31 @@ function CavityComparisonSection() {
         {/* 내장비만인의 복강 설명 */}
         <div className="bg-[#fd6363] w-full py-12 px-6 md:px-0 text-white flex justify-center">
           <div className="w-full max-w-5xl text-left">
-            <h3 className="text-2xl md:text-[28px] font-bold mb-6">내장비만인의 복강</h3>
-            <p className="text-[16px] md:text-[19px] font-medium leading-[1.7] break-keep mb-10 text-white/90">
+            <h3 className="text-2xl md:text-[28px] font-bold mb-6 tracking-tight">내장비만인의 복강</h3>
+            <p className="text-[16px] md:text-[19px] font-medium leading-[1.7] break-keep mb-10 text-white/90 tracking-tight">
               처리되지 못한 대사산물의 축적으로 혈액이 탁해지고 흐름이 나빠져서 혈액 내 염증 수치 증가, 혈중 지질의 증가로 세포, 조직, 장기의 기능 저하되어 각종 질병이 발생
             </p>
             
             <div className="flex flex-col gap-6">
               <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center">
                 <div className="bg-[#3b3b3b] text-white px-8 py-2.5 rounded-full font-bold w-fit md:w-32 text-center shrink-0">간</div>
-                <p className="font-medium text-[16px] md:text-[18px]">과음 과식으로 인한 간의 울혈 현상</p>
+                <p className="font-medium text-[16px] md:text-[18px] tracking-tight">과음 과식으로 인한 간의 울혈 현상</p>
               </div>
               <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center">
                 <div className="bg-[#3b3b3b] text-white px-8 py-2.5 rounded-full font-bold w-fit md:w-32 text-center shrink-0">심장</div>
-                <p className="font-medium text-[16px] md:text-[18px]">심장의 부담 증가 로 혈압 맥박수 증가</p>
+                <p className="font-medium text-[16px] md:text-[18px] tracking-tight">심장의 부담 증가 로 혈압 맥박수 증가</p>
               </div>
               <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center">
                 <div className="bg-[#3b3b3b] text-white px-8 py-2.5 rounded-full font-bold w-fit md:w-32 text-center shrink-0">위</div>
-                <p className="font-medium text-[16px] md:text-[18px]">과도한 위근육 사용으로 위벽이 붓고 단단해짐</p>
+                <p className="font-medium text-[16px] md:text-[18px] tracking-tight">과도한 위근육 사용으로 위벽이 붓고 단단해짐</p>
               </div>
               <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center">
                 <div className="bg-[#3b3b3b] text-white px-8 py-2.5 rounded-full font-bold w-fit md:w-32 text-center shrink-0">복강</div>
-                <p className="font-medium text-[16px] md:text-[18px] break-keep">내장지방의 증가로 인해 복강 내 공간 감소로 혈류, 림프 순환장애로 인해 복강 내 부종 발생</p>
+                <p className="font-medium text-[16px] md:text-[18px] break-keep tracking-tight">내장지방의 증가로 인해 복강 내 공간 감소로 혈류, 림프 순환장애로 인해 복강 내 부종 발생</p>
               </div>
               <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center">
                 <div className="bg-[#3b3b3b] text-white px-8 py-2.5 rounded-full font-bold w-fit md:w-32 text-center shrink-0">장</div>
-                <p className="font-medium text-[16px] md:text-[18px] break-keep mt-[21px]">장운동 감소로 인한 음식물 독소의 처리속도 지연으로 부패 증가하여 복부 내 가스 생성이 늘어나 복부 팽만감이 생기고 배변 활동도 감소</p>
+                <p className="font-medium text-[16px] md:text-[18px] break-keep mt-[21px] tracking-tight">장운동 감소로 인한 음식물 독소의 처리속도 지연으로 부패 증가하여 복부 내 가스 생성이 늘어나 복부 팽만감이 생기고 배변 활동도 감소</p>
               </div>
             </div>
           </div>
@@ -401,11 +403,11 @@ function ProcessSection() {
       <div className="visceral-process-main max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl mb-8 leading-tight tracking-tight text-gray-900">
           <span className="font-medium">중년의</span> <strong className="text-[#A5C614] font-black">뱃살 증가</strong><br/>
-          <span className="text-black text-2xl md:text-3xl mt-4 block font-bold"><span className="text-[#A5C614]">→</span> 소화기계의 과부하 <span className="text-[#A5C614]">→</span> 타장기의 혈류장애와 기능저하</span>
+          <span className="text-black text-2xl md:text-3xl mt-4 block font-bold tracking-tight"><span className="text-[#A5C614]">→</span> 소화기계의 과부하 <span className="text-[#A5C614]">→</span> 타장기의 혈류장애와 기능저하</span>
         </h2>
         
         <div className="mb-16 max-w-4xl mx-auto">
-           <p className="text-gray-800 text-[16px] md:text-[19px] leading-[1.8] break-keep">
+           <p className="text-gray-800 text-[16px] md:text-[19px] leading-[1.8] break-keep tracking-tight">
              공복 상태이거나 소화기능이 원만할 때보다 과식시 소화기계 쪽의 혈류유입량이 35~40%까지 증가되면서<br className="hidden md:block"/>
              <strong className="bg-[#fff4b0] px-1 font-bold mt-1 inline-block">다른 주요 장기와 말초부위로의 혈류가 감소되면서 전신 불편 증상을 유발할 수 있습니다.</strong>
            </p>
@@ -457,8 +459,8 @@ function ProcessSection() {
                <div key={i} className="flex items-start gap-4 text-left">
                   <div className="bg-[#A5C614] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold shrink-0 mt-0.5">{item.num}</div>
                   <div>
-                    <strong className="text-lg font-bold bg-[#fff4b0] px-1 text-gray-900">{item.title}</strong>
-                    <p className="text-gray-600 mt-1 text-[15px] break-keep leading-snug">{item.desc}</p>
+                    <strong className="text-lg font-bold bg-[#fff4b0] px-1 text-gray-900 tracking-tight">{item.title}</strong>
+                    <p className="text-gray-600 mt-1 text-[15px] break-keep leading-snug tracking-tight">{item.desc}</p>
                   </div>
                </div>
              ))}
@@ -466,29 +468,29 @@ function ProcessSection() {
         </div>
       </div>
 
-      {/* Middle: Comorbidity (Full Width) */}
+      {/* Middle: Comorbidity (Full Width) - 아이콘 양옆 여백을 주어 안쪽으로 모이게 배치 */}
       <div className="visceral-comorbidities w-full bg-[#f9f9f9] py-16 md:py-24 border-y border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-8 md:px-16 flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
           <div className="flex flex-col gap-8 md:gap-12 w-full md:w-auto relative z-10 mb-10 md:mb-0">
              <div className="flex items-center gap-4">
                <div className="w-[68px] h-[68px] relative flex items-center justify-center shrink-0"><Image src="/images/personal/nj_section7_3.png" alt="대사증후군" fill className="object-contain" unoptimized={true} /></div>
                <div className="text-left">
-                 <div className="text-2xl md:text-3xl font-black text-gray-900">4.2배</div>
-                 <div className="text-gray-600 text-base md:text-lg">대사증후군</div>
+                 <div className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">4.2배</div>
+                 <div className="text-gray-600 text-base md:text-lg tracking-tight">대사증후군</div>
                </div>
              </div>
              <div className="flex items-center gap-4">
                <div className="w-[68px] h-[68px] relative flex items-center justify-center shrink-0"><Image src="/images/personal/nj_section7_4.png" alt="고혈압" fill className="object-contain" unoptimized={true} /></div>
                <div className="text-left">
-                 <div className="text-2xl md:text-3xl font-black text-gray-900">2배</div>
-                 <div className="text-gray-600 text-base md:text-lg">고혈압</div>
+                 <div className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">2배</div>
+                 <div className="text-gray-600 text-base md:text-lg tracking-tight">고혈압</div>
                </div>
              </div>
              <div className="flex items-center gap-4">
                <div className="w-[68px] h-[68px] relative flex items-center justify-center shrink-0"><Image src="/images/personal/nj_section7_5.png" alt="만성콩팥병" fill className="object-contain" unoptimized={true} /></div>
                <div className="text-left">
-                 <div className="text-2xl md:text-3xl font-black text-gray-900">1.5배</div>
-                 <div className="text-gray-600 text-base md:text-lg">만성콩팥병</div>
+                 <div className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">1.5배</div>
+                 <div className="text-gray-600 text-base md:text-lg tracking-tight">만성콩팥병</div>
                </div>
              </div>
           </div>
@@ -497,29 +499,29 @@ function ProcessSection() {
              <div className="w-40 h-40 md:w-48 md:h-48 mb-4 relative flex items-center justify-center">
                 <Image src="/images/personal/nj_section7_2.png" alt="복부비만 동반질환" fill className="object-contain" unoptimized={true} />
              </div>
-             <p className="font-bold text-xl md:text-2xl text-gray-900">복부비만 동반질환</p>
+             <p className="font-bold text-[25px] text-gray-900 tracking-tight">복부비만 동반질환</p>
           </div>
           
           <div className="flex flex-col gap-8 md:gap-12 w-full md:w-auto relative z-10">
              <div className="flex items-center gap-4 md:flex-row-reverse text-left md:text-right">
                <div className="w-[68px] h-[68px] relative flex items-center justify-center shrink-0"><Image src="/images/personal/nj_section7_6.png" alt="당뇨병" fill className="object-contain" unoptimized={true} /></div>
                <div>
-                 <div className="text-2xl md:text-3xl font-black text-gray-900">2.1배</div>
-                 <div className="text-gray-600 text-base md:text-lg">당뇨병</div>
+                 <div className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">2.1배</div>
+                 <div className="text-gray-600 text-base md:text-lg tracking-tight">당뇨병</div>
                </div>
              </div>
              <div className="flex items-center gap-4 md:flex-row-reverse text-left md:text-right">
                <div className="w-[68px] h-[68px] relative flex items-center justify-center shrink-0"><Image src="/images/personal/nj_section7_7.png" alt="골관절염" fill className="object-contain" unoptimized={true} /></div>
                <div>
-                 <div className="text-2xl md:text-3xl font-black text-gray-900">1.6배</div>
-                 <div className="text-gray-600 text-base md:text-lg">골관절염</div>
+                 <div className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">1.6배</div>
+                 <div className="text-gray-600 text-base md:text-lg tracking-tight">골관절염</div>
                </div>
              </div>
              <div className="flex items-center gap-4 md:flex-row-reverse text-left md:text-right">
                <div className="w-[68px] h-[68px] relative flex items-center justify-center shrink-0"><Image src="/images/personal/nj_section7_8.png" alt="심혈관질환" fill className="object-contain" unoptimized={true} /></div>
                <div>
-                 <div className="text-2xl md:text-3xl font-black text-gray-900">1.4배</div>
-                 <div className="text-gray-600 text-base md:text-lg">심혈관질환</div>
+                 <div className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">1.4배</div>
+                 <div className="text-gray-600 text-base md:text-lg tracking-tight">심혈관질환</div>
                </div>
              </div>
           </div>
@@ -542,7 +544,7 @@ function ProcessSection() {
         <div className="max-w-6xl mx-auto">
           <p className="text-[23px] md:text-[27px] font-medium break-keep leading-relaxed tracking-tight">
             뱃살의 감소 <span className="mx-2 md:mx-4 font-black">➡</span> 정상적인 위장기능의 회복과 내장지방의 감소 <br className="hidden md:block"/>
-            <span className="text-2xl md:text-4xl mt-2 block font-bold"><span className="mx-1 md:mx-3 font-bold">➡</span> 내과적 질병 예방과 건강관리</span>
+            <span className="text-2xl md:text-4xl mt-2 block font-bold tracking-tight"><span className="mx-1 md:mx-3 font-bold">➡</span> 내과적 질병 예방과 건강관리</span>
           </p>
         </div>
       </div>
@@ -578,14 +580,14 @@ function MedicineSection() {
                  <div className="w-36 h-36 md:w-44 md:h-44 bg-gray-200 rounded-full mb-6 flex flex-col items-center justify-center overflow-hidden relative shadow-sm self-center">
                     <Image src={med.image} alt={med.name} fill className="object-cover" unoptimized={true} />
                  </div>
-                 <h3 className="text-2xl font-bold text-[#A5C614] mb-4 text-center">{med.name}</h3>
-                 <p className="text-[16px] text-gray-800 font-medium break-keep leading-relaxed mb-6 h-auto min-h-[48px] text-left">
+                 <h3 className="text-2xl font-bold text-[#A5C614] mb-4 text-center tracking-tight">{med.name}</h3>
+                 <p className="text-[16px] text-gray-800 font-medium break-keep leading-relaxed mb-6 h-auto min-h-[48px] text-left tracking-tight">
                    {med.desc}
                  </p>
                  <div className="w-full h-[1px] bg-gray-200 mb-6"></div>
                  <ul className="text-left w-full flex flex-col gap-2">
                    {med.list.map((item, i) => (
-                     <li key={i} className="text-gray-600 text-[16px] font-medium flex items-start gap-2">
+                     <li key={i} className="text-gray-600 text-[16px] font-medium flex items-start gap-2 tracking-tight">
                        <span className="text-gray-400 leading-tight">·</span>
                        <span className="leading-tight break-keep">{item}</span>
                      </li>
@@ -603,14 +605,14 @@ function MedicineSection() {
                     <Image src={med.image} alt={med.name} fill className="object-cover" unoptimized={true} />
                  </div>
                  <div className="flex flex-col flex-1 text-left w-full">
-                   <h3 className="text-2xl font-bold text-[#A5C614] mb-3">{med.name}</h3>
-                   <p className="text-[16px] text-gray-800 font-medium break-keep leading-relaxed mb-5">
+                   <h3 className="text-2xl font-bold text-[#A5C614] mb-3 tracking-tight">{med.name}</h3>
+                   <p className="text-[16px] text-gray-800 font-medium break-keep leading-relaxed mb-5 tracking-tight">
                      {med.desc}
                    </p>
                    <div className="w-full h-[1px] bg-gray-200 mb-5"></div>
                    <ul className="text-left flex flex-col gap-2">
                      {med.list.map((item, i) => (
-                       <li key={i} className="text-gray-600 text-[16px] font-medium flex items-start gap-2">
+                       <li key={i} className="text-gray-600 text-[16px] font-medium flex items-start gap-2 tracking-tight">
                          <span className="text-gray-400 leading-tight">·</span>
                          <span className="leading-tight break-keep">{item}</span>
                        </li>
@@ -629,8 +631,8 @@ function MedicineSection() {
 function DiagnosisSection() {
   const diagnosisData = [
     {
-      highlights: ['간기능저하,', '간피로'],
-      normal: '- 간열,어혈',
+      highlights: ['간기능 저하,', '간피로'],
+      normal: '- 간열, 어혈',
       caption: '오른쪽 갈비뼈 밑',
       align: 'left',
       image: '/images/personal/nj_section9_1.png',
@@ -638,7 +640,7 @@ function DiagnosisSection() {
       seoClass: 'translate-x-[-35px] translate-y-[-25px]'
     },
     {
-      highlights: ['역류성식도염,', '신경성위염'],
+      highlights: ['역류성 식도염,', '신경성 위염'],
       normal: '- 위열',
       caption: '명치부근',
       align: 'right',
@@ -647,8 +649,8 @@ function DiagnosisSection() {
       seoClass: 'translate-y-[-10px]'
     },
     {
-      highlights: ['장운동성저하,', '장명,', '복부팽만감,가스'],
-      normal: '- 담적,습담',
+      highlights: ['장운동성 저하,', '장명,', '복부팽만감, 가스'],
+      normal: '- 담적, 습담',
       caption: '배꼽주위',
       align: 'left',
       image: '/images/personal/nj_section9_3.png',
@@ -687,7 +689,7 @@ function DiagnosisSection() {
   return (
     <section className="visceral-diagnosis py-20 md:py-32 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold mb-20 tracking-tight text-gray-900">장기별 불편 증상에 따른 복부 진찰법</h2>
+        <h2 className="text-2xl md:text-[38px] font-bold mb-20 tracking-tight text-gray-900">장기별 불편 증상에 따른 복부 진찰법</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-16 max-w-5xl mx-auto">
           {diagnosisData.map((item, idx) => (
@@ -696,10 +698,12 @@ function DiagnosisSection() {
               {/* Left Column Text (Only if align is left) */}
               {item.align === 'left' && (
                 <div className="flex flex-col items-end text-right flex-1">
-                  {item.highlights.map((h, i) => (
-                    <span key={i} className="visceral-diagnosis-highlight bg-[#fff4b0] px-1 md:px-2 py-0.5 text-[16px] md:text-[19px] font-normal text-gray-800 mb-0.5 break-keep leading-snug">{h}</span>
-                  ))}
-                  {item.normal && <span className="visceral-diagnosis-normal text-gray-700 font-semibold text-[16px] md:text-[19px] mt-1 break-keep">{item.normal}</span>}
+                  <div className="flex flex-wrap justify-end gap-1 mb-1">
+                    {item.highlights.map((h, i) => (
+                      <span key={i} className="inline-block bg-[#fff4b0] px-1.5 py-0.5 text-[16px] font-semibold text-gray-800 tracking-tight break-keep leading-snug">{h}</span>
+                    ))}
+                  </div>
+                  {item.normal && <span className="visceral-diagnosis-normal text-gray-700 font-semibold text-[16px] mt-1 break-keep tracking-tight">{item.normal}</span>}
                 </div>
               )}
 
@@ -711,7 +715,7 @@ function DiagnosisSection() {
                       <span className={`text-[20px] text-transparent font-bold inline-block ${item.seoClass || ''}`}>{item.seoText}</span>
                    </div>
                 </div>
-                <div className="w-full py-2 bg-[#f4f4f4] text-center text-[16px] md:text-[19px] font-bold text-gray-800 border-t border-gray-200 z-10 relative">
+                <div className="w-full py-2 bg-[#f4f4f4] text-center text-[16px] md:text-[19px] font-bold text-gray-800 border-t border-gray-200 z-10 relative tracking-tight">
                   {item.caption}
                 </div>
               </div>
@@ -719,10 +723,12 @@ function DiagnosisSection() {
               {/* Right Column Text (Only if align is right) */}
               {item.align === 'right' && (
                 <div className="flex flex-col items-start text-left flex-1">
-                  {item.highlights.map((h, i) => (
-                    <span key={i} className="visceral-diagnosis-highlight bg-[#fff4b0] px-1 md:px-2 py-0.5 text-[16px] md:text-[19px] font-normal text-gray-800 mb-0.5 break-keep leading-snug">{h}</span>
-                  ))}
-                  {item.normal && <span className="visceral-diagnosis-normal text-gray-700 font-semibold text-[16px] md:text-[19px] mt-1 break-keep">{item.normal}</span>}
+                  <div className="flex flex-wrap justify-start gap-1 mb-1">
+                    {item.highlights.map((h, i) => (
+                      <span key={i} className="inline-block bg-[#fff4b0] px-1.5 py-0.5 text-[16px] font-semibold text-gray-800 tracking-tight break-keep leading-snug">{h}</span>
+                    ))}
+                  </div>
+                  {item.normal && <span className="visceral-diagnosis-normal text-gray-700 font-semibold text-[16px] mt-1 break-keep tracking-tight">{item.normal}</span>}
                 </div>
               )}
 
@@ -736,7 +742,7 @@ function DiagnosisSection() {
 
 function DiagnosisReasonSection() {
   return (
-    <section className="visceral-diagnosis-reason py-20 md:py-32 bg-[#f9f9f9] border-t border-gray-200">
+    <section className="visceral-diagnosis-reason py-12 md:py-16 bg-[#f9f9f9] border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl md:text-5xl text-center mb-16 tracking-tight text-gray-900">
           <span className="font-bold">복부진찰법이</span> <span className="font-medium">중요한 이유?</span>
@@ -752,10 +758,10 @@ function DiagnosisReasonSection() {
              
              {/* Text Block */}
              <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <p className="text-gray-600 text-[16px] md:text-[18px] leading-[1.8] break-keep font-medium mb-5">
+                <p className="text-gray-600 text-[16px] md:text-[18px] leading-[1.8] break-keep font-medium mb-5 tracking-tight">
                   복부는 흉부와 달리 흉곽으로 덮여있지 않아 복부 안의 장기를 촉진하여 압통처의 반응, 종양유무, 장부의 건강 상태 등을 알아볼 수 있습니다. 정상적인 경우 일정한 세기로 눌렀을 때 배가 아프거나 단단하거나 피부가 차갑지 않은데 반해서, <strong className="bg-[#fff4b0] px-1 inline text-gray-900 font-bold">손으로 눌렀을 때 배가 많이 아프다던지, 단단하던지, 뭉쳤다던지, 차가운 느낌이 들면 거기 위치해 있는 장기가 편하지 않거나 활동성이 떨어져 있거나 해당 부위로 혈액·림프 흐름이 저하되어 있을 확률이 많습니다.</strong>
                 </p>
-                <p className="text-gray-600 text-[16px] md:text-[18px] leading-[1.8] break-keep font-medium">
+                <p className="text-gray-600 text-[16px] md:text-[18px] leading-[1.8] break-keep font-medium tracking-tight">
                   즉, 배가 편하지 않은 사람이 장기의 피로도가 쌓여있고 장기주변의 혈류가 좋지 못해서 산소포화도는 낮고 염증 물질은 많아서 피가 끈끈해서 머리와 팔다리의 혈행도 나빠져서 얼굴과 손발이 잘 붓고 차고 저리다는 증세를 호소하게 됩니다.
                 </p>
              </div>
@@ -763,34 +769,34 @@ function DiagnosisReasonSection() {
 
            {/* Bottom Half: List */}
            <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 tracking-tight">복부의 임상적 의미</h3>
+              <h3 className="text-2xl md:text-[25px] font-bold text-gray-900 mb-8 tracking-tight">복부의 임상적 의미</h3>
               <div className="flex flex-col gap-6">
                  
                  {/* Item 1 */}
                  <div className="flex items-start gap-4">
                     <div className="w-8 h-8 rounded-full bg-[#A5C614] text-white flex items-center justify-center font-bold flex-shrink-0 text-sm mt-1">01</div>
                     <div>
-                      <p className="text-gray-900 font-bold text-lg md:text-xl tracking-tight mb-2">복부는 동맥혈과 정맥혈의 교류처</p>
-                      <p className="text-gray-500 text-[14px] md:text-[16px] leading-relaxed break-keep">복부의 세로중심선에 해당하는 부분이 복부대동맥 근처로 심장에서 나간 혈액이 뇌 혹은 복부 중요 장기로의 공급 상황을 반영하기 때문</p>
+                      <p className="text-gray-900 font-bold text-[20px] tracking-tight mb-2">복부는 동맥혈과 정맥혈의 교류처</p>
+                      <p className="text-gray-500 text-[14px] md:text-[16px] leading-relaxed break-keep tracking-tight">복부의 세로중심선에 해당하는 부분이 복부대동맥 근처로 심장에서 나간 혈액이 뇌 혹은 복부 중요 장기로의 공급 상황을 반영하기 때문</p>
                     </div>
                  </div>
 
                  {/* Item 2 */}
                  <div className="flex items-center gap-4">
                     <div className="w-8 h-8 rounded-full bg-[#A5C614] text-white flex items-center justify-center font-bold flex-shrink-0 text-sm">02</div>
-                    <p className="text-gray-900 font-bold text-lg md:text-xl tracking-tight">소화기계 특히 소장, 간 등이 면역 기능과 관련</p>
+                    <p className="text-gray-900 font-bold text-[20px] tracking-tight">소화기계 특히 소장, 간 등이 면역 기능과 관련</p>
                  </div>
 
                  {/* Item 3 */}
                  <div className="flex items-center gap-4">
                     <div className="w-8 h-8 rounded-full bg-[#A5C614] text-white flex items-center justify-center font-bold flex-shrink-0 text-sm">03</div>
-                    <p className="text-gray-900 font-bold text-lg md:text-xl tracking-tight">복부는 오장육부의 집결지</p>
+                    <p className="text-gray-900 font-bold text-[20px] tracking-tight">복부는 오장육부의 집결지</p>
                  </div>
 
                  {/* Item 4 */}
                  <div className="flex items-center gap-4">
                     <div className="w-8 h-8 rounded-full bg-[#A5C614] text-white flex items-center justify-center font-bold flex-shrink-0 text-sm">04</div>
-                    <p className="text-gray-900 font-bold text-lg md:text-xl tracking-tight">장벽의 평활근의 이완과 수축은 내부 장기의 건강 상태를 반영</p>
+                    <p className="text-gray-900 font-bold text-[20px] tracking-tight">장벽의 평활근의 이완과 수축은 내부 장기의 건강 상태를 반영</p>
                  </div>
 
               </div>
