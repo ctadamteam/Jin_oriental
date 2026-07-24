@@ -943,8 +943,8 @@ export default function DetoxDietPage() {
                </div>
              </div>
 
-             {/* 방영일자 (이미지 밖 우측 하단) */}
-             <div className="relative z-10 text-gray-500 text-[10px] md:text-xs font-normal mt-[-5px] mr-[35px] text-right w-full pointer-events-none">
+             {/* 방영일자 (이미지 밖 우측 하단 - 위로 7px, 오른쪽으로 23px 이동 반영) */}
+             <div className="relative z-10 text-gray-500 text-[10px] md:text-xs font-normal mt-[-12px] mr-[12px] text-right w-full pointer-events-none">
                2015년 9월 5일 방영
              </div>
            </div>
