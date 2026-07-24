@@ -161,8 +161,8 @@ function CauseSection() {
   return (
     <section className="visceral-causes py-20 md:py-32 bg-white border-t border-gray-100">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-2xl md:text-[38px] font-bold text-gray-900 mb-16 tracking-tight">
-          <strong className="text-[#A5C614]">내장지방</strong>은 왜 생기는 건가요?
+        <h2 className="text-2xl md:text-[38px] font-normal text-gray-900 mb-16 tracking-tight">
+          <strong className="text-[#A5C614] font-bold">내장지방</strong>은 왜 생기는 건가요?
         </h2>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
