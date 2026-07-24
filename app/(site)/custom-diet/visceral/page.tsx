@@ -200,14 +200,14 @@ function CauseSection() {
 
 function WhatIsSection() {
   return (
-    <section className="visceral-what-is py-20 md:py-32 bg-white">
-      <div className="w-full max-w-[1000px] mx-auto px-0">
-        <h2 className="text-2xl md:text-[38px] font-bold text-center text-gray-900 mb-16 tracking-tight">
+    <section className="visceral-what-is py-12 md:py-20 bg-white">
+      <div className="w-full max-w-[1100px] mx-auto px-4 md:px-6">
+        <h2 className="text-2xl md:text-[38px] font-bold text-center text-gray-900 mb-10 md:mb-16 tracking-tight">
           <strong className="text-[#A5C614]">내장지방</strong>은 무엇인가요?
         </h2>
 
         {/* 2cm 이하 vs 2cm 이상 비교 이미지 (양옆 여백 없이 100% 가로 사이즈 확장) */}
-        <div className="relative w-full mb-20">
+        <div className="relative w-full mb-12 md:mb-20">
            <Image 
              src="/images/personal/nj_section5_1.jpg" 
              alt="피하지방 내장지방 비교" 
@@ -253,8 +253,8 @@ function WhatIsSection() {
            </div>
         </div>
 
-        {/* 단면도 비교 (연한 회색 배경 bg-[#f8f9f6]) */}
-        <div className="bg-[#f8f9f6] p-6 md:p-10 rounded-2xl mb-12">
+        {/* 단면도 비교 (배경 순백색 bg-white 및 폭 확장) */}
+        <div className="bg-white w-full px-0 md:px-6 mb-12">
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-12">
              <div className="flex-1 bg-white border border-gray-200 shadow-[0_15px_40px_rgba(0,0,0,0.04)] flex flex-col">
                 <div className="w-full aspect-[3/2] bg-white relative p-4 md:p-6 flex items-center justify-center">
