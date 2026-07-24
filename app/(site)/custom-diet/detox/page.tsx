@@ -694,11 +694,21 @@ export default function DetoxDietPage() {
       </section>
 
       {/* 8. Quality Assurance (청정한약 시스템) */}
-      <section className="w-full pt-16 md:pt-24 bg-white">
-        <div className="w-full max-w-5xl mx-auto px-4 text-center mb-12 md:mb-16">
-          <h4 className="text-sm md:text-base text-gray-400 font-normal mb-2">믿을 수 있는 진한의원</h4>
-          <h2 className="text-2xl md:text-[36px] font-bold text-[#1f2421] tracking-tight">청정한약 시스템</h2>
-          <div className="w-12 h-1 bg-[#8cb82b] mx-auto mt-4"></div>
+      <section className="w-full pt-16 md:pt-20 bg-white relative">
+        <div className="w-full max-w-5xl mx-auto px-4 mb-8 md:mb-12 relative">
+          <div className="flex items-start gap-3.5 text-left">
+            <div className="w-[6px] h-[52px] md:h-[58px] bg-[#747474] shrink-0 mt-0.5"></div>
+            <div>
+              <h4 className="text-lg md:text-[25px] text-gray-500 font-normal leading-tight tracking-tight mb-1">
+                믿을 수 있는 진한의원
+              </h4>
+              <h2 className="text-xl md:text-[25px] font-bold text-gray-900 tracking-tight leading-tight">
+                청정한약 시스템
+              </h2>
+            </div>
+          </div>
+          {/* 오른쪽 끝 수직 회색 바 */}
+          <div className="hidden md:block absolute top-0 right-4 w-[7px] h-[68px] bg-[#747474]"></div>
         </div>
         
         <div className="w-full flex flex-col md:flex-row min-h-[360px] md:min-h-[420px]">
