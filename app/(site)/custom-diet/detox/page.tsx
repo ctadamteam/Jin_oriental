@@ -500,16 +500,16 @@ export default function DetoxDietPage() {
               
               {/* Top Left (청소) */}
               <div className="md:absolute md:top-[18%] md:left-[15px] md:w-[310px] w-full text-left px-4 md:px-0 pointer-events-auto">
-                <p className="text-gray-800 text-[20px] md:text-[20px] leading-snug break-keep border-l-[3px] border-gray-300 pl-4 py-1">
-                  소화기관 및 주요한<br className="hidden md:block" />기관으로부터 <strong className="bg-[#fff4b0] px-1 font-normal">점액질과독소를<br className="hidden md:block" />청소해내는 단계입니다.</strong>
+                <p className="text-gray-800 text-[20px] md:text-[20px] font-semibold leading-snug break-keep border-l-[3px] border-gray-300 pl-4 py-1">
+                  소화기관 및 주요한<br className="hidden md:block" />기관으로부터 <strong className="bg-[#fff4b0] px-1 font-semibold">점액질과독소를<br className="hidden md:block" />청소해내는 단계입니다.</strong>
                 </p>
               </div>
 
               {/* Top Right (재건) */}
               <div className="md:absolute md:top-[12%] md:-right-[20px] md:w-[320px] w-full text-left px-4 md:px-0 pointer-events-auto">
                 <div className="border-l-[3px] border-gray-300 pl-4 py-1">
-                  <p className="text-gray-800 text-[20px] md:text-[20px] leading-snug break-keep mb-1">
-                    독소를 청소한 후 <strong className="bg-[#fff4b0] px-1 font-normal">조직을<br className="hidden md:block" />건강하고 최상의 상태로 만드는<br className="hidden md:block" />단계입니다.</strong>
+                  <p className="text-gray-800 text-[20px] md:text-[20px] font-semibold leading-snug break-keep mb-1">
+                    독소를 청소한 후 <strong className="bg-[#fff4b0] px-1 font-semibold">조직을<br className="hidden md:block" />건강하고 최상의 상태로 만드는<br className="hidden md:block" />단계입니다.</strong>
                   </p>
                   <p className="text-[18px] md:text-[18px] text-gray-700 break-keep leading-relaxed mt-1.5">
                     재건단계에서는 신선한 음식이나 최소로 조리한 음식을 먹습니다. 지방과 유제품 섭취는 줄이고 튀긴 음식은 금해야 하며. 알코올, 카페인, 설탕, 담배도 멀리하며 해산물을 제외한 육류도 피하는 것이 좋습니다.
@@ -520,7 +520,7 @@ export default function DetoxDietPage() {
               {/* Bottom Left (유지) */}
               <div className="md:absolute md:bottom-[2%] md:left-[20px] md:w-[350px] w-full text-left px-4 md:px-0 pointer-events-auto">
                 <div className="border-l-[3px] border-gray-300 pl-4 py-1">
-                  <p className="text-gray-800 text-[20px] md:text-[20px] leading-snug break-keep mb-1">
+                  <p className="text-gray-800 text-[20px] md:text-[20px] font-semibold leading-snug break-keep mb-1">
                     해독에 있어서 가장 중요한 단계입니다.
                   </p>
                   <p className="text-[18px] md:text-[18px] text-gray-700 break-keep leading-relaxed mt-1.5">
