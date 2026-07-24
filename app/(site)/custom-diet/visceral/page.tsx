@@ -133,8 +133,8 @@ function ReasonSection() {
           <Image src="/images/personal/nj_section3.png" alt="남녀 허리둘레 기준" fill className="object-contain" unoptimized={true} />
           
           <div className="absolute inset-0 flex flex-col md:flex-row justify-center items-center z-10 pointer-events-none">
-            {/* 남자 영역 (왼쪽으로 40px 이동) */}
-            <div className="visceral-waist-text visceral-waist-text--male w-full md:w-1/2 flex flex-col items-center pointer-events-auto -translate-x-[40px]">
+            {/* 남자 영역 (왼쪽으로 80px 이동) */}
+            <div className="visceral-waist-text visceral-waist-text--male w-full md:w-1/2 flex flex-col items-center pointer-events-auto -translate-x-[80px]">
                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#4a72b2]/10 flex items-center justify-center mb-3 md:mb-4">
                   <span className="text-[#4a72b2] text-2xl md:text-3xl font-bold">男</span>
                </div>
@@ -142,8 +142,8 @@ function ReasonSection() {
                <p className="text-4xl md:text-5xl font-black text-black tracking-tighter">90<span className="text-xl md:text-2xl font-bold text-black ml-1">cm</span> <span className="text-lg md:text-xl font-medium text-black">이상</span></p>
             </div>
             
-            {/* 여자 영역 (오른쪽으로 40px 이동) */}
-            <div className="visceral-waist-text visceral-waist-text--female w-full md:w-1/2 flex flex-col items-center pointer-events-auto mt-6 md:mt-0 translate-x-[40px]">
+            {/* 여자 영역 (오른쪽으로 80px 이동) */}
+            <div className="visceral-waist-text visceral-waist-text--female w-full md:w-1/2 flex flex-col items-center pointer-events-auto mt-6 md:mt-0 translate-x-[80px]">
                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#d92b2b]/10 flex items-center justify-center mb-3 md:mb-4">
                   <span className="text-[#d92b2b] text-2xl md:text-3xl font-bold">女</span>
                </div>
