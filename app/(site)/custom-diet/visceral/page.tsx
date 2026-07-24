@@ -502,7 +502,7 @@ function ProcessSection() {
              <p className="font-bold text-[25px] text-gray-900 tracking-tight">복부비만 동반질환</p>
           </div>
           
-          <div className="flex flex-col gap-8 md:gap-12 w-full md:w-auto relative z-10">
+          <div className="flex flex-col gap-8 md:gap-12 w-full md:w-auto relative z-10 translate-x-0 md:-translate-x-[30px]">
              <div className="flex items-center gap-4 md:flex-row-reverse text-left md:text-right">
                <div className="w-[68px] h-[68px] relative flex items-center justify-center shrink-0"><Image src="/images/personal/nj_section7_6.png" alt="당뇨병" fill className="object-contain" unoptimized={true} /></div>
                <div>
