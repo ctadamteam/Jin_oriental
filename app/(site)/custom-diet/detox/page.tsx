@@ -473,25 +473,25 @@ export default function DetoxDietPage() {
                {/* 텍스트 오버레이 (드래그 가능) */}
                {/* 중앙 텍스트 */}
                <div className="absolute top-1/2 left-[53%] -translate-x-1/2 -translate-y-1/2 flex items-center justify-center mt-[-10px]">
-                 <span className="text-[#3a332d] font-black text-base md:text-xl tracking-tight">해독 단계</span>
+                 <span className="text-[#3a332d] font-black text-[20px] md:text-[20px] tracking-tight">해독 단계</span>
                </div>
                
                {/* 01 청소 */}
                <div className="absolute top-[39%] left-[31%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-white">
-                 <span className="font-bold text-[10px] md:text-xs leading-none mb-1">01</span>
-                 <span className="font-bold text-base md:text-xl leading-none">청소</span>
+                 <span className="font-bold text-[18px] md:text-[18px] leading-none mb-1">01</span>
+                 <span className="font-bold text-[20px] md:text-[20px] leading-none">청소</span>
                </div>
                
                {/* 02 재건 */}
                <div className="absolute top-[39%] left-[74%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-white">
-                 <span className="font-bold text-[10px] md:text-xs leading-none mb-1">02</span>
-                 <span className="font-bold text-base md:text-xl leading-none">재건</span>
+                 <span className="font-bold text-[18px] md:text-[18px] leading-none mb-1">02</span>
+                 <span className="font-bold text-[20px] md:text-[20px] leading-none">재건</span>
                </div>
                
                {/* 03 유지 */}
-               <div className="absolute top-[72%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1 text-white">
-                 <span className="font-bold text-[10px] md:text-xs">03</span>
-                 <span className="font-bold text-base md:text-xl">유지</span>
+               <div className="absolute top-[72%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 text-white">
+                 <span className="font-bold text-[18px] md:text-[18px]">03</span>
+                 <span className="font-bold text-[20px] md:text-[20px]">유지</span>
                </div>
             </div>
 
@@ -500,18 +500,18 @@ export default function DetoxDietPage() {
               
               {/* Top Left (청소) */}
               <div className="md:absolute md:top-[18%] md:left-[15px] md:w-[310px] w-full text-left px-4 md:px-0 pointer-events-auto">
-                <p className="text-gray-800 text-lg md:text-[20px] leading-snug break-keep border-l-[3px] border-gray-300 pl-4 py-1">
-                  소화기관 및 주요한<br className="hidden md:block" />기관으로부터 <strong className="bg-yellow-100/80 px-1 font-bold">점액질과독소를<br className="hidden md:block" />청소해내는 단계입니다.</strong>
+                <p className="text-gray-800 text-[20px] md:text-[20px] leading-snug break-keep border-l-[3px] border-gray-300 pl-4 py-1">
+                  소화기관 및 주요한<br className="hidden md:block" />기관으로부터 <strong className="bg-[#fff4b0] px-1 font-bold">점액질과독소를<br className="hidden md:block" />청소해내는 단계입니다.</strong>
                 </p>
               </div>
 
               {/* Top Right (재건) */}
               <div className="md:absolute md:top-[12%] md:-right-[20px] md:w-[320px] w-full text-left px-4 md:px-0 pointer-events-auto">
                 <div className="border-l-[3px] border-gray-300 pl-4 py-1">
-                  <p className="text-gray-800 text-lg md:text-[20px] leading-snug break-keep mb-3">
-                    독소를 청소한 후 <strong className="bg-yellow-100/80 px-1 font-bold">조직을<br className="hidden md:block" />건강하고 최상의 상태로 만드는<br className="hidden md:block" />단계입니다.</strong>
+                  <p className="text-gray-800 text-[20px] md:text-[20px] leading-snug break-keep mb-3">
+                    독소를 청소한 후 <strong className="bg-[#fff4b0] px-1 font-bold">조직을<br className="hidden md:block" />건강하고 최상의 상태로 만드는<br className="hidden md:block" />단계입니다.</strong>
                   </p>
-                  <p className="text-[14px] md:text-[15px] text-gray-700 break-keep leading-relaxed mt-4">
+                  <p className="text-[18px] md:text-[18px] text-gray-700 break-keep leading-relaxed mt-4">
                     재건단계에서는 신선한 음식이나 최소로 조리한 음식을 먹습니다. 지방과 유제품 섭취는 줄이고 튀긴 음식은 금해야 하며. 알코올, 카페인, 설탕, 담배도 멀리하며 해산물을 제외한 육류도 피하는 것이 좋습니다.
                   </p>
                 </div>
@@ -520,11 +520,11 @@ export default function DetoxDietPage() {
               {/* Bottom Left (유지) */}
               <div className="md:absolute md:bottom-[2%] md:left-[20px] md:w-[350px] w-full text-left px-4 md:px-0 pointer-events-auto">
                 <div className="border-l-[3px] border-gray-300 pl-4 py-1">
-                  <p className="text-gray-800 text-lg md:text-[20px] leading-snug break-keep mb-2">
+                  <p className="text-gray-800 text-[20px] md:text-[20px] leading-snug break-keep mb-2">
                     해독에 있어서 가장 중요한 단계입니다.
                   </p>
-                  <p className="text-[14px] md:text-[15px] text-gray-700 break-keep leading-relaxed mt-3">
-                    <strong className="bg-yellow-100/80 px-1 font-bold">생활 습관을 조절하여 저항력이 강한 인체를 만들도록 해야 합니다.</strong> 섬유질이 풍부한 건강한 식단과 적당한 운동을 병행하여 독소의 축적을 막는 것이 좋습니다.
+                  <p className="text-[18px] md:text-[18px] text-gray-700 break-keep leading-relaxed mt-3">
+                    <strong className="bg-[#fff4b0] px-1 font-bold">생활 습관을 조절하여 저항력이 강한 인체를 만들도록 해야 합니다.</strong> 섬유질이 풍부한 건강한 식단과 적당한 운동을 병행하여 독소의 축적을 막는 것이 좋습니다.
                   </p>
                 </div>
               </div>
@@ -542,7 +542,7 @@ export default function DetoxDietPage() {
                 <h3 className="text-lg font-bold text-gray-800 mb-2">장해독</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
                   설탕, 밀가루, 인스턴트, 가공식품의 과도한 섭취로 인해 나쁜 균이 늘어나게 되고 각종 노폐물과 독소를 만들어 냅니다.<br />
-                  <strong className="bg-yellow-100/80 px-1">장 해독은 몸속의 과잉된 노폐물 찌꺼기와 독소를 몸 밖으로 배출해 건강한 장내 환경을 만들어줍니다.</strong>
+                  <strong className="bg-[#fff4b0] px-1">장 해독은 몸속의 과잉된 노폐물 찌꺼기와 독소를 몸 밖으로 배출해 건강한 장내 환경을 만들어줍니다.</strong>
                 </p>
               </div>
             </div>
@@ -555,7 +555,7 @@ export default function DetoxDietPage() {
               <div className="bg-gray-50 rounded-2xl p-6 flex-1 w-full border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-800 mb-2">간 해독</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
-                  외부환경에 의해 생성되는 독소도 있지만 몸속 에너지 대사 과정에서 나오는 대사산물과 박테리아 등으로 인한 인체 내에서 발생하는 내부독소도 있습니다. 술, 밀가루 등 해독이 필요한 음식을 다량으로 섭취하게 되면 우리 몸이 스스로 해독할 수 있는 정화시스템의 과부하로 간 기능이 저하되어 이상이 생깁니다. <strong className="bg-yellow-100/80 px-1">간 해독은 몸속의 잉여 노폐물과 독소로 인해 기능이 저하된 간을 정화해 몸속 독소 배출을 도와줍니다.</strong>
+                  외부환경에 의해 생성되는 독소도 있지만 몸속 에너지 대사 과정에서 나오는 대사산물과 박테리아 등으로 인한 인체 내에서 발생하는 내부독소도 있습니다. 술, 밀가루 등 해독이 필요한 음식을 다량으로 섭취하게 되면 우리 몸이 스스로 해독할 수 있는 정화시스템의 과부하로 간 기능이 저하되어 이상이 생깁니다. <strong className="bg-[#fff4b0] px-1">간 해독은 몸속의 잉여 노폐물과 독소로 인해 기능이 저하된 간을 정화해 몸속 독소 배출을 도와줍니다.</strong>
                 </p>
               </div>
             </div>
@@ -568,7 +568,7 @@ export default function DetoxDietPage() {
               <div className="bg-gray-50 rounded-2xl p-6 flex-1 w-full border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-800 mb-2">혈액 해독</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
-                  기름진 식사와 과식은 노폐물이 제대로 배출되지 못해 몸속의 독소로 남아 혈액 속을 돌아다닙니다. <br/>이렇게 <strong className="bg-yellow-100/80 px-1">탁해진 혈액은 신진대사를 방해해 질병이나 비만의 원인이 됩니다. 혈액 해독은 혈액과 함께 몸속을 돌아다니는 독소를 빠른 시간 내 제거해 혈액이 깨끗해질 수 있도록 도와드립니다.</strong>
+                  기름진 식사와 과식은 노폐물이 제대로 배출되지 못해 몸속의 독소로 남아 혈액 속을 돌아다닙니다. <br/>이렇게 <strong className="bg-[#fff4b0] px-1">탁해진 혈액은 신진대사를 방해해 질병이나 비만의 원인이 됩니다. 혈액 해독은 혈액과 함께 몸속을 돌아다니는 독소를 빠른 시간 내 제거해 혈액이 깨끗해질 수 있도록 도와드립니다.</strong>
                 </p>
               </div>
             </div>
@@ -581,7 +581,7 @@ export default function DetoxDietPage() {
               <div className="bg-gray-50 rounded-2xl p-6 flex-1 w-full border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-800 mb-2">피부해독</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
-                  체내에 쌓인 독소가 제대로 배출되지 못하고 기혈의 순환이 원활하지 못하면 각종 피부 트러블과 여드름, 아토피 등 다양한 증상으로 나타나게 됩니다. 피부해독은 체질에 맞게 처방되어, <strong className="bg-yellow-100/80 px-1">몸속에 정체되어 있는 독소와 노폐물을 배출해 피부 트러블의 원인을 제거합니다.</strong>
+                  체내에 쌓인 독소가 제대로 배출되지 못하고 기혈의 순환이 원활하지 못하면 각종 피부 트러블과 여드름, 아토피 등 다양한 증상으로 나타나게 됩니다. 피부해독은 체질에 맞게 처방되어, <strong className="bg-[#fff4b0] px-1">몸속에 정체되어 있는 독소와 노폐물을 배출해 피부 트러블의 원인을 제거합니다.</strong>
                 </p>
               </div>
             </div>
@@ -594,7 +594,7 @@ export default function DetoxDietPage() {
               <div className="bg-gray-50 rounded-2xl p-6 flex-1 w-full border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-800 mb-2">자궁해독</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
-                  환경 호르몬과 같은 적체된 자궁내 독소를 배출하고 자궁내의 혈액과 림프 순환을 촉진시켜 어혈을 배출하고 <strong className="bg-yellow-100/80 px-1">자궁환경 개선을 통해 염증을 치료하고 자궁관련 질환에 있어서 근본적인 치료를 가능하게 도와줍니다.</strong> 특히 평소 생리통증군이 심하거나 생리주기가 일정하지 못한 경우에 도움이 됩니다.
+                  환경 호르몬과 같은 적체된 자궁내 독소를 배출하고 자궁내의 혈액과 림프 순환을 촉진시켜 어혈을 배출하고 <strong className="bg-[#fff4b0] px-1">자궁환경 개선을 통해 염증을 치료하고 자궁관련 질환에 있어서 근본적인 치료를 가능하게 도와줍니다.</strong> 특히 평소 생리통증군이 심하거나 생리주기가 일정하지 못한 경우에 도움이 됩니다.
                 </p>
               </div>
             </div>
