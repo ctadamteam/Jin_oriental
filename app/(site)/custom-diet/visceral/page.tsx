@@ -178,7 +178,7 @@ function CauseSection() {
                  />
               </div>
               <div className="bg-[#f0f0f0] border-t border-gray-200 py-2 md:py-2.5 w-full flex items-center justify-center px-2">
-                <p className="font-bold text-gray-800 text-[20px] tracking-tight text-center">
+                <p className="font-bold text-gray-800 text-[18px] tracking-tight text-center">
                   {item === '갱년기' ? '갱년기(성 호르몬 감소)' : item}
                 </p>
               </div>
