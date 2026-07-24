@@ -162,7 +162,7 @@ export default function PostpartumDietPage() {
           <div className="pp-case-list">{caseStudies.map((caseStudy) => <article className="pp-case" key={caseStudy.caseLabel}>
             <header className="pp-case-header"><b>{caseStudy.caseLabel}</b><p>{caseStudy.profile}</p><div className="pp-case-summary">{caseStudy.summary.map((item, index) => <span key={item}>{item}{index < caseStudy.summary.length - 1 && <i aria-hidden="true">›</i>}</span>)}</div></header>
             <div className="pp-case-stages">{caseStudy.stages.map((stage, index) => <div className="pp-case-stage-wrap" key={stage.image}>
-              <div className="pp-case-stage"><p><span>{stage.label}</span>{stage.weight && <strong>{stage.weight}</strong>}{stage.date && <small>{stage.date}</small>}</p><Image src={`/images/postpartum/${stage.image}`} alt={`${caseStudy.caseLabel} ${stage.label}`} width={930} height={409} loading="eager" unoptimized /></div>
+              <div className="pp-case-stage"><p><span>{stage.label}</span>{stage.weight && <strong>{stage.weight}</strong>}{stage.date && <small>{stage.date}</small>}</p><Image src={`/images/postpartum/${stage.image}`} alt={`${caseStudy.caseLabel} ${stage.label}`} width={930} height={409} loading="eager" unoptimized className={['PP_11.png', 'PP_12.png', 'PP_14.png', 'PP_15.png'].includes(stage.image) ? 'relative -top-[50px]' : ''} /></div>
               {index < caseStudy.stages.length - 1 && <i className="pp-down-arrow" aria-hidden="true">↓</i>}
             </div>)}</div>
           </article>)}</div>
