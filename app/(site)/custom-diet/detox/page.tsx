@@ -617,8 +617,8 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">1. 해독한약</h3>
               </div>
-              <div className="w-full aspect-[4/3] bg-gray-200 rounded-sm mb-6 flex items-center justify-center text-gray-400 font-medium">
-                이미지 영역
+              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+                <Image src="/images/personal/detox_1.png" alt="1. 해독한약" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
                 독소가 몰려 있는 장소가 조직인지, 혈액인지, 어느 장기에 있는지에 따라 치료법과 약재가 달라집니다. 한약의 경우 독소의 배출구를 열고 전신 혈류 개선 및 해독 대사를 촉진하는 역할도 하지만. 부족한 부분은 채워 보호하는 기능도 합니다.
@@ -630,8 +630,8 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">2. 효소해독</h3>
               </div>
-              <div className="w-full aspect-[4/3] bg-gray-200 rounded-sm mb-6 flex items-center justify-center text-gray-400 font-medium">
-                이미지 영역
+              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+                <Image src="/images/personal/detox_2.png" alt="2. 효소해독" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
                 발효된 효소 해독요법으로 장속 유산균을 늘려 독소와 유해균들을 빨리 몸 밖으로 빼내고, 영양소의 흡수율을 높이고 면역력이 높아지는 장내 환경을 개선합니다.
@@ -643,8 +643,8 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">3. 수독환</h3>
               </div>
-              <div className="w-full aspect-[4/3] bg-gray-200 rounded-sm mb-6 flex items-center justify-center text-gray-400 font-medium">
-                이미지 영역
+              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+                <Image src="/images/personal/detox_3.png" alt="3. 수독환" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
                 몸의 잉여 수분을 빼주어 몸의 부종을 완화시키며 위를 가볍게 만들어 소화 장애가 있으신 분들에게도 좋습니다. 몸의 노폐물을 밖으로 빼주어 하루 복용하고 다음날이면 가벼워진 몸을 느끼실 수 있습니다.
@@ -656,8 +656,8 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">4. 해독탕</h3>
               </div>
-              <div className="w-full aspect-[4/3] bg-gray-200 rounded-sm mb-6 flex items-center justify-center text-gray-400 font-medium">
-                이미지 영역
+              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+                <Image src="/images/personal/detox_4.png" alt="4. 해독탕" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
                 소장해독과 쓸개해독에 효과가 좋으며 장벽에 붙은 기름때를 배출해줍니다. 간해독에도 좋아 음주가 있으시거나 요즘 들어 몸이 계속 피곤하다 느끼시는 분들에게 추천 드립니다.
@@ -669,8 +669,8 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">5. 해독약침</h3>
               </div>
-              <div className="w-full aspect-[4/3] bg-gray-200 rounded-sm mb-6 flex items-center justify-center text-gray-400 font-medium">
-                이미지 영역
+              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+                <Image src="/images/personal/detox_5.png" alt="5. 해독약침" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
                 불완전한 소화, 대사, 배설 과정에서 생기는 장내 독소를 효과적으로 처리하기 위해 관련 장기의 기능을 향상하고 위장관 운동성을 높여주고 복강 내 혈액, 림프 순환을 촉진 시키기 위한 한약 추출액 을 복부의 주요 혈자리에 주입 하여, 침과 한약이 가진 약리 효과를 낼 수 있습니다.
@@ -682,8 +682,8 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">6. 심부투열치료</h3>
               </div>
-              <div className="w-full aspect-[4/3] bg-gray-200 rounded-sm mb-6 flex items-center justify-center text-gray-400 font-medium">
-                이미지 영역
+              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+                <Image src="/images/personal/detox_6.png" alt="6. 심부투열치료" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
                 하복부를 온열요법으로 마사지하여 자궁냉증 개선 및 하복부 순환을 활성화 시킵니다.
