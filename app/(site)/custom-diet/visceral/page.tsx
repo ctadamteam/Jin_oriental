@@ -37,7 +37,7 @@ export default function VisceralFatPage() {
 
 function HeroSection() {
   return (
-    <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#433124] text-white mb-8">
+    <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#433124] text-white mb-0">
       <div className="relative w-full h-[250px] md:h-full overflow-hidden">
         <Image 
           src="/images/personal/visceral_title.jpg" 
