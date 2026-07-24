@@ -950,6 +950,21 @@ export default function DetoxDietPage() {
            </div>
         </div>
       </section>
+
+      {/* 11. Jin Obesity Footer Banner (진한의원 비만 배너) */}
+      <section className="w-full mb-16 md:mb-24 leading-none" aria-label="진한의원 비만 홈페이지 안내">
+        <div className="w-full max-w-[1000px] mx-auto overflow-hidden">
+          <Image 
+            src="/images/mid-age/MID_29.jpg" 
+            alt="진한의원 비만 홈페이지에서 확인" 
+            width={1000} 
+            height={500} 
+            className="w-full h-auto block" 
+            loading="eager" 
+            unoptimized 
+          />
+        </div>
+      </section>
       </div>
     </main>
   );
