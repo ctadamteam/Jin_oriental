@@ -37,29 +37,25 @@ export default function VisceralFatPage() {
 
 function HeroSection() {
   return (
-    <section className="visceral-hero w-full h-[460px] md:h-[560px] relative bg-[#3a332d]">
-      <div className="absolute inset-0 flex flex-col md:flex-row">
-        <div className="visceral-hero-photo w-full md:w-[55%] h-1/2 md:h-full relative">
-          <Image 
-            src="/images/personal/visceral_title.jpg" 
-            alt="내장지방형 비만 메인 이미지" 
-            fill 
-            className="object-cover object-left"
-            priority
-          />
-        </div>
-        <div className="visceral-hero-copy w-full md:w-[45%] h-1/2 md:h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 text-white relative overflow-hidden">
-          <div className="relative z-10 max-w-[90%] xl:max-w-[85%]">
-            <div className="inline-block border border-white/40 text-white/80 text-xs md:text-sm px-3 py-1 mb-4 rounded-full font-light tracking-widest">
-              뱃살 먼저 감량되는 내장 다이어트
-            </div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 tracking-tight">진 한 의 원</h1>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#A5C614] tracking-tight">내장지방형 비만</h2>
-            <p className="text-xs md:text-sm lg:text-base text-gray-300 leading-relaxed break-keep font-light opacity-90">
-              만성피로, 순환장애, 부종, 대사성 질환을 유발하는 내장지방을 보다 집중적으로 감소할 수 있는 1:1 개인별 맞춤 다이어트
-            </p>
-          </div>
-        </div>
+    <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#433124] text-white mb-8">
+      <div className="relative w-full h-[250px] md:h-full overflow-hidden">
+        <Image 
+          src="/images/personal/visceral_title.jpg" 
+          alt="내장지방형 비만 메인 이미지" 
+          fill 
+          className="object-cover object-left"
+          priority
+        />
+      </div>
+      <div className="flex flex-col justify-center p-6 md:py-8 md:px-[32px]">
+        <p className="text-sm md:text-[15px] text-[#c7bbb1] tracking-tight mb-2">뱃살 먼저 감량되는 내장 다이어트</p>
+        <h2 className="w-full text-3xl md:text-[54px] leading-tight mb-4 tracking-tight">
+          <span className="font-bold text-[#A5C614] block">내장지방형</span>
+          <b className="text-white font-normal block">비만</b>
+        </h2>
+        <p className="text-xs md:text-[14px] text-gray-200 leading-relaxed break-keep font-light opacity-90 w-full">
+          만성피로, 순환장애, 부종, 대사성 질환을 유발하는 내장지방을 보다 집중적으로 감소할 수 있는 1:1 개인별 맞춤 다이어트
+        </p>
       </div>
     </section>
   );
@@ -70,7 +66,7 @@ function StatsSection() {
     <section className="visceral-stats bg-[#f8f9f6] py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-6">
         <p className="text-left text-gray-800 font-medium text-[15px] md:text-lg mb-12 leading-[1.8] break-keep tracking-tight">
-          한 통계에 따르면 <strong className="bg-[#fff4b0] px-1 font-medium text-gray-800">성인 3명 중 한명은 비만</strong>이며, <strong className="bg-[#fff4b0] px-1 font-medium text-gray-800">성인 5명 중 한명은 복부비만</strong>이며 <strong className="bg-[#fff4b0] px-1 font-medium text-gray-800">50대 이상 유병율은 50대 이하에 비해 2배</strong>에 달합니다.
+          한 통계에 따르면 <strong className="bg-[#fff4b0] px-1 font-normal text-gray-800">성인 3명 중 한명은 비만</strong>이며, <strong className="bg-[#fff4b0] px-1 font-normal text-gray-800">성인 5명 중 한명은 복부비만</strong>이며 <strong className="bg-[#fff4b0] px-1 font-normal text-gray-800">50대 이상 유병율은 50대 이하에 비해 2배</strong>에 달합니다.
         </p>
         
         <div className="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-32 mb-16">
@@ -80,9 +76,11 @@ function StatsSection() {
                <Image src="/images/personal/nj_section2_1.png" alt="비만 실루엣" fill className="object-contain" unoptimized={true} />
              </div>
              <div className="absolute top-[26%] left-[calc(25%+40px)] -translate-x-1/2 -translate-y-1/2 scale-90 text-left text-white drop-shadow-md z-10 pointer-events-auto">
-                <p className="text-sm md:text-base font-medium mb-0.5">성인</p>
-                <p className="text-3xl md:text-4xl font-black text-[#A5C614] tracking-tighter">3명 <span className="text-lg md:text-xl font-bold text-white">중</span> 1명</p>
-                <p className="text-xl md:text-2xl font-bold mt-0.5">비만</p>
+                <p className="text-[15px] font-normal text-white mb-0.5">성인</p>
+                <p className="text-[20px] font-bold text-[#A5C614] tracking-tight leading-none mb-1">
+                  3명 <span className="text-[15px] font-normal text-white mx-0.5">중</span> 1명
+                </p>
+                <p className="text-[20px] font-bold text-white leading-none mt-1">비만</p>
              </div>
           </div>
           
@@ -92,16 +90,18 @@ function StatsSection() {
                <Image src="/images/personal/nj_section2_2.png" alt="복부비만 실루엣" fill className="object-contain" unoptimized={true} />
              </div>
              <div className="absolute top-[calc(22%+10px)] left-[calc(32%+80px)] -translate-x-1/2 -translate-y-1/2 scale-90 text-left text-white drop-shadow-md z-10 pointer-events-auto">
-                <p className="text-sm md:text-base font-medium mb-0.5">성인</p>
-                <p className="text-3xl md:text-4xl font-black text-[#A5C614] tracking-tighter">5명 <span className="text-lg md:text-xl font-bold text-white">중</span> 1명</p>
-                <p className="text-xl md:text-2xl font-bold mt-0.5">복부비만</p>
+                <p className="text-[15px] font-normal text-white mb-0.5">성인</p>
+                <p className="text-[20px] font-bold text-[#A5C614] tracking-tight leading-none mb-1">
+                  5명 <span className="text-[15px] font-normal text-white mx-0.5">중</span> 1명
+                </p>
+                <p className="text-[20px] font-bold text-white leading-none mt-1">복부비만</p>
              </div>
           </div>
         </div>
 
         <div className="flex justify-center">
-          <p className="text-xl md:text-2xl font-medium text-gray-800 tracking-tight">
-            숫자로 알아보는 <strong className="text-black font-black">한국인의 비만</strong>
+          <p className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tighter leading-snug">
+            숫자로 알아보는 <strong className="text-black font-bold">한국인의 비만</strong>
           </p>
         </div>
       </div>
