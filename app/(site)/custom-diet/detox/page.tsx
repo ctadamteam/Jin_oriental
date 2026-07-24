@@ -460,8 +460,8 @@ export default function DetoxDietPage() {
       <section className="w-full py-16 md:py-24 bg-white">
         <div className="w-full max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 tracking-tight">
-              해독은 <span className="text-[#A5C614]">청소 - 재건 - 유지</span>의 3단계로 이루어집니다
+            <h2 className="text-2xl md:text-3xl font-light text-gray-800 tracking-tight">
+              해독은 <strong className="font-bold text-[#A5C614]">청소 - 재건 - 유지</strong>의 3단계로 이루어집니다
             </h2>
           </div>
           
