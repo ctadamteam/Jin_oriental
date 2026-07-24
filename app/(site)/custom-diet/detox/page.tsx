@@ -539,10 +539,10 @@ export default function DetoxDietPage() {
                 <Image src="/images/personal/detox_section7_11.png" alt="장해독 아이콘" fill className="object-cover" unoptimized={true} />
               </div>
               <div className="bg-gray-50 rounded-2xl p-6 flex-1 w-full border border-gray-100">
-                <h3 className="text-lg font-bold text-gray-800 mb-2">장해독</h3>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
+                <h3 className="text-[20px] md:text-[20px] font-bold text-gray-800 mb-2">장해독</h3>
+                <p className="text-[18px] md:text-[18px] text-gray-600 leading-relaxed break-keep">
                   설탕, 밀가루, 인스턴트, 가공식품의 과도한 섭취로 인해 나쁜 균이 늘어나게 되고 각종 노폐물과 독소를 만들어 냅니다.<br />
-                  <strong className="bg-[#fff4b0] px-1">장 해독은 몸속의 과잉된 노폐물 찌꺼기와 독소를 몸 밖으로 배출해 건강한 장내 환경을 만들어줍니다.</strong>
+                  <strong className="bg-[#fff4b0] px-1 font-normal">장 해독은 몸속의 과잉된 노폐물 찌꺼기와 독소를 몸 밖으로 배출해 건강한 장내 환경을 만들어줍니다.</strong>
                 </p>
               </div>
             </div>
@@ -553,9 +553,9 @@ export default function DetoxDietPage() {
                 <Image src="/images/personal/detox_section7_22.png" alt="간 해독 아이콘" fill className="object-cover" unoptimized={true} />
               </div>
               <div className="bg-gray-50 rounded-2xl p-6 flex-1 w-full border border-gray-100">
-                <h3 className="text-lg font-bold text-gray-800 mb-2">간 해독</h3>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
-                  외부환경에 의해 생성되는 독소도 있지만 몸속 에너지 대사 과정에서 나오는 대사산물과 박테리아 등으로 인한 인체 내에서 발생하는 내부독소도 있습니다. 술, 밀가루 등 해독이 필요한 음식을 다량으로 섭취하게 되면 우리 몸이 스스로 해독할 수 있는 정화시스템의 과부하로 간 기능이 저하되어 이상이 생깁니다. <strong className="bg-[#fff4b0] px-1">간 해독은 몸속의 잉여 노폐물과 독소로 인해 기능이 저하된 간을 정화해 몸속 독소 배출을 도와줍니다.</strong>
+                <h3 className="text-[20px] md:text-[20px] font-bold text-gray-800 mb-2">간 해독</h3>
+                <p className="text-[18px] md:text-[18px] text-gray-600 leading-relaxed break-keep">
+                  외부환경에 의해 생성되는 독소도 있지만 몸속 에너지 대사 과정에서 나오는 대사산물과 박테리아 등으로 인한 인체 내에서 발생하는 내부독소도 있습니다. 술, 밀가루 등 해독이 필요한 음식을 다량으로 섭취하게 되면 우리 몸이 스스로 해독할 수 있는 정화시스템의 과부하로 간 기능이 저하되어 이상이 생깁니다. <strong className="bg-[#fff4b0] px-1 font-normal">간 해독은 몸속의 잉여 노폐물과 독소로 인해 기능이 저하된 간을 정화해 몸속 독소 배출을 도와줍니다.</strong>
                 </p>
               </div>
             </div>
@@ -566,9 +566,9 @@ export default function DetoxDietPage() {
                 <Image src="/images/personal/detox_section7_33.png" alt="혈액 해독 아이콘" fill className="object-cover" unoptimized={true} />
               </div>
               <div className="bg-gray-50 rounded-2xl p-6 flex-1 w-full border border-gray-100">
-                <h3 className="text-lg font-bold text-gray-800 mb-2">혈액 해독</h3>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
-                  기름진 식사와 과식은 노폐물이 제대로 배출되지 못해 몸속의 독소로 남아 혈액 속을 돌아다닙니다. <br/>이렇게 <strong className="bg-[#fff4b0] px-1">탁해진 혈액은 신진대사를 방해해 질병이나 비만의 원인이 됩니다. 혈액 해독은 혈액과 함께 몸속을 돌아다니는 독소를 빠른 시간 내 제거해 혈액이 깨끗해질 수 있도록 도와드립니다.</strong>
+                <h3 className="text-[20px] md:text-[20px] font-bold text-gray-800 mb-2">혈액 해독</h3>
+                <p className="text-[18px] md:text-[18px] text-gray-600 leading-relaxed break-keep">
+                  기름진 식사와 과식은 노폐물이 제대로 배출되지 못해 몸속의 독소로 남아 혈액 속을 돌아다닙니다. <br/>이렇게 <strong className="bg-[#fff4b0] px-1 font-normal">탁해진 혈액은 신진대사를 방해해 질병이나 비만의 원인이 됩니다. 혈액 해독은 혈액과 함께 몸속을 돌아다니는 독소를 빠른 시간 내 제거해 혈액이 깨끗해질 수 있도록 도와드립니다.</strong>
                 </p>
               </div>
             </div>
@@ -579,9 +579,9 @@ export default function DetoxDietPage() {
                 <Image src="/images/personal/detox_section7_44.png" alt="피부해독 아이콘" fill className="object-cover scale-110" unoptimized={true} />
               </div>
               <div className="bg-gray-50 rounded-2xl p-6 flex-1 w-full border border-gray-100">
-                <h3 className="text-lg font-bold text-gray-800 mb-2">피부해독</h3>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
-                  체내에 쌓인 독소가 제대로 배출되지 못하고 기혈의 순환이 원활하지 못하면 각종 피부 트러블과 여드름, 아토피 등 다양한 증상으로 나타나게 됩니다. 피부해독은 체질에 맞게 처방되어, <strong className="bg-[#fff4b0] px-1">몸속에 정체되어 있는 독소와 노폐물을 배출해 피부 트러블의 원인을 제거합니다.</strong>
+                <h3 className="text-[20px] md:text-[20px] font-bold text-gray-800 mb-2">피부해독</h3>
+                <p className="text-[18px] md:text-[18px] text-gray-600 leading-relaxed break-keep">
+                  체내에 쌓인 독소가 제대로 배출되지 못하고 기혈의 순환이 원활하지 못하면 각종 피부 트러블과 여드름, 아토피 등 다양한 증상으로 나타나게 됩니다. 피부해독은 체질에 맞게 처방되어, <strong className="bg-[#fff4b0] px-1 font-normal">몸속에 정체되어 있는 독소와 노폐물을 배출해 피부 트러블의 원인을 제거합니다.</strong>
                 </p>
               </div>
             </div>
@@ -592,9 +592,9 @@ export default function DetoxDietPage() {
                 <Image src="/images/personal/detox_section7_55.png" alt="자궁해독 아이콘" fill className="object-cover" unoptimized={true} />
               </div>
               <div className="bg-gray-50 rounded-2xl p-6 flex-1 w-full border border-gray-100">
-                <h3 className="text-lg font-bold text-gray-800 mb-2">자궁해독</h3>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed break-keep">
-                  환경 호르몬과 같은 적체된 자궁내 독소를 배출하고 자궁내의 혈액과 림프 순환을 촉진시켜 어혈을 배출하고 <strong className="bg-[#fff4b0] px-1">자궁환경 개선을 통해 염증을 치료하고 자궁관련 질환에 있어서 근본적인 치료를 가능하게 도와줍니다.</strong> 특히 평소 생리통증군이 심하거나 생리주기가 일정하지 못한 경우에 도움이 됩니다.
+                <h3 className="text-[20px] md:text-[20px] font-bold text-gray-800 mb-2">자궁해독</h3>
+                <p className="text-[18px] md:text-[18px] text-gray-600 leading-relaxed break-keep">
+                  환경 호르몬과 같은 적체된 자궁내 독소를 배출하고 자궁내의 혈액과 림프 순환을 촉진시켜 어혈을 배출하고 <strong className="bg-[#fff4b0] px-1 font-normal">자궁환경 개선을 통해 염증을 치료하고 자궁관련 질환에 있어서 근본적인 치료를 가능하게 도와줍니다.</strong> 특히 평소 생리통증군이 심하거나 생리주기가 일정하지 못한 경우에 도움이 됩니다.
                 </p>
               </div>
             </div>
