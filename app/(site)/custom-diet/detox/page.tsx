@@ -269,7 +269,7 @@ export default function DetoxDietPage() {
               </div>
 
               {/* 오른쪽: 위 */}
-              <div className="absolute top-[10%] lg:top-[12%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep translate-x-[10px] translate-y-[74px]">
+              <div className="absolute top-[10%] lg:top-[12%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep translate-x-[10px] translate-y-[99px]">
                 <div className="flex relative">
                   <div className="absolute right-full top-[-4px] mr-3 text-2xl font-extrabold text-[#3a332d]">위</div>
                   <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
@@ -290,7 +290,7 @@ export default function DetoxDietPage() {
               </div>
 
               {/* 오른쪽: 소장 */}
-              <div className="absolute top-[72%] lg:top-[75%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep translate-x-[30px] -translate-y-[20px]">
+              <div className="absolute top-[72%] lg:top-[75%] right-0 lg:right-[0%] w-[260px] lg:w-[310px] z-10 flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep translate-x-[30px] -translate-y-[15px]">
                 <div className="flex relative">
                   <div className="absolute right-full top-[-4px] mr-3 text-2xl font-extrabold text-[#3a332d]">소장</div>
                   <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
