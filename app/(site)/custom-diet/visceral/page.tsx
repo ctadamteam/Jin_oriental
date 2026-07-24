@@ -192,7 +192,7 @@ function CauseSection() {
            </p>
         </div>
 
-        <div className="w-full border-b border-dashed border-gray-300 mt-10 md:mt-12"></div>
+        <div className="w-full border-b border-dashed border-gray-300 mt-6 md:mt-8"></div>
       </div>
     </section>
   );
@@ -200,9 +200,9 @@ function CauseSection() {
 
 function WhatIsSection() {
   return (
-    <section className="visceral-what-is pt-4 md:pt-8 pb-12 md:pb-20 bg-white">
+    <section className="visceral-what-is pt-0 pb-12 md:pb-20 -mt-4 md:-mt-8 bg-white">
       <div className="w-full max-w-[1100px] mx-auto px-4 md:px-6">
-        <h2 className="text-2xl md:text-[38px] font-bold text-center text-gray-900 mb-8 md:mb-12 tracking-tight">
+        <h2 className="text-2xl md:text-[38px] font-bold text-center text-gray-900 mb-6 md:mb-10 tracking-tight">
           <strong className="text-[#A5C614]">내장지방</strong>은 무엇인가요?
         </h2>
 
