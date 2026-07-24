@@ -603,7 +603,7 @@ export default function DetoxDietPage() {
       </section>
 
       {/* 7-2. Detox Treatment Methods (진한의원 해독치료 방법) */}
-      <section className="w-full py-16 md:py-24 bg-white border-t border-gray-100">
+      <section className="w-full py-16 md:py-24 bg-white">
         <div className="w-full max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight">
