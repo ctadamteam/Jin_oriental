@@ -747,50 +747,48 @@ export default function DetoxDietPage() {
       </section>
 
       {/* 9. Case Studies (해독 치료사례) */}
-      <section className="w-full bg-[#f9fbf7] py-16 md:py-24 border-t border-gray-100">
+      <section className="w-full bg-[#515357] py-16 md:py-24 text-white">
         <div className="w-full max-w-5xl mx-auto px-4">
+          {/* 헤더 */}
           <div className="text-center mb-16">
-            <h4 className="text-sm text-gray-400 font-normal mb-2">진한의원 해독 프로그램</h4>
-            <h2 className="text-2xl md:text-[38px] font-bold text-gray-900 tracking-tight">해독 치료사례</h2>
-            <div className="w-12 h-1 bg-[#8cb82b] mx-auto mt-4"></div>
+            <h4 className="text-sm md:text-base text-gray-300 font-light tracking-[0.2em] mb-2">
+              진 한 의 원 &nbsp;해 독 &nbsp;프 로 그 램
+            </h4>
+            <h2 className="text-3xl md:text-[44px] font-bold text-white tracking-tight">
+              해독 치료사례
+            </h2>
           </div>
 
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-14">
             {/* 사례 1 */}
-            <div className="bg-white p-6 md:p-8 rounded-lg border border-gray-200/80 shadow-sm">
-              <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-6">
-                <h3 className="text-xl font-bold text-gray-800">윤OO님 (35세 여)</h3>
-                <span className="text-[14px] md:text-[15px] text-[#76c3c4] font-semibold bg-[#edf7f7] px-3.5 py-1 rounded-full">
-                  치료기간: 4개월
-                </span>
-              </div>
-
-              <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-6">
-                <div className="w-full md:w-[46%] h-[260px] md:h-[300px] bg-[#f4f7f2] relative rounded-md border border-gray-200/60 overflow-hidden">
-                  <Image src="/images/personal/detox_section9_1_1.png" alt="치료 전" fill className="object-contain p-2" unoptimized={true} />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-[#76c3c4] flex items-center justify-center text-white shrink-0 -my-3 md:my-0 md:-mx-3 z-10 shadow-md">
-                  ▶
-                </div>
-                <div className="w-full md:w-[46%] h-[260px] md:h-[300px] bg-[#f4f7f2] relative rounded-md border border-gray-200/60 overflow-hidden">
-                  <Image src="/images/personal/detox_section9_1_2.png" alt="치료 후" fill className="object-contain p-2" unoptimized={true} />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 text-left bg-[#fafcf9] p-5 rounded-md border border-gray-100">
-                <div>
-                  <strong className="block text-gray-700 font-bold text-base mb-1.5 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-gray-400"></span> Before (치료 전)
-                  </strong>
-                  <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed break-keep">
-                    상체, 특히 머리 쪽에 열감이 많아 안압이 있고, 두피가 가렵고 모발 빠짐도 있음. 복부가 차고, 소화가 불량아 심했음.
+            <div>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-3 pl-1 text-left">
+                윤OO님 (35세 남) 치료기간 : 4개월
+              </h3>
+              <div className="relative flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
+                {/* Before 카드 */}
+                <div className="w-full md:w-1/2 bg-white text-gray-800 p-4 md:p-6 rounded-none shadow-md text-center flex flex-col items-center">
+                  <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden">
+                    <Image src="/images/personal/detox_section9_1_1.png" alt="치료 전" fill className="object-contain" unoptimized={true} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-[#333333] mb-3">Before</h4>
+                  <p className="text-[15px] md:text-[16px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
+                    상체, 특히 머리 쪽에 열감이 많아 안압이 있고, 두피가 가렵고 모발 빠짐도 있음. 복부가 차고, 소화가 불량이 심했음.
                   </p>
                 </div>
-                <div>
-                  <strong className="block text-[#50a160] font-bold text-base mb-1.5 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#50a160]"></span> After (치료 후)
-                  </strong>
-                  <p className="text-[15px] md:text-[16px] text-gray-800 font-semibold leading-relaxed break-keep">
+
+                {/* 중앙 연두색 원형 화살표 */}
+                <div className="w-12 h-12 rounded-full bg-[#8cb82b] text-white flex items-center justify-center text-xl font-bold shadow-lg shrink-0 z-10 -my-4 md:my-0 md:-mx-6 pointer-events-none">
+                  ▶
+                </div>
+
+                {/* After 카드 */}
+                <div className="w-full md:w-1/2 bg-white text-gray-800 p-4 md:p-6 rounded-none shadow-md text-center flex flex-col items-center">
+                  <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden">
+                    <Image src="/images/personal/detox_section9_1_2.png" alt="치료 후" fill className="object-contain" unoptimized={true} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-[#8cb82b] mb-3">After</h4>
+                  <p className="text-[15px] md:text-[16px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
                     상체에 열감이 내려가, 안압 증상이 좋아졌으며, 두피에 가려움증이 줄어듦. 혈액순환이 원활해져 복부가 따뜻해지고, 소화가 잘됨.
                   </p>
                 </div>
@@ -798,122 +796,104 @@ export default function DetoxDietPage() {
             </div>
 
             {/* 사례 2 */}
-            <div className="bg-white p-6 md:p-8 rounded-lg border border-gray-200/80 shadow-sm">
-              <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-6">
-                <h3 className="text-xl font-bold text-gray-800">강OO님 (30세 남)</h3>
-                <span className="text-[14px] md:text-[15px] text-[#76c3c4] font-semibold bg-[#edf7f7] px-3.5 py-1 rounded-full">
-                  치료기간: 5개월
-                </span>
-              </div>
-
-              <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-6">
-                <div className="w-full md:w-[46%] h-[260px] md:h-[300px] bg-[#f4f7f2] relative rounded-md border border-gray-200/60 overflow-hidden">
-                  <Image src="/images/personal/detox_section9_2_1.png" alt="치료 전" fill className="object-contain p-2" unoptimized={true} />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-[#76c3c4] flex items-center justify-center text-white shrink-0 -my-3 md:my-0 md:-mx-3 z-10 shadow-md">
-                  ▶
-                </div>
-                <div className="w-full md:w-[46%] h-[260px] md:h-[300px] bg-[#f4f7f2] relative rounded-md border border-gray-200/60 overflow-hidden">
-                  <Image src="/images/personal/detox_section9_2_2.png" alt="치료 후" fill className="object-contain p-2" unoptimized={true} />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 text-left bg-[#fafcf9] p-5 rounded-md border border-gray-100">
-                <div>
-                  <strong className="block text-gray-700 font-bold text-base mb-1.5 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-gray-400"></span> Before (치료 전)
-                  </strong>
-                  <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed break-keep">
-                    상체에 열감이 많아 두통과 무기력 증상이 있음. 수면의 질이 떨어지고, 명치답답과 속쓰림이 있음. 심했음. 하체쪽에 혈액순환이 안 돼 손발이 참.
+            <div>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-3 pl-1 text-left">
+                김OO님 (30세 남) 치료기간 : 5개월
+              </h3>
+              <div className="relative flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
+                {/* Before 카드 */}
+                <div className="w-full md:w-1/2 bg-white text-gray-800 p-4 md:p-6 rounded-none shadow-md text-center flex flex-col items-center">
+                  <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden">
+                    <Image src="/images/personal/detox_section9_2_1.png" alt="치료 전" fill className="object-contain" unoptimized={true} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-[#333333] mb-3">Before</h4>
+                  <p className="text-[15px] md:text-[16px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
+                    상체에 열감이 높아 두통과 무거움 증상이 있음. 수면의 질이 떨어지고, 소화불량, 변비, 복부 긴장감이 심했음. 하체쪽에 혈액순환이 안 돼 손발이 참.
                   </p>
                 </div>
-                <div>
-                  <strong className="block text-[#50a160] font-bold text-base mb-1.5 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#50a160]"></span> After (치료 후)
-                  </strong>
-                  <p className="text-[15px] md:text-[16px] text-gray-800 font-semibold leading-relaxed break-keep">
-                    상열감이 없어지면서 두통과 머리 무거운 증상이 완화됨. 수면 양호. 변비가 호전되고, 위장 불편감이 해소됨.
+
+                {/* 중앙 연두색 원형 화살표 */}
+                <div className="w-12 h-12 rounded-full bg-[#8cb82b] text-white flex items-center justify-center text-xl font-bold shadow-lg shrink-0 z-10 -my-4 md:my-0 md:-mx-6 pointer-events-none">
+                  ▶
+                </div>
+
+                {/* After 카드 */}
+                <div className="w-full md:w-1/2 bg-white text-gray-800 p-4 md:p-6 rounded-none shadow-md text-center flex flex-col items-center">
+                  <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden">
+                    <Image src="/images/personal/detox_section9_2_2.png" alt="치료 후" fill className="object-contain" unoptimized={true} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-[#8cb82b] mb-3">After</h4>
+                  <p className="text-[15px] md:text-[16px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
+                    상열감이 없어지면서 두통과 머리 무거움 증상이 완화됨. 수면 양호, 변비가 호전되고, 위장 불편감이 해소됨.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* 사례 3 */}
-            <div className="bg-white p-6 md:p-8 rounded-lg border border-gray-200/80 shadow-sm">
-              <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-6">
-                <h3 className="text-xl font-bold text-gray-800">이OO님 (35세 남)</h3>
-                <span className="text-[14px] md:text-[15px] text-[#76c3c4] font-semibold bg-[#edf7f7] px-3.5 py-1 rounded-full">
-                  치료기간: 4개월
-                </span>
-              </div>
-
-              <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-6">
-                <div className="w-full md:w-[46%] h-[260px] md:h-[300px] bg-[#f4f7f2] relative rounded-md border border-gray-200/60 overflow-hidden">
-                  <Image src="/images/personal/detox_section9_3_1.png" alt="치료 전" fill className="object-contain p-2" unoptimized={true} />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-[#76c3c4] flex items-center justify-center text-white shrink-0 -my-3 md:my-0 md:-mx-3 z-10 shadow-md">
-                  ▶
-                </div>
-                <div className="w-full md:w-[46%] h-[260px] md:h-[300px] bg-[#f4f7f2] relative rounded-md border border-gray-200/60 overflow-hidden">
-                  <Image src="/images/personal/detox_section9_3_2.png" alt="치료 후" fill className="object-contain p-2" unoptimized={true} />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 text-left bg-[#fafcf9] p-5 rounded-md border border-gray-100">
-                <div>
-                  <strong className="block text-gray-700 font-bold text-base mb-1.5 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-gray-400"></span> Before (치료 전)
-                  </strong>
-                  <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed break-keep">
-                    머리에는 열이 많고 피로감이 심함. 복부가 차서 복부냉증, 복부팽만, 설사증상이 있음. 하체혈액순환이 안 돼 대장이 건강하지 못함.
+            <div>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-3 pl-1 text-left">
+                이OO님 (35세 남) 치료기간 : 4개월
+              </h3>
+              <div className="relative flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
+                {/* Before 카드 */}
+                <div className="w-full md:w-1/2 bg-white text-gray-800 p-4 md:p-6 rounded-none shadow-md text-center flex flex-col items-center">
+                  <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden">
+                    <Image src="/images/personal/detox_section9_3_1.png" alt="치료 전" fill className="object-contain" unoptimized={true} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-[#333333] mb-3">Before</h4>
+                  <p className="text-[15px] md:text-[16px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
+                    머리에는 열이 많고 피로감이 심함. 복부가 차서 복부가 딱딱하고, 명치압통과 속쓰림이 있음. 하체혈액순환이 안 돼 대장이 건강하지 못함.
                   </p>
                 </div>
-                <div>
-                  <strong className="block text-[#50a160] font-bold text-base mb-1.5 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#50a160]"></span> After (치료 후)
-                  </strong>
-                  <p className="text-[15px] md:text-[16px] text-gray-800 font-semibold leading-relaxed break-keep">
-                    복부 냉감과 명치답답이 줄어들었으며, 딱딱했던 배가 부드러워졌음. 몸무게가 줄어들었음.
+
+                {/* 중앙 연두색 원형 화살표 */}
+                <div className="w-12 h-12 rounded-full bg-[#8cb82b] text-white flex items-center justify-center text-xl font-bold shadow-lg shrink-0 z-10 -my-4 md:my-0 md:-mx-6 pointer-events-none">
+                  ▶
+                </div>
+
+                {/* After 카드 */}
+                <div className="w-full md:w-1/2 bg-white text-gray-800 p-4 md:p-6 rounded-none shadow-md text-center flex flex-col items-center">
+                  <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden">
+                    <Image src="/images/personal/detox_section9_3_2.png" alt="치료 후" fill className="object-contain" unoptimized={true} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-[#8cb82b] mb-3">After</h4>
+                  <p className="text-[15px] md:text-[16px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
+                    복부 냉감과 명치압통이 줄어들었으며, 딱딱했던 배가 부드러워졌음. 몸무게가 줄어들었음.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* 사례 4 */}
-            <div className="bg-white p-6 md:p-8 rounded-lg border border-gray-200/80 shadow-sm">
-              <div className="flex items-center justify-between border-b border-gray-100 pb-4 mb-6">
-                <h3 className="text-xl font-bold text-gray-800">김OO님 (30세 여)</h3>
-                <span className="text-[14px] md:text-[15px] text-[#76c3c4] font-semibold bg-[#edf7f7] px-3.5 py-1 rounded-full">
-                  치료기간: 5개월
-                </span>
-              </div>
-
-              <div className="flex flex-col md:flex-row gap-4 items-center justify-center mb-6">
-                <div className="w-full md:w-[46%] h-[260px] md:h-[300px] bg-[#f4f7f2] relative rounded-md border border-gray-200/60 overflow-hidden">
-                  <Image src="/images/personal/detox_section9_4_1.png" alt="치료 전" fill className="object-contain p-2" unoptimized={true} />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-[#76c3c4] flex items-center justify-center text-white shrink-0 -my-3 md:my-0 md:-mx-3 z-10 shadow-md">
-                  ▶
-                </div>
-                <div className="w-full md:w-[46%] h-[260px] md:h-[300px] bg-[#f4f7f2] relative rounded-md border border-gray-200/60 overflow-hidden">
-                  <Image src="/images/personal/detox_section9_4_2.png" alt="치료 후" fill className="object-contain p-2" unoptimized={true} />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 text-left bg-[#fafcf9] p-5 rounded-md border border-gray-100">
-                <div>
-                  <strong className="block text-gray-700 font-bold text-base mb-1.5 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-gray-400"></span> Before (치료 전)
-                  </strong>
-                  <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed break-keep">
-                    목부터 얼굴에 상열감 있음, 얼굴 홍조. 생리 주기가 불규칙하고 생리통이 심함.
+            <div>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-3 pl-1 text-left">
+                김OO님 (30세 여) 치료기간 : 5개월
+              </h3>
+              <div className="relative flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
+                {/* Before 카드 */}
+                <div className="w-full md:w-1/2 bg-white text-gray-800 p-4 md:p-6 rounded-none shadow-md text-center flex flex-col items-center">
+                  <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden">
+                    <Image src="/images/personal/detox_section9_4_1.png" alt="치료 전" fill className="object-contain" unoptimized={true} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-[#333333] mb-3">Before</h4>
+                  <p className="text-[15px] md:text-[16px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
+                    목부터 얼굴에 상열감 있음. 얼굴 홍조. 생리 주기가 불규칙하고 생리통이 심함.
                   </p>
                 </div>
-                <div>
-                  <strong className="block text-[#50a160] font-bold text-base mb-1.5 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#50a160]"></span> After (치료 후)
-                  </strong>
-                  <p className="text-[15px] md:text-[16px] text-gray-800 font-semibold leading-relaxed break-keep">
+
+                {/* 중앙 연두색 원형 화살표 */}
+                <div className="w-12 h-12 rounded-full bg-[#8cb82b] text-white flex items-center justify-center text-xl font-bold shadow-lg shrink-0 z-10 -my-4 md:my-0 md:-mx-6 pointer-events-none">
+                  ▶
+                </div>
+
+                {/* After 카드 */}
+                <div className="w-full md:w-1/2 bg-white text-gray-800 p-4 md:p-6 rounded-none shadow-md text-center flex flex-col items-center">
+                  <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden">
+                    <Image src="/images/personal/detox_section9_4_2.png" alt="치료 후" fill className="object-contain" unoptimized={true} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-[#8cb82b] mb-3">After</h4>
+                  <p className="text-[15px] md:text-[16px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
                     생리 주기가 일정해짐. 생리통이 줄어듦. 어깨결림 완화. 수면장애가 호전되었음.
                   </p>
                 </div>
