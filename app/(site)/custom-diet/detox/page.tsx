@@ -696,7 +696,7 @@ export default function DetoxDietPage() {
       {/* 8. Quality Assurance (청정한약 시스템) */}
       <section className="w-full pt-16 md:pt-20 bg-white relative">
         <div className="w-full max-w-5xl mx-auto px-4 mb-8 md:mb-12 relative">
-          <div className="flex items-start gap-3.5 text-left">
+          <div className="flex items-start gap-3.5 text-left -translate-x-[17px]">
             <div className="w-[6px] h-[52px] md:h-[58px] bg-[#747474] shrink-0 mt-0.5"></div>
             <div>
               <h4 className="text-lg md:text-[25px] text-gray-500 font-normal leading-tight tracking-tight mb-1">
@@ -707,8 +707,6 @@ export default function DetoxDietPage() {
               </h2>
             </div>
           </div>
-          {/* 오른쪽 끝 수직 회색 바 */}
-          <div className="hidden md:block absolute top-0 right-4 w-[7px] h-[68px] bg-[#747474]"></div>
         </div>
         
         <div className="w-full flex flex-col md:flex-row min-h-[360px] md:min-h-[420px]">
