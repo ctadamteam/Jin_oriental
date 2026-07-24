@@ -471,7 +471,7 @@ function ProcessSection() {
       {/* Middle: Comorbidity (Full Width) - 아이콘 양옆 여백을 주어 안쪽으로 모이게 배치 */}
       <div className="visceral-comorbidities w-full bg-[#f9f9f9] py-16 md:py-24 border-y border-gray-100">
         <div className="max-w-4xl mx-auto px-8 md:px-16 flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
-          <div className="flex flex-col gap-8 md:gap-12 w-full md:w-auto relative z-10 mb-10 md:mb-0">
+          <div className="flex flex-col gap-8 md:gap-12 w-full md:w-auto relative z-10 mb-10 md:mb-0 translate-x-0 md:translate-x-[30px]">
              <div className="flex items-center gap-4">
                <div className="w-[68px] h-[68px] relative flex items-center justify-center shrink-0"><Image src="/images/personal/nj_section7_3.png" alt="대사증후군" fill className="object-contain" unoptimized={true} /></div>
                <div className="text-left">
