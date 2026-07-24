@@ -617,7 +617,7 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">1. 해독한약</h3>
               </div>
-              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+              <div className="w-full aspect-[4/3] relative mb-6 overflow-hidden">
                 <Image src="/images/personal/detox_1.png" alt="1. 해독한약" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
@@ -630,7 +630,7 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">2. 효소해독</h3>
               </div>
-              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+              <div className="w-full aspect-[4/3] relative mb-6 overflow-hidden">
                 <Image src="/images/personal/detox_2.png" alt="2. 효소해독" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
@@ -643,7 +643,7 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">3. 수독환</h3>
               </div>
-              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+              <div className="w-full aspect-[4/3] relative mb-6 overflow-hidden">
                 <Image src="/images/personal/detox_3.png" alt="3. 수독환" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
@@ -656,7 +656,7 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">4. 해독탕</h3>
               </div>
-              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+              <div className="w-full aspect-[4/3] relative mb-6 overflow-hidden">
                 <Image src="/images/personal/detox_4.png" alt="4. 해독탕" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
@@ -669,7 +669,7 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">5. 해독약침</h3>
               </div>
-              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+              <div className="w-full aspect-[4/3] relative mb-6 overflow-hidden">
                 <Image src="/images/personal/detox_5.png" alt="5. 해독약침" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
@@ -682,7 +682,7 @@ export default function DetoxDietPage() {
               <div className="w-full border-y-[2px] border-[#76c3c4] py-3 mb-6">
                 <h3 className="text-[23px] font-bold text-gray-800 tracking-tight">6. 심부투열치료</h3>
               </div>
-              <div className="w-full aspect-[4/3] relative rounded-sm mb-6 overflow-hidden">
+              <div className="w-full aspect-[4/3] relative mb-6 overflow-hidden">
                 <Image src="/images/personal/detox_6.png" alt="6. 심부투열치료" fill className="object-cover" unoptimized={true} />
               </div>
               <p className="text-[16px] text-gray-600 leading-relaxed break-keep text-left">
