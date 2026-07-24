@@ -566,7 +566,7 @@ function MedicineSection() {
   ];
 
   return (
-    <section className="visceral-medicine py-20 md:py-32 bg-white">
+    <section className="visceral-medicine pt-12 md:pt-16 pb-20 md:pb-28 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-2xl md:text-[38px] mb-16 tracking-tight text-black">
           <span className="font-medium">내장지방을 빼기위한</span><br className="md:hidden"/> <span className="font-bold">특별한 노하우를 담은 치료한약</span>
@@ -687,7 +687,7 @@ function DiagnosisSection() {
   ];
 
   return (
-    <section className="visceral-diagnosis py-20 md:py-32 bg-white">
+    <section className="visceral-diagnosis pt-12 md:pt-16 pb-20 md:pb-28 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-2xl md:text-[38px] font-bold mb-20 tracking-tight text-gray-900">장기별 불편 증상에 따른 복부 진찰법</h2>
         
