@@ -711,7 +711,7 @@ export default function DetoxDietPage() {
         
         <div className="w-full flex flex-col md:flex-row min-h-[360px] md:min-h-[420px]">
           {/* 좌측 박스 */}
-          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] bg-[#edf2e8] relative overflow-hidden flex flex-col items-center justify-center p-8">
+          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] bg-[#edf2e8] relative overflow-hidden flex flex-col items-center justify-end p-8 md:pb-12">
             {/* 배경 대형 숫자 1 */}
             <div className="absolute top-2 left-4 text-[#d3e2cb] text-[120px] md:text-[170px] font-bold leading-none select-none z-0 pointer-events-none">
               1
@@ -728,7 +728,7 @@ export default function DetoxDietPage() {
           </div>
 
           {/* 우측 박스 */}
-          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] relative overflow-hidden flex flex-col items-center justify-center p-8">
+          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] relative overflow-hidden flex flex-col items-center justify-end p-8 md:pb-12">
             <Image src="/images/personal/detox_section_8_2.jpg" alt="청정약재 배경" fill className="object-cover z-0" unoptimized={true} />
             <div className="absolute inset-0 bg-black/45 z-0"></div>
             
