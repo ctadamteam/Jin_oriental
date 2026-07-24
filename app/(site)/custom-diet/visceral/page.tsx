@@ -566,7 +566,7 @@ function MedicineSection() {
   ];
 
   return (
-    <section className="visceral-medicine pt-4 md:pt-6 pb-16 md:pb-24 bg-white">
+    <section className="visceral-medicine pt-4 md:pt-6 pb-16 md:pb-24 bg-white -mt-[10px]">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-2xl md:text-[38px] mb-16 tracking-tight text-black">
           <span className="font-medium">내장지방을 빼기위한</span><br className="md:hidden"/> <span className="font-bold">특별한 노하우를 담은 치료한약</span>
