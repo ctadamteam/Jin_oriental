@@ -951,9 +951,9 @@ export default function DetoxDietPage() {
         </div>
       </section>
 
-      {/* 11. Jin Obesity Footer Banner (진한의원 비만 배너) */}
+      {/* 11. Jin Obesity Footer Banner (진한의원 비만 배너 + SEO 투명 텍스트) */}
       <section className="w-full mb-16 md:mb-24 leading-none" aria-label="진한의원 비만 홈페이지 안내">
-        <div className="w-full max-w-[1000px] mx-auto overflow-hidden">
+        <div className="w-full max-w-[1000px] mx-auto overflow-hidden relative">
           <Image 
             src="/images/mid-age/MID_29.jpg" 
             alt="진한의원 비만 홈페이지에서 확인" 
@@ -963,6 +963,17 @@ export default function DetoxDietPage() {
             loading="eager" 
             unoptimized 
           />
+
+          {/* SEO 및 드래그용 투명 텍스트 오버레이 (15pt / ~20px, 이미지 위 글자 위치와 100% 대응) */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-auto text-center select-text">
+            <h2 className="text-[15pt] md:text-[24pt] text-transparent font-bold tracking-tight mb-1 md:mb-3 select-text">
+              진한의원 비만
+            </h2>
+            <p className="text-[15pt] md:text-[22pt] text-transparent font-medium leading-normal md:leading-relaxed select-text">
+              더 많은 사례자를 보시려면<br />
+              홈페이지에서 확인해주세요
+            </p>
+          </div>
         </div>
       </section>
       </div>
