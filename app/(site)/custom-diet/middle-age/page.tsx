@@ -56,6 +56,13 @@ const sizePrograms = [
   { name: '온열적선/중저주파', image: 'MID_26.png', tone: 'light', description: '온열마사지 및 다량의 초음파를 균일하게 방사하는 중저주파 시술을 통해 원하는 부위의 근육과 조직 등을 이완시키고 혈류하고 산소공급량을 증가시켜 다이어트 효과가 극대화 될 수 있도록 유도합니다.' },
 ];
 
+const injectionIngredients = [
+  { name: '산삼', image: 'MID_30.png', description: '혈중 지질감소와 지방세포 분화 억제 및 피로회복에 효과가 있고 인체의 기초대사량을 높여줍니다.' },
+  { name: '사향', image: 'MID_31.png', description: '지방분해를 촉진시키며 대사작용을 증가시키고 식욕을 억제하는 효과가 있습니다.' },
+  { name: '웅담', image: 'MID_32.png', description: '담즙산, 타우로콜산 등이 주성분으로 항염증 작용과 해독작용이 있으며 혈중지질을 감소시킵니다.' },
+  { name: '우황', image: 'MID_33.png', description: '비만으로 인한 고혈압을 완화시키고 경련을 예방하며 웅담과 함께 혈중지질을 감소시킵니다.' },
+];
+
 function Chat({ doctor = false, woman = false, children }: { doctor?: boolean; woman?: boolean; children: ReactNode }) {
   const icon = doctor ? 'MID_03.png' : woman ? 'MID_04.png' : 'MID_02.png';
   return (
@@ -68,24 +75,23 @@ function Chat({ doctor = false, woman = false, children }: { doctor?: boolean; w
 }
 
 function DecorativeTitle({ children }: { children: ReactNode }) {
-  return <h2 className="mid-deco-title">{children}<span aria-hidden="true" /></h2>;
+  return <div className="mid-deco-title-wrap"><h2 className="mid-deco-title">{children}<span aria-hidden="true" /></h2></div>;
 }
 
 export default function MiddleAgeDietPage() {
   return (
     <main className="mid-page">
       <article className="mid-content">
-        <header className="mid-page-heading"><h1>중년 다이어트</h1></header>
+        <header className="mid-page-heading"><h1>중년 비만</h1></header>
 
         <section className="mid-hero" aria-labelledby="mid-hero-title">
           <div className="mid-hero-photo"><Image src={imagePath('MID_01.png')} alt="중년 다이어트 상담" fill priority sizes="672px" unoptimized /></div>
           <div className="mid-hero-copy">
             <p>적절한 체중감량으로 건강한 노후를 준비!</p>
             <h2 id="mid-hero-title">
-              <div className="mid-hero-top-row"><span>중</span><span>년</span></div>
-              <b>다이어트</b>
+              <div className="mid-hero-top-row"><span>중년</span><b>비만</b></div>
             </h2>
-            <p className="mid-hero-detail">중년이라서 더 어렵고 포기했던 체중감량과 함께<br />대사성질환의 예방과 관리를 동시에!<br />실패하지 않는 건강한 다이어트를 위한 맞춤 치료<br />프로세스</p>
+            <p className="mid-hero-detail">중년이라서 더 어렵고 포기했던 체중감량과 함께 대사성질환의 예방과 관리를 동시에! 실패하지 않는 건강한 다이어트를 위한 맞춤 치료 프로세스</p>
           </div>
         </section>
 
@@ -126,10 +132,12 @@ export default function MiddleAgeDietPage() {
           <h2>중년 체중감량을 통한 신체적 변화</h2>
           <div className="mid-chart">
             <div className="mid-chart-tabs"><b>01. 해독치료 단계</b><b>02. 감량치료 단계</b><b>03. 회복치료 단계</b></div>
-            <svg viewBox="0 0 900 460" role="img" aria-label="중년 체중감량에 따른 신체 변화 그래프">
+            <svg viewBox="-36 0 936 460" role="img" aria-label="중년 체중감량에 따른 신체 변화 그래프">
               <defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="#b97f9f" strokeOpacity=".18" strokeWidth="1" /></pattern></defs>
+              <rect x="0" y="0" width="900" height="420" fill="#fff" fillOpacity=".58" />
               <rect x="0" y="0" width="900" height="420" fill="url(#grid)" />
               <g stroke="#5c4b4a" strokeWidth="2"><line x1="0" y1="420" x2="900" y2="420" /><line x1="0" y1="0" x2="0" y2="420" /></g>
+              <text x="-22" y="103" transform="rotate(-90 -22 103)" fill="#51433e" fontSize="16" fontWeight="700">증상의 정도</text>
               <g stroke="#7b617d" strokeDasharray="4 4"><line x1="300" y1="0" x2="300" y2="420" /><line x1="600" y1="0" x2="600" y2="420" /></g>
               <path d="M10 100 C125 105 180 167 280 275 S535 360 890 370" fill="none" stroke="#487dc8" strokeWidth="3" />
               <path d="M10 118 C175 150 210 235 330 290 S590 355 890 385" fill="none" stroke="#50ad38" strokeWidth="3" />
@@ -154,8 +162,8 @@ export default function MiddleAgeDietPage() {
         </section>
 
         <section className="mid-herbs visceral-medicine pt-4 md:pt-6 pb-16 md:pb-24 bg-white -mt-[10px]">
-          <div className="w-full max-w-[1100px] mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-2xl md:text-[38px] mb-16 tracking-tight text-black">
+          <div className="mid-herbs-content w-full max-w-[1100px] mx-auto px-4 md:px-6 text-center">
+            <h2 className="mid-herbs-title text-2xl md:text-[38px] mb-16 tracking-tight text-black">
               <span className="font-medium">중년기의 여러문제를 치료하기 위한</span><br className="hidden md:block"/> <span className="font-bold">특별한 노하우를 담은 한약</span>
             </h2>
             
@@ -214,29 +222,56 @@ export default function MiddleAgeDietPage() {
         </section>
 
         <section className="mid-doctor-intro">
-          <div>
+          <div className="mid-doctor-copy">
             <h2>진한의원 중년 다이어트</h2>
             <p>갱년기 증후군을 겪는 여성들은 개인에 따라 정도의 차이가 있지만 몸과 마음에 모두 큰 변화를 겪는 시기인 만큼 적절한 관리가 필요합니다. 때문에 이런 특성을 고려하여 불필요한 지방은 감소시키면서도 근육과 뼈는 최대한 보호하는 갱년기 환자만을 위한 다이어트 프로그램이 반드시 필요합니다.</p>
-            <p className="mid-highlight">
-              <mark>오랜 기간 비만과 부인과 치료에 대한 임상경험을 축적해온 진한의원 에서는</mark><br />
-              <mark>단순한 다이어트 처방만이 아닌 다양한 갱년기 증상을 완화시키고 건강한</mark><br />
-              <mark>노후생활을 준비하기 위한 초석을 다지는 갱년기 다이어트 프로세스를 통해</mark><br />
-              <mark>자연스러운 체중감량을 도와드립니다.</mark>
-            </p>
+            <p className="mid-highlight"><mark>오랜 기간 비만과 부인과 치료에 대한 임상경험을 축적해온 진한의원에서는 단순한 다이어트 처방만이 아닌 다양한 갱년기 증상을 완화시키고 건강한 노후생활을 준비하기 위한 초석을 다지는 갱년기 다이어트 프로세스를 통해 자연스러운 체중감량을 도와드립니다.</mark></p>
           </div>
           <Image src={imagePath('MID_11.png')} alt="진한의원 중년 다이어트 안내" width={327} height={472} loading="eager" unoptimized />
         </section>
 
         <section className="mid-products"><DecorativeTitle>진한의원 다이어트 프로그램</DecorativeTitle><div className="mid-product-grid">{products.map(product => <article key={product.name}><h3>{product.name}</h3><p>{product.description}</p><Image src={imagePath(product.image)} alt={product.name} width={306} height={239} loading="eager" unoptimized /></article>)}</div></section>
 
-        <section className="mid-injection"><h2>산삼비만약침</h2><p>부분비만에 사용하는 산삼비만약침으로 산삼, 사향, 웅담, 우황이 들어가 있어 지방분해를 촉진하고 해독작용에 도움을 줍니다.</p><div className="mid-injection-detail"><div className="mid-ingredient-list"><article><b>산삼</b><p>혈중 지질감소와 지방세포 분화 억제 및 피괴에 효과가 있고 인체의 기초대사량을 높여줍니다.</p></article><article><b>사향</b><p>지방분해를 촉진시키며 대사작용을 증가시키고 식욕을 억제하는 효과가 있습니다.</p></article><article><b>웅담</b><p>담즙산, 티우르콜산 등이 주성분으로 항염증 작용, 해독작용이 있으며 혈중지질을 감소시킵니다.</p></article><article><b>우황</b><p>비만으로 인한 고혈압을 완화시키고 경련을 예방하고 웅담과 함께 혈중지질을 감소시킵니다.</p></article></div><Image src={imagePath('MID_18.png')} alt="산삼비만약침" width={311} height={238} loading="eager" unoptimized /></div></section>
+        <section className="mid-injection">
+          <h2>산삼비만약침</h2>
+          <p>부분비만에 사용하는 산삼비만약침으로 산삼, 사향, 웅담, 우황이 들어가 있어 지방분해를 촉진하고 해독작용에 도움을 줍니다.</p>
+          <div className="mid-injection-detail">
+            <div className="mid-ingredient-list">
+              {injectionIngredients.map((ingredient) => (
+                <article key={ingredient.name}>
+                  <div className="mid-ingredient-diamond"><Image src={imagePath(ingredient.image)} alt="" fill sizes="54px" unoptimized /></div>
+                  <div><b>{ingredient.name}</b><p>{ingredient.description}</p></div>
+                </article>
+              ))}
+            </div>
+            <Image src={imagePath('MID_18.png')} alt="산삼비만약침" width={311} height={238} loading="eager" unoptimized />
+          </div>
+        </section>
 
-        <section className="mid-tip"><Image src="/images/che-diet/diet_tip_bg.jpg" alt="DIET PROGRAM TIP" width={1000} height={541} loading="eager" unoptimized /></section>
+        <section className="mid-tip" aria-label="DIET PROGRAM TIP">
+          <Image src="/images/che-diet/diet_tip_bg.jpg" alt="DIET PROGRAM TIP" width={1000} height={541} loading="eager" unoptimized />
+          <div className="mid-tip-seo" aria-label="다이어트 프로그램 안내">
+            <h2>DIET PROGRAM TIP!</h2>
+            <p className="mid-tip-seo__stage mid-tip-seo__stage--food">FOOD. 음식</p>
+            <p className="mid-tip-seo__stage mid-tip-seo__stage--eat">EAT. 섭취</p>
+            <p className="mid-tip-seo__stage mid-tip-seo__stage--fat">FAT. 체지방</p>
+            <p className="mid-tip-seo__stage mid-tip-seo__stage--slim">SLIM. 배출/해독</p>
+            <p className="mid-tip-seo__copy mid-tip-seo__copy--one">식욕조절<br />슬림탕환<br />진SS시럽</p>
+            <p className="mid-tip-seo__copy mid-tip-seo__copy--two">체지방분해<br />슬림환<br />진SS시럽<br />탄수화물의 지방화 전환 방지<br />칼로리컷다운</p>
+            <p className="mid-tip-seo__copy mid-tip-seo__copy--three">숙변배출, 장해독<br />장코쾌환<br />숙변환<br />독소배출, 간해독<br />해독프로그램</p>
+          </div>
+        </section>
 
         <section className="mid-size"><DecorativeTitle>부위별 사이즈 감소 프로그램</DecorativeTitle><p>운동으로 빼기 힘든 등, 허벅지, 복부 등 <strong>국소적인 부위의 사이즈 감소</strong>에 효과적인 프로그램입니다.</p><div className="mid-size-grid">{sizePrograms.map(program => <article className={`mid-size-card mid-size-card--${program.tone}`} key={program.name}><div className="mid-size-photo"><Image src={imagePath(program.image)} alt={program.name} fill sizes="250px" loading="eager" unoptimized /></div><div className="mid-size-copy"><h3>{program.name}</h3><p>{program.description}</p></div></article>)}<div className="mid-size-finale"><div className="mid-size-photo"><Image src={imagePath('MID_27.png')} alt="S-body 체형매선" fill sizes="250px" loading="eager" unoptimized /></div><div className="mid-size-copy"><h3>S-body 체형매선</h3><p>다이어트, 임신, 출산 등으로 늘어지고 처진 부위에 경혈과 경락자리를 따라 한방약실을 자입하여 지방세포의 소실로 인한 탄력저하를 개선하고 이상적인 몸매라인을 형성합니다. 체형매선 시술후에는 특수약실의 피부속 내에서 스스로 녹으면서 지속적인 피부의 혈부조직을 자극, 탄력증가 및 리프팅 효과를 얻을 수 있습니다.</p></div><div className="mid-size-logo"><Image src={imagePath('MID_28.png')} alt="진한의원" fill sizes="250px" loading="eager" unoptimized /></div></div></div>
         </section>
 
-        <footer className="mid-footer"><Image src={imagePath('MID_29.jpg')} alt="진한의원 비만 상담" width={1000} height={500} loading="eager" unoptimized /></footer>
+        <footer className="mid-footer" aria-label="진한의원 비만 상담">
+          <Image src={imagePath('MID_29.jpg')} alt="진한의원 비만 상담" width={1000} height={500} loading="eager" unoptimized />
+          <div className="mid-footer-seo">
+            <h2>진한의원 비만</h2>
+            <p>더 많은 사례자를 보시려면<br />홈페이지에서 확인해주세요</p>
+          </div>
+        </footer>
       </article>
 
       <style dangerouslySetInnerHTML={{ __html: `
@@ -256,6 +291,26 @@ export default function MiddleAgeDietPage() {
         .mid-deco-title{position:relative;margin:0 auto;color:#1b1919;text-align:center;font-family:Arial,'Malgun Gothic',sans-serif;font-size:53px;font-weight:700;letter-spacing:-5px}.mid-deco-title:after{display:block;width:600px;height:9px;margin:14px auto 0;background:linear-gradient(90deg,#48271c,#855846,#48271c);box-shadow:0 3px 3px rgba(0,0,0,.25);content:''}.mid-deco-title span{position:absolute;bottom:-8px;left:50%;width:0;height:0;border-right:48px solid transparent;border-bottom:25px solid #6d4634;border-left:48px solid transparent;transform:translateX(-50%)}.mid-products{padding:117px 0 81px}.mid-products .mid-deco-title{margin-bottom:104px}.mid-product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:76px 40px}.mid-product-grid article h3{margin:0 0 13px;padding-bottom:8px;border-bottom:5px solid #64c4cb;color:#3c3c3c;font-size:31px;font-weight:700;letter-spacing:-3px}.mid-product-grid article p{min-height:91px;margin:0 0 16px;color:#555;font-size:16px;line-height:1.46;letter-spacing:-1.35px;word-break:keep-all}.mid-product-grid article>img{display:block;width:100%;height:236px;object-fit:cover}
         .mid-injection{padding:9px 0 68px}.mid-injection>h2{display:inline-block;width:fit-content;margin:0 0 12px;padding-bottom:9px;border-bottom:5px solid #64c4cb;color:#333;font-size:35px;font-weight:700;letter-spacing:-3px}.mid-injection>p{margin:0 0 25px;color:#555;font-size:16px;letter-spacing:-1.2px}.mid-injection-detail{display:grid;grid-template-columns:1fr 310px;gap:38px;align-items:center}.mid-ingredient-list{display:grid;grid-template-columns:repeat(2,1fr);gap:29px 40px}.mid-ingredient-list article{position:relative;padding-left:64px}.mid-ingredient-list article:before{position:absolute;top:3px;left:12px;width:37px;height:37px;background:#dfe7e8;content:'';transform:rotate(45deg)}.mid-ingredient-list b{position:relative;color:#333;font-family:Arial,'Malgun Gothic','Pretendard',sans-serif;font-size:29px;font-weight:400 !important;letter-spacing:-2px}.mid-ingredient-list p{position:relative;margin:6px 0 0;color:#555;font-size:14px;line-height:1.45;letter-spacing:-1px}.mid-injection-detail>img{width:310px;height:auto}.mid-tip{line-height:0}.mid-tip img{width:100%;height:auto}
         .mid-size{padding:113px 0 0}.mid-size .mid-deco-title{margin-bottom:73px}.mid-size>p{margin:0 0 55px;padding:13px 15px;background:repeating-linear-gradient(-45deg,#f6f6f6 0 1px,#fff 1px 4px);color:#444;text-align:center;font-size:20px;letter-spacing:-1.8px}.mid-size>p strong{color:#e56c5b;font-weight:700}.mid-size-grid{display:grid;grid-template-columns:repeat(2,1fr)}.mid-size-card{display:grid;min-height:204px;grid-template-columns:47.5% 52.5%}.mid-size-photo{position:relative;min-height:204px;overflow:hidden}.mid-size-photo img{object-fit:cover}.mid-size-copy{padding:17px 15px;background:#fff;color:#3f3f3f}.mid-size-copy h3{display:table;width:fit-content;margin:0 0 11px;padding-bottom:5px;border-bottom:3px solid #069fb0;color:#0297a7;font-size:29px;font-weight:700;line-height:1;letter-spacing:-2.7px}.mid-size-copy p{margin:0;font-size:15px;line-height:1.31;letter-spacing:-1.15px;word-break:keep-all}.mid-size-card--aqua .mid-size-copy{background:#3d9cac;color:#fff}.mid-size-card--aqua .mid-size-copy h3{border-color:#fff;color:#fff}.mid-size-card--dark .mid-size-copy{background:#4c4c4c;color:#fff}.mid-size-card--dark .mid-size-copy h3{border-color:#fff;color:#fff}.mid-size-finale{display:grid;min-height:204px;grid-column:1 / -1;grid-template-columns:23.6% 50% 26.4%}.mid-size-finale .mid-size-copy{padding:18px;background:#3d9cac;color:#fff}.mid-size-finale .mid-size-copy h3{border-color:#fff;color:#fff}.mid-size-logo{position:relative;overflow:hidden;min-height:204px}.mid-size-logo img{object-fit:cover}.mid-footer{margin-top:245px;line-height:0}.mid-footer img{width:100%;height:auto}
+        .mid-page-heading{height:100px;margin-bottom:10px;padding:18px 0 0;border-bottom:1px dashed #c9c9c9}.mid-page-heading h1{font-family:'Batang','Nanum Myeongjo',serif;font-size:38px;font-weight:700;letter-spacing:-3px}
+        .mid-hero{margin-top:0}.mid-hero-copy{display:flex;min-height:365px;flex-direction:column;justify-content:center;padding:38px 32px;background:#433124}.mid-hero-copy p{color:#c7bbb1;font-size:15px;line-height:1.45}.mid-hero-copy h2{margin:8px 0 16px;color:#a5c614;font-size:54px;font-weight:700;line-height:.98;letter-spacing:-1px}.mid-hero-top-row{width:245px}.mid-hero-copy h2 b{margin-top:8px;color:#fff;font-size:54px;font-weight:400;letter-spacing:10px}.mid-hero-copy .mid-hero-detail{color:#ece7e2;font-size:14px;line-height:1.75}
+        .mid-introduction{width:920px;max-width:100%;margin:0 auto;padding:92px 0 58px}.mid-introduction h2{margin-bottom:28px;font-family:'Batang','Nanum Myeongjo',serif;font-size:48px;font-weight:700;letter-spacing:-3px}.mid-introduction .mid-lead{margin-bottom:14px;font-size:20px;line-height:1.7;letter-spacing:-1.5px}.mid-introduction p{font-size:18px;line-height:1.78;letter-spacing:-1.2px}.mid-introduction mark{padding:2px 2px 3px;background:linear-gradient(transparent 54%,#fff4b0 54%,#fff4b0 94%,transparent 94%)}
+        .mid-causes{padding:55px 58px 72px}.mid-causes h2{font-size:38px}.mid-cause-item b{display:flex;flex-direction:column;gap:0;text-align:center;text-align-last:center}.mid-cause-item b span{width:100%;text-align:center}.mid-causes>p{width:calc(100% - 20px);margin:44px 0 0;padding-top:21px;border-top-width:6px;text-align:left;font-size:18px;line-height:1.7;letter-spacing:-1.25px}
+        .mid-question{font-size:22px;font-weight:600}.mid-chat-area{padding:48px 58px}.mid-chat{gap:20px;margin-bottom:26px}.mid-chat>img{width:80px;height:80px;border-radius:28px}.mid-chat p{max-width:700px;margin-top:10px;padding:25px 30px;border-radius:28px;font-size:18px;font-weight:600;line-height:1.5;letter-spacing:-1.2px}.mid-chat:not(.mid-chat--doctor) p:before{top:24px;left:-14px;border-width:10px 14px 10px 0}.mid-chat--doctor>img{width:80px;height:80px}.mid-chat--doctor p:after{right:-14px;bottom:22px;border-width:10px 0 10px 14px}.mid-chat-area--second{padding-top:48px;padding-bottom:56px}.mid-chat-area--second .mid-chat:first-child p{margin-top:10px}
+        .mid-change{padding:84px 48px 30px}.mid-change h2{font-size:38px}.mid-chart{background-color:#f4eaf2}.mid-outcome{min-height:360px;margin-top:42px}.mid-outcome p{font-size:25px}.mid-outcome b{font-size:30px;font-weight:400}.mid-outcome strong{font-size:39px}
+        .mid-herbs{padding-top:42px!important;padding-bottom:92px!important}.mid-herbs-content{max-width:1000px!important;padding-right:24px!important;padding-left:24px!important}.mid-herbs-title{margin-bottom:56px!important;font-size:38px!important;line-height:1.35}.mid-herbs .flex.flex-col.gap-6{gap:16px!important}.mid-herbs .grid.lg\\:grid-cols-4,.mid-herbs .grid.lg\\:grid-cols-2{gap:16px!important;align-items:stretch}.mid-herbs .grid.lg\\:grid-cols-4>div,.mid-herbs .grid.lg\\:grid-cols-2>div{height:100%}
+        .mid-doctor-intro{margin-top:40px;padding:54px 66px 0}.mid-doctor-intro h2{font-size:38px;letter-spacing:-3px}.mid-doctor-intro p{font-size:18px;line-height:1.78}.mid-doctor-intro .mid-highlight{font-size:20px;line-height:1.75}.mid-doctor-intro .mid-highlight mark{padding:0 3px 1px;background:linear-gradient(transparent 58%,#fff4b0 58%,#fff4b0 90%,transparent 90%)}
+        .mid-deco-title-wrap{text-align:center}.mid-deco-title{display:inline-block;width:fit-content;max-width:100%;font-size:48px;letter-spacing:-4px}.mid-deco-title:after{width:100%;height:7px;margin-top:14px}.mid-deco-title span{bottom:-7px;transform:translateX(-50%) rotate(180deg)}.mid-products{padding:112px 24px 82px}.mid-products .mid-deco-title{margin-bottom:88px}.mid-product-grid{gap:64px 40px}.mid-product-grid article h3{font-size:30px;letter-spacing:-2.6px}.mid-product-grid article p{font-size:18px;line-height:1.55}.mid-product-grid article:nth-child(4) h3{border-bottom-color:#64c4cb}
+        .mid-injection{padding:8px 24px 82px}.mid-injection>h2{font-size:35px}.mid-injection>p{font-size:18px;line-height:1.6}.mid-injection-detail{gap:42px}.mid-ingredient-list{gap:34px 42px}.mid-ingredient-list article{display:flex;gap:18px;padding-left:0}.mid-ingredient-diamond{position:relative;flex:0 0 56px;width:56px;height:56px;overflow:hidden;background:#dfe7e8;transform:rotate(45deg)}.mid-ingredient-diamond img{object-fit:contain;padding:7px;transform:rotate(-45deg) scale(1.35)}.mid-ingredient-list b{font-size:25px;font-weight:600!important;letter-spacing:-1.5px}.mid-ingredient-list p{margin-top:6px;font-size:16px;line-height:1.48;letter-spacing:-1px}.mid-injection-detail>img{width:311px}
+        .mid-tip{position:relative;line-height:0}.mid-tip>img{display:block;width:100%;height:auto}.mid-tip-seo,.mid-footer-seo{position:absolute;inset:0;z-index:1;color:transparent;font-size:13pt;line-height:1.35;user-select:text}.mid-tip-seo h2,.mid-tip-seo p{position:absolute;margin:0;color:transparent;font:inherit;white-space:nowrap}.mid-tip-seo h2{top:1%;left:0;font-size:18pt}.mid-tip-seo__stage{top:56%;width:22%;text-align:center}.mid-tip-seo__stage--food{left:3%}.mid-tip-seo__stage--eat{left:28%}.mid-tip-seo__stage--fat{left:53%}.mid-tip-seo__stage--slim{left:78%}.mid-tip-seo__copy{top:67%;font-size:13pt;line-height:1.36;white-space:normal!important}.mid-tip-seo__copy--one{left:22%}.mid-tip-seo__copy--two{left:46%}.mid-tip-seo__copy--three{left:72%}
+        .mid-size{padding:108px 24px 0}.mid-size .mid-deco-title{margin-bottom:68px}.mid-size>p{font-size:20px}.mid-size>p strong{color:#a5c614}.mid-size-copy h3{font-size:25px;letter-spacing:-2px}.mid-size-copy p{font-size:18px;line-height:1.45;letter-spacing:-1.2px}.mid-footer{position:relative;margin-top:72px;margin-bottom:72px;line-height:0}.mid-footer img{display:block}.mid-footer-seo{font-size:15pt}.mid-footer-seo h2,.mid-footer-seo p{position:absolute;margin:0;color:transparent;font:inherit}.mid-footer-seo h2{top:22%;left:27%;font-size:38px;font-weight:700}.mid-footer-seo p{top:47%;left:19%;font-size:26px;line-height:1.5}
+        .mid-page-heading{height:77px}.mid-hero-copy h2{margin:8px 0 16px}.mid-hero-top-row{display:flex;width:auto;align-items:baseline;justify-content:flex-start;gap:14px;white-space:nowrap}.mid-hero-top-row span{color:#a5c614}.mid-hero-top-row b{display:inline;margin:0;color:#fff;font-size:54px;font-weight:400;letter-spacing:4px}.mid-hero-copy>h2>b{display:none}.mid-hero-copy .mid-hero-detail{word-break:keep-all}
+        .mid-causes{padding-bottom:70px}.mid-causes>p{position:relative;width:calc(100% + 38px);max-width:none;margin:44px 0 0;padding-top:31px;border-top:0}.mid-causes>p:before{position:absolute;top:0;left:0;width:90px;height:6px;background:#c9b1d3;content:''}
+        @media(max-width:680px){.mid-causes>p{width:100%;max-width:100%}}
+        .mid-herbs{padding-top:130px!important}.mid-herbs .rounded-full img{transform:scale(1.34)}
+        .mid-doctor-intro .mid-highlight{line-height:1.56}.mid-doctor-intro .mid-highlight mark{display:inline;padding:0 2px 1px;background:linear-gradient(transparent 54%,#fff4b0 54%,#fff4b0 93%,transparent 93%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+        .mid-product-grid article{display:flex;flex-direction:column}.mid-product-grid article p{height:124px;min-height:124px;margin-bottom:16px}.mid-product-grid article>img{margin-top:auto}
+        .mid-injection>h2{position:relative;padding-bottom:10px;border-bottom:0}.mid-injection>h2:after{position:absolute;bottom:0;left:0;width:291px;height:5px;background:#64c4cb;content:''}.mid-size-copy p{font-size:16px;line-height:1.42}
+        .mid-page-heading{height:70px;padding-top:3px}.mid-hero{margin-top:0}
         @media(max-width:1000px){.mid-content{width:100%}.mid-hero{grid-template-columns:67.2% 32.8%;height:auto;aspect-ratio:1000 / 365}.mid-hero-copy{padding:5.8vw 0 0 3.7vw}.mid-hero-copy h2,.mid-hero-copy h2 b{font-size:5.5vw}.mid-hero-top-row{width:24.4vw}.mid-product-grid{gap:7.6vw 4vw}.mid-products,.mid-injection{padding-right:2vw;padding-left:2vw}}
         @media(max-width:680px){.mid-page-heading{height:70px;padding:15px 18px}.mid-page-heading h1{font-size:30px}.mid-hero{display:block;height:auto;aspect-ratio:auto}.mid-hero-photo{height:auto;aspect-ratio:672 / 365}.mid-hero-copy{min-height:265px;padding:38px 32px}.mid-hero-copy h2,.mid-hero-copy h2 b{font-size:43px}.mid-hero-top-row{width:190px}.mid-introduction{padding:55px 22px 42px}.mid-introduction h2{font-size:34px}.mid-introduction .mid-lead{font-size:16px}.mid-introduction p{font-size:14px}.mid-causes{padding:46px 18px}.mid-causes h2{margin-bottom:35px;font-size:30px}.mid-cause-flow{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mid-cause-item{justify-content:center}.mid-cause-item b{width:125px;height:125px;font-size:19px}.mid-cause-item i{display:none}.mid-causes>p{font-size:13px}.mid-question{font-size:19px}.mid-chat-area{padding:31px 16px}.mid-chat{gap:10px}.mid-chat>img{width:54px;height:54px;border-radius:9px}.mid-chat p{margin-top:9px;padding:18px 21px;border-radius:25px;font-size:14px;letter-spacing:-1.25px}.mid-chat--doctor>img{height:57px}.mid-change{padding:54px 15px}.mid-change h2{font-size:27px}.mid-chart{padding:15px 8px}.mid-chart-tabs{gap:8px}.mid-chart-tabs b{font-size:10px}.mid-outcome{min-height:260px}.mid-outcome p{font-size:16px}.mid-outcome b{font-size:22px}.mid-outcome strong{font-size:28px}.mid-doctor-intro{display:flex;min-height:0;margin-top:25px;padding:35px 22px;flex-direction:column}.mid-doctor-intro h2{font-size:35px}.mid-doctor-intro p{font-size:14px}.mid-doctor-intro>img{width:240px;height:auto;align-self:center}.mid-deco-title{font-size:38px}.mid-products{padding:65px 20px}.mid-products .mid-deco-title{margin-bottom:60px}.mid-product-grid{grid-template-columns:1fr;gap:44px}.mid-product-grid article p{min-height:0}.mid-injection{padding:10px 20px 45px}.mid-injection>h2{font-size:30px}.mid-injection>p{font-size:14px}.mid-injection-detail{grid-template-columns:1fr}.mid-ingredient-list{gap:20px}.mid-injection-detail>img{justify-self:center}.mid-size{padding-top:65px}.mid-size .mid-deco-title{margin-bottom:48px}.mid-size>p{font-size:15px}.mid-size-grid{grid-template-columns:1fr}.mid-size-card{min-height:190px}.mid-size-photo{min-height:190px}.mid-size-finale{grid-template-columns:24% 50% 26%;min-height:190px}.mid-size-finale .mid-size-photo,.mid-size-logo{min-height:190px}.mid-size-copy h3{font-size:24px}.mid-size-copy p{font-size:13px}.mid-footer{margin-top:90px}}
       ` }} />

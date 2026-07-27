@@ -38,13 +38,13 @@ function HeroSection() {
           priority
         />
       </div>
-      <div className="flex flex-col justify-center p-6 md:py-8 md:px-[37px]">
-        <p className="text-sm md:text-[15px] text-[#cfc5bd] tracking-tight mb-2">체질개선과 원인 치료!</p>
-        <h2 className="w-full text-3xl md:text-[55px] leading-[0.95] mb-4 tracking-tight">
-          <div className="flex justify-between w-[252px] text-[#ffec55]"><span>고도</span><span> </span></div>
-          <b className="text-white font-bold block mt-3 text-[55px] tracking-[14px]">비만</b>
+      <div className="flex flex-col justify-center p-6 md:py-8 md:px-[32px]">
+        <p className="text-sm md:text-[15px] text-[#c7bbb1] tracking-tight mb-2">체질개선과 원인 치료!</p>
+        <h2 className="w-full flex items-baseline gap-3 whitespace-nowrap text-3xl md:text-[54px] leading-tight mb-4 tracking-tight">
+          <span className="font-bold text-[#A5C614]">고도</span>
+          <b className="text-white font-normal">비만</b>
         </h2>
-        <p className="text-xs md:text-[14px] text-gray-200 leading-[1.8] break-keep font-light opacity-90 w-full">
+        <p className="text-xs md:text-[14px] text-gray-200 leading-relaxed break-keep font-light opacity-90 w-full">
           고도비만은 유전적 요인과 여러 질환이 관련되므로 일반 다이어트와는 다르게 접근해야 합니다. 장시간 진행되기 때문에 오랫동안 복용할 수 있는 '안전한 약이어야 하며' 근본적인 생활습관 개선과 동반질병 치료가 필수적입니다.
         </p>
       </div>
@@ -56,7 +56,7 @@ function FiveCoreSection() {
   return (
     <section className="relative w-full">
       {/* Title Area - 왼쪽 정렬 적용 */}
-      <div className="relative z-10 w-full bg-white pt-10 md:pt-12 pb-4 px-6 md:px-12">
+      <div className="relative z-10 w-full bg-white pt-[68px] md:pt-[76px] pb-4 px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-start gap-2 md:gap-6">
           <span className="text-6xl md:text-7xl font-bold text-[#fce8c0] leading-none">Jin</span>
           <span className="text-gray-600 text-lg md:text-xl font-serif">소중한 당신의 몸과 아름다운 당신의 몸매를 위한 건강한 다이어트</span>
@@ -72,35 +72,35 @@ function FiveCoreSection() {
         />
         
         {/* Transparent overlay for SEO and Selectability */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-transparent selection:bg-[#ec6f68]/30 selection:text-white px-[12%] pt-[2%] md:pt-[4%] -mt-[155px]">
-          <div className="text-center mb-[4%] md:mb-[6%] translate-y-[25px]">
-            <h2 className="text-xs md:text-sm lg:text-base tracking-widest mb-1 md:mb-2">JIN DIET</h2>
-            <h3 className="text-xl md:text-3xl lg:text-4xl font-black">고도비만 다이어트 5가지 핵심</h3>
+        <div className="absolute inset-0 z-10 select-text text-transparent selection:bg-[#ec6f68]/30 selection:text-white" aria-label="고도비만 다이어트 5가지 핵심">
+          <div className="absolute top-[9%] left-1/2 w-full -translate-x-1/2 text-center">
+            <h2 className="text-[13px] tracking-[0.42em]">JIN DIET</h2>
+            <h3 className="mt-2 text-[15pt] font-black">고도비만 다이어트 5가지 핵심</h3>
           </div>
-          
-          <div className="w-[70%] mx-auto grid grid-cols-5 gap-2 md:gap-6 lg:gap-10 text-[8px] md:text-xs lg:text-sm leading-normal md:leading-relaxed break-keep text-left">
-            <div className="flex flex-col translate-x-[50px]">
-              <h4 className="font-bold mb-2 md:mb-4 inline-block self-start text-[10px] md:text-[14px] lg:text-[16px]">체내 환경 개선</h4>
+
+          <div className="absolute top-[39%] left-[3.7%] right-[3.7%] grid grid-cols-5 gap-[3.4%] text-left text-[10px] leading-[1.46] md:text-[14px] break-keep">
+            <div className="flex flex-col">
+              <h4 className="mb-2 inline-block self-start text-[12px] font-bold md:text-[16px]">체내 환경 개선</h4>
               <p>비정상적인 식욕의 원인인 과잉된 체내 노폐물과 독소를 제거하여 살을 빼기 위한 환경을 만듭니다.</p>
             </div>
             
-            <div className="flex flex-col translate-x-[25px]">
-              <h4 className="font-bold mb-2 md:mb-4 inline-block self-start text-[10px] md:text-[14px] lg:text-[16px]">위 용적 축소</h4>
+            <div className="flex flex-col">
+              <h4 className="mb-2 inline-block self-start text-[12px] font-bold md:text-[16px]">위 용적 축소</h4>
               <p>잦은 과식과 폭식으로 위가 커지고 위벽이 단단하게 부어있는 상태가 지속되면 위의 운동 능력과 소화기능이 떨어져 먹어도 배가 부른 상태를 인지하기 어렵습니다. 이런 위의 용적을 줄이고 잘못된 식습관을 바로잡습니다.</p>
             </div>
             
             <div className="flex flex-col">
-              <h4 className="font-bold mb-2 md:mb-4 inline-block self-start text-[10px] md:text-[14px] lg:text-[16px]">살이 찌는 원인 치료</h4>
+              <h4 className="mb-2 inline-block self-start text-[12px] font-bold md:text-[16px]">살이 찌는 원인 치료</h4>
               <p>비만이 된 원인을 진단합니다. 식적형, 어혈형, 담음형, 기허형, 칠정형 비만에 따라 살이 찔 수 밖에 없는 이유를 치료합니다.</p>
             </div>
             
-            <div className="flex flex-col -translate-x-[25px]">
-              <h4 className="font-bold mb-2 md:mb-4 inline-block self-start text-[10px] md:text-[14px] lg:text-[16px]">단계적인 체중감량</h4>
+            <div className="flex flex-col">
+              <h4 className="mb-2 inline-block self-start text-[12px] font-bold md:text-[16px]">단계적인 체중감량</h4>
               <p>일정한 체중 감량 후 몸이 변화된 체중을 인지하고 익숙해지는 기간이 꼭 필요합니다. 감량의 폭이 큰 고도비만일수록 이런 감량기와 회복기의 체계적인 관리가 있어야 요요현상을 줄일 수 있습니다.</p>
             </div>
             
-            <div className="flex flex-col -translate-x-[50px]">
-              <h4 className="font-bold mb-2 md:mb-4 inline-block self-start text-[10px] md:text-[14px] lg:text-[16px]">생활습관 치료</h4>
+            <div className="flex flex-col">
+              <h4 className="mb-2 inline-block self-start text-[12px] font-bold md:text-[16px]">생활습관 치료</h4>
               <p>고도비만 다이어트가 특히 힘든 이유가 생활 습관이 고쳐지지 않는 상태로 치료가 중단되는 경우가 대부분이기 때문입니다. 요요현상을 방지하기 위해서는 반드시 잘못된 식습관 치료와 생활습관 치료는 필요합니다.</p>
             </div>
           </div>
@@ -153,11 +153,7 @@ function IntroSection() {
           고도비만이란? 체질량지수(BMI)가 35이상이거나 30이상인데 관련 질환이 동반된 경우를 고도비만이라고 하며 대개로 감량해야 되는 몸무게가 20키로가 넘습니다.
         </p>
         <p className="text-sm md:text-[18px] text-gray-700 leading-relaxed">
-          고도비만은 하나의 원인으로 발생하기보다 체질적 요인, 스트레스, 부적절한 식생활, 질병이나 약물 복용 등 다양한 원인이<br className="hidden md:block"/>
-          복합적으로 작용하여 신체가 감당하기 어려운 수준으로 지방 량이 급격히 증가되어 나타납니다. 체중 조절 시스템도 이미<br className="hidden md:block"/>
-          고장 나 있는 경우가 많고 단순히 지방의 증가로 그치는 것이 아니라 전신적이고 복합적인 문제를 동반합니다.<br className="hidden md:block"/>
-          <strong className="bg-[#fff4b0] px-1 text-black font-medium">고도비만은 체중 감량도 중요하지만 고도비만을 유발하거나 악화시키는 원인을 치료하는 것이 가장 중요합니다.</strong><br className="hidden md:block"/>
-          적게 먹고 운동을 한다고 다이어트의 전부는 아닙니다. 몸의 오장육부의 균형을 개선시켜 살이 찌는 근본 적인 이유를 찾아<br className="hidden md:block"/>
+          고도비만은 하나의 원인으로 발생하기보다 체질적 요인, 스트레스, 부적절한 식생활, 질병이나 약물 복용 등 다양한 원인이 복합적으로 작용하여 신체가 감당하기 어려운 수준으로 지방 량이 급격히 증가되어 나타납니다. 체중 조절 시스템도 이미 고장 나 있는 경우가 많고 단순히 지방의 증가로 그치는 것이 아니라 전신적이고 복합적인 문제를 동반합니다. <strong className="bg-[#fff4b0] px-1 text-black font-medium">고도비만은 체중 감량도 중요하지만 고도비만을 유발하거나 악화시키는 원인을 치료하는 것이 가장 중요합니다.</strong> 적게 먹고 운동을 한다고 다이어트의 전부는 아닙니다. 몸의 오장육부의 균형을 개선시켜 살이 찌는 근본 적인 이유를 찾아
           치료하고 개선하는 것이 감량은 물론이고 요요현상을 줄이는 건강한 다이어트라고 시작이라고 할 수 있습니다.
         </p>
       </div>
@@ -183,10 +179,10 @@ function IntroSection() {
 
 function CausesSection() {
   return (
-    /* 요청사항 6번: 고도비만의 유발원인 > 48px, 양옆 여백 확장, 소제목 > 22px, 각각의 설명 > 18px */
+    /* 고도비만의 유발원인 */
     <section className="py-20 bg-[#f0f9f0] text-center px-8 md:px-16 lg:px-24">
-      <h2 className="text-3xl md:text-[48px] font-bold text-gray-900 mb-12 tracking-tight">
-        <span className="font-medium">고도비만의</span> 유발 원인
+      <h2 className="text-3xl md:text-[38px] font-bold text-gray-900 mb-12 tracking-tight">
+        <span className="font-medium">고도비만의</span> 유발원인
       </h2>
       
       <div className="max-w-5xl mx-auto bg-white rounded-[2rem] p-8 md:p-14 relative">
@@ -265,26 +261,26 @@ function CausesSection() {
 
 function NecessitySection() {
   return (
-    /* 요청사항 7번 & 추가검토: [고도 비만 다이어트에] > 38px, [치료가 꼭 필요한 이유] > 48px, 내용 > 18px, 양옆 여백 확장 (px-8 md:px-16 lg:px-20) */
+    /* 고도 비만 다이어트 치료 필요성 */
     <section className="py-24 bg-[#A5C614] text-center px-8 md:px-16 lg:px-20">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl md:text-[38px] font-medium text-white mb-1 md:mb-1 tracking-tight">고도 비만 다이어트에</h2>
-        <h2 className="text-3xl md:text-[48px] font-bold text-gray-900 mb-16 tracking-tight">치료가 꼭 필요한 이유</h2>
+        <h2 className="text-2xl md:text-[35px] font-medium leading-none text-white mb-1 tracking-tight">고도 비만 다이어트에</h2>
+        <h2 className="text-3xl md:text-[38px] font-bold leading-none text-gray-900 mb-12 tracking-tight">치료가 꼭 필요한 이유</h2>
         
         <div className="flex flex-col gap-6">
           {/* Row 1 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <NecessityItem num="1" text="<span class='bg-[#fff4b0]'>높아진 체중의 set point</span><br/>와 <span class='bg-[#fff4b0]'>망가진 체중 조절</span><br/><span class='bg-[#fff4b0]'>시스템</span>" />
-            <NecessityItem num="2" text="<span class='bg-[#fff4b0]'>늘어나버린 위 용적</span>으로<br/>웬만큼 많이 먹지<br/>않고서야 가지기 힘든<br/>포만감" />
-            <NecessityItem num="3" text="<span class='bg-[#fff4b0]'>체내 독소와 장내 유해균</span><br/><span class='bg-[#fff4b0]'>(비만균) 증가</span>로 식욕<br/>자극 호르몬 (그렐린)<br/>분비 상승" />
+            <NecessityItem num="1" text="<span class='bg-[#fff4b0]'>높아진 체중의 set point</span>와 <span class='bg-[#fff4b0]'>망가진 체중 조절 시스템</span>" />
+            <NecessityItem num="2" text="<span class='bg-[#fff4b0]'>늘어나버린 위 용적</span>으로 웬만큼 많이 먹지 않고서야 가지기 힘든 포만감" />
+            <NecessityItem num="3" text="<span class='bg-[#fff4b0]'>체내 독소와 장내 유해균 (비만균) 증가</span>로 식욕 자극 호르몬 (그렐린) 분비 상승" />
           </div>
           
           {/* Row 2 */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <NecessityItem num="4" text="커진 체구에 비해 저하된<br/>체력으로 인한 <span class='bg-[#fff4b0]'>만성 피로</span>" />
-            <NecessityItem num="5" text="혈당의 기복이 커서<br/><span class='bg-[#fff4b0]'>허기를 많이 느끼고</span><br/><span class='bg-[#fff4b0]'>인슐린 저항성 증가</span>로<br/>대사 장애 유발" />
-            <NecessityItem num="6" text="혈액이 끈적하고 흐름이<br/>나빠져 혈액, 림프 순환<br/>장애로 <span class='bg-[#fff4b0]'>부종 증가</span>" />
-            <NecessityItem num="7" text="오장 육부의 만성적 피로와<br/>신진대사, 순환, 배설 기능<br/>저하로 <span class='bg-[#fff4b0]'>더욱 살빼기 어려운</span><br/><span class='bg-[#fff4b0]'>체질로 고착화</span>" />
+            <NecessityItem num="4" text="커진 체구에 비해 저하된 체력으로 인한 <span class='bg-[#fff4b0]'>만성 피로</span>" />
+            <NecessityItem num="5" text="혈당의 기복이 커서 <span class='bg-[#fff4b0]'>허기를 많이 느끼고 인슐린 저항성 증가</span>로 대사 장애 유발" />
+            <NecessityItem num="6" text="혈액이 끈적하고 흐름이 나빠져 혈액, 림프 순환 장애로 <span class='bg-[#fff4b0]'>부종 증가</span>" />
+            <NecessityItem num="7" text="오장 육부의 만성적 피로와 신진대사, 순환, 배설 기능 저하로 <span class='bg-[#fff4b0]'>더욱 살빼기 어려운 체질로 고착화</span>" />
           </div>
         </div>
       </div>
@@ -303,9 +299,9 @@ function NecessityItem({num, text}: {num:string, text:string}) {
 
 function ViciousCycleSection() {
   return (
-    /* 요청사항 8번 & 추가검토: [고도비만이 불러오는 악영향] > 48px, 소제목 > 20px, 설명 > 18px, 양옆 여백 확장 (px-8 md:px-16 lg:px-24), 카드 간격 축소 (gap-6) */
+    /* 고도비만이 불러오는 악영향 */
     <section className="py-20 bg-[#f0f9f0] text-center px-8 md:px-16 lg:px-24 border-b border-gray-200">
-      <h2 className="text-3xl md:text-[48px] font-bold text-gray-900 mb-16 tracking-tight">
+      <h2 className="text-3xl md:text-[38px] font-bold text-gray-900 mb-16 tracking-tight">
         <span className="font-medium">고도비만이 불러오는</span> 악영향
       </h2>
       
@@ -370,28 +366,28 @@ function ProgramHeaderSection() {
       </div>
       
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-16">
-        <h2 className="text-2xl md:text-[38px] font-medium text-white mb-1 md:mb-1 tracking-tight">진한의원 단계별</h2>
-        <h1 className="text-3xl md:text-[48px] font-bold text-white mb-16 tracking-tight leading-tight">
-          <span className="text-[#A5C614] text-4xl md:text-[48px]">고도비만</span><br/> 
-          <span className="text-2xl md:text-[38px] font-medium">다이어트 프로그램</span>
+        <h2 className="text-2xl md:text-[35px] font-medium leading-none text-white mb-0 tracking-tight">진한의원 단계별</h2>
+        <h1 className="text-3xl font-bold text-white mb-12 tracking-tight leading-[0.92]">
+          <span className="relative top-px text-[#A5C614] text-4xl md:text-[38px]">고도비만</span><br/>
+          <span className="text-2xl md:text-[35px] font-medium">다이어트 프로그램</span>
         </h1>
       
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row px-4 md:px-8 justify-center drop-shadow-2xl">
-          <div className="relative flex-1 bg-[#f0ece1] text-gray-900 flex flex-col items-center justify-center pt-8 pb-12 md:py-10 md:pl-6 md:pr-10 [clip-path:polygon(0_0,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%)]">
-             <p className="font-light text-xl md:text-2xl mb-1">1단계</p>
-             <p className="text-sm md:text-[18px] font-medium leading-tight mt-1">꺼져있는 지방대사<br/>스위치를 켜자.</p>
+          <div className="relative flex-1 bg-[#f0ece1] text-gray-900 flex flex-col items-center justify-center py-10 md:py-8 md:pl-6 md:pr-10 [clip-path:polygon(0_0,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%)]">
+             <p className="font-light text-xl md:text-2xl mb-0">1단계</p>
+             <p className="mt-0 whitespace-nowrap text-[17px] md:text-[18px] font-medium leading-[1.35]">꺼져있는 지방대사<br/>스위치를 켜자.</p>
           </div>
-          <div className="relative flex-1 bg-[#fcd147] text-gray-900 flex flex-col items-center justify-center pt-12 pb-12 md:py-10 md:pl-12 md:pr-10 -mt-[20px] md:mt-0 md:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
-             <p className="font-light text-xl md:text-2xl mb-1">2단계</p>
-             <p className="text-sm md:text-[18px] font-medium leading-tight mt-1">살이 찌는 원인부터<br/>치료하자.</p>
+          <div className="relative flex-1 bg-[#fcd147] text-gray-900 flex flex-col items-center justify-center py-10 md:py-8 md:pl-12 md:pr-10 -mt-[20px] md:mt-0 md:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
+             <p className="font-light text-xl md:text-2xl mb-0">2단계</p>
+             <p className="mt-0 whitespace-nowrap text-[17px] md:text-[18px] font-medium leading-[1.35]">살이 찌는 원인부터<br/>치료하자.</p>
           </div>
-          <div className="relative flex-1 bg-[#fdb53d] text-gray-900 flex flex-col items-center justify-center pt-12 pb-12 md:py-10 md:pl-12 md:pr-10 -mt-[20px] md:mt-0 md:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
-             <p className="font-light text-xl md:text-2xl mb-1">3단계</p>
-             <p className="text-sm md:text-[18px] font-medium leading-tight mt-1">단계별 회복기를<br/>가지자.</p>
+          <div className="relative flex-1 bg-[#fdb53d] text-gray-900 flex flex-col items-center justify-center py-10 md:py-8 md:pl-12 md:pr-10 -mt-[20px] md:mt-0 md:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
+             <p className="font-light text-xl md:text-2xl mb-0">3단계</p>
+             <p className="text-sm md:text-[18px] font-medium leading-[1.35] mt-0">단계별 회복기를<br/>가지자.</p>
           </div>
-          <div className="relative flex-1 bg-[#f5749b] text-gray-900 flex flex-col items-center justify-center pt-12 pb-12 md:py-10 md:pl-12 md:pr-10 -mt-[20px] md:mt-0 md:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
-             <p className="font-light text-xl md:text-2xl mb-1">4단계</p>
-             <p className="text-sm md:text-[18px] font-medium leading-tight mt-1">생활 습관을<br/>치료하자.</p>
+          <div className="relative flex-1 bg-[#f5749b] text-gray-900 flex flex-col items-center justify-center py-10 md:py-8 md:pl-12 md:pr-10 -mt-[20px] md:mt-0 md:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
+             <p className="font-light text-xl md:text-2xl mb-0">4단계</p>
+             <p className="text-sm md:text-[18px] font-medium leading-[1.35] mt-0">생활 습관을<br/>치료하자.</p>
           </div>
         </div>
       </div>
@@ -434,6 +430,18 @@ function ProgramStep1Section() {
               <span className="font-bold text-slate-800 text-lg absolute top-5 left-6 z-20">해독치료 전</span>
               <div className="relative w-full">
                 <Image src="/images/personal/gd_section8_1.png" alt="해독치료 전 비정상식욕" width={600} height={700} className="w-full h-auto translate-y-[2px]" />
+                <div className="pointer-events-auto absolute inset-0 z-10 select-text text-[8pt] leading-tight text-transparent selection:bg-[#3a332d]/30 selection:text-white" aria-label="해독치료 전 비정상식욕">
+                  <span className="absolute left-[34%] top-[11%]">뇌</span>
+                  <span className="absolute left-[39%] top-[23%]">식욕자극</span>
+                  <span className="absolute left-[39%] top-[28%]">그렐린 분비 증가</span>
+                  <span className="absolute left-[18%] top-[42%]">식욕억제</span>
+                  <span className="absolute left-[12%] top-[47%]">렙틴 분비 증가</span>
+                  <span className="absolute left-[43%] top-[58%]">위</span>
+                  <span className="absolute left-[35%] top-[75%]">소장</span>
+                  <span className="absolute left-[88%] top-[39%]">과식</span>
+                  <span className="absolute left-[65%] top-[68%]">장연동운동 무력, 비만세균 증식</span>
+                  <span className="absolute left-[12%] top-[84%]">담음, 식적, 독소</span>
+                </div>
               </div>
             </div>
             <div className="bg-[#3a332d]/80 py-3 text-center">
@@ -446,6 +454,16 @@ function ProgramStep1Section() {
               <span className="font-bold text-slate-800 text-lg absolute top-5 left-6 z-20">해독치료 후</span>
               <div className="relative w-full">
                 <Image src="/images/personal/gd_section8_2.png" alt="해독치료 후 정상식욕" width={600} height={700} className="w-full h-auto translate-y-[1px]" />
+                <div className="pointer-events-auto absolute inset-0 z-10 select-text text-[8pt] leading-tight text-transparent selection:bg-[#A5C614]/30 selection:text-white" aria-label="해독치료 후 정상식욕">
+                  <span className="absolute left-[24%] top-[12%]">뇌</span>
+                  <span className="absolute left-[25%] top-[23%]">식욕억제 렙틴호르몬 상승</span>
+                  <span className="absolute left-[25%] top-[28%]">식욕자극 그렐린 호르몬 상승</span>
+                  <span className="absolute left-[25%] top-[33%]">정상적인 5대 영양소 인지</span>
+                  <span className="absolute left-[32%] top-[55%]">위</span>
+                  <span className="absolute left-[31%] top-[74%]">소장</span>
+                  <span className="absolute left-[83%] top-[39%]">보통의 식사</span>
+                  <span className="absolute left-[62%] top-[68%]">장내 비만세균 억제, 유익균 증가</span>
+                </div>
               </div>
             </div>
             <div className="bg-[#A5C614] py-3 text-center shadow-[0_-4px_15px_rgba(165,198,20,0.2)]">
@@ -726,7 +744,7 @@ function ProgramStep3Section() {
 
             {/* Right Text Content */}
             <div className="w-full md:w-1/2 flex flex-col gap-6">
-              <h4 className="text-[20px] md:text-[26px] font-extrabold text-gray-800 leading-snug break-keep">
+              <h4 className="text-[20px] md:text-[22px] font-extrabold text-gray-800 leading-snug break-keep">
                 무리한 단식만으로 체중을 급속 감량하면<br/>
                 보상작용으로 체내 흡수율이 현저히 높아집니다.
               </h4>
@@ -775,7 +793,7 @@ function ProgramStep3Section() {
 
             {/* Right Text Content */}
             <div className="w-full md:w-1/2 flex flex-col gap-6">
-              <h4 className="text-[20px] md:text-[26px] font-extrabold text-gray-800 leading-snug break-keep">
+              <h4 className="text-[20px] md:text-[22px] font-extrabold text-gray-800 leading-snug break-keep">
                 일정한 체중 감량 후 몸이 변화된 체중을<br/>
                 인지하고 익숙해지는 유지기가 중요합니다.<br/>
                 감량의 폭이 큰 고도비만의 경우 감량-<br/>
@@ -882,7 +900,7 @@ function ProgramStep4Section() {
           
           {/* Question */}
           <div className="flex items-start gap-3 md:gap-5">
-             <div className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] shrink-0 relative overflow-hidden shadow-md rounded-[20px] md:rounded-[28px]">
+             <div className="ml-[20px] w-[60px] h-[60px] md:w-[80px] md:h-[80px] shrink-0 relative overflow-hidden shadow-md rounded-[20px] md:rounded-[28px]">
                <Image
                  src="/images/personal/gd_section11_1.png"
                  alt="프로필 (환자)"
@@ -901,7 +919,7 @@ function ProgramStep4Section() {
 
           {/* Answer 1 */}
           <div className="flex items-start gap-3 md:gap-5 flex-row-reverse">
-             <div className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] shrink-0 relative overflow-hidden shadow-md rounded-[20px] md:rounded-[28px]">
+             <div className="mr-[20px] w-[60px] h-[60px] md:w-[80px] md:h-[80px] shrink-0 relative overflow-hidden shadow-md rounded-[20px] md:rounded-[28px]">
                <Image
                  src="/images/personal/gd_section11_2.png"
                  alt="프로필 (원장님)"
@@ -921,7 +939,7 @@ function ProgramStep4Section() {
 
           {/* Answer 2 */}
           <div className="flex items-start gap-3 md:gap-5 flex-row-reverse">
-             <div className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] shrink-0 relative overflow-hidden shadow-md rounded-[20px] md:rounded-[28px]">
+             <div className="mr-[20px] w-[60px] h-[60px] md:w-[80px] md:h-[80px] shrink-0 relative overflow-hidden shadow-md rounded-[20px] md:rounded-[28px]">
                <Image
                  src="/images/personal/gd_section11_2.png"
                  alt="프로필 (원장님)"
@@ -930,7 +948,7 @@ function ProgramStep4Section() {
                  unoptimized={true}
                />
              </div>
-             <div className="relative bg-[#fef187] rounded-3xl p-5 md:p-7 max-w-[85%] shadow-sm mt-2">
+             <div className="relative w-[586px] max-w-[calc(100%_-_120px)] bg-[#fef187] rounded-3xl p-5 md:p-7 shadow-sm mt-2">
                <div className="absolute top-4 -right-3 w-0 h-0 border-t-[10px] border-t-transparent border-l-[14px] border-l-[#fef187] border-b-[10px] border-b-transparent"></div>
                <p className="text-gray-900 font-medium text-[16px] md:text-[18px] break-keep leading-relaxed">
                  일반적으로 체중 감량에 있어서 식이와 운동은 7:3정도로 식이조절이 훨씬 중요하며 비만도가 높을수록 운동보다는 식이요법에 훨씬 더 많은 비중을 두는 것이 체중 감량에 있어서 효과적이며 몸에 무리가 적습니다. 체중 감량에 있어서 운동은 힘이 많이 들더라도 기대만큼 큰 역할을 하지 못합니다.<br/>
@@ -947,7 +965,7 @@ function ProgramStep4Section() {
 
 function FooterBannerSection() {
   return (
-    <section className="w-full mt-16" aria-label="진한의원 비만 홈페이지 안내">
+    <section className="relative w-full mt-16" aria-label="진한의원 비만 홈페이지 안내">
       <Image 
         src="/images/mid-age/MID_29.jpg" 
         alt="진한의원 비만 상담" 
@@ -957,6 +975,11 @@ function FooterBannerSection() {
         loading="eager" 
         unoptimized 
       />
+      <div className="pointer-events-auto absolute inset-0 select-text text-[15pt] leading-[1.45] text-transparent selection:bg-white/40 selection:text-white" aria-label="진한의원 비만 홈페이지 안내">
+        <p className="absolute left-[27%] top-[20%]">진한의원 비만</p>
+        <p className="absolute left-[17%] top-[47%]">더 많은 사례자를 보시려면</p>
+        <p className="absolute left-[17%] top-[57%]">홈페이지에서 확인해주세요</p>
+      </div>
     </section>
   );
 }
