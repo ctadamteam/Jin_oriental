@@ -9,6 +9,7 @@ type ConstitutionTypeProps = {
   lead: string;
   description: string;
   highlight: string;
+  seoLabels: string[];
   reverse?: boolean;
   pale?: boolean;
 };
@@ -22,7 +23,7 @@ const products = [
   },
   {
     title: '진 슬림삼총사',
-    description: '몸에 체지방을 제거하고 영양소를 제공하며 몸 속의 노폐물과 숙변까지 함께 제거하여 요요까지 관리합니다.',
+    description: '몸에 체지방을 제거하고 영양소를 제공하며 몸 속의 노폐물과 숙변까지 함께 제거하여 요요까지 관리합니다. 환으로 되어 있어 한약을 잘 못 드시는 분들에게 권해드립니다.',
     image: '/images/che-diet/imge08.png',
     alt: '진 슬림삼총사',
   },
@@ -34,7 +35,7 @@ const products = [
   },
   {
     title: '진 SS시럽',
-    description: '물이 없어도 간편하게 먹는 농축 시럽한약으로 편안하게 식욕조절을 도와드립니다.',
+    description: '물이 없어도 간편하게 먹는 농축 시럽한약으로 편안하게 식욕조절을 도와 드립니다. 휴대성이 좋고, 한약의 쓴맛을 잘 못 느끼는 분들도 소아비만인 아이에게 좋습니다.',
     image: '/images/che-diet/imge10.png',
     alt: '진 SS시럽',
   },
@@ -52,6 +53,13 @@ const products = [
   },
 ];
 
+const injectionIngredients = [
+  { title: '산삼', image: '/images/che-diet/img13.png', description: '혈중 지질감소와 지방세포 분화 억제 및 피로회복에 효과가 있고 인체의 기초대사량을 높여줍니다.' },
+  { title: '사향', image: '/images/che-diet/img14.png', description: '지방분해를 촉진시키며 대사작용을 증가시키고 식욕을 억제하는 효과가 있습니다.' },
+  { title: '웅담', image: '/images/che-diet/img15.png', description: '담즙산, 타우로콜산 등이 주성분으로 항염증 작용과 해독작용이 있으며 혈중지질을 감소시킵니다.' },
+  { title: '우황', image: '/images/che-diet/img16.png', description: '비만으로 인한 고혈압을 완화시키고 경련을 예방하며 웅담과 함께 혈중지질을 감소시킵니다.' },
+];
+
 function ConstitutionType({
   title,
   image,
@@ -59,17 +67,28 @@ function ConstitutionType({
   lead,
   description,
   highlight,
+  seoLabels,
   reverse = false,
   pale = false,
 }: ConstitutionTypeProps) {
+  const titleParts = title.match(/^(.+?)(\s*\([^)]*\))$/);
+  const figureKey = image.match(/img(0[3-6])/)?.[1] ?? '';
+
   return (
     <section className={`constitution-type ${pale ? 'constitution-type--pale' : ''}`}>
       <div className={`type-inner ${reverse ? 'type-inner--reverse' : ''}`}>
         <div className="type-figure">
-          <Image src={image} alt={imageAlt} width={309} height={579} unoptimized />
+          <div className="type-visual">
+            <Image src={image} alt={imageAlt} width={309} height={579} unoptimized />
+            <div className={`type-figure-seo type-figure-seo--${figureKey}`} aria-label={`${title} 살찌기 쉬운 부위`}>
+              {seoLabels.map((label) => <span key={label}>{label}</span>)}
+            </div>
+          </div>
         </div>
         <div className="type-copy">
-          <div className="type-title"><span>{title}</span></div>
+          <div className="type-title">
+            <span>{titleParts ? <><b>{titleParts[1]}</b><em>{titleParts[2]}</em></> : title}</span>
+          </div>
           <p className="type-lead">{lead}</p>
           <p className="type-description">{description} <mark>{highlight}</mark></p>
         </div>
@@ -128,27 +147,29 @@ export default function ConstitutionDietPage() {
           <div className="metabolism-grid" aria-label="체질별 기초대사량 비교">
             <div className="metabolism-card">
               <h3>조금만 먹어도 살이 찌는 체질</h3>
-              <div className="metabolism-ring metabolism-ring--low">
-                <div className="ring-label ring-label--left">체지방<br /><strong>표준이상</strong></div>
-                <div className="ring-center">체중 60kg<br /><b>표준</b></div>
-                <div className="ring-label ring-label--right"><b>근육량</b><br /><strong>표준이하</strong></div>
-                <i className="ring-marker ring-marker--one" aria-hidden="true" />
-                <i className="ring-marker ring-marker--two" aria-hidden="true" />
-                <i className="ring-marker ring-marker--three" aria-hidden="true" />
-                <i className="ring-marker ring-marker--four" aria-hidden="true" />
+              <div className="metabolism-graphic">
+                <div className="metabolism-visual">
+                  <Image src="/images/che-diet/img17.png" alt="조금만 먹어도 살이 찌는 체질의 체지방과 근육량 비교" width={425} height={303} loading="eager" unoptimized />
+                  <div className="metabolism-seo" aria-label="조금만 먹어도 살이 찌는 체질의 체성분 정보">
+                    <span className="metabolism-seo__left">체지방<br />표준이상</span>
+                    <span className="metabolism-seo__center">체중 60kg<br />표준</span>
+                    <span className="metabolism-seo__right">근육량<br />표준이하</span>
+                  </div>
+                </div>
               </div>
               <p>조금만 먹어도 살이 찌는 체질<br /><strong>기초대사량 낮음</strong></p>
             </div>
             <div className="metabolism-card">
               <h3>먹어도 살이 안찌는 체질</h3>
-              <div className="metabolism-ring metabolism-ring--high">
-                <div className="ring-label ring-label--left">체지방<br /><strong>표준이하</strong></div>
-                <div className="ring-center">체중 60kg<br /><b>표준</b></div>
-                <div className="ring-label ring-label--right"><b>근육량</b><br /><strong>표준이상</strong></div>
-                <i className="ring-marker ring-marker--one" aria-hidden="true" />
-                <i className="ring-marker ring-marker--two" aria-hidden="true" />
-                <i className="ring-marker ring-marker--three" aria-hidden="true" />
-                <i className="ring-marker ring-marker--four" aria-hidden="true" />
+              <div className="metabolism-graphic">
+                <div className="metabolism-visual">
+                  <Image src="/images/che-diet/img18.png" alt="먹어도 살이 안찌는 체질의 체지방과 근육량 비교" width={425} height={303} loading="eager" unoptimized />
+                  <div className="metabolism-seo" aria-label="먹어도 살이 안찌는 체질의 체성분 정보">
+                    <span className="metabolism-seo__left">체지방<br />표준이하</span>
+                    <span className="metabolism-seo__center">체중 60kg<br />표준</span>
+                    <span className="metabolism-seo__right">근육량<br />표준이상</span>
+                  </div>
+                </div>
               </div>
               <p>근육량이 많고 체지방이 적은 체형<br /><strong>기초대사량 높음</strong></p>
             </div>
@@ -166,6 +187,7 @@ export default function ConstitutionDietPage() {
           lead="소음인은 팔, 다리는 가늘고 배만 나온 복부비만 혹은 엉덩이가 크고 어깨가 좁은 하체비만형 체격이 많습니다."
           description="소음인은 몸이 차고 양기가 부족하여 기운이 순환하지 못해 부분적인 비만인 경우가 많으며, 위장이 약한 체질이므로 육체적 피로나 스트레스가 누적되면 소화기능에 장애가 발생합니다."
           highlight="지방질이 많은 음식이나 성질이 냉한 음식은 피하고 항상 몸을 따뜻하게 하는 것이 좋습니다."
+          seoLabels={['전신', '엉덩이', '허벅지', '살찌기 쉬운 부분']}
         />
         <ConstitutionType
           title="소양인(少陽人)"
@@ -174,6 +196,7 @@ export default function ConstitutionDietPage() {
           lead="소양인은 하체에 비해 상체가 발달한 편으로 여자의 경우 가슴이 큰 사람이 많습니다."
           description="상대적으로 하부장기인 비뇨생식기의 기능이 약해 비만이 될 수 있습니다. 또한 성격이 예민하여 스트레스를 받으면 폭식, 과식을 하는 경향이 있으므로 가벼운 운동을 생활화하고 정신적인 건강관리에도 힘쓰는 것이 좋습니다."
           highlight="열이 많은 체질이기 때문에 미지근하거나 차가운 성질의 음식과 약이 좋고, 열을 내는 음식은 피해야합니다."
+          seoLabels={['어깨', '팔뚝', '윗배', '살찌기 쉬운 부분']}
           reverse
           pale
         />
@@ -184,6 +207,7 @@ export default function ConstitutionDietPage() {
           lead="듬직하고 골격이 큰 태음인은 평소 움직이는 것을 싫어하고 음식에 욕심이 많아 단순 과식성 비만체형이 될 확률이 높습니다."
           description="저칼로리 다이어트보다는 규칙적인 운동을 통해 서서히 살이 빠지는 체질로 바꿔나가는 것이 좋습니다. 근육단련보다는 유산소 운동에 중점을 두고 운동과 함께 점차적으로 식사량을 줄이는 다이어트 방법이 효과가 있습니다."
           highlight="비만이 되기 쉬운 체질이므로 다른 사람보다 많이 먹는 습관을 버리고 자극적이거나 지방질이 많은 음식은 피해야합니다."
+          seoLabels={['목덜미', '옆구리', '배', '살찌기 쉬운 부분']}
         />
         <ConstitutionType
           title="태양인(太陽人)"
@@ -192,6 +216,7 @@ export default function ConstitutionDietPage() {
           lead="태양인은 폐의 기능이 강하고 간의 기능이 약하여 가슴 상부가 발달하고 하체가 약합니다."
           description="체질적으로는 비만한 사람이 드물지만 스트레스를 받으면 폭식을 하게 되는 체질이므로 평소 감정조절과 관리에 신경을 써야 합니다. 간의 기능이 약하므로 간을 보호하는 음식이 좋으며, 기름진 육류는 피해야합니다."
           highlight="몸에 열이 많기 때문에 더운 성질이 있는 음식은 가급적 피하고, 해산물과 채소류, 지방질이 적고 자극성 없는 담백한 맛의 음식이 도움이 됩니다."
+          seoLabels={['팔뚝', '상체', '살찌기 쉬운 부분']}
           reverse
           pale
         />
@@ -216,10 +241,14 @@ export default function ConstitutionDietPage() {
           <p className="acupuncture-intro">부분비만에 사용하는 산삼비만약침으로 산삼, 사향, 웅담, 우황이 들어가 있어 지방분해를 촉진하고 해독작용에 도움을 줍니다.</p>
           <div className="acupuncture-content">
             <div className="ingredient-grid">
-              <div><h3>산삼</h3><p>혈중 지질감소와 지방세포 분화억제 및 파괴에 효과가 있고 인체의 기초대사량을 높여줍니다.</p></div>
-              <div><h3>사향</h3><p>지방분해를 촉진시키며 대사작용을 증가시키고 식욕을 억제하는 효과가 있습니다.</p></div>
-              <div><h3>웅담</h3><p>담즙산, 티우로콜산 등이 주성분으로 항염증 작용과 해독작용이 있습니다.</p></div>
-              <div><h3>우황</h3><p>비만으로 인한 고혈압을 완화시키고 경련을 예방하며 혈중지질을 감소시킵니다.</p></div>
+              {injectionIngredients.map((ingredient) => (
+                <article key={ingredient.title}>
+                  <div className="ingredient-diamond">
+                    <Image src={ingredient.image} alt="" fill sizes="56px" unoptimized />
+                  </div>
+                  <div><h3>{ingredient.title}</h3><p>{ingredient.description}</p></div>
+                </article>
+              ))}
             </div>
             <Image src="/images/che-diet/sansam_bottle.png" alt="산삼비만약침" width={314} height={258} loading="eager" unoptimized />
           </div>
@@ -238,7 +267,12 @@ export default function ConstitutionDietPage() {
           </div>
         </section>
         <section className="constitution-footer-cta" aria-label="진한의원 비만 홈페이지 안내">
-          <Image src="/images/mid-age/MID_29.jpg" alt="진한의원 비만 홈페이지에서 확인" width={1000} height={500} loading="eager" unoptimized />
+          <Image src="/images/che-diet/img19.jpg" alt="진한의원 비만 홈페이지에서 확인" width={1000} height={500} loading="eager" unoptimized />
+          <div className="constitution-footer-seo" aria-label="진한의원 비만 홈페이지 안내">
+            <h2>진한의원 비만</h2>
+            <p>더 많은 사례자를 보시려면</p>
+            <p>홈페이지에서 확인해주세요</p>
+          </div>
         </section>
       </article>
 
@@ -395,7 +429,7 @@ export default function ConstitutionDietPage() {
         .program-section h2 { margin: 0 0 66px; color: #2e2e2e; text-align: center; font-family: Georgia, 'Batang', serif; font-size: 42px; letter-spacing: -4px; }
         .program-section h2::after { display: block; width: 600px; max-width: 72%; height: 6px; margin: 10px auto 0; background: #574039; content: ''; box-shadow: 0 2px 4px rgba(0,0,0,0.25); }
         .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 66px 38px; padding: 0 2px; }
-        .program-card h3 { margin: 0 0 11px; padding-bottom: 7px; color: #3d3d3d; border-bottom: 5px solid #67c7ce; font-family: 'Batang', serif; font-size: 31px; font-weight: 500; letter-spacing: -3px; }
+        .program-card h3 { margin: 0 0 11px; padding-bottom: 7px; color: #3d3d3d; border-bottom: 5px solid #a5c614; font-family: 'Batang', serif; font-size: 31px; font-weight: 500; letter-spacing: -3px; }
         .program-card p { min-height: 73px; margin: 0 0 14px; color: #585858; font-size: 15px; line-height: 1.46; letter-spacing: -1px; word-break: keep-all; }
         .program-image { position: relative; width: 100%; aspect-ratio: 1.31; overflow: hidden; background: #f4f4f4; }
         .program-image img { width: 100%; height: 100%; object-fit: cover; }
@@ -499,7 +533,7 @@ export default function ConstitutionDietPage() {
         .program-card p{min-height:92px;font-family:Arial,'Malgun Gothic',sans-serif;font-size:18px;font-weight:400;line-height:1.6;letter-spacing:-1.1px}
 
         .acupuncture-section h2{display:table;width:fit-content;margin-bottom:24px;font-weight:700}
-        .acupuncture-section h2::after{display:block;width:306px;height:5px;margin-top:8px;background:#67c7ce;content:''}
+        .acupuncture-section h2::after{display:block;width:289px;height:5px;margin-top:8px;background:#a5c614;content:''}
         .acupuncture-intro{font-family:Arial,'Malgun Gothic',sans-serif;font-size:18px;line-height:1.65}
         .ingredient-grid{gap:34px 42px}
         .ingredient-grid>div{position:relative;min-height:86px;padding-left:76px}
@@ -521,6 +555,103 @@ export default function ConstitutionDietPage() {
       <style>{`
         .type-figure img[src="/images/che-diet/img03.png"]{height:475px}
         @media (max-width:720px){.type-figure img[src="/images/che-diet/img03.png"]{height:383px}}
+      `}</style>
+      <style>{`
+        .constitution-page{--diet-brand:#a5c614;--diet-brand-soft:#edf5d8}
+
+        /* Match the shared custom-diet hero proportions used by the detox page. */
+        .constitution-hero{height:365px;grid-template-columns:672px 328px;margin-top:7px;background:#433124}
+        .hero-photo-image{object-position:center}
+        .hero-copy{display:flex;min-height:365px;flex-direction:column;justify-content:center;padding:38px 32px;background:#433124}
+        .hero-kicker{margin:0 0 8px;color:#c7bbb1;font-size:15px;line-height:1.45;letter-spacing:-1px}
+        .hero-copy h2{margin:8px 0 16px;font-size:54px;font-weight:400;line-height:.98;letter-spacing:4px}
+        .hero-copy h2 em{color:var(--diet-brand);font-weight:700}
+        .hero-note{margin:0;color:#ece7e2;font-size:14px;line-height:1.75;letter-spacing:-.65px}
+
+        .intro-copy h2{font-weight:700}
+        .intro-copy p{font-size:18px}
+        .intro-copy mark,.type-description mark{padding:.12em .15em .26em;background:linear-gradient(transparent 18%,#fff4b0 18%,#fff4b0 100%,transparent 100%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+        .types-heading h2{font-size:38px}
+        .constitution-type--pale{background:#f4f6ef}
+        .type-title{color:var(--diet-brand)}
+        .type-title::before,.type-title::after{background:var(--diet-brand)}
+        .type-title span{background:var(--diet-brand)}
+        .type-title span b{font-weight:700}
+        .type-title span em{font-style:normal;font-weight:400}
+        .type-lead{font-size:20px;font-weight:700}
+        .type-description{font-size:18px}
+        .type-visual{position:relative;display:inline-block;line-height:0}
+        .type-visual>img{display:block}
+        .type-figure-seo{position:absolute;inset:0;color:transparent;font-family:Arial,'Malgun Gothic',sans-serif;font-size:8pt;font-weight:400;line-height:1.25;user-select:text}
+        .type-figure-seo span{position:absolute;white-space:nowrap;transform:translate(-50%,-50%)}
+        .type-figure-seo--03 span:nth-child(1){top:20%;left:85%}.type-figure-seo--03 span:nth-child(2){top:46%;left:86%}.type-figure-seo--03 span:nth-child(3){top:59%;left:18%}.type-figure-seo--03 span:nth-child(4){top:93%;left:50%}
+        .type-figure-seo--04 span:nth-child(1){top:24%;left:87%}.type-figure-seo--04 span:nth-child(2){top:35%;left:91%}.type-figure-seo--04 span:nth-child(3){top:40%;left:11%}.type-figure-seo--04 span:nth-child(4){top:93%;left:50%}
+        .type-figure-seo--05 span:nth-child(1){top:20%;left:87%}.type-figure-seo--05 span:nth-child(2){top:43%;left:17%}.type-figure-seo--05 span:nth-child(3){top:54%;left:14%}.type-figure-seo--05 span:nth-child(4){top:93%;left:50%}
+        .type-figure-seo--06 span:nth-child(1){top:24%;left:86%}.type-figure-seo--06 span:nth-child(2){top:38%;left:16%}.type-figure-seo--06 span:nth-child(3){top:93%;left:50%}
+        .type-figure-seo::selection,.type-figure-seo *::selection{background:rgba(165,198,20,.4);color:transparent}
+
+        .metabolism-graphic{display:flex;height:333px;align-items:center;justify-content:center;padding:12px 0}
+        .metabolism-visual{position:relative;width:272px;max-width:100%}
+        .metabolism-visual>img{display:block;width:100%;height:auto}
+        .metabolism-seo{position:absolute;inset:0;color:transparent;font-family:Arial,'Malgun Gothic',sans-serif;font-size:8pt;line-height:1.55;user-select:text}
+        .metabolism-seo span{position:absolute;top:44%;text-align:center;white-space:nowrap;transform:translate(-50%,-50%)}
+        .metabolism-seo__left{left:27%}.metabolism-seo__center{left:50%}.metabolism-seo__right{left:75%}
+        .metabolism-seo::selection,.metabolism-seo *::selection{background:rgba(165,198,20,.4);color:transparent}
+
+        /* Same title, spacing and card system as the middle-age diet program. */
+        .program-section{padding:112px 24px 82px}
+        .program-section h2{position:relative;display:table;width:fit-content;max-width:100%;margin:0 auto 88px;color:#1b1919;font-family:Arial,'Malgun Gothic',sans-serif;font-size:48px;font-weight:700;letter-spacing:-4px}
+        .program-section h2::after{display:block;width:100%;max-width:none;height:7px;margin:14px auto 0;background:linear-gradient(90deg,#48271c,#855846,#48271c);box-shadow:0 3px 3px rgba(0,0,0,.25);content:''}
+        .program-section h2::before{position:absolute;bottom:-7px;left:50%;width:0;height:0;border-right:48px solid transparent;border-bottom:25px solid #6d4634;border-left:48px solid transparent;content:'';transform:translateX(-50%) rotate(180deg)}
+        .program-grid{gap:64px 40px;padding:0}
+        .program-card{display:flex;flex-direction:column}
+        .program-card h3{margin:0 0 13px;padding-bottom:8px;font-size:30px;font-weight:700;letter-spacing:-2.6px}
+        .program-card p{height:124px;min-height:124px;margin:0 0 16px;font-size:18px;line-height:1.55;letter-spacing:-1.1px}
+        .program-image{height:236px;aspect-ratio:auto;margin-top:auto}
+
+        .acupuncture-section{padding:8px 24px 82px}
+        .acupuncture-section h2{font-family:Arial,'Malgun Gothic',sans-serif;font-size:30px;font-weight:600;letter-spacing:-1.4px}
+        .acupuncture-intro{margin-bottom:25px;font-size:18px;line-height:1.6}
+        .acupuncture-content{grid-template-columns:1fr 311px;gap:42px}
+        .ingredient-grid{gap:34px 42px}
+        .ingredient-grid article{display:flex;min-height:0;gap:18px;padding-left:0}
+        .ingredient-diamond{position:relative;flex:0 0 56px;width:56px;height:56px;overflow:hidden;background:#dfe7e8;transform:rotate(45deg)}
+        .ingredient-diamond img{object-fit:contain;padding:7px;transform:rotate(-45deg) scale(1.35)}
+        .ingredient-grid h3{margin:0 0 6px;font-size:25px;font-weight:600;letter-spacing:-1.5px}
+        .ingredient-grid p{margin:0;font-size:16px;line-height:1.48;letter-spacing:-1px}
+        .acupuncture-content>img{width:311px;height:auto}
+
+        .constitution-footer-cta{position:relative;margin:72px 0;line-height:0}
+        .constitution-footer-seo{position:absolute;inset:0;z-index:1;color:transparent;font-family:Arial,'Malgun Gothic',sans-serif;font-size:13pt;font-weight:400;line-height:1.3;user-select:text}
+        .constitution-footer-seo h2,.constitution-footer-seo p{position:absolute;margin:0;color:transparent;white-space:nowrap;transform:translate(-50%,-50%)}
+        .constitution-footer-seo h2{top:29%;left:50%}.constitution-footer-seo p:nth-of-type(1){top:52%;left:50%}.constitution-footer-seo p:nth-of-type(2){top:68%;left:50%}
+        .constitution-footer-seo::selection,.constitution-footer-seo *::selection{background:rgba(165,198,20,.4);color:transparent}
+
+        @media (max-width:1000px) and (min-width:721px){
+          .constitution-hero{height:auto;grid-template-columns:67.2% 32.8%;aspect-ratio:1000 / 365}
+          .hero-copy{min-height:0;padding:5.8vw 0 0 3.2vw}
+          .hero-copy h2{font-size:5.4vw}
+        }
+        @media (max-width:720px){
+          .constitution-hero{height:auto;grid-template-columns:1fr;aspect-ratio:auto}
+          .hero-copy{min-height:250px;padding:35px 12% 38px}
+          .hero-copy h2{font-size:clamp(38px,11vw,52px)}
+          .intro-copy p,.type-description{font-size:15px}
+          .type-lead{font-size:18px}
+          .metabolism-graphic{height:293px;padding:10px 0}
+          .program-section{padding:65px 20px}
+          .program-section h2{margin-bottom:60px;font-size:32px}
+          .program-section h2::before{border-right-width:34px;border-bottom-width:18px;border-left-width:34px}
+          .program-grid{grid-template-columns:1fr;gap:44px}
+          .program-card p{height:auto;min-height:0}
+          .program-image{height:auto;aspect-ratio:1.31}
+          .acupuncture-section{padding:10px 20px 45px}
+          .acupuncture-content{grid-template-columns:1fr}
+          .acupuncture-content>img{justify-self:center}
+          .ingredient-grid{gap:20px}
+          .constitution-footer-cta{margin:54px 0}
+        }
       `}</style>
     </div>
   );

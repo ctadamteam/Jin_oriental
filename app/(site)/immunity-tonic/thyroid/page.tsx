@@ -59,22 +59,22 @@ export default function ThyroidPage() {
   return (
     <main className="thy-page">
       <article className="thy-content">
-        <header className="thy-title"><h1>갑상선 질환 <small>(갑상선기능저하증/갑상선 수술 후 관리)</small></h1></header>
+        <header className="thy-title"><h1>갑상선 저하증</h1></header>
 
         <section className="thy-hero">
           <div className="thy-hero-image"><Image src="/images/thyroid/THY_01.png" alt="목을 짚고 있는 여성" fill priority sizes="(max-width: 1000px) 64vw, 640px" unoptimized /></div>
-          <div className="thy-hero-copy"><p>진 / 한 / 의 / 원</p><h2>갑상선<small>은</small></h2><span>우리 몸의 신진대사를 조절하는<br />중요한 내분비샘으로 에너지 생성과<br />자율신경계 조절, 피로 회복, 체온<br />조절에 있어서 매우 중요한 역할을<br />합니다.</span></div>
+          <div className="thy-hero-copy"><p>진 / 한 / 의 / 원</p><h2>갑상선<small>은</small></h2><span>우리 몸의 신진대사를 조절하는 중요한 내분비샘으로 에너지 생성과 자율신경계 조절, 피로 회복, 체온 조절에 있어서 매우 중요한 역할을 합니다.</span></div>
         </section>
 
         <section className="thy-intro">
           <h2>갑상선 기능저하증의 <strong>단계별 치료효과</strong></h2>
           <div className="thy-stage-list">{treatmentStages.map((stage, index) => <div className="thy-stage" key={stage}><b>{stage}</b>{index < treatmentStages.length - 1 && <i>›</i>}</div>)}</div>
-          <div className="thy-intro-body"><div><h3>갑상선 호르몬은 에너지 생성에<br />필수적이므로 <strong>갑상선 호르몬이<br />부족해지면 몸의 전반적인 기능이<br />저하</strong>됩니다.</h3><p>갑상선 기능저하증을 유발하는 원인과 정도에 따라 불편증상이 매우 다양하고 모호하게 나타나서 발견시기가 늦어질 때가 있습니다. 갑상선 호르몬의 이상은 혈액 검사로 간단히 진단 가능하며 갑상선 기능저하의 70%는 하시모토병으로 자가면역질환의 일종인데, 여성이 남성에 비해 훨씬 비율이 높습니다. <mark>피로감, 집중력 저하, 부종, 체중증가, 변비 등의 증상이 있고 실제 온도 자극이 없음에도 느닷없이 춥거나 관절이 뻣뻣하고 몸이 시리다고 느끼는 수가 있습니다.</mark></p></div><Image src="/images/thyroid/THY_02.png" alt="갑상선을 짚고 있는 여성" width={356} height={507} unoptimized /></div>
+          <div className="thy-intro-body"><div><h3>갑상선 호르몬은 에너지 생성에 필수적이므로 <strong>갑상선 호르몬이 부족해지면 몸의 전반적인 기능이 저하</strong>됩니다.</h3><p>갑상선 기능저하증을 유발하는 원인과 정도에 따라 불편증상이 매우 다양하고 모호하게 나타나서 발견시기가 늦어질 때가 있습니다. 갑상선 호르몬의 이상은 혈액 검사로 간단히 진단 가능하며 갑상선 기능저하의 70%는 하시모토병으로 자가면역질환의 일종인데, 여성이 남성에 비해 훨씬 비율이 높습니다. <mark>피로감, 집중력 저하, 부종, 체중증가, 변비 등의 증상이 있고 실제 온도 자극이 없음에도 느닷없이 춥거나 관절이 뻣뻣하고 몸이 시리다고 느끼는 수가 있습니다.</mark></p></div><Image src="/images/thyroid/THY_02.png" alt="갑상선을 짚고 있는 여성" width={356} height={507} unoptimized /></div>
         </section>
 
         <section className="thy-purpose">
           <h2>갑상선기능저하증의 <strong>한방치료의 목적</strong></h2>
-          <p>한의학적으로 허로(虛勞), 허손(虛損), 양기허쇠(陽氣虛衰)에<br />해당하며 체력적으로나 면역의 측면에서 신체 기능이 고갈되거나 바닥난 상태라고 봅니다.<br />즉, 일종의 ‘번아웃 증후군’과도 유사하며 부신 기능 약화에 이어져 나타나는 경우가 많으며<br />이는 한의학에서 말하는 수승화강(水昇火降)과도 관련이 있습니다.</p>
+          <p>한의학적으로 허로(虛勞), 허손(虛損), 양기허쇠(陽氣虛衰)에 해당하며 <mark>체력적으로나 면역의 측면에서 신체 기능이 고갈되거나 바닥난 상태</mark>라고 봅니다.<br />즉, 일종의 ‘번아웃 증후군’과도 유사하며 부신 기능 약화에 이어져 나타나는 경우가 많으며<br />이는 한의학에서 말하는 수승화강(水昇火降)과도 관련이 있습니다.</p>
           <div className="thy-step-wrap">{treatmentSteps.map(({ step, term, items }) => <article key={step}><header><b>{step}</b><span>{term}</span></header><div>{items.map(item => <p key={item}><i>✓</i>{item}</p>)}</div></article>)}</div>
         </section>
 
@@ -118,6 +118,35 @@ export default function ThyroidPage() {
         .thy-cancer-purpose h2{font-size:38px}.thy-cancer-purpose p{font-size:18px}.thy-final-qa>h2{font-size:38px;font-weight:400}.thy-final-qa>h2 strong{font-weight:700}
         .thy-quality{position:relative;padding:58px 0 0}.thy-quality:after{position:absolute;top:48px;right:0;width:7px;height:68px;background:#747474;content:''}.thy-quality h2{padding-left:52px;font-size:25px;text-align:left}.thy-quality h2 strong{font-size:25px}.thy-quality>div{gap:0}.thy-quality article{min-height:310px;overflow:hidden}.thy-quality article>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.thy-quality article:first-child{background:#f7eed7}.thy-quality article:first-child .thy-quality-gmp{object-fit:contain;object-position:34% 41%;width:43%;height:43%;top:13%;right:auto;bottom:auto;left:9%}.thy-quality article:first-child:after{position:absolute;inset:0;background:linear-gradient(108deg,rgba(250,242,214,.99) 0 54%,rgba(250,242,214,.86) 54% 58%,transparent 58%);content:''}.thy-quality article:last-child:after{position:absolute;inset:0;background:rgba(67,42,34,.38);content:''}.thy-quality b{z-index:2;top:15px;font-size:102px}.thy-quality span{z-index:3;font-size:25px;line-height:1.32}.thy-quality article:first-child span{width:80%;padding-top:98px;color:#3d3d3d}.thy-quality article:last-child span{color:#fff}
         @media(max-width:680px){.thy-title{padding-left:18px}.thy-title h1,.thy-title small{font-size:22px}.thy-hero-copy{text-align:right}.thy-hero-copy p{font-size:14px}.thy-hero-copy span{font-size:15px}.thy-intro>h2,.thy-causes>h2{font-size:34px}.thy-intro-body h3{font-size:28px}.thy-intro-body p,.thy-purpose>p,.thy-surgery>p,.thy-causes>p,.thy-diagnosis-copy p,.thy-deer>p,.thy-water-fire p,.thy-cancer-purpose p{font-size:16px}.thy-purpose h2{font-size:30px}.thy-purpose h2 strong{font-size:36px}.thy-step-wrap header span{font-size:18px}.thy-step-wrap p{font-size:16px}.thy-step-wrap i{width:44px;flex-basis:44px;margin-right:12px}.thy-surgery>h2,.thy-research h2,.thy-symptoms h2,.thy-deer h2{font-size:34px}.thy-surgery-grid{gap:12px}.thy-dialogue{grid-template-columns:50px minmax(0,1fr);gap:8px}.thy-dialogue .thy-patient{width:50px}.thy-answer-row{gap:8px}.thy-answer-row .thy-doctor{width:50px;flex-basis:50px}.thy-question,.thy-answer{font-size:14px}.thy-answer:after{right:-10px;border-width:8px 0 8px 10px}.thy-research h3{font-size:23px}.thy-research article p{font-size:19px}.thy-research small,.thy-paper-journal{font-size:15px}.thy-causes img{height:112px}.thy-causes b{min-height:46px;font-size:17px}.thy-diagnosis>img{margin-top:36px}.thy-symptoms h2{font-size:34px}.thy-image-text__copy{font-size:9pt}.thy-water-fire h3{font-size:34px}.thy-final-qa>h2{font-size:32px}.thy-quality h2{padding-left:20px;font-size:22px}.thy-quality h2 strong{font-size:22px}.thy-quality article{min-height:190px}.thy-quality b{font-size:70px}.thy-quality span{font-size:17px}.thy-quality article:first-child span{padding-top:55px}}
+        /* thyroid page refinement: 2026-07 */
+        .thy-page{--thy-brand:#a5c614;--thy-brand-deep:#7f9a10;--thy-brand-soft:#edf5d8;--thy-brown:#433124}
+        .thy-title{height:68px;padding-left:0;border-bottom:1px dashed #d1d1d1}
+        .thy-title h1{font-family:'Batang','Times New Roman',serif;font-size:38px;font-weight:400;letter-spacing:-3px}
+        .thy-hero{height:365px;margin-top:10px;grid-template-columns:672px 328px;background:var(--thy-brown)}
+        .thy-hero-copy{display:flex;padding:32px;background:var(--thy-brown);flex-direction:column;justify-content:center;text-align:right}
+        .thy-hero-copy p{margin:0 0 14px;color:#c7bbb1;font-size:15px;font-weight:400;letter-spacing:0}
+        .thy-hero-copy h2{color:var(--thy-brand);font-size:54px;font-weight:700;letter-spacing:-5px}
+        .thy-hero-copy h2 small{color:#fff;font-size:22px;font-weight:400}
+        .thy-hero-copy span{margin-top:15px;color:#eee;font-size:14px;font-weight:400;line-height:1.75;letter-spacing:-1px;text-align:right}
+        .thy-intro{background:#f1f1f1}
+        .thy-intro>h2{font-family:Arial,'Malgun Gothic',sans-serif;color:var(--thy-brand);font-size:38px;font-weight:700;letter-spacing:-2.5px}
+        .thy-stage-list{gap:12px;margin-right:-18px;margin-left:-18px}
+        .thy-stage{gap:10px}.thy-stage b,.thy-stage:nth-child(2) b,.thy-stage:nth-child(3) b,.thy-stage:nth-child(4) b{width:154px;height:154px;background:var(--thy-brand);font-weight:700}.thy-stage i{color:var(--thy-brand-deep)}
+        .thy-intro-body{align-items:start}.thy-intro-body h3{margin-bottom:30px;font-size:38px;letter-spacing:-2.3px}.thy-intro-body p{margin-bottom:35px}.thy-intro-body>img{align-self:start;margin-top:0}
+        .thy-page mark{padding:0 1px;background:linear-gradient(transparent 47%,#fff4b0 47%,#fff4b0 96%,transparent 96%)}
+        .thy-intro-body p mark{font-weight:600}
+        .thy-purpose{background:var(--thy-brand)}.thy-purpose>p mark{color:#383838;font-weight:600}
+        .thy-step-wrap header b{font-weight:700}
+        .thy-surgery>h2,.thy-surgery>h2 span,.thy-surgery>h2 strong{font-family:Arial,'Malgun Gothic',sans-serif;font-size:38px;font-weight:400;letter-spacing:-2px}
+        .thy-dialogue-copy,.thy-answer-row,.thy-question,.thy-answer{min-width:0}.thy-answer-row{display:grid;grid-template-columns:minmax(0,1fr) 86px;gap:20px;padding-right:8px}.thy-answer{max-width:100%}
+        .thy-research h2{font-size:38px}.thy-paper-journal,.thy-research small{font-size:18px}.thy-research h3{font-weight:600}
+        .thy-causes{background:linear-gradient(135deg,#f1f1f1 0%,var(--thy-brand-soft) 100%)}.thy-causes>h2{font-size:38px;font-weight:500}.thy-causes>p{max-width:900px;margin-right:auto;margin-left:auto}
+        .thy-diagnosis{background:var(--thy-brand)}.thy-diagnosis-copy h2{background:var(--thy-brown)}.thy-diagnosis-copy h2 strong{color:var(--thy-brand)}.thy-diagnosis-copy p{font-weight:400}.thy-levels b{background:var(--thy-brown);color:#fff;font-size:18px;white-space:nowrap}.thy-levels span{background:#fff}
+        .thy-symptoms h2{font-size:38px}.thy-image-text__copy{font-size:10pt}
+        .thy-deer h2{font-size:38px}.thy-deer>p{font-weight:400}.thy-deer>strong,.thy-deer ul{font-weight:600}
+        .thy-quality{padding:80px 0 68px;background:#fff}.thy-quality:after{top:65px;width:6px;height:58px;background:#747474}.thy-quality h2{padding-left:28px;color:#777;font-size:25px;font-weight:400;line-height:1.16}.thy-quality h2 strong{display:block;color:#111;font-size:25px;font-weight:700}.thy-quality>div{min-height:420px}.thy-quality article{min-height:420px;padding:0 25px 48px;align-items:flex-end;justify-content:center}.thy-quality article:first-child{background:#edf2e8}.thy-quality article:first-child .thy-quality-gmp{top:17%;left:50%;width:176px;height:176px;object-fit:contain;object-position:center;transform:translateX(-50%)}.thy-quality article:first-child:after{background:rgba(237,242,232,.66)}.thy-quality article:last-child{background:#5d4238}.thy-quality article:last-child:after{background:rgba(39,25,21,.44)}.thy-quality b{top:6px;font-size:170px}.thy-quality span{font-size:24px;line-height:1.33;letter-spacing:-1.7px}.thy-quality article:first-child span{width:100%;padding-top:0;color:#3d3d3d}.thy-quality article:last-child span{color:#fff}
+        @media(max-width:1000px){.thy-title{padding-left:18px}.thy-hero{height:auto;grid-template-columns:64% 36%;aspect-ratio:2.74}.thy-hero-copy{padding:10% 8%}.thy-hero-copy p{font-size:1.5vw}.thy-hero-copy h2{font-size:5.4vw}.thy-hero-copy span{font-size:1.4vw}.thy-quality article{min-height:42vw}}
+        @media(max-width:680px){.thy-title{height:58px}.thy-title h1{font-size:28px}.thy-hero{display:block;aspect-ratio:auto}.thy-hero-copy{min-height:250px;padding:38px 20px}.thy-hero-copy p{font-size:13px}.thy-hero-copy span{font-size:14px}.thy-stage-list{margin-right:0;margin-left:0}.thy-stage b{width:130px;height:130px}.thy-intro>h2,.thy-causes>h2,.thy-research h2,.thy-symptoms h2,.thy-deer h2{font-size:32px}.thy-intro-body h3{font-size:28px}.thy-answer-row{grid-template-columns:minmax(0,1fr) 50px;gap:8px;padding-right:0}.thy-answer-row .thy-doctor{width:50px;flex-basis:50px}.thy-paper-journal,.thy-research small{font-size:15px}.thy-quality{padding-bottom:42px}.thy-quality h2{padding-left:20px}.thy-quality article{min-height:230px}.thy-quality article:first-child .thy-quality-gmp{width:110px;height:110px}.thy-quality b{font-size:90px}.thy-quality span{font-size:17px}}
       `}</style>
     </main>
   );

@@ -87,13 +87,13 @@ export default function MenopausePage() {
   return (
     <main className="meno-page">
       <article className="meno-content">
-        <header className="meno-title"><h1>갱년기증상</h1></header>
+        <header className="meno-title"><h1>갱년기 증후군</h1></header>
 
         <section className="meno-hero" aria-labelledby="menopause-hero-heading">
           <Image src="/images/menopause/CL_01.png" alt="" width={999} height={366} priority unoptimized />
           <div className="meno-hero-copy">
             <p>진&nbsp; / &nbsp;한&nbsp; / &nbsp;의&nbsp; / &nbsp;원</p>
-            <h2 id="menopause-hero-heading">갱년기증상</h2>
+            <h2 id="menopause-hero-heading">갱년기 증후군</h2>
             <span>오직 여성만을 위한,<br />진 한의원의 여성질환 전문치료</span>
           </div>
         </section>
@@ -152,7 +152,7 @@ export default function MenopausePage() {
         </section>
 
         <section className="meno-system" aria-labelledby="menopause-system-heading">
-          <h2 id="menopause-system-heading">정확하고 세부적인 원인 진단을 통한<br /><strong>진 한의원의 1:1</strong> 맞춤 치료</h2>
+          <h2 id="menopause-system-heading">정확하고 세부적인 원인 진단을 통한<br /><strong>진 한의원<span className="meno-system-possessive">의</span> <em>1:1</em></strong> 맞춤 치료</h2>
           <i>JIN SYSTEM</i>
           <p>진단부터 치료까지, 체계적이고 과학적인 진 여성치료 시스템!</p>
         </section>
@@ -260,6 +260,71 @@ export default function MenopausePage() {
           .meno-link-copy h3,.meno-link-card:nth-child(n+4) .meno-link-copy h3{font-size:20px}.meno-link-copy p,.meno-link-card:nth-child(n+4) .meno-link-copy p{font-size:16px}.meno-link-phone{font-size:28px!important}
           .meno-links{margin-bottom:24px}
         }
+      `}</style>
+      <style>{`
+        /* Menopause page refinement: align the desktop title rhythm with the diet-detail pages. */
+        .meno-title{height:auto;min-height:70px;box-sizing:border-box;padding:16px 0;align-items:flex-start}
+        .meno-title h1{font-size:38px;line-height:38px}
+        .meno-hero{margin-top:8px}
+
+        .meno-intro-copy{padding-top:30px}
+        .meno-intro-rule{width:615px}
+
+        .meno-symptom-circle i{font-family:'Batang','Times New Roman',serif;font-size:18px;font-style:normal;font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+        .meno-symptom-circle b{font-family:'Batang','Times New Roman',serif;font-weight:600}
+
+        .meno-treatment-copy:after{font-size:600px}
+        .meno-treatment>img{transform:translateX(16px)}
+
+        .meno-beginning{grid-template-columns:205px minmax(0,1fr)}
+        .meno-beginning-mark{transform:translateX(-16px)}
+        .meno-beginning h2 span{white-space:nowrap;letter-spacing:-3.1px}
+        .meno-beginning p{max-width:none}
+
+        .meno-system h2{font-size:38px}
+        .meno-system h2 strong{font-size:38px}
+        .meno-system h2 strong em{font-style:normal;font-weight:300}
+        .meno-diagnosis h3{font-weight:600}
+        .meno-diagnosis h3 span{font-weight:400}
+
+        .meno-link-copy h3,.meno-link-card:nth-child(n+4) .meno-link-copy h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+        .meno-link-copy p,.meno-link-card:nth-child(n+4) .meno-link-copy p{font-size:16px}
+        .meno-link-phone{font-size:38px!important;font-weight:700!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+        .meno-links{margin-bottom:64px}
+
+        @media(max-width:680px){
+          .meno-title{min-height:70px;padding:16px 20px}.meno-title h1{font-size:32px;line-height:38px}
+          .meno-intro-rule{width:100%}
+          .meno-treatment>img{transform:none}
+          .meno-beginning{grid-template-columns:1fr}.meno-beginning-mark{transform:none}
+          .meno-beginning h2 span{white-space:normal;letter-spacing:-2.6px}
+          .meno-system h2,.meno-system h2 strong{font-size:30px}
+          .meno-link-copy p,.meno-link-card:nth-child(n+4) .meno-link-copy p{font-size:16px}
+          .meno-link-phone{font-size:32px!important}
+          .meno-links{margin-bottom:44px}
+        }
+      `}</style>
+      <style>{`
+        .meno-treatment-copy:after{right:-12px;font-size:480px}
+        .meno-beginning-mark i{transform:translateY(10px)}
+        .meno-diagnosis h3 span{font-weight:200}
+        .meno-link-copy p,.meno-link-card:nth-child(n+4) .meno-link-copy p{font-size:15px}
+        .meno-system h2 strong .meno-system-possessive{font-weight:300}
+      `}</style>
+      <style>{`
+        .meno-treatment-copy:after{right:-22px;font-size:528px}
+        .meno-beginning-mark i:last-child{transform:translateY(30px)}
+        .meno-diagnosis h3 span{font-weight:100}
+        .meno-link-card--phone small{border-top:0}
+      `}</style>
+      <style>{`
+        .meno-beginning{grid-template-columns:225px minmax(0,1fr)}
+      `}</style>
+      <style>{`
+        .meno-link-phone{width:calc(100% + 49px);margin-left:-29px;justify-content:center;font-size:48px!important}
+      `}</style>
+      <style>{`
+        .meno-link-phone{transform:translateX(-40px)}
       `}</style>
     </main>
   );

@@ -56,6 +56,19 @@ function SectionHeading({ children, variant = '' }: { children: React.ReactNode;
   return <h2 className={`lift-section-heading ${variant}`}><span />{children}<span /></h2>;
 }
 
+function ProgrammeDescription({ title, description }: { title: string; description: string }) {
+  if (title === '눈가 전용 매선') {
+    return <>기존 매선은 침끝이 예리하여 멍과 통증에 대한 우려로 인해 눈가 가까이에 시술이 힘들었으나, 진한의원 눈가 전용 매선으로는 가능합니다. 처지고 꺼진 눈가를 당기고 고정시키는 복원력이 뛰어나 <mark>볼륨감은 물론이고 리프팅 효과까지</mark> 느껴보실 수 있습니다.</>;
+  }
+  if (title === '팔자전용 매선') {
+    return <>최신기술 도입으로 최소의 개수로 최대의 효과를 경험하실 수 있습니다. 깊은 팔자 주름을 매선으로 효과가 높은 가시를 추가하여 꺼진부위를 완화합니다. 보형물 등이 삽입되는 수술이 아닌 <mark>녹는 콜라겐실이 피부 속부터 채워, 부작용이 거의 없으며</mark>, 매선이 녹은 후에도 피부 재생으로 인해 채움 효과가 유지되어 간편합니다. 필러 시술의 부작용이 걱정인 분들께 추천드립니다.</>;
+  }
+  if (title === '얼굴전체 주름개선 V라인 리프팅') {
+    return <>가시도 더 깊은 가시매선이 아닙니다! 매선실에 가시돌기를 추가하여 처진 피부를 더욱 강하게 당겨주는 <mark>3세대 신개념 리프팅 전용 매선</mark>으로 일반 매선실 보다 줄기가 강해지는 효과가 뛰어나 <mark>늘어난 볼살과 무뎌진 턱선을 V라인으로 효과적으로 만들어 줍니다.</mark> 고정력이 강한 가시매선을 한 번 더 잡아주는 가시고정매선과 함께 사용하면 더욱 오래갑니다.</>;
+  }
+  return description;
+}
+
 export default function LiftingPage() {
   return (
     <main className="lift-page">
@@ -74,8 +87,8 @@ export default function LiftingPage() {
 
         {programmes.map((programme) => (
           <section className={`lift-programme${programme.accent ? ' lift-programme--thorn' : ''}`} key={programme.title}>
-            <div className="lift-programme-hero"><Image src={`/images/lifting/${programme.image}`} alt={programme.title} fill sizes="1000px" unoptimized /><div><p>{programme.kicker}{programme.accent && <><br />{programme.title}</>}</p><h2>{programme.accent || programme.title}</h2><span>{programme.description}</span></div></div>
-            <div className={`lift-technique-grid lift-technique-grid--${programme.cards.length}`}>{programme.cards.map(([image, title, text], index) => <article key={title}><header><i>{index + 1}</i><b>{title}</b></header><Image src={`/images/lifting/${image}`} alt={title} width={270} height={173} unoptimized /><p>{text}</p></article>)}</div>
+            <div className="lift-programme-hero"><Image src={`/images/lifting/${programme.image}`} alt={programme.title} fill sizes="1000px" unoptimized /><div><p>{programme.kicker}{programme.accent && <><br />{programme.title}</>}</p><h2>{programme.accent || programme.title}</h2><span><ProgrammeDescription title={programme.title} description={programme.description} /></span></div></div>
+            <div className={`lift-technique-grid lift-technique-grid--${programme.title === '눈가 전용 매선' ? 3 : programme.cards.length}`}>{programme.cards.map(([image, title, text], index) => <article key={title}><header><i>{index + 1}</i><b>{title}</b></header><Image src={`/images/lifting/${image}`} alt={title} width={270} height={173} unoptimized /><p>{text}</p></article>)}{programme.title === '눈가 전용 매선' && <article className="lift-technique-placeholder" aria-hidden="true" />}</div>
           </section>
         ))}
 
@@ -101,7 +114,7 @@ export default function LiftingPage() {
         </section>
 
         <section className="lift-related">
-          <SectionHeading variant="lift-section-heading--ornament">함께하면 더욱 효과적인 시술</SectionHeading>
+          <SectionHeading variant="lift-section-heading--ornament">함께하면 더욱 <em className="lift-related-keyword">효과적인</em> 시술</SectionHeading>
           <div>{related.map(([image, title, text], index) => <article key={title}><h3><i>{index + 1}</i>{title}</h3><Image src={`/images/lifting/${image}`} alt={title} width={490} height={277} unoptimized /><p>{text}</p></article>)}</div>
         </section>
 
@@ -111,9 +124,9 @@ export default function LiftingPage() {
           ['PL_29.png', '팔자매선 Before', 'PL_30.png', '팔자매선 After'],
         ].map(([beforeImage, before, afterImage, after]) => <div className="lift-case-row" key={beforeImage}><article><b>{before}</b><Image src={`/images/lifting/${beforeImage}`} alt={before} width={426} height={265} unoptimized /></article><span>3개월 후<i>➜</i></span><article><b>{after}</b><Image src={`/images/lifting/${afterImage}`} alt={after} width={429} height={266} unoptimized /></article></div>)}</div><small>매선 시술은 출산, 붓기, 통증과 같은 부작용이 발생할 수 있으므로 상담 후 신중히 결정하시기 바랍니다.</small></section>
 
-        <section className="lift-miinsu"><Image src="/images/lifting/PL_31.jpg" alt="성형 수술, 레이저 시술 후 붓기에 미인수" fill sizes="1000px" unoptimized /><div><p>성형 후 붓기가 걱정되신다면?</p><h2>성형 수술, 레이저 시술 후 붓기에<br /><strong>미인수</strong></h2><ul><li>레이저 멍붓기 3일분(9포)<b>2만 7천원</b></li><li>눈 7일분(21포)<b>6만 3천원</b></li><li>코 10일분(30포)<b>9만원</b></li><li>코 14일분(42포)<b>12만 6천원</b></li><li>안면윤곽 및 가슴 1개월(90포)<b>27만원</b></li></ul></div></section>
+        <section className="lift-miinsu"><Image src="/images/lifting/PL_31.jpg" alt="성형 수술, 레이저 시술 후 붓기에 미인수" fill sizes="1000px" unoptimized /><div><p>성형 후 붓기가 걱정되신다면?</p><h2>성형 수술, 레이저 시술 후 붓기에<br /><strong>미인수</strong></h2><ul><li>레이저 멍붓기 3일분(9포)<b>2<small>만</small> 7<small>천원</small></b></li><li>눈 7일분(21포)<b>6<small>만</small> 3<small>천원</small></b></li><li>코 10일분(30포)<b>9<small>만원</small></b></li><li>코 14일분(42포)<b>12<small>만</small> 6<small>천원</small></b></li><li>안면윤곽 및 가슴 1개월(90포)<b>27<small>만원</small></b></li></ul></div></section>
 
-        <section className="lift-quick"><p className="lift-quick-kicker">QUICK<br />V LINE<br />LIFTING</p><h2>퀵 <strong>V라인 매선</strong></h2><p className="lift-quick-lead">진한의원의 놀라운 한개별 V라인 시술로 얼굴라인을 찾아드립니다.</p><div className="lift-quick-cards">{[['PL_32.png', '윤곽매선', '갸름해 지고싶은\n얼굴 턱 라인은'], ['PL_33.png', '산삼비만약침', '얼굴을 둔탁하게\n만들었던 이중턱은'], ['PL_34.png', '사각턱약침', '각지고\n튀어나온 부위는']].map(([image, label, caption]) => <article key={label}><Image src={`/images/lifting/${image}`} alt={label} width={218} height={325} unoptimized /><span>{caption}</span><b>{label}</b></article>)}</div><p className="lift-quick-combo"><i>윤곽<br />매선</i><em>+</em><i>산삼<br />비만약침</i><em>+</em><i>사각턱<br />약침</i><strong>21<small>만원</small></strong><small className="lift-quick-vat">*VAT별도</small></p><Image className="lift-quick-logo" src="/images/lifting/PL_35.png" alt="진한의원" width={707} height={62} unoptimized /></section>
+        <section className="lift-quick"><p className="lift-quick-kicker">QUICK<br />V LINE<br />LIFTING</p><h2>퀵 <strong>V라인 매선</strong></h2><p className="lift-quick-lead">진한의원의 놀라운 한개별 V라인 시술로 얼굴라인을 찾아드립니다.</p><div className="lift-quick-cards">{[['PL_32.png', '윤곽매선', '갸름해 지고싶은\n얼굴 턱 라인은'], ['PL_33.png', '산삼비만약침', '얼굴을 둔탁하게\n만들었던 이중턱은'], ['PL_34.png', '사각턱약침', '각지고\n튀어나온 부위는']].map(([image, label, caption]) => <article key={label}><Image src={`/images/lifting/${image}`} alt={label} width={218} height={325} unoptimized /><span>{caption}</span><b>{label}</b></article>)}</div><p className="lift-quick-combo"><i>윤곽<br />매선</i><em>+</em><i>산삼<br />비만약침</i><em>+</em><i>사각턱<br />약침</i><strong>21<small>만원</small></strong><small className="lift-quick-vat">*VAT별도</small></p></section>
       </article>
 
       <style>{`
@@ -177,6 +190,77 @@ export default function LiftingPage() {
         .lift-miinsu>img:first-child{width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center!important}
         .lift-miinsu>div{position:absolute;z-index:1;inset:0;box-sizing:border-box;width:auto;padding:171px 0 0 123px}
         @media(max-width:680px){.lift-miinsu{height:auto;min-height:0;aspect-ratio:1000 / 1415}.lift-miinsu>div{padding:17.1vw 0 0 12.3vw}}
+      `}</style>
+      <style>{`
+        .lift-page{--lift-brand:#a5c614;--lift-brand-deep:#7f9a10;--lift-brown:#433124}
+
+        /* 상단과 히어로: 해독 다이어트 페이지의 기준 박스에 맞춤 */
+        .lift-title h1{margin-left:0}
+        .lift-hero{height:365px;grid-template-columns:672px 328px;background:var(--lift-brown)}
+        .lift-hero-copy{display:flex;padding:32px;justify-content:center;flex-direction:column;background:var(--lift-brown);text-align:left}
+        .lift-hero-copy p{margin:0 0 8px;color:#c7bbb1;font-size:15px;letter-spacing:-.4px}
+        .lift-hero-copy h2{margin:0 0 16px;color:var(--lift-brand);font-size:54px;font-weight:700;line-height:.98;letter-spacing:-2px}
+        .lift-hero-copy h2 strong{color:#fff;font-size:54px;font-weight:400;letter-spacing:0}
+        .lift-hero-copy>div{gap:10px;margin-top:0;justify-content:flex-start}
+        .lift-hero-copy b,.lift-hero-copy b:nth-child(2),.lift-hero-copy b:nth-child(3){width:78px;height:78px;background:var(--lift-brand);font-size:14px;font-weight:700}
+        .lift-hero-copy b em{font-size:16px}
+
+        /* 눈가·팔자·가시 전용 매선 */
+        .lift-programme-hero>div:before{height:92px;background:var(--lift-brand)}
+        .lift-programme-hero span{font-size:16px;line-height:1.65}
+        .lift-programme-hero span mark{padding:0;background:none;color:#c92323;font-weight:700;text-decoration:underline;text-decoration-color:#c92323;text-decoration-thickness:1px;text-underline-offset:3px}
+        .lift-technique-grid--3{grid-template-columns:repeat(3,1fr)}
+        .lift-technique-placeholder{min-height:302px;background:#fff8f3!important}
+
+        /* 맞춤 매선 솔루션 */
+        .lift-solution-grid h3{background:var(--lift-brand)}
+        .lift-solution-grid article>div,.lift-solution-grid .lift-solution-card--dual-price>div{height:165px;min-height:165px}
+        .lift-solution-grid p{font-size:13px;line-height:1.5}
+        .lift-solution-grid article>div:after{right:100px;bottom:23px;width:20px;height:15px;background:var(--lift-brand);color:transparent;content:'';clip-path:polygon(0 26%,66% 26%,66% 0,100% 50%,66% 100%,66% 74%,0 74%)}
+
+        /* 3UP 포인트 */
+        .lift-three-up{background:#f1f1f1}
+        .lift-three-up h2{background:#6b5139}
+        .lift-three-up h2:before,.lift-three-up h2:after{border-top-color:#6b5139}
+
+        /* 한방성형 장점과 함께하면 효과적인 시술 */
+        .lift-advantages b{font-size:23px}
+        .lift-related h3{color:#3d3d3d}
+        .lift-related h3 i{background:var(--lift-brand)}
+        .lift-related .lift-section-heading--ornament:before{content:none}
+        .lift-related-keyword{position:relative;font-style:normal}
+        .lift-related-keyword:before{position:absolute;top:-23px;left:50%;color:#4b4038;content:'●  ●  ●  ●';font-size:10px;letter-spacing:4px;transform:translateX(-50%)}
+
+        /* 치료 사례 화살표 */
+        .lift-case-row>span i{display:flex;width:30px;height:21px;margin:8px auto 0;align-items:center;justify-content:center;background:var(--lift-brand);color:transparent;font-size:0;clip-path:polygon(37% 0,63% 0,63% 54%,100% 54%,50% 100%,0 54%,37% 54%)}
+
+        /* 미인수 */
+        .lift-miinsu p,.lift-miinsu h2,.lift-miinsu h2 strong{color:var(--lift-brand)}
+        .lift-miinsu p{font-size:38px}
+        .lift-miinsu li b{color:var(--lift-brand);font-size:38px}
+        .lift-miinsu li b small{font-size:30px;letter-spacing:-1px}
+
+        /* 퀵 V라인 매선: PL_36의 배경 그래픽 위에 텍스트와 카드 배치 */
+        .lift-quick{position:relative;width:707px;height:1000px;padding:74px 0 0;background:#fff url('/images/lifting/PL_36.jpg') center top/100% auto no-repeat}
+        .lift-quick:before{display:none}
+        .lift-quick-kicker{top:0}
+        .lift-quick h2{position:relative;z-index:1}
+        .lift-quick-lead{position:relative;z-index:1;margin-top:12px!important;margin-bottom:20px!important}
+        .lift-quick-cards{position:relative;z-index:1}
+        .lift-quick-combo{position:absolute;top:662px;left:0;z-index:1;margin:0!important;background:transparent}
+        .lift-quick-combo i{border:0;background:transparent;color:#4b3a36}
+        .lift-quick-combo em{color:#4b3a36}
+        .lift-quick-combo strong{border:0;background:transparent;clip-path:none;color:#fff}
+        .lift-quick-logo{display:none!important}
+
+        @media(max-width:680px){
+          .lift-hero{height:auto;grid-template-columns:1fr;aspect-ratio:auto}.lift-hero-copy{padding:40px 20px}.lift-hero-copy h2,.lift-hero-copy h2 strong{font-size:34px}.lift-hero-copy b,.lift-hero-copy b:nth-child(2),.lift-hero-copy b:nth-child(3){width:60px;height:60px;font-size:12px}
+          .lift-programme-hero>div:before{height:82px;background:var(--lift-brand)}
+          .lift-technique-placeholder{display:none}
+          .lift-solution-grid article>div,.lift-solution-grid .lift-solution-card--dual-price>div{height:132px;min-height:132px}.lift-solution-grid p{font-size:10px}.lift-solution-grid article>div:after{right:65px;bottom:16px;width:16px;height:12px}
+          .lift-miinsu p{font-size:4vw}.lift-miinsu li b{font-size:5.4vw}.lift-miinsu li b small{font-size:4.2vw}
+          .lift-quick{width:100%;height:auto;min-height:0;padding-top:10.5vw;aspect-ratio:707 / 1000}.lift-quick-combo{top:93.6vw}.lift-quick-combo i{color:#4b3a36}.lift-quick-combo strong{color:#fff}
+        }
       `}</style>
     </main>
   );

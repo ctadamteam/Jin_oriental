@@ -341,7 +341,7 @@ export default function PostpartumDietPage() {
         .pp-case-list>.pp-case:nth-child(2) .pp-case-stage-wrap:first-child .pp-case-stage img{margin-top:-50px}
         .pp-case-list>.pp-case:nth-child(2) .pp-case-stage-wrap:nth-child(2) .pp-case-stage img{margin-top:-40px}
         .pp-case-list>.pp-case:nth-child(2) .pp-case-stage-wrap:nth-child(3) .pp-case-stage img{margin-top:-30px}
-        .pp-qa .pp-highlight{padding:.12em .12em .24em;background:linear-gradient(transparent 8%,#fff4b0 8%,#fff4b0 100%,transparent 100%);line-height:1.4}
+        .pp-qa .pp-highlight{position:static;padding:.12em .12em .24em;background-image:linear-gradient(transparent 8%,#fff4b0 8%,#fff4b0 96%,transparent 96%);background-repeat:no-repeat;background-position:0 -3px;background-size:100% calc(100% + 3px);line-height:1.4}
         .pp-prevention-body>div:last-child p{color:#4a4a4a}
       `}</style>
     </main>
