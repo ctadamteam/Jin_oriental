@@ -5,10 +5,12 @@ export function InformationSection() {
   return (
     <section className="bg-gray-50 py-24">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <SectionTitle 
-          subtitle="INFORMATION"
-          title="오시는길"
-        />
+        <div id="location" className="scroll-mt-28">
+          <SectionTitle
+            subtitle="INFORMATION"
+            title="오시는길"
+          />
+        </div>
 
         <div className="mt-12 bg-white rounded-xl shadow-xl flex flex-col lg:flex-row overflow-hidden min-h-[540px] max-w-[1320px] mx-auto w-full">
           {/* Left: Map */}

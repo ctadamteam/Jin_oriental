@@ -4,18 +4,18 @@ export const MENUS = [
     href: "/about",
     subMenus: [
       { title: "진한의원 story", href: "/about/story" },
-      { title: "공지사항", href: "/about/notices" },
     ],
   },
   {
     title: "진 다이어트 한약",
     href: "/diet-medicine",
     subMenus: [
-      { title: "슬림환/습담탕", href: "/diet-medicine/slim" },
+      { title: "슬림환ㆍ습담탕", href: "/diet-medicine/slim" },
       { title: "붓기제로ㆍ배사라정", href: "/diet-medicine/zero" },
-      { title: "슬림톡(삭뺀다정ㆍ블랙정)", href: "/diet-medicine/tok" },
+      { title: "슬림톡ㆍ삭뺀다정ㆍ블랙정", href: "/diet-medicine/tok" },
       { title: "올인원", href: "/diet-medicine/allinone" },
-      { title: "원인 치료 한약", href: "/diet-medicine/cause" },
+      { title: "비만주사 불편감 치료한약", href: "/diet-medicine/injection-discomfort" },
+      { title: "요요 방지한약", href: "/diet-medicine/rebound-prevention" },
     ],
   },
   {
@@ -57,11 +57,12 @@ export const MENUS = [
     title: "면역/보약 클리닉",
     href: "/immunity-tonic",
     subMenus: [
-      { title: "자율신경실조증", href: "/immunity-tonic/autonomic" },
-      { title: "불안ㆍ공황장애", href: "/immunity-tonic/panic" },
-      { title: "화병", href: "/immunity-tonic/anger" },
-      { title: "갑상선 저하증", href: "/immunity-tonic/thyroid" },
-      { title: "공진단", href: "/immunity-tonic/gongjindan" },
+      { title: "자율신경실조증(불면, 공황장애, 화병)", href: "/immunity-tonic/autonomic" },
+      { title: "아토피, 건선, 지루성피부염", href: "/immunity-tonic/atopy" },
+      { title: "소화기질환(소화불량, 변비, 과민성대장증후군)", href: "/immunity-tonic/digestive" },
+      { title: "탈모", href: "/immunity-tonic/hair-loss" },
+      { title: "갑상선저하증", href: "/immunity-tonic/thyroid" },
+      { title: "공진단, 경옥고", href: "/immunity-tonic/gongjindan" },
     ],
   },
   {
@@ -69,6 +70,9 @@ export const MENUS = [
     href: "/events",
     subMenus: [
       { title: "이벤트", href: "/events" },
+      { title: "공지사항", href: "/events/notices" },
+      { title: "치료사례", href: "/events/treatment-cases" },
+      { title: "환자인터뷰", href: "/events/interviews" },
     ],
   },
 ];

@@ -28,7 +28,7 @@ const NaverBlogIcon = ({ size = 24, className = "" }: any) => {
 export function SideQuickMenu() {
   const menus = [
     { label: '카톡상담', href: SITE_CONFIG.links.kakao, Icon: KakaoTalkBubble },
-    { label: '오시는길', href: '/about/location', Icon: FaLocationDot },
+    { label: '오시는길', href: '/#location', Icon: FaLocationDot },
     { label: '블로그', href: SITE_CONFIG.links.blog, Icon: NaverBlogIcon },
     { label: '인스타그램', href: SITE_CONFIG.links.instagram, Icon: FaCamera },
     { label: '네이버예약', href: SITE_CONFIG.links.naverReservation, Icon: FaCalendarCheck },
@@ -39,18 +39,35 @@ export function SideQuickMenu() {
     <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col bg-white border border-gray-200 shadow-[0_8px_35px_rgba(0,0,0,0.08)] rounded-[20px] overflow-hidden divide-y divide-gray-100">
       {menus.map((menu, i) => {
         const Icon = menu.Icon;
+        const linkClassName = "group flex flex-col items-center justify-center w-[86px] h-[83px] hover:bg-gray-50 text-[11px] font-bold text-gray-800 text-center transition-colors duration-300";
+        const linkContent = (
+          <>
+            <div className="mb-1.5 text-gray-800 group-hover:text-[var(--color-primary)] transition-colors duration-300">
+              <Icon size={27} />
+            </div>
+            {menu.label}
+          </>
+        );
+
+        // 다른 상세 페이지에서 메인 앵커로 이동할 때는 브라우저의 기본 앵커 이동을 사용해
+        // 메인 콘텐츠가 모두 그려진 뒤 정확한 위치로 이동하도록 합니다.
+        if (menu.label === '오시는길') {
+          return (
+            <a key={i} href={menu.href} className={linkClassName}>
+              {linkContent}
+            </a>
+          );
+        }
+
         return (
           <Link 
             key={i} 
             href={menu.href}
             target={menu.href.startsWith('http') ? '_blank' : '_self'}
             rel={menu.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            className="group flex flex-col items-center justify-center w-[86px] h-[83px] hover:bg-gray-50 text-[11px] font-bold text-gray-800 text-center transition-colors duration-300"
+            className={linkClassName}
           >
-            <div className="mb-1.5 text-gray-800 group-hover:text-[var(--color-primary)] transition-colors duration-300">
-              <Icon size={27} />
-            </div>
-            {menu.label}
+            {linkContent}
           </Link>
         )
       })}
