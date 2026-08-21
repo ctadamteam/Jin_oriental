@@ -126,7 +126,7 @@ export function Header() {
 
       {/* Search Overlay Modal */}
       {isSearchOpen && (
-        <div className="fixed inset-0 z-50 bg-white/95 backdrop-blur-sm animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 bg-white/95 backdrop-blur-sm">
           <div className="mx-auto max-w-4xl px-4 pt-24 h-full flex flex-col">
             <button 
               onClick={() => setIsSearchOpen(false)}
@@ -141,7 +141,7 @@ export function Header() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="검색어를 입력해주세요."
-                className="w-full border-b-2 border-gray-300 bg-transparent py-4 pl-4 pr-16 text-3xl font-light text-gray-900 placeholder-gray-300 focus:border-[var(--color-primary)] focus:outline-none transition-colors"
+                className="w-full border-b-2 border-gray-300 bg-transparent py-4 pl-4 pr-16 text-3xl font-light text-gray-900 placeholder-gray-300 focus:border-[#08325C] focus:outline-none transition-colors"
               />
               <button 
                 type="submit"

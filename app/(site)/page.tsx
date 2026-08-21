@@ -8,10 +8,11 @@ import { EventMenuSection } from '@/components/home/EventMenuSection';
 import { PrescriptionCheckSection } from '@/components/home/PrescriptionCheckSection';
 import { InformationSection } from '@/components/home/InformationSection';
 import MainPopup from '@/components/common/MainPopup';
+import { HomeColorScope } from '@/components/home/HomeColorScope';
 
 export default function Home() {
   return (
-    <>
+    <HomeColorScope>
       <MainPopup />
       <MainHeroSection />
       {/* <DoctorProfileSection /> */}
@@ -22,6 +23,6 @@ export default function Home() {
       <InformationSection />
       {/* <EventMenuSection /> */}
       {/* <PrescriptionCheckSection /> */}
-    </>
+    </HomeColorScope>
   );
 }

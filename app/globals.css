@@ -86,6 +86,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* 공통 포인트 팔레트: 상세 페이지는 아래 기본값을, 메인만 별도 값을 사용합니다. */
+  --site-primary: #BEE622;
+  --site-primary-dark: #2B3B09;
+  --site-primary-medium: #93B21A;
+  --site-primary-muted: #586B23;
+  --site-primary-popup: #BEE622;
+  --site-primary-popup-dark: #829A21;
+  --site-sub: #FAFBF7;
+  /* 임의 CSS 값(var(--color-primary))으로 사용된 기존 컴포넌트 호환용입니다. */
+  --color-primary: var(--site-primary);
+  --color-primary-dark: var(--site-primary-dark);
+  --color-primary-medium: var(--site-primary-medium);
+  --color-primary-muted: var(--site-primary-muted);
+  --color-primary-popup: var(--site-primary-popup);
+  --color-primary-popup-dark: var(--site-primary-popup-dark);
+  --color-sub: var(--site-sub);
   --font-geist-sans: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   --font-geist-mono: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
@@ -93,13 +109,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #BEE622;
-  --color-primary-dark: #2B3B09;
-  --color-primary-medium: #93B21A;
-  --color-primary-muted: #586B23;
-  --color-primary-popup: #BEE622;
-  --color-primary-popup-dark: #829A21;
-  --color-sub: #FAFBF7;
+  --color-primary: var(--site-primary);
+  --color-primary-dark: var(--site-primary-dark);
+  --color-primary-medium: var(--site-primary-medium);
+  --color-primary-muted: var(--site-primary-muted);
+  --color-primary-popup: var(--site-primary-popup);
+  --color-primary-popup-dark: var(--site-primary-popup-dark);
+  --color-sub: var(--site-sub);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-paperlogy: Paperlogy, sans-serif;
@@ -120,5 +136,73 @@ body {
 
 /* Custom Utilities */
 .text-primary-medium {
-  color: #93B21A !important;
+  color: var(--site-primary-medium) !important;
+}
+
+/*
+ * 메인 화면 전용 색상 체계입니다. 기존 상세 페이지의 녹색 디자인에는
+ * 영향을 주지 않도록 루트(/) 페이지가 마운트될 때만 body에 적용됩니다.
+ * 색상은 사용자가 제공한 레퍼런스에서 직접 추출한 네이비/블루그레이 값입니다.
+ */
+body.home-page-theme {
+  --site-primary: #083560;
+  --site-primary-dark: #01223D;
+  --site-primary-medium: #123960;
+  --site-primary-muted: #08325C;
+  --site-primary-popup: #123960;
+  --site-primary-popup-dark: #01223D;
+  --site-sub: #EEEFF1;
+}
+
+body.home-page-theme .text-primary-medium {
+  color: var(--site-primary-medium) !important;
+}
+
+/* 메인 JIN STORY의 더보기 버튼에만 적용하는 네이비 처리입니다. */
+.jin-story-more-button {
+  border-color: #083560 !important;
+  background-color: #FFFFFF !important;
+  color: #083560 !important;
+}
+
+.jin-story-more-button:hover {
+  border-color: #083560 !important;
+  background-color: #083560 !important;
+  color: #FFFFFF !important;
+}
+
+.jin-story-more-button:focus-visible {
+  outline: 2px solid #083560;
+  outline-offset: 3px;
+}
+
+/* 빠른 상담 바는 공통 UI이므로 모든 페이지에서 네이비로 통일합니다. */
+.quick-consult-toggle {
+  background: linear-gradient(90deg, #123960 0%, #083560 100%) !important;
+  color: #FFFFFF !important;
+}
+
+.quick-consult-toggle:hover {
+  background: linear-gradient(90deg, #083560 0%, #01223D 100%) !important;
+}
+
+.quick-consult-panel {
+  background-color: rgb(8 50 92 / 0.95) !important;
+}
+
+.quick-consult-panel .text-primary-muted {
+  color: #083560 !important;
+}
+
+.quick-consult-gender-indicator {
+  background-color: #123960 !important;
+}
+
+.quick-consult-submit {
+  background-color: #01223D !important;
+  color: #FFFFFF !important;
+}
+
+.quick-consult-submit:hover {
+  background-color: #083560 !important;
 }

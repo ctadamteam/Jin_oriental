@@ -4,25 +4,44 @@ import Link from 'next/link';
 import { Button } from '../ui/Button';
 
 export function JinStorySection() {
-  const realVideos = [
+  const videos = [
     {
-      title: '[KNN건강튜브] 체질에 맞춰 뺀다! 한방 다이어트의 모든 것!',
+      id: 1,
+      title: '한방 다이어트의 모든 것!',
       thumbnailUrl: 'https://i.ytimg.com/vi/jw-MfFAtVlY/hqdefault.jpg',
       videoUrl: 'https://youtu.be/jw-MfFAtVlY',
     },
     {
-      title: '[닥터스] 한방 해독치료 대박 비법 공개! (부산 진한의원 / 051-714-0040)',
+      id: 2,
+      title: '한방 해독치료 대박 비법 공개!',
       thumbnailUrl: 'https://i.ytimg.com/vi/jIitb2gBDL8/hqdefault.jpg',
       videoUrl: 'https://youtu.be/jIitb2gBDL8',
-    }
+    },
+    {
+      id: 3,
+      title: '다이어트 적. 부종을 잡아라',
+      thumbnailUrl: 'https://i.ytimg.com/vi/e0Hq1HGTyL4/hqdefault.jpg',
+      videoUrl: 'https://youtu.be/e0Hq1HGTyL4',
+    },
+    {
+      id: 4,
+      title: '한방해독 다이어트',
+      thumbnailUrl: 'https://i.ytimg.com/vi/esw_t4jduI8/hqdefault.jpg',
+      videoUrl: 'https://youtu.be/esw_t4jduI8',
+    },
+    {
+      id: 5,
+      title: '중년의 비만. 뱃살은 해독이 필요하다',
+      thumbnailUrl: 'https://i.ytimg.com/vi/LFM_nLK1tps/hqdefault.jpg',
+      videoUrl: 'https://youtu.be/LFM_nLK1tps',
+    },
+    {
+      id: 6,
+      title: '생애주기별 다이어트',
+      thumbnailUrl: 'https://i.ytimg.com/vi/hVHHpD-LN24/hqdefault.jpg',
+      videoUrl: 'https://youtu.be/hVHHpD-LN24',
+    },
   ];
-
-  const mockVideos = Array.from({ length: 6 }).map((_, i) => ({
-    id: i + 1,
-    title: realVideos[i % 2].title,
-    thumbnailUrl: realVideos[i % 2].thumbnailUrl,
-    videoUrl: realVideos[i % 2].videoUrl,
-  }));
 
   return (
     <section className="py-24 bg-white">
@@ -32,7 +51,7 @@ export function JinStorySection() {
           title="영상으로 전하는 건강한 감량 이야기"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1320px] mx-auto">
-          {mockVideos.map((video) => (
+          {videos.map((video) => (
             <Link 
               key={video.id} 
               href={video.videoUrl}
@@ -54,7 +73,7 @@ export function JinStorySection() {
         </div>
         <div className="mt-12 text-center">
           <Link href="/about/story">
-            <Button variant="outline" className="px-12">더보기</Button>
+            <Button variant="outline" className="jin-story-more-button px-12">더보기</Button>
           </Link>
         </div>
       </div>

@@ -35,7 +35,7 @@ export function BottomQuickConsultForm() {
       {/* Toggle Tab */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="group w-full bg-gradient-to-r from-[#BEE622] to-[#A2C41D] text-primary-dark py-3 flex flex-row items-center justify-center gap-2 cursor-pointer hover:from-[#C7EE2C] hover:to-[#ADC91C] transition-all duration-300 border-t border-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] relative z-20"
+        className="quick-consult-toggle group w-full bg-gradient-to-r from-[#BEE622] to-[#A2C41D] text-primary-dark py-3 flex flex-row items-center justify-center gap-2 cursor-pointer hover:from-[#C7EE2C] hover:to-[#ADC91C] transition-all duration-300 border-t border-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] relative z-20"
       >
         <span className="text-[14px] font-extrabold tracking-tight">
           {isOpen ? '빠른 상담 신청 닫기' : '빠른 상담 신청하기'}
@@ -48,7 +48,7 @@ export function BottomQuickConsultForm() {
 
       {/* Expandable Form Content */}
       <div 
-        className={`backdrop-blur-md bg-primary-muted/95 overflow-hidden transition-[max-height,opacity] duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] ${
+        className={`quick-consult-panel backdrop-blur-md bg-primary-muted/95 overflow-hidden transition-[max-height,opacity] duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] ${
           isOpen 
             ? 'max-h-[500px] opacity-100 border-t border-white/20 shadow-[0_-15px_40px_rgba(0,0,0,0.2)] pointer-events-auto' 
             : 'max-h-0 h-0 opacity-0 border-t-0 border-transparent shadow-none pointer-events-none'
@@ -142,7 +142,7 @@ export function BottomQuickConsultForm() {
 
                 {/* Sliding Indicator Background */}
                 <div 
-                  className={`absolute top-1 bottom-1 left-1 rounded-lg bg-primary-muted shadow-sm transition-all duration-300 ease-out pointer-events-none ${
+                  className={`quick-consult-gender-indicator absolute top-1 bottom-1 left-1 rounded-lg bg-primary-muted shadow-sm transition-all duration-300 ease-out pointer-events-none ${
                     formData.gender === 'M' 
                       ? 'w-[calc(50%-4px)] translate-x-0 opacity-100' 
                       : formData.gender === 'F' 
@@ -176,7 +176,7 @@ export function BottomQuickConsultForm() {
               <button 
                 type="submit" 
                 style={{ transitionDelay: '200ms' }}
-                className={`group w-full md:w-44 bg-primary text-primary-dark text-sm font-extrabold h-12 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.4)] transform active:translate-y-0 cursor-pointer flex items-center justify-center gap-2 border border-white/10 shrink-0 transition-all duration-500 ease-out ${
+                className={`quick-consult-submit group w-full md:w-44 bg-primary text-primary-dark text-sm font-extrabold h-12 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.4)] transform active:translate-y-0 cursor-pointer flex items-center justify-center gap-2 border border-white/10 shrink-0 transition-all duration-500 ease-out ${
                   isOpen ? 'translate-y-0 opacity-100 hover:-translate-y-0.5' : 'translate-y-3 opacity-0'
                 }`}
               >

@@ -29,6 +29,36 @@ const BANNERS = [
     imageUrl: '/images/main/hero_banner_04.jpg',
     alt: '진한의원 후기 배너',
     link: '#'
+  },
+  {
+    id: 5,
+    imageUrl: '/images/main/hero_banner_05.jpg',
+    alt: '진한의원 배너 5',
+    link: '#'
+  },
+  {
+    id: 6,
+    imageUrl: '/images/main/hero_banner_06.jpg',
+    alt: '진한의원 배너 6',
+    link: '#'
+  },
+  {
+    id: 7,
+    imageUrl: '/images/main/hero_banner_07.jpg',
+    alt: '진한의원 배너 7',
+    link: '#'
+  },
+  {
+    id: 8,
+    imageUrl: '/images/main/hero_banner_08.jpg',
+    alt: '진한의원 배너 8',
+    link: '#'
+  },
+  {
+    id: 9,
+    imageUrl: '/images/main/hero_banner_09.jpg',
+    alt: '진한의원 배너 9',
+    link: '#'
   }
 ];
 

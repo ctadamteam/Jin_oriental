@@ -32,7 +32,7 @@ export function SideQuickMenu() {
     { label: '블로그', href: SITE_CONFIG.links.blog, Icon: NaverBlogIcon },
     { label: '인스타그램', href: SITE_CONFIG.links.instagram, Icon: FaCamera },
     { label: '네이버예약', href: SITE_CONFIG.links.naverReservation, Icon: FaCalendarCheck },
-    { label: '진료시간', href: '/about/hours', Icon: FaClock },
+    { label: '진료시간', href: '/#location', Icon: FaClock },
   ];
 
   return (
@@ -42,7 +42,7 @@ export function SideQuickMenu() {
         const linkClassName = "group flex flex-col items-center justify-center w-[86px] h-[83px] hover:bg-gray-50 text-[11px] font-bold text-gray-800 text-center transition-colors duration-300";
         const linkContent = (
           <>
-            <div className="mb-1.5 text-gray-800 group-hover:text-[var(--color-primary)] transition-colors duration-300">
+            <div className="mb-1.5 text-gray-800 group-hover:text-[#27577F] transition-colors duration-300">
               <Icon size={27} />
             </div>
             {menu.label}
@@ -51,7 +51,7 @@ export function SideQuickMenu() {
 
         // 다른 상세 페이지에서 메인 앵커로 이동할 때는 브라우저의 기본 앵커 이동을 사용해
         // 메인 콘텐츠가 모두 그려진 뒤 정확한 위치로 이동하도록 합니다.
-        if (menu.label === '오시는길') {
+        if (menu.label === '오시는길' || menu.label === '진료시간') {
           return (
             <a key={i} href={menu.href} className={linkClassName}>
               {linkContent}
