@@ -67,10 +67,10 @@ export default function PostpartumCarePage() {
 
         <section className="care-hero" aria-labelledby="care-hero-title">
           <Image src="/images/care/SHJ_01.png" alt="진한의원 의료진" width={596} height={329} priority unoptimized />
-          <div style={{ background: 'var(--care-brown)' }}>
+          <div style={{ background: 'var(--care-hero-bg)' }}>
             <p style={{ fontFamily: "'Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif" }}>진&nbsp;/&nbsp;한&nbsp;/&nbsp;의&nbsp;/&nbsp;원</p>
-            <span style={{ color: 'var(--care-brand)', fontFamily: "'Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif" }}>산모와 아기를 위한</span>
-            <h2 id="care-hero-title" style={{ fontFamily: "'Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif", fontWeight: 400 }}><em style={{ color: 'var(--care-brand)' }}>100일 완성</em><strong>산후조리</strong></h2>
+            <span style={{ color: 'var(--care-hero-accent)', fontFamily: "'Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif" }}>산모와 아기를 위한</span>
+            <h2 id="care-hero-title" style={{ fontFamily: "'Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif", fontWeight: 400 }}><em style={{ color: 'var(--care-hero-accent)' }}>100일 완성</em><strong>산후조리</strong></h2>
           </div>
         </section>
 
@@ -418,4 +418,12 @@ const styles = String.raw`
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%)}
   @media(max-width:700px){.care-treatment-panel{padding:75px 14px 58px}.care-treatment-panel__tab{width:192px;height:82px;font-size:22px}.care-treatment-panel__sheet{padding:92px 16px 45px}.care-treatment-panel__sheet>h2{margin-bottom:32px;font-size:31px;letter-spacing:-2.7px}.care-treatment-effects{margin-bottom:43px;gap:8px}.care-treatment-effects strong{min-height:82px;padding:5px;font-size:12px;letter-spacing:-1px}.care-treatment-chart{margin-bottom:42px}.care-treatment-chart figcaption{margin-bottom:16px;font-size:24px}.care-treatment-chart__stage{font-size:11px}.care-treatment-chart__hanja{font-size:10px}.care-treatment-chart__blue,.care-treatment-chart__green,.care-treatment-chart__pink,.care-treatment-chart__purple{font-size:11px}.care-treatment-chart__axis,.care-treatment-chart__week{font-size:10px}.care-treatment-chart__icon{font-size:36px}.care-treatment-chart__detail{font-size:10px}.care-treatment-chart__phase{font-size:14px}.care-treatment-chart__phase-detail{font-size:8px}.care-treatment-programs>h2{font-size:28px;letter-spacing:-2.6px}.care-treatment-programs>p{margin:10px 0 28px;font-size:14px}.care-treatment-program{min-height:128px;margin-bottom:21px;grid-template-columns:42% 58%}.care-treatment-program>section{padding:11px 12px;border-radius:15px 0 0 15px}.care-treatment-program>section span{font-size:12px}.care-treatment-program>section strong{font-size:20px}.care-treatment-program>section small{margin-top:9px;font-size:11px}.care-treatment-program>aside{padding:9px 8px 9px 13px;border-radius:0 15px 15px 0}.care-treatment-program>aside img{width:86px;opacity:.5}.care-treatment-program>aside:after{background:rgba(255,255,255,.7)}.care-treatment-program li{margin:4px 0;padding-left:16px;font-size:11px;line-height:1.25}.care-treatment-program li:before{font-size:14px}.care-treatment-program:not(:last-child):after{bottom:-24px;left:calc(21% - 14px);width:28px;height:28px}}
   .care-programs>h2{font-size:38px;font-weight:700}.care-programs h3{font-size:25px}.care-programs ul{margin-top:0}.care-programs li{font-size:16px;line-height:1.45}.care-deer h2{font-family:'Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif}.care-deer>p{font-weight:400}.care-deer ul{text-align:center}.care-deer li{display:table;margin:8px auto;text-align:left}
+
+  /* 네이비 컬러 체계: CSS로 제어되는 연두 계열만 교체 */
+  .postpartum-care{--care-brand:#123961;--care-brand-deep:#0D3155;--care-brand-soft:#F3F5F7;--care-brown:#433124;--care-hero-bg:#123960;--care-hero-accent:#A4B7CC}
+  .care-hero>div{background:var(--care-hero-bg)}
+  .care-hero span,.care-hero em{color:var(--care-hero-accent)}
+  .c-green{fill:#123961}
+  .qa-orbit:before,.qa-orbit:after{border-color:#D8E3EE}
+  .timeline-benefit-icons b{background:#0D3155}.timeline-benefit-icons b:nth-child(2){background:#123961}.timeline-benefit-icons b:nth-child(3){background:#214B74}.timeline-benefit-icons b:nth-child(4){background:#0D3155}
 `;

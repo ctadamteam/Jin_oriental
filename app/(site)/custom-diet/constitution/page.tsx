@@ -429,7 +429,7 @@ export default function ConstitutionDietPage() {
         .program-section h2 { margin: 0 0 66px; color: #2e2e2e; text-align: center; font-family: Georgia, 'Batang', serif; font-size: 42px; letter-spacing: -4px; }
         .program-section h2::after { display: block; width: 600px; max-width: 72%; height: 6px; margin: 10px auto 0; background: #574039; content: ''; box-shadow: 0 2px 4px rgba(0,0,0,0.25); }
         .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 66px 38px; padding: 0 2px; }
-        .program-card h3 { margin: 0 0 11px; padding-bottom: 7px; color: #3d3d3d; border-bottom: 5px solid #a5c614; font-family: 'Batang', serif; font-size: 31px; font-weight: 500; letter-spacing: -3px; }
+        .program-card h3 { margin: 0 0 11px; padding-bottom: 7px; color: #3d3d3d; border-bottom: 5px solid #123961; font-family: 'Batang', serif; font-size: 31px; font-weight: 500; letter-spacing: -3px; }
         .program-card p { min-height: 73px; margin: 0 0 14px; color: #585858; font-size: 15px; line-height: 1.46; letter-spacing: -1px; word-break: keep-all; }
         .program-image { position: relative; width: 100%; aspect-ratio: 1.31; overflow: hidden; background: #f4f4f4; }
         .program-image img { width: 100%; height: 100%; object-fit: cover; }
@@ -533,7 +533,7 @@ export default function ConstitutionDietPage() {
         .program-card p{min-height:92px;font-family:Arial,'Malgun Gothic',sans-serif;font-size:18px;font-weight:400;line-height:1.6;letter-spacing:-1.1px}
 
         .acupuncture-section h2{display:table;width:fit-content;margin-bottom:24px;font-weight:700}
-        .acupuncture-section h2::after{display:block;width:289px;height:5px;margin-top:8px;background:#a5c614;content:''}
+        .acupuncture-section h2::after{display:block;width:289px;height:5px;margin-top:8px;background:#123961;content:''}
         .acupuncture-intro{font-family:Arial,'Malgun Gothic',sans-serif;font-size:18px;line-height:1.65}
         .ingredient-grid{gap:34px 42px}
         .ingredient-grid>div{position:relative;min-height:86px;padding-left:76px}
@@ -557,23 +557,23 @@ export default function ConstitutionDietPage() {
         @media (max-width:720px){.type-figure img[src="/images/che-diet/img03.png"]{height:383px}}
       `}</style>
       <style>{`
-        .constitution-page{--diet-brand:#a5c614;--diet-brand-soft:#edf5d8}
+        .constitution-page{--diet-brand:#123961;--diet-brand-soft:#f3f5f7}
 
         /* Match the shared custom-diet hero proportions used by the detox page. */
-        .constitution-hero{height:365px;grid-template-columns:672px 328px;margin-top:7px;background:#433124}
+        .constitution-hero{height:365px;grid-template-columns:672px 328px;margin-top:7px;background:#123961}
         .hero-photo-image{object-position:center}
-        .hero-copy{display:flex;min-height:365px;flex-direction:column;justify-content:center;padding:38px 32px;background:#433124}
-        .hero-kicker{margin:0 0 8px;color:#c7bbb1;font-size:15px;line-height:1.45;letter-spacing:-1px}
+        .hero-copy{display:flex;min-height:365px;flex-direction:column;justify-content:center;padding:38px 32px;background:#123961}
+        .hero-kicker{margin:0 0 8px;color:#a4b7cc;font-size:15px;line-height:1.45;letter-spacing:-1px}
         .hero-copy h2{margin:8px 0 16px;font-size:54px;font-weight:400;line-height:.98;letter-spacing:4px}
-        .hero-copy h2 em{color:var(--diet-brand);font-weight:700}
-        .hero-note{margin:0;color:#ece7e2;font-size:14px;line-height:1.75;letter-spacing:-.65px}
+        .hero-copy h2 em{color:#a4b7cc;font-weight:700}
+        .hero-note{margin:0;color:#eef3f8;font-size:14px;line-height:1.75;letter-spacing:-.65px}
 
         .intro-copy h2{font-weight:700}
         .intro-copy p{font-size:18px}
         .intro-copy mark,.type-description mark{padding:.12em .15em .26em;background:linear-gradient(transparent 18%,#fff4b0 18%,#fff4b0 100%,transparent 100%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
         .types-heading h2{font-size:38px}
-        .constitution-type--pale{background:#f4f6ef}
+        .constitution-type--pale{background:#f3f5f7}
         .type-title{color:var(--diet-brand)}
         .type-title::before,.type-title::after{background:var(--diet-brand)}
         .type-title span{background:var(--diet-brand)}
@@ -589,7 +589,7 @@ export default function ConstitutionDietPage() {
         .type-figure-seo--04 span:nth-child(1){top:24%;left:87%}.type-figure-seo--04 span:nth-child(2){top:35%;left:91%}.type-figure-seo--04 span:nth-child(3){top:40%;left:11%}.type-figure-seo--04 span:nth-child(4){top:93%;left:50%}
         .type-figure-seo--05 span:nth-child(1){top:20%;left:87%}.type-figure-seo--05 span:nth-child(2){top:43%;left:17%}.type-figure-seo--05 span:nth-child(3){top:54%;left:14%}.type-figure-seo--05 span:nth-child(4){top:93%;left:50%}
         .type-figure-seo--06 span:nth-child(1){top:24%;left:86%}.type-figure-seo--06 span:nth-child(2){top:38%;left:16%}.type-figure-seo--06 span:nth-child(3){top:93%;left:50%}
-        .type-figure-seo::selection,.type-figure-seo *::selection{background:rgba(165,198,20,.4);color:transparent}
+        .type-figure-seo::selection,.type-figure-seo *::selection{background:rgba(18,57,97,.4);color:transparent}
 
         .metabolism-graphic{display:flex;height:333px;align-items:center;justify-content:center;padding:12px 0}
         .metabolism-visual{position:relative;width:272px;max-width:100%}
@@ -597,7 +597,7 @@ export default function ConstitutionDietPage() {
         .metabolism-seo{position:absolute;inset:0;color:transparent;font-family:Arial,'Malgun Gothic',sans-serif;font-size:8pt;line-height:1.55;user-select:text}
         .metabolism-seo span{position:absolute;top:44%;text-align:center;white-space:nowrap;transform:translate(-50%,-50%)}
         .metabolism-seo__left{left:27%}.metabolism-seo__center{left:50%}.metabolism-seo__right{left:75%}
-        .metabolism-seo::selection,.metabolism-seo *::selection{background:rgba(165,198,20,.4);color:transparent}
+        .metabolism-seo::selection,.metabolism-seo *::selection{background:rgba(18,57,97,.4);color:transparent}
 
         /* Same title, spacing and card system as the middle-age diet program. */
         .program-section{padding:112px 24px 82px}
@@ -626,7 +626,7 @@ export default function ConstitutionDietPage() {
         .constitution-footer-seo{position:absolute;inset:0;z-index:1;color:transparent;font-family:Arial,'Malgun Gothic',sans-serif;font-size:13pt;font-weight:400;line-height:1.3;user-select:text}
         .constitution-footer-seo h2,.constitution-footer-seo p{position:absolute;margin:0;color:transparent;white-space:nowrap;transform:translate(-50%,-50%)}
         .constitution-footer-seo h2{top:29%;left:50%}.constitution-footer-seo p:nth-of-type(1){top:52%;left:50%}.constitution-footer-seo p:nth-of-type(2){top:68%;left:50%}
-        .constitution-footer-seo::selection,.constitution-footer-seo *::selection{background:rgba(165,198,20,.4);color:transparent}
+        .constitution-footer-seo::selection,.constitution-footer-seo *::selection{background:rgba(18,57,97,.4);color:transparent}
 
         @media (max-width:1000px) and (min-width:721px){
           .constitution-hero{height:auto;grid-template-columns:67.2% 32.8%;aspect-ratio:1000 / 365}

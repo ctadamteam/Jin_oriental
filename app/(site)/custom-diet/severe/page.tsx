@@ -28,7 +28,7 @@ export default function SevereObesityDietPage() {
 
 function HeroSection() {
   return (
-    <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#433124] text-white mb-8">
+    <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#123961] text-white mb-8">
       <div className="relative w-full h-[250px] md:h-full overflow-hidden">
         <Image 
           src="/images/personal/gd_section1.jpg" 
@@ -39,9 +39,9 @@ function HeroSection() {
         />
       </div>
       <div className="flex flex-col justify-center p-6 md:py-8 md:px-[32px]">
-        <p className="text-sm md:text-[15px] text-[#c7bbb1] tracking-tight mb-2">체질개선과 원인 치료!</p>
+        <p className="text-sm md:text-[15px] text-[#A4B7CC] tracking-tight mb-2">체질개선과 원인 치료!</p>
         <h2 className="w-full flex items-baseline gap-3 whitespace-nowrap text-3xl md:text-[54px] leading-tight mb-4 tracking-tight">
-          <span className="font-bold text-[#A5C614]">고도</span>
+          <span className="font-bold text-[#A4B7CC]">고도</span>
           <b className="text-white font-normal">비만</b>
         </h2>
         <p className="text-xs md:text-[14px] text-gray-200 leading-relaxed break-keep font-light opacity-90 w-full">
@@ -162,17 +162,17 @@ function IntroSection() {
         <div className="border-2 border-[#4b4b4b] rounded-full py-3 px-8 md:px-10 bg-white inline-flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
           <div className="flex items-center gap-2">
             <span>현재 체중 - 표준 체중</span>
-            <span className="text-[#A5C614] text-sm">▶</span>
+            <span className="text-[#123961] text-sm">▶</span>
             <span>20kg 이상</span>
           </div>
           <div className="flex items-center gap-2">
             <span>BMI (Body Mass Index)</span>
-            <span className="text-[#A5C614] text-sm">▶</span>
+            <span className="text-[#123961] text-sm">▶</span>
             <span>30 이상</span>
           </div>
         </div>
       </div>
-      <p className="mt-4 text-[#A5C614] font-bold text-[20px]">(BMI가 35 이상이면 초고도 비만)</p>
+      <p className="mt-4 text-[#123961] font-bold text-[20px]">(BMI가 35 이상이면 초고도 비만)</p>
     </section>
   );
 }
@@ -180,7 +180,7 @@ function IntroSection() {
 function CausesSection() {
   return (
     /* 고도비만의 유발원인 */
-    <section className="py-20 bg-[#f0f9f0] text-center px-8 md:px-16 lg:px-24">
+    <section className="py-20 bg-[rgba(18,57,97,0.05)] text-center px-8 md:px-16 lg:px-24">
       <h2 className="text-3xl md:text-[38px] font-bold text-gray-900 mb-12 tracking-tight">
         <span className="font-medium">고도비만의</span> 유발원인
       </h2>
@@ -262,10 +262,10 @@ function CausesSection() {
 function NecessitySection() {
   return (
     /* 고도 비만 다이어트 치료 필요성 */
-    <section className="py-24 bg-[#A5C614] text-center px-8 md:px-16 lg:px-20">
+    <section className="py-24 bg-[#123961] text-center px-8 md:px-16 lg:px-20">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl md:text-[35px] font-medium leading-none text-white mb-1 tracking-tight">고도 비만 다이어트에</h2>
-        <h2 className="text-3xl md:text-[38px] font-bold leading-none text-gray-900 mb-12 tracking-tight">치료가 꼭 필요한 이유</h2>
+        <h2 className="text-3xl md:text-[38px] font-bold leading-none text-[#A4B7CC] mb-12 tracking-tight">치료가 꼭 필요한 이유</h2>
         
         <div className="flex flex-col gap-6">
           {/* Row 1 */}
@@ -291,7 +291,7 @@ function NecessityItem({num, text}: {num:string, text:string}) {
   return (
     <div className="bg-white px-2 py-10 shadow-sm flex flex-col items-center justify-start h-full">
        <div className="text-[26px] font-medium text-gray-800 mb-4">{num}</div>
-       <div className="w-10 border-b-2 border-[#A5C614] mb-6"></div>
+       <div className="w-10 border-b-2 border-[#123961] mb-6"></div>
        <p className="text-gray-800 text-sm md:text-[18px] leading-[1.6] break-keep" dangerouslySetInnerHTML={{__html: text}}></p>
     </div>
   );
@@ -300,7 +300,7 @@ function NecessityItem({num, text}: {num:string, text:string}) {
 function ViciousCycleSection() {
   return (
     /* 고도비만이 불러오는 악영향 */
-    <section className="py-20 bg-[#f0f9f0] text-center px-8 md:px-16 lg:px-24 border-b border-gray-200">
+    <section className="py-20 bg-[rgba(18,57,97,0.05)] text-center px-8 md:px-16 lg:px-24 border-b border-gray-200">
       <h2 className="text-3xl md:text-[38px] font-bold text-gray-900 mb-16 tracking-tight">
         <span className="font-medium">고도비만이 불러오는</span> 악영향
       </h2>
@@ -313,7 +313,7 @@ function ViciousCycleSection() {
                  <Image src="/images/personal/gd_section5_1.png" alt="심리적 영향" fill className="object-contain object-bottom scale-110 transform origin-bottom translate-y-[11px]" />
                </div>
             </div>
-            <div className="bg-[#A5C614] text-white py-2 w-full text-center font-bold text-lg md:text-[20px]">
+            <div className="bg-[#123961] text-white py-2 w-full text-center font-bold text-lg md:text-[20px]">
               심리적 영향
             </div>
           </div>
@@ -327,7 +327,7 @@ function ViciousCycleSection() {
                  <Image src="/images/personal/gd_section5_2_v2.png" alt="내과적 영향" fill className="object-contain object-bottom scale-110 transform origin-bottom translate-y-[15px]" />
                </div>
             </div>
-            <div className="bg-[#A5C614] text-white py-2 w-full text-center font-bold text-lg md:text-[20px]">
+            <div className="bg-[#123961] text-white py-2 w-full text-center font-bold text-lg md:text-[20px]">
               내과적 영향
             </div>
           </div>
@@ -341,7 +341,7 @@ function ViciousCycleSection() {
                  <Image src="/images/personal/gd_section5_3.png" alt="외과적 영향" fill className="object-contain object-bottom" />
                </div>
             </div>
-            <div className="bg-[#A5C614] text-white py-2 w-full text-center font-bold text-lg md:text-[20px]">
+            <div className="bg-[#123961] text-white py-2 w-full text-center font-bold text-lg md:text-[20px]">
               외과적 영향
             </div>
           </div>
@@ -354,7 +354,7 @@ function ViciousCycleSection() {
 
 function ProgramHeaderSection() {
   return (
-    <section className="relative w-full py-16 text-center text-white overflow-hidden bg-[#3a332d]">
+    <section className="relative w-full py-16 text-center text-white overflow-hidden bg-[#123961]">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/personal/gd_section7.png"
@@ -362,13 +362,13 @@ function ProgramHeaderSection() {
           fill
           className="object-cover object-left scale-110 -translate-x-[250px]"
         />
-        <div className="absolute inset-0 bg-[#3a332d]/90"></div>
+        <div className="absolute inset-0 bg-[#123961]/90"></div>
       </div>
       
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-16">
         <h2 className="text-2xl md:text-[35px] font-medium leading-none text-white mb-0 tracking-tight">진한의원 단계별</h2>
         <h1 className="text-3xl font-bold text-white mb-12 tracking-tight leading-[0.92]">
-          <span className="relative top-px text-[#A5C614] text-4xl md:text-[38px]">고도비만</span><br/>
+          <span className="relative top-px text-[#A4B7CC] text-4xl md:text-[38px]">고도비만</span><br/>
           <span className="text-2xl md:text-[35px] font-medium">다이어트 프로그램</span>
         </h1>
       
@@ -400,7 +400,7 @@ function ProgramStep1Section() {
     <section className="pt-20 pb-[50px] bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
-           <div className="bg-[#A5C614] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">1단계</div>
+           <div className="bg-[#123961] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">1단계</div>
            <h2 className="text-[28px] md:text-[35px] font-bold text-gray-900">꺼져있는 지방 대사 스위치를 켜자.</h2>
         </div>
         
@@ -415,8 +415,8 @@ function ProgramStep1Section() {
         <p className="text-gray-800 text-base md:text-lg font-normal leading-relaxed break-keep mb-4">
           <span className="bg-[#fff4b0]">해독 요법을 통해서 병적인 과잉 식욕을 유발하는 독소와 노폐물을 청장 작용과 간의 해독 작용으로 개선하고 만성 적인 피로와 전신적인 부종을 개선하고 과식과 과체중으로 망가진 몸 상태를 근본적으로 개선해야 요요 현상이 줄어들 수 있습니다.</span>
         </p>
-        <div className="border border-[#A5C614] px-4 py-2 md:px-5 md:py-3 mb-16">
-          <p className="text-base md:text-lg text-gray-700 font-normal"><span className="bg-[#A5C614] text-white px-2 py-1 rounded text-xs mr-2 font-bold">Tip</span> 배가 많이 나올수록, 체중 민감할 때 복부가 찬 사람일수록 <span className="bg-[#fff4b0]">장내 환경이 나빠져 있고 독소가 많다</span>고 볼 수 있습니다.</p>
+        <div className="border border-[#123961] px-4 py-2 md:px-5 md:py-3 mb-16">
+          <p className="text-base md:text-lg text-gray-700 font-normal"><span className="bg-[#123961] text-white px-2 py-1 rounded text-xs mr-2 font-bold">Tip</span> 배가 많이 나올수록, 체중 민감할 때 복부가 찬 사람일수록 <span className="bg-[#fff4b0]">장내 환경이 나빠져 있고 독소가 많다</span>고 볼 수 있습니다.</p>
         </div>
 
         <div className="text-center mb-8 mt-16">
@@ -449,12 +449,12 @@ function ProgramStep1Section() {
             </div>
           </div>
 
-          <div className="border-2 border-[#A5C614] rounded-3xl overflow-hidden flex flex-col bg-[#fffef9]">
+          <div className="border-2 border-[#123961] rounded-3xl overflow-hidden flex flex-col bg-[#fffef9]">
             <div className="pt-14 pb-0 px-0 flex-1 relative">
               <span className="font-bold text-slate-800 text-lg absolute top-5 left-6 z-20">해독치료 후</span>
               <div className="relative w-full">
                 <Image src="/images/personal/gd_section8_2.png" alt="해독치료 후 정상식욕" width={600} height={700} className="w-full h-auto translate-y-[1px]" />
-                <div className="pointer-events-auto absolute inset-0 z-10 select-text text-[8pt] leading-tight text-transparent selection:bg-[#A5C614]/30 selection:text-white" aria-label="해독치료 후 정상식욕">
+                <div className="pointer-events-auto absolute inset-0 z-10 select-text text-[8pt] leading-tight text-transparent selection:bg-[#123961]/30 selection:text-white" aria-label="해독치료 후 정상식욕">
                   <span className="absolute left-[24%] top-[12%]">뇌</span>
                   <span className="absolute left-[25%] top-[23%]">식욕억제 렙틴호르몬 상승</span>
                   <span className="absolute left-[25%] top-[28%]">식욕자극 그렐린 호르몬 상승</span>
@@ -466,7 +466,7 @@ function ProgramStep1Section() {
                 </div>
               </div>
             </div>
-            <div className="bg-[#A5C614] py-3 text-center shadow-[0_-4px_15px_rgba(165,198,20,0.2)]">
+            <div className="bg-[#123961] py-3 text-center shadow-[0_-4px_15px_rgba(18,57,97,0.2)]">
               <span className="text-white font-bold text-lg md:text-xl tracking-wider">정상식욕</span>
             </div>
           </div>
@@ -481,7 +481,7 @@ function ProgramStep2Section() {
     <section className="pt-[50px] pb-10 bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
-           <div className="bg-[#A5C614] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">2단계</div>
+           <div className="bg-[#123961] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">2단계</div>
            <h2 className="text-[28px] md:text-[35px] font-bold text-gray-900">살이 찌는 원인부터 치료하자.</h2>
         </div>
         
@@ -500,13 +500,13 @@ function ProgramStep2Section() {
           <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 md:gap-2 lg:gap-4 relative">
             
             <div className="flex-1 flex flex-col">
-              <div className="bg-white border-2 border-[#A5C614] rounded-2xl overflow-hidden flex flex-col h-full">
+              <div className="bg-white border-2 border-[#123961] rounded-2xl overflow-hidden flex flex-col h-full">
                 <div className="relative min-h-[280px] flex-1 flex items-center justify-center p-6">
                   <span className="absolute top-16 left-[20%] md:left-[25%] translate-x-[20px] translate-y-[20px] text-[#c02b23] text-2xl font-bold z-20">70%</span>
                   <Image src="/images/personal/gd_section9_1.png" alt="정상인의 위(Stomach)" width={240} height={265} className="w-auto h-[160px] md:h-[180px] object-contain" />
                 </div>
                 {/* Title */}
-                <div className="bg-[#A5C614] py-2 text-center text-white font-bold text-lg md:text-xl">
+                <div className="bg-[#123961] py-2 text-center text-white font-bold text-lg md:text-xl">
                   정상인의 위용적
                 </div>
               </div>
@@ -529,7 +529,7 @@ function ProgramStep2Section() {
                 <div className="absolute left-0 top-0 w-full text-white z-0" style={{ WebkitTextStroke: '5px white' }} aria-hidden="true">
                   위가 늘어나면서<br/>위벽이 붓고 단단해짐
                 </div>
-                <div className="relative z-10 text-[#A5C614]">
+                <div className="relative z-10 text-[#123961]">
                   위가 늘어나면서<br/>위벽이 붓고 단단해짐
                 </div>
               </div>
@@ -569,7 +569,7 @@ function ProgramStep2Section() {
                 <div className="absolute left-0 top-0 w-full text-white z-0" style={{ WebkitTextStroke: '5px white' }} aria-hidden="true">
                   위가 늘어나면서<br/>위벽이 붓고 단단해짐
                 </div>
-                <div className="relative z-10 text-[#A5C614]">
+                <div className="relative z-10 text-[#123961]">
                   위가 늘어나면서<br/>위벽이 붓고 단단해짐
                 </div>
               </div>
@@ -619,8 +619,8 @@ function ProgramStep2Section() {
         <p className="text-gray-700 text-[17px] md:text-[19px] leading-relaxed break-keep mb-4">
           혈당이 높게 유지되고 인슐린 수치가 높을 때에는 체지방이 연소되지 않으며 <strong className="bg-[#fff4b0]">과식할수록, 체중이 많이 나갈수록 인슐린 저항성이 생겨서 점점 더 지방을 쓰지 않는 몸으로 바뀌게 됩니다.</strong>
         </p>
-        <div className="border border-[#A5C614] px-4 py-2 md:px-5 md:py-3 mb-10">
-          <p className="text-base md:text-lg text-gray-700 font-normal leading-relaxed break-keep"><span className="bg-[#A5C614] text-white px-2 py-1 rounded text-xs mr-2 font-bold">Tip</span> 높아진 인슐린 저항성을 개선하기 위해서는 혈당을 짙게 올리는 음식의 섭취를 줄이고, <span className="bg-[#fff4b0]">공복을 잘 견딜 수 있는 몸 상태를 만드는 것이 무엇보다 중요</span>합니다. <span className="bg-[#fff4b0]">빈혈이 있거나 체력이 떨어질수록 소식을 하고 공복을 견디기 어려우므로 지속적으로 소식</span>할 수 있도록 보약 다이어트가 필요한 이유가 이 때문입니다.</p>
+        <div className="border border-[#123961] px-4 py-2 md:px-5 md:py-3 mb-10">
+          <p className="text-base md:text-lg text-gray-700 font-normal leading-relaxed break-keep"><span className="bg-[#123961] text-white px-2 py-1 rounded text-xs mr-2 font-bold">Tip</span> 높아진 인슐린 저항성을 개선하기 위해서는 혈당을 짙게 올리는 음식의 섭취를 줄이고, <span className="bg-[#fff4b0]">공복을 잘 견딜 수 있는 몸 상태를 만드는 것이 무엇보다 중요</span>합니다. <span className="bg-[#fff4b0]">빈혈이 있거나 체력이 떨어질수록 소식을 하고 공복을 견디기 어려우므로 지속적으로 소식</span>할 수 있도록 보약 다이어트가 필요한 이유가 이 때문입니다.</p>
         </div>
 
         {/* Treatment Mechanism */}
@@ -699,7 +699,7 @@ function ProgramStep3Section() {
     <section className="pt-10 pb-12 bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
-           <div className="bg-[#A5C614] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">3단계</div>
+           <div className="bg-[#123961] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">3단계</div>
            <h2 className="text-[28px] md:text-[35px] font-bold text-gray-900">감량 후 회복기를 가지자</h2>
         </div>
 
@@ -710,9 +710,9 @@ function ProgramStep3Section() {
         </p>
 
         {/* 3-1 */}
-        <div className="relative border-[3px] border-[#A5C614] rounded-3xl p-6 md:p-10 mt-16 mb-6">
+        <div className="relative border-[3px] border-[#123961] rounded-3xl p-6 md:p-10 mt-16 mb-6">
           {/* Header Badge */}
-          <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#A5C614] text-white font-bold text-[18px] md:text-[22px] px-8 py-2 whitespace-nowrap">
+          <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#123961] text-white font-bold text-[18px] md:text-[22px] px-8 py-2 whitespace-nowrap">
             단식을 통한 급속 감량법
           </div>
           
@@ -758,9 +758,9 @@ function ProgramStep3Section() {
         </div>
 
         {/* 3-2 */}
-        <div className="relative border-[3px] border-[#A5C614] rounded-3xl p-6 md:p-10 mt-16 mb-16">
+        <div className="relative border-[3px] border-[#123961] rounded-3xl p-6 md:p-10 mt-16 mb-16">
           {/* Header Badge */}
-          <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#A5C614] text-white font-bold text-[18px] md:text-[22px] px-8 py-2 whitespace-nowrap">
+          <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#123961] text-white font-bold text-[18px] md:text-[22px] px-8 py-2 whitespace-nowrap">
             적정감량속도를 지키고 유지기를 거치는 단계적 감량법
           </div>
           
@@ -878,7 +878,7 @@ function ProgramStep4Section() {
     <section className="pt-12 pb-20 bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto mb-8">
         <div className="flex items-center gap-4 mb-8">
-           <div className="bg-[#A5C614] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px] shrink-0">4단계</div>
+           <div className="bg-[#123961] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px] shrink-0">4단계</div>
            <h2 className="text-[28px] md:text-[35px] font-bold text-gray-900 break-keep">생활습관을 치료하자.</h2>
         </div>
 

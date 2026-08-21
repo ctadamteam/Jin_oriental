@@ -192,17 +192,17 @@ export default function LiftingPage() {
         @media(max-width:680px){.lift-miinsu{height:auto;min-height:0;aspect-ratio:1000 / 1415}.lift-miinsu>div{padding:17.1vw 0 0 12.3vw}}
       `}</style>
       <style>{`
-        .lift-page{--lift-brand:#a5c614;--lift-brand-deep:#7f9a10;--lift-brown:#433124}
+        .lift-page{--lift-brand:#123961;--lift-brand-deep:#0D3155;--lift-brown:#433124;--lift-hero-bg:#123960;--lift-hero-accent:#A4B7CC}
 
         /* 상단과 히어로: 해독 다이어트 페이지의 기준 박스에 맞춤 */
         .lift-title h1{margin-left:0}
-        .lift-hero{height:365px;grid-template-columns:672px 328px;background:var(--lift-brown)}
-        .lift-hero-copy{display:flex;padding:32px;justify-content:center;flex-direction:column;background:var(--lift-brown);text-align:left}
-        .lift-hero-copy p{margin:0 0 8px;color:#c7bbb1;font-size:15px;letter-spacing:-.4px}
-        .lift-hero-copy h2{margin:0 0 16px;color:var(--lift-brand);font-size:54px;font-weight:700;line-height:.98;letter-spacing:-2px}
+        .lift-hero{height:365px;grid-template-columns:672px 328px;background:var(--lift-hero-bg)}
+        .lift-hero-copy{display:flex;padding:32px;justify-content:center;flex-direction:column;background:var(--lift-hero-bg);text-align:left}
+        .lift-hero-copy p{margin:0 0 8px;color:var(--lift-hero-accent);font-size:15px;letter-spacing:-.4px}
+        .lift-hero-copy h2{margin:0 0 16px;color:var(--lift-hero-accent);font-size:54px;font-weight:700;line-height:.98;letter-spacing:-2px}
         .lift-hero-copy h2 strong{color:#fff;font-size:54px;font-weight:400;letter-spacing:0}
         .lift-hero-copy>div{gap:10px;margin-top:0;justify-content:flex-start}
-        .lift-hero-copy b,.lift-hero-copy b:nth-child(2),.lift-hero-copy b:nth-child(3){width:78px;height:78px;background:var(--lift-brand);font-size:14px;font-weight:700}
+        .lift-hero-copy b,.lift-hero-copy b:nth-child(2),.lift-hero-copy b:nth-child(3){width:78px;height:78px;background:var(--lift-hero-accent);color:#123961;font-size:14px;font-weight:700}
         .lift-hero-copy b em{font-size:16px}
 
         /* 눈가·팔자·가시 전용 매선 */

@@ -9,7 +9,7 @@ export default function DetoxDietPage() {
         <h1 className="text-3xl md:text-[38px] font-serif text-gray-900 tracking-tighter leading-none font-normal">해독 다이어트</h1>
       </header>
 
-      <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#433124] text-white mb-8">
+      <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#123960] text-white mb-8">
         <div className="relative w-full h-[250px] md:h-full overflow-hidden">
           <Image 
             src="/images/personal/detox_title.jpg" 
@@ -20,9 +20,9 @@ export default function DetoxDietPage() {
           />
         </div>
         <div className="flex flex-col justify-center p-6 md:py-8 md:px-[32px]">
-          <p className="text-sm md:text-[15px] text-[#c7bbb1] tracking-tight mb-2">1:1 체질별 맞춤</p>
+          <p className="text-sm md:text-[15px] text-[#A4B7CC] tracking-tight mb-2">1:1 체질별 맞춤</p>
           <h2 className="w-full text-3xl md:text-[54px] leading-tight mb-4 tracking-tight">
-            <span className="font-bold text-[#A5C614] block">해독</span>
+            <span className="font-bold text-[#A4B7CC] block">해독</span>
             <b className="text-white font-normal block">다이어트</b>
           </h2>
           <p className="text-xs md:text-[14px] text-gray-200 leading-relaxed break-keep font-light opacity-90 w-full">
@@ -34,7 +34,7 @@ export default function DetoxDietPage() {
       {/* 2. Intro Section (독소란 무엇인가요?) */}
       <section className="w-full max-w-5xl mx-auto px-4 pt-16 pb-8 md:pt-24 md:pb-12">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-medium text-gray-800 tracking-tight">진한의원 <span className="text-[#A5C614] font-bold">해독요법</span></h2>
+          <h2 className="text-3xl md:text-5xl font-medium text-gray-800 tracking-tight">진한의원 <span className="text-[#08325C] font-bold">해독요법</span></h2>
         </div>
         
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
@@ -71,7 +71,7 @@ export default function DetoxDietPage() {
       <section className="w-full pt-8 pb-16 md:pt-12 md:pb-24 bg-white">
         <div className="w-full max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight mb-12">
-            해독요법! <strong className="font-bold text-[#A5C614]">이런분들께 추천</strong>합니다
+            해독요법! <strong className="font-bold text-[#08325C]">이런분들께 추천</strong>합니다
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
@@ -122,7 +122,7 @@ export default function DetoxDietPage() {
       </section>
 
       {/* 4. Symptom Process (각종 이상 증상들) */}
-      <section className="w-full relative py-20 md:py-32 text-white bg-[#3a332d] overflow-hidden">
+      <section className="w-full relative py-20 md:py-32 text-white bg-[#08325C] overflow-hidden">
         {/* 배경 이미지 래퍼 (가장자리 그라데이션 페이드 효과 적용) */}
         <div 
           className="absolute inset-0 w-full max-w-5xl mx-auto z-0" 
@@ -138,12 +138,12 @@ export default function DetoxDietPage() {
             className="object-cover object-center opacity-30" 
           />
           {/* 상하 기본 오버레이 */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#3a332d]/50 to-[#3a332d]/90 z-0 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#08325C]/50 to-[#08325C]/90 z-0 pointer-events-none"></div>
         </div>
 
         <div className="w-full max-w-5xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-2xl md:text-[38px] font-light mb-16 md:mb-24 tracking-tight">
-            몸 속에 독소가 쌓일 때 생기는 <strong className="font-bold text-[#A5C614]">각종 이상 증상들</strong>
+            몸 속에 독소가 쌓일 때 생기는 <strong className="font-bold text-[#A4B7CC]">각종 이상 증상들</strong>
           </h2>
           
           <div className="relative w-full">
@@ -231,7 +231,7 @@ export default function DetoxDietPage() {
       <section className="w-full pt-16 pb-8 md:pt-24 md:pb-12 bg-white overflow-hidden">
         <div className="w-full max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight mb-2">해독한약의 <strong className="font-bold text-[#A5C614]">치료기전</strong></h2>
+          <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight mb-2">해독한약의 <strong className="font-bold text-[#08325C]">치료기전</strong></h2>
           </div>
           
           <div className="relative flex flex-col items-center justify-center w-full -mt-[100px]">
@@ -312,7 +312,7 @@ export default function DetoxDietPage() {
               <div className="flex flex-col space-y-8 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                 {/* 간 */}
                 <div>
-                  <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>간</h4>
+                  <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#08325C] mr-2"></span>간</h4>
                   <div className="flex text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep">
                     <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
                     <div>시호, 청피, 치자 등으로 쓸개즙 분비를 촉진하고, 소엽, 곽향 등으로 <span className="bg-[#fff4b0] px-1">스트레스로 인한 장의 억제·흥분을 조절합니다</span>.</div>
@@ -321,7 +321,7 @@ export default function DetoxDietPage() {
 
                 {/* 대장 */}
                 <div>
-                  <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>대장</h4>
+                  <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#08325C] mr-2"></span>대장</h4>
                   <div className="flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep">
                     <div className="flex">
                       <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
@@ -336,7 +336,7 @@ export default function DetoxDietPage() {
 
                 {/* 위 */}
                 <div>
-                  <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>위</h4>
+                  <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#08325C] mr-2"></span>위</h4>
                   <div className="flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep">
                     <div className="flex">
                       <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
@@ -359,7 +359,7 @@ export default function DetoxDietPage() {
 
                 {/* 소장 */}
                 <div>
-                  <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#A5C614] mr-2"></span>소장</h4>
+                  <h4 className="font-bold text-lg mb-4 text-[#3a332d] flex items-center"><span className="w-2 h-2 rounded-full bg-[#08325C] mr-2"></span>소장</h4>
                   <div className="flex flex-col gap-3 text-sm md:text-[15px] text-gray-700 leading-relaxed break-keep">
                     <div className="flex">
                       <div className="w-5 h-5 shrink-0 bg-[#444] text-white flex items-center justify-center text-xs mt-1 mr-2.5 rounded-none font-bold">1</div>
@@ -381,7 +381,7 @@ export default function DetoxDietPage() {
       <section className="w-full bg-[#f8f9f6] pt-[70px] pb-16 md:pt-[86px] md:pb-24">
         <div className="w-full max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight">해독 효능이 있는 <strong className="font-bold text-[#A5C614]">한약재</strong></h2>
+            <h2 className="text-2xl md:text-[38px] font-light text-gray-800 tracking-tight">해독 효능이 있는 <strong className="font-bold text-[#08325C]">한약재</strong></h2>
           </div>
           
           <div className="flex flex-col gap-6 max-w-4xl mx-auto">
@@ -461,7 +461,7 @@ export default function DetoxDietPage() {
         <div className="w-full max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-light text-gray-800 tracking-tight">
-              해독은 <strong className="font-bold text-[#A5C614]">청소 - 재건 - 유지</strong>의 3단계로 이루어집니다
+              해독은 <strong className="font-bold text-[#08325C]">청소 - 재건 - 유지</strong>의 3단계로 이루어집니다
             </h2>
           </div>
           
@@ -711,9 +711,9 @@ export default function DetoxDietPage() {
         
         <div className="w-full flex flex-col md:flex-row min-h-[360px] md:min-h-[420px]">
           {/* 좌측 박스 */}
-          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] bg-[#edf2e8] relative overflow-hidden flex flex-col items-center justify-end p-8 md:pb-12">
+          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] bg-[#EBEFF2] relative overflow-hidden flex flex-col items-center justify-end p-8 md:pb-12">
             {/* 배경 대형 숫자 1 */}
-            <div className="absolute top-2 left-4 text-[#d3e2cb] text-[120px] md:text-[170px] font-bold leading-none select-none z-0 pointer-events-none">
+            <div className="absolute top-2 left-4 text-[#DDE5EB] text-[120px] md:text-[170px] font-bold leading-none select-none z-0 pointer-events-none">
               1
             </div>
             
@@ -778,7 +778,7 @@ export default function DetoxDietPage() {
                 </div>
 
                 {/* 중앙 연두색 원형 화살표 */}
-                <div className="w-11 h-11 rounded-full bg-[#8cb82b] text-white flex items-center justify-center text-lg font-bold shadow-lg shrink-0 z-10 self-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 pointer-events-none">
+                <div className="w-11 h-11 rounded-full bg-[#123960] text-white flex items-center justify-center text-lg font-bold shadow-lg shrink-0 z-10 self-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 pointer-events-none">
                   ▶
                 </div>
 
@@ -787,7 +787,7 @@ export default function DetoxDietPage() {
                   <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden shrink-0">
                     <Image src="/images/personal/detox_section9_1_2.png" alt="치료 후" fill className="object-contain" unoptimized={true} />
                   </div>
-                  <h4 className="text-[20px] font-bold text-[#8cb82b] mb-3">After</h4>
+                  <h4 className="text-[20px] font-bold text-[#123960] mb-3">After</h4>
                   <p className="text-[18px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
                     상체에 열감이 내려가, 안압 증상이 좋아졌으며, 두피에 가려움증이 줄어듦. 혈액순환이 원활해져 복부가 따뜻해지고, 소화가 잘됨.
                   </p>
@@ -813,7 +813,7 @@ export default function DetoxDietPage() {
                 </div>
 
                 {/* 중앙 연두색 원형 화살표 */}
-                <div className="w-11 h-11 rounded-full bg-[#8cb82b] text-white flex items-center justify-center text-lg font-bold shadow-lg shrink-0 z-10 self-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 pointer-events-none">
+                <div className="w-11 h-11 rounded-full bg-[#123960] text-white flex items-center justify-center text-lg font-bold shadow-lg shrink-0 z-10 self-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 pointer-events-none">
                   ▶
                 </div>
 
@@ -822,7 +822,7 @@ export default function DetoxDietPage() {
                   <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden shrink-0">
                     <Image src="/images/personal/detox_section9_2_2.png" alt="치료 후" fill className="object-contain" unoptimized={true} />
                   </div>
-                  <h4 className="text-[20px] font-bold text-[#8cb82b] mb-3">After</h4>
+                  <h4 className="text-[20px] font-bold text-[#123960] mb-3">After</h4>
                   <p className="text-[18px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
                     상열감이 없어지면서 두통과 머리 무거움 증상이 완화됨. 수면 양호, 변비가 호전되고, 위장 불편감이 해소됨.
                   </p>
@@ -848,7 +848,7 @@ export default function DetoxDietPage() {
                 </div>
 
                 {/* 중앙 연두색 원형 화살표 */}
-                <div className="w-11 h-11 rounded-full bg-[#8cb82b] text-white flex items-center justify-center text-lg font-bold shadow-lg shrink-0 z-10 self-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 pointer-events-none">
+                <div className="w-11 h-11 rounded-full bg-[#123960] text-white flex items-center justify-center text-lg font-bold shadow-lg shrink-0 z-10 self-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 pointer-events-none">
                   ▶
                 </div>
 
@@ -857,7 +857,7 @@ export default function DetoxDietPage() {
                   <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden shrink-0">
                     <Image src="/images/personal/detox_section9_3_2.png" alt="치료 후" fill className="object-contain" unoptimized={true} />
                   </div>
-                  <h4 className="text-[20px] font-bold text-[#8cb82b] mb-3">After</h4>
+                  <h4 className="text-[20px] font-bold text-[#123960] mb-3">After</h4>
                   <p className="text-[18px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
                     복부 냉감과 명치압통이 줄어들었으며, 딱딱했던 배가 부드러워졌음. 몸무게가 줄어들었음.
                   </p>
@@ -883,7 +883,7 @@ export default function DetoxDietPage() {
                 </div>
 
                 {/* 중앙 연두색 원형 화살표 */}
-                <div className="w-11 h-11 rounded-full bg-[#8cb82b] text-white flex items-center justify-center text-lg font-bold shadow-lg shrink-0 z-10 self-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 pointer-events-none">
+                <div className="w-11 h-11 rounded-full bg-[#123960] text-white flex items-center justify-center text-lg font-bold shadow-lg shrink-0 z-10 self-center md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 pointer-events-none">
                   ▶
                 </div>
 
@@ -892,7 +892,7 @@ export default function DetoxDietPage() {
                   <div className="w-full aspect-[4/3] relative bg-black mb-6 overflow-hidden shrink-0">
                     <Image src="/images/personal/detox_section9_4_2.png" alt="치료 후" fill className="object-contain" unoptimized={true} />
                   </div>
-                  <h4 className="text-[20px] font-bold text-[#8cb82b] mb-3">After</h4>
+                  <h4 className="text-[20px] font-bold text-[#123960] mb-3">After</h4>
                   <p className="text-[18px] text-[#444444] leading-relaxed break-keep max-w-[360px]">
                     생리 주기가 일정해짐. 생리통이 줄어듦. 어깨결림 완화. 수면장애가 호전되었음.
                   </p>

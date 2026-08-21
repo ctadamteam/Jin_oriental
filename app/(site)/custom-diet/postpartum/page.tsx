@@ -211,7 +211,7 @@ export default function PostpartumDietPage() {
       `}</style>
       <style>{`
         @font-face{font-family:'TheFaceShopInkLipquid';src:url('/fonts/THEFACESHOP-INKLIPQUID.TTF') format('truetype');font-display:swap}
-        .pp-hero-copy h2{width:280px;letter-spacing:4px}.pp-hero-copy h2 em,.pp-hero-copy h2>span{letter-spacing:4px;text-align:right}.pp-stat-photo:before{background:rgba(255,255,255,.44)}.pp-stat-copy>p{color:#3d3938}.pp-stat-copy small{color:#4e4847;font-weight:500}.pp-stat-copy i{color:#a8c914}
+        .pp-hero-copy h2{width:280px;letter-spacing:4px}.pp-hero-copy h2 em,.pp-hero-copy h2>span{letter-spacing:4px;text-align:right}.pp-stat-photo:before{background:rgba(255,255,255,.44)}.pp-stat-copy>p{color:#3d3938}.pp-stat-copy small{color:#4e4847;font-weight:500}.pp-stat-copy i{color:#123961}
         .pp-cause-list i,.pp-cause-list--right i{width:39px;margin-right:9px;margin-left:12px}.pp-cause-person img{transform:translateY(100px)}.pp-cause-person strong{position:absolute;top:50%;width:180px;margin:0;transform:translateY(-300px);color:#5e3b3a;font-family:'TheFaceShopInkLipquid','Nanum Pen Script','Malgun Gothic',cursive;font-size:28px;line-height:1.16;letter-spacing:-1.5px}.pp-cause-person strong span{display:block}.pp-cause-center{display:flex;flex-direction:column;gap:3px;white-space:nowrap}.pp-cause-center span,.pp-cause-center strong{display:block}.pp-cause-details .pp-highlight{padding-bottom:2px;background:linear-gradient(transparent 45%,#fff039 45%,#fff039 93%,transparent 93%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
         .pp-effect-grid h3{font-size:18px}.pp-effect-grid p{font-size:17px;line-height:1.45}.pp-effect-grid article:nth-child(2) p{line-height:1.5}
         .pp-benefit-copy li{width:342px}.pp-benefit-copy li:nth-child(3){white-space:nowrap}.pp-benefits>img{align-self:end;object-fit:contain;object-position:right bottom}
@@ -230,15 +230,15 @@ export default function PostpartumDietPage() {
         @media(max-width:680px){.pp-hero-copy h2{transform:translateX(-58px)}.pp-results .pp-section-title{font-size:30px}.pp-results-kicker{font-size:12px}.pp-case-header>b{font-size:15px}.pp-case-header p{font-size:19px}.pp-case-summary{gap:4px;padding:4px 5px;font-size:12px;letter-spacing:-.9px}.pp-case-summary i{margin-left:4px;font-size:18px}.pp-case-stage p{font-size:14px}.pp-case-stage p strong{font-size:15px}.pp-case-stage p small{font-size:12px}}
       `}</style>
       <style>{`
-        .pp-page{--pp-brand:#a5c614;--pp-brand-soft:#edf5d8;--pp-brown:#4a352d;--pp-soft-gray:#f2f2f2}
+        .pp-page{--pp-brand:#123961;--pp-brand-soft:#f3f5f7;--pp-brown:#4a352d;--pp-soft-gray:#f2f2f2}
         .pp-highlight{padding:0 .08em .14em;background:linear-gradient(transparent 30%,#fff4b0 30%,#fff4b0 96%,transparent 96%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
         /* 상단: 해독 다이어트 페이지의 공통 히어로 비율 */
-        .pp-hero{height:365px;margin-top:8px;grid-template-columns:672px 328px;background:var(--pp-brown)}
-        .pp-hero-copy{display:flex;padding:32px;flex-direction:column;justify-content:center;background:var(--pp-brown)}
-        .pp-hero-copy>p:first-child{margin:0 0 8px;color:#c7bbb1;font-size:15px;line-height:1.4}
-        .pp-hero-copy h2,.pp-hero-copy h2 em{display:block;width:auto;margin:0;transform:none;color:var(--pp-brand);font-size:54px;font-style:normal;font-weight:700;line-height:1.06;letter-spacing:-3px;text-align:left}
-        .pp-hero-copy .pp-hero-description{margin:15px 0 0;color:#e9e4e0;font-size:14px;font-weight:300;line-height:1.72;letter-spacing:-.7px}
+        .pp-hero{height:365px;margin-top:8px;grid-template-columns:672px 328px;background:#123961}
+        .pp-hero-copy{display:flex;padding:32px;flex-direction:column;justify-content:center;background:#123961}
+        .pp-hero-copy>p:first-child{margin:0 0 8px;color:#a4b7cc;font-size:15px;line-height:1.4}
+        .pp-hero-copy h2,.pp-hero-copy h2 em{display:block;width:auto;margin:0;transform:none;color:#a4b7cc;font-size:54px;font-style:normal;font-weight:700;line-height:1.06;letter-spacing:-3px;text-align:left}
+        .pp-hero-copy .pp-hero-description{margin:15px 0 0;color:#eef3f8;font-size:14px;font-weight:300;line-height:1.72;letter-spacing:-.7px}
 
         /* 정의·통계·임신 체중 증가 */
         .pp-stat-photo>img{opacity:.24}
@@ -273,8 +273,8 @@ export default function PostpartumDietPage() {
         .pp-case-summary,.pp-case-summary span{font-size:18px!important}
         .pp-case-summary i{color:var(--pp-brand)}
         .pp-case-stage p,.pp-case-stage p strong,.pp-case-stage p small{color:#fff;font-size:18px}
-        .pp-down-arrow{position:relative;display:block;width:4px;height:22px;margin:14px auto 16px;background:var(--pp-brand);border:0;font-size:0;transform:none}
-        .pp-down-arrow:after{position:absolute;bottom:-9px;left:50%;border-top:11px solid var(--pp-brand);border-right:10px solid transparent;border-left:10px solid transparent;content:'';transform:translateX(-50%)}
+        .pp-down-arrow{position:relative;display:block;width:4px;height:22px;margin:14px auto 16px;background:#a4b7cc;border:0;font-size:0;transform:none}
+        .pp-down-arrow:after{position:absolute;bottom:-9px;left:50%;border-top:11px solid #a4b7cc;border-right:10px solid transparent;border-left:10px solid transparent;content:'';transform:translateX(-50%)}
 
         /* 치료목표 */
         .pp-treatment-goals{background:var(--pp-brand)}
@@ -324,9 +324,9 @@ export default function PostpartumDietPage() {
         .pp-weight-tables caption{background:var(--pp-brand)}
         .pp-weight-tables .pp-pink th,.pp-weight-tables .pp-pink td{background:var(--pp-brand-soft)}
         .pp-benefit-copy li b{color:var(--pp-brand)}
-        .pp-chart-stages b:first-child{background:#c8de72}
+        .pp-chart-stages b:first-child{background:#a4b7cc}
         .pp-chart-stages b:nth-child(2){background:var(--pp-brand)}
-        .pp-chart-stages b:nth-child(3){background:#819b0e}
+        .pp-chart-stages b:nth-child(3){background:#0b2d4a}
         .pp-chart-wrap svg text{paint-order:normal;stroke:none}
         .pp-chart-wrap svg .pp-chart-label{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}
         .pp-benefit-copy li{color:#4a4a4a}
