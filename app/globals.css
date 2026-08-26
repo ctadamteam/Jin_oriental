@@ -161,7 +161,7 @@ body.home-page-theme .text-primary-medium {
 /* 메인 JIN STORY의 더보기 버튼에만 적용하는 네이비 처리입니다. */
 .jin-story-more-button {
   border-color: #083560 !important;
-  background-color: #FFFFFF !important;
+  background-color: #EAF0F7 !important;
   color: #083560 !important;
 }
 
@@ -176,18 +176,31 @@ body.home-page-theme .text-primary-medium {
   outline-offset: 3px;
 }
 
-/* 빠른 상담 바는 공통 UI이므로 모든 페이지에서 네이비로 통일합니다. */
+/* 빠른 상담 바는 공통 UI이므로 모든 페이지에서 뮤트 골드 CTA로 통일합니다. */
 .quick-consult-toggle {
-  background: linear-gradient(90deg, #123960 0%, #083560 100%) !important;
-  color: #FFFFFF !important;
+  background: #D7C28D !important;
+  color: #083560 !important;
+  border-top-color: transparent !important;
+  box-shadow: none !important;
 }
 
 .quick-consult-toggle:hover {
-  background: linear-gradient(90deg, #083560 0%, #01223D 100%) !important;
+  background: #D7C28D !important;
+  box-shadow: none !important;
+}
+
+.quick-consult-toggle:active {
+  background: #C6AA6A !important;
+  transform: translateY(1px);
+}
+
+.quick-consult-toggle:focus-visible {
+  outline: 2px solid #083560;
+  outline-offset: -4px;
 }
 
 .quick-consult-panel {
-  background-color: rgb(8 50 92 / 0.95) !important;
+  background-color: #083560 !important;
 }
 
 .quick-consult-panel .text-primary-muted {
@@ -199,10 +212,16 @@ body.home-page-theme .text-primary-medium {
 }
 
 .quick-consult-submit {
-  background-color: #01223D !important;
-  color: #FFFFFF !important;
+  background-color: #D7C28D !important;
+  color: #083560 !important;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.12) !important;
 }
 
 .quick-consult-submit:hover {
-  background-color: #083560 !important;
+  background-color: #D7C28D !important;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.12) !important;
+}
+
+.quick-consult-submit:active {
+  background-color: #C6AA6A !important;
 }
