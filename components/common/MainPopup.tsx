@@ -65,7 +65,7 @@ export default function MainPopup() {
                   : 'text-white/70'
               }`}
             >
-              이벤트바로가기
+              휴진안내
             </button>
             <button 
               onClick={() => setActiveTab(2)}
@@ -100,18 +100,18 @@ export default function MainPopup() {
             {activeTab === 0 && (
               <div className="w-full h-full p-6 md:p-8 lg:p-9 text-white flex flex-col justify-between relative overflow-hidden select-none">
                 <div
-                  className="absolute inset-0 bg-cover bg-center md:[background-size:115%_auto] md:[background-position:left_center] pointer-events-none"
-                  style={{ backgroundImage: "url('/images/main/popup/popup_broadcast.jpg')" }}
+                  className="absolute inset-0 bg-cover bg-[position:70%_center] md:bg-[position:65%_center] lg:bg-center pointer-events-none"
+                  style={{ backgroundImage: "url('/images/main/popup/popup_1.jpg')" }}
                 />
                 <div
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     backgroundImage:
-                      'linear-gradient(90deg, rgba(1, 34, 61, 0.92) 0%, rgba(1, 34, 61, 0.82) 34%, rgba(1, 34, 61, 0.52) 52%, rgba(1, 34, 61, 0.18) 70%, rgba(1, 34, 61, 0) 86%)',
+                      'linear-gradient(90deg, rgba(57, 50, 46, 0.90) 0%, rgba(57, 50, 46, 0.78) 22%, rgba(57, 50, 46, 0.48) 39%, rgba(57, 50, 46, 0.18) 52%, rgba(57, 50, 46, 0) 64%)',
                   }}
                 />
 
-                <div className="max-w-full md:max-w-[61%] relative z-10 flex-1 flex flex-col justify-center">
+                <div className="max-w-full md:max-w-[48%] relative z-10 flex-1 flex flex-col justify-center [text-shadow:0_1px_2px_rgba(0,0,0,0.28)]">
                   <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <span className="font-paperlogy font-extrabold italic tracking-tight bg-[#ED193A] px-2 py-0.5 rounded text-[11px] md:text-xs">
                       KNN
@@ -164,37 +164,14 @@ export default function MainPopup() {
               </div>
             )}
 
-            {/* 2. 이벤트바로가기 탭 */}
+            {/* 2. 휴진안내 탭 */}
             {activeTab === 1 && (
-              <div className="w-full h-full bg-gradient-to-br from-[#00C2FF] via-[#00B4D8] to-[#0077B6] p-6 md:p-8 lg:p-9 text-white flex flex-col justify-between relative overflow-hidden select-none">
-                {/* 구름 및 물방울 형태의 아기자기한 배경 장식 */}
-                <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-white/10 blur-lg pointer-events-none" />
-                <div className="absolute top-1/4 left-8 w-3 h-3 rounded-full bg-white/20 pointer-events-none" />
-                <div className="absolute bottom-1/4 right-12 w-4 h-4 rounded-full bg-white/15 pointer-events-none" />
-
-                <div className="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left z-10">
-                  {/* 구름 모양 안내박스 */}
-                  <div className="inline-block border-2 border-white/60 rounded-full px-5 py-2.5 bg-white/10 backdrop-blur-sm text-[11px] md:text-xs lg:text-sm font-semibold tracking-wide shadow-inner mb-6">
-                     진한의원의 각종 이벤트를 만나보세요!
-                  </div>
-
-                  <span className="text-xs md:text-sm font-bold tracking-widest text-cyan-100 uppercase">
-                    JIN EVENT
-                  </span>
-                  
-                  <h3 className="text-2xl md:text-3xl lg:text-[40px] font-black leading-tight mt-1 mb-6 text-white drop-shadow-[0_3px_6px_rgba(0,0,0,0.12)]">
-                    이벤트 바로가기
-                  </h3>
-
-                  <div>
-                    <a 
-                      href="/events"
-                      className="inline-flex items-center justify-center bg-cyan-100 text-cyan-900 font-bold px-8 py-3 rounded-full text-xs md:text-sm shadow-lg transition-all hover:scale-[1.03] cursor-pointer"
-                    >
-                      이벤트 바로가기 <span className="ml-2 font-mono">&rarr;</span>
-                    </a>
-                  </div>
-                </div>
+              <div className="w-full h-full relative overflow-hidden select-none bg-[#F5F2EA]">
+                <img
+                  src="/images/main/popup/popup_2.jpg"
+                  alt="진한의원 8월 진료 및 휴진 안내"
+                  className="w-full h-full object-contain pointer-events-none"
+                />
               </div>
             )}
  
@@ -202,21 +179,21 @@ export default function MainPopup() {
             {activeTab === 2 && (
               <div className="w-full h-full p-6 md:p-8 lg:p-9 text-white flex flex-col justify-between relative overflow-hidden select-none">
                 <div
-                  className="absolute inset-0 bg-cover bg-center md:bg-left pointer-events-none"
-                  style={{ backgroundImage: "url('/images/main/popup/popup_remote-diet.jpg')" }}
+                  className="absolute inset-0 bg-cover bg-[position:75%_center] md:bg-[position:70%_center] lg:bg-center pointer-events-none"
+                  style={{ backgroundImage: "url('/images/main/popup/popup_3.jpg')" }}
                 />
                 <div
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     backgroundImage:
-                      'linear-gradient(90deg, rgba(1, 34, 61, 0.93) 0%, rgba(1, 34, 61, 0.82) 31%, rgba(1, 34, 61, 0.62) 44%, rgba(1, 34, 61, 0.32) 58%, rgba(1, 34, 61, 0.1) 72%, rgba(1, 34, 61, 0) 86%)',
+                      'linear-gradient(90deg, rgba(45, 50, 51, 0.78) 0%, rgba(45, 50, 51, 0.67) 22%, rgba(45, 50, 51, 0.40) 38%, rgba(45, 50, 51, 0.16) 52%, rgba(45, 50, 51, 0) 64%)',
                   }}
                 />
                 {/* 올리브 나뭇잎 질감의 배경 장식 */}
                 <div className="absolute top-1/2 -left-12 w-48 h-48 rounded-full bg-[#A4B7CC]/20 blur-xl pointer-events-none" />
                 <div className="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-[#FAFAFA]/5 blur-lg pointer-events-none" />
 
-                <div className="flex-1 flex flex-col justify-center z-10">
+                <div className="max-w-full md:max-w-[48%] flex-1 flex flex-col justify-center z-10 [text-shadow:0_1px_2px_rgba(0,0,0,0.26)]">
                   <div className="inline-block bg-[#A4B7CC] text-[#08325C] rounded-full px-4 py-1 text-[10px] md:text-xs font-extrabold w-fit mb-3">
                     방문 없는 간편 처방
                   </div>
@@ -252,7 +229,9 @@ export default function MainPopup() {
  
                   <div>
                     <a 
-                      href="/diet-medicine"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSe_AxR5_JWnZx_ge6FIw0YjM1Xnsj00T4b0fJSXV6tui_nbmg/viewform?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAacxgBEma-uDANrn7SpRVbf7DQvhuP9JjPHNe2F9ZxCL2Iv8S5PsXLg_UluO2g_aem_dl-3k6JeKPKiBzhMMQacfQ"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center bg-white text-[#08325C] font-bold px-6 py-2.5 rounded-full text-xs md:text-sm shadow-md transition-all hover:scale-[1.03] cursor-pointer"
                     >
                       비대면 처방 알아보기
