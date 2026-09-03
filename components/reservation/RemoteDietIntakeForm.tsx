@@ -381,9 +381,9 @@ export function RemoteDietIntakeForm() {
                     <h4 className="text-base font-bold text-[#123961]">{group.title}</h4>
                     <span className="shrink-0 text-xs font-semibold text-slate-500">복수 선택 가능</span>
                   </div>
-                  <div className={`grid px-5 sm:px-6 lg:grid-cols-2 lg:gap-x-8 ${group.desktopRowHeight}`}>
+                  <div className={`grid lg:grid-cols-2 lg:gap-x-1 ${group.desktopRowHeight}`}>
                     {group.items.map((item) => (
-                      <label key={item.name} className="flex min-h-[68px] cursor-pointer items-center gap-3 border-b border-[#E4EBF2] py-4 text-slate-700 transition-colors last:border-b-0 has-[:checked]:bg-[#F3F7FB] lg:h-full lg:px-2">
+                      <label key={item.name} className="flex min-h-[68px] cursor-pointer items-center gap-3 border-b border-[#E4EBF2] px-5 py-4 text-slate-700 transition-colors last:border-b-0 has-[:checked]:bg-[#F3F7FB] sm:px-6 lg:h-full lg:px-8">
                         <input type="checkbox" checked={formData.prescriptions.includes(item.name)} onChange={() => togglePrescription(item.name)} className="peer sr-only" />
                         <span className="relative mt-0.5 flex h-5 w-5 shrink-0 rounded-[4px] border-2 border-[#A4B7CC] transition-colors after:absolute after:left-[5px] after:top-[1px] after:h-2.5 after:w-1.5 after:scale-0 after:rotate-45 after:border-b-2 after:border-r-2 after:border-[#EAF0F7] after:transition-transform peer-checked:border-[#083560] peer-checked:bg-[#083560] peer-checked:after:scale-100 peer-focus-visible:ring-4 peer-focus-visible:ring-[#EAF0F7]" />
                         <span className="min-w-0">
