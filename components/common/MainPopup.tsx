@@ -153,7 +153,8 @@ export default function MainPopup() {
                   
                   <div>
                     <a 
-                      href="/reservation"
+                      href="/#jin-story"
+                      onClick={handleClose}
                       className="inline-flex items-center justify-center bg-white text-blue-900 font-bold px-6 py-2.5 rounded-full text-xs md:text-sm shadow-md transition-all hover:scale-[1.03] cursor-pointer"
                     >
                       방송 바로보기
@@ -229,12 +230,10 @@ export default function MainPopup() {
  
                   <div>
                     <a 
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSe_AxR5_JWnZx_ge6FIw0YjM1Xnsj00T4b0fJSXV6tui_nbmg/viewform?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAacxgBEma-uDANrn7SpRVbf7DQvhuP9JjPHNe2F9ZxCL2Iv8S5PsXLg_UluO2g_aem_dl-3k6JeKPKiBzhMMQacfQ"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/reservation"
                       className="inline-flex items-center justify-center bg-white text-[#08325C] font-bold px-6 py-2.5 rounded-full text-xs md:text-sm shadow-md transition-all hover:scale-[1.03] cursor-pointer"
                     >
-                      비대면 처방 알아보기
+                      비대면 설문지 작성하기
                     </a>
                   </div>
                 </div>

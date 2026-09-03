@@ -35,14 +35,14 @@ export function BottomQuickConsultForm() {
       {/* Toggle Tab */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="quick-consult-toggle group w-full bg-gradient-to-r from-[#BEE622] to-[#A2C41D] text-primary-dark py-3 flex flex-row items-center justify-center gap-2 cursor-pointer hover:from-[#C7EE2C] hover:to-[#ADC91C] transition-all duration-300 border-t border-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] relative z-20"
+        className="quick-consult-toggle group w-full bg-gradient-to-r from-[#BEE622] to-[#A2C41D] text-primary-dark py-4 flex flex-row items-center justify-center gap-2.5 cursor-pointer hover:from-[#C7EE2C] hover:to-[#ADC91C] transition-all duration-300 border-t border-white/20 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] relative z-20"
       >
-        <span className="text-[14px] font-extrabold tracking-tight">
+        <span className="whitespace-nowrap text-base font-extrabold tracking-tight">
           {isOpen ? '빠른 상담 신청 닫기' : '빠른 상담 신청하기'}
         </span>
-        <ChevronUp 
-          size={16} 
-          className={`transition-transform duration-500 ease-in-out ${isOpen ? 'rotate-180' : 'rotate-0'}`} 
+        <ChevronUp
+          size={18}
+          className={`transition-transform duration-500 ease-in-out ${isOpen ? 'rotate-180' : 'rotate-0'}`}
         />
       </button>
 

@@ -14,7 +14,7 @@ export const MENUS = [
       { title: "붓기제로ㆍ배사라정", href: "/diet-medicine/zero" },
       { title: "슬림톡ㆍ삭뺀다정ㆍ블랙정", href: "/diet-medicine/tok" },
       { title: "올인원", href: "/diet-medicine/allinone" },
-      { title: "비만주사 불편감 치료한약", href: "/diet-medicine/injection-discomfort" },
+      { title: "지방분해약침", href: "/diet-medicine/injection-discomfort" },
       { title: "요요 방지한약", href: "/diet-medicine/rebound-prevention" },
     ],
   },

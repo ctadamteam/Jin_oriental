@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   contact: {
     phoneMain: "051.714.0040",
     phoneMobile: "010.7686.0041",
-    address: "부산광역시 해운대구 좌동 1479-2 엘리움 빌딩 6층",
+    address: "부산광역시 해운대구 좌동 1473-2 엘리움 빌딩 6층",
   },
   links: {
     kakao: "https://pf.kakao.com/_xgPxeWV",
@@ -15,6 +15,7 @@ export const SITE_CONFIG = {
   hours: {
     weekdays: "오전9시 30분 ~ 오후6시",
     thursday: "오전9시 30분 ~ 오후2시 (점심없음)",
+    weekendLabel: "토 / 대체공휴일",
     weekend: "오전9시 30분 ~ 오후2시 (점심없음)",
     lunch: "오후1시 ~ 오후2시",
     closed: "*일요일은 휴진입니다.",

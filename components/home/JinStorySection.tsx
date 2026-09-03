@@ -44,7 +44,7 @@ export function JinStorySection() {
   ];
 
   return (
-    <section className="bg-[#EAF0F7] py-24">
+    <section id="jin-story" className="scroll-mt-28 bg-[#EAF0F7] py-24">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <SectionTitle 
           subtitle="JIN STORY"

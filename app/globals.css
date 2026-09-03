@@ -178,19 +178,19 @@ body.home-page-theme .text-primary-medium {
 
 /* 빠른 상담 바는 공통 UI이므로 모든 페이지에서 뮤트 골드 CTA로 통일합니다. */
 .quick-consult-toggle {
-  background: #D7C28D !important;
+  background: #DAC080 !important;
   color: #083560 !important;
   border-top-color: transparent !important;
   box-shadow: none !important;
 }
 
 .quick-consult-toggle:hover {
-  background: #D7C28D !important;
+  background: #DAC080 !important;
   box-shadow: none !important;
 }
 
 .quick-consult-toggle:active {
-  background: #C6AA6A !important;
+  background: #C5A55E !important;
   transform: translateY(1px);
 }
 
@@ -212,16 +212,16 @@ body.home-page-theme .text-primary-medium {
 }
 
 .quick-consult-submit {
-  background-color: #D7C28D !important;
+  background-color: #DAC080 !important;
   color: #083560 !important;
   box-shadow: 0 2px 6px rgb(0 0 0 / 0.12) !important;
 }
 
 .quick-consult-submit:hover {
-  background-color: #D7C28D !important;
+  background-color: #DAC080 !important;
   box-shadow: 0 2px 6px rgb(0 0 0 / 0.12) !important;
 }
 
 .quick-consult-submit:active {
-  background-color: #C6AA6A !important;
+  background-color: #C5A55E !important;
 }

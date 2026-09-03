@@ -36,13 +36,13 @@ export function SideQuickMenu() {
   ];
 
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col bg-white border border-gray-200 shadow-[0_8px_35px_rgba(0,0,0,0.08)] rounded-[20px] overflow-hidden divide-y divide-gray-100">
+    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col bg-[#083560] shadow-[0_10px_24px_rgba(1,34,61,0.26)] rounded-[20px] overflow-hidden divide-y divide-[rgba(234,240,247,0.20)]">
       {menus.map((menu, i) => {
         const Icon = menu.Icon;
-        const linkClassName = "group flex flex-col items-center justify-center w-[86px] h-[83px] hover:bg-gray-50 text-[11px] font-bold text-gray-800 text-center transition-colors duration-300";
+        const linkClassName = "group flex flex-col items-center justify-center w-[86px] h-[83px] bg-[#083560] hover:bg-[#DAC080] active:bg-[#C5A55E] text-[11px] font-bold text-[#EAF0F7] hover:text-[#083560] active:text-[#083560] text-center transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#EAF0F7]";
         const linkContent = (
           <>
-            <div className="mb-1.5 text-gray-800 group-hover:text-[#27577F] transition-colors duration-300">
+            <div className="mb-1.5 text-[#EAF0F7] group-hover:text-[#083560] group-active:text-[#083560] transition-colors duration-300">
               <Icon size={27} />
             </div>
             {menu.label}
