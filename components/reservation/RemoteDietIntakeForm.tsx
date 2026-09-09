@@ -1,7 +1,7 @@
 'use client';
 
 import { CheckCircle2, Search } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 type PostcodeData = {
   address: string;
@@ -23,11 +23,12 @@ type FormData = {
   visitHistory: '' | '초진' | '재진';
   phone: string;
   name: string;
-  birthDate: string;
+  birthDate: string[];
   postalCode: string;
   address: string;
   addressDetail: string;
   contactTimes: string[];
+  visitRoutes: string[];
   referrer: string;
   paymentMethod: '' | '카드결제' | '계좌이체 (현금영수증 발급)';
   prescriptions: string[];
@@ -48,54 +49,70 @@ const initialFormData: FormData = {
   visitHistory: '',
   phone: '',
   name: '',
-  birthDate: '',
+  birthDate: ['', '', '', '', '', '', ''],
   postalCode: '',
   address: '',
   addressDetail: '',
   contactTimes: [],
+  visitRoutes: [],
   referrer: '',
   paymentMethod: '',
   prescriptions: [],
 };
 
 const contactTimeOptions = ['시간 무관 (9시반~6시)', '오전', '오후', '토요일', '카톡 혹은 문자'];
+const visitRouteOptions = ['인터넷', '방송', '소개'];
 
-const prescriptionGroups = [
+type PrescriptionItem = {
+  name: string;
+  meta?: string;
+  description?: string;
+};
+
+type PrescriptionGroup = {
+  title: string;
+  titleMeta?: string;
+  desktopRowHeight: string;
+  items: PrescriptionItem[];
+};
+
+const prescriptionGroups: PrescriptionGroup[] = [
   {
     title: 'A. 다이어트 한약',
-    desktopRowHeight: 'lg:auto-rows-[112px]',
+    titleMeta: '1:1 맞춤처방',
+    desktopRowHeight: 'lg:auto-rows-[144px]',
     items: [
-      { name: '슬림환', description: '식욕억제, 체지방감소, 신진대사 활성화, 체중감량' },
-      { name: '삭뺀다정', description: '식욕억제, 체지방감소, 신진대사 활성화, 체중감량' },
-      { name: '빼빼정(블랙정)', description: '식욕억제, 체지방감소, 신진대사 활성화, 체중감량' },
-      { name: '다이어트 탕약' },
-      { name: '올인원', description: '다이어트약(캡슐 혹은 타블렛) + 치료약\n변비, 소화불량, 현기증, 불면, 두근거림, 생리불순, 붓기 중 택 2' },
-      { name: '유지환(요요방지환)' },
-      { name: '요요방지캡슐' },
-      { name: '숙변환(변비예방)' },
+      { name: '슬림환', meta: '환', description: '식욕억제, 체지방감소, 신진대사 활성화, 체중감량' },
+      { name: '삭뺀다정', meta: '알약', description: '식욕억제, 체지방감소, 신진대사 활성화, 체중감량' },
+      { name: '빼빼정(블랙정)', meta: '알약', description: '식욕억제, 체지방감소, 신진대사 활성화, 체중감량' },
+      { name: '습담탕', meta: '면역력+체지방+기저질환', description: '개인별 맞춤 다이어트 탕약, 살이 찌는 원인 치료, 신진대사 향상, 체지방 연소, 변비 예방, 체질 개선, 면역 및 체력 향상' },
+      { name: '올인원', meta: '캡슐', description: '다이어트약(캡슐 혹은 타블렛) + 치료약\n변비, 소화불량, 현기증, 불면, 두근거림, 생리불순, 붓기 중 택 2' },
+      { name: '유지환(요요방지환)', description: '식욕억제, 체지방 연소, 요요현상 방지, 식욕억제 강도 조절 가능' },
+      { name: '요요방지캡슐', description: '알약 형태를 잘 못 드시는 분, 한약 냄새와 맛이 힘드신 분, 환에 비해 흡수와 효과가 빨리 나타나는 특성' },
+      { name: '숙변환(변비예방)', description: '평소에도 변비가 있거나 다이어트 과정 중에 생길 수 있는 변비를 예방하는 약, 강도와 제형이 다양해서 맞춤 처방 가능' },
     ],
   },
   {
     title: 'B. 내장지방 및 염증제거, 독소배출',
-    desktopRowHeight: 'lg:auto-rows-[104px]',
+    desktopRowHeight: 'lg:auto-rows-[128px]',
     items: [
       { name: '배사라정', description: '내장지방 감소, 숙취 및 간해독, 변비개선 및 예방, 장해독' },
       { name: '붓기제로', description: '붓기감소, 수분대사 개선, 노폐물 및 염증 배출, 내장지방감소에 도움' },
-      { name: '체질 개선 및 면역 탕약' },
+      { name: '체질 개선 및 면역 탕약', description: '환자가 평소 불편한 증상을 근본적으로 개선해드리는 탕약, 100% 맞춤 탕약, GMP 인증한약, 규격한약재' },
     ],
   },
   {
     title: 'C. 해독프로그램',
-    desktopRowHeight: 'lg:auto-rows-[68px]',
+    desktopRowHeight: 'lg:auto-rows-[128px]',
     items: [
-      { name: '해독탕' },
-      { name: '수독환' },
-      { name: '발효선식' },
+      { name: '해독탕', description: '장내 환경 개선, 담즙배출 활성화를 통한 간 해독 기능 회복, 만성염증, 복부팽만감, 내장지방 제거에 도움' },
+      { name: '수독환', description: '체내 수분 대사 개선을 통한 부종 치료, 수독과 냉기 제거, 과민성 대장증후군, 생리통, 생리불순에 도움' },
+      { name: '발효선식', description: '25종의 한약재, 10종의 콩류, 25종의 과채류, 49종의 곡류, 비타민, 무기질, 한방발효효소 포함' },
     ],
   },
   {
     title: 'D. 치료약',
-    desktopRowHeight: 'lg:auto-rows-[88px]',
+    desktopRowHeight: 'lg:auto-rows-[104px]',
     items: [
       { name: '꿀잠정', description: '수면장애, 두근거림' },
       { name: '심밸런스', description: '불안감, 공황장애, 홧병' },
@@ -105,9 +122,9 @@ const prescriptionGroups = [
       { name: '익기보혈시럽', description: '면역력, 체력저하, 빈혈' },
       { name: '공진단', description: '시럽 / 탄자대' },
       { name: '경옥고', description: '시럽 / 환 / 단지' },
-      { name: '쾌통정', description: '만성통증, 손발시림, 저림' },
+      { name: '쾌통정', description: '만성통증, 손발시림, 저림, 운동 시 뼈, 인대 강화' },
       { name: '계족환', description: '골절, 골다공증, 퇴행성관절염' },
-      { name: '속시원정', description: '소화불량, 윗배팽만감' },
+      { name: '속시원정', description: '소화불량, 윗배팽만감, 허리둘레 감소' },
       { name: '과민장Q환', description: '과민성대장증후군, 장염, 설사' },
       { name: '개울화담전', description: '속쓰림, 역류성식도염, 위궤양' },
       { name: '청혈정', description: '고지혈증, 혈관염증, 지방간' },
@@ -137,6 +154,14 @@ function FieldError({ message }: { message?: string }) {
   return <p className="mt-2 text-sm font-medium text-[#B42318]">{message}</p>;
 }
 
+function isValidBirthIdentity(value: string) {
+  if (!/^\d{7}$/.test(value)) return false;
+
+  const month = Number(value.slice(2, 4));
+  const day = Number(value.slice(4, 6));
+  return month >= 1 && month <= 12 && day >= 1 && day <= new Date(2000, month, 0).getDate();
+}
+
 function loadDaumPostcode() {
   if (window.daum?.Postcode) return Promise.resolve();
 
@@ -163,6 +188,7 @@ export function RemoteDietIntakeForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const birthInputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const setError = (field: FieldName) => {
     setErrors((current) => {
@@ -181,6 +207,55 @@ export function RemoteDietIntakeForm() {
         : [...current.contactTimes, value],
     }));
     setError('contactTimes');
+  };
+
+  const toggleVisitRoute = (value: string) => {
+    setFormData((current) => {
+      const visitRoutes = current.visitRoutes.includes(value)
+        ? current.visitRoutes.filter((item) => item !== value)
+        : [...current.visitRoutes, value];
+
+      return {
+        ...current,
+        visitRoutes,
+        referrer: visitRoutes.includes('소개') ? current.referrer : '',
+      };
+    });
+  };
+
+  const setBirthDigit = (index: number, value: string) => {
+    const digit = value.replace(/\D/g, '').slice(-1);
+
+    setFormData((current) => {
+      const birthDate = [...current.birthDate];
+      birthDate[index] = digit;
+      return { ...current, birthDate };
+    });
+    setError('birthDate');
+
+    if (digit && index < 6) {
+      birthInputRefs.current[index + 1]?.focus();
+    }
+  };
+
+  const handleBirthKeyDown = (index: number, event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Backspace' && !formData.birthDate[index] && index > 0) {
+      birthInputRefs.current[index - 1]?.focus();
+    }
+  };
+
+  const handleBirthPaste = (event: React.ClipboardEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    const digits = event.clipboardData.getData('text').replace(/\D/g, '').slice(0, 7);
+
+    if (!digits) return;
+
+    setFormData((current) => ({
+      ...current,
+      birthDate: Array.from({ length: 7 }, (_, index) => digits[index] ?? ''),
+    }));
+    setError('birthDate');
+    requestAnimationFrame(() => birthInputRefs.current[Math.min(digits.length, 7) - 1]?.focus());
   };
 
   const togglePrescription = (value: string) => {
@@ -219,8 +294,8 @@ export function RemoteDietIntakeForm() {
     if (!formData.visitHistory) nextErrors.visitHistory = '초진 또는 재진 중 하나를 선택해주세요.';
     if (!/^01[016789]\d{7,8}$/.test(phoneDigits)) nextErrors.phone = '연락처를 정확히 입력해주세요.';
     if (!formData.name.trim()) nextErrors.name = '이름을 입력해주세요.';
-    if (!formData.birthDate) nextErrors.birthDate = '생년월일을 입력해주세요.';
-    if (!formData.postalCode || !formData.address) nextErrors.address = '주소 검색을 통해 주소를 입력해주세요.';
+    if (!isValidBirthIdentity(formData.birthDate.join(''))) nextErrors.birthDate = '생년월일 앞 6자리와 뒷자리 첫 숫자를 입력해주세요.';
+    if (!formData.postalCode || !formData.address) nextErrors.address = '주소 검색을 통해 신주소를 입력해주세요.';
     if (formData.contactTimes.length === 0) nextErrors.contactTimes = '연락 가능한 시간대를 하나 이상 선택해주세요.';
     if (!formData.paymentMethod) nextErrors.paymentMethod = '결제 방법을 선택해주세요.';
 
@@ -322,19 +397,53 @@ export function RemoteDietIntakeForm() {
 
           <div>
             <QuestionTitle number={4} required>생년월일을 입력해주세요.</QuestionTitle>
-            <input type="date" value={formData.birthDate} onChange={(event) => { setFormData((current) => ({ ...current, birthDate: event.target.value })); setError('birthDate'); }} className={`mt-5 h-12 w-full rounded-lg border bg-white px-4 text-[15px] text-slate-900 outline-none transition-shadow focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7] ${errors.birthDate ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
+            <div role="group" aria-label="생년월일 앞 6자리와 뒷자리 첫 숫자" className="mt-5 flex w-fit max-w-full items-center gap-1.5 sm:gap-2">
+              <div className="flex items-center gap-0.5 sm:gap-1">
+                {formData.birthDate.slice(0, 6).map((digit, index) => (
+                  <input
+                    key={index}
+                    ref={(element) => { birthInputRefs.current[index] = element; }}
+                    type="text"
+                    inputMode="numeric"
+                    autoComplete="off"
+                    maxLength={1}
+                    value={digit}
+                    onChange={(event) => setBirthDigit(index, event.target.value)}
+                    onKeyDown={(event) => handleBirthKeyDown(index, event)}
+                    onPaste={handleBirthPaste}
+                    aria-label={`생년월일 앞자리 ${index + 1}번째 숫자`}
+                    className={`h-10 w-6 rounded-[4px] border bg-white text-center text-[15px] font-medium text-slate-900 outline-none transition-shadow focus:z-10 focus:border-[#083560] focus:ring-2 focus:ring-[#EAF0F7] sm:h-11 sm:w-8 ${errors.birthDate ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`}
+                  />
+                ))}
+              </div>
+              <span className="font-semibold text-[#476786]" aria-hidden="true">-</span>
+              <input
+                ref={(element) => { birthInputRefs.current[6] = element; }}
+                type="text"
+                inputMode="numeric"
+                autoComplete="off"
+                maxLength={1}
+                value={formData.birthDate[6]}
+                onChange={(event) => setBirthDigit(6, event.target.value)}
+                onKeyDown={(event) => handleBirthKeyDown(6, event)}
+                onPaste={handleBirthPaste}
+                aria-label="생년월일 뒷자리 첫 숫자"
+                className={`h-10 w-6 rounded-[4px] border bg-white text-center text-[15px] font-medium text-slate-900 outline-none transition-shadow focus:z-10 focus:border-[#083560] focus:ring-2 focus:ring-[#EAF0F7] sm:h-11 sm:w-8 ${errors.birthDate ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`}
+              />
+              <span className="shrink-0 font-medium tracking-[0.04em] text-slate-400" aria-hidden="true">XXXXXX</span>
+            </div>
             <FieldError message={errors.birthDate} />
           </div>
 
           <div>
-            <QuestionTitle number={5} required>주소를 입력해주세요.</QuestionTitle>
+            <QuestionTitle number={5} required>신주소를 입력해주세요.</QuestionTitle>
             <div className="mt-5 flex gap-2">
               <input type="text" value={formData.postalCode} readOnly placeholder="우편번호" className={`h-12 min-w-0 flex-1 rounded-lg border bg-slate-50 px-4 text-[15px] text-slate-900 outline-none placeholder:text-slate-400 ${errors.address ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
               <button type="button" onClick={openAddressSearch} className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-[#083560] px-4 text-sm font-bold text-white transition-colors hover:bg-[#01223D] focus:outline-none focus:ring-2 focus:ring-[#083560] focus:ring-offset-2">
                 <Search size={17} aria-hidden="true" /> 주소 검색
               </button>
             </div>
-            <input type="text" value={formData.address} readOnly placeholder="기본 주소" className={`mt-2 h-12 w-full rounded-lg border bg-slate-50 px-4 text-[15px] text-slate-900 outline-none placeholder:text-slate-400 ${errors.address ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
+            <input type="text" value={formData.address} readOnly placeholder="신주소" className={`mt-2 h-12 w-full rounded-lg border bg-slate-50 px-4 text-[15px] text-slate-900 outline-none placeholder:text-slate-400 ${errors.address ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
             <input type="text" autoComplete="address-line2" value={formData.addressDetail} onChange={(event) => setFormData((current) => ({ ...current, addressDetail: event.target.value }))} placeholder="상세 주소를 입력해주세요." className="mt-2 h-12 w-full rounded-lg border border-[#CDD9E6] bg-white px-4 text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7]" />
             <FieldError message={errors.address} />
           </div>
@@ -352,10 +461,23 @@ export function RemoteDietIntakeForm() {
             <FieldError message={errors.contactTimes} />
           </fieldset>
 
-          <div>
-            <QuestionTitle number={7}>저희 한의원을 소개해주신 분이 있나요?</QuestionTitle>
-            <input type="text" value={formData.referrer} onChange={(event) => setFormData((current) => ({ ...current, referrer: event.target.value }))} placeholder="있다면 성함을 입력해주세요. (선택)" className="mt-5 h-12 w-full rounded-lg border border-[#CDD9E6] bg-white px-4 text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7]" />
-          </div>
+          <fieldset>
+            <legend><QuestionTitle number={7}>내원경로를 선택해주세요.</QuestionTitle></legend>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              {visitRouteOptions.map((value) => (
+                <label key={value} className="flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border border-[#CDD9E6] px-4 text-[15px] font-semibold text-slate-700 transition-colors has-[:checked]:border-[#083560] has-[:checked]:bg-[#EAF0F7]">
+                  <input type="checkbox" checked={formData.visitRoutes.includes(value)} onChange={() => toggleVisitRoute(value)} className="h-4 w-4 rounded accent-[#083560]" />
+                  {value}
+                </label>
+              ))}
+            </div>
+            {formData.visitRoutes.includes('소개') && (
+              <div className="mt-4">
+                <label htmlFor="referrer-name" className="text-sm font-semibold text-[#123961]">소개자 이름 <span className="font-normal text-slate-500">(선택)</span></label>
+                <input id="referrer-name" type="text" autoComplete="off" value={formData.referrer} onChange={(event) => setFormData((current) => ({ ...current, referrer: event.target.value }))} placeholder="소개자 이름을 입력해주세요." className="mt-2 h-12 w-full rounded-lg border border-[#CDD9E6] bg-white px-4 text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7]" />
+              </div>
+            )}
+          </fieldset>
 
           <fieldset>
             <legend><QuestionTitle number={8} required>원하시는 결제 방법이 있으세요?</QuestionTitle></legend>
@@ -378,7 +500,10 @@ export function RemoteDietIntakeForm() {
               {prescriptionGroups.map((group) => (
                 <section key={group.title} className="overflow-hidden border border-[#D7E1EB] bg-white">
                   <div className="flex items-center justify-between gap-4 bg-[#F8FAFC] px-5 py-4 sm:px-6">
-                    <h4 className="text-base font-bold text-[#123961]">{group.title}</h4>
+                    <h4 className="min-w-0 text-base font-bold text-[#123961]">
+                      {group.title}
+                      {group.titleMeta && <span className="ml-1.5 text-[13px] font-semibold text-[#476786]">({group.titleMeta})</span>}
+                    </h4>
                     <span className="shrink-0 text-xs font-semibold text-slate-500">복수 선택 가능</span>
                   </div>
                   <div className={`grid lg:grid-cols-2 lg:gap-x-1 ${group.desktopRowHeight}`}>
@@ -387,7 +512,10 @@ export function RemoteDietIntakeForm() {
                         <input type="checkbox" checked={formData.prescriptions.includes(item.name)} onChange={() => togglePrescription(item.name)} className="peer sr-only" />
                         <span className="relative mt-0.5 flex h-5 w-5 shrink-0 rounded-[4px] border-2 border-[#A4B7CC] transition-colors after:absolute after:left-[5px] after:top-[1px] after:h-2.5 after:w-1.5 after:scale-0 after:rotate-45 after:border-b-2 after:border-r-2 after:border-[#EAF0F7] after:transition-transform peer-checked:border-[#083560] peer-checked:bg-[#083560] peer-checked:after:scale-100 peer-focus-visible:ring-4 peer-focus-visible:ring-[#EAF0F7]" />
                         <span className="min-w-0">
-                          <strong className="block text-[15px] leading-6 text-slate-800 transition-colors peer-checked:text-[#083560]">{item.name}</strong>
+                          <strong className="block text-[15px] leading-6 text-slate-800 transition-colors peer-checked:text-[#083560]">
+                            {item.name}
+                            {item.meta && <span className="ml-1 text-[13px] font-semibold text-[#476786]">({item.meta})</span>}
+                          </strong>
                           {item.description && <span className="mt-0.5 block whitespace-pre-line break-keep text-sm leading-5 text-slate-500">{item.description}</span>}
                         </span>
                       </label>
