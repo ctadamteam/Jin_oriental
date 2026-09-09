@@ -4,7 +4,7 @@ import { SectionTitle } from '../common/SectionTitle';
 import { SITE_CONFIG } from '@/lib/constants/site';
 
 const directions = [
-  { label: '지하철', description: '2호선 11번, 13번 출구 앞', icon: TrainFront },
+  { label: '지하철', description: '2호선 장산역(종점) 11번 혹은 13번 출구 앞', icon: TrainFront },
   { label: '시내버스', description: '36, 38, 115-1, 180, 1001, 1006', icon: BusFront },
   { label: '자가용', description: '네비게이션에 부산광역시 해운대구 좌동 1473-2 엘리움 6층 입력', icon: CarFront },
 ];
