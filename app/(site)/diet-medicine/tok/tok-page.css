@@ -1,0 +1,574 @@
+.tok-page {
+  --tok-navy: #083560;
+  --tok-light-blue: #bcd0e8;
+  --tok-pale-blue: #c3d6ed;
+  --tok-charcoal: #161616;
+  width: 100%;
+  overflow: clip;
+  background: #ffffff;
+  color: #161616;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tok-page__content {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ==============================================================
+   [상단 헤더 타이틀]
+   Figma 441:84 & 441:83 (NanumMyeongjo 400, 40px, Line 11 1px)
+============================================================== */
+.tok-page__heading {
+  position: relative;
+  height: 84px;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+
+.tok-page__heading h1 {
+  margin: 0;
+  color: #000000;
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.tok-page__divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #000000;
+}
+
+/* ==============================================================
+   [섹션 0] 메인 히어로 배너 (Figma 441:7 - 1440px x 588px)
+   ChatGPT Image 888x588 + #083560 패널 588x588
+============================================================== */
+.tok-hero {
+  position: relative;
+  width: 100%;
+  height: 588px;
+  margin-top: 12px;
+  overflow: hidden;
+  background: var(--tok-light-blue);
+}
+
+.tok-hero__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 888px;
+  height: 588px;
+  overflow: hidden;
+}
+
+.tok-hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tok-hero__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 588px;
+  height: 588px;
+  padding: 95px 0 0 95px;
+  box-sizing: border-box;
+  background: var(--tok-navy);
+}
+
+.tok-hero__sub {
+  margin: 0 0 15px 0;
+  color: var(--tok-pale-blue);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -2px;
+}
+
+.tok-hero__title {
+  margin: 0;
+  color: var(--tok-pale-blue);
+  font-size: 100px;
+  font-weight: 800;
+  line-height: 115px;
+  letter-spacing: -5px;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [제품 상세 공통 섹션] (슬림톡 / 삭뺀다정 / 블랙정)
+   - Visual Area (1440px x 1342px)
+   - Point Area (#083560)
+============================================================== */
+.tok-product {
+  position: relative;
+  width: 100%;
+}
+
+.tok-product__visual {
+  position: relative;
+  width: 100%;
+  height: 1342px;
+  overflow: hidden;
+}
+
+.tok-product__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tok-product__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 250, 250, 0.98) 0%,
+    rgba(250, 250, 250, 0.85) 20%,
+    rgba(250, 250, 250, 0.45) 45%,
+    rgba(250, 250, 250, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.tok-product__header {
+  position: relative;
+  z-index: 2;
+  padding-top: 133px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tok-product__headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 85px;
+  letter-spacing: -3.5px;
+  color: var(--tok-charcoal);
+}
+
+.tok-product__headline-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.tok-product__underline {
+  display: block;
+  height: 5px;
+  background: var(--tok-charcoal);
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+.tok-product__title {
+  margin: 26px 0 0 0;
+  font-size: 155px;
+  font-weight: 800;
+  line-height: 155px;
+  letter-spacing: -7.75px;
+  color: var(--tok-navy);
+  text-align: center;
+}
+
+.tok-product__subline {
+  margin: 52px 0 0 0;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: -2px;
+  color: var(--tok-charcoal);
+  text-align: center;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [복용 안내 박스]
+   Figma Group 1 (좌측 하단 x: 61~66, y: 1112)
+============================================================== */
+.tok-product__dosage {
+  position: absolute;
+  z-index: 2;
+  left: 61px;
+  top: 1112px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.tok-product__dosage-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tok-product__dosage-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 73px;
+  flex-shrink: 0;
+}
+
+.tok-product__dosage-icon-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.tok-product__dosage-text {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: -1.5px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+/* ==============================================================
+   [POINT 영역]
+   Figma Rectangle 68 (#083560) + Rectangle 51 (1248px 카드)
+============================================================== */
+.tok-point {
+  position: relative;
+  width: 100%;
+  background: var(--tok-navy);
+  padding: 150px 0 160px;
+  box-sizing: border-box;
+}
+
+.tok-point__title {
+  margin: 0 0 67px 0;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: -3.5px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.tok-point__card {
+  width: 1248px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 2px solid var(--tok-navy);
+  padding: 38px 48px;
+  box-sizing: border-box;
+}
+
+.tok-point__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tok-point__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 50px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+}
+
+.tok-point__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tok-navy);
+  flex-shrink: 0;
+}
+
+.tok-point__text {
+  white-space: nowrap;
+}
+
+/* ==============================================================
+   [태블릿 반응형] (721px ~ 1439px)
+============================================================== */
+@media (max-width: 1439px) and (min-width: 721px) {
+  .tok-page__content {
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .tok-hero {
+    height: calc(588 * 100vw / 1440);
+  }
+
+  .tok-hero__photo {
+    width: calc(888 * 100vw / 1440);
+    height: 100%;
+  }
+
+  .tok-hero__panel {
+    width: calc(588 * 100vw / 1440);
+    height: 100%;
+    padding: calc(95 * 100vw / 1440) 0 0 calc(95 * 100vw / 1440);
+  }
+
+  .tok-hero__sub {
+    font-size: calc(40 * 100vw / 1440);
+    line-height: calc(48 * 100vw / 1440);
+  }
+
+  .tok-hero__title {
+    font-size: calc(100 * 100vw / 1440);
+    line-height: calc(115 * 100vw / 1440);
+  }
+
+  .tok-product__visual {
+    height: calc(1342 * 100vw / 1440);
+  }
+
+  .tok-product__header {
+    padding-top: calc(133 * 100vw / 1440);
+  }
+
+  .tok-product__headline {
+    font-size: calc(70 * 100vw / 1440);
+    line-height: calc(85 * 100vw / 1440);
+  }
+
+  .tok-product__title {
+    font-size: calc(155 * 100vw / 1440);
+    line-height: calc(155 * 100vw / 1440);
+    margin-top: calc(26 * 100vw / 1440);
+  }
+
+  .tok-product__subline {
+    font-size: calc(40 * 100vw / 1440);
+    line-height: calc(55 * 100vw / 1440);
+    margin-top: calc(52 * 100vw / 1440);
+  }
+
+  .tok-product__dosage {
+    left: calc(61 * 100vw / 1440);
+    top: calc(1112 * 100vw / 1440);
+    gap: calc(23 * 100vw / 1440);
+  }
+
+  .tok-product__dosage-icon-wrap {
+    width: calc(75 * 100vw / 1440);
+    height: calc(73 * 100vw / 1440);
+  }
+
+  .tok-product__dosage-text {
+    font-size: calc(30 * 100vw / 1440);
+    line-height: calc(36 * 100vw / 1440);
+  }
+
+  .tok-point {
+    padding: calc(150 * 100vw / 1440) 0 calc(160 * 100vw / 1440);
+  }
+
+  .tok-point__title {
+    font-size: calc(70 * 100vw / 1440);
+    line-height: calc(84 * 100vw / 1440);
+    margin-bottom: calc(67 * 100vw / 1440);
+  }
+
+  .tok-point__card {
+    width: calc(1248 * 100vw / 1440);
+    padding: calc(38 * 100vw / 1440) calc(48 * 100vw / 1440);
+  }
+
+  .tok-point__item {
+    height: calc(50 * 100vw / 1440);
+    font-size: calc(35 * 100vw / 1440);
+    line-height: calc(50 * 100vw / 1440);
+  }
+}
+
+/* ==============================================================
+   [모바일 반응형] (720px 이하)
+============================================================== */
+@media (max-width: 720px) {
+  .tok-page__heading {
+    height: 64px;
+    padding: 16px 20px 0;
+  }
+
+  .tok-page__heading h1 {
+    font-size: 26px;
+    line-height: 34px;
+    letter-spacing: -1px;
+  }
+
+  /* 히어로 섹션 */
+  .tok-hero {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+  }
+
+  .tok-hero__photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 888 / 588;
+  }
+
+  .tok-hero__panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 36px 24px 44px;
+  }
+
+  .tok-hero__sub {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+
+  .tok-hero__title {
+    font-size: 46px;
+    line-height: 56px;
+    letter-spacing: -2px;
+  }
+
+  /* 제품 섹션 비주얼 */
+  .tok-product__visual {
+    height: auto;
+    min-height: 680px;
+    padding-bottom: 220px;
+  }
+
+  .tok-product__header {
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .tok-product__headline {
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .tok-product__headline-line {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .tok-product__underline {
+    height: 3px;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 4px;
+    margin-bottom: 6px;
+  }
+
+  .tok-product__title {
+    font-size: clamp(34px, 10.5vw, 64px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin-top: 16px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    word-break: keep-all;
+  }
+
+  .tok-product__subline {
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: -1px;
+    margin-top: 24px;
+    padding: 0 10px;
+  }
+
+  /* 복용안내 박스 */
+  .tok-product__dosage {
+    position: absolute;
+    left: 20px;
+    bottom: 28px;
+    top: auto;
+    gap: 14px;
+  }
+
+  .tok-product__dosage-icon-wrap {
+    width: 44px;
+    height: 44px;
+  }
+
+  .tok-product__dosage-text {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  /* POINT 영역 */
+  .tok-point {
+    padding: 60px 16px 72px;
+  }
+
+  .tok-point__title {
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -1.5px;
+    margin-bottom: 28px;
+  }
+
+  .tok-point__card {
+    width: 100%;
+    padding: 24px 18px;
+  }
+
+  .tok-point__item {
+    height: auto;
+    min-height: 30px;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: -0.8px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .tok-point__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .tok-point__dot {
+    margin-top: 9px;
+  }
+
+  .tok-point__text {
+    white-space: normal;
+    word-break: keep-all;
+  }
+}

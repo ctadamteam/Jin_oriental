@@ -1,0 +1,1400 @@
+.ped-page {
+  --ped-navy: #083560;
+  --ped-soft-blue: #bbcfe7;
+  --ped-pale-blue: #c3d6ed;
+  --ped-box-blue: #d9e6f2;
+  --ped-bg-gray: #f8f8f8;
+  --ped-card-gray: #f4f4f4;
+  --ped-charcoal: #161616;
+  width: 100%;
+  overflow-x: clip;
+  background: #ffffff;
+  color: #161616;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+
+.ped-page__content {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ==============================================================
+   [상단 헤더 타이틀 & 구분선]
+   Figma 426:448 & 426:447 (NanumMyeongjo 400, 40px, Line 11 1px)
+============================================================== */
+.ped-page__heading {
+  position: relative;
+  height: 84px;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+
+.ped-page__heading h1 {
+  margin: 0;
+  color: #000000;
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.ped-page__divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #000000;
+}
+
+/* ==============================================================
+   [섹션 01] 메인 히어로 배너 (Figma 426:333 "상단" - 1440px x 588px)
+============================================================== */
+.ped-hero {
+  position: relative;
+  width: 100%;
+  height: 588px;
+  margin-top: 12px;
+  overflow: visible;
+  background: #bcd0e8;
+  display: flex;
+}
+
+.ped-hero__photo {
+  position: relative;
+  width: 852px;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.ped-hero__photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.ped-hero__logo {
+  position: absolute;
+  top: 0;
+  left: -51px;
+  width: 310px;
+  height: 104px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ped-hero__panel {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  background: var(--ped-navy);
+  padding: 83px 40px 40px 78px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.ped-hero__sub {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 45.35px;
+  letter-spacing: -1.9px;
+  color: var(--ped-pale-blue);
+}
+
+.ped-hero__title {
+  margin: 6px 0 0 0;
+  font-size: 70px;
+  font-weight: 800;
+  line-height: 80px;
+  letter-spacing: -3.5px;
+  color: var(--ped-soft-blue);
+  white-space: pre-line;
+}
+
+.ped-hero__title span {
+  color: #ffffff;
+}
+
+.ped-hero__desc {
+  margin: 38px 0 0 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+  color: var(--ped-pale-blue);
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 02] 어릴 때 찐 살, 정말 다 키로 갈까요? (Figma 426:342)
+============================================================== */
+.ped-intro {
+  margin-top: 136px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ped-intro__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ped-intro__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ped-intro__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ped-intro__desc-1 {
+  margin: 51px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-intro__desc-2 {
+  margin: 21px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-intro__desc-3 {
+  margin: 21px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-intro__callout {
+  margin-top: 42px;
+  width: 1240px;
+  min-height: 230px;
+  background: var(--ped-box-blue);
+  border: 2px solid var(--ped-navy);
+  border-radius: 10px;
+  padding: 36px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ped-intro__callout-title {
+  margin: 0;
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2.25px;
+  color: var(--ped-navy);
+}
+
+.ped-intro__callout-desc {
+  margin: 13px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 03] 성인비만 vs 소아비만 세포수 비교 (Figma 427:482)
+============================================================== */
+.ped-compare {
+  margin-top: 163px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ped-compare__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ped-compare__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ped-compare__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ped-compare__desc {
+  margin: 51px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-compare__diagram {
+  margin-top: 74px;
+  width: 1250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.ped-compare__col {
+  width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.ped-compare__flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 380px;
+}
+
+.ped-compare__cell-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.ped-compare__pointer {
+  position: absolute;
+  top: -17px;
+  left: 86px;
+  display: flex;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.ped-compare__col:last-child .ped-compare__pointer {
+  left: 89px;
+}
+
+.ped-compare__pointer-svg {
+  width: 72px;
+  height: 45px;
+  flex-shrink: 0;
+}
+
+.ped-compare__pointer-label {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -1.1px;
+  color: #000000;
+  white-space: nowrap;
+  margin-top: -10px;
+  margin-left: 6px;
+}
+
+.ped-compare__arrow {
+  width: 55px;
+  height: 49px;
+  flex-shrink: 0;
+}
+
+.ped-compare__badge {
+  width: 202px;
+  height: 67px;
+  border-radius: 33.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  margin-top: 24px;
+}
+
+.ped-compare__badge--adult {
+  background: var(--ped-soft-blue);
+  color: #000000;
+}
+
+.ped-compare__badge--child {
+  background: var(--ped-navy);
+  color: #ffffff;
+}
+
+/* ==============================================================
+   [섹션 04] 소아비만의 원인 알아보기 (Figma 429:2)
+============================================================== */
+.ped-causes {
+  margin-top: 196px;
+  text-align: center;
+}
+
+.ped-causes__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ped-causes__title-light {
+  font-weight: 400;
+}
+
+.ped-causes__title-bold {
+  font-weight: 700;
+}
+
+.ped-causes__grid {
+  margin-top: 78px;
+  width: 1440px;
+  display: grid;
+  grid-template-columns: 704px 704px;
+  gap: 31px 32px;
+  justify-content: center;
+}
+
+.ped-cause-card {
+  width: 704px;
+  min-height: 673px;
+  background: var(--ped-card-gray);
+  border-radius: 14px;
+  padding: 40px 30px 48px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ped-cause-card__img {
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ped-cause-card__img img {
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+}
+
+.ped-cause-card__point {
+  margin: 16px 0 0 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -1.5px;
+  color: var(--ped-navy);
+}
+
+.ped-cause-card__title {
+  margin: 7px 0 0 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #000000;
+}
+
+.ped-cause-card__desc {
+  margin: 18px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  white-space: pre-line;
+}
+
+.ped-causes__footer-text {
+  margin-top: 56px;
+  text-align: center;
+}
+
+.ped-causes__desc-1 {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-causes__desc-2 {
+  margin: 26px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-causes__desc-2 strong {
+  font-weight: 600;
+  color: var(--ped-navy);
+}
+
+.ped-causes__desc-3 {
+  margin: 26px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 05] 소아비만 건강 문제 10가지 (Figma 430:57)
+============================================================== */
+.ped-risks {
+  margin-top: 179px;
+  text-align: center;
+}
+
+.ped-risks__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ped-risks__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ped-risks__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ped-risks__grid {
+  margin-top: 62px;
+  width: 1284px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 236px);
+  gap: 46px 26px;
+  justify-content: center;
+}
+
+.ped-risk-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ped-risk-item__circle {
+  width: 236px;
+  height: 236px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ped-risk-item__circle--navy {
+  background: var(--ped-navy);
+}
+
+.ped-risk-item__circle--blue {
+  background: var(--ped-soft-blue);
+}
+
+.ped-risk-item__circle img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.ped-risk-item__label {
+  margin: 22px 0 0 0;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 45px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  white-space: pre-line;
+  min-height: 90px;
+}
+
+/* ==============================================================
+   [섹션 06] 소아비만 증상 체크리스트 (Figma 431:141)
+============================================================== */
+.ped-checklist-sec {
+  margin-top: 179px;
+  width: 100%;
+  min-height: 1077px;
+  background: var(--ped-bg-gray);
+  padding: 145px 50px 115px 50px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.ped-checklist-sec__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ped-checklist-sec__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ped-checklist-sec__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ped-checklist-card {
+  margin-top: 54px;
+  width: 1198px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 53px 55px;
+  box-sizing: border-box;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.ped-checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ped-check-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 0;
+  transition: opacity 0.15s ease;
+}
+
+.ped-check-row:hover {
+  opacity: 0.85;
+}
+
+.ped-check-box {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--ped-navy);
+  border-radius: 5px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.ped-check-row.is-checked .ped-check-box {
+  background: var(--ped-navy);
+}
+
+.ped-check-box svg {
+  display: none;
+}
+
+.ped-check-row.is-checked .ped-check-box svg {
+  display: block;
+}
+
+.ped-check-text {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+}
+
+/* ==============================================================
+   [섹션 07] 성장기 체중 감량 (Figma 431:158)
+============================================================== */
+.ped-slow-loss {
+  margin-top: 136px;
+  text-align: center;
+}
+
+.ped-slow-loss__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ped-slow-loss__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ped-slow-loss__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ped-slow-loss__desc-1 {
+  margin: 51px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-slow-loss__desc-1 strong {
+  font-weight: 600;
+  color: var(--ped-navy);
+}
+
+.ped-slow-loss__desc-2 {
+  margin: 27px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-slow-loss__desc-2 strong {
+  font-weight: 600;
+  color: var(--ped-navy);
+}
+
+/* ==============================================================
+   [섹션 08] 체질에 맞춘 소아비만 한방 관리 (Figma 431:178)
+============================================================== */
+.ped-constitution {
+  margin-top: 136px;
+  text-align: center;
+}
+
+.ped-constitution__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ped-constitution__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ped-constitution__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ped-constitution__desc {
+  margin: 51px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-constitution__desc strong {
+  font-weight: 600;
+  color: var(--ped-navy);
+}
+
+/* ==============================================================
+   [섹션 09] 한의학에서 보는 소아비만, 담음과 적취 (Figma 426:359)
+============================================================== */
+.ped-dampness {
+  margin-top: 136px;
+  width: 100%;
+  min-height: 1173px;
+  background: var(--ped-navy);
+  padding: 145px 0 115px 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
+}
+
+.ped-dampness__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+}
+
+.ped-dampness__title-light {
+  display: block;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.ped-dampness__title-accent {
+  display: block;
+  font-weight: 700;
+  color: var(--ped-soft-blue);
+}
+
+.ped-dampness__desc-1 {
+  margin: 63px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #ffffff;
+  white-space: pre-line;
+}
+
+.ped-dampness__desc-2 {
+  margin: 30px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #ffffff;
+  white-space: pre-line;
+}
+
+.ped-dampness__flow-area {
+  margin-top: 61px;
+  width: 1071px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.ped-dampness__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 1071px;
+}
+
+.ped-damp-bar {
+  width: 1071px;
+  height: 86px;
+  background: #ffffff;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  padding: 0 35px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.ped-damp-bar__num {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: var(--ped-navy);
+  width: 78px;
+  flex-shrink: 0;
+}
+
+.ped-damp-bar__text {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: var(--ped-charcoal);
+}
+
+.ped-dampness__child-circle {
+  position: absolute;
+  left: 918px;
+  top: -6px;
+  width: 303px;
+  height: 303px;
+  border-radius: 50%;
+  background: var(--ped-soft-blue);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ped-dampness__child-wrap {
+  position: absolute;
+  left: 875px;
+  top: -55px;
+  width: 389px;
+  height: 352px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.ped-dampness__child-img {
+  width: 389px;
+  height: 352px;
+  display: block;
+  object-fit: contain;
+}
+
+/* ==============================================================
+   [섹션 10] 소아비만 한방 관리의 핵심 (Figma 431:227)
+============================================================== */
+.ped-core {
+  margin-top: 158px;
+  text-align: center;
+}
+
+.ped-core__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ped-core__title-light {
+  font-weight: 400;
+}
+
+.ped-core__title-bold {
+  font-weight: 700;
+}
+
+.ped-core__desc-1 {
+  margin: 63px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-core__desc-1 strong {
+  font-weight: 600;
+  color: var(--ped-navy);
+}
+
+.ped-core__desc-2 {
+  margin: 27px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-core__desc-2 strong {
+  font-weight: 600;
+  color: var(--ped-navy);
+}
+
+.ped-core__grid {
+  margin-top: 41px;
+  width: 1409px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.ped-core-card {
+  width: 341px;
+  height: 423px;
+  background: var(--ped-card-gray);
+  border-radius: 14px;
+  padding: 24px 15px 36px 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.ped-core-card__img {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ped-core-card__img img {
+  max-width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+}
+
+.ped-core-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ped-core-card__point {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -1.5px;
+  color: var(--ped-navy);
+}
+
+.ped-core-card__title {
+  margin: 7px 0 0 0;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+}
+
+/* ==============================================================
+   [섹션 11] 체질과 성장까지 고려 (Figma 432:257)
+============================================================== */
+.ped-herbs {
+  margin-top: 163px;
+  width: 100%;
+  min-height: 2019px;
+  background: var(--ped-bg-gray);
+  padding: 145px 0 115px 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.ped-herbs__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ped-herbs__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ped-herbs__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ped-herbs__desc-1 {
+  margin: 54px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-herbs__desc-2 {
+  margin: 33px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ped-charcoal);
+  white-space: pre-line;
+}
+
+.ped-herbs__badge {
+  margin: 48px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 382px;
+  height: 68px;
+  background: var(--ped-navy);
+  border-radius: 34px;
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+}
+
+.ped-herbs__grid {
+  margin-top: 33px;
+  width: 1246px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 602px 602px;
+  gap: 39px 42px;
+  justify-content: center;
+}
+
+.ped-herb-card {
+  width: 602px;
+  height: 508px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 21px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ped-herb-card__photo {
+  width: 560px;
+  height: 394px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #d9d9d9;
+}
+
+.ped-herb-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ped-herb-card__name {
+  margin: 21px 0 0 0;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+}
+
+/* ==============================================================
+   [반응형 대응 - Tablet & Mobile]
+============================================================== */
+@media (max-width: 1440px) {
+  .ped-page__content {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  .ped-hero__photo {
+    width: 58%;
+  }
+  .ped-hero__panel {
+    padding: 40px 24px;
+  }
+  .ped-hero__title {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  .ped-hero__sub {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .ped-hero__desc {
+    font-size: 19px;
+    line-height: 28px;
+  }
+  .ped-intro__callout,
+  .ped-compare__diagram,
+  .ped-causes__grid,
+  .ped-risks__grid,
+  .ped-checklist-card,
+  .ped-dampness__flow-area,
+  .ped-dampness__bars,
+  .ped-damp-bar,
+  .ped-core__grid,
+  .ped-herbs__grid {
+    width: 100%;
+    max-width: 100%;
+  }
+  .ped-cause-card {
+    width: 100%;
+  }
+  .ped-herb-card {
+    width: 100%;
+    height: auto;
+  }
+  .ped-herb-card__photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 560 / 394;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ped-hero {
+    height: auto;
+    flex-direction: column;
+  }
+  .ped-hero__photo {
+    width: 100%;
+    height: 360px;
+  }
+  .ped-hero__panel {
+    width: 100%;
+    padding: 40px 24px;
+  }
+  .ped-compare__diagram {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  .ped-compare__col {
+    width: 100%;
+    max-width: 580px;
+  }
+  .ped-causes__grid {
+    grid-template-columns: 1fr;
+  }
+  .ped-risks__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 16px;
+  }
+  .ped-dampness__child-circle {
+    display: none;
+  }
+  .ped-dampness__child-wrap {
+    position: static;
+    margin: 40px auto 0 auto;
+    width: 280px;
+    height: auto;
+  }
+  .ped-dampness__child-img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .ped-core__grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .ped-core-card {
+    width: calc(50% - 15px);
+  }
+  .ped-herbs__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ped-page__heading {
+    height: 60px;
+    padding-top: 14px;
+  }
+  .ped-page__heading h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .ped-hero__photo {
+    height: 240px;
+  }
+  .ped-hero__logo {
+    width: 200px;
+    height: auto;
+    left: 0;
+  }
+  .ped-hero__panel {
+    padding: 30px 18px;
+  }
+  .ped-hero__sub {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .ped-hero__title {
+    font-size: 34px;
+    line-height: 42px;
+  }
+  .ped-hero__desc {
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .ped-intro,
+  .ped-compare,
+  .ped-causes,
+  .ped-risks,
+  .ped-checklist-sec,
+  .ped-slow-loss,
+  .ped-constitution,
+  .ped-dampness,
+  .ped-core,
+  .ped-herbs {
+    margin-top: 70px;
+  }
+  .ped-intro__title,
+  .ped-compare__title,
+  .ped-causes__title,
+  .ped-risks__title,
+  .ped-checklist-sec__title,
+  .ped-slow-loss__title,
+  .ped-constitution__title,
+  .ped-dampness__title,
+  .ped-core__title,
+  .ped-herbs__title {
+    font-size: 36px;
+    line-height: 46px;
+    letter-spacing: -1.5px;
+  }
+  .ped-intro__desc-1,
+  .ped-intro__desc-2,
+  .ped-intro__desc-3,
+  .ped-compare__desc,
+  .ped-causes__desc-1,
+  .ped-causes__desc-2,
+  .ped-causes__desc-3,
+  .ped-slow-loss__desc-1,
+  .ped-slow-loss__desc-2,
+  .ped-constitution__desc,
+  .ped-dampness__desc-1,
+  .ped-dampness__desc-2,
+  .ped-core__desc-1,
+  .ped-core__desc-2,
+  .ped-herbs__desc-1,
+  .ped-herbs__desc-2 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    margin-top: 18px;
+  }
+  .ped-intro__callout {
+    width: 100%;
+    min-height: auto;
+    padding: 24px 16px;
+  }
+  .ped-intro__callout-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .ped-intro__callout-desc {
+    font-size: 17px;
+    line-height: 26px;
+  }
+  .ped-cause-card {
+    min-height: auto;
+    padding: 24px 16px;
+  }
+  .ped-cause-card__img {
+    height: 240px;
+  }
+  .ped-cause-card__point {
+    font-size: 20px;
+  }
+  .ped-cause-card__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .ped-cause-card__desc {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .ped-risks__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 12px;
+  }
+  .ped-risk-item__circle {
+    width: 140px;
+    height: 140px;
+  }
+  .ped-risk-item__label {
+    font-size: 18px;
+    line-height: 24px;
+    min-height: auto;
+    margin-top: 12px;
+  }
+  .ped-checklist-sec {
+    padding: 60px 16px;
+  }
+  .ped-checklist-card {
+    padding: 30px 18px;
+  }
+  .ped-check-text {
+    font-size: 17px;
+    line-height: 26px;
+  }
+  .ped-dampness {
+    padding: 60px 16px;
+  }
+  .ped-damp-bar {
+    height: auto;
+    padding: 16px 18px;
+  }
+  .ped-damp-bar__num {
+    font-size: 24px;
+    line-height: 30px;
+    width: 45px;
+  }
+  .ped-damp-bar__text {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .ped-core-card {
+    width: 100%;
+    height: auto;
+  }
+  .ped-herbs {
+    padding: 60px 16px;
+  }
+  .ped-herbs__badge {
+    width: 240px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .ped-herb-card {
+    padding: 16px;
+  }
+  .ped-herb-card__name {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}

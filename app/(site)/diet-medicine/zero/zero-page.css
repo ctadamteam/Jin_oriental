@@ -1,0 +1,1458 @@
+/* ==============================================================
+   [붓기제로ㆍ배사라정] 상세페이지 스타일시트 (피그마 1:1 정밀 규격)
+   Figma Frame 328:4 (Width: 1440px 기준)
+============================================================== */
+
+.zero-page {
+  --zero-navy: #083560;
+  --zero-pale-blue: #C3D6ED;
+  --zero-bg-blue: #BCD0E8;
+  --zero-gray-bg: #F8F8F8;
+  --zero-teal: #8ACCCA;
+  --zero-teal-text: #518F8E;
+  --zero-dark: #161616;
+  width: 100%;
+  overflow-x: clip;
+  background: #fff;
+  color: #161616;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.zero-page__content {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+}
+
+/* ==============================================================
+   상단 나눔명조 헤딩 (Figma Node 333:550 & 333:521)
+============================================================== */
+.zero-page__heading {
+  position: relative;
+  height: 84px;
+  padding-top: 16px;
+}
+
+.zero-page__heading h1 {
+  margin: 0;
+  color: #000000;
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.zero-page__divider {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #000000;
+}
+
+/* ==============================================================
+   [섹션 0] 메인 히어로 배너 (Figma 328:5 - 1440px x 588px)
+============================================================== */
+.zero-hero {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 588px;
+  margin-top: 12px;
+  overflow: hidden;
+  background: var(--zero-bg-blue);
+}
+
+.zero-hero__photo {
+  position: relative;
+  width: 923px;
+  height: 588px;
+  flex-shrink: 0;
+}
+
+.zero-hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.zero-hero__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 588px;
+  height: 588px;
+  padding: 134px 0 0 95px;
+  background: var(--zero-navy);
+}
+
+.zero-hero__sub {
+  margin: 0 0 15px;
+  color: var(--zero-pale-blue);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -2px;
+}
+
+.zero-hero__title {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 120px;
+  font-weight: 800;
+  line-height: 130px;
+  letter-spacing: -6px;
+}
+
+.zero-hero__title span {
+  color: var(--zero-pale-blue);
+}
+
+/* ==============================================================
+   [섹션 1] 붓기제로 인트로 & 4대 효능 (Figma 328:44 - 1440px x 1460px)
+============================================================== */
+.zero-intro {
+  position: relative;
+  width: 100%;
+  height: 1460px;
+  background: #fdfbf7;
+  overflow: hidden;
+}
+
+.zero-intro__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1398px;
+  z-index: 1;
+}
+
+.zero-intro__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.zero-intro__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.zero-intro__top-copy {
+  position: absolute;
+  top: 106px;
+  right: 96px;
+  text-align: right;
+}
+
+.zero-intro__headline {
+  margin: 0;
+  color: var(--zero-dark);
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 85px;
+  letter-spacing: -2px;
+}
+
+.zero-intro__underline-line1 {
+  display: inline-block;
+  border-bottom: 5px solid #161616;
+  padding-bottom: 4px;
+}
+
+.zero-intro__underline-line2 {
+  display: inline-block;
+  border-bottom: 5px solid #161616;
+  padding-bottom: 4px;
+}
+
+.zero-intro__brand-title {
+  margin: 20px 0 0;
+  color: var(--zero-navy);
+  font-size: 155px;
+  font-weight: 800;
+  line-height: 155px;
+  letter-spacing: -4px;
+}
+
+.zero-intro__subline {
+  margin: 25px 0 0;
+  color: var(--zero-dark);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: -1.5px;
+}
+
+.zero-intro__middle-copy {
+  position: absolute;
+  top: 760px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1141px;
+  text-align: center;
+  color: var(--zero-dark);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+}
+
+.zero-intro__center-line {
+  position: absolute;
+  top: 1119px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 176px;
+  background: var(--zero-navy);
+}
+
+.zero-intro__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1440px;
+  height: 182px;
+  background: var(--zero-navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 40px;
+}
+
+.zero-intro__bar-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.zero-intro__bar-icon-wrap {
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.zero-intro__bar-text {
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -1px;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 2 & 7] 이런분들에게 추천해요 (Figma 356:11 & 364:192 - 1248px x 480px)
+============================================================== */
+.zero-recommend {
+  width: 1248px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.zero-recommend__title {
+  margin: 0 0 70px;
+  color: #000000;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: -2px;
+}
+
+.zero-recommend__box {
+  width: 100%;
+  min-height: 326px;
+  padding: 48px 60px;
+  border: 2px solid var(--zero-navy);
+  background: #FFFFFF;
+  text-align: left;
+}
+
+.zero-recommend__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zero-recommend__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+}
+
+.zero-recommend__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--zero-navy);
+  flex-shrink: 0;
+}
+
+/* ==============================================================
+   [섹션 3] 부종을 방치하면 살찌기 쉬운 이유 (Figma 356:12 - 1440px x 1238px)
+============================================================== */
+.zero-steps {
+  width: 100%;
+  padding: 139px 96px 100px;
+  background: var(--zero-gray-bg);
+}
+
+.zero-steps__title {
+  margin: 0 0 86px;
+  text-align: center;
+  color: #000000;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: -2px;
+}
+
+.zero-steps__grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+  width: 1248px;
+  margin: 0 auto;
+}
+
+.zero-steps__card {
+  width: 392px;
+  height: 654px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 24px 40px;
+  text-align: center;
+}
+
+.zero-steps__card-img {
+  width: 325px;
+  height: 325px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zero-steps__card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.zero-steps__card-step {
+  margin-top: 15px;
+  color: var(--zero-navy);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.zero-steps__card-heading {
+  margin: 8px 0 15px;
+  color: #000000;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.zero-steps__card-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.zero-steps__card-bullets li {
+  color: #000000;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1px;
+}
+
+.zero-checkpoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 37px;
+  width: 1248px;
+  margin: 45px auto 0;
+}
+
+.zero-checkpoint__badge {
+  background: var(--zero-navy);
+  color: #FFFFFF;
+  border-radius: 25px;
+  width: 211px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+.zero-checkpoint__text {
+  margin: 0;
+  color: #000000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+}
+
+.zero-checkpoint__text strong {
+  font-weight: 700;
+}
+
+/* ==============================================================
+   [섹션 4 & 9] 네이비 와이드 배너 (Figma 359:42 & 366:288)
+============================================================== */
+.zero-banner-navy {
+  width: 100%;
+  padding: 139px 100px;
+  background: var(--zero-navy);
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.zero-banner-navy__title {
+  margin: 0 0 67px;
+  color: #FFFFFF;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 84px;
+  letter-spacing: -2px;
+}
+
+.zero-banner-navy__p1 {
+  margin: 0 0 36px;
+  color: #FFFFFF;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+}
+
+.zero-banner-navy__p2 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+}
+
+/* ==============================================================
+   [섹션 5] 무엇이 어디에 쌓였는가 (Figma 360:68 - 1440px x 2108px)
+============================================================== */
+.zero-compare {
+  width: 100%;
+  padding: 139px 96px 100px;
+  background: var(--zero-gray-bg);
+}
+
+.zero-compare__title {
+  margin: 0 0 86px;
+  text-align: center;
+  color: #000000;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: -2px;
+}
+
+.zero-compare__cols {
+  display: flex;
+  justify-content: space-between;
+  width: 1248px;
+  margin: 0 auto;
+  gap: 22px;
+}
+
+.zero-compare__card {
+  width: 613px;
+  height: 1529px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.zero-compare__card--fat {
+  background: #8ACCCA;
+}
+
+.zero-compare__card--edema {
+  background: var(--zero-navy);
+}
+
+.zero-compare__header {
+  height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+.zero-compare__card--fat .zero-compare__header {
+  color: #161616;
+}
+
+.zero-compare__card--edema .zero-compare__header {
+  color: #A4BBD6;
+}
+
+.zero-compare__body {
+  background: #FFFFFF;
+  height: 1423px;
+  border-radius: 20px;
+  padding: 40px 37px;
+  display: flex;
+  flex-direction: column;
+}
+
+.zero-compare__block-label {
+  margin: 0 0 12px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.zero-compare__card--fat .zero-compare__block-label {
+  color: var(--zero-teal-text);
+}
+
+.zero-compare__card--edema .zero-compare__block-label {
+  color: var(--zero-navy);
+}
+
+.zero-compare__block-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 209px;
+  margin-bottom: 30px;
+}
+
+.zero-compare__block-1-text {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  color: #000000;
+}
+
+.zero-compare__block-2 {
+  margin-bottom: 30px;
+}
+
+.zero-compare__block-2-img {
+  width: 540px;
+  margin-bottom: 20px;
+}
+
+.zero-compare__block-2-sub {
+  margin-top: 14px;
+}
+
+.zero-compare__sub-title {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 45px;
+  color: #000000;
+}
+
+.zero-compare__sub-desc {
+  margin: 4px 0 14px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  color: #000000;
+}
+
+.zero-compare__block-3-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.zero-compare__block-3-bullets li {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  color: #000000;
+  letter-spacing: -1px;
+}
+
+/* ==============================================================
+   [섹션 6] 배사라정 인트로 & 5대 효능 (Figma 362:163 - 1440px x 1460px)
+============================================================== */
+.zero-intro--besara .zero-intro__bar {
+  padding: 0 20px;
+}
+
+.zero-intro--besara .zero-intro__bar-item {
+  gap: 14px;
+}
+
+.zero-intro--besara .zero-intro__bar-text {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+/* ==============================================================
+   [섹션 8] 내장지방 원인 & 생활습관 (Figma 364:201 - 1440px x 2004px)
+============================================================== */
+.zero-cause {
+  width: 100%;
+  padding: 139px 96px 100px;
+  background: var(--zero-gray-bg);
+}
+
+.zero-cause__title {
+  margin: 0 0 49px;
+  text-align: center;
+  color: #000000;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: -2px;
+}
+
+.zero-cause__sub {
+  max-width: 1198px;
+  margin: 0 auto 89px;
+  text-align: center;
+  color: #000000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+}
+
+.zero-cause__pill {
+  background: var(--zero-navy);
+  color: #FFFFFF;
+  border-radius: 39px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0 auto 39px;
+}
+
+.zero-cause__pill--process {
+  width: 428px;
+}
+
+.zero-cause__pill--habit {
+  width: 584px;
+  margin-top: 80px;
+}
+
+.zero-cause__process-flow {
+  width: 1248px;
+  margin: 0 auto;
+}
+
+.zero-cause__process-flow img {
+  width: 100%;
+  height: auto;
+}
+
+.zero-cause__habits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 612px);
+  gap: 24px;
+  width: 1248px;
+  margin: 0 auto;
+}
+
+.zero-cause__habit-card {
+  width: 612px;
+  height: 295px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  gap: 25px;
+}
+
+.zero-cause__habit-img {
+  width: 250px;
+  height: 250px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zero-cause__habit-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.zero-cause__habit-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.zero-cause__habit-point {
+  color: var(--zero-navy);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.zero-cause__habit-title {
+  margin: 7px 0 5px;
+  color: #000000;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.zero-cause__habit-subnote {
+  margin: 0 0 5px;
+  color: #000000;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.zero-cause__habit-desc {
+  margin: 0;
+  color: #000000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1px;
+}
+
+/* ==============================================================
+   [섹션 10] 내장지방이 위험한 진짜 이유 (Figma 367:296 - 1440px x 2394px)
+============================================================== */
+.zero-danger {
+  width: 100%;
+  padding: 149px 96px 100px;
+  background: var(--zero-gray-bg);
+}
+
+.zero-danger__title {
+  margin: 0 0 49px;
+  text-align: center;
+  color: #000000;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: -2px;
+}
+
+.zero-danger__sub {
+  max-width: 1099px;
+  margin: 0 auto 86px;
+  text-align: center;
+  color: #000000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+}
+
+.zero-danger__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 612px);
+  gap: 24px 24px;
+  width: 1248px;
+  margin: 0 auto;
+}
+
+.zero-danger__card {
+  width: 612px;
+  height: 785px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 45px;
+  text-align: center;
+}
+
+.zero-danger__card-img {
+  width: 440px;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zero-danger__card-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.zero-danger__card-title {
+  margin: 10px 0 18px;
+  color: #000000;
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+}
+
+.zero-danger__card-line {
+  width: 100%;
+  height: 1px;
+  background: #000000;
+  margin-bottom: 20px;
+}
+
+.zero-danger__card-desc {
+  margin: 0;
+  color: #161616;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1px;
+}
+
+/* ==============================================================
+   태블릿 반응형 규격 (721px ~ 1439px): 1440px 비례 vw 스케일링
+============================================================== */
+@media (min-width: 721px) and (max-width: 1439px) {
+  .zero-page__heading {
+    height: 5.833vw;
+    padding-top: 1.111vw;
+  }
+  .zero-page__heading h1 {
+    font-size: 2.778vw;
+    line-height: 3.472vw;
+  }
+  .zero-hero {
+    height: 40.833vw;
+  }
+  .zero-hero__photo {
+    width: 64.097vw;
+    height: 40.833vw;
+  }
+  .zero-hero__panel {
+    width: 40.833vw;
+    height: 40.833vw;
+    padding: 9.306vw 0 0 6.597vw;
+  }
+  .zero-hero__sub {
+    font-size: 2.778vw;
+    line-height: 3.333vw;
+  }
+  .zero-hero__title {
+    font-size: 8.333vw;
+    line-height: 9.028vw;
+  }
+  .zero-intro {
+    height: 101.389vw;
+  }
+  .zero-intro__bg {
+    width: 100vw;
+    height: 97.083vw;
+  }
+  .zero-intro__top-copy {
+    top: 7.361vw;
+    right: 6.667vw;
+  }
+  .zero-intro__headline {
+    font-size: 4.861vw;
+    line-height: 5.903vw;
+  }
+  .zero-intro__brand-title {
+    font-size: 10.764vw;
+    line-height: 10.764vw;
+  }
+  .zero-intro__subline {
+    font-size: 2.778vw;
+    line-height: 3.819vw;
+  }
+  .zero-intro__middle-copy {
+    top: 52.778vw;
+    width: 79.236vw;
+    font-size: 2.431vw;
+    line-height: 3.472vw;
+  }
+  .zero-intro__center-line {
+    top: 77.708vw;
+    height: 12.222vw;
+  }
+  .zero-intro__bar {
+    width: 100vw;
+    height: 12.639vw;
+  }
+  .zero-intro__bar-icon-wrap {
+    width: 7.917vw;
+    height: 7.917vw;
+  }
+  .zero-intro__bar-text {
+    font-size: 2.083vw;
+    line-height: 2.778vw;
+  }
+  .zero-recommend {
+    width: 86.667vw;
+    margin: 8.333vw auto;
+  }
+  .zero-recommend__title {
+    font-size: 4.861vw;
+    line-height: 5.833vw;
+    margin-bottom: 4.861vw;
+  }
+  .zero-recommend__item {
+    font-size: 2.431vw;
+    line-height: 3.472vw;
+  }
+  .zero-steps {
+    padding: 9.653vw 6.667vw 6.944vw;
+  }
+  .zero-steps__title {
+    font-size: 4.861vw;
+    line-height: 5.833vw;
+    margin-bottom: 5.972vw;
+  }
+  .zero-steps__grid {
+    width: 86.667vw;
+    gap: 2.5vw;
+  }
+  .zero-steps__card {
+    width: 27.222vw;
+    height: 45.417vw;
+    padding: 2.083vw 1.667vw 2.778vw;
+  }
+  .zero-steps__card-img {
+    width: 22.569vw;
+    height: 22.569vw;
+  }
+  .zero-steps__card-step {
+    font-size: 2.083vw;
+  }
+  .zero-steps__card-heading {
+    font-size: 2.778vw;
+    line-height: 3.472vw;
+  }
+  .zero-steps__card-bullets li {
+    font-size: 2.083vw;
+    line-height: 3.125vw;
+  }
+  .zero-checkpoint {
+    width: 86.667vw;
+    gap: 2.569vw;
+    margin-top: 3.125vw;
+  }
+  .zero-checkpoint__badge {
+    width: 14.653vw;
+    height: 3.472vw;
+    font-size: 2.431vw;
+  }
+  .zero-checkpoint__text {
+    font-size: 2.431vw;
+    line-height: 3.472vw;
+  }
+  .zero-banner-navy {
+    padding: 9.653vw 6.944vw;
+  }
+  .zero-banner-navy__title {
+    font-size: 4.861vw;
+    line-height: 5.833vw;
+  }
+  .zero-banner-navy__p1,
+  .zero-banner-navy__p2 {
+    font-size: 2.431vw;
+    line-height: 3.472vw;
+  }
+  .zero-compare {
+    padding: 9.653vw 6.667vw 6.944vw;
+  }
+  .zero-compare__title {
+    font-size: 4.861vw;
+    line-height: 5.833vw;
+  }
+  .zero-compare__cols {
+    width: 86.667vw;
+    gap: 1.528vw;
+  }
+  .zero-compare__card {
+    width: 42.569vw;
+    height: 106.181vw;
+  }
+  .zero-compare__header {
+    height: 7.361vw;
+    font-size: 4.167vw;
+  }
+  .zero-compare__body {
+    height: 98.819vw;
+    padding: 2.778vw 2.569vw;
+  }
+  .zero-compare__block-label {
+    font-size: 2.778vw;
+    line-height: 3.472vw;
+  }
+  .zero-compare__block-1-text,
+  .zero-compare__sub-title,
+  .zero-compare__sub-desc,
+  .zero-compare__block-3-bullets li {
+    font-size: 2.431vw;
+    line-height: 3.472vw;
+  }
+  .zero-compare__block-2-img {
+    width: 37.5vw;
+  }
+  .zero-cause {
+    padding: 9.653vw 6.667vw 6.944vw;
+  }
+  .zero-cause__title {
+    font-size: 4.861vw;
+    line-height: 5.833vw;
+  }
+  .zero-cause__sub {
+    font-size: 2.431vw;
+    line-height: 3.472vw;
+  }
+  .zero-cause__pill {
+    font-size: 2.778vw;
+    height: 5.417vw;
+  }
+  .zero-cause__pill--process {
+    width: 29.722vw;
+  }
+  .zero-cause__pill--habit {
+    width: 40.556vw;
+  }
+  .zero-cause__process-flow {
+    width: 86.667vw;
+  }
+  .zero-cause__habits-grid {
+    grid-template-columns: repeat(2, 42.5vw);
+    width: 86.667vw;
+    gap: 1.667vw;
+  }
+  .zero-cause__habit-card {
+    width: 42.5vw;
+    height: 20.486vw;
+    padding: 1.389vw 2.083vw;
+    gap: 1.736vw;
+  }
+  .zero-cause__habit-img {
+    width: 17.361vw;
+    height: 17.361vw;
+  }
+  .zero-cause__habit-point {
+    font-size: 2.083vw;
+  }
+  .zero-cause__habit-title {
+    font-size: 2.778vw;
+    line-height: 3.472vw;
+  }
+  .zero-cause__habit-desc {
+    font-size: 2.431vw;
+    line-height: 3.125vw;
+  }
+  .zero-danger {
+    padding: 10.347vw 6.667vw 6.944vw;
+  }
+  .zero-danger__title {
+    font-size: 4.861vw;
+    line-height: 5.833vw;
+  }
+  .zero-danger__sub {
+    font-size: 2.431vw;
+    line-height: 3.472vw;
+  }
+  .zero-danger__grid {
+    grid-template-columns: repeat(2, 42.5vw);
+    width: 86.667vw;
+    gap: 1.667vw;
+  }
+  .zero-danger__card {
+    width: 42.5vw;
+    height: 54.514vw;
+    padding: 2.083vw 3.125vw;
+  }
+  .zero-danger__card-img {
+    width: 30.556vw;
+    height: 30.556vw;
+  }
+  .zero-danger__card-title {
+    font-size: 3.125vw;
+    line-height: 3.611vw;
+  }
+  .zero-danger__card-desc {
+    font-size: 2.431vw;
+    line-height: 3.125vw;
+  }
+}
+
+/* ==============================================================
+   모바일 반응형 규격 (최대 720px)
+============================================================== */
+@media (max-width: 720px) {
+  .zero-page__heading {
+    height: 62px;
+    padding: 12px 20px 0;
+  }
+  .zero-page__heading h1 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  .zero-hero {
+    flex-direction: column;
+    height: auto;
+    margin-top: 8px;
+  }
+  .zero-hero__photo {
+    width: 100%;
+    height: 260px;
+  }
+  .zero-hero__panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 40px 24px 48px;
+  }
+  .zero-hero__sub {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+  .zero-hero__title {
+    font-size: 52px;
+    line-height: 58px;
+    letter-spacing: -2px;
+  }
+  .zero-intro {
+    height: auto;
+    min-height: auto;
+  }
+  .zero-intro__bg {
+    position: relative;
+    width: 100%;
+    height: 340px;
+  }
+  .zero-intro__content {
+    position: relative;
+    padding: 30px 20px 0;
+  }
+  .zero-intro__top-copy {
+    position: relative;
+    top: auto;
+    right: auto;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .zero-intro__headline {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .zero-intro__brand-title {
+    font-size: 56px;
+    line-height: 56px;
+    margin-top: 10px;
+  }
+  .zero-intro__subline {
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 12px;
+  }
+  .zero-intro__middle-copy {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    font-size: 16px;
+    line-height: 25px;
+    margin: 30px 0 20px;
+  }
+  .zero-intro__center-line {
+    position: relative;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    margin: 20px 0;
+  }
+  .zero-intro__bar {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+  .zero-intro__bar-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .zero-intro__bar-icon-wrap {
+    width: 56px;
+    height: 56px;
+  }
+  .zero-intro__bar-text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .zero-recommend {
+    width: calc(100% - 36px);
+    margin: 60px auto;
+  }
+  .zero-recommend__title {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 30px;
+  }
+  .zero-recommend__box {
+    padding: 24px 20px;
+  }
+  .zero-recommend__item {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .zero-steps {
+    padding: 60px 18px 40px;
+  }
+  .zero-steps__title {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 36px;
+  }
+  .zero-steps__grid {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+  .zero-steps__card {
+    width: 100%;
+    height: auto;
+    padding: 24px 16px 30px;
+  }
+  .zero-steps__card-img {
+    width: 200px;
+    height: 200px;
+  }
+  .zero-steps__card-step {
+    font-size: 16px;
+  }
+  .zero-steps__card-heading {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .zero-steps__card-bullets li {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .zero-checkpoint {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .zero-checkpoint__badge {
+    width: 140px;
+    height: 36px;
+    font-size: 18px;
+  }
+  .zero-checkpoint__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .zero-banner-navy {
+    padding: 60px 20px;
+  }
+  .zero-banner-navy__title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+  .zero-banner-navy__p1,
+  .zero-banner-navy__p2 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .zero-compare {
+    padding: 60px 18px 40px;
+  }
+  .zero-compare__title {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 36px;
+  }
+  .zero-compare__cols {
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+  }
+  .zero-compare__card {
+    width: 100%;
+    height: auto;
+  }
+  .zero-compare__header {
+    height: 60px;
+    font-size: 28px;
+  }
+  .zero-compare__body {
+    height: auto;
+    padding: 24px 18px;
+  }
+  .zero-compare__block-label {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .zero-compare__block-1 {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .zero-compare__block-1-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .zero-compare__block-2-img {
+    width: 100%;
+  }
+  .zero-compare__sub-title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .zero-compare__sub-desc {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .zero-compare__block-3-bullets li {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .zero-cause {
+    padding: 60px 18px 40px;
+  }
+  .zero-cause__title {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 24px;
+  }
+  .zero-cause__sub {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 36px;
+  }
+  .zero-cause__pill {
+    height: 48px;
+    font-size: 20px;
+    border-radius: 24px;
+  }
+  .zero-cause__pill--process {
+    width: 240px;
+  }
+  .zero-cause__pill--habit {
+    width: 300px;
+    margin-top: 40px;
+  }
+  .zero-cause__process-flow {
+    width: 100%;
+  }
+  .zero-cause__habits-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 16px;
+  }
+  .zero-cause__habit-card {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+    text-align: center;
+  }
+  .zero-cause__habit-img {
+    width: 140px;
+    height: 140px;
+  }
+  .zero-cause__habit-point {
+    font-size: 16px;
+  }
+  .zero-cause__habit-title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .zero-cause__habit-desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .zero-danger {
+    padding: 60px 18px 40px;
+  }
+  .zero-danger__title {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 24px;
+  }
+  .zero-danger__sub {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 36px;
+  }
+  .zero-danger__grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 16px;
+  }
+  .zero-danger__card {
+    width: 100%;
+    height: auto;
+    padding: 24px 16px;
+  }
+  .zero-danger__card-img {
+    width: 200px;
+    height: 200px;
+  }
+  .zero-danger__card-title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .zero-danger__card-desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

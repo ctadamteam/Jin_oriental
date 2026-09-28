@@ -1,0 +1,1089 @@
+.ci-page {
+  --ci-navy: #083560;
+  --ci-light-blue: #bcd0e8;
+  --ci-soft-blue: #bbcfe7;
+  --ci-pale-blue: #c3d6ed;
+  --ci-box-blue: #d9e6f2;
+  --ci-charcoal: #161616;
+  --ci-bg-gray: #f8f8f8;
+  width: 100%;
+  overflow-x: clip;
+  background: #ffffff;
+  color: #161616;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+
+.ci-page__content {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ==============================================================
+   [상단 헤더 타이틀 & 구분선]
+   Figma 420:161 & 420:160 (NanumMyeongjo 400, 40px, Line 11 1px)
+============================================================== */
+.ci-page__heading {
+  position: relative;
+  height: 84px;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+
+.ci-page__heading h1 {
+  margin: 0;
+  color: #000000;
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.ci-page__divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #000000;
+}
+
+/* ==============================================================
+   [섹션 01] 메인 히어로 배너 (Figma 420:46 "상단" - 1440px x 588px)
+============================================================== */
+.ci-hero {
+  position: relative;
+  width: 100%;
+  height: 588px;
+  margin-top: 12px;
+  overflow: hidden;
+  background: var(--ci-light-blue);
+  display: flex;
+}
+
+.ci-hero__photo {
+  position: relative;
+  width: 852px;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.ci-hero__photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.ci-hero__logo {
+  position: absolute;
+  top: 0;
+  left: -51px;
+  width: 310px;
+  height: 104px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ci-hero__panel {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  background: var(--ci-navy);
+  padding: 93px 40px 40px 78px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.ci-hero__sub {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 45.35px;
+  letter-spacing: -1.9px;
+  color: var(--ci-pale-blue);
+}
+
+.ci-hero__title {
+  margin: 6px 0 0 0;
+  font-size: 70px;
+  font-weight: 800;
+  line-height: 80px;
+  letter-spacing: -3.5px;
+  color: var(--ci-soft-blue);
+  white-space: pre-line;
+}
+
+.ci-hero__title span {
+  color: #ffffff;
+}
+
+.ci-hero__desc {
+  margin: 55px 0 0 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+  color: var(--ci-pale-blue);
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 02] 자가 테스트 (Figma 420:55 "2" - 1440px x 2014px, #F8F8F8)
+============================================================== */
+.ci-test {
+  position: relative;
+  width: 100%;
+  margin-top: 24px;
+  background: var(--ci-bg-gray);
+  padding: 112px 55px 95px 55px;
+  box-sizing: border-box;
+}
+
+.ci-test__title {
+  margin: 0;
+  text-align: center;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ci-test__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ci-test__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ci-test__sub {
+  margin: 39px 0 0 0;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ci-charcoal);
+}
+
+/* 카드 그리드 */
+.ci-test__grid {
+  margin-top: 27px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ci-test__row-1 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ci-test__row-2 {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+
+.ci-card {
+  background: #ffffff;
+  border-radius: 11px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.ci-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.14);
+}
+
+.ci-card--row1 {
+  width: 379px;
+  height: 524px;
+  flex-shrink: 0;
+}
+
+.ci-card--row2 {
+  width: 326px;
+  height: 524px;
+  flex-shrink: 0;
+}
+
+.ci-card__top {
+  display: flex;
+  align-items: flex-start;
+  padding: 47px 18px 10px 24px;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.ci-card__checkbox {
+  width: 29px;
+  height: 29px;
+  border: 2px solid var(--ci-navy);
+  border-radius: 5px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 6px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.ci-card.is-checked .ci-card__checkbox {
+  background: var(--ci-navy);
+}
+
+.ci-card__checkbox-icon {
+  display: none;
+}
+
+.ci-card.is-checked .ci-card__checkbox-icon {
+  display: block;
+}
+
+.ci-card__text {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.5px;
+  color: #000000;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.ci-card__text--screening {
+  letter-spacing: -2.3px;
+}
+
+.ci-card__img-wrap {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ci-card__img-wrap img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 하단 안내 텍스트 */
+.ci-test__notice {
+  margin-top: 39px;
+  text-align: center;
+}
+
+.ci-test__notice-title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: var(--ci-navy);
+}
+
+.ci-test__notice-desc {
+  margin: 16px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ci-charcoal);
+  white-space: pre-line;
+}
+
+/* Check Point 바 */
+.ci-test__checkpoint {
+  margin-top: 32px;
+  width: 100%;
+}
+
+.ci-test__checkpoint-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+.ci-test__checkpoint-badge {
+  width: 211px;
+  height: 50px;
+  background: var(--ci-navy);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  flex-shrink: 0;
+}
+
+.ci-test__checkpoint-line {
+  flex: 1;
+  height: 1px;
+  background: var(--ci-navy);
+}
+
+.ci-test__checkpoint-items {
+  margin-top: 16px;
+  padding: 0;
+}
+
+.ci-test__checkpoint-item {
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -2.1px;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.ci-test__checkpoint-item--normal {
+  font-weight: 400;
+  color: #161616;
+}
+
+.ci-test__checkpoint-item--highlight {
+  font-weight: 600;
+  color: var(--ci-navy);
+}
+
+/* ==============================================================
+   [섹션 03] 혈당에서 시작되는 만성 염증의 악순환 (Figma 420:101 "3")
+============================================================== */
+.ci-cycle {
+  position: relative;
+  width: 100%;
+  margin-top: 142px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ci-cycle__title {
+  margin: 0;
+  text-align: center;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ci-cycle__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ci-cycle__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ci-cycle__desc-1 {
+  margin: 60px 0 0 0;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ci-charcoal);
+  white-space: pre-line;
+}
+
+.ci-cycle__desc-2 {
+  margin: 34px 0 0 0;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ci-charcoal);
+  white-space: pre-line;
+}
+
+.ci-cycle__step-badge {
+  margin: 47px 0 0 0;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2.25px;
+  color: var(--ci-navy);
+}
+
+/* 4단계 카드 열 */
+.ci-cycle__row {
+  margin-top: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.ci-cycle-card {
+  width: 352px;
+  height: 682px;
+  background: var(--ci-bg-gray);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.ci-cycle-card__header {
+  width: 100%;
+  height: 109px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ci-cycle-card__header--navy {
+  background: var(--ci-navy);
+}
+
+.ci-cycle-card__header--blue {
+  background: var(--ci-soft-blue);
+}
+
+.ci-cycle-card__title {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+}
+
+.ci-cycle-card__header--navy .ci-cycle-card__title {
+  color: #ffffff;
+}
+
+.ci-cycle-card__header--blue .ci-cycle-card__title {
+  color: var(--ci-navy);
+}
+
+.ci-cycle-card__sub {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -1px;
+}
+
+.ci-cycle-card__header--navy .ci-cycle-card__sub {
+  color: #ffffff;
+}
+
+.ci-cycle-card__header--blue .ci-cycle-card__sub {
+  color: var(--ci-navy);
+}
+
+.ci-cycle-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 18px 20px 18px;
+  box-sizing: border-box;
+}
+
+.ci-cycle-card__img {
+  width: 100%;
+  height: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ci-cycle-card__img img {
+  max-width: 100%;
+  max-height: 210px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.ci-cycle-card__desc {
+  margin: 8px 0 0 0;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.75px;
+  color: var(--ci-charcoal);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.ci-cycle-card__desc--inflammation {
+  letter-spacing: -2.1px;
+}
+
+.ci-cycle-card__desc--oxidation {
+  letter-spacing: -2.1px;
+}
+
+.ci-cycle-card__line {
+  width: 100%;
+  height: 1px;
+  background: #000000;
+  margin: 12px 0 8px 0;
+}
+
+.ci-cycle-card__bullets {
+  margin: 0;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: -1.25px;
+  color: var(--ci-charcoal);
+  text-align: left;
+  white-space: pre-line;
+  padding-left: 6px;
+  box-sizing: border-box;
+}
+
+.ci-cycle__arrow {
+  width: 40px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ci-cycle__arrow img {
+  width: 40px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* 반복되는 악순환 박스 */
+.ci-cycle__callout {
+  margin-top: 33px;
+  width: 100%;
+  height: 174px;
+  background: var(--ci-box-blue);
+  border: 2px solid var(--ci-navy);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.ci-cycle__callout-title {
+  margin: 0;
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2.25px;
+  color: var(--ci-navy);
+}
+
+.ci-cycle__callout-desc {
+  margin: 4px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ci-charcoal);
+}
+
+/* ==============================================================
+   [섹션 04] 만성염증, 살이 찌기 쉬운 몸 (Figma 420:72 "4", 1440px x 1404px)
+============================================================== */
+.ci-result {
+  position: relative;
+  width: 100%;
+  margin-top: 159px;
+  background: var(--ci-navy);
+  padding: 145px 74px 105px 74px;
+  box-sizing: border-box;
+}
+
+.ci-result__title {
+  margin: 0;
+  text-align: center;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+}
+
+.ci-result__title-accent {
+  font-weight: 700;
+  color: var(--ci-soft-blue);
+}
+
+.ci-result__title-light {
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.ci-result__cards {
+  margin-top: 78px;
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+}
+
+.ci-result-card {
+  width: 629px;
+  height: 761px;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 40px 60px 40px;
+  box-sizing: border-box;
+}
+
+.ci-result-card__circle {
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  background: var(--ci-soft-blue);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ci-result-card__circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ci-result-card__title {
+  margin: 64px 0 0 0;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #000000;
+}
+
+.ci-result-card__bullets {
+  margin: 23px 0 0 0;
+  width: 100%;
+  max-width: 535px;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1.9px;
+  color: #000000;
+  text-align: left;
+  white-space: pre-line;
+  padding-left: 10px;
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+
+.ci-result__bottom-text {
+  margin: 53px 0 0 0;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -2.25px;
+  color: #ffffff;
+  white-space: pre-line;
+}
+
+.ci-result__bottom-text strong {
+  font-weight: 700;
+  color: var(--ci-soft-blue);
+}
+
+/* ==============================================================
+   [섹션 05] 만성 염증형 비만을 위한 한방 관리 (Figma 420:124 "5")
+============================================================== */
+.ci-treatment {
+  position: relative;
+  width: 100%;
+  margin-top: 158px;
+  padding: 0 63px 190px 63px;
+  box-sizing: border-box;
+}
+
+.ci-treatment__title {
+  margin: 0;
+  text-align: center;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ci-treatment__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ci-treatment__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ci-treatment__sub {
+  margin: 47px 0 0 0;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ci-charcoal);
+}
+
+.ci-treatment__list {
+  margin-top: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.ci-treatment-row {
+  width: 100%;
+  min-height: 395px;
+  display: flex;
+  align-items: center;
+  gap: 41px;
+}
+
+.ci-treatment-row__photo {
+  width: 565px;
+  height: 395px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #d9d9d9;
+}
+
+.ci-treatment-row__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ci-treatment-row__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ci-treatment-row__name {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 59.7px;
+  letter-spacing: -2.5px;
+  color: #000000;
+}
+
+.ci-treatment-row__desc {
+  margin: 43px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [반응형 대응 - 테블릿 & 모바일]
+============================================================== */
+@media (max-width: 1440px) {
+  .ci-page__content {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  .ci-hero__photo {
+    width: 58%;
+  }
+  .ci-hero__panel {
+    padding: 40px 24px;
+  }
+  .ci-hero__title {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  .ci-hero__sub {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .ci-hero__desc {
+    margin-top: 24px;
+    font-size: 19px;
+    line-height: 28px;
+  }
+  .ci-cycle-card {
+    width: calc(25% - 20px);
+  }
+  .ci-cycle__arrow {
+    width: 24px;
+    height: 22px;
+  }
+  .ci-cycle__arrow img {
+    width: 24px;
+    height: 22px;
+  }
+  .ci-result-card {
+    width: 48%;
+  }
+  .ci-treatment-row__photo {
+    width: 45%;
+    height: auto;
+    aspect-ratio: 565 / 395;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ci-hero {
+    height: auto;
+    flex-direction: column;
+  }
+  .ci-hero__photo {
+    width: 100%;
+    height: 360px;
+  }
+  .ci-hero__panel {
+    width: 100%;
+    padding: 40px 24px;
+  }
+  .ci-test__row-1,
+  .ci-test__row-2 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ci-card--row1,
+  .ci-card--row2 {
+    width: calc(50% - 10px);
+    height: auto;
+    min-height: 440px;
+  }
+  .ci-cycle__row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .ci-cycle-card {
+    width: calc(50% - 20px);
+  }
+  .ci-cycle__arrow {
+    display: none;
+  }
+  .ci-result__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ci-result-card {
+    width: 100%;
+    max-width: 629px;
+    height: auto;
+    padding-bottom: 40px;
+  }
+  .ci-treatment-row {
+    flex-direction: column;
+    height: auto;
+    gap: 24px;
+  }
+  .ci-treatment-row__photo {
+    width: 100%;
+    max-width: 565px;
+  }
+  .ci-treatment-row__desc {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ci-page__heading {
+    height: 60px;
+    padding-top: 14px;
+  }
+  .ci-page__heading h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .ci-hero__photo {
+    height: 240px;
+  }
+  .ci-hero__logo {
+    width: 200px;
+    height: auto;
+  }
+  .ci-hero__panel {
+    padding: 30px 18px;
+  }
+  .ci-hero__sub {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .ci-hero__title {
+    font-size: 34px;
+    line-height: 42px;
+  }
+  .ci-hero__desc {
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .ci-test {
+    padding: 60px 16px 50px 16px;
+    margin-top: 16px;
+  }
+  .ci-test__title,
+  .ci-cycle__title,
+  .ci-result__title,
+  .ci-treatment__title {
+    font-size: 36px;
+    line-height: 46px;
+    letter-spacing: -1.5px;
+  }
+  .ci-test__sub,
+  .ci-cycle__desc-1,
+  .ci-cycle__desc-2,
+  .ci-treatment__sub {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    margin-top: 18px;
+  }
+  .ci-card--row1,
+  .ci-card--row2 {
+    width: 100%;
+    min-height: auto;
+  }
+  .ci-card__top {
+    padding: 24px 16px 10px 16px;
+  }
+  .ci-card__text {
+    font-size: 19px;
+    line-height: 27px;
+  }
+  .ci-card__checkbox {
+    width: 22px;
+    height: 22px;
+  }
+  .ci-test__notice-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .ci-test__notice-desc {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .ci-test__checkpoint-badge {
+    width: 140px;
+    height: 36px;
+    font-size: 20px;
+    line-height: 36px;
+  }
+  .ci-test__checkpoint-item {
+    font-size: 17px;
+    line-height: 26px;
+  }
+  .ci-cycle {
+    margin-top: 70px;
+  }
+  .ci-cycle__step-badge {
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 24px;
+  }
+  .ci-cycle-card {
+    width: 100%;
+    height: auto;
+  }
+  .ci-cycle-card__desc {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .ci-cycle-card__bullets {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .ci-cycle__callout {
+    height: auto;
+    padding: 24px 16px;
+  }
+  .ci-cycle__callout-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .ci-cycle__callout-desc {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .ci-result {
+    margin-top: 70px;
+    padding: 60px 16px;
+  }
+  .ci-result-card__circle {
+    width: 200px;
+    height: 200px;
+  }
+  .ci-result-card__title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 28px;
+  }
+  .ci-result-card__bullets {
+    font-size: 18px;
+    line-height: 26px;
+    padding-left: 0;
+  }
+  .ci-result__bottom-text {
+    font-size: 22px;
+    line-height: 32px;
+    margin-top: 36px;
+  }
+  .ci-treatment {
+    margin-top: 70px;
+    padding: 0 16px 90px 16px;
+  }
+  .ci-treatment-row__name {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .ci-treatment-row__desc {
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 12px;
+  }
+}

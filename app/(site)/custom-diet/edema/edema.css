@@ -1,0 +1,967 @@
+/* ==============================================================
+   [부종형 비만 전용 스타일시트]
+   Figma Source of Truth: Frame 410:430 (부종형비만_pc, 1920 x 8396)
+   네임스페이스: .ede-
+============================================================== */
+
+:root {
+  --ede-navy: #083560;
+  --ede-soft-blue: #bbcfe7;
+  --ede-sky-blue: #c3d6ed;
+  --ede-bg-gray: #f8f8f8;
+  --ede-charcoal: #161616;
+  --ede-border-navy: #083560;
+}
+
+.ede-page {
+  width: 100%;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  font-family: var(--font-pretendard, 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif);
+  color: var(--ede-charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+.ede-page__content {
+  width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ==============================================================
+   [상단 서브 헤딩 & 구분선]
+   Figma 410:651 & 410:650 (NanumMyeongjo 400, 40px, Line 11 1px)
+============================================================== */
+.ede-page__heading {
+  width: 100%;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+
+.ede-page__heading h1 {
+  margin: 0;
+  font-family: var(--font-myeongjo, 'NanumMyeongjo', serif);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #000000;
+  text-align: left;
+}
+
+.ede-page__divider {
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  margin-top: 12px;
+}
+
+/* ==============================================================
+   [섹션 01] 메인 히어로 배너 (Figma 410:431 - 1440px x 588px)
+============================================================== */
+.ede-hero {
+  position: relative;
+  width: 1440px;
+  height: 588px;
+  margin-top: 12px;
+  display: flex;
+  background-color: #bcd0e8;
+  overflow: visible;
+}
+
+.ede-hero__photo {
+  position: relative;
+  width: 852px;
+  height: 588px;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+.ede-hero__logo {
+  position: absolute;
+  top: 0;
+  left: -51px;
+  width: 312px;
+  height: 104px;
+  z-index: 5;
+  object-fit: contain;
+}
+
+.ede-hero__photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ede-hero__panel {
+  width: 588px;
+  height: 588px;
+  background-color: var(--ede-navy);
+  padding: 89px 40px 40px 78px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.ede-hero__sub {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 45.35px;
+  letter-spacing: -1.9px;
+  color: var(--ede-sky-blue);
+}
+
+.ede-hero__title {
+  margin: 6px 0 0 0;
+  font-size: 100px;
+  font-weight: 800;
+  line-height: 100px;
+  letter-spacing: -5px;
+  color: var(--ede-soft-blue);
+  white-space: nowrap;
+}
+
+.ede-hero__title span {
+  color: #ffffff;
+}
+
+.ede-hero__desc {
+  margin: 42px 0 0 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+  color: var(--ede-sky-blue);
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 02] 부종과 비만의 차이 (Figma 410:440)
+============================================================== */
+.ede-compare {
+  margin-top: 136px;
+  text-align: center;
+}
+
+.ede-compare__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ede-compare__title-light {
+  font-weight: 400;
+}
+
+.ede-compare__title-bold {
+  font-weight: 700;
+}
+
+.ede-compare__desc {
+  margin: 61px auto 0 auto;
+  max-width: 1070px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ede-charcoal);
+  white-space: pre-line;
+}
+
+.ede-compare__grid {
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+.ede-compare__col {
+  width: 463px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ede-compare__circle {
+  width: 451px;
+  height: 451px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ede-compare__circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ede-compare__col-title {
+  margin: 24px 0 0 0;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2.5px;
+  color: var(--ede-charcoal);
+}
+
+.ede-compare__col-desc {
+  margin: 4px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ede-charcoal);
+}
+
+.ede-compare__symbol {
+  width: 100px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 70px;
+}
+
+.ede-compare__symbol img {
+  width: 100px;
+  height: 95px;
+  object-fit: contain;
+}
+
+/* ==============================================================
+   [섹션 03] 한의학에서 바라보는 부종, 수독 (Figma 410:617)
+============================================================== */
+.ede-water-toxin {
+  margin-top: 148px;
+  width: 100%;
+  min-height: 1696px;
+  background-color: var(--ede-navy);
+  padding: 145px 0 115px 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
+}
+
+.ede-water-toxin__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+}
+
+.ede-water-toxin__title-light {
+  display: block;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.ede-water-toxin__title-accent {
+  display: block;
+  font-weight: 700;
+  color: var(--ede-soft-blue);
+}
+
+.ede-water-toxin__desc-1 {
+  margin: 63px auto 0 auto;
+  max-width: 1260px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #ffffff;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.ede-water-toxin__desc-2 {
+  margin: 42px auto 0 auto;
+  max-width: 1220px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #ffffff;
+  white-space: pre-line;
+}
+
+.ede-water-toxin__grid {
+  margin-top: 53px;
+  width: 1073px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 307px);
+  gap: 42px 76px;
+  justify-content: center;
+}
+
+.ede-symptom-card {
+  width: 307px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ede-symptom-card__circle {
+  width: 307px;
+  height: 307px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ede-symptom-card__circle img {
+  max-width: 88%;
+  max-height: 88%;
+  object-fit: contain;
+}
+
+.ede-symptom-card__label {
+  margin: 30px 0 0 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ==============================================================
+   [섹션 04] 붓기 관리 (Figma 413:700)
+============================================================== */
+.ede-management {
+  width: 1100px;
+  margin: 148px auto 0 auto;
+  text-align: center;
+}
+
+.ede-management__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ede-management__title-light {
+  display: block;
+  font-weight: 400;
+}
+
+.ede-management__title-bold {
+  display: block;
+  font-weight: 700;
+}
+
+.ede-management__desc {
+  margin: 60px auto 0 auto;
+  max-width: 1077px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ede-charcoal);
+  white-space: pre-line;
+}
+
+.ede-management__bar {
+  margin-top: 28px;
+  width: 1100px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  text-align: left;
+}
+
+.ede-management__badge {
+  width: 211px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--ede-navy);
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ede-management__text {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+/* ==============================================================
+   [섹션 05] 부종형 비만 체크리스트 (Figma 413:722)
+============================================================== */
+.ede-checklist-sec {
+  margin-top: 156px;
+  width: 100%;
+  min-height: 1528px;
+  background-color: var(--ede-bg-gray);
+  padding: 145px 0 115px 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.ede-checklist-sec__title {
+  margin: 0;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ede-checklist-sec__sub {
+  margin: 61px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ede-charcoal);
+}
+
+.ede-checklist-wrap {
+  width: 1198px;
+  margin: 27px auto 0 auto;
+}
+
+.ede-checklist-card {
+  width: 1198px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 53px 55px;
+  box-sizing: border-box;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.ede-checklist-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ede-check-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+  padding: 3px 0;
+  transition: opacity 0.2s ease;
+}
+
+.ede-check-row:hover {
+  opacity: 0.85;
+}
+
+.ede-check-box {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #161616;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.ede-check-box--checked {
+  background-color: var(--ede-navy);
+  border-color: var(--ede-navy);
+}
+
+.ede-check-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.ede-check-text {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ede-charcoal);
+}
+
+/* 간단한 해석 박스 */
+.ede-interpretation {
+  margin-top: 23px;
+  position: relative;
+  width: 1198px;
+}
+
+.ede-interpretation__badge {
+  position: absolute;
+  top: -37.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 269px;
+  height: 75px;
+  border-radius: 37.5px;
+  background-color: var(--ede-navy);
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 75px;
+  letter-spacing: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.ede-interpretation__card {
+  width: 1198px;
+  min-height: 254px;
+  border: 2px solid var(--ede-border-navy);
+  border-radius: 18px;
+  background-color: #ffffff;
+  padding: 51px 55px 35px 55px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.ede-interpretation__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ede-interpretation__row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  transition: background-color 0.25s ease;
+}
+
+.ede-interpretation__row--active {
+  background-color: #eaf1f8;
+}
+
+.ede-interpretation__range {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2.1px;
+  color: var(--ede-navy);
+  width: 148px;
+  flex-shrink: 0;
+}
+
+.ede-interpretation__desc {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ede-charcoal);
+}
+
+/* ==============================================================
+   [섹션 06] 내 몸에 맞춘 부종 치료 (Figma 413:764)
+============================================================== */
+.ede-treatments {
+  width: 1320px;
+  margin: 158px auto 0 auto;
+  text-align: center;
+}
+
+.ede-treatments__title {
+  margin: 0;
+  font-size: 70px;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.ede-treatments__title-light {
+  font-weight: 400;
+}
+
+.ede-treatments__title-bold {
+  font-weight: 700;
+}
+
+.ede-treatments__sub {
+  margin: 45px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--ede-charcoal);
+}
+
+.ede-treatments__list {
+  margin-top: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  width: 1320px;
+}
+
+.ede-treatment-card {
+  width: 1320px;
+  height: 395px;
+  display: flex;
+  align-items: center;
+  gap: 41px;
+  text-align: left;
+}
+
+.ede-treatment-card__photo {
+  width: 565px;
+  height: 395px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #d9d9d9;
+  flex-shrink: 0;
+}
+
+.ede-treatment-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ede-treatment-card__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ede-treatment-card__title {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 59.7px;
+  letter-spacing: -2.5px;
+  color: #000000;
+}
+
+.ede-treatment-card__desc {
+  margin: 22px 0 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.ede-treatment-card:nth-child(2) .ede-treatment-card__desc {
+  letter-spacing: -2.1px;
+}
+
+.ede-treatment-card:last-child .ede-treatment-card__desc {
+  color: var(--ede-charcoal);
+}
+
+/* ==============================================================
+   [반응형 대응 - Tablet & Mobile]
+============================================================== */
+@media (max-width: 1440px) {
+  .ede-page__content {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  .ede-hero {
+    width: 100%;
+    height: auto;
+  }
+  .ede-hero__photo {
+    width: 58%;
+    height: 500px;
+  }
+  .ede-hero__panel {
+    width: 42%;
+    height: 500px;
+    padding: 50px 30px;
+  }
+  .ede-hero__title {
+    font-size: 70px;
+    line-height: 75px;
+  }
+  .ede-hero__sub {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .ede-hero__desc {
+    font-size: 19px;
+    line-height: 30px;
+    margin-top: 24px;
+  }
+  .ede-compare__desc,
+  .ede-water-toxin__desc-1,
+  .ede-water-toxin__desc-2,
+  .ede-management,
+  .ede-management__bar,
+  .ede-checklist-wrap,
+  .ede-checklist-card,
+  .ede-interpretation,
+  .ede-interpretation__card,
+  .ede-treatments,
+  .ede-treatments__list,
+  .ede-treatment-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ede-hero {
+    flex-direction: column;
+    height: auto;
+  }
+  .ede-hero__photo {
+    width: 100%;
+    height: 380px;
+  }
+  .ede-hero__logo {
+    left: 16px;
+    width: 220px;
+    height: auto;
+  }
+  .ede-hero__panel {
+    width: 100%;
+    height: auto;
+    padding: 40px 24px;
+  }
+  .ede-water-toxin__grid {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 16px;
+  }
+  .ede-symptom-card {
+    width: 100%;
+  }
+  .ede-symptom-card__circle {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+  }
+  .ede-treatment-card {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .ede-treatment-card__photo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 565 / 395;
+    margin: 0 auto;
+  }
+  .ede-treatment-card__info {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .ede-page__content {
+    padding: 0 16px;
+  }
+  .ede-page__heading {
+    padding-top: 14px;
+  }
+  .ede-page__heading h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .ede-hero__photo {
+    height: 240px;
+  }
+  .ede-hero__logo {
+    width: 180px;
+    left: 8px;
+  }
+  .ede-hero__panel {
+    padding: 28px 16px;
+  }
+  .ede-hero__sub {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .ede-hero__title {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -2px;
+  }
+  .ede-hero__desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+  }
+  .ede-compare,
+  .ede-water-toxin,
+  .ede-management,
+  .ede-checklist-sec,
+  .ede-treatments {
+    margin-top: 60px;
+  }
+  .ede-compare__title,
+  .ede-water-toxin__title,
+  .ede-management__title,
+  .ede-checklist-sec__title,
+  .ede-treatments__title {
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: -1.5px;
+  }
+  .ede-compare__desc,
+  .ede-water-toxin__desc-1,
+  .ede-water-toxin__desc-2,
+  .ede-management__desc,
+  .ede-checklist-sec__sub,
+  .ede-treatments__sub {
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: -0.5px;
+    margin-top: 18px;
+  }
+  .ede-compare__grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .ede-compare__col {
+    width: 100%;
+  }
+  .ede-compare__circle {
+    width: 220px;
+    height: 220px;
+  }
+  .ede-compare__col-title {
+    font-size: 32px;
+    line-height: 36px;
+    margin-top: 14px;
+  }
+  .ede-compare__col-desc {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .ede-compare__symbol {
+    margin-bottom: 0;
+    width: 60px;
+    height: 60px;
+  }
+  .ede-compare__symbol img {
+    width: 60px;
+    height: 60px;
+  }
+  .ede-water-toxin {
+    padding: 60px 16px;
+  }
+  .ede-water-toxin__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 10px;
+  }
+  .ede-symptom-card__circle {
+    width: 140px;
+    height: 140px;
+  }
+  .ede-symptom-card__label {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 12px;
+  }
+  .ede-management__bar {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+    text-align: center;
+  }
+  .ede-management__badge {
+    width: 160px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+  }
+  .ede-management__text {
+    font-size: 18px;
+    line-height: 26px;
+    white-space: normal;
+  }
+  .ede-checklist-sec {
+    padding: 60px 16px;
+  }
+  .ede-checklist-card {
+    padding: 24px 16px;
+  }
+  .ede-check-box {
+    width: 20px;
+    height: 20px;
+  }
+  .ede-check-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .ede-interpretation__badge {
+    width: 180px;
+    height: 50px;
+    font-size: 22px;
+    line-height: 50px;
+    top: -25px;
+  }
+  .ede-interpretation__card {
+    padding: 35px 16px 20px 16px;
+    min-height: auto;
+  }
+  .ede-interpretation__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 8px 6px;
+  }
+  .ede-interpretation__range {
+    font-size: 19px;
+    line-height: 26px;
+    width: auto;
+  }
+  .ede-interpretation__desc {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .ede-treatments {
+    padding: 0 16px;
+  }
+  .ede-treatment-card__title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .ede-treatment-card__desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 12px;
+  }
+}

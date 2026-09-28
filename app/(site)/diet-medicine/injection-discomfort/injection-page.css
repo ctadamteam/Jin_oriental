@@ -1,0 +1,1167 @@
+.inj-page {
+  --inj-navy: #083560;
+  --inj-light-blue: #bcd0e8;
+  --inj-pale-blue: #c3d6ed;
+  --inj-charcoal: #161616;
+  --inj-bg-gray: #f8f8f8;
+  width: 100%;
+  overflow: clip;
+  background: #ffffff;
+  color: #161616;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.inj-page__content {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ==============================================================
+   [상단 헤더 타이틀]
+   Figma 389:351 & 389:350 (NanumMyeongjo 400, 40px, Line 11 1px)
+============================================================== */
+.inj-page__heading {
+  position: relative;
+  height: 84px;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+
+.inj-page__heading h1 {
+  margin: 0;
+  color: #000000;
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.inj-page__divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #000000;
+}
+
+/* ==============================================================
+   [섹션 0] 메인 히어로 배너 (Figma 389:94 - 1440px x 588px)
+============================================================== */
+.inj-hero {
+  position: relative;
+  width: 100%;
+  height: 588px;
+  margin-top: 12px;
+  overflow: hidden;
+  background: var(--inj-light-blue);
+}
+
+.inj-hero__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 884px;
+  height: 588px;
+  overflow: hidden;
+}
+
+.inj-hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.inj-hero__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 588px;
+  height: 588px;
+  padding: 93px 0 0 95px;
+  box-sizing: border-box;
+  background: var(--inj-navy);
+}
+
+.inj-hero__sub {
+  margin: 0 0 10px 0;
+  color: var(--inj-pale-blue);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -2px;
+}
+
+.inj-hero__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 120px;
+  font-weight: 800;
+  line-height: 130px;
+  letter-spacing: -6px;
+  white-space: pre-line;
+}
+
+.inj-hero__desc {
+  margin: 22px 0 0 0;
+  color: var(--inj-pale-blue);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 1] 진한의원 지방분해 시술 인트로 (Figma 389:126)
+============================================================== */
+.inj-intro {
+  width: 1141px;
+  margin: 136px auto 147px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.inj-intro__title {
+  margin: 0 0 61px 0;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.inj-intro__title span {
+  font-weight: 400;
+}
+
+.inj-intro__title strong {
+  font-weight: 700;
+}
+
+.inj-intro__desc-1,
+.inj-intro__desc-2 {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.inj-intro__desc-2 {
+  margin-top: 23px;
+}
+
+/* ==============================================================
+   [공통 섹션 컴포넌트 스타일]
+============================================================== */
+.inj-section {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inj-section--gray {
+  background: var(--inj-bg-gray);
+  padding: 122px 0 140px;
+}
+
+.inj-section--white {
+  background: #ffffff;
+  padding: 100px 0 120px;
+}
+
+.inj-section__inner {
+  width: 1241px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.inj-section__inner--full {
+  width: 1440px;
+}
+
+.inj-section__top-line {
+  width: 100%;
+  height: 1px;
+  background: #000000;
+  margin-bottom: 122px;
+}
+
+/* 타이틀 & 네이비 바 */
+.inj-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 45px;
+}
+
+.inj-title-bar {
+  width: 7px;
+  height: 67px;
+  background: var(--inj-navy);
+  flex-shrink: 0;
+}
+
+.inj-title {
+  margin: 0;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 84px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+/* 2단 레이아웃 (좌측 텍스트 + 우측 이미지) */
+.inj-twocol {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.inj-twocol__left {
+  width: 580px;
+  flex-shrink: 0;
+}
+
+.inj-twocol__desc {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--inj-charcoal);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.inj-twocol__right {
+  width: 645px;
+  height: 442px;
+  position: relative;
+  overflow: hidden;
+  background: #d9d9d9;
+  flex-shrink: 0;
+}
+
+.inj-twocol__right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 시술 시간 / 횟수 박스 */
+.inj-info-badges {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inj-info-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.inj-info-badge__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--inj-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.inj-info-badge__icon img {
+  max-width: 65%;
+  max-height: 65%;
+  object-fit: contain;
+}
+
+.inj-info-badge__label {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--inj-navy);
+  width: 130px;
+}
+
+.inj-info-badge__value {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--inj-charcoal);
+  white-space: nowrap;
+}
+
+/* 서브섹션 헤더 (제목 + 우측 검은 라인) */
+.inj-subheading {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.inj-subheading__title {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -2.5px;
+  color: var(--inj-charcoal);
+  white-space: nowrap;
+}
+
+.inj-subheading__line {
+  flex: 1;
+  height: 2px;
+  background: #000000;
+}
+
+/* 추천 리스트 (체크마크) */
+.inj-check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.inj-check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inj-check-item__icon {
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+}
+
+.inj-check-item__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.inj-check-item__text {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+}
+
+/* ==============================================================
+   [섹션 3] 체형매선 2x2 카드 & Check Point
+============================================================== */
+.inj-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 607px);
+  gap: 24px 27px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.inj-step-card {
+  width: 607px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.inj-step-card__img-wrap {
+  position: relative;
+  width: 607px;
+  height: 439px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.inj-step-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.inj-step-card__layer-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.inj-step-card__label-skin,
+.inj-step-card__label-fat,
+.inj-step-card__label-muscle {
+  position: absolute;
+  left: 29px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -1.25px;
+  color: #161616;
+  text-shadow:
+    -2px -2px 0 #fff,
+     2px -2px 0 #fff,
+    -2px  2px 0 #fff,
+     2px  2px 0 #fff,
+    -1px  0   0 #fff,
+     1px  0   0 #fff,
+     0   -1px 0 #fff,
+     0    1px 0 #fff;
+}
+
+.inj-step-card__label-skin {
+  top: 141px;
+}
+
+.inj-step-card__label-fat {
+  top: 246px;
+}
+
+.inj-step-card__label-muscle {
+  top: 383px;
+}
+
+.inj-step-card__body {
+  padding: 33px 35px 35px;
+  position: relative;
+}
+
+.inj-step-card__title {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -1.75px;
+  color: var(--inj-navy);
+}
+
+.inj-step-card__num {
+  position: absolute;
+  right: 35px;
+  bottom: 25px;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 80px;
+  letter-spacing: -4px;
+  color: var(--inj-navy);
+  opacity: 0.2;
+}
+
+.inj-step-card__desc {
+  margin: 14px 0 0 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.5px;
+  color: #000000;
+  white-space: pre-line;
+  max-width: 480px;
+}
+
+/* 체형매선 변화 2열 그리드 */
+.inj-changes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px 40px;
+}
+
+/* Check Point 안내 */
+.inj-checkpoint-wrap {
+  margin-top: 80px;
+  display: flex;
+  align-items: flex-start;
+  gap: 37px;
+}
+
+.inj-checkpoint-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 25px;
+  border-radius: 25px;
+  background: var(--inj-navy);
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.inj-checkpoint-text {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+.inj-checkpoint-text strong {
+  font-weight: 600;
+}
+
+/* ==============================================================
+   [섹션 4] 지방분해약침 3대 성분 카드
+============================================================== */
+.inj-ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 403px);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.inj-ingredient-card {
+  width: 403px;
+  height: 510px;
+  border-radius: 10px;
+  background: var(--inj-bg-gray);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 17px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.inj-ingredient-card__img {
+  width: 369px;
+  height: 303px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.inj-ingredient-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.inj-ingredient-card__name {
+  margin: 29px 0 13px;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: var(--inj-navy);
+}
+
+.inj-ingredient-card__desc {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.5px;
+  color: var(--inj-charcoal);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+/* ==============================================================
+   [섹션 5] 샤인모드 리프팅 도식 카드
+============================================================== */
+.inj-shinemode-card {
+  width: 1241px;
+  height: 485px;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+.inj-shinemode-card__img {
+  width: 664px;
+  height: 498px;
+  flex-shrink: 0;
+}
+
+.inj-shinemode-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.inj-shinemode-card__body {
+  flex: 1;
+  padding: 0 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inj-shinemode-card__title {
+  margin: 0 0 34px;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: -2px;
+  color: var(--inj-charcoal);
+  white-space: pre-line;
+}
+
+.inj-shinemode-card__title strong {
+  font-weight: 600;
+}
+
+.inj-circles-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.inj-circle {
+  width: 201px;
+  height: 201px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.inj-circle--navy {
+  background: var(--inj-navy);
+  color: #ffffff;
+}
+
+.inj-circle--light {
+  background: var(--inj-pale-blue);
+  color: var(--inj-navy);
+  margin: 0 -23px;
+  z-index: 2;
+}
+
+.inj-circle__top {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.inj-circle__bottom {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1.5px;
+}
+
+/* ==============================================================
+   [태블릿 반응형] (721px ~ 1439px)
+============================================================== */
+@media (max-width: 1439px) and (min-width: 721px) {
+  .inj-page__content {
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .inj-section__inner {
+    width: 100%;
+  }
+
+  .inj-section__inner--full {
+    width: 100%;
+  }
+
+  .inj-hero {
+    height: calc(588 * 100vw / 1440);
+  }
+
+  .inj-hero__photo {
+    width: calc(884 * 100vw / 1440);
+    height: 100%;
+  }
+
+  .inj-hero__panel {
+    width: calc(588 * 100vw / 1440);
+    height: 100%;
+    padding: calc(93 * 100vw / 1440) 0 0 calc(95 * 100vw / 1440);
+  }
+
+  .inj-hero__sub {
+    font-size: calc(40 * 100vw / 1440);
+    line-height: calc(48 * 100vw / 1440);
+  }
+
+  .inj-hero__title {
+    font-size: calc(120 * 100vw / 1440);
+    line-height: calc(130 * 100vw / 1440);
+  }
+
+  .inj-hero__desc {
+    font-size: calc(25 * 100vw / 1440);
+    line-height: calc(38 * 100vw / 1440);
+  }
+
+  .inj-intro {
+    width: 100%;
+    margin: calc(100 * 100vw / 1440) auto;
+  }
+
+  .inj-intro__title {
+    font-size: calc(70 * 100vw / 1440);
+    line-height: calc(84 * 100vw / 1440);
+  }
+
+  .inj-intro__desc-1,
+  .inj-intro__desc-2 {
+    font-size: calc(35 * 100vw / 1440);
+    line-height: calc(50 * 100vw / 1440);
+  }
+
+  .inj-title {
+    font-size: calc(70 * 100vw / 1440);
+    line-height: calc(84 * 100vw / 1440);
+  }
+
+  .inj-twocol__left {
+    width: 48%;
+  }
+
+  .inj-twocol__desc {
+    font-size: calc(35 * 100vw / 1440);
+    line-height: calc(50 * 100vw / 1440);
+  }
+
+  .inj-twocol__right {
+    width: 48%;
+    height: calc(442 * 100vw / 1440);
+  }
+
+  .inj-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .inj-step-card {
+    width: 100%;
+  }
+
+  .inj-step-card__img-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 607 / 439;
+  }
+
+  .inj-ingredients-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .inj-ingredient-card {
+    width: 100%;
+    height: auto;
+    padding-bottom: 24px;
+  }
+
+  .inj-ingredient-card__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 369 / 303;
+  }
+
+  .inj-shinemode-card {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .inj-shinemode-card__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 664 / 498;
+  }
+
+  .inj-shinemode-card__body {
+    padding: 30px 20px;
+  }
+}
+
+/* ==============================================================
+   [모바일 반응형] (720px 이하)
+============================================================== */
+@media (max-width: 720px) {
+  .inj-page__heading {
+    height: 64px;
+    padding: 16px 20px 0;
+  }
+
+  .inj-page__heading h1 {
+    font-size: 26px;
+    line-height: 34px;
+    letter-spacing: -1px;
+  }
+
+  /* 히어로 */
+  .inj-hero {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+  }
+
+  .inj-hero__photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 884 / 588;
+  }
+
+  .inj-hero__panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 36px 24px 44px;
+  }
+
+  .inj-hero__sub {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -1px;
+  }
+
+  .inj-hero__title {
+    font-size: 54px;
+    line-height: 64px;
+    letter-spacing: -2px;
+  }
+
+  .inj-hero__desc {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    margin-top: 14px;
+  }
+
+  /* 인트로 */
+  .inj-intro {
+    width: 100%;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .inj-intro__title {
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: -1.5px;
+    margin-bottom: 28px;
+  }
+
+  .inj-intro__desc-1,
+  .inj-intro__desc-2 {
+    font-size: 17px;
+    line-height: 28px;
+    letter-spacing: -0.8px;
+  }
+
+  /* 섹션 공통 */
+  .inj-section--gray,
+  .inj-section--white {
+    padding: 60px 0 70px;
+  }
+
+  .inj-section__inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .inj-section__inner--full {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .inj-section__top-line {
+    margin-bottom: 60px;
+  }
+
+  .inj-title-wrap {
+    margin-bottom: 24px;
+    gap: 8px;
+  }
+
+  .inj-title-bar {
+    width: 5px;
+    height: 38px;
+  }
+
+  .inj-title {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -1.5px;
+  }
+
+  .inj-twocol {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .inj-twocol__left {
+    width: 100%;
+  }
+
+  .inj-twocol__desc {
+    font-size: 17px;
+    line-height: 28px;
+    letter-spacing: -0.8px;
+  }
+
+  .inj-twocol__right {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 645 / 442;
+  }
+
+  /* 시술 시간/횟수 */
+  .inj-info-badges {
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  .inj-info-badge__icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .inj-info-badge__label {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    width: 90px;
+  }
+
+  .inj-info-badge__value {
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  /* 서브섹션 헤더 */
+  .inj-subheading {
+    margin-top: 50px;
+    margin-bottom: 24px;
+    gap: 14px;
+  }
+
+  .inj-subheading__title {
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
+
+  /* 추천 리스트 */
+  .inj-check-list {
+    gap: 14px;
+  }
+
+  .inj-check-item {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .inj-check-item__icon {
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+  }
+
+  .inj-check-item__text {
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+
+  /* 체형매선 2x2 카드 -> 1열 */
+  .inj-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .inj-step-card {
+    width: 100%;
+  }
+
+  .inj-step-card__img-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 607 / 439;
+  }
+
+  .inj-step-card__label-skin {
+    font-size: 16px;
+    left: 16px;
+    top: 30%;
+  }
+
+  .inj-step-card__label-fat {
+    font-size: 16px;
+    left: 16px;
+    top: 55%;
+  }
+
+  .inj-step-card__label-muscle {
+    font-size: 16px;
+    left: 16px;
+    top: 85%;
+  }
+
+  .inj-step-card__body {
+    padding: 24px 20px;
+  }
+
+  .inj-step-card__title {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -1px;
+  }
+
+  .inj-step-card__num {
+    font-size: 48px;
+    line-height: 48px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .inj-step-card__desc {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    margin-top: 10px;
+    max-width: 80%;
+  }
+
+  .inj-changes-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .inj-checkpoint-wrap {
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .inj-checkpoint-badge {
+    height: 38px;
+    padding: 0 18px;
+    font-size: 18px;
+    line-height: 38px;
+  }
+
+  .inj-checkpoint-text {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.5px;
+  }
+
+  /* 약침 3대 성분 카드 -> 1열 */
+  .inj-ingredients-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .inj-ingredient-card {
+    width: 100%;
+    height: auto;
+    padding: 16px 16px 28px;
+  }
+
+  .inj-ingredient-card__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 369 / 303;
+  }
+
+  .inj-ingredient-card__name {
+    font-size: 26px;
+    line-height: 34px;
+    margin: 20px 0 8px;
+  }
+
+  .inj-ingredient-card__desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* 샤인모드 카드 */
+  .inj-shinemode-card {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .inj-shinemode-card__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 664 / 498;
+  }
+
+  .inj-shinemode-card__body {
+    padding: 28px 16px 36px;
+  }
+
+  .inj-shinemode-card__title {
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+
+  .inj-circles-wrap {
+    gap: 8px;
+  }
+
+  .inj-circle {
+    width: clamp(86px, 26vw, 110px);
+    height: clamp(86px, 26vw, 110px);
+  }
+
+  .inj-circle--light {
+    margin: 0;
+  }
+
+  .inj-circle__top {
+    font-size: clamp(18px, 5.5vw, 24px);
+    line-height: 1.2;
+  }
+
+  .inj-circle__bottom {
+    font-size: clamp(12px, 3.5vw, 16px);
+    line-height: 1.2;
+    margin-top: 4px;
+  }
+}
