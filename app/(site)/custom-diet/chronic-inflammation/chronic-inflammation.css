@@ -44,11 +44,11 @@
 
 .ci-page__divider {
   position: absolute;
+  right: 0;
   bottom: 0;
-  left: 0;
+  display: block;
   width: 100%;
   height: 1px;
-  background: #000000;
 }
 
 /* ==============================================================
@@ -202,15 +202,9 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  cursor: default;
   user-select: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
-}
-
-.ci-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.14);
 }
 
 .ci-card--row1 {
@@ -244,19 +238,6 @@
   justify-content: center;
   flex-shrink: 0;
   margin-top: 6px;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
-}
-
-.ci-card.is-checked .ci-card__checkbox {
-  background: var(--ci-navy);
-}
-
-.ci-card__checkbox-icon {
-  display: none;
-}
-
-.ci-card.is-checked .ci-card__checkbox-icon {
-  display: block;
 }
 
 .ci-card__text {
@@ -584,6 +565,29 @@
   object-fit: contain;
 }
 
+@media (min-width: 1024px) {
+  .ci-cycle__row {
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .ci-cycle-card {
+    width: auto;
+    height: 650px;
+    min-width: 0;
+    flex: 1 1 0;
+  }
+
+  .ci-cycle__arrow,
+  .ci-cycle__arrow img {
+    width: 20px;
+    height: 18px;
+  }
+
+}
+
 /* 반복되는 악순환 박스 */
 .ci-cycle__callout {
   margin-top: 33px;
@@ -708,6 +712,14 @@
   padding-left: 10px;
   box-sizing: border-box;
   word-break: keep-all;
+}
+
+.ci-result-card__bullets--health > span {
+  display: block;
+}
+
+.ci-result-card__continuation {
+  padding-left: 20px;
 }
 
 .ci-result__bottom-text {
@@ -1067,6 +1079,9 @@
     font-size: 18px;
     line-height: 26px;
     padding-left: 0;
+  }
+  .ci-result-card__continuation {
+    padding-left: 12px;
   }
   .ci-result__bottom-text {
     font-size: 22px;

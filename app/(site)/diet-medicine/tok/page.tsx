@@ -132,7 +132,14 @@ export default function TokDietMedicinePage() {
         ============================================================== */}
         <header className="tok-page__heading">
           <h1>슬림톡ㆍ삭뺀다정ㆍ블랙정</h1>
-          <div className="tok-page__divider" />
+          <Image
+            className="tok-page__divider"
+            src="/images/diet-medicine/slim/top-divider.svg"
+            alt=""
+            width={1440}
+            height={1}
+            unoptimized
+          />
         </header>
 
         {/* ==============================================================
@@ -153,7 +160,15 @@ export default function TokDietMedicinePage() {
           <div className="tok-hero__panel">
             <p className="tok-hero__sub">고농축 다이어트 한약</p>
             <h2 className="tok-hero__title">
-              {'슬림톡\n삭뺀다정\n블랙정'}
+              <span className="tok-hero__title-line">
+                슬림<span className="tok-hero__title-accent">톡</span>
+              </span>
+              <span className="tok-hero__title-line">
+                삭뺀다<span className="tok-hero__title-accent">정</span>
+              </span>
+              <span className="tok-hero__title-line">
+                블랙<span className="tok-hero__title-accent">정</span>
+              </span>
             </h2>
           </div>
         </section>
@@ -180,11 +195,16 @@ export default function TokDietMedicinePage() {
               <div className="tok-product__header">
                 <h3 className="tok-product__headline">
                   {prod.headlineLines.map((line, idx) => (
-                    <span key={idx} className="tok-product__headline-line">
+                    <span
+                      key={idx}
+                      className={`tok-product__headline-line${
+                        prod.id === 'sakppaenda' ? ' tok-product__headline-line--fit' : ''
+                      }`}
+                    >
                       <span>{line.text}</span>
                       <span
                         className="tok-product__underline"
-                        style={{ width: `${line.lineWidth}px` }}
+                        style={prod.id === 'sakppaenda' ? undefined : { width: `${line.lineWidth}px` }}
                         aria-hidden="true"
                       />
                     </span>
@@ -225,7 +245,10 @@ export default function TokDietMedicinePage() {
 
             {/* 하단 POINT 영역 (Figma Rectangle 68 & 51) */}
             <div className="tok-point">
-              <h5 className="tok-point__title">{prod.pointTitle}</h5>
+              <h5 className="tok-point__title">
+                {prod.pointTitle.replace(/ POINT$/, '')}{' '}
+                <strong className="tok-point__accent">POINT</strong>
+              </h5>
               <div className="tok-point__card">
                 <ul className="tok-point__list">
                   {prod.points.map((pointText, pIdx) => (

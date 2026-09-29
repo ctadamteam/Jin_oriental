@@ -18,7 +18,14 @@ export default function ZeroDietMedicinePage() {
         {/* 상단 서브 헤딩 (피그마 333:550 NanumMyeongjo 40px 규격) */}
         <header className="zero-page__heading">
           <h1>붓기제로ㆍ배사라정</h1>
-          <div className="zero-page__divider" />
+          <Image
+            className="zero-page__divider"
+            src="/images/diet-medicine/slim/top-divider.svg"
+            alt=""
+            width={1440}
+            height={1}
+            unoptimized
+          />
         </header>
 
         {/* ==============================================================
@@ -38,8 +45,11 @@ export default function ZeroDietMedicinePage() {
           <div className="zero-hero__panel">
             <p className="zero-hero__sub">슬림환과 함께 챙기는</p>
             <h2 className="zero-hero__title">
-              붓기제로<br />
-              <span>배사라정</span>
+              <span className="zero-hero__title-white">붓기</span>
+              <span className="zero-hero__title-blue">제로</span>
+              <br />
+              <span className="zero-hero__title-blue">배사라</span>
+              <span className="zero-hero__title-white">정</span>
             </h2>
           </div>
         </section>
@@ -72,13 +82,6 @@ export default function ZeroDietMedicinePage() {
               </p>
             </div>
 
-            <p className="zero-intro__middle-copy">
-              체질적으로 잘 붓거나, 체중 관리 중에도 붓기가 반복된다면<br />
-              단순한 체중 변화뿐 아니라 몸속에 정체된 수분과 노폐물까지 함께 살펴볼 필요가 있습니다.
-            </p>
-
-            <div className="zero-intro__center-line" aria-hidden="true" />
-
             <div className="zero-intro__bar">
               {[
                 { title: '순환장애로 인한\n붓기감소', icon: `${ASSET_PATH}/asset-2-353_37.png`, w: 53, h: 71 },
@@ -101,7 +104,7 @@ export default function ZeroDietMedicinePage() {
             [섹션 2] 이런분들에게 추천해요 (붓기제로) (Figma 356:11 - 1248px x 480px)
         ============================================================== */}
         <section className="zero-recommend" aria-label="붓기제로 추천 대상">
-          <h2 className="zero-recommend__title">이런분들에게 추천해요</h2>
+          <h2 className="zero-recommend__title">이런분들에게 <strong>추천해요</strong></h2>
           <div className="zero-recommend__box">
             <ul className="zero-recommend__list">
               {[
@@ -124,7 +127,7 @@ export default function ZeroDietMedicinePage() {
             [섹션 3] 부종을 방치하면 살찌기 쉬운 이유 (Figma 356:12 - 1440px x 1238px)
         ============================================================== */}
         <section className="zero-steps" aria-label="부종 메디컬 원리">
-          <h2 className="zero-steps__title">부종을 방치하면 살찌기 쉬운 이유</h2>
+          <h2 className="zero-steps__title">부종을 방치하면 <strong>살찌기 쉬운 이유</strong></h2>
           <div className="zero-steps__grid">
             {[
               {
@@ -182,7 +185,7 @@ export default function ZeroDietMedicinePage() {
           <p className="zero-banner-navy__p2">
             부종을 빠르게 해결하기 위해 이뇨제로 소변 배출량을 늘리는 방법은<br />
             신장에 부담을 줄 수 있어 주의가 필요합니다.<br />
-            부종은 단순히 소변으로 빼내는 것이 아니라, 체내 염증과 노폐물을 함께 관리하는 것이 중요합니다.
+            부종은 단순히 소변으로 빼내는 것이 아니라, <strong className="zero-highlight-blue">체내 염증과 노폐물을 함께 관리하는 것</strong>이 중요합니다.
           </p>
         </section>
 
@@ -190,11 +193,14 @@ export default function ZeroDietMedicinePage() {
             [섹션 5] ‘무엇’이 ‘어디’에 쌓였는가 입니다 (Figma 360:68 - 1440px x 2108px)
         ============================================================== */}
         <section className="zero-compare" aria-label="살과 부종 비교">
-          <h2 className="zero-compare__title">‘무엇’이 ‘어디’에 쌓였는가 입니다</h2>
+          <h2 className="zero-compare__title">‘<strong>무엇</strong>’이 ‘<strong>어디</strong>’에 쌓였는가 입니다</h2>
           <div className="zero-compare__cols">
             {/* 좌측: 살 (지방 축적) */}
             <article className="zero-compare__card zero-compare__card--fat">
-              <div className="zero-compare__header">살 (지방 축적)</div>
+              <div className="zero-compare__header">
+                <span className="zero-compare__header-main">살</span>
+                <span className="zero-compare__header-sub">(지방 축적)</span>
+              </div>
               <div className="zero-compare__body">
                 <div className="zero-compare__block-1">
                   <div>
@@ -210,6 +216,8 @@ export default function ZeroDietMedicinePage() {
                   <h3 className="zero-compare__block-label">어디에 쌓였는가?</h3>
                   <div className="zero-compare__block-2-img">
                     <Image src={`${ASSET_PATH}/asset-10-362_127.png`} alt="피하지방과 내장지방 축적 부위" width={540} height={360} unoptimized />
+                    <span className="zero-compare__img-label zero-compare__img-label--subcutaneous">피하지방</span>
+                    <span className="zero-compare__img-label zero-compare__img-label--visceral">내장지방</span>
                   </div>
                   <div className="zero-compare__block-2-sub">
                     <h4 className="zero-compare__sub-title">피하지방</h4>
@@ -232,7 +240,10 @@ export default function ZeroDietMedicinePage() {
 
             {/* 우측: 부종 (수분 및 노폐물 정체) */}
             <article className="zero-compare__card zero-compare__card--edema">
-              <div className="zero-compare__header">부종 (수분 및 노폐물 정체)</div>
+              <div className="zero-compare__header">
+                <span className="zero-compare__header-main">부종</span>
+                <span className="zero-compare__header-sub">(수분 및 노폐물 정체)</span>
+              </div>
               <div className="zero-compare__body">
                 <div className="zero-compare__block-1">
                   <div>
@@ -246,8 +257,13 @@ export default function ZeroDietMedicinePage() {
 
                 <div className="zero-compare__block-2">
                   <h3 className="zero-compare__block-label">어디에 쌓였는가?</h3>
-                  <div className="zero-compare__block-2-img">
+                  <div className="zero-compare__block-2-img zero-compare__block-2-img--edema">
                     <Image src={`${ASSET_PATH}/asset-12-362_161.png`} alt="세포 간 공간, 림프 정체, 부은 발" width={540} height={180} unoptimized />
+                    <div className="zero-compare__img-labels">
+                      <span className="zero-compare__img-label-cell">세포 간 공간</span>
+                      <span className="zero-compare__img-label-lymph">림프 정체</span>
+                      <span className="zero-compare__img-label-foot">부은 발</span>
+                    </div>
                   </div>
                   <div className="zero-compare__block-2-sub">
                     <h4 className="zero-compare__sub-title">세포 간 공간</h4>
@@ -264,9 +280,9 @@ export default function ZeroDietMedicinePage() {
                   <h3 className="zero-compare__block-label">특징</h3>
                   <ul className="zero-compare__block-3-bullets">
                     <li>ㆍ짧은 시간 내에 붓고, 아침에 더 심한 경우 많음</li>
-                    <li>ㆍ염분 과다, 수면 부족, 호르몬 변화, 순환 문제 등이 원인</li>
+                    <li>ㆍ염분 과다, 수면 부족, 호르몬 변화, 순환 문제 등이<br />원인</li>
                     <li>ㆍ부은 부위를 누르면 자국이 남음 (함요성 부종)</li>
-                    <li>ㆍ체중은 크게 변하지 않아도 몸이 무겁고 피곤하게 느낌</li>
+                    <li>ㆍ체중은 크게 변하지 않아도 몸이 무겁고 피곤하게<br />느낌</li>
                   </ul>
                 </div>
               </div>
@@ -277,7 +293,7 @@ export default function ZeroDietMedicinePage() {
             <span className="zero-checkpoint__badge">Check Point</span>
             <p className="zero-checkpoint__text">
               살은 ‘지방이 몸에 쌓인 것’, 부종은 ‘수분과 노폐물이 몸에 고여있는 것’입니다.<br />
-              관리방법이 다르므로 내 몸 상태에 맞는 관리가 중요합니다.
+              <strong>관리방법이 다르므로 내 몸 상태에 맞는 관리가 중요합니다.</strong>
             </p>
           </div>
         </section>
@@ -296,6 +312,7 @@ export default function ZeroDietMedicinePage() {
               unoptimized
             />
           </div>
+          <div className="zero-intro__overlay" aria-hidden="true" />
 
           <div className="zero-intro__content">
             <div className="zero-intro__top-copy">
@@ -310,20 +327,13 @@ export default function ZeroDietMedicinePage() {
               </p>
             </div>
 
-            <p className="zero-intro__middle-copy">
-              체질적으로 잘 붓거나, 체중 관리 중에도 붓기가 반복된다면<br />
-              단순한 체중 변화뿐 아니라 몸속에 정체된 수분과 노폐물까지 함께 살펴볼 필요가 있습니다.
-            </p>
-
-            <div className="zero-intro__center-line" aria-hidden="true" />
-
             <div className="zero-intro__bar">
               {[
-                { title: '내장지방\n분해', icon: `${ASSET_PATH}/asset-14-365_245.png`, w: 70, h: 70 },
-                { title: '과식/과음 후\n살찜 방지', icon: `${ASSET_PATH}/asset-15-365_244.png`, w: 70, h: 70 },
-                { title: '간해독', icon: `${ASSET_PATH}/asset-16-365_243.png`, w: 65, h: 75 },
-                { title: '어혈제거', icon: `${ASSET_PATH}/asset-17-365_242.png`, w: 65, h: 75 },
-                { title: '변비완화', icon: `${ASSET_PATH}/asset-18-365_241.png`, w: 65, h: 75 },
+                { title: '내장지방\n분해', icon: `${ASSET_PATH}/asset-14-365_245.png`, w: 105, h: 105 },
+                { title: '과식/과음 후\n살찜 방지', icon: `${ASSET_PATH}/asset-15-365_244.png`, w: 105, h: 105 },
+                { title: '간해독', icon: `${ASSET_PATH}/asset-16-365_243.png`, w: 98, h: 112 },
+                { title: '어혈제거', icon: `${ASSET_PATH}/asset-17-365_242.png`, w: 98, h: 112 },
+                { title: '변비완화', icon: `${ASSET_PATH}/asset-18-365_241.png`, w: 98, h: 112 },
               ].map((item, idx) => (
                 <div key={idx} className="zero-intro__bar-item">
                   <div className="zero-intro__bar-icon-wrap">
@@ -340,7 +350,7 @@ export default function ZeroDietMedicinePage() {
             [섹션 7] 이런분들에게 추천해요 (배사라정) (Figma 364:192 - 1248px x 480px)
         ============================================================== */}
         <section className="zero-recommend" aria-label="배사라정 추천 대상">
-          <h2 className="zero-recommend__title">이런분들에게 추천해요</h2>
+          <h2 className="zero-recommend__title">이런분들에게 <strong>추천해요</strong></h2>
           <div className="zero-recommend__box">
             <ul className="zero-recommend__list">
               {[
@@ -363,7 +373,7 @@ export default function ZeroDietMedicinePage() {
             [섹션 8] 많은 사람들이 모르는 내장지방 원인 (Figma 364:201 - 1440px x 2004px)
         ============================================================== */}
         <section className="zero-cause" aria-label="내장지방 원인 및 생활습관">
-          <h2 className="zero-cause__title">많은 사람들이 모르는 내장지방 원인</h2>
+          <h2 className="zero-cause__title">많은 사람들이 모르는 <strong>내장지방 원인</strong></h2>
           <p className="zero-cause__sub">
             내장지방의 원인을 단순히 과식이나 운동 부족으로만 보면 중요한 부분을 놓치기 쉽습니다.<br />
             실제로는 몸이 지방을 잘 태우지 못하는 상태, 즉 대사 흐름이 둔해진 상태가 핵심일 수 있습니다.
@@ -378,9 +388,15 @@ export default function ZeroDietMedicinePage() {
               src={`${ASSET_PATH}/asset-22-366_249.png`}
               alt="대사 흐름 둔화에서 만성 염증 발생으로 이어지는 4단계 과정"
               width={1248}
-              height={416}
+              height={266}
               unoptimized
             />
+            <div className="zero-cause__process-labels">
+              <span>대사 흐름 둔화</span>
+              <span>지방 연소 기능 저하</span>
+              <span>지방 축적</span>
+              <span>만성 염증 발생</span>
+            </div>
           </div>
 
           <div className="zero-cause__pill zero-cause__pill--habit">
@@ -411,7 +427,7 @@ export default function ZeroDietMedicinePage() {
               {
                 point: 'POINT 04',
                 title: '오래 앉는 습관',
-                desc: '하체ㆍ복부 순환 정체',
+                desc: '하체ㆍ복부 순환\n정체',
                 img: `${ASSET_PATH}/asset-26-367_290.png`,
               },
             ].map((habit, idx) => (
@@ -444,8 +460,8 @@ export default function ZeroDietMedicinePage() {
         <section className="zero-banner-navy" aria-label="간-장 순환 핵심">
           <h2 className="zero-banner-navy__title">노폐물 배출의 핵심, 간-장 순환</h2>
           <p className="zero-banner-navy__p1">
-            배사라정은 간-장 순환을 원활하게 해 담즙 배설을 돕고,<br />
-            혈액 내 지용성 노폐물과 염증 물질이 대변을 통해 배출되는 과정을 돕습니다.
+            배사라정은 간-장 순환을 원활하게 해 <strong className="zero-highlight-blue">담즙 배설을 돕고,<br />
+            혈액 내 지용성 노폐물과 염증 물질이 대변을 통해 배출되는 과정</strong>을 돕습니다.
           </p>
           <p className="zero-banner-navy__p2">
             노폐물과 염증 물질이 체내에 쌓이면 장 점막을 통해 다시 흡수될 수 있고,<br />
@@ -457,31 +473,35 @@ export default function ZeroDietMedicinePage() {
             [섹션 10] 내장지방이 위험한 진짜 이유 (Figma 367:296 - 1440px x 2394px)
         ============================================================== */}
         <section className="zero-danger" aria-label="내장지방 위험 요인">
-          <h2 className="zero-danger__title">내장지방이 위험한 진짜 이유</h2>
+          <h2 className="zero-danger__title">내장지방이 위험한 <strong>진짜 이유</strong></h2>
           <p className="zero-danger__sub">
-            내장지방은 단순히 허리둘레가 늘어나는 문제에 그치지 않습니다.<br />
+            내장지방은 단순히 <strong>허리둘레가 늘어나는 문제</strong>에 그치지 않습니다.<br />
             장기 주변에 쌓이면서 혈당 조절, 혈관 건강, 간 기능, 대사 상태에 부담을 줄 수 있습니다.
           </p>
 
           <div className="zero-danger__grid">
             {[
               {
-                title: '혈당 조절 저하로\n당뇨 위험 증가',
+                title1: '혈당 조절 저하로',
+                title2: '당뇨 위험 증가',
                 desc: '인슐린 저항성 증가로 혈당이 쉽게\n올라가고 당뇨 위험이 커집니다.',
                 img: `${ASSET_PATH}/asset-27-372_4.png`,
               },
               {
-                title: '중성지방 상승으로\n혈관 부담 확대',
+                title1: '중성지방 상승으로',
+                title2: '혈관 부담 확대',
                 desc: '중성지방이 증가하고 혈관 벽에\n지방이 쌓여 혈관 부담이 커집니다.',
                 img: `${ASSET_PATH}/asset-29-374_35.png`,
               },
               {
-                title: '간·대사 기능 저하로\n간 기능 부담 증가',
+                title1: '간·대사 기능 저하로',
+                title2: '간 기능 부담 증가',
                 desc: '간에 지방이 쌓여 대사 기능이 떨어지고\n피로감, 무기력감이 지속될 수 있습니다.',
                 img: `${ASSET_PATH}/asset-28-376_49.png`,
               },
               {
-                title: '복부비만 지속으로\n대사증후군 위험 증가',
+                title1: '복부비만 지속으로',
+                title2: '대사증후군 위험 증가',
                 desc: '내장지방은 염증 물질을 지속적으로\n분비해 대사증후군 위험을 높입니다.',
                 img: `${ASSET_PATH}/asset-30-375_48.png`,
               },
@@ -490,7 +510,10 @@ export default function ZeroDietMedicinePage() {
                 <div className="zero-danger__card-img">
                   <Image src={danger.img} alt="" width={440} height={440} unoptimized />
                 </div>
-                <h3 className="zero-danger__card-title">{danger.title}</h3>
+                <h3 className="zero-danger__card-title">
+                  {danger.title1}<br />
+                  <span className="zero-navy-text">{danger.title2}</span>
+                </h3>
                 <div className="zero-danger__card-line" aria-hidden="true" />
                 <p className="zero-danger__card-desc">{danger.desc}</p>
               </article>
@@ -503,7 +526,7 @@ export default function ZeroDietMedicinePage() {
               겉으로는 큰 변화가 없어 보여도<br />
               몸속에서는 혈당·혈관·간·대사 기능이 동시에 부담을 받을 수 있습니다.<br />
               따라서 내장지방은 단순한 외모 관리보다<br />
-              건강과 질병 예방 관리의 관점에서 살펴보는 것이 중요합니다.
+              <strong>건강과 질병 예방 관리의 관점에서 살펴보는 것이 중요합니다.</strong>
             </p>
           </div>
         </section>

@@ -84,7 +84,14 @@ export default function EdemaPage() {
         ============================================================== */}
         <header className="ede-page__heading">
           <h1>부종형 비만</h1>
-          <div className="ede-page__divider" />
+          <Image
+            className="ede-page__divider"
+            src="/images/diet-medicine/slim/top-divider.svg"
+            alt=""
+            width={1440}
+            height={1}
+            unoptimized
+          />
         </header>
 
         {/* ==============================================================

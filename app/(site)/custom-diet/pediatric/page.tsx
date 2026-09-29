@@ -43,7 +43,14 @@ export default function PediatricPage() {
         ============================================================== */}
         <header className="ped-page__heading">
           <h1>소아/청소년 비만</h1>
-          <div className="ped-page__divider" />
+          <Image
+            className="ped-page__divider"
+            src="/images/diet-medicine/slim/top-divider.svg"
+            alt=""
+            width={1440}
+            height={1}
+            unoptimized
+          />
         </header>
 
         {/* ==============================================================

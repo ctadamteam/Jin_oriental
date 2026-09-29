@@ -50,7 +50,6 @@
   display: block;
   width: 100%;
   height: 1px;
-  background: #000000;
 }
 
 /* ==============================================================
@@ -64,6 +63,10 @@
   margin-top: 12px;
   overflow: hidden;
   background: var(--zero-bg-blue);
+}
+
+.zero-hero + .zero-intro {
+  margin-top: 36px;
 }
 
 .zero-hero__photo {
@@ -101,15 +104,18 @@
 
 .zero-hero__title {
   margin: 0;
-  color: #FFFFFF;
   font-size: 120px;
   font-weight: 800;
   line-height: 130px;
   letter-spacing: -6px;
 }
 
-.zero-hero__title span {
-  color: var(--zero-pale-blue);
+.zero-hero__title-white {
+  color: #FFFFFF;
+}
+
+.zero-hero__title-blue {
+  color: #BBCFE7;
 }
 
 /* ==============================================================
@@ -139,9 +145,17 @@
   object-position: center;
 }
 
+.zero-intro__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(225deg, rgba(253, 251, 247, 0.88) 0%, rgba(253, 251, 247, 0.45) 38%, rgba(253, 251, 247, 0) 68%);
+}
+
 .zero-intro__content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   height: 100%;
 }
@@ -273,6 +287,10 @@
   letter-spacing: -2px;
 }
 
+.zero-recommend__title strong {
+  font-weight: 700;
+}
+
 .zero-recommend__box {
   width: 100%;
   min-height: 326px;
@@ -327,6 +345,10 @@
   font-weight: 400;
   line-height: 84px;
   letter-spacing: -2px;
+}
+
+.zero-steps__title strong {
+  font-weight: 700;
 }
 
 .zero-steps__grid {
@@ -386,7 +408,7 @@
   padding: 0;
   text-align: left;
   width: 100%;
-  padding-left: 20px;
+  padding-left: 0;
 }
 
 .zero-steps__card-bullets li {
@@ -394,7 +416,7 @@
   font-size: 30px;
   font-weight: 400;
   line-height: 45px;
-  letter-spacing: -1px;
+  letter-spacing: -1.2px;
 }
 
 .zero-checkpoint {
@@ -437,7 +459,7 @@
 ============================================================== */
 .zero-banner-navy {
   width: 100%;
-  padding: 139px 100px;
+  padding: 139px 60px;
   background: var(--zero-navy);
   text-align: center;
   color: #FFFFFF;
@@ -470,6 +492,11 @@
   letter-spacing: -1.2px;
 }
 
+.zero-highlight-blue {
+  color: #BBCFE7;
+  font-weight: 700;
+}
+
 /* ==============================================================
    [섹션 5] 무엇이 어디에 쌓였는가 (Figma 360:68 - 1440px x 2108px)
 ============================================================== */
@@ -487,6 +514,11 @@
   font-weight: 400;
   line-height: 84px;
   letter-spacing: -2px;
+  word-break: keep-all;
+}
+
+.zero-compare__title strong {
+  font-weight: 700;
 }
 
 .zero-compare__cols {
@@ -499,28 +531,30 @@
 
 .zero-compare__card {
   width: 613px;
-  height: 1529px;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .zero-compare__card--fat {
-  background: #8ACCCA;
+  --zero-compare-header-bg: #8ACCCA;
 }
 
 .zero-compare__card--edema {
-  background: var(--zero-navy);
+  --zero-compare-header-bg: var(--zero-navy);
 }
 
 .zero-compare__header {
   height: 106px;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
-  font-size: 60px;
-  font-weight: 600;
-  letter-spacing: -2px;
+  gap: 8px;
+  padding-top: 20px;
+  background: var(--zero-compare-header-bg);
 }
 
 .zero-compare__card--fat .zero-compare__header {
@@ -531,20 +565,32 @@
   color: #A4BBD6;
 }
 
+.zero-compare__header-main {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.zero-compare__header-sub {
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
 .zero-compare__body {
   background: #FFFFFF;
-  height: 1423px;
+  flex: 1;
   border-radius: 20px;
-  padding: 40px 37px;
+  padding: 40px 36px 45px;
   display: flex;
   flex-direction: column;
 }
 
 .zero-compare__block-label {
-  margin: 0 0 12px;
-  font-size: 40px;
+  margin: 0 0 10px;
+  font-size: 32px;
   font-weight: 600;
-  line-height: 50px;
+  line-height: 42px;
 }
 
 .zero-compare__card--fat .zero-compare__block-label {
@@ -560,23 +606,75 @@
   align-items: center;
   justify-content: space-between;
   height: 209px;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .zero-compare__block-1-text {
-  font-size: 35px;
+  font-size: 28px;
   font-weight: 400;
-  line-height: 50px;
+  line-height: 40px;
   color: #000000;
 }
 
 .zero-compare__block-2 {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .zero-compare__block-2-img {
+  position: relative;
   width: 540px;
   margin-bottom: 20px;
+}
+
+.zero-compare__img-label {
+  position: absolute;
+  top: 76%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.8px;
+  color: #000000;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.zero-compare__img-label--subcutaneous {
+  left: calc(21.4% - 30px);
+}
+
+.zero-compare__img-label--visceral {
+  left: calc(80.1% + 30px);
+}
+
+.zero-compare__img-labels {
+  position: relative;
+  width: 100%;
+  height: 32px;
+  margin-top: 14px;
+}
+
+.zero-compare__img-labels span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.8px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.zero-compare__img-label-cell {
+  left: 17.55%;
+}
+
+.zero-compare__img-label-lymph {
+  left: 50%;
+}
+
+.zero-compare__img-label-foot {
+  left: 82.27%;
 }
 
 .zero-compare__block-2-sub {
@@ -585,17 +683,17 @@
 
 .zero-compare__sub-title {
   margin: 0;
-  font-size: 35px;
+  font-size: 29px;
   font-weight: 600;
-  line-height: 45px;
+  line-height: 39px;
   color: #000000;
 }
 
 .zero-compare__sub-desc {
-  margin: 4px 0 14px;
-  font-size: 35px;
+  margin: 4px 0 12px;
+  font-size: 26px;
   font-weight: 400;
-  line-height: 45px;
+  line-height: 38px;
   color: #000000;
 }
 
@@ -606,11 +704,13 @@
 }
 
 .zero-compare__block-3-bullets li {
-  font-size: 35px;
+  font-size: 26px;
   font-weight: 400;
-  line-height: 50px;
+  line-height: 38px;
   color: #000000;
-  letter-spacing: -1px;
+  letter-spacing: -0.8px;
+  padding-left: 22px;
+  text-indent: -22px;
 }
 
 /* ==============================================================
@@ -621,12 +721,17 @@
 }
 
 .zero-intro--besara .zero-intro__bar-item {
-  gap: 14px;
+  gap: 12px;
+}
+
+.zero-intro--besara .zero-intro__bar-icon-wrap {
+  width: 126px;
+  height: 126px;
 }
 
 .zero-intro--besara .zero-intro__bar-text {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 28px;
+  line-height: 38px;
 }
 
 /* ==============================================================
@@ -648,8 +753,12 @@
   letter-spacing: -2px;
 }
 
+.zero-cause__title strong {
+  font-weight: 700;
+}
+
 .zero-cause__sub {
-  max-width: 1198px;
+  max-width: 1248px;
   margin: 0 auto 89px;
   text-align: center;
   color: #000000;
@@ -674,11 +783,12 @@
 
 .zero-cause__pill--process {
   width: 428px;
+  margin-bottom: 24px;
 }
 
 .zero-cause__pill--habit {
   width: 584px;
-  margin-top: 80px;
+  margin-top: 56px;
 }
 
 .zero-cause__process-flow {
@@ -690,6 +800,29 @@
   width: 100%;
   height: auto;
 }
+
+.zero-cause__process-labels {
+  position: relative;
+  width: 100%;
+  height: 42px;
+  margin-top: 16px;
+}
+
+.zero-cause__process-labels span {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 42px;
+  letter-spacing: -1px;
+  color: #000000;
+}
+
+.zero-cause__process-labels span:nth-child(1) { left: 11.52%; }
+.zero-cause__process-labels span:nth-child(2) { left: 37.10%; }
+.zero-cause__process-labels span:nth-child(3) { left: 63.40%; }
+.zero-cause__process-labels span:nth-child(4) { left: 90.10%; }
 
 .zero-cause__habits-grid {
   display: grid;
@@ -760,6 +893,7 @@
   font-weight: 400;
   line-height: 45px;
   letter-spacing: -1px;
+  white-space: pre-line;
 }
 
 /* ==============================================================
@@ -781,8 +915,12 @@
   letter-spacing: -2px;
 }
 
+.zero-danger__title strong {
+  font-weight: 700;
+}
+
 .zero-danger__sub {
-  max-width: 1099px;
+  max-width: 1248px;
   margin: 0 auto 86px;
   text-align: center;
   color: #000000;
@@ -790,6 +928,10 @@
   font-weight: 400;
   line-height: 50px;
   letter-spacing: -1.2px;
+}
+
+.zero-danger__sub strong {
+  font-weight: 700;
 }
 
 .zero-danger__grid {
@@ -836,6 +978,10 @@
   letter-spacing: -1.5px;
 }
 
+.zero-navy-text {
+  color: var(--zero-navy);
+}
+
 .zero-danger__card-line {
   width: 100%;
   height: 1px;
@@ -866,6 +1012,9 @@
   }
   .zero-hero {
     height: 40.833vw;
+  }
+  .zero-hero + .zero-intro {
+    margin-top: 2.5vw;
   }
   .zero-hero__photo {
     width: 64.097vw;
@@ -925,6 +1074,10 @@
     width: 7.917vw;
     height: 7.917vw;
   }
+  .zero-intro--besara .zero-intro__bar-icon-wrap {
+    width: 8.75vw;
+    height: 8.75vw;
+  }
   .zero-intro__bar-text {
     font-size: 2.083vw;
     line-height: 2.778vw;
@@ -970,6 +1123,9 @@
     font-size: 2.778vw;
     line-height: 3.472vw;
   }
+  .zero-steps__card-bullets {
+    padding-left: 0;
+  }
   .zero-steps__card-bullets li {
     font-size: 2.083vw;
     line-height: 3.125vw;
@@ -989,7 +1145,7 @@
     line-height: 3.472vw;
   }
   .zero-banner-navy {
-    padding: 9.653vw 6.944vw;
+    padding: 9.653vw 4.167vw;
   }
   .zero-banner-navy__title {
     font-size: 4.861vw;
@@ -1013,29 +1169,71 @@
   }
   .zero-compare__card {
     width: 42.569vw;
-    height: 106.181vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
   }
   .zero-compare__header {
     height: 7.361vw;
-    font-size: 4.167vw;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.556vw;
+    padding-top: 1.389vw;
+  }
+  .zero-compare__header-main {
+    font-size: 3.611vw;
+    font-weight: 700;
+  }
+  .zero-compare__header-sub {
+    font-size: 1.806vw;
+    font-weight: 400;
   }
   .zero-compare__body {
-    height: 98.819vw;
-    padding: 2.778vw 2.569vw;
+    height: auto;
+    flex: 1;
+    padding: 2.778vw 2.569vw 3.125vw;
   }
   .zero-compare__block-label {
-    font-size: 2.778vw;
-    line-height: 3.472vw;
+    font-size: 2.222vw;
+    line-height: 2.917vw;
   }
-  .zero-compare__block-1-text,
-  .zero-compare__sub-title,
+  .zero-compare__block-1-text {
+    font-size: 1.944vw;
+    line-height: 2.639vw;
+  }
+  .zero-compare__sub-title {
+    font-size: 2.014vw;
+    line-height: 2.708vw;
+  }
   .zero-compare__sub-desc,
   .zero-compare__block-3-bullets li {
-    font-size: 2.431vw;
-    line-height: 3.472vw;
+    font-size: 1.806vw;
+    line-height: 2.639vw;
+  }
+  .zero-compare__block-3-bullets li {
+    padding-left: 1.528vw;
+    text-indent: -1.528vw;
   }
   .zero-compare__block-2-img {
     width: 37.5vw;
+  }
+  .zero-compare__img-label {
+    font-size: 1.806vw;
+  }
+  .zero-compare__img-label--subcutaneous {
+    left: calc(21.4% - 2.083vw);
+  }
+  .zero-compare__img-label--visceral {
+    left: calc(80.1% + 2.083vw);
+  }
+  .zero-compare__img-labels {
+    height: 2.222vw;
+    margin-top: 0.972vw;
+  }
+  .zero-compare__img-labels span {
+    font-size: 1.736vw;
+    letter-spacing: -0.056vw;
   }
   .zero-cause {
     padding: 9.653vw 6.667vw 6.944vw;
@@ -1054,13 +1252,32 @@
   }
   .zero-cause__pill--process {
     width: 29.722vw;
+    margin-bottom: 1.667vw;
   }
   .zero-cause__pill--habit {
     width: 40.556vw;
+    margin-top: 3.889vw;
   }
   .zero-cause__process-flow {
     width: 86.667vw;
   }
+  .zero-cause__process-labels {
+    position: relative;
+    width: 86.667vw;
+    height: 2.917vw;
+    margin: 1.111vw auto 0;
+  }
+  .zero-cause__process-labels span {
+    position: absolute;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 2.222vw;
+    line-height: 2.917vw;
+  }
+  .zero-cause__process-labels span:nth-child(1) { left: 11.52%; }
+  .zero-cause__process-labels span:nth-child(2) { left: 37.10%; }
+  .zero-cause__process-labels span:nth-child(3) { left: 63.40%; }
+  .zero-cause__process-labels span:nth-child(4) { left: 90.10%; }
   .zero-cause__habits-grid {
     grid-template-columns: repeat(2, 42.5vw);
     width: 86.667vw;
@@ -1138,6 +1355,9 @@
     flex-direction: column;
     height: auto;
     margin-top: 8px;
+  }
+  .zero-hero + .zero-intro {
+    margin-top: 24px;
   }
   .zero-hero__photo {
     width: 100%;
@@ -1229,6 +1449,10 @@
     width: 56px;
     height: 56px;
   }
+  .zero-intro--besara .zero-intro__bar-icon-wrap {
+    width: 60px;
+    height: 60px;
+  }
   .zero-intro__bar-text {
     font-size: 16px;
     line-height: 22px;
@@ -1298,7 +1522,7 @@
     line-height: 24px;
   }
   .zero-banner-navy {
-    padding: 60px 20px;
+    padding: 60px 16px;
   }
   .zero-banner-navy__title {
     font-size: 32px;
@@ -1328,8 +1552,20 @@
     height: auto;
   }
   .zero-compare__header {
-    height: 60px;
-    font-size: 28px;
+    height: 50px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    padding-top: 8px;
+  }
+  .zero-compare__header-main {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .zero-compare__header-sub {
+    font-size: 14px;
+    font-weight: 400;
   }
   .zero-compare__body {
     height: auto;
@@ -1352,9 +1588,26 @@
   .zero-compare__block-2-img {
     width: 100%;
   }
+  .zero-compare__img-label {
+    font-size: 14px;
+  }
+  .zero-compare__img-label--subcutaneous {
+    left: calc(21.4% - 16px);
+  }
+  .zero-compare__img-label--visceral {
+    left: calc(80.1% + 16px);
+  }
+  .zero-compare__img-labels {
+    height: 20px;
+    margin-top: 8px;
+  }
+  .zero-compare__img-labels span {
+    font-size: 13px;
+    letter-spacing: -0.4px;
+  }
   .zero-compare__sub-title {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 19px;
+    line-height: 27px;
   }
   .zero-compare__sub-desc {
     font-size: 15px;
@@ -1363,6 +1616,8 @@
   .zero-compare__block-3-bullets li {
     font-size: 15px;
     line-height: 24px;
+    padding-left: 14px;
+    text-indent: -14px;
   }
   .zero-cause {
     padding: 60px 18px 40px;
@@ -1384,13 +1639,32 @@
   }
   .zero-cause__pill--process {
     width: 240px;
+    margin-bottom: 12px;
   }
   .zero-cause__pill--habit {
     width: 300px;
-    margin-top: 40px;
+    margin-top: 32px;
   }
   .zero-cause__process-flow {
     width: 100%;
+  }
+  .zero-cause__process-labels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: static;
+    height: auto;
+    width: 100%;
+    margin-top: 10px;
+    gap: 8px;
+    text-align: center;
+  }
+  .zero-cause__process-labels span {
+    position: static;
+    left: auto;
+    transform: none;
+    white-space: normal;
+    font-size: 14px;
+    line-height: 20px;
   }
   .zero-cause__habits-grid {
     grid-template-columns: 1fr;

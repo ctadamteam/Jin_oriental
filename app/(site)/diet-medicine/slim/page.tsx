@@ -105,10 +105,16 @@ export default function SlimDietMedicinePage() {
           </div>
           <div className="slim-overview__wash" aria-hidden="true" />
           <div className="slim-overview__copy">
-            <p className="slim-overview__headline">
-              식욕은 <span className="slim-underline slim-underline--short">다스리고<Image src={`${ASSET_PATH}/slim-accent-short.svg`} alt="" width={430} height={5} unoptimized /></span><br />
-              체지방은 <span className="slim-underline slim-underline--wide">선택적으로<Image src={`${ASSET_PATH}/slim-accent-wide.svg`} alt="" width={531} height={5} unoptimized /></span>
-            </p>
+            <div className="slim-overview__headline">
+              <div className="slim-headline-row">
+                <span>식욕은 다스리고</span>
+                <span className="slim-headline-line slim-headline-line--short" aria-hidden="true" />
+              </div>
+              <div className="slim-headline-row">
+                <span>체지방은 선택적으로</span>
+                <span className="slim-headline-line slim-headline-line--wide" aria-hidden="true" />
+              </div>
+            </div>
             <h2 id="slim-overview-title">진 슬림환</h2>
             <p className="slim-overview__description">식욕 조절과 체지방 연소를 돕고,<br />근육량은 유지하며 체지방 감소를 돕습니다.</p>
           </div>
@@ -172,10 +178,18 @@ export default function SlimDietMedicinePage() {
           </div>
           <div className="supdangtang__wash" aria-hidden="true" />
           <div className="supdangtang__copy">
-            <p className="supdangtang__headline">
-              다이어트는 물론<br />
-              <span className="slim-underline slim-underline--short">건강까지<Image src={`${ASSET_PATH}/slim-accent-short.svg`} alt="" width={430} height={5} unoptimized /></span> 함께
-            </p>
+            <div className="supdangtang__headline">
+              <div className="slim-headline-row">
+                <span>다이어트는 물론</span>
+                <span className="slim-headline-line slim-headline-line--short" aria-hidden="true" />
+              </div>
+              <div className="slim-headline-row">
+                <span className="slim-headline-fit">
+                  <span>건강까지 함께</span>
+                  <span className="slim-headline-line slim-headline-line--match" aria-hidden="true" />
+                </span>
+              </div>
+            </div>
             <h2 id="supdangtang-title">진 습담탕</h2>
             <p className="supdangtang__description">개인의 체질과 상태를 고려한 맞춤 다이어트 탕약으로,<br />15일마다 개인별 맞춤 처방을 진행합니다.</p>
           </div>

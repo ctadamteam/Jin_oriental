@@ -41,11 +41,11 @@
 
 .inj-page__divider {
   position: absolute;
+  right: 0;
   bottom: 0;
-  left: 0;
+  display: block;
   width: 100%;
   height: 1px;
-  background: #000000;
 }
 
 /* ==============================================================
@@ -104,6 +104,14 @@
   line-height: 130px;
   letter-spacing: -6px;
   white-space: pre-line;
+}
+
+.inj-hero__title-line {
+  display: block;
+}
+
+.inj-hero__title-line--accent {
+  color: #bbcfe7;
 }
 
 .inj-hero__desc {
@@ -192,6 +200,7 @@
   height: 1px;
   background: #000000;
   margin-bottom: 122px;
+  transform: translateY(-50px);
 }
 
 /* 타이틀 & 네이비 바 */
@@ -284,8 +293,8 @@
 }
 
 .inj-info-badge__icon img {
-  max-width: 65%;
-  max-height: 65%;
+  width: 97.5%;
+  height: 97.5%;
   object-fit: contain;
 }
 
@@ -470,6 +479,10 @@
   opacity: 0.2;
 }
 
+.inj-step-card:nth-child(3) .inj-step-card__num {
+  transform: translateY(40px);
+}
+
 .inj-step-card__desc {
   margin: 14px 0 0 0;
   font-size: 30px;
@@ -614,7 +627,8 @@
 
 .inj-shinemode-card__body {
   flex: 1;
-  padding: 0 40px;
+  min-width: 0;
+  padding: 0 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -677,6 +691,13 @@
   font-weight: 400;
   line-height: 45px;
   letter-spacing: -1.5px;
+}
+
+@media (min-width: 1024px) {
+  .inj-shinemode-card__title,
+  .inj-circles-wrap {
+    transform: translateX(-50.4px);
+  }
 }
 
 /* ==============================================================
@@ -1054,6 +1075,10 @@
     line-height: 48px;
     right: 20px;
     bottom: 20px;
+  }
+
+  .inj-step-card:nth-child(3) .inj-step-card__num {
+    transform: none;
   }
 
   .inj-step-card__desc {

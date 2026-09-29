@@ -1,6 +1,3 @@
-'use client';
-
-import React, { useState } from 'react';
 import Image from 'next/image';
 
 const ASSET_PATH = '/images/custom-diet/chronic-inflammation';
@@ -84,132 +81,52 @@ const CHECK_ITEMS: CheckItem[] = [
 ];
 
 export default function SelfTestGrid() {
-  const [checkedIds, setCheckedIds] = useState<Set<number>>(new Set());
-
-  const toggleCheck = (id: number) => {
-    setCheckedIds(prev => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      return next;
-    });
-  };
-
   return (
     <div className="ci-test__grid">
       {/* 1열 (3개 카드) */}
       <div className="ci-test__row-1">
-        {CHECK_ITEMS.filter(item => item.row === 1).map(item => {
-          const isChecked = checkedIds.has(item.id);
-          return (
-            <div
-              key={item.id}
-              className={`ci-card ci-card--row1 ${isChecked ? 'is-checked' : ''}`}
-              onClick={() => toggleCheck(item.id)}
-              role="checkbox"
-              aria-checked={isChecked}
-              tabIndex={0}
-              onKeyDown={e => {
-                if (e.key === ' ' || e.key === 'Enter') {
-                  e.preventDefault();
-                  toggleCheck(item.id);
-                }
-              }}
-            >
-              <div className="ci-card__top">
-                <div className="ci-card__checkbox">
-                  <svg
-                    className="ci-card__checkbox-icon"
-                    width="18"
-                    height="14"
-                    viewBox="0 0 18 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 7.5L6.5 12L16 2"
-                      stroke="#ffffff"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <p className="ci-card__text">{item.text}</p>
-              </div>
-              <div className="ci-card__img-wrap">
-                <Image
-                  src={item.img}
-                  alt={item.alt}
-                  width={item.width}
-                  height={item.height}
-                  unoptimized
-                />
-              </div>
+        {CHECK_ITEMS.filter(item => item.row === 1).map(item => (
+          <div key={item.id} className="ci-card ci-card--row1">
+            <div className="ci-card__top">
+              <div className="ci-card__checkbox" aria-hidden="true" />
+              <p className="ci-card__text">{item.text}</p>
             </div>
-          );
-        })}
+            <div className="ci-card__img-wrap">
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={item.width}
+                height={item.height}
+                unoptimized
+              />
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* 2열 (4개 카드) */}
       <div className="ci-test__row-2">
-        {CHECK_ITEMS.filter(item => item.row === 2).map(item => {
-          const isChecked = checkedIds.has(item.id);
-          return (
-            <div
-              key={item.id}
-              className={`ci-card ci-card--row2 ${isChecked ? 'is-checked' : ''}`}
-              onClick={() => toggleCheck(item.id)}
-              role="checkbox"
-              aria-checked={isChecked}
-              tabIndex={0}
-              onKeyDown={e => {
-                if (e.key === ' ' || e.key === 'Enter') {
-                  e.preventDefault();
-                  toggleCheck(item.id);
-                }
-              }}
-            >
-              <div className="ci-card__top">
-                <div className="ci-card__checkbox">
-                  <svg
-                    className="ci-card__checkbox-icon"
-                    width="18"
-                    height="14"
-                    viewBox="0 0 18 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 7.5L6.5 12L16 2"
-                      stroke="#ffffff"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <p
-                  className={`ci-card__text ${item.id === 6 ? 'ci-card__text--screening' : ''}`}
-                >
-                  {item.text}
-                </p>
-              </div>
-              <div className="ci-card__img-wrap">
-                <Image
-                  src={item.img}
-                  alt={item.alt}
-                  width={item.width}
-                  height={item.height}
-                  unoptimized
-                />
-              </div>
+        {CHECK_ITEMS.filter(item => item.row === 2).map(item => (
+          <div key={item.id} className="ci-card ci-card--row2">
+            <div className="ci-card__top">
+              <div className="ci-card__checkbox" aria-hidden="true" />
+              <p
+                className={`ci-card__text ${item.id === 6 ? 'ci-card__text--screening' : ''}`}
+              >
+                {item.text}
+              </p>
             </div>
-          );
-        })}
+            <div className="ci-card__img-wrap">
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={item.width}
+                height={item.height}
+                unoptimized
+              />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

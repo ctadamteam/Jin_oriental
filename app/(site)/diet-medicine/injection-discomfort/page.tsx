@@ -21,7 +21,14 @@ export default function InjectionDiscomfortPage() {
         ============================================================== */}
         <header className="inj-page__heading">
           <h1>지방분해시술</h1>
-          <div className="inj-page__divider" />
+          <Image
+            className="inj-page__divider"
+            src="/images/diet-medicine/slim/top-divider.svg"
+            alt=""
+            width={1440}
+            height={1}
+            unoptimized
+          />
         </header>
 
         {/* ==============================================================
@@ -40,7 +47,10 @@ export default function InjectionDiscomfortPage() {
           </div>
           <div className="inj-hero__panel">
             <p className="inj-hero__sub">잘 빠지지 않는 지방 관리</p>
-            <h2 className="inj-hero__title">{'지방분해\n시술'}</h2>
+            <h2 className="inj-hero__title">
+              <span className="inj-hero__title-line inj-hero__title-line--accent">지방분해</span>
+              <span className="inj-hero__title-line">시술</span>
+            </h2>
             <p className="inj-hero__desc">
               {'셀룰라이트와 저항성 지방을 집중 관리해\n지방 분해와 슬리밍 효과를 돕습니다.'}
             </p>

@@ -46,8 +46,9 @@
   right: 0;
   bottom: 11px;
   left: 0;
+  display: block;
+  width: 100%;
   height: 1px;
-  background: #000;
 }
 
 .ad-hero {
@@ -83,7 +84,10 @@
   position: relative;
   flex: 0 0 588px;
   height: 588px;
-  padding: 93px 40px 30px 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px 0 78px;
   background: var(--ad-navy);
 }
 
@@ -113,7 +117,7 @@
 
 .ad-hero__description {
   max-width: 440px;
-  margin: 47px 0 0;
+  margin: 24px 0 0;
   color: var(--ad-pale-blue);
   font-size: 25px;
   font-weight: 400;
@@ -176,6 +180,7 @@
 
 .ad-flow__image {
   position: relative;
+  z-index: 1;
   width: 100%;
   height: 305px;
 }
@@ -186,6 +191,8 @@
 }
 
 .ad-flow-card {
+  position: relative;
+  z-index: 2;
   overflow: hidden;
   width: 100%;
   height: 333px;
@@ -230,6 +237,21 @@
   color: var(--ad-navy);
 }
 
+.ad-flow-card__sub-item::before {
+  content: '' !important;
+}
+
+.ad-flow-card__sub-item {
+  padding-left: 12px;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.ad-flow-card__sub-indent {
+  display: inline-block;
+  padding-left: 12px;
+}
+
 .ad-flow-card__note {
   margin: 12px -14px 0;
   padding: 9px 8px;
@@ -249,13 +271,15 @@
   background: #fff;
 }
 
-.ad-flow-card__hormones p,
-.ad-flow-card__cortisol {
+.ad-flow-card__hormones p {
   margin: 0;
+  font-size: 29px;
+  line-height: 38px;
+  text-align: center;
 }
 
 .ad-flow-card__cortisol {
-  margin-top: 8px;
+  margin: 8px 0 0;
   text-align: center;
 }
 
@@ -264,15 +288,13 @@
   letter-spacing: -1px;
 }
 
-.ad-flow-card__down {
+.ad-flow-card__arrow {
   display: block;
-  height: 20px;
-  margin-top: -4px;
-  color: var(--ad-navy);
-  font-size: 37px;
-  font-weight: 800;
-  line-height: 20px;
-  text-align: center;
+  width: 17.5px;
+  height: 19px;
+  margin: 3px auto 2px;
+  object-fit: contain;
+  transform: none;
 }
 
 .ad-flow-card__result {
@@ -287,21 +309,32 @@
 .ad-flow__arrow {
   position: absolute;
   z-index: 2;
-  top: 126px;
-  right: -39px;
-  width: 50px;
-  height: 53px;
+  top: 139px;
+  right: -21px;
+  width: 25px;
+  height: 27px;
   object-fit: contain;
   transform: rotate(-90deg);
 }
 
-.ad-flow__item--4 .ad-flow__arrow {
-  top: 492px;
-  right: auto;
-  left: -82px;
-  transform: rotate(-90deg);
+.ad-flow__item--2 .ad-flow__image img {
+  transform: scale(0.8);
+  transform-origin: center bottom;
 }
 
+.ad-flow__item--3 .ad-flow__image {
+  transform: translateY(20px);
+}
+
+.ad-flow__item--4 .ad-flow__image {
+  transform: translateY(20px);
+}
+
+.ad-flow__item--6 .ad-flow__image {
+  transform: translateY(10px);
+}
+
+.ad-flow__item--4 .ad-flow__arrow,
 .ad-flow__item--7 .ad-flow__arrow {
   display: none;
 }
@@ -400,7 +433,7 @@
 }
 
 .ad-signals__emphasis {
-  margin: 90px 0 0;
+  margin: 45px 0 0;
   color: #000;
   font-size: 35px;
   font-weight: 400;
@@ -497,28 +530,16 @@
   flex: 0 0 52px;
   border-radius: 50%;
   background: var(--ad-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.ad-test__clock::before,
-.ad-test__clock::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 2px;
-  border-radius: 2px;
-  background: #fff;
-  transform-origin: left center;
-}
-
-.ad-test__clock::before {
-  transform: translate(-1px, -1px) rotate(-90deg);
-}
-
-.ad-test__clock::after {
-  width: 11px;
-  transform: translate(-1px, -1px) rotate(35deg);
+.ad-test__clock img {
+  width: 97.5%;
+  height: 97.5%;
+  object-fit: contain;
 }
 
 .ad-balance {
@@ -556,7 +577,7 @@
   width: 200px;
   height: 600px;
   background: #5f8fbb;
-  clip-path: polygon(0 50%, 25% 22%, 50% 13%, 75% 22%, 100% 50%, 75% 78%, 50% 87%, 25% 78%);
+  clip-path: url(#ad-lens-clip);
   pointer-events: none;
 }
 
@@ -722,7 +743,7 @@
 }
 
 .ad-circulation {
-  min-height: 1600px;
+  min-height: 1530px;
   margin-top: 146px;
   padding-top: 145px;
   background: var(--ad-navy);
@@ -754,7 +775,7 @@
 .ad-circulation__figure {
   width: 1278px;
   height: 678px;
-  margin: 135px auto 0;
+  margin: 65px auto 0;
   padding: 35px 27px 24px;
   border-radius: 10px;
   background: #fff;
@@ -883,6 +904,10 @@
 @media (max-width: 1023px) {
   .ad-page__content {
     padding: 0 16px;
+  }
+
+  .ad-flow__intro-br {
+    display: none;
   }
 
   .ad-page__heading {
@@ -1270,6 +1295,16 @@
     font-size: 20px;
     line-height: 31px;
     letter-spacing: -0.7px;
+  }
+
+  .ad-flow-card__sub-item {
+    font-size: 20px;
+    line-height: 31px;
+    padding-left: 8px;
+  }
+
+  .ad-flow-card__sub-indent {
+    padding-left: 8px;
   }
 
   .ad-flow-card__note {

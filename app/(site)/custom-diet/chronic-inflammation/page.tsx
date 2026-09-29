@@ -22,7 +22,14 @@ export default function ChronicInflammationPage() {
         ============================================================== */}
         <header className="ci-page__heading">
           <h1>만성염증형 비만</h1>
-          <div className="ci-page__divider" />
+          <Image
+            className="ci-page__divider"
+            src="/images/diet-medicine/slim/top-divider.svg"
+            alt=""
+            width={1440}
+            height={1}
+            unoptimized
+          />
         </header>
 
         {/* ==============================================================
@@ -70,7 +77,7 @@ export default function ChronicInflammationPage() {
           </h2>
           <p className="ci-test__sub">아래 항목에 해당되시나요? 체크해보세요!</p>
 
-          {/* 대화형 자가 테스트 체크리스트 카드 그리드 */}
+          {/* 정적인 자가 테스트 체크리스트 카드 그리드 */}
           <SelfTestGrid />
 
           {/* 하단 안내 문구 */}
@@ -136,7 +143,7 @@ export default function ChronicInflammationPage() {
                   />
                 </div>
                 <p className="ci-cycle-card__desc">
-                  {'과도한 당이 혈액 속\n단백질과 결합해 노화를 촉진\n하는 유해물질이 생성됩니다.'}
+                  {'과도한 당이 혈액 속\n단백질과 결합해\n노화를 촉진 하는\n유해물질이 생성됩니다.'}
                 </p>
                 <div className="ci-cycle-card__line" />
                 <p className="ci-cycle-card__bullets">
@@ -173,7 +180,7 @@ export default function ChronicInflammationPage() {
                   />
                 </div>
                 <p className="ci-cycle-card__desc">
-                  {'장 점막이 손상되어 유해\n물질이 혈액으로 들어가 전신에\n염증반응을 일으킵니다.'}
+                  {'장 점막이 손상되어\n유해 물질이 혈액으로\n들어가 전신에\n염증반응을 일으킵니다.'}
                 </p>
                 <div className="ci-cycle-card__line" />
                 <p className="ci-cycle-card__bullets">
@@ -214,7 +221,7 @@ export default function ChronicInflammationPage() {
                   />
                 </div>
                 <p className="ci-cycle-card__desc ci-cycle-card__desc--inflammation">
-                  {'당화, 산화, 장누수로 염증 반응이\n지속되며 지방이 쉽게 쌓이고\n대사가 둔화되는 상태입니다.'}
+                  {'당화, 산화, 장누수로\n염증 반응이 지속되며\n지방이 쉽게 쌓이고\n대사가 둔화되는 상태입니다.'}
                 </p>
                 <div className="ci-cycle-card__line" />
                 <p className="ci-cycle-card__bullets">
@@ -251,7 +258,7 @@ export default function ChronicInflammationPage() {
                   />
                 </div>
                 <p className="ci-cycle-card__desc ci-cycle-card__desc--oxidation">
-                  {'스트레스, 불규칙한 생활, 과식\n등으로 활성산소가 증가해 세포가\n손상되고 염증이 유발됩니다.'}
+                  {'스트레스, 불규칙한 생활,\n과식 등으로 활성산소가\n증가해 세포가 손상되고\n염증이 유발됩니다.'}
                 </p>
                 <div className="ci-cycle-card__line" />
                 <p className="ci-cycle-card__bullets">
@@ -309,8 +316,11 @@ export default function ChronicInflammationPage() {
                 />
               </div>
               <h3 className="ci-result-card__title">건강 측면의 변화</h3>
-              <p className="ci-result-card__bullets">
-                {'ㆍ혈당, 혈압, 고지혈증 등 대사질환 위험\n    증가\nㆍ전신 건강 악화\nㆍ노화 가속화'}
+              <p className="ci-result-card__bullets ci-result-card__bullets--health">
+                <span>ㆍ혈당, 혈압, 고지혈증 등 대사질환 위험</span>
+                <span className="ci-result-card__continuation">증가</span>
+                <span>ㆍ전신 건강 악화</span>
+                <span>ㆍ노화 가속화</span>
               </p>
             </div>
           </div>

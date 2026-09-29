@@ -1,7 +1,3 @@
-'use client';
-
-import React, { useState } from 'react';
-
 const CHECKLIST_ITEMS = [
   '아이가 배가 부를 때까지 먹는다.',
   '평소에 군것질을 많이하고 한꺼번에 많이 먹는다.',
@@ -15,61 +11,15 @@ const CHECKLIST_ITEMS = [
 ];
 
 export default function PediatricChecklist() {
-  const [checkedIndices, setCheckedIndices] = useState<Set<number>>(new Set());
-
-  const toggleIndex = (idx: number) => {
-    setCheckedIndices(prev => {
-      const next = new Set(prev);
-      if (next.has(idx)) {
-        next.delete(idx);
-      } else {
-        next.add(idx);
-      }
-      return next;
-    });
-  };
-
   return (
     <div className="ped-checklist-card">
-      <div className="ped-checklist-items" role="group" aria-label="소아비만 증상 자가 체크리스트">
-        {CHECKLIST_ITEMS.map((text, idx) => {
-          const isChecked = checkedIndices.has(idx);
-          return (
-            <div
-              key={idx}
-              className={`ped-check-row ${isChecked ? 'is-checked' : ''}`}
-              onClick={() => toggleIndex(idx)}
-              role="checkbox"
-              aria-checked={isChecked}
-              tabIndex={0}
-              onKeyDown={e => {
-                if (e.key === ' ' || e.key === 'Enter') {
-                  e.preventDefault();
-                  toggleIndex(idx);
-                }
-              }}
-            >
-              <div className="ped-check-box">
-                <svg
-                  width="18"
-                  height="14"
-                  viewBox="0 0 18 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 7.5L6.5 12L16 2"
-                    stroke="#ffffff"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <p className="ped-check-text">{text}</p>
-            </div>
-          );
-        })}
+      <div className="ped-checklist-items">
+        {CHECKLIST_ITEMS.map((text, idx) => (
+          <div key={idx} className="ped-check-row">
+            <div className="ped-check-box" aria-hidden="true" />
+            <p className="ped-check-text">{text}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

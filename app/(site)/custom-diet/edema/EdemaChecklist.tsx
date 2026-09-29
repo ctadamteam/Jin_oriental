@@ -1,7 +1,3 @@
-'use client';
-
-import React, { useState } from 'react';
-
 const CHECKLIST_ITEMS = [
   '아침에 일어나면 얼굴이나 눈 주변이 잘 붓는다',
   '오후가 되면 발·발목·종아리가 붓고 무겁다',
@@ -20,77 +16,27 @@ const CHECKLIST_ITEMS = [
 interface InterpretationTier {
   id: number;
   range: string;
-  min: number;
-  max: number;
   desc: string;
 }
 
 const TIERS: InterpretationTier[] = [
-  { id: 1, range: '0  ~  3개', min: 0, max: 3, desc: '부종 경향이 크지 않은 편' },
-  { id: 2, range: '4  ~  7개', min: 4, max: 7, desc: '부종 경향이 있어 생활습관 점검 권장' },
-  { id: 3, range: '8개 이상', min: 8, max: 12, desc: '부종이 반복되는 원인을 확인해볼 필요가 있음' },
+  { id: 1, range: '0  ~  3개', desc: '부종 경향이 크지 않은 편' },
+  { id: 2, range: '4  ~  7개', desc: '부종 경향이 있어 생활습관 점검 권장' },
+  { id: 3, range: '8개 이상', desc: '부종이 반복되는 원인을 확인해볼 필요가 있음' },
 ];
 
 export default function EdemaChecklist() {
-  const [checkedState, setCheckedState] = useState<boolean[]>(
-    new Array(CHECKLIST_ITEMS.length).fill(false)
-  );
-
-  const toggleItem = (index: number) => {
-    setCheckedState((prev) => {
-      const next = [...prev];
-      next[index] = !next[index];
-      return next;
-    });
-  };
-
-  const checkedCount = checkedState.filter(Boolean).length;
-
   return (
     <div className="ede-checklist-wrap">
       {/* 12문항 체크리스트 카드 */}
       <div className="ede-checklist-card">
         <ul className="ede-checklist-items">
-          {CHECKLIST_ITEMS.map((item, index) => {
-            const isChecked = checkedState[index];
-            return (
-              <li
-                key={index}
-                className={`ede-check-row ${isChecked ? 'ede-check-row--checked' : ''}`}
-                onClick={() => toggleItem(index)}
-                role="checkbox"
-                aria-checked={isChecked}
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === ' ' || e.key === 'Enter') {
-                    e.preventDefault();
-                    toggleItem(index);
-                  }
-                }}
-              >
-                <span className={`ede-check-box ${isChecked ? 'ede-check-box--checked' : ''}`}>
-                  {isChecked && (
-                    <svg
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="ede-check-icon"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M3.5 8.5L6.5 11.5L12.5 4.5"
-                        stroke="#ffffff"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  )}
-                </span>
-                <span className="ede-check-text">{item}</span>
-              </li>
-            );
-          })}
+          {CHECKLIST_ITEMS.map((item, index) => (
+            <li key={index} className="ede-check-row">
+              <span className="ede-check-box" aria-hidden="true" />
+              <span className="ede-check-text">{item}</span>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -99,20 +45,12 @@ export default function EdemaChecklist() {
         <div className="ede-interpretation__badge">간단한 해석</div>
         <div className="ede-interpretation__card">
           <div className="ede-interpretation__rows">
-            {TIERS.map((tier) => {
-              const isMatch = checkedCount >= tier.min && checkedCount <= tier.max;
-              return (
-                <div
-                  key={tier.id}
-                  className={`ede-interpretation__row ${
-                    isMatch ? 'ede-interpretation__row--active' : ''
-                  }`}
-                >
-                  <span className="ede-interpretation__range">{tier.range}</span>
-                  <span className="ede-interpretation__desc">{tier.desc}</span>
-                </div>
-              );
-            })}
+            {TIERS.map((tier) => (
+              <div key={tier.id} className="ede-interpretation__row">
+                <span className="ede-interpretation__range">{tier.range}</span>
+                <span className="ede-interpretation__desc">{tier.desc}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

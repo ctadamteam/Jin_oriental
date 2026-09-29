@@ -126,7 +126,14 @@ export default function AutonomicDietPage() {
       <div className="ad-page__content">
         <header className="ad-page__heading">
           <h1>자율신경실조형 비만</h1>
-          <div className="ad-page__divider" />
+          <Image
+            className="ad-page__divider"
+            src="/images/diet-medicine/slim/top-divider.svg"
+            alt=""
+            width={1440}
+            height={1}
+            unoptimized
+          />
         </header>
 
         <section className="ad-hero" aria-label="자율신경실조형 비만 안내">
@@ -155,9 +162,16 @@ export default function AutonomicDietPage() {
               <strong>비만</strong>
             </h2>
             <p className="ad-hero__description">
-              자율신경 기능이 나빠지면 스트레스성 폭식, 야식, 단음식이 당김, 불면,
-              두근거림, 쉽게 긴장, 소화불량, 복부팽만, 변비 혹은 설사, 만성피로,
-              생리불순, 부종이 잘 나타납니다. 또한 신진대사가 불리해져 체중 관리가 더 욱
+              자율신경 기능이 나빠지면 스트레스성 폭식,
+              <br />
+              야식, 단음식이 당김, 불면, 두근거림, 쉽게 긴장,
+              <br />
+              소화불량, 복부팽만, 변비 혹은 설사, 만성피로,
+              <br />
+              생리불순, 부종이 잘 나타납니다.
+              <br />
+              또한 신진대사가 불리해져 체중 관리가 더욱
+              <br />
               어려워집니다.
             </p>
           </div>
@@ -166,10 +180,10 @@ export default function AutonomicDietPage() {
         <section className="ad-flow" aria-labelledby="ad-flow-title">
           <h2 id="ad-flow-title">자율신경실조형 비만</h2>
           <p className="ad-flow__intro">
-            현대인들은 스트레스, 과로, 수면 부족, 불규칙한 생활 등으로 인해 뇌의 피로가
-            많아졌습니다. 뇌 신경 중에서 특히 장기 기능, 호르몬 분비, 신진대사,
-            혈액순환을 지배하는 자율신경이 많이 약해지면 몸은 불편하면서도 정확한
-            병명이나 진단명이 나오지 않고 검사 결과로도 설명되지 않는 경우가 많습니다.
+            현대인들은 스트레스, 과로, 수면 부족, 불규칙한 생활 등으로 인해 뇌의 피로가<br className="ad-flow__intro-br" />
+            많아졌습니다. 뇌 신경 중에서 특히 장기 기능, 호르몬 분비, 신진대사, 혈액순환을<br className="ad-flow__intro-br" />
+            지배하는 자율신경이 많이 약해지면 몸은 불편하면서도<br className="ad-flow__intro-br" />
+            정확한 병명이나 진단명이 나오지 않고 검사 결과로도 설명되지 않는 경우가 많습니다.
           </p>
 
           <div className="ad-flow__grid">
@@ -195,14 +209,34 @@ export default function AutonomicDietPage() {
                         <p className="ad-flow-card__cortisol">
                           코르티솔 증가 <small>(스트레스 호르몬)</small>
                         </p>
-                        <span className="ad-flow-card__down">⌄</span>
+                        <Image
+                          src={`${ASSET_PATH}/flow-arrow.png`}
+                          alt=""
+                          aria-hidden="true"
+                          width={18}
+                          height={19}
+                          className="ad-flow-card__arrow"
+                        />
                         <strong className="ad-flow-card__result">{step.result}</strong>
                       </>
                     ) : (
                       <>
                         <ul>
                           {step.items.map((item) => (
-                            <li key={item}>{item}</li>
+                            <li
+                              key={item}
+                              className={item.startsWith('(') ? 'ad-flow-card__sub-item' : ''}
+                            >
+                              {item === '다이어트 시 잘 빠지지 않음' ? (
+                                <>
+                                  다이어트 시 잘 빠지지
+                                  <br />
+                                  <span className="ad-flow-card__sub-indent">않음</span>
+                                </>
+                              ) : (
+                                item
+                              )}
+                            </li>
                           ))}
                         </ul>
                         {step.note && <p className="ad-flow-card__note">{step.note}</p>}
@@ -210,8 +244,8 @@ export default function AutonomicDietPage() {
                     )}
                   </div>
                 </article>
-                {index < 6 && (
-                  <FlowArrow className={index === 3 ? 'ad-flow__arrow--wrap' : ''} />
+                {index !== 3 && index < 6 && (
+                  <FlowArrow />
                 )}
               </div>
             ))}
@@ -283,7 +317,15 @@ export default function AutonomicDietPage() {
                 상태를 살펴볼 수 있습니다.
               </p>
               <div className="ad-test__time">
-                <span className="ad-test__clock" aria-hidden="true" />
+                <div className="ad-test__clock" aria-hidden="true">
+                  <Image
+                    src="/images/diet-medicine/injection-discomfort/node-icon-clock.png"
+                    alt=""
+                    width={41}
+                    height={41}
+                    unoptimized
+                  />
+                </div>
                 <strong>소요 시간</strong>
                 <span>5분 정도</span>
               </div>
@@ -298,6 +340,14 @@ export default function AutonomicDietPage() {
             <br />
             심장의 열과 기운이 적절한 균형을 이루는 것을 중요하게 봅니다.
           </p>
+
+          <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true">
+            <defs>
+              <clipPath id="ad-lens-clip" clipPathUnits="objectBoundingBox">
+                <path d="M 0.5,0.1273 C 0.82,0.23 1,0.35 1,0.5 C 1,0.65 0.82,0.77 0.5,0.8727 C 0.18,0.77 0,0.65 0,0.5 C 0,0.35 0.18,0.23 0.5,0.1273 Z" />
+              </clipPath>
+            </defs>
+          </svg>
 
           <div className="ad-balance-diagram" aria-label="심장열과 심기허의 적절한 균형">
             <article className="ad-balance-circle ad-balance-circle--left">

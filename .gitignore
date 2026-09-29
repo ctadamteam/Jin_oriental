@@ -41,6 +41,7 @@ yarn-error.log*
 next-env.d.ts
 _figma_exports/  
 scratch_*
+scratch/
 .vercel
 .pnpm-store/
 
