@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import './tok-page.css';
+import '../../_shared/detail-page-scale.css';
 
 export const metadata: Metadata = {
   title: '슬림톡ㆍ삭뺀다정ㆍ블랙정 | 진한의원',

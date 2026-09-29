@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import './zero-page.css';
+import '../../_shared/detail-page-scale.css';
 
 export const metadata: Metadata = {
   title: '붓기제로ㆍ배사라정 | 진한의원',

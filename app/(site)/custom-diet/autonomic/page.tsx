@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import './autonomic.css';
+import '../../_shared/detail-page-scale.css';
 
 export const metadata: Metadata = {
   title: '자율신경실조형 비만 | 진한의원',

@@ -1120,7 +1120,7 @@
 /* ==============================================================
    [반응형 대응 - Tablet & Mobile]
 ============================================================== */
-@media (max-width: 1440px) {
+@media (max-width: 1023px) {
   .ped-page__content {
     width: 100%;
     padding: 0 16px;
@@ -1171,7 +1171,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .ped-hero {
     height: auto;
     flex-direction: column;

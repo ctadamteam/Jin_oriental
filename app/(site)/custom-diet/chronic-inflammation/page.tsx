@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import SelfTestGrid from './SelfTestGrid';
 import './chronic-inflammation.css';
+import '../../_shared/detail-page-scale.css';
 
 export const metadata: Metadata = {
   title: '만성염증형 비만 | 진한의원',

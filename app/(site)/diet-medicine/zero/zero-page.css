@@ -855,7 +855,7 @@
 /* ==============================================================
    태블릿 반응형 규격 (721px ~ 1439px): 1440px 비례 vw 스케일링
 ============================================================== */
-@media (min-width: 721px) and (max-width: 1439px) {
+@media (min-width: 721px) and (max-width: 1023px) {
   .zero-page__heading {
     height: 5.833vw;
     padding-top: 1.111vw;

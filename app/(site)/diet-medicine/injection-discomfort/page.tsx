@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import './injection-page.css';
+import '../../_shared/detail-page-scale.css';
 
 export const metadata: Metadata = {
   title: '지방분해시술 | 진한의원',

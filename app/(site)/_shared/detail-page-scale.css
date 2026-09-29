@@ -1,0 +1,46 @@
+/*
+ * 1440px로 제작된 상세 콘텐츠를 PC에서 1000px로 동일 비율 축소합니다.
+ * Header, Footer, 빠른 상담 등 공통 UI는 각 페이지 콘텐츠 바깥에 있어 영향을 받지 않습니다.
+ */
+.slim-page,
+.zero-page,
+.tok-page,
+.inj-page,
+.ede-page,
+.ci-page,
+.ped-page,
+.ad-page {
+  --detail-pc-scale: 0.6944444444;
+}
+
+@media (min-width: 1024px) {
+  .slim-page__content,
+  .zero-page__content,
+  .tok-page__content,
+  .inj-page__content,
+  .ede-page__content,
+  .ci-page__content,
+  .ped-page__content,
+  .ad-page__content {
+    width: 1440px;
+    max-width: none;
+    margin-right: auto;
+    margin-left: auto;
+    zoom: var(--detail-pc-scale);
+  }
+}
+
+@media (max-width: 1023px) {
+  .slim-page__content,
+  .zero-page__content,
+  .tok-page__content,
+  .inj-page__content,
+  .ede-page__content,
+  .ci-page__content,
+  .ped-page__content,
+  .ad-page__content {
+    width: 100%;
+    max-width: none;
+    zoom: 1;
+  }
+}

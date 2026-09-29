@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import PediatricChecklist from './PediatricChecklist';
 import './pediatric.css';
+import '../../_shared/detail-page-scale.css';
 
 export const metadata: Metadata = {
   title: '소아/청소년 비만 | 진한의원',

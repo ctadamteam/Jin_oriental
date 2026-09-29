@@ -874,7 +874,13 @@
   white-space: pre-line;
 }
 
-@media (max-width: 1440px) {
+@media (min-width: 1024px) {
+  .ad-flow {
+    min-height: 1916px;
+  }
+}
+
+@media (max-width: 1023px) {
   .ad-page__content {
     padding: 0 16px;
   }
@@ -1005,7 +1011,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .ad-hero {
     flex-direction: column;
   }

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import './slim-page.css';
+import '../../_shared/detail-page-scale.css';
 
 const ASSET_PATH = '/images/diet-medicine/slim';
 

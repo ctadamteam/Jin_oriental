@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import EdemaChecklist from './EdemaChecklist';
 import './edema.css';
+import '../../_shared/detail-page-scale.css';
 
 export const metadata: Metadata = {
   title: '부종형 비만 | 진한의원',
