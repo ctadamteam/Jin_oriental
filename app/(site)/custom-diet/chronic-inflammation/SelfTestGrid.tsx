@@ -97,6 +97,7 @@ export default function SelfTestGrid() {
                 alt={item.alt}
                 width={item.width}
                 height={item.height}
+                className={item.id === 1 || item.id === 2 ? 'ci-card__image--reduced' : undefined}
                 unoptimized
               />
             </div>

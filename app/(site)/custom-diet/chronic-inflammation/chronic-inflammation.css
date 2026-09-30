@@ -269,6 +269,11 @@
   display: block;
 }
 
+.ci-card__image--reduced {
+  transform: scale(0.8);
+  transform-origin: center bottom;
+}
+
 /* 하단 안내 텍스트 */
 .ci-test__notice {
   margin-top: 39px;
@@ -714,12 +719,17 @@
   word-break: keep-all;
 }
 
-.ci-result-card__bullets--health > span {
+.ci-result-card__bullets--structured > span {
   display: block;
 }
 
-.ci-result-card__continuation {
-  padding-left: 20px;
+.ci-result-card__bullets--structured > .ci-result-card__bullet-item {
+  display: grid;
+  grid-template-columns: 1em minmax(0, 1fr);
+}
+
+.ci-result-card__bullet-copy > span {
+  display: block;
 }
 
 .ci-result__bottom-text {
@@ -1079,9 +1089,6 @@
     font-size: 18px;
     line-height: 26px;
     padding-left: 0;
-  }
-  .ci-result-card__continuation {
-    padding-left: 12px;
   }
   .ci-result__bottom-text {
     font-size: 22px;

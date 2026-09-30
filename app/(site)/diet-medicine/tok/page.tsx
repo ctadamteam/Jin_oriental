@@ -182,7 +182,7 @@ export default function TokDietMedicinePage() {
             {/* 상단 비주얼 영역 (1440px x 1342px) */}
             <div className="tok-product__visual">
               <Image
-                className="tok-product__bg"
+                className={`tok-product__bg${prod.id === 'sakppaenda' ? ' tok-product__bg--sakppaenda' : ''}`}
                 src={prod.bgImage}
                 alt=""
                 width={prod.bgWidth}

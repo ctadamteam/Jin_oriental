@@ -299,8 +299,23 @@ export default function ChronicInflammationPage() {
                 />
               </div>
               <h3 className="ci-result-card__title">몸에서 나타나는 변화</h3>
-              <p className="ci-result-card__bullets">
-                {'ㆍ복부비만(특히 내장지방 증가)\nㆍ체중 증가, 요요\nㆍ피로감, 무기력\nㆍ피부 트러블, 가려움'}
+              <p className="ci-result-card__bullets ci-result-card__bullets--structured">
+                <span className="ci-result-card__bullet-item">
+                  <span aria-hidden="true">ㆍ</span>
+                  <span className="ci-result-card__bullet-copy">복부비만(특히 내장지방 증가)</span>
+                </span>
+                <span className="ci-result-card__bullet-item">
+                  <span aria-hidden="true">ㆍ</span>
+                  <span className="ci-result-card__bullet-copy">체중 증가, 요요</span>
+                </span>
+                <span className="ci-result-card__bullet-item">
+                  <span aria-hidden="true">ㆍ</span>
+                  <span className="ci-result-card__bullet-copy">피로감, 무기력</span>
+                </span>
+                <span className="ci-result-card__bullet-item">
+                  <span aria-hidden="true">ㆍ</span>
+                  <span className="ci-result-card__bullet-copy">피부 트러블, 가려움</span>
+                </span>
               </p>
             </div>
 
@@ -316,11 +331,26 @@ export default function ChronicInflammationPage() {
                 />
               </div>
               <h3 className="ci-result-card__title">건강 측면의 변화</h3>
-              <p className="ci-result-card__bullets ci-result-card__bullets--health">
-                <span>ㆍ혈당, 혈압, 고지혈증 등 대사질환 위험</span>
-                <span className="ci-result-card__continuation">증가</span>
-                <span>ㆍ전신 건강 악화</span>
-                <span>ㆍ노화 가속화</span>
+              <p className="ci-result-card__bullets ci-result-card__bullets--structured">
+                <span className="ci-result-card__bullet-item">
+                  <span aria-hidden="true">ㆍ</span>
+                  <span className="ci-result-card__bullet-copy">
+                    <span>혈당, 혈압, 고지혈증 등 대사질환 위험</span>
+                    <span>증가</span>
+                  </span>
+                </span>
+                <span className="ci-result-card__bullet-item">
+                  <span aria-hidden="true">ㆍ</span>
+                  <span className="ci-result-card__bullet-copy">
+                    <span>전신 건강 악화</span>
+                  </span>
+                </span>
+                <span className="ci-result-card__bullet-item">
+                  <span aria-hidden="true">ㆍ</span>
+                  <span className="ci-result-card__bullet-copy">
+                    <span>노화 가속화</span>
+                  </span>
+                </span>
               </p>
             </div>
           </div>

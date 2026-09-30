@@ -410,6 +410,8 @@
 
 .ad-signal__circle img {
   object-fit: contain;
+  transform: scale(0.8);
+  transform-origin: center;
 }
 
 .ad-signal h3 {
@@ -511,7 +513,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 64px;
+  margin-top: 40px;
   color: #161616;
   font-size: 35px;
   line-height: 50px;
