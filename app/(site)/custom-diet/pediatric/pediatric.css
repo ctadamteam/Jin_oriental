@@ -22,6 +22,36 @@
 }
 
 /* ==============================================================
+   [공통 형광펜 밑줄 스타일]
+   - 글자 하단 35% 마커 스타일
+   - 모바일 줄바꿈 시 각 행 독립 유지 (box-decoration-break)
+============================================================== */
+.ped-highlight {
+  display: inline;
+  background: linear-gradient(
+    to top,
+    rgba(255, 233, 122, 0.58) 0%,
+    rgba(255, 233, 122, 0.58) 35%,
+    transparent 35%,
+    transparent 100%
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 2px;
+  border-radius: 2px;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.ped-highlight strong,
+.ped-slow-loss__desc-1 .ped-highlight strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+
+
+/* ==============================================================
    [상단 헤더 타이틀 & 구분선]
    Figma 426:448 & 426:447 (NanumMyeongjo 400, 40px, Line 11 1px)
 ============================================================== */
@@ -737,7 +767,9 @@
   white-space: pre-line;
 }
 
-.ped-constitution__desc strong {
+.ped-constitution__desc strong,
+.ped-constitution__desc .ped-highlight,
+.ped-constitution__desc .ped-highlight strong {
   font-weight: 600;
   color: var(--ped-navy);
 }

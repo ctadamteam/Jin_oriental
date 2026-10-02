@@ -293,7 +293,9 @@ export default function PediatricPage() {
 
           <div className="ped-causes__footer-text">
             <p className="ped-causes__desc-1">
-              {'양쪽 부모가 정상체중일 때 자녀가 소아비만이 될 확률은 5% 전후이나,\n한쪽 부모가 비만이면 40~50%, 양쪽 부모가 비만일 경우 80%까지 올라가게 됩니다.'}
+              <span className="ped-highlight">
+                {'양쪽 부모가 정상체중일 때 자녀가 소아비만이 될 확률은 5% 전후이나,\n한쪽 부모가 비만이면 40~50%, 양쪽 부모가 비만일 경우 80%까지 올라가게 됩니다.'}
+              </span>
             </p>
             <p className="ped-causes__desc-2">
               <strong>하지만 선천적 체질적 요인보다 환경적 요인이 더 중요합니다.</strong>
@@ -354,8 +356,10 @@ export default function PediatricPage() {
           </h2>
           <p className="ped-slow-loss__desc-1">
             {'소아비만의 경우 체중감량이 필요하지만 성장기에 놓여있기 때문에\n단시간에 무리하게 급격한 감량을 하기보다\n'}
-            <strong>한달에 2~3킬로 정도</strong>
-            {'씩 장기간에 걸쳐 서서히 감량하는 것이 좋습니다.'}
+            <span className="ped-highlight">
+              <strong>한달에 2~3킬로 정도씩</strong>
+              {' 장기간에 걸쳐 서서히 감량하는 것이 좋습니다.'}
+            </span>
           </p>
           <p className="ped-slow-loss__desc-2">
             {'무엇보다 '}
@@ -376,7 +380,9 @@ export default function PediatricPage() {
           </h2>
           <p className="ped-constitution__desc">
             {'원래 다이어트 한약은 태음인이나 소양인처럼 위장이 크고 식욕이 왕성하면서도\n신진대사율이 떨어져서 살이 잘 찌고 잘 붓는 체질 치료처방에서 발전했기 때문에,\n개인의 체질, 체력, 건강 상태에 맞게 처방받는다면\n'}
-            <strong>체중 감량 뿐만 아니라 평소 갖고 있는 불편증상들도 같이 개선</strong>
+            <span className="ped-highlight">
+              <strong>{'체중 감량 뿐만 아니라 평소 갖고 있는 불편증상들도 같이 개선'}</strong>
+            </span>
             {'될 수 있습니다.'}
           </p>
         </section>
@@ -525,10 +531,15 @@ export default function PediatricPage() {
             <strong className="ped-herbs__title-bold">체질과 성장까지 함께 고려합니다</strong>
           </h2>
           <p className="ped-herbs__desc-1">
-            {'단순하게 식욕만 억제하는 것이 아니라 잘못된 식습관으로 인해\n쌓인 노폐물을 배출하고 신진대사율을 올려 지방을 잘 태우는 체질로 개선합니다.\n오랜 시간 과식과 폭식으로 늘어나 커져버린\n위장을 줄여서 나중에는 스스로 소식할 수 있도록 도와줍니다.'}
+            {'단순하게 식욕만 억제하는 것이 아니라 잘못된 식습관으로 인해\n쌓인 노폐물을 배출하고 신진대사율을 올려 '}
+            <span className="ped-highlight">지방을 잘 태우는 체질</span>
+            {'로 개선합니다.\n오랜 시간 과식과 폭식으로 늘어나 커져버린\n'}
+            <span className="ped-highlight">위장을 줄여서 나중에는 스스로 소식할 수 있도록 도와줍니다.</span>
           </p>
           <p className="ped-herbs__desc-2">
-            {'그와 더불어 성장을 도와주는 한약재 녹용, 우슬, 오가피, 속단 등을 체질에 맞게 같이 처방해드립니다.'}
+            {'그와 더불어 '}
+            <span className="ped-highlight">성장을 도와주는 한약재 녹용, 우슬, 오가피, 속단 등을 체질에 맞게 같이 처방</span>
+            {'해드립니다.'}
           </p>
 
           <div className="ped-herbs__badge">
