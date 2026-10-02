@@ -439,7 +439,7 @@ export const REVIEW_SLIDES: ReviewSlideData[] = [
         groupName: 'Group 3',
         stats: '리뷰 477 · 사진 101',
         meta: '',
-        content: '미주란효과 넘 많이봐서 친구 데려왔어요 ㅎㅎ \n원장님 진짜 시술 넘 꼼꼼히 잘해주셔요^^\n친구도 아픈거 잘 못맞는데 진짜 거의 통증 없어서 넘 좋다고\n하네요ㅎㅎ',
+        content: '미주안효과 넘 많이봐서 친구 데려왔어요 ㅎㅎ \n원장님 진짜 시술 넘 꼼꼼히 잘해주셔요^^\n친구도 아픈거 잘 못맞는데 진짜 거의 통증 없어서 넘 좋다고\n하네요ㅎㅎ',
         hasPhoto: true,
         photoUrl: '/images/review/photo_04_right.jpg',
         rotation: 8.18,
@@ -1275,7 +1275,7 @@ export function ReviewSection() {
                         className="text-[1.33cqw] font-normal tracking-tight text-transparent whitespace-nowrap leading-[1.3] select-text cursor-text"
                         style={{ color: 'transparent' }}
                       >
-                        #미주란 #붓기제로 #슬림탕 #슬림환
+                        #미주안 #붓기제로 #슬림탕 #슬림환
                       </div>
                     </div>
                     
