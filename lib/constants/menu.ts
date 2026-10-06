@@ -1,14 +1,14 @@
 export const MENUS = [
   {
     title: "진한의원 소개",
-    href: "/about",
+    href: "/about/story",
     subMenus: [
       { title: "진한의원 story", href: "/about/story" },
     ],
   },
   {
     title: "진 다이어트 한약",
-    href: "/diet-medicine",
+    href: "/diet-medicine/slim",
     subMenus: [
       { title: "슬림환ㆍ습담탕", href: "/diet-medicine/slim" },
       { title: "붓기제로ㆍ배사라정", href: "/diet-medicine/zero" },
@@ -20,7 +20,7 @@ export const MENUS = [
   },
   {
     title: "개인별 맞춤 다이어트",
-    href: "/custom-diet",
+    href: "/custom-diet/detox",
     subMenus: [
       { title: "해독 다이어트", href: "/custom-diet/detox" },
       { title: "내장지방형 비만", href: "/custom-diet/visceral" },
@@ -36,7 +36,7 @@ export const MENUS = [
   },
   {
     title: "여성/산후 클리닉",
-    href: "/women-postpartum",
+    href: "/women-postpartum/care",
     subMenus: [
       { title: "산후조리", href: "/women-postpartum/care" },
       { title: "유산후조리", href: "/women-postpartum/miscarriage" },
@@ -46,7 +46,7 @@ export const MENUS = [
   },
   {
     title: "피부 클리닉",
-    href: "/skin-clinic",
+    href: "/skin-clinic/lifting",
     subMenus: [
       { title: "매선(실리프팅 - 주름 및 쳐짐개선)", href: "/skin-clinic/lifting" },
       { title: "엑소좀(모공 및 흉터/피부결개선)", href: "/skin-clinic/exosome" },
@@ -57,7 +57,7 @@ export const MENUS = [
   },
   {
     title: "면역/보약 클리닉",
-    href: "/immunity-tonic",
+    href: "/immunity-tonic/autonomic",
     subMenus: [
       { title: "자율신경실조증(불면, 공황장애, 화병)", href: "/immunity-tonic/autonomic" },
       { title: "아토피, 건선, 지루성피부염", href: "/immunity-tonic/atopy" },
