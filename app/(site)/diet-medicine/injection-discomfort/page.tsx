@@ -73,12 +73,108 @@ export default function InjectionDiscomfortPage() {
         </section>
 
         {/* ==============================================================
+            [신규 섹션] 지방분해시술 작용 원리 (Figma 495:14)
+        ============================================================== */}
+        <section className="inj-mechanism" aria-label="지방분해시술 작용 원리">
+          <div className="inj-section__inner">
+            <h3 className="inj-mechanism__title">
+              {'지방분해시술,\n어떻게 '}
+              <strong className="inj-mechanism__title-point">작용하나요?</strong>
+            </h3>
+
+            <div className="inj-mechanism__list">
+              {/* STEP 01 */}
+              <div className="inj-mechanism-card">
+                <div className="inj-mechanism-card__img-wrap">
+                  <Image
+                    src={`${ASSET_PATH}/mechanism-step-01.png`}
+                    alt="지방세포에 지방분해 성분 주입"
+                    width={790}
+                    height={644}
+                    className="inj-mechanism-card__img"
+                    unoptimized
+                  />
+                </div>
+                <div className="inj-mechanism-card__body">
+                  <span className="inj-mechanism-card__badge">STEP 01</span>
+                  <h4 className="inj-mechanism-card__title">지방세포에 지방분해 성분 주입</h4>
+                  <p className="inj-mechanism-card__desc">
+                    특정부위의 지방세포를 선택적으로 타겟합니다.
+                  </p>
+                </div>
+              </div>
+
+              {/* STEP 02 */}
+              <div className="inj-mechanism-card">
+                <div className="inj-mechanism-card__img-wrap">
+                  <Image
+                    src={`${ASSET_PATH}/mechanism-step-02.png`}
+                    alt="지방세포 분해"
+                    width={790}
+                    height={644}
+                    className="inj-mechanism-card__img"
+                    unoptimized
+                  />
+                </div>
+                <div className="inj-mechanism-card__body">
+                  <span className="inj-mechanism-card__badge">STEP 02</span>
+                  <h4 className="inj-mechanism-card__title">지방세포 분해</h4>
+                  <p className="inj-mechanism-card__desc">
+                    지방세포의 세포막이 분해되어 지방이 액체 상태로 배출됩니다.
+                  </p>
+                </div>
+              </div>
+
+              {/* STEP 03 */}
+              <div className="inj-mechanism-card">
+                <div className="inj-mechanism-card__img-wrap">
+                  <Image
+                    src={`${ASSET_PATH}/mechanism-step-03.png`}
+                    alt="체외 배출"
+                    width={790}
+                    height={644}
+                    className="inj-mechanism-card__img"
+                    unoptimized
+                  />
+                </div>
+                <div className="inj-mechanism-card__body">
+                  <span className="inj-mechanism-card__badge">STEP 03</span>
+                  <h4 className="inj-mechanism-card__title">체외 배출</h4>
+                  <p className="inj-mechanism-card__desc">
+                    분해된 지방은 림프순환을 통해 자연스럽게 배출됩니다.
+                  </p>
+                </div>
+              </div>
+
+              {/* STEP 04 */}
+              <div className="inj-mechanism-card">
+                <div className="inj-mechanism-card__img-wrap">
+                  <Image
+                    src={`${ASSET_PATH}/mechanism-step-04.png`}
+                    alt="매끈해진 라인"
+                    width={790}
+                    height={644}
+                    className="inj-mechanism-card__img"
+                    unoptimized
+                  />
+                </div>
+                <div className="inj-mechanism-card__body">
+                  <span className="inj-mechanism-card__badge">STEP 04</span>
+                  <h4 className="inj-mechanism-card__title">매끈해진 라인</h4>
+                  <p className="inj-mechanism-card__desc">
+                    {'불필요한 지방이 줄어들어 더 슬림하고 균형 잡힌 라인으로\n개선됩니다.'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==============================================================
             [섹션 2] 전기지방분해침 (Figma 389:135 - 1440px x 1101px)
         ============================================================== */}
         <section className="inj-section inj-section--white" aria-label="전기지방분해침">
-          <div className="inj-section__inner inj-section__inner--full">
-            <div className="inj-section__top-line" aria-hidden="true" />
-            <div className="inj-section__inner">
+          <div className="inj-section__inner">
               <div className="inj-title-wrap">
                 <span className="inj-title-bar" aria-hidden="true" />
                 <h3 className="inj-title">전기지방분해침</h3>
@@ -158,7 +254,6 @@ export default function InjectionDiscomfortPage() {
                 ))}
               </ul>
             </div>
-          </div>
         </section>
 
         {/* ==============================================================

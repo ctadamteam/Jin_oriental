@@ -167,6 +167,110 @@
 }
 
 /* ==============================================================
+   [신규 섹션] 지방분해시술 작용 원리 (Figma 495:14)
+============================================================== */
+.inj-mechanism {
+  width: 100%;
+  background: var(--inj-navy);
+  padding: 120px 0 140px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.inj-mechanism__title {
+  margin: 0 0 86px 0;
+  color: #ffffff;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: -3.5px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.inj-mechanism__title-point {
+  color: var(--inj-pale-blue);
+  font-weight: 700;
+}
+
+.inj-mechanism__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.inj-mechanism-card {
+  width: 100%;
+  height: 310px;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.inj-mechanism-card__img-wrap {
+  position: relative;
+  width: 380px;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.inj-mechanism-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.inj-mechanism-card__body {
+  flex: 1;
+  padding: 30px 40px 30px 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.inj-mechanism-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 40px;
+  border-radius: 20px;
+  background: var(--inj-navy);
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+}
+
+.inj-mechanism-card__title {
+  margin: 0 0 16px 0;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -2px;
+  color: var(--inj-charcoal);
+}
+
+.inj-mechanism-card__desc {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.2px;
+  color: var(--inj-charcoal);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+/* ==============================================================
    [공통 섹션 컴포넌트 스타일]
 ============================================================== */
 .inj-section {
@@ -830,6 +934,48 @@
   .inj-shinemode-card__body {
     padding: 30px 20px;
   }
+
+  /* 신규 작용 원리 섹션 태블릿 */
+  .inj-mechanism {
+    padding: calc(90 * 100vw / 1440) 0 calc(100 * 100vw / 1440);
+  }
+
+  .inj-mechanism__title {
+    font-size: calc(54 * 100vw / 1440);
+    line-height: calc(66 * 100vw / 1440);
+    margin-bottom: calc(50 * 100vw / 1440);
+  }
+
+  .inj-mechanism-card {
+    height: auto;
+    min-height: calc(240 * 100vw / 1440);
+  }
+
+  .inj-mechanism-card__img-wrap {
+    width: 34%;
+  }
+
+  .inj-mechanism-card__body {
+    padding: calc(24 * 100vw / 1440) calc(28 * 100vw / 1440);
+  }
+
+  .inj-mechanism-card__badge {
+    width: calc(100 * 100vw / 1440);
+    height: calc(32 * 100vw / 1440);
+    font-size: calc(16 * 100vw / 1440);
+    margin-bottom: calc(12 * 100vw / 1440);
+  }
+
+  .inj-mechanism-card__title {
+    font-size: calc(28 * 100vw / 1440);
+    line-height: calc(36 * 100vw / 1440);
+    margin-bottom: calc(10 * 100vw / 1440);
+  }
+
+  .inj-mechanism-card__desc {
+    font-size: calc(18 * 100vw / 1440);
+    line-height: calc(26 * 100vw / 1440);
+  }
 }
 
 /* ==============================================================
@@ -1189,4 +1335,57 @@
     line-height: 1.2;
     margin-top: 4px;
   }
+
+  /* 신규 작용 원리 섹션 모바일 */
+  .inj-mechanism {
+    padding: 60px 0 70px;
+  }
+
+  .inj-mechanism__title {
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: -1.5px;
+    margin-bottom: 36px;
+  }
+
+  .inj-mechanism__list {
+    gap: 16px;
+  }
+
+  .inj-mechanism-card {
+    flex-direction: column;
+    height: auto;
+    border-radius: 14px;
+  }
+
+  .inj-mechanism-card__img-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 380 / 230;
+  }
+
+  .inj-mechanism-card__body {
+    padding: 24px 18px 28px;
+  }
+
+  .inj-mechanism-card__badge {
+    width: 88px;
+    height: 28px;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .inj-mechanism-card__title {
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+
+  .inj-mechanism-card__desc {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+  }
 }
+
