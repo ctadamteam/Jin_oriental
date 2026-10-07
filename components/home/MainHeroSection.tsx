@@ -104,13 +104,13 @@ export function MainHeroSection() {
         <div className="flex touch-pan-y">
           {BANNERS.map((banner) => (
             <div 
-              className="flex-[0_0_100%] min-w-0 relative h-[360px] sm:h-[480px] lg:h-[645px] w-full"
+              className="flex-[0_0_100%] min-w-0 relative aspect-[1920/645] w-full"
               key={banner.id}
             >
               <img 
                 src={banner.imageUrl} 
                 alt={banner.alt} 
-                className="w-full h-full object-cover object-[center_left] select-none"
+                className="w-full h-full object-contain select-none"
                 draggable={false}
               />
             </div>
@@ -121,7 +121,7 @@ export function MainHeroSection() {
       {/* Navigation Arrows */}
       <button 
         onClick={scrollPrev}
-        className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/10 hover:bg-black/40 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
+        className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/10 hover:bg-black/40 text-white rounded-full hidden sm:flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
         aria-label="Previous slide"
       >
         <ChevronLeft size={28} strokeWidth={2.5} />
@@ -129,14 +129,14 @@ export function MainHeroSection() {
       
       <button 
         onClick={scrollNext}
-        className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/10 hover:bg-black/40 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
+        className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/10 hover:bg-black/40 text-white rounded-full hidden sm:flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
         aria-label="Next slide"
       >
         <ChevronRight size={28} strokeWidth={2.5} />
       </button>
 
-      {/* Pagination Indicators - Placed overlapping at the bottom of the banners */}
-      <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2.5 z-10">
+      {/* Keep controls below the smaller mobile artwork so they do not cover its text. */}
+      <div className="relative flex justify-center gap-2.5 py-3 sm:absolute sm:bottom-6 sm:left-0 sm:right-0 sm:py-0 z-10">
         {scrollSnaps.map((_, index) => (
           <button
             key={index}
@@ -144,7 +144,7 @@ export function MainHeroSection() {
             className={`transition-all duration-300 rounded-full h-2.5 ${
               index === selectedIndex 
                 ? 'w-6 bg-primary-dark' 
-                : 'w-2.5 bg-white/60 hover:bg-white/90'
+                : 'w-2.5 bg-primary-dark/20 hover:bg-primary-dark/40 sm:bg-white/60 sm:hover:bg-white/90'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
