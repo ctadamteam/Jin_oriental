@@ -169,8 +169,8 @@ export default function MainPopup() {
             {activeTab === 1 && (
               <div className="w-full h-full relative overflow-hidden select-none bg-[#F5F2EA]">
                 <img
-                  src="/images/main/popup/popup_2.jpg"
-                  alt="진한의원 8월 진료 및 휴진 안내"
+                  src="/images/main/popup/popup_26_10.jpg"
+                  alt="진한의원 10월 진료 및 휴진 안내"
                   className="w-full h-full object-contain pointer-events-none"
                 />
               </div>

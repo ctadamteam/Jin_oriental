@@ -16,6 +16,7 @@ export const MENUS = [
       { title: "올인원", href: "/diet-medicine/allinone" },
       { title: "지방분해시술", href: "/diet-medicine/injection-discomfort" },
       { title: "요요 방지한약", href: "/diet-medicine/rebound-prevention" },
+      { title: "비만주사제 보완과 유지관리", href: "/diet-medicine/injection-maintenance" },
     ],
   },
   {
@@ -29,6 +30,9 @@ export const MENUS = [
       { title: "소아/청소년 비만", href: "/custom-diet/pediatric" },
       { title: "자율신경실조형 비만", href: "/custom-diet/autonomic" },
       { title: "중년 비만", href: "/custom-diet/middle-age" },
+      { title: "기혈부족형 비만", href: "/custom-diet/qi-blood" },
+      { title: "스트레스형 비만", href: "/custom-diet/stress" },
+      { title: "호르몬불균형 비만", href: "/custom-diet/hormone" },
       { title: "고도 비만", href: "/custom-diet/severe" },
       { title: "산후 비만", href: "/custom-diet/postpartum" },
       { title: "체질별 다이어트", href: "/custom-diet/constitution" },

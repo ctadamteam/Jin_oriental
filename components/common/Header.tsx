@@ -72,7 +72,7 @@ export function Header() {
                       <Link
                         key={sub.title}
                         href={sub.href}
-                        className="rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50"
+                        className="rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 leading-snug break-keep"
                       >
                         {sub.title}
                       </Link>
