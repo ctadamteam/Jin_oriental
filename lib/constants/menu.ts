@@ -55,7 +55,7 @@ export const MENUS = [
       { title: "매선(실리프팅 - 주름 및 쳐짐개선)", href: "/skin-clinic/lifting" },
       { title: "엑소좀(모공 및 흉터/피부결개선)", href: "/skin-clinic/exosome" },
       { title: "벨라콜(피부탄력 및 콜라겐 재생 촉진)", href: "/skin-clinic/bellacoll" },
-      { title: "미주란(잔주름, 속건조)", href: "/skin-clinic/mijuran" },
+      { title: "미주안(잔주름, 속건조)", href: "/skin-clinic/mijuran" },
       { title: "샤인모드(심부볼, 이중턱, 얼굴축소)", href: "/skin-clinic/shine" },
     ],
   },
