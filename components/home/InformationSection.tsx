@@ -11,7 +11,7 @@ const directions = [
 
 export function InformationSection() {
   return (
-    <section className="bg-gray-50 py-24">
+    <section className="bg-gray-50 py-14 md:py-24">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div id="location" className="scroll-mt-28">
           <SectionTitle
@@ -20,7 +20,7 @@ export function InformationSection() {
           />
         </div>
 
-        <div className="mt-12 bg-white rounded-xl shadow-xl flex flex-col lg:flex-row overflow-hidden min-h-[540px] max-w-[1320px] mx-auto w-full">
+        <div className="mt-8 md:mt-12 bg-white rounded-xl shadow-xl flex flex-col lg:flex-row overflow-hidden min-h-[540px] max-w-[1320px] mx-auto w-full">
           {/* Left: Map */}
           <div className="w-full lg:w-1/2 h-[300px] lg:h-auto bg-gray-100 relative">
             <iframe
@@ -37,13 +37,13 @@ export function InformationSection() {
           </div>
 
           {/* Right: Information */}
-          <div className="w-full lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center items-center">
+          <div className="w-full min-w-0 lg:w-1/2 p-6 sm:p-8 lg:p-12 flex flex-col justify-center items-center">
             
             <div className="flex flex-col gap-8 lg:gap-7 w-full max-w-[560px]">
               {/* Address */}
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <h3 className="text-xl font-bold text-primary-medium shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">주소</h3>
-                <p className="text-gray-700 text-[18px] leading-relaxed font-medium">
+                <p className="min-w-0 break-keep text-gray-700 text-base sm:text-[18px] leading-relaxed font-medium [overflow-wrap:anywhere]">
                   {SITE_CONFIG.contact.address}
                 </p>
               </div>
@@ -51,7 +51,7 @@ export function InformationSection() {
               {/* Business Hours */}
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <h3 className="text-xl font-bold text-primary-medium shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">진료시간</h3>
-                <div className="flex-1 w-full">
+                <div className="min-w-0 flex-1 w-full">
                   <ul className="text-[17px] text-gray-700 space-y-3 w-full">
                     <li className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6">
                       <span className="font-semibold text-gray-600 shrink-0 sm:w-24 whitespace-nowrap">월/화/수/금</span>
@@ -79,15 +79,17 @@ export function InformationSection() {
               {/* Contact */}
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <h3 className="text-xl font-bold text-primary-medium shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">연락처</h3>
-                <p className="text-gray-800 text-[18px] font-bold tracking-wide mt-0.5">
-                  051.714.0040 / 010.7686.0041
+                <p className="min-w-0 flex flex-wrap items-center gap-x-3 text-gray-800 text-[18px] font-bold tracking-wide mt-0.5">
+                  <a href={`tel:${SITE_CONFIG.contact.phoneMain.replace(/\D/g, '')}`} className="inline-flex min-h-11 items-center whitespace-nowrap rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#083560]">{SITE_CONFIG.contact.phoneMain}</a>
+                  <span aria-hidden="true" className="hidden sm:inline">/</span>
+                  <a href={`tel:${SITE_CONFIG.contact.phoneMobile.replace(/\D/g, '')}`} className="inline-flex min-h-11 items-center whitespace-nowrap rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#083560]">{SITE_CONFIG.contact.phoneMobile}</a>
                 </p>
               </div>
 
               {/* Directions */}
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <h3 className="text-xl font-bold text-primary-medium shrink-0 sm:w-20 mt-1 sm:mt-0 whitespace-nowrap">오시는 방법</h3>
-                <dl className="flex-1 w-full space-y-2.5 text-[16px] leading-relaxed text-gray-700">
+                <dl className="min-w-0 flex-1 w-full space-y-2.5 text-[16px] leading-relaxed text-gray-700">
                   {directions.map((direction) => (
                     <div key={direction.label} className="flex items-start gap-3">
                       <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[#083560] text-[#EAF0F7]" aria-hidden="true">

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import '../responsive.css';
 import type { ReactNode } from 'react';
 
 const imagePath = (name: string) => `/images/mid-age/${name}`;

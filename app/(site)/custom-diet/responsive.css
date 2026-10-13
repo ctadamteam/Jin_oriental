@@ -1,0 +1,325 @@
+/* These rules are scoped to the detailed diet pages. Desktop artwork stays unchanged. */
+@media (max-width: 1023px) {
+  .diet-responsive-hero > div:last-child {
+    min-width: 0;
+  }
+
+  .diet-responsive-hero h2 {
+    font-size: clamp(32px, 4.7vw, 48px);
+    overflow-wrap: break-word;
+  }
+
+  .diet-responsive-hero > div:last-child > p:last-child {
+    font-size: 14px;
+  }
+
+  .detox-page .detox-broadcast {
+    height: auto;
+  }
+
+  .detox-page .detox-broadcast > img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    inset: auto !important;
+  }
+
+  .detox-page .detox-broadcast > div {
+    position: static;
+    width: 100%;
+    margin: 24px 0 0;
+  }
+
+  .detox-page .detox-broadcast > div > div > div:first-child {
+    font-size: 13px;
+  }
+
+  .detox-page .detox-broadcast h3 {
+    font-size: 18px;
+  }
+
+  .detox-page .detox-broadcast h2 {
+    font-size: 26px;
+    word-break: keep-all;
+  }
+
+  .detox-page .detox-broadcast p {
+    font-size: 16px;
+  }
+
+  .severe-page .severe-core-art {
+    height: auto;
+  }
+
+  .severe-page .severe-core-art > img {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  .severe-page .severe-core-copy {
+    position: relative;
+    padding: 28px 20px;
+    color: #374151;
+    background: #faf8f3;
+  }
+
+  .severe-page .severe-core-copy > div {
+    position: static;
+    width: auto;
+    translate: none;
+    transform: none;
+  }
+
+  .severe-page .severe-core-copy > div:first-child {
+    margin-bottom: 24px;
+    color: #123961;
+  }
+
+  .severe-page .severe-core-copy > div:last-child {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .severe-page .severe-core-copy > div:last-child > div {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #e5e1d7;
+    border-radius: 16px;
+    background: white;
+  }
+
+  .severe-page .severe-core-copy h4 {
+    font-size: 18px;
+    color: #123961;
+  }
+
+  .mid-page .mid-causes {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .mid-page .mid-cause-flow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+  }
+
+  .mid-page .mid-cause-item {
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .mid-page .mid-cause-item b {
+    width: min(182px, 100%);
+    height: auto;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+  }
+
+  .mid-page .mid-cause-item i {
+    display: none;
+  }
+
+  .mid-page .mid-causes > p {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .pp-page .pp-case-summary {
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    white-space: normal;
+  }
+
+  .pp-page .pp-case-summary span {
+    max-width: 100%;
+    flex: 0 1 auto;
+    font-size: 16px !important;
+    line-height: 1.55;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .pp-page .pp-case-stage p {
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+
+  .pp-page .pp-benefits {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .pp-page .pp-benefit-copy {
+    min-width: 0;
+    padding: 48px 20px;
+  }
+
+  .pp-page .pp-benefit-copy li,
+  .pp-page .pp-benefit-copy li:nth-child(3) {
+    width: 100%;
+    padding: 10px 12px 10px 0;
+    white-space: normal;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 1023px) {
+  .pp-page .pp-hero,
+  .mid-page .mid-hero {
+    height: auto;
+    min-height: 365px;
+    aspect-ratio: auto;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  }
+
+  .pp-page .pp-hero-copy,
+  .mid-page .mid-hero-copy {
+    min-width: 0;
+    padding: 30px 24px;
+  }
+
+  .pp-page .pp-hero-copy .pp-hero-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 680px) {
+  .severe-page .severe-chat-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .severe-page .severe-chat-row.flex-row-reverse {
+    align-items: flex-end;
+  }
+
+  .severe-page .severe-chat-row > div:first-child {
+    margin: 0;
+  }
+
+  .severe-page .severe-chat-row > div:last-child {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .severe-page .severe-chat-row > div:last-child > div {
+    display: none;
+  }
+
+  .severe-page .severe-treatment-label {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding-right: 16px;
+    padding-left: 16px;
+    translate: none;
+    transform: none;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .severe-page .severe-core-copy > div:last-child {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mid-page .mid-causes {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .mid-page .mid-cause-item b {
+    width: min(140px, 100%);
+    font-size: 20px;
+  }
+
+  .pp-page .pp-case-summary {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .pp-page .pp-case-summary span {
+    display: block;
+    font-size: 15px !important;
+  }
+
+  .pp-page .pp-case-summary i {
+    display: inline-block;
+    margin-left: 8px;
+    transform: rotate(90deg);
+  }
+
+  .pp-page .pp-case-stage p {
+    margin-top: 24px !important;
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .pp-page .pp-case-stage p span {
+    flex-basis: 100%;
+  }
+
+  .pp-page .pp-case-stage img {
+    margin-top: 0 !important;
+  }
+
+  .pp-page .pp-case-stage p strong,
+  .pp-page .pp-case-stage p small {
+    font-size: 15px;
+  }
+
+  .pp-page .pp-benefits {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pp-page .pp-treatment-goals > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .pp-page .pp-treatment-goals article {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    min-width: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .pp-page .pp-treatment-goals article + article {
+    padding-top: 20px;
+    border-left: 0;
+    border-top: 1px solid rgb(255 255 255 / 35%);
+  }
+
+  .pp-page .pp-treatment-goals article > div {
+    width: 88px;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .pp-page .pp-treatment-goals img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .pp-page .pp-treatment-goals p {
+    min-width: 0;
+    min-height: 0;
+    max-width: 100%;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+}

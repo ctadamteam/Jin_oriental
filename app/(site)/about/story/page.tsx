@@ -11,7 +11,7 @@ export default function StoryPage() {
             <span className="bg-[#08325C] text-white px-2 py-1 mr-1">행복한 진효과</span>를 아시나요?
           </div>
           
-          <div className="relative w-full max-w-5xl mx-auto mt-5 mb-4 translate-x-[20px]">
+            <div className="relative w-full max-w-5xl mx-auto mt-5 mb-4 lg:translate-x-[20px]">
             <Image 
               src="/images/story/jin_oriental%20story_title.png" 
               alt="JIN Story" 
@@ -21,10 +21,10 @@ export default function StoryPage() {
             />
             
             <div className="mt-6 md:mt-0 md:absolute md:bottom-[12%] md:right-[50px] md:w-[34%] text-[13px] lg:text-[14px] text-gray-600 leading-[1.7] break-keep tracking-tight text-justify px-4 md:px-0">
-              '오늘 서울에서 공기를 살랑이게 한 나비의 날개<br className="hidden md:block" />
+              &apos;오늘 서울에서 공기를 살랑이게 한 나비의 날개<br className="hidden md:block" />
               짓이 다음 달 북경에서 큰 폭풍우를 몰아치게 할<br className="hidden md:block" />
-              수 있다.' 아주 작은 차이가 완전히 다른 결과를<br className="hidden md:block" />
-              가져올 수 있다는 유명한 '진효과' 이론입니다.
+              수 있다.&apos; 아주 작은 차이가 완전히 다른 결과를<br className="hidden md:block" />
+              가져올 수 있다는 유명한 &apos;진효과&apos; 이론입니다.
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function StoryPage() {
               aria-hidden="true"
             />
             <p className="text-gray-600 leading-relaxed text-justify">
-              진 한의원의 진료철학은 빠른 진료보다 바른 진료에 있습니다. 단순히 눈에 보이는 병증을 해결하기보다 환자의 타고난 체질과 특성, 생활환경을 고려한 보이지 않는 병의 근원을 치료하고 나아가 치료받는 환자가 마음까지 어루만질 수 있는 '사람을 위하는 진심치료'로 다가가겠습니다.
+              진 한의원의 진료철학은 빠른 진료보다 바른 진료에 있습니다. 단순히 눈에 보이는 병증을 해결하기보다 환자의 타고난 체질과 특성, 생활환경을 고려한 보이지 않는 병의 근원을 치료하고 나아가 치료받는 환자가 마음까지 어루만질 수 있는 &apos;사람을 위하는 진심치료&apos;로 다가가겠습니다.
             </p>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function StoryPage() {
           <div className="text-xl md:text-2xl font-medium text-gray-800 leading-snug">
             <p className="text-gray-500 mb-1">프로그램은 모방해도 그 안에 체득된</p>
             <p className="text-gray-500 mb-2">독자적인 노하우까지는 모방할 수 없습니다.</p>
-            <p className="font-bold text-black text-2xl md:text-3xl mt-4">그래서 진한의원의 <span className="text-[#08325C]">'진심 치료'</span> 는 다릅니다.</p>
+            <p className="font-bold text-black text-2xl md:text-3xl mt-4">그래서 진한의원의 <span className="text-[#08325C]">&apos;진심 치료&apos;</span> 는 다릅니다.</p>
           </div>
           
           <div className="flex gap-4 md:gap-6">

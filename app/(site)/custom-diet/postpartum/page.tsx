@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { ImageLightbox } from '@/components/common/ImageLightbox';
+import '../responsive.css';
 
 const causeLeft = ['임신전 과체중', '임신중 과도한 영양 섭취 및 활동량 감소', '임신중독증', '신진대사 및 수분대사저하'];
 const causeRight = ['산후우울증으로 인한 스트레스성 폭식', '모유수유로 인한 갈증과 허기', '모유수유 중단', '성급한 재임신', '산후부종'];
@@ -174,8 +176,9 @@ export default function PostpartumDietPage() {
           <SectionTitle>산후 비만 치료사례</SectionTitle>
           <div className="pp-case-list">{caseStudies.map((caseStudy) => <article className="pp-case" key={caseStudy.caseLabel}>
             <header className="pp-case-header"><b>{caseStudy.caseLabel}</b><p>{caseStudy.profile}</p><div className="pp-case-summary">{caseStudy.summary.map((item, index) => <span key={item}>{item}{index < caseStudy.summary.length - 1 && <i aria-hidden="true">›</i>}</span>)}</div></header>
+            <p className="mb-3 text-sm text-white/80">결과 이미지를 누르면 크게 볼 수 있습니다.</p>
             <div className="pp-case-stages">{caseStudy.stages.map((stage, index) => <div className="pp-case-stage-wrap" key={stage.image}>
-              <div className="pp-case-stage"><p><span>{stage.label}</span>{stage.weight && <strong>{stage.weight}</strong>}{stage.date && <small>{stage.date}</small>}</p><Image src={`/images/postpartum/${stage.image}`} alt={`${caseStudy.caseLabel} ${stage.label}`} width={930} height={409} loading="eager" unoptimized /></div>
+              <div className="pp-case-stage"><p><span>{stage.label}</span>{stage.weight && <strong>{stage.weight}</strong>}{stage.date && <small>{stage.date}</small>}</p><ImageLightbox src={`/images/postpartum/${stage.image}`} alt={`${caseStudy.caseLabel} ${stage.label}`} className="block w-full"><Image src={`/images/postpartum/${stage.image}`} alt={`${caseStudy.caseLabel} ${stage.label}`} width={930} height={409} unoptimized /></ImageLightbox></div>
               {index < caseStudy.stages.length - 1 && <i className="pp-down-arrow" aria-hidden="true" />}
             </div>)}</div>
           </article>)}</div>

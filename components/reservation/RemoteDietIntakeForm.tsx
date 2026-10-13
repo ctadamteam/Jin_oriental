@@ -148,10 +148,10 @@ function QuestionTitle({ number, children, required = false }: { number: number;
   );
 }
 
-function FieldError({ message }: { message?: string }) {
+function FieldError({ field, message }: { field: FieldName; message?: string }) {
   if (!message) return null;
 
-  return <p className="mt-2 text-sm font-medium text-[#B42318]">{message}</p>;
+  return <p id={`intake-error-${field}`} className="mt-2 text-sm font-medium text-[#B42318]">{message}</p>;
 }
 
 function isValidBirthIdentity(value: string) {
@@ -189,6 +189,13 @@ export function RemoteDietIntakeForm() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const birthInputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const focusField = (field: FieldName) => {
+    const group = formRef.current?.querySelector<HTMLElement>(`[data-intake-field="${field}"]`);
+    group?.scrollIntoView({ block: 'center' });
+    group?.querySelector<HTMLElement>('input:not([readonly]), button')?.focus({ preventScroll: true });
+  };
 
   const setError = (field: FieldName) => {
     setErrors((current) => {
@@ -300,6 +307,8 @@ export function RemoteDietIntakeForm() {
     if (!formData.paymentMethod) nextErrors.paymentMethod = '결제 방법을 선택해주세요.';
 
     setErrors(nextErrors);
+    const firstError = Object.keys(nextErrors)[0] as FieldName | undefined;
+    if (firstError) requestAnimationFrame(() => focusField(firstError));
     return Object.keys(nextErrors).length === 0;
   };
 
@@ -317,7 +326,7 @@ export function RemoteDietIntakeForm() {
         </div>
         <p className="mt-7 text-sm font-bold tracking-[0.14em] text-[#123961]">JIN ORIENTAL CLINIC</p>
         <h2 className="mt-3 text-2xl font-bold text-[#083560] sm:text-3xl">비대면 접수가 완료되었습니다.</h2>
-        <p className="mt-4 text-[15px] leading-7 text-slate-600 sm:text-base">순차적으로 전화 또는 카카오 상담을 드립니다.</p>
+        <p className="mt-4 text-base sm:text-[15px] leading-7 text-slate-600 sm:text-base">순차적으로 전화 또는 카카오 상담을 드립니다.</p>
         <button type="button" onClick={() => setIsSubmitted(false)} className="mt-9 rounded-lg border border-[#083560] px-6 py-3 text-sm font-bold text-[#083560] transition-colors hover:bg-[#EAF0F7] focus:outline-none focus:ring-2 focus:ring-[#083560] focus:ring-offset-2">
           입력 내용 다시 작성하기
         </button>
@@ -329,7 +338,7 @@ export function RemoteDietIntakeForm() {
     <section className="overflow-hidden rounded-2xl border border-[#CDD9E6] bg-white shadow-[0_16px_40px_rgba(8,53,96,0.08)]">
       <div className="border-b border-[#D7E1EB] bg-[#F8FAFC] px-6 py-8 sm:px-10 sm:py-10">
         <p className="text-lg font-bold text-[#083560]">안녕하세요. 해운대 진한의원입니다.</p>
-        <div className="mt-5 space-y-4 break-keep text-[15px] leading-7 text-slate-700 sm:text-base sm:leading-8">
+        <div className="mt-5 space-y-4 break-keep text-base sm:text-[15px] leading-7 text-slate-700 sm:text-base sm:leading-8">
           <p>
             김효진 원장님이 직접 조제하고 원장님도, 가족도 복용하는 간수치, 신장수치 걱정 없는 안심 다이어트 한약입니다.
             <br />
@@ -354,7 +363,7 @@ export function RemoteDietIntakeForm() {
 
       <div className="border-b border-[#D7E1EB] bg-[#EAF0F7] px-6 py-7 sm:px-10 sm:py-8">
         <h2 className="text-lg font-bold text-[#083560]">공지사항</h2>
-        <ol className="mt-4 list-decimal space-y-2.5 pl-5 text-sm leading-6 text-slate-700 sm:text-[15px]">
+        <ol className="mt-4 list-decimal space-y-2.5 pl-5 text-sm leading-6 text-slate-700 sm:text-base sm:text-[15px]">
           <li>아래 문항 작성 후 제출해주시면 <strong className="font-bold text-[#123961]">[전화 상담 → 계좌입금 혹은 카드결제 → 택배수령 혹은 방문수령]</strong>의 순서로 진행됩니다.</li>
           <li>문항 제출 후 기다려주시면 순차대로 전화 혹은 카카오 상담을 해드립니다.</li>
           <li>처방 문의가 많아 상담이 지연될 수 있습니다. 미리 양해 부탁드립니다.</li>
@@ -365,39 +374,50 @@ export function RemoteDietIntakeForm() {
         </ol>
       </div>
 
-      <form onSubmit={handleSubmit} noValidate className="px-6 py-9 sm:px-10 sm:py-12">
+      <form ref={formRef} onSubmit={handleSubmit} noValidate className="px-6 py-9 sm:px-10 sm:py-12">
         <p className="mb-8 text-sm text-slate-500"><span className="text-[#B42318]">*</span> 표시는 필수 입력 항목입니다.</p>
 
+        {Object.keys(errors).length > 0 && (
+          <div role="alert" className="mb-8 rounded-lg border border-[#B42318] bg-red-50 p-4 text-[#B42318]">
+            <p className="font-bold">입력 내용을 확인해주세요.</p>
+            <ul className="mt-2 space-y-1">
+              {(Object.entries(errors) as Array<[FieldName, string]>).map(([field, message]) => (
+                <li key={field}><button type="button" onClick={() => focusField(field)} className="min-h-11 text-left text-sm underline underline-offset-4">{message}</button></li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div className="space-y-10 sm:space-y-12">
-          <fieldset>
+          <fieldset data-intake-field="visitHistory" aria-describedby={errors.visitHistory ? 'intake-error-visitHistory' : undefined}>
             <legend><QuestionTitle number={1} required>진한의원에서 진료받으신 적이 있나요?</QuestionTitle></legend>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {(['초진', '재진'] as const).map((value) => (
-                <label key={value} className="inline-flex min-h-12 cursor-pointer items-center gap-3 px-1 py-2 text-[15px] font-semibold text-slate-700">
-                  <input type="radio" name="visitHistory" value={value} checked={formData.visitHistory === value} onChange={() => { setFormData((current) => ({ ...current, visitHistory: value })); setError('visitHistory'); }} className="peer sr-only" />
+                <label key={value} className="inline-flex min-h-12 cursor-pointer items-center gap-3 px-1 py-2 text-base sm:text-[15px] font-semibold text-slate-700">
+                  <input type="radio" required name="visitHistory" value={value} checked={formData.visitHistory === value} onChange={() => { setFormData((current) => ({ ...current, visitHistory: value })); setError('visitHistory'); }} className="peer sr-only" />
                   <span className="relative flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-[#A4B7CC] transition-colors after:h-2 after:w-2 after:scale-0 after:rounded-full after:bg-[#EAF0F7] after:transition-transform peer-checked:border-[#083560] peer-checked:bg-[#083560] peer-checked:after:scale-100 peer-focus-visible:ring-4 peer-focus-visible:ring-[#EAF0F7]" />
                   <span className="transition-colors peer-checked:text-[#083560]">{value}</span>
                 </label>
               ))}
             </div>
-            <FieldError message={errors.visitHistory} />
+            <FieldError field="visitHistory" message={errors.visitHistory} />
           </fieldset>
 
-          <div>
+          <div data-intake-field="phone">
             <QuestionTitle number={2} required>연락처를 입력해주세요.</QuestionTitle>
-            <input type="tel" inputMode="tel" autoComplete="tel" value={formData.phone} onChange={(event) => { setFormData((current) => ({ ...current, phone: event.target.value })); setError('phone'); }} placeholder="010-0000-0000" className={`mt-5 h-12 w-full rounded-lg border bg-white px-4 text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7] ${errors.phone ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
-            <FieldError message={errors.phone} />
+            <input aria-label="연락처" aria-required="true" aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? 'intake-error-phone' : undefined} type="tel" inputMode="tel" autoComplete="tel" value={formData.phone} onChange={(event) => { setFormData((current) => ({ ...current, phone: event.target.value })); setError('phone'); }} placeholder="010-0000-0000" className={`mt-5 h-12 w-full rounded-lg border bg-white px-4 text-base sm:text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7] ${errors.phone ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
+            <FieldError field="phone" message={errors.phone} />
           </div>
 
-          <div>
+          <div data-intake-field="name">
             <QuestionTitle number={3} required>이름을 입력해주세요.</QuestionTitle>
-            <input type="text" autoComplete="name" value={formData.name} onChange={(event) => { setFormData((current) => ({ ...current, name: event.target.value })); setError('name'); }} placeholder="이름을 입력해주세요." className={`mt-5 h-12 w-full rounded-lg border bg-white px-4 text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7] ${errors.name ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
-            <FieldError message={errors.name} />
+            <input aria-label="이름" aria-required="true" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'intake-error-name' : undefined} type="text" autoComplete="name" value={formData.name} onChange={(event) => { setFormData((current) => ({ ...current, name: event.target.value })); setError('name'); }} placeholder="이름을 입력해주세요." className={`mt-5 h-12 w-full rounded-lg border bg-white px-4 text-base sm:text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7] ${errors.name ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
+            <FieldError field="name" message={errors.name} />
           </div>
 
-          <div>
+          <div data-intake-field="birthDate">
             <QuestionTitle number={4} required>생년월일을 입력해주세요.</QuestionTitle>
-            <div role="group" aria-label="생년월일 앞 6자리와 뒷자리 첫 숫자" className="mt-5 flex w-fit max-w-full items-center gap-1.5 sm:gap-2">
+            <div role="group" aria-label="생년월일 앞 6자리와 뒷자리 첫 숫자" className="mt-5 flex w-fit max-w-full items-center gap-1 sm:gap-2">
               <div className="flex items-center gap-0.5 sm:gap-1">
                 {formData.birthDate.slice(0, 6).map((digit, index) => (
                   <input
@@ -412,7 +432,10 @@ export function RemoteDietIntakeForm() {
                     onKeyDown={(event) => handleBirthKeyDown(index, event)}
                     onPaste={handleBirthPaste}
                     aria-label={`생년월일 앞자리 ${index + 1}번째 숫자`}
-                    className={`h-10 w-6 rounded-[4px] border bg-white text-center text-[15px] font-medium text-slate-900 outline-none transition-shadow focus:z-10 focus:border-[#083560] focus:ring-2 focus:ring-[#EAF0F7] sm:h-11 sm:w-8 ${errors.birthDate ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`}
+                    aria-required="true"
+                    aria-invalid={Boolean(errors.birthDate)}
+                    aria-describedby={errors.birthDate ? 'intake-error-birthDate' : undefined}
+                    className={`h-11 w-6 rounded-[4px] border bg-white text-center text-base sm:text-[15px] font-medium text-slate-900 outline-none transition-shadow focus:z-10 focus:border-[#083560] focus:ring-2 focus:ring-[#EAF0F7] sm:h-11 sm:w-8 ${errors.birthDate ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`}
                   />
                 ))}
               </div>
@@ -428,44 +451,47 @@ export function RemoteDietIntakeForm() {
                 onKeyDown={(event) => handleBirthKeyDown(6, event)}
                 onPaste={handleBirthPaste}
                 aria-label="생년월일 뒷자리 첫 숫자"
-                className={`h-10 w-6 rounded-[4px] border bg-white text-center text-[15px] font-medium text-slate-900 outline-none transition-shadow focus:z-10 focus:border-[#083560] focus:ring-2 focus:ring-[#EAF0F7] sm:h-11 sm:w-8 ${errors.birthDate ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`}
+                aria-required="true"
+                aria-invalid={Boolean(errors.birthDate)}
+                aria-describedby={errors.birthDate ? 'intake-error-birthDate' : undefined}
+                className={`h-11 w-6 rounded-[4px] border bg-white text-center text-base sm:text-[15px] font-medium text-slate-900 outline-none transition-shadow focus:z-10 focus:border-[#083560] focus:ring-2 focus:ring-[#EAF0F7] sm:h-11 sm:w-8 ${errors.birthDate ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`}
               />
-              <span className="shrink-0 font-medium tracking-[0.04em] text-slate-400" aria-hidden="true">XXXXXX</span>
+              <span className="shrink-0 text-xs sm:text-base font-medium tracking-normal sm:tracking-[0.04em] text-slate-400" aria-hidden="true">XXXXXX</span>
             </div>
-            <FieldError message={errors.birthDate} />
+            <FieldError field="birthDate" message={errors.birthDate} />
           </div>
 
-          <div>
+          <div data-intake-field="address">
             <QuestionTitle number={5} required>신주소를 입력해주세요.</QuestionTitle>
             <div className="mt-5 flex gap-2">
-              <input type="text" value={formData.postalCode} readOnly placeholder="우편번호" className={`h-12 min-w-0 flex-1 rounded-lg border bg-slate-50 px-4 text-[15px] text-slate-900 outline-none placeholder:text-slate-400 ${errors.address ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
+              <input aria-label="우편번호" aria-required="true" aria-invalid={Boolean(errors.address)} aria-describedby={errors.address ? 'intake-error-address' : undefined} type="text" value={formData.postalCode} readOnly placeholder="우편번호" className={`h-12 min-w-0 flex-1 rounded-lg border bg-slate-50 px-4 text-base sm:text-[15px] text-slate-900 outline-none placeholder:text-slate-400 ${errors.address ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
               <button type="button" onClick={openAddressSearch} className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-lg bg-[#083560] px-4 text-sm font-bold text-white transition-colors hover:bg-[#01223D] focus:outline-none focus:ring-2 focus:ring-[#083560] focus:ring-offset-2">
                 <Search size={17} aria-hidden="true" /> 주소 검색
               </button>
             </div>
-            <input type="text" value={formData.address} readOnly placeholder="신주소" className={`mt-2 h-12 w-full rounded-lg border bg-slate-50 px-4 text-[15px] text-slate-900 outline-none placeholder:text-slate-400 ${errors.address ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
-            <input type="text" autoComplete="address-line2" value={formData.addressDetail} onChange={(event) => setFormData((current) => ({ ...current, addressDetail: event.target.value }))} placeholder="상세 주소를 입력해주세요." className="mt-2 h-12 w-full rounded-lg border border-[#CDD9E6] bg-white px-4 text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7]" />
-            <FieldError message={errors.address} />
+            <input aria-label="기본 주소" aria-required="true" aria-invalid={Boolean(errors.address)} aria-describedby={errors.address ? 'intake-error-address' : undefined} type="text" value={formData.address} readOnly placeholder="신주소" className={`mt-2 h-12 w-full rounded-lg border bg-slate-50 px-4 text-base sm:text-[15px] text-slate-900 outline-none placeholder:text-slate-400 ${errors.address ? 'border-[#B42318]' : 'border-[#CDD9E6]'}`} />
+            <input aria-label="상세 주소 (선택)" type="text" autoComplete="address-line2" value={formData.addressDetail} onChange={(event) => setFormData((current) => ({ ...current, addressDetail: event.target.value }))} placeholder="상세 주소를 입력해주세요." className="mt-2 h-12 w-full rounded-lg border border-[#CDD9E6] bg-white px-4 text-base sm:text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7]" />
+            <FieldError field="address" message={errors.address} />
           </div>
 
-          <fieldset>
+          <fieldset data-intake-field="contactTimes" aria-describedby={errors.contactTimes ? 'intake-error-contactTimes' : undefined}>
             <legend><QuestionTitle number={6} required>연락가능한 시간대를 체크해주세요. (중복 가능)</QuestionTitle></legend>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {contactTimeOptions.map((value) => (
-                <label key={value} className={`flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border border-[#CDD9E6] px-4 text-[15px] font-semibold text-slate-700 transition-colors has-[:checked]:border-[#083560] has-[:checked]:bg-[#EAF0F7] ${value === '시간 무관 (9시반~6시)' ? 'sm:col-span-2 lg:col-span-1' : ''}`}>
+                <label key={value} className={`flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border border-[#CDD9E6] px-4 text-base sm:text-[15px] font-semibold text-slate-700 transition-colors has-[:checked]:border-[#083560] has-[:checked]:bg-[#EAF0F7] ${value === '시간 무관 (9시반~6시)' ? 'sm:col-span-2 lg:col-span-1' : ''}`}>
                   <input type="checkbox" checked={formData.contactTimes.includes(value)} onChange={() => toggleContactTime(value)} className="h-4 w-4 rounded accent-[#083560]" />
                   {value}
                 </label>
               ))}
             </div>
-            <FieldError message={errors.contactTimes} />
+            <FieldError field="contactTimes" message={errors.contactTimes} />
           </fieldset>
 
           <fieldset>
             <legend><QuestionTitle number={7}>내원경로를 선택해주세요.</QuestionTitle></legend>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               {visitRouteOptions.map((value) => (
-                <label key={value} className="flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border border-[#CDD9E6] px-4 text-[15px] font-semibold text-slate-700 transition-colors has-[:checked]:border-[#083560] has-[:checked]:bg-[#EAF0F7]">
+                <label key={value} className="flex min-h-12 cursor-pointer items-center gap-3 rounded-lg border border-[#CDD9E6] px-4 text-base sm:text-[15px] font-semibold text-slate-700 transition-colors has-[:checked]:border-[#083560] has-[:checked]:bg-[#EAF0F7]">
                   <input type="checkbox" checked={formData.visitRoutes.includes(value)} onChange={() => toggleVisitRoute(value)} className="h-4 w-4 rounded accent-[#083560]" />
                   {value}
                 </label>
@@ -474,23 +500,23 @@ export function RemoteDietIntakeForm() {
             {formData.visitRoutes.includes('소개') && (
               <div className="mt-4">
                 <label htmlFor="referrer-name" className="text-sm font-semibold text-[#123961]">소개자 이름 <span className="font-normal text-slate-500">(선택)</span></label>
-                <input id="referrer-name" type="text" autoComplete="off" value={formData.referrer} onChange={(event) => setFormData((current) => ({ ...current, referrer: event.target.value }))} placeholder="소개자 이름을 입력해주세요." className="mt-2 h-12 w-full rounded-lg border border-[#CDD9E6] bg-white px-4 text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7]" />
+                <input id="referrer-name" type="text" autoComplete="off" value={formData.referrer} onChange={(event) => setFormData((current) => ({ ...current, referrer: event.target.value }))} placeholder="소개자 이름을 입력해주세요." className="mt-2 h-12 w-full rounded-lg border border-[#CDD9E6] bg-white px-4 text-base sm:text-[15px] text-slate-900 outline-none transition-shadow placeholder:text-slate-400 focus:border-[#083560] focus:ring-4 focus:ring-[#EAF0F7]" />
               </div>
             )}
           </fieldset>
 
-          <fieldset>
+          <fieldset data-intake-field="paymentMethod" aria-describedby={errors.paymentMethod ? 'intake-error-paymentMethod' : undefined}>
             <legend><QuestionTitle number={8} required>원하시는 결제 방법이 있으세요?</QuestionTitle></legend>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {(['카드결제', '계좌이체 (현금영수증 발급)'] as const).map((value) => (
-                <label key={value} className="inline-flex min-h-12 cursor-pointer items-center gap-3 px-1 py-2 text-[15px] font-semibold text-slate-700">
-                  <input type="radio" name="paymentMethod" value={value} checked={formData.paymentMethod === value} onChange={() => { setFormData((current) => ({ ...current, paymentMethod: value })); setError('paymentMethod'); }} className="peer sr-only" />
+                <label key={value} className="inline-flex min-h-12 cursor-pointer items-center gap-3 px-1 py-2 text-base sm:text-[15px] font-semibold text-slate-700">
+                  <input type="radio" required name="paymentMethod" value={value} checked={formData.paymentMethod === value} onChange={() => { setFormData((current) => ({ ...current, paymentMethod: value })); setError('paymentMethod'); }} className="peer sr-only" />
                   <span className="relative flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-[#A4B7CC] transition-colors after:h-2 after:w-2 after:scale-0 after:rounded-full after:bg-[#EAF0F7] after:transition-transform peer-checked:border-[#083560] peer-checked:bg-[#083560] peer-checked:after:scale-100 peer-focus-visible:ring-4 peer-focus-visible:ring-[#EAF0F7]" />
                   <span className="transition-colors peer-checked:text-[#083560]">{value}</span>
                 </label>
               ))}
             </div>
-            <FieldError message={errors.paymentMethod} />
+            <FieldError field="paymentMethod" message={errors.paymentMethod} />
           </fieldset>
 
           <fieldset>
@@ -499,7 +525,7 @@ export function RemoteDietIntakeForm() {
             <div className="mt-6 space-y-8">
               {prescriptionGroups.map((group) => (
                 <section key={group.title} className="overflow-hidden border border-[#D7E1EB] bg-white">
-                  <div className="flex items-center justify-between gap-4 bg-[#F8FAFC] px-5 py-4 sm:px-6">
+                  <div className="flex flex-wrap items-center justify-between gap-2 bg-[#F8FAFC] px-5 py-4 sm:px-6">
                     <h4 className="min-w-0 text-base font-bold text-[#123961]">
                       {group.title}
                       {group.titleMeta && <span className="ml-1.5 text-[13px] font-semibold text-[#476786]">({group.titleMeta})</span>}
@@ -512,7 +538,7 @@ export function RemoteDietIntakeForm() {
                         <input type="checkbox" checked={formData.prescriptions.includes(item.name)} onChange={() => togglePrescription(item.name)} className="peer sr-only" />
                         <span className="relative mt-0.5 flex h-5 w-5 shrink-0 rounded-[4px] border-2 border-[#A4B7CC] transition-colors after:absolute after:left-[5px] after:top-[1px] after:h-2.5 after:w-1.5 after:scale-0 after:rotate-45 after:border-b-2 after:border-r-2 after:border-[#EAF0F7] after:transition-transform peer-checked:border-[#083560] peer-checked:bg-[#083560] peer-checked:after:scale-100 peer-focus-visible:ring-4 peer-focus-visible:ring-[#EAF0F7]" />
                         <span className="min-w-0">
-                          <strong className="block text-[15px] leading-6 text-slate-800 transition-colors peer-checked:text-[#083560]">
+                          <strong className="block text-base sm:text-[15px] leading-6 text-slate-800 transition-colors peer-checked:text-[#083560]">
                             {item.name}
                             {item.meta && <span className="ml-1 text-[13px] font-semibold text-[#476786]">({item.meta})</span>}
                           </strong>

@@ -177,4 +177,80 @@ const styles = String.raw`
   .miscarriage-risk{background:linear-gradient(rgba(18,57,97,.56),rgba(13,49,85,.64)),url('/images/miscarriage/USH_16.jpg') center/cover no-repeat}
   .miscarriage-goals{background:linear-gradient(rgba(18,57,97,.68),rgba(13,49,85,.68)),url('/images/miscarriage/USH_17.jpg') center/cover no-repeat}
   .clean-panels article:first-child,.clean-panels article:first-child>img{background:#F3F5F7}.clean-panels article:first-child i{color:rgba(164,183,204,.38)}
+
+  @media(max-width:1023px){
+    .miscarriage-hero{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+    .miscarriage-hero-copy{padding:32px 24px}
+    .miscarriage-hero-copy h2{font-size:clamp(32px,5vw,50px);white-space:normal;letter-spacing:-2px}
+    .miscarriage-hero-copy p{font-size:16px;letter-spacing:3px}
+    .miscarriage-charts{grid-template-columns:minmax(0,1fr);gap:42px;max-width:520px;margin-right:auto;margin-left:auto;padding:32px 34px}
+    .miscarriage-charts article{min-width:0}
+    .chart-bars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 10px 36px;justify-items:center}
+    .chart-adhesion{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .chart-bars i{width:min(100%,51px)}
+    .chart-bars span{width:max-content;max-width:90px}
+    .miscarriage-goals>div{width:100%;max-width:560px}
+    .miscarriage-goals h2{white-space:normal;line-height:1.25}
+    .miscarriage-goals li{gap:12px;padding:14px 20px;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}
+    .miscarriage-goals em{width:40px;flex:0 0 40px}
+    .process-flow{padding-right:20px;padding-left:20px}
+    .treatment-articles article{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px;padding:28px}
+    .treatment-articles img{width:100%;height:auto}
+    .treatment-articles p{align-items:flex-start;gap:12px}
+    .treatment-articles p em{width:58px;height:58px;flex:0 0 58px;font-size:18px}
+    .treatment-articles p strong{min-width:0;font-size:28px;line-height:1.35}
+    .miscarriage-research>div{grid-template-columns:minmax(0,1fr);gap:32px}
+    .miscarriage-card{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;padding:60px 32px}
+    .miscarriage-card img{max-width:100%}
+    .miscarriage-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .miscarriage-link-card:nth-child(n){height:260px}
+    .miscarriage-link-phone{font-size:clamp(25px,4vw,34px)!important;letter-spacing:-1.5px!important}
+  }
+  @media(max-width:700px){
+    .miscarriage-hero{grid-template-columns:minmax(0,1fr)}
+    .miscarriage-hero-copy{min-height:0;padding:32px 24px}
+    .miscarriage-hero-copy h2{font-size:40px}
+    .miscarriage-intro{min-height:0;padding:48px 22px}
+    .miscarriage-intro-photo{opacity:.16;width:100%}
+    .miscarriage-intro p,.miscarriage-need>p,.miscarriage-need>.miscarriage-restored-copy{font-size:16px;line-height:1.75}
+    .miscarriage-note{grid-template-columns:minmax(0,1fr);gap:14px;margin:0 18px;padding:24px}
+    .miscarriage-note>b{font-size:34px;transform:none}
+    .miscarriage-note--peach{margin:30px 0 0}
+    .miscarriage-need,.miscarriage-symptoms,.miscarriage-treatment,.miscarriage-research{padding:48px 18px}
+    .miscarriage-need>h2,.miscarriage-symptoms h2,.miscarriage-treatment>h2,.miscarriage-research>h2{font-size:30px;letter-spacing:-1.5px;line-height:1.35}
+    .miscarriage-risk p{font-size:17px;line-height:1.75}
+    .miscarriage-risk strong{font-size:21px}
+    .miscarriage-charts{padding:30px 10px 20px 30px}
+    .chart-bars{gap:10px;padding-right:4px;padding-left:4px}
+    .chart-bars b{font-size:25px}
+    .chart-bars i:last-child b{font-size:31px}
+    .chart-bars span{font-size:14px}
+    .miscarriage-charts h3{font-size:16px;line-height:1.5;padding:12px 8px}
+    .miscarriage-restored-copy{padding:22px 18px}
+    .symptoms-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 14px;margin:32px 0}
+    .symptoms-grid figcaption{font-size:15px;line-height:1.5;letter-spacing:-.5px}
+    .miscarriage-symptoms>p{font-size:16px}
+    .miscarriage-symptoms>h3{font-size:20px;line-height:1.5}
+    .miscarriage-goals h2{font-size:32px;letter-spacing:-1.5px}
+    .miscarriage-goals li{padding:14px;font-size:16px;border-radius:14px}
+    .process-flow{grid-template-columns:minmax(0,1fr);gap:36px;padding:8px 14px 28px}
+    .process-flow span{min-height:110px;font-size:17px}
+    .treatment-articles article{grid-template-columns:minmax(0,1fr);padding:22px}
+    .treatment-articles img{max-width:320px;margin:auto}
+    .treatment-articles article span{font-size:16px;line-height:1.7}
+    .miscarriage-research>h2{margin-bottom:38px}
+    .miscarriage-research article{grid-template-columns:74px minmax(0,1fr);gap:16px}
+    .miscarriage-research img{width:74px;height:auto}
+    .miscarriage-research h4{margin-top:0;line-height:1.5}
+    .clean-panels{height:auto;grid-template-columns:minmax(0,1fr)}
+    .clean-panels article{min-height:310px}
+    .clean-panels p{bottom:30px;font-size:23px}
+    .miscarriage-clean>p{font-size:16px;line-height:1.75}
+    .miscarriage-card{grid-template-columns:minmax(0,1fr);padding:48px 24px}
+    .miscarriage-card h2{font-size:30px;letter-spacing:-1.5px}
+    .miscarriage-card p{font-size:16px}
+    .miscarriage-links{grid-template-columns:minmax(0,1fr)}
+    .miscarriage-link-card:nth-child(n){height:260px;min-height:0}
+    .miscarriage-link-phone{font-size:34px!important}
+  }
 `;

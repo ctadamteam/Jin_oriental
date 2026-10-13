@@ -149,6 +149,36 @@ export default function ThyroidPage() {
         @media(max-width:1000px){.thy-title{padding-left:18px}.thy-hero{height:auto;grid-template-columns:64% 36%;aspect-ratio:2.74}.thy-hero-copy{padding:10% 8%}.thy-hero-copy p{font-size:1.5vw}.thy-hero-copy h2{font-size:5.4vw}.thy-hero-copy span{font-size:1.4vw}.thy-quality article{min-height:42vw}}
         @media(max-width:680px){.thy-title{height:58px}.thy-title h1{font-size:28px}.thy-hero{display:block;aspect-ratio:auto}.thy-hero-copy{min-height:250px;padding:38px 20px}.thy-hero-copy p{font-size:13px}.thy-hero-copy span{font-size:14px}.thy-stage-list{margin-right:0;margin-left:0}.thy-stage b{width:130px;height:130px}.thy-intro>h2,.thy-causes>h2,.thy-research h2,.thy-symptoms h2,.thy-deer h2{font-size:32px}.thy-intro-body h3{font-size:28px}.thy-answer-row{grid-template-columns:minmax(0,1fr) 50px;gap:8px;padding-right:0}.thy-answer-row .thy-doctor{width:50px;flex-basis:50px}.thy-paper-journal,.thy-research small{font-size:15px}.thy-quality{padding-bottom:42px}.thy-quality h2{padding-left:20px}.thy-quality article{min-height:230px}.thy-quality article:first-child .thy-quality-gmp{width:110px;height:110px}.thy-quality b{font-size:90px}.thy-quality span{font-size:17px}}
       `}</style>
+      <style>{`
+        @media(max-width:1023px){
+          .thy-hero{height:auto;min-height:330px;grid-template-columns:minmax(0,3fr) minmax(0,2fr);aspect-ratio:auto}
+          .thy-hero-copy{padding:32px 24px}
+          .thy-hero-copy h2{font-size:clamp(36px,4.8vw,48px);letter-spacing:-2px}
+          .thy-hero-copy p{font-size:14px}
+          .thy-hero-copy span{font-size:15px}
+          .thy-stage-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:36px auto 48px;max-width:440px}
+          .thy-stage{min-width:0;justify-content:center}
+          .thy-stage b,.thy-stage:nth-child(n) b{width:100%;max-width:154px;height:auto;aspect-ratio:1;font-size:17px;padding:14px}
+          .thy-stage i{display:none}
+          .thy-intro-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+          .thy-levels b{white-space:normal;line-height:1.45}
+        }
+        @media(max-width:680px){
+          .thy-hero{display:block;min-height:0}
+          .thy-hero-copy{min-height:0;padding:32px 24px;text-align:left}
+          .thy-hero-copy h2{font-size:42px;line-height:1.15}
+          .thy-hero-copy span{text-align:left}
+          .thy-stage-list{gap:14px}
+          .thy-stage b,.thy-stage:nth-child(n) b{font-size:15px;padding:12px}
+          .thy-intro-body{grid-template-columns:minmax(0,1fr)}
+          .thy-research article>img{position:static;display:block;margin:0 0 18px auto}
+          .thy-research h3{padding-right:0;margin-top:20px}
+          .thy-quality>div{min-height:0;grid-template-columns:minmax(0,1fr)}
+          .thy-quality article{min-height:280px;padding:0 24px 28px}
+          .thy-quality article:first-child .thy-quality-gmp{width:130px;height:130px}
+          .thy-quality span{font-size:20px;letter-spacing:-1px}
+        }
+      `}</style>
     </main>
   );
 }

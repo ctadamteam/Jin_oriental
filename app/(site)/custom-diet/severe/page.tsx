@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import '../responsive.css';
 
 export default function SevereObesityDietPage() {
   return (
-    <main className="w-full bg-white font-sans text-gray-800">
+    <main className="severe-page w-full bg-white font-sans text-gray-800">
       <div className="mx-auto w-full max-w-[1000px] overflow-hidden pb-16 md:pb-24">
         {/* 1. 최상단 헤더 (detox 페이지 스타일 동기화) */}
         <header className="py-4 border-b border-dashed border-gray-300 mb-2 px-4 md:px-0">
@@ -28,7 +29,7 @@ export default function SevereObesityDietPage() {
 
 function HeroSection() {
   return (
-    <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#123961] text-white mb-8">
+    <section className="diet-responsive-hero w-full grid grid-cols-1 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:grid-cols-[672px_1fr] md:min-h-[365px] lg:h-[365px] overflow-hidden bg-[#123961] text-white mb-8">
       <div className="relative w-full h-[250px] md:h-full overflow-hidden">
         <Image 
           src="/images/personal/gd_section1.jpg" 
@@ -45,7 +46,7 @@ function HeroSection() {
           <b className="text-white font-normal">비만</b>
         </h2>
         <p className="text-xs md:text-[14px] text-gray-200 leading-relaxed break-keep font-light opacity-90 w-full">
-          고도비만은 유전적 요인과 여러 질환이 관련되므로 일반 다이어트와는 다르게 접근해야 합니다. 장시간 진행되기 때문에 오랫동안 복용할 수 있는 '안전한 약이어야 하며' 근본적인 생활습관 개선과 동반질병 치료가 필수적입니다.
+          고도비만은 유전적 요인과 여러 질환이 관련되므로 일반 다이어트와는 다르게 접근해야 합니다. 장시간 진행되기 때문에 오랫동안 복용할 수 있는 &apos;안전한 약이어야 하며&apos; 근본적인 생활습관 개선과 동반질병 치료가 필수적입니다.
         </p>
       </div>
     </section>
@@ -63,7 +64,7 @@ function FiveCoreSection() {
         </div>
       </div>
       
-      <div className="relative w-full h-[455px]">
+      <div className="severe-core-art relative w-full h-[455px]">
         <Image
           src="/images/personal/gd_section2_1.jpg"
           alt="고도비만 다이어트 5가지 핵심"
@@ -72,7 +73,7 @@ function FiveCoreSection() {
         />
         
         {/* Transparent overlay for SEO and Selectability */}
-        <div className="absolute inset-0 z-10 select-text text-transparent selection:bg-[#ec6f68]/30 selection:text-white" aria-label="고도비만 다이어트 5가지 핵심">
+        <div className="severe-core-copy absolute inset-0 z-10 select-text text-transparent selection:bg-[#ec6f68]/30 selection:text-white" aria-label="고도비만 다이어트 5가지 핵심">
           <div className="absolute top-[9%] left-1/2 w-full -translate-x-1/2 text-center">
             <h2 className="text-[13px] tracking-[0.42em]">JIN DIET</h2>
             <h3 className="mt-2 text-[15pt] font-black">고도비만 다이어트 5가지 핵심</h3>
@@ -118,7 +119,7 @@ function IntroSection() {
           className="text-3xl md:text-4xl text-gray-900 mb-8 leading-tight tracking-tight"
           style={{ fontFamily: "'THEFACESHOP INKLIPQUID', '더페이스샵 잉크립퀴드체', sans-serif" }}
         >
-          "또 먹니? 그만 먹어!" "그걸 다 먹었어?" "먹고 바로 눕지마!"<br/>
+          &quot;또 먹니? 그만 먹어!&quot; &quot;그걸 다 먹었어?&quot; &quot;먹고 바로 눕지마!&quot;<br/>
           <span>매번 시도하는 다이어트 왜 나는 더 힘이 들까요?</span>
         </h3>
         {/* 요청사항 5번: 한방내과 전문의가 진단하는 고도비만은 질병입니다. > 48px */}
@@ -365,29 +366,29 @@ function ProgramHeaderSection() {
         <div className="absolute inset-0 bg-[#123961]/90"></div>
       </div>
       
-      <div className="relative z-10 w-full px-6 md:px-12 lg:px-16">
-        <h2 className="text-2xl md:text-[35px] font-medium leading-none text-white mb-0 tracking-tight">진한의원 단계별</h2>
+      <div className="relative z-10 w-full px-6 lg:px-16">
+        <h2 className="text-2xl lg:text-[35px] font-medium leading-none text-white mb-0 tracking-tight">진한의원 단계별</h2>
         <h1 className="text-3xl font-bold text-white mb-12 tracking-tight leading-[0.92]">
-          <span className="relative top-px text-[#A4B7CC] text-4xl md:text-[38px]">고도비만</span><br/>
-          <span className="text-2xl md:text-[35px] font-medium">다이어트 프로그램</span>
+          <span className="relative top-px text-[#A4B7CC] text-4xl lg:text-[38px]">고도비만</span><br/>
+          <span className="text-2xl lg:text-[35px] font-medium">다이어트 프로그램</span>
         </h1>
       
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row px-4 md:px-8 justify-center drop-shadow-2xl">
-          <div className="relative flex-1 bg-[#f0ece1] text-gray-900 flex flex-col items-center justify-center py-10 md:py-8 md:pl-6 md:pr-10 [clip-path:polygon(0_0,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%)]">
-             <p className="font-light text-xl md:text-2xl mb-0">1단계</p>
-             <p className="mt-0 whitespace-nowrap text-[17px] md:text-[18px] font-medium leading-[1.35]">꺼져있는 지방대사<br/>스위치를 켜자.</p>
+        <div className="max-w-5xl mx-auto flex flex-col lg:flex-row px-4 lg:px-8 justify-center drop-shadow-2xl">
+          <div className="relative flex-1 bg-[#f0ece1] text-gray-900 flex flex-col items-center justify-center py-10 lg:py-8 lg:pl-6 lg:pr-10 [clip-path:polygon(0_0,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] lg:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%)]">
+             <p className="font-light text-xl lg:text-2xl mb-0">1단계</p>
+             <p className="mt-0 whitespace-nowrap text-[17px] lg:text-[18px] font-medium leading-[1.35]">꺼져있는 지방대사<br/>스위치를 켜자.</p>
           </div>
-          <div className="relative flex-1 bg-[#fcd147] text-gray-900 flex flex-col items-center justify-center py-10 md:py-8 md:pl-12 md:pr-10 -mt-[20px] md:mt-0 md:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
-             <p className="font-light text-xl md:text-2xl mb-0">2단계</p>
-             <p className="mt-0 whitespace-nowrap text-[17px] md:text-[18px] font-medium leading-[1.35]">살이 찌는 원인부터<br/>치료하자.</p>
+          <div className="relative flex-1 bg-[#fcd147] text-gray-900 flex flex-col items-center justify-center py-10 lg:py-8 lg:pl-12 lg:pr-10 -mt-[20px] lg:mt-0 lg:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] lg:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
+             <p className="font-light text-xl lg:text-2xl mb-0">2단계</p>
+             <p className="mt-0 whitespace-nowrap text-[17px] lg:text-[18px] font-medium leading-[1.35]">살이 찌는 원인부터<br/>치료하자.</p>
           </div>
-          <div className="relative flex-1 bg-[#fdb53d] text-gray-900 flex flex-col items-center justify-center py-10 md:py-8 md:pl-12 md:pr-10 -mt-[20px] md:mt-0 md:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
-             <p className="font-light text-xl md:text-2xl mb-0">3단계</p>
-             <p className="text-sm md:text-[18px] font-medium leading-[1.35] mt-0">단계별 회복기를<br/>가지자.</p>
+          <div className="relative flex-1 bg-[#fdb53d] text-gray-900 flex flex-col items-center justify-center py-10 lg:py-8 lg:pl-12 lg:pr-10 -mt-[20px] lg:mt-0 lg:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] lg:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
+             <p className="font-light text-xl lg:text-2xl mb-0">3단계</p>
+             <p className="text-sm lg:text-[18px] font-medium leading-[1.35] mt-0">단계별 회복기를<br/>가지자.</p>
           </div>
-          <div className="relative flex-1 bg-[#f5749b] text-gray-900 flex flex-col items-center justify-center py-10 md:py-8 md:pl-12 md:pr-10 -mt-[20px] md:mt-0 md:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] md:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
-             <p className="font-light text-xl md:text-2xl mb-0">4단계</p>
-             <p className="text-sm md:text-[18px] font-medium leading-[1.35] mt-0">생활 습관을<br/>치료하자.</p>
+          <div className="relative flex-1 bg-[#f5749b] text-gray-900 flex flex-col items-center justify-center py-10 lg:py-8 lg:pl-12 lg:pr-10 -mt-[20px] lg:mt-0 lg:-ml-[20px] [clip-path:polygon(0_0,50%_24px,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] lg:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%,24px_50%)]">
+             <p className="font-light text-xl lg:text-2xl mb-0">4단계</p>
+             <p className="text-sm lg:text-[18px] font-medium leading-[1.35] mt-0">생활 습관을<br/>치료하자.</p>
           </div>
         </div>
       </div>
@@ -400,7 +401,7 @@ function ProgramStep1Section() {
     <section className="pt-20 pb-[50px] bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
-           <div className="bg-[#123961] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">1단계</div>
+           <div className="bg-[#123961] text-white rounded-full w-16 h-16 md:w-[92px] md:h-[92px] flex shrink-0 items-center justify-center whitespace-nowrap font-bold text-2xl md:text-[35px]">1단계</div>
            <h2 className="text-[28px] md:text-[35px] font-bold text-gray-900">꺼져있는 지방 대사 스위치를 켜자.</h2>
         </div>
         
@@ -481,7 +482,7 @@ function ProgramStep2Section() {
     <section className="pt-[50px] pb-10 bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
-           <div className="bg-[#123961] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">2단계</div>
+           <div className="bg-[#123961] text-white rounded-full w-16 h-16 md:w-[92px] md:h-[92px] flex shrink-0 items-center justify-center whitespace-nowrap font-bold text-2xl md:text-[35px]">2단계</div>
            <h2 className="text-[28px] md:text-[35px] font-bold text-gray-900">살이 찌는 원인부터 치료하자.</h2>
         </div>
         
@@ -699,7 +700,7 @@ function ProgramStep3Section() {
     <section className="pt-10 pb-12 bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
-           <div className="bg-[#123961] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px]">3단계</div>
+           <div className="bg-[#123961] text-white rounded-full w-16 h-16 md:w-[92px] md:h-[92px] flex shrink-0 items-center justify-center whitespace-nowrap font-bold text-2xl md:text-[35px]">3단계</div>
            <h2 className="text-[28px] md:text-[35px] font-bold text-gray-900">감량 후 회복기를 가지자</h2>
         </div>
 
@@ -712,7 +713,7 @@ function ProgramStep3Section() {
         {/* 3-1 */}
         <div className="relative border-[3px] border-[#123961] rounded-3xl p-6 md:p-10 mt-16 mb-6">
           {/* Header Badge */}
-          <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#123961] text-white font-bold text-[18px] md:text-[22px] px-8 py-2 whitespace-nowrap">
+          <div className="severe-treatment-label absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#123961] text-white font-bold text-[18px] md:text-[22px] px-8 py-2 whitespace-nowrap">
             단식을 통한 급속 감량법
           </div>
           
@@ -760,7 +761,7 @@ function ProgramStep3Section() {
         {/* 3-2 */}
         <div className="relative border-[3px] border-[#123961] rounded-3xl p-6 md:p-10 mt-16 mb-16">
           {/* Header Badge */}
-          <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#123961] text-white font-bold text-[18px] md:text-[22px] px-8 py-2 whitespace-nowrap">
+          <div className="severe-treatment-label absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#123961] text-white font-bold text-[18px] md:text-[22px] px-8 py-2 whitespace-nowrap">
             적정감량속도를 지키고 유지기를 거치는 단계적 감량법
           </div>
           
@@ -878,7 +879,7 @@ function ProgramStep4Section() {
     <section className="pt-12 pb-20 bg-white px-8 md:px-16">
       <div className="max-w-5xl mx-auto mb-8">
         <div className="flex items-center gap-4 mb-8">
-           <div className="bg-[#123961] text-white rounded-full w-[92px] h-[92px] flex items-center justify-center font-bold text-[35px] shrink-0">4단계</div>
+           <div className="bg-[#123961] text-white rounded-full w-16 h-16 md:w-[92px] md:h-[92px] flex shrink-0 items-center justify-center whitespace-nowrap font-bold text-2xl md:text-[35px]">4단계</div>
            <h2 className="text-[28px] md:text-[35px] font-bold text-gray-900 break-keep">생활습관을 치료하자.</h2>
         </div>
 
@@ -899,7 +900,7 @@ function ProgramStep4Section() {
         <div className="max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-16 flex flex-col gap-8 md:gap-10">
           
           {/* Question */}
-          <div className="flex items-start gap-3 md:gap-5">
+          <div className="severe-chat-row flex items-start gap-3 md:gap-5">
              <div className="ml-[20px] w-[60px] h-[60px] md:w-[80px] md:h-[80px] shrink-0 relative overflow-hidden shadow-md rounded-[20px] md:rounded-[28px]">
                <Image
                  src="/images/personal/gd_section11_1.png"
@@ -918,7 +919,7 @@ function ProgramStep4Section() {
           </div>
 
           {/* Answer 1 */}
-          <div className="flex items-start gap-3 md:gap-5 flex-row-reverse">
+          <div className="severe-chat-row flex items-start gap-3 md:gap-5 flex-row-reverse">
              <div className="mr-[20px] w-[60px] h-[60px] md:w-[80px] md:h-[80px] shrink-0 relative overflow-hidden shadow-md rounded-[20px] md:rounded-[28px]">
                <Image
                  src="/images/personal/gd_section11_2.png"
@@ -938,7 +939,7 @@ function ProgramStep4Section() {
           </div>
 
           {/* Answer 2 */}
-          <div className="flex items-start gap-3 md:gap-5 flex-row-reverse">
+          <div className="severe-chat-row flex items-start gap-3 md:gap-5 flex-row-reverse">
              <div className="mr-[20px] w-[60px] h-[60px] md:w-[80px] md:h-[80px] shrink-0 relative overflow-hidden shadow-md rounded-[20px] md:rounded-[28px]">
                <Image
                  src="/images/personal/gd_section11_2.png"

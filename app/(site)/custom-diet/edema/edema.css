@@ -863,12 +863,13 @@
     padding: 60px 16px;
   }
   .ede-water-toxin__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px 10px;
   }
   .ede-symptom-card__circle {
-    width: 140px;
-    height: 140px;
+    width: min(140px, 100%);
+    height: auto;
+    aspect-ratio: 1;
   }
   .ede-symptom-card__label {
     font-size: 18px;

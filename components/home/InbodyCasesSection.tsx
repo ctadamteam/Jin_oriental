@@ -1,7 +1,9 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import { SectionTitle } from '../common/SectionTitle';
+import { ImageLightbox } from '../common/ImageLightbox';
 
 type InbodyCase = {
   id: number;
@@ -178,44 +180,49 @@ function InbodyCaseCard({ item }: { item: InbodyCase }) {
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_24px_rgba(8,53,96,0.07)]">
-      <div className="flex items-start justify-between gap-3 px-6 pt-6 sm:px-7 sm:pt-7">
+      <div className="flex items-start justify-between gap-3 px-4 pt-5 sm:px-6 sm:pt-6 xl:px-7 xl:pt-7">
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-base font-extrabold tracking-[0.12em] text-[#123960]">{caseLabel}</span>
-            <span className="rounded-md bg-[#EAF0F7] px-2.5 py-1 text-xs font-bold text-[#083560]">
-              {item.period}{item.maintenance && ` · ${item.maintenance}`}
+            <span className="flex flex-wrap gap-x-1.5 gap-y-0.5 rounded-md bg-[#EAF0F7] px-2.5 py-1 text-xs font-bold leading-5 text-[#083560]">
+              <span className="whitespace-nowrap">{item.period}</span>
+              {item.maintenance && <span className="whitespace-nowrap">· {item.maintenance}</span>}
             </span>
           </div>
-          <p className="mt-1.5 text-sm font-semibold text-slate-700">{item.profile}</p>
+          <p className="mt-1.5 break-keep text-sm font-semibold leading-6 text-slate-700">{item.profile}</p>
         </div>
 
-        <div className="relative z-10 flex h-[96px] w-[96px] shrink-0 flex-col items-center justify-center rounded-full bg-[#083560] text-white shadow-[0_8px_20px_rgba(8,53,96,0.28)]">
+        <div className="relative z-10 flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-full bg-[#083560] text-white shadow-[0_8px_20px_rgba(8,53,96,0.28)] xl:h-[96px] xl:w-[96px]">
           <div className="flex items-baseline justify-center">
-            <span className="text-[24px] font-black leading-none tracking-tight">-{item.totalLoss}</span>
-            <span className="ml-0.5 text-[15px] font-bold text-slate-200">kg</span>
+            <span className="text-[21px] font-black leading-none tracking-tight xl:text-[24px]">-{item.totalLoss}</span>
+            <span className="ml-0.5 text-[13px] font-bold text-slate-200 xl:text-[15px]">kg</span>
           </div>
           <span className="mt-0.5 text-[13px] font-bold tracking-wider text-[#D7C28D]">감량</span>
         </div>
       </div>
 
-      <figure className="relative mx-6 mt-5 overflow-hidden rounded-xl border border-[#D7E1EB] bg-[#F7F9FC] sm:mx-7">
-        <div className="flex items-center justify-center gap-3 border-b border-[#D7E1EB] bg-white px-3 py-2.5 sm:gap-4">
-          <div className="flex items-baseline gap-1.5 whitespace-nowrap">
+      <figure className="relative mx-4 mt-5 overflow-hidden rounded-xl border border-[#D7E1EB] bg-[#F7F9FC] sm:mx-6 xl:mx-7">
+        <div className="flex items-center justify-center gap-3 border-b border-[#D7E1EB] bg-white px-3 py-2.5 xl:gap-4">
+          <div className="flex flex-col items-start gap-1 whitespace-nowrap sm:flex-row sm:items-baseline sm:gap-1.5">
             <span className="text-[10px] font-extrabold tracking-[0.1em] text-slate-500">BEFORE</span>
             <span className="text-[17px] font-black leading-none tracking-tight text-[#083560] sm:text-lg">{item.weightBefore}<span className="ml-0.5 text-xs font-bold">kg</span></span>
           </div>
           <span className="text-xl font-bold leading-none text-[#B42318]" aria-hidden="true">→</span>
-          <div className="flex items-baseline gap-1.5 whitespace-nowrap">
+          <div className="flex flex-col items-start gap-1 whitespace-nowrap sm:flex-row sm:items-baseline sm:gap-1.5">
             <span className="text-[10px] font-extrabold tracking-[0.1em] text-slate-500">AFTER</span>
             <span className="text-[17px] font-black leading-none tracking-tight text-[#083560] sm:text-lg">{item.weightAfter}<span className="ml-0.5 text-xs font-bold">kg</span></span>
           </div>
         </div>
-        <div className="relative">
-          <img
+        <ImageLightbox src={item.imageUrl} alt={`${caseLabel} 감량 전후 체중 변화 인바디 결과`} className="relative block aspect-[4/1] w-full">
+          <Image
             src={item.imageUrl}
             alt={`${caseLabel} 감량 전후 체중 변화 인바디 결과`}
-            className="aspect-[4/1] w-full object-cover"
+            fill
+            sizes="(min-width: 1280px) 360px, (min-width: 768px) calc(50vw - 80px), calc(100vw - 64px)"
+            className="object-cover"
             style={{ objectPosition: `center ${item.imagePositionY}%` }}
+            loading="lazy"
+            decoding="async"
           />
           <WeightHighlight
             beforeX={item.markerBeforeX}
@@ -223,12 +230,13 @@ function InbodyCaseCard({ item }: { item: InbodyCase }) {
             beforeY={item.markerBeforeY}
             afterY={item.markerAfterY}
           />
-        </div>
+        </ImageLightbox>
+        <figcaption className="border-t border-[#D7E1EB] px-3 py-2 text-center text-xs font-semibold text-[#083560]">이미지를 누르면 인바디 결과를 확대할 수 있습니다.</figcaption>
       </figure>
 
-      <div className="mx-6 mt-4 grid grid-cols-2 gap-3.5 sm:mx-7">
-        <div className="rounded-xl bg-[#F4F7FB] px-4 py-3.5">
-          <div className="min-h-5">
+      <div className="mx-4 mt-4 grid grid-cols-2 gap-3 sm:mx-6 xl:mx-7 xl:gap-3.5">
+        <div className="min-w-0 rounded-xl bg-[#F4F7FB] px-3 py-3.5 xl:px-4">
+          <div className="min-h-10 xl:min-h-5">
             <span className="text-sm font-bold text-slate-700">{item.fatLabel}</span>
           </div>
           <div className="mt-1 flex items-baseline gap-1">
@@ -237,10 +245,10 @@ function InbodyCaseCard({ item }: { item: InbodyCase }) {
           </div>
         </div>
 
-        <div className="rounded-xl bg-[#F4F7FB] px-4 py-3.5">
-          <div className="flex min-h-5 items-baseline gap-1 whitespace-nowrap">
+        <div className="min-w-0 rounded-xl bg-[#F4F7FB] px-3 py-3.5 xl:px-4">
+          <div className="flex min-h-10 flex-wrap content-start items-baseline gap-x-1 gap-y-0.5 xl:min-h-5">
             <span className="text-sm font-bold text-slate-700">{item.visceralLabel}</span>
-            {item.visceralDescription && <span className="text-[11px] font-semibold text-slate-500">{item.visceralDescription}</span>}
+            {item.visceralDescription && <span className="break-keep text-[11px] font-semibold text-slate-500">{item.visceralDescription}</span>}
           </div>
           <div className="mt-1 flex items-baseline gap-1">
             <span className="text-[25px] font-black leading-none tracking-tight text-[#B42318]">-{item.visceralLoss}</span>
@@ -249,9 +257,9 @@ function InbodyCaseCard({ item }: { item: InbodyCase }) {
         </div>
       </div>
 
-      <div className="px-6 pb-6 pt-5 sm:px-7 sm:pb-7">
+      <div className="px-4 pb-5 pt-5 sm:px-6 sm:pb-6 xl:px-7 xl:pb-7">
         <p className="text-sm font-semibold text-[#123960]">내원 당시 증상</p>
-        <p className="mt-1.5 text-sm font-medium leading-6 text-slate-700">
+        <p className="mt-1.5 break-keep text-sm font-medium leading-6 text-slate-700 [overflow-wrap:anywhere]">
           {item.concerns.join(' · ')}
         </p>
       </div>
@@ -283,41 +291,44 @@ export function InbodyCasesSection() {
   };
 
   return (
-    <section id="inbody-cases" className="scroll-mt-28 bg-[#F7F9FC] py-24">
+    <section id="inbody-cases" className="scroll-mt-28 bg-[#F7F9FC] py-14 md:py-24">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <SectionTitle subtitle="INBODY CASES" title="인바디로 보는 감량 사례" className="mb-4" />
         <p className="mx-auto max-w-xl text-center text-sm leading-6 text-slate-600 md:text-base">
           개인별 감량 기간과 체성분 변화를 확인해 보세요.
         </p>
 
-        <div className="mx-auto mt-12 hidden max-w-[1320px] grid-cols-2 gap-x-6 gap-y-7 sm:grid lg:grid-cols-3">
+        <div className="mx-auto mt-12 hidden max-w-[1320px] grid-cols-2 gap-x-6 gap-y-7 md:grid xl:grid-cols-3">
           {INBODY_CASES.map((item) => <InbodyCaseCard key={item.id} item={item} />)}
         </div>
 
-        <div className="mt-10 sm:hidden">
+        <div className="mt-8 md:hidden">
           <div
             ref={mobileScrollerRef}
             onScroll={handleMobileScroll}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {INBODY_CASES.map((item) => (
-              <div key={item.id} className="min-w-[calc(100%-1.25rem)] snap-start">
+              <div key={item.id} className="w-full min-w-0 shrink-0 snap-start">
                 <InbodyCaseCard item={item} />
               </div>
             ))}
           </div>
-          <div className="mt-4 flex items-center justify-center gap-2">
+          <div className="mt-2 flex items-center justify-center">
             {INBODY_CASES.map((item, index) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => moveToMobileCase(index)}
-                className={`h-2 rounded-full transition-all ${mobileIndex === index ? 'w-5 bg-[#083560]' : 'w-2 bg-[#C7D3E0]'}`}
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#083560]"
                 aria-label={`${getCaseLabel(item.id)} 보기`}
-              />
+                aria-current={mobileIndex === index ? 'true' : undefined}
+              >
+                <span className={`h-2 rounded-full transition-all ${mobileIndex === index ? 'w-5 bg-[#083560]' : 'w-2 bg-[#C7D3E0]'}`} aria-hidden="true" />
+              </button>
             ))}
           </div>
-          <p className="mt-3 text-center text-xs font-medium text-slate-500">{mobileIndex + 1} / {INBODY_CASES.length}</p>
+          <p className="mt-1 text-center text-xs font-medium text-slate-500">{mobileIndex + 1} / {INBODY_CASES.length}</p>
         </div>
 
         <p className="mx-auto mt-7 max-w-[1320px] text-center text-xs leading-5 text-slate-500">
