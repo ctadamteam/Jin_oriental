@@ -1,0 +1,1183 @@
+.qb-page {
+  --qb-navy: #083560;
+  --qb-soft-blue: #bbcfe7;
+  --qb-pale-blue: #c3d6ed;
+  --qb-card-gray: #f4f4f4;
+  --qb-charcoal: #161616;
+  width: 100%;
+  overflow-x: clip;
+  background: #fff;
+  color: var(--qb-charcoal);
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+
+.qb-page *,
+.qb-page *::before,
+.qb-page *::after {
+  box-sizing: border-box;
+}
+
+.qb-page__content {
+  position: relative;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+}
+
+.qb-page__heading {
+  position: relative;
+  height: 84px;
+  padding-top: 22px;
+}
+
+.qb-page__heading h1 {
+  margin: 0;
+  color: #000;
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.qb-page__divider {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+}
+
+.qb-section-title {
+  margin: 0;
+  color: #000;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 1.19;
+  letter-spacing: -3.5px;
+  text-align: center;
+}
+
+.qb-section-title strong {
+  font-weight: 700;
+}
+
+.qb-section-lead {
+  margin: 40px 0 0;
+  color: var(--qb-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  text-align: center;
+}
+
+/* Hero */
+.qb-hero {
+  display: grid;
+  grid-template-columns: 852px 588px;
+  width: 100%;
+  height: 588px;
+  margin-top: 12px;
+  background: #bcd0e8;
+}
+
+.qb-hero__visual {
+  position: relative;
+  height: 588px;
+  overflow: hidden;
+}
+
+.qb-hero__photo {
+  position: absolute;
+  top: 0;
+  left: -5.63%;
+  display: block;
+  width: 111.27%;
+  height: 120.77%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.qb-hero__visual::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+}
+
+.qb-hero__logo {
+  position: absolute;
+  top: 0;
+  left: -51px;
+  z-index: 2;
+  display: block;
+  width: 310px;
+  height: 104px;
+  object-fit: contain;
+}
+
+.qb-hero__panel {
+  position: relative;
+  z-index: 1;
+  height: 588px;
+  padding: 79px 35px 35px 75px;
+  overflow: hidden;
+  background: var(--qb-navy);
+}
+
+.qb-hero__kicker {
+  margin: 0;
+  color: var(--qb-pale-blue);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: -1.9px;
+  white-space: nowrap;
+}
+
+.qb-hero__title {
+  margin: 4px 0 0;
+  color: var(--qb-soft-blue);
+  font-size: 75px;
+  font-weight: 800;
+  line-height: 85px;
+  letter-spacing: -3.75px;
+  white-space: nowrap;
+}
+
+.qb-hero__title span {
+  color: #fff;
+}
+
+.qb-hero__copy {
+  margin-top: 52px;
+  color: var(--qb-pale-blue);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+}
+
+.qb-hero__copy p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.qb-hero__copy p + p {
+  margin-top: 19px;
+}
+
+/* Concerns */
+.qb-concerns {
+  margin-top: 136px;
+}
+
+.qb-concerns__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 695px);
+  gap: 34px 35px;
+  margin-top: 69px;
+  padding: 0 8px;
+}
+
+.qb-concern-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  height: 281px;
+  padding: 117px 48px 38px 61px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--qb-card-gray);
+}
+
+.qb-concern-card--wide {
+  grid-column: 1 / -1;
+}
+
+.qb-concern-card__quote {
+  position: absolute;
+  top: 33px;
+  left: 50px;
+  color: var(--qb-soft-blue);
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  font-size: 200px;
+  font-weight: 800;
+  line-height: 200px;
+  letter-spacing: -10px;
+}
+
+.qb-concern-card p {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  margin: 0;
+  color: var(--qb-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+}
+
+/* Definition */
+.qb-definition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 136px;
+}
+
+.qb-definition__copy {
+  width: 1240px;
+  margin-top: 50px;
+  color: var(--qb-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  text-align: center;
+}
+
+.qb-definition__copy p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.qb-definition__copy p + p {
+  margin-top: 25px;
+}
+
+.qb-definition__answer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1240px;
+  height: 350px;
+  margin-top: 53px;
+  padding-top: 55px;
+  border: 2px solid var(--qb-navy);
+  border-radius: 10px;
+}
+
+.qb-definition__question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 870px;
+  height: 82px;
+  margin: 0;
+  border-radius: 41px;
+  background: var(--qb-navy);
+  color: #fff;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2.25px;
+}
+
+.qb-definition__answer > strong {
+  margin-top: 42px;
+  color: var(--qb-navy);
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -3px;
+}
+
+.qb-definition__note {
+  margin: 12px 0 0;
+  color: var(--qb-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+}
+
+/* Causes */
+.qb-causes {
+  margin-top: 136px;
+}
+
+.qb-causes > .qb-section-lead {
+  margin-top: 54px;
+}
+
+.qb-causes__map {
+  position: relative;
+  width: 1440px;
+  height: 1061px;
+  margin: 60px auto 0;
+}
+
+.qb-causes__center {
+  position: absolute;
+  top: 158px;
+  left: 462px;
+  z-index: 2;
+  width: 520px;
+  height: 520px;
+  padding: 76px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.qb-causes__ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 520px;
+  height: 520px;
+}
+
+.qb-causes__portrait {
+  position: relative;
+  z-index: 1;
+  width: 368px;
+  height: 368px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.qb-causes__portrait img {
+  position: absolute;
+  top: -51px;
+  left: -318px;
+  display: block;
+  width: 1102px;
+  height: 826px;
+  max-width: none;
+  object-fit: cover;
+}
+
+.qb-cause {
+  position: absolute;
+  z-index: 4;
+}
+
+.qb-cause h3 {
+  width: 100%;
+  margin: 0;
+  color: var(--qb-navy);
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+}
+
+.qb-cause p {
+  margin: 25px 0 0;
+  color: var(--qb-charcoal);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1.5px;
+  white-space: pre-line;
+}
+
+.qb-cause--top-left { top: 0; left: 134px; width: 328px; }
+.qb-cause--top-right { top: 0; left: 982px; width: 328px; text-align: right; }
+.qb-cause--middle-left { top: 353px; left: 64px; width: 402px; }
+.qb-cause--middle-right { top: 353px; left: 982px; width: 398px; text-align: right; }
+.qb-cause--bottom-left { top: 676px; left: 134px; width: 328px; }
+.qb-cause--bottom-right { top: 726px; left: 982px; width: 328px; text-align: right; }
+
+.qb-causes__lines {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.qb-cause-line,
+.qb-cause-point {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+.qb-cause-line--top-left-horizontal { top: 54px; left: 134px; }
+.qb-cause-line--top-left-diagonal { top: 54px; left: 462px; transform: rotate(59.79deg); transform-origin: left center; }
+.qb-cause-line--top-right-diagonal { top: 54px; left: 982px; transform: rotate(120.75deg); transform-origin: left center; }
+.qb-cause-line--top-right-horizontal { top: 54px; left: 982px; }
+.qb-cause-line--middle-left { top: 407px; left: 64px; }
+.qb-cause-line--middle-right { top: 407px; left: 982px; }
+.qb-cause-line--bottom-left-horizontal { top: 781px; left: 134px; }
+.qb-cause-line--bottom-left-diagonal { top: 781px; left: 462px; transform: rotate(-59.79deg); transform-origin: left center; }
+.qb-cause-line--bottom-right-diagonal { top: 781px; left: 982px; transform: rotate(-120.75deg); transform-origin: left center; }
+.qb-cause-line--bottom-right-horizontal { top: 781px; left: 982px; }
+
+.qb-steps {
+  position: relative;
+  width: 100%;
+  height: 513px;
+  padding: 75px 60px 35px;
+  border-radius: 10px;
+  background: var(--qb-card-gray);
+}
+
+.qb-steps > h3 {
+  position: absolute;
+  top: -39px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 641px;
+  height: 81px;
+  margin: 0;
+  border-radius: 44px;
+  background: var(--qb-navy);
+  color: #fff;
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -2.25px;
+  transform: translateX(-50%);
+}
+
+.qb-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+}
+
+.qb-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.qb-step__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 245px;
+  height: 205px;
+}
+
+.qb-step__visual img {
+  display: block;
+  width: 220px;
+  height: 190px;
+  object-fit: contain;
+}
+
+.qb-step__change {
+  position: absolute;
+  right: 3px;
+  bottom: 16px;
+  color: #ed161d;
+  font-size: 76px;
+  font-weight: 900;
+  line-height: 1;
+  filter: drop-shadow(1px 2px 1px rgba(98, 0, 0, 0.45));
+}
+
+.qb-step__change--down::before { content: '↓'; }
+.qb-step__change--up::before { content: '↑'; }
+
+.qb-step > strong {
+  margin-top: 4px;
+  color: var(--qb-navy);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -1.5px;
+}
+
+.qb-step > p {
+  margin: 0;
+  color: var(--qb-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+}
+
+.qb-step__next {
+  position: absolute;
+  top: 233px;
+  right: -28px;
+  color: var(--qb-navy);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Symptoms */
+.qb-symptoms {
+  margin-top: 136px;
+}
+
+.qb-symptoms__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 330px);
+  gap: 37px 40px;
+  margin-top: 31px;
+}
+
+.qb-symptom-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 330px;
+  height: 578px;
+  padding: 38px 12px 24px;
+  border-radius: 14px;
+  background: var(--qb-card-gray);
+  text-align: center;
+}
+
+.qb-symptom-card__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 286px;
+  height: 296px;
+}
+
+.qb-symptom-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qb-symptom-card > strong {
+  margin-top: 12px;
+  color: var(--qb-navy);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -1.5px;
+}
+
+.qb-symptom-card > p {
+  margin: 14px 0 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+}
+
+/* 2줄 설명 POINT 카드 세로 중앙 정렬 (POINT 03, 04, 06, 10, 12) */
+.qb-symptom-card:nth-child(3) > p,
+.qb-symptom-card:nth-child(4) > p,
+.qb-symptom-card:nth-child(6) > p,
+.qb-symptom-card:nth-child(10) > p,
+.qb-symptom-card:nth-child(12) > p {
+  margin-top: 36.5px;
+}
+
+.qb-symptoms__banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 102px;
+  margin: 38px 0 0;
+  border-radius: 10px;
+  background: var(--qb-navy);
+  color: #fff;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.qb-symptoms__footnote {
+  margin: 18px 0 0;
+  color: var(--qb-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  text-align: center;
+}
+
+/* Herbs */
+.qb-herbs {
+  width: 100%;
+  min-height: 2675px;
+  margin-top: 147px;
+  padding: 145px 96px 155px;
+  background: #f8f8f8;
+}
+
+.qb-herbs__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 602px);
+  gap: 46px 44px;
+  margin-top: 65px;
+}
+
+.qb-herb-card {
+  width: 602px;
+  height: 1090px;
+  padding: 21px 21px 36px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.qb-herb-card__image {
+  width: 560px;
+  height: 394px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.qb-herb-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.qb-herb-card h3 {
+  margin: 21px 0 0;
+  color: var(--qb-charcoal);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.qb-herb-card__summary {
+  margin: 0;
+  color: var(--qb-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.qb-herb-card__group {
+  margin-top: 23px;
+  margin-right: 26px;
+  margin-left: 26px;
+}
+
+.qb-herb-card__group--target {
+  margin-top: 22px;
+}
+
+.qb-herb-card__group h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 339px;
+  height: 59px;
+  margin: 0 auto;
+  border-radius: 30px;
+  background: var(--qb-navy);
+  color: #fff;
+  font-size: 33px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -1.65px;
+}
+
+.qb-herb-card__group--target h4 {
+  background: var(--qb-soft-blue);
+  color: var(--qb-navy);
+}
+
+.qb-herb-card__list {
+  display: grid;
+  gap: 0;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.qb-herb-card__list li {
+  position: relative;
+  min-height: 50px;
+  padding-left: 42px;
+  color: var(--qb-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  white-space: nowrap;
+}
+
+.qb-herb-card__list li::before {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: var(--qb-navy);
+  color: #fff;
+  content: '✓';
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Treatments */
+.qb-treatments {
+  width: 1320px;
+  margin: 140px auto 0;
+  padding-bottom: 180px;
+}
+
+.qb-treatments__list {
+  display: grid;
+  gap: 23px;
+  margin-top: 34px;
+}
+
+.qb-treatment {
+  display: grid;
+  grid-template-columns: 565px 1fr;
+  gap: 41px;
+  min-height: 395px;
+  align-items: center;
+}
+
+.qb-treatment__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 565px;
+  height: 395px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #eee;
+}
+
+.qb-treatment__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center center;
+}
+
+/* 치료 항목 내부 제품 이미지 개별 배율 조정 */
+.qb-treatment:nth-child(1) .qb-treatment__image img {
+  transform: scale(1.2);
+}
+
+.qb-treatment:nth-child(3) .qb-treatment__image img {
+  transform: scale(0.85);
+}
+
+.qb-treatment:nth-child(4) .qb-treatment__image img {
+  transform: scale(0.9);
+}
+
+.qb-treatment__copy h3 {
+  margin: 0;
+  color: #000;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -2.5px;
+}
+
+.qb-treatment__copy p {
+  margin: 28px 0 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+}
+
+@media (max-width: 1023px) {
+  .qb-page__content {
+    width: 100%;
+  }
+
+  .qb-page__heading {
+    height: 72px;
+    margin: 0 32px;
+    padding-top: 14px;
+  }
+
+  .qb-page__heading h1 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+
+  .qb-section-title {
+    font-size: clamp(44px, 6vw, 58px);
+    letter-spacing: -2.5px;
+  }
+
+  .qb-section-lead {
+    padding: 0 32px;
+    font-size: 27px;
+    line-height: 1.55;
+  }
+
+  .qb-causes > .qb-section-lead {
+    margin-top: 40px;
+  }
+
+  .qb-hero {
+    grid-template-columns: 58% 42%;
+    width: calc(100% - 64px);
+    height: 500px;
+    margin: 12px 32px 0;
+  }
+
+  .qb-hero__visual,
+  .qb-hero__panel {
+    height: 500px;
+  }
+
+  .qb-hero__logo {
+    left: -24px;
+    width: 250px;
+    height: 84px;
+  }
+
+  .qb-hero__panel {
+    padding: 70px 28px 28px 42px;
+  }
+
+  .qb-hero__kicker { font-size: 26px; line-height: 36px; }
+  .qb-hero__title { margin-top: 5px; font-size: 49px; line-height: 60px; letter-spacing: -2.5px; }
+  .qb-hero__copy { margin-top: 34px; font-size: 19px; line-height: 30px; letter-spacing: -0.8px; }
+  .qb-hero__copy p + p { margin-top: 14px; }
+
+  .qb-concerns,
+  .qb-definition,
+  .qb-causes,
+  .qb-symptoms {
+    margin-top: 100px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .qb-concerns__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+    padding: 0;
+  }
+
+  .qb-concern-card {
+    width: auto;
+    height: 230px;
+    padding: 90px 32px 30px 42px;
+  }
+
+  .qb-concern-card__quote { top: 15px; left: 30px; font-size: 160px; }
+  .qb-concern-card p { font-size: 26px; line-height: 40px; }
+
+  .qb-definition__copy,
+  .qb-definition__answer {
+    width: 100%;
+  }
+
+  .qb-definition__copy {
+    font-size: 27px;
+    line-height: 1.65;
+  }
+
+  .qb-definition__answer {
+    height: auto;
+    min-height: 300px;
+    padding: 48px 28px;
+  }
+
+  .qb-definition__question { width: min(90%, 760px); font-size: 34px; }
+  .qb-definition__answer > strong { font-size: 50px; }
+  .qb-definition__note { font-size: 28px; }
+
+  .qb-causes__map {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    width: 100%;
+    height: auto;
+    margin-top: 54px;
+  }
+
+  .qb-causes__center {
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-column: 1 / -1;
+    width: 420px;
+    height: 420px;
+    margin: 0 auto 16px;
+    padding: 58px;
+    border: 1px solid var(--qb-navy);
+  }
+
+  .qb-causes__ring,
+  .qb-causes__lines { display: none; }
+
+  .qb-causes__portrait {
+    width: 302px;
+    height: 302px;
+  }
+
+  .qb-causes__portrait img {
+    top: -42px;
+    left: -261px;
+    width: 904px;
+    height: 677px;
+  }
+
+  .qb-cause,
+  .qb-cause--top-left,
+  .qb-cause--top-right,
+  .qb-cause--middle-left,
+  .qb-cause--middle-right,
+  .qb-cause--bottom-left,
+  .qb-cause--bottom-right {
+    position: static;
+    width: auto;
+    min-height: 245px;
+    padding: 28px;
+    border-radius: 10px;
+    background: var(--qb-card-gray);
+    text-align: left;
+  }
+
+  .qb-cause h3 {
+    padding-bottom: 3px;
+    border-bottom: 1px solid #777;
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .qb-cause p { margin-top: 16px; font-size: 24px; line-height: 36px; }
+
+  .qb-steps {
+    width: 100%;
+    height: auto;
+    margin-top: 95px;
+    padding: 72px 30px 40px;
+  }
+
+  .qb-steps > h3 { width: min(82%, 600px); font-size: 36px; }
+  .qb-steps__grid { grid-template-columns: repeat(2, 1fr); gap: 42px 24px; }
+  .qb-step__next { display: none; }
+
+  .qb-symptoms__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .qb-symptom-card {
+    width: auto;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .qb-symptom-card__image { width: 100%; height: 260px; }
+  .qb-symptom-card > p { font-size: 28px; line-height: 40px; }
+  .qb-symptom-card:nth-child(3) > p,
+  .qb-symptom-card:nth-child(4) > p,
+  .qb-symptom-card:nth-child(6) > p,
+  .qb-symptom-card:nth-child(10) > p,
+  .qb-symptom-card:nth-child(12) > p {
+    margin-top: 34px;
+  }
+  .qb-symptoms__banner { height: auto; min-height: 92px; padding: 18px 30px; font-size: 32px; }
+  .qb-symptoms__footnote { font-size: 27px; }
+
+  .qb-herbs {
+    min-height: 0;
+    margin-top: 110px;
+    padding: 100px 32px;
+  }
+
+  .qb-herbs__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+  }
+
+  .qb-herb-card {
+    width: auto;
+    height: auto;
+    min-height: 930px;
+    padding: 18px 28px 34px;
+  }
+
+  .qb-herb-card__image { width: 100%; height: 300px; }
+  .qb-herb-card__group { margin-right: 0; margin-left: 0; }
+  .qb-herb-card h3 { font-size: 34px; }
+  .qb-herb-card__summary { font-size: 25px; line-height: 40px; }
+  .qb-herb-card__group h4 { width: min(100%, 320px); font-size: 27px; }
+  .qb-herb-card__list li { padding-left: 34px; font-size: 25px; line-height: 42px; white-space: normal; }
+  .qb-herb-card__list li::before { top: 7px; width: 27px; height: 27px; }
+
+  .qb-treatments {
+    width: auto;
+    margin: 110px 32px 0;
+    padding-bottom: 120px;
+  }
+
+  .qb-treatment {
+    grid-template-columns: 42% 1fr;
+    gap: 34px;
+    min-height: 330px;
+  }
+
+  .qb-treatment__image { width: 100%; height: 320px; }
+  .qb-treatment__copy h3 { font-size: 42px; }
+  .qb-treatment__copy p { margin-top: 22px; font-size: 26px; line-height: 40px; white-space: normal; }
+}
+
+@media (max-width: 800px) {
+  .qb-page__heading { margin: 0 20px; }
+
+  .qb-hero {
+    display: block;
+    width: calc(100% - 40px);
+    height: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .qb-hero__visual {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 852 / 588;
+    overflow: hidden;
+  }
+
+  .qb-hero__panel {
+    height: auto;
+    min-height: 450px;
+    padding: 58px 44px;
+  }
+
+  .qb-hero__kicker { font-size: clamp(20px, 4.5vw, 30px); }
+  .qb-hero__title { font-size: clamp(42px, 9vw, 62px); line-height: 1.2; white-space: normal; }
+  .qb-hero__copy { font-size: clamp(17px, 3.6vw, 23px); line-height: 1.65; }
+
+  .qb-concerns,
+  .qb-definition,
+  .qb-causes,
+  .qb-symptoms {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .qb-concerns__grid { grid-template-columns: 1fr; }
+  .qb-concern-card--wide { grid-column: auto; }
+  .qb-concern-card { min-height: 210px; height: auto; }
+
+  .qb-definition__copy { font-size: 22px; }
+  .qb-definition__copy p { white-space: normal; }
+  .qb-definition__question { width: 100%; height: auto; min-height: 76px; padding: 12px 24px; font-size: 27px; text-align: center; }
+  .qb-definition__answer > strong { font-size: 42px; }
+  .qb-definition__note { font-size: 22px; text-align: center; }
+
+  .qb-causes__map { grid-template-columns: 1fr; }
+  .qb-causes__center { grid-column: auto; width: min(88vw, 380px); height: min(88vw, 380px); }
+  .qb-causes__portrait {
+    width: calc(min(88vw, 380px) - 116px);
+    height: calc(min(88vw, 380px) - 116px);
+  }
+  .qb-causes__portrait img {
+    top: calc((min(88vw, 380px) - 116px) * -0.1386);
+    left: calc((min(88vw, 380px) - 116px) * -0.8641);
+    width: calc((min(88vw, 380px) - 116px) * 2.9946);
+    height: calc((min(88vw, 380px) - 116px) * 2.2446);
+  }
+
+  .qb-steps__grid { grid-template-columns: 1fr; }
+  .qb-steps > h3 { width: 90%; height: auto; min-height: 72px; padding: 10px 20px; font-size: 29px; text-align: center; }
+
+  .qb-symptoms__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .qb-symptom-card { min-height: 430px; padding: 24px 10px; }
+  .qb-symptom-card__image { height: 210px; }
+  .qb-symptom-card > strong { font-size: 23px; }
+  .qb-symptom-card > p { font-size: 23px; line-height: 34px; }
+  .qb-symptom-card:nth-child(3) > p,
+  .qb-symptom-card:nth-child(4) > p,
+  .qb-symptom-card:nth-child(6) > p,
+  .qb-symptom-card:nth-child(10) > p,
+  .qb-symptom-card:nth-child(12) > p {
+    margin-top: 31px;
+  }
+
+  .qb-herbs { padding: 80px 20px; }
+  .qb-herbs__grid { grid-template-columns: 1fr; }
+  .qb-herb-card { min-height: 0; }
+  .qb-herb-card__image { height: auto; aspect-ratio: 560 / 394; }
+
+  .qb-treatment {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 46px;
+  }
+
+  .qb-treatment__image { height: auto; aspect-ratio: 565 / 395; }
+  .qb-treatment__copy h3 { font-size: 38px; }
+  .qb-treatment__copy p { white-space: normal; }
+}
+
+@media (max-width: 520px) {
+  .qb-page__heading h1 { font-size: 28px; }
+  .qb-section-title { font-size: 38px; }
+  .qb-section-lead { padding: 0; font-size: 21px; }
+
+  .qb-hero__panel { min-height: 420px; padding: 46px 28px; }
+  .qb-hero__logo { left: -10px; width: 190px; height: 64px; }
+  .qb-hero__copy p { white-space: normal; }
+
+  .qb-concern-card p { font-size: 23px; line-height: 36px; }
+  .qb-causes__center { padding: 45px; }
+  .qb-causes__portrait {
+    width: calc(min(88vw, 380px) - 90px);
+    height: calc(min(88vw, 380px) - 90px);
+  }
+  .qb-causes__portrait img {
+    top: calc((min(88vw, 380px) - 90px) * -0.1386);
+    left: calc((min(88vw, 380px) - 90px) * -0.8641);
+    width: calc((min(88vw, 380px) - 90px) * 2.9946);
+    height: calc((min(88vw, 380px) - 90px) * 2.2446);
+  }
+  .qb-step__visual { width: 210px; }
+
+  .qb-symptoms__grid { grid-template-columns: 1fr; }
+  .qb-symptom-card { min-height: 480px; }
+  .qb-symptom-card__image { width: min(280px, 100%); height: 285px; }
+  .qb-symptom-card > p { font-size: 26px; line-height: 38px; }
+  .qb-symptom-card:nth-child(3) > p,
+  .qb-symptom-card:nth-child(4) > p,
+  .qb-symptom-card:nth-child(6) > p,
+  .qb-symptom-card:nth-child(10) > p,
+  .qb-symptom-card:nth-child(12) > p {
+    margin-top: 33px;
+  }
+
+  .qb-herb-card { padding-right: 18px; padding-left: 18px; }
+  .qb-herb-card__summary { white-space: normal; }
+  .qb-herb-card__group h4 { font-size: 24px; }
+  .qb-herb-card__list li { font-size: 22px; line-height: 36px; }
+  .qb-herb-card__list li::before { top: 5px; }
+}

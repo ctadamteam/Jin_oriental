@@ -1,0 +1,1403 @@
+.hor-page {
+  --hor-navy: #083560;
+  --hor-blue: #7ba1ce;
+  --hor-soft-blue: #bbcfe7;
+  --hor-pale-blue: #c3d6ed;
+  --hor-bg-gray: #f8f8f8;
+  --hor-card-gray: #f4f4f4;
+  --hor-charcoal: #161616;
+  --hor-highlight: #fff2b1;
+  width: 100%;
+  overflow-x: clip;
+  background: #fff;
+  color: var(--hor-charcoal);
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hor-page *,
+.hor-page *::before,
+.hor-page *::after {
+  box-sizing: border-box;
+}
+
+.hor-page__content {
+  position: relative;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+}
+
+/* ==============================================================
+   [상단 헤딩 & 구분선 (Line 11)]
+============================================================== */
+.hor-page__heading {
+  position: relative;
+  width: 1440px;
+  height: 84px;
+  margin: 0 auto;
+  padding-top: 22px;
+}
+
+.hor-page__heading h1 {
+  margin: 0;
+  color: #000;
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.hor-page__divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 1440px;
+  height: 1px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+}
+
+/* ==============================================================
+   [공통 섹션 타이포그래피 (400 Regular + 700 Bold 2단 구조)]
+============================================================== */
+.hor-section-title {
+  margin: 0;
+  color: #000;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 84px;
+  letter-spacing: -3.5px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.hor-section-title strong {
+  font-weight: 700;
+}
+
+.hor-section-desc {
+  margin: 36px 0 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 01] 메인 히어로 배너 (Figma 1440px x 588px, y: 96)
+============================================================== */
+.hor-hero {
+  display: grid;
+  grid-template-columns: 852px 588px;
+  width: 1440px;
+  height: 588px;
+  margin: 12px auto 0;
+  background: var(--hor-navy);
+}
+
+.hor-hero__visual {
+  position: relative;
+  width: 852px;
+  height: 588px;
+  overflow: hidden;
+}
+
+.hor-hero__visual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 260px 100px at 0 0, rgba(232, 222, 217, 0.95) 0%, rgba(232, 222, 217, 0.6) 55%, transparent 100%);
+}
+
+.hor-hero__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hor-hero__logo {
+  position: absolute;
+  top: 0;
+  left: -51px;
+  z-index: 2;
+  display: block;
+  width: 310px;
+  height: 104px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.hor-hero__panel {
+  position: relative;
+  width: 588px;
+  height: 588px;
+  padding: 61px 30px 52px 82px;
+  background: var(--hor-navy);
+  box-sizing: border-box;
+}
+
+.hor-hero__kicker {
+  margin: 0;
+  color: #c3d6ed;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 45.35px;
+  letter-spacing: -1.9px;
+  white-space: nowrap;
+}
+
+.hor-hero__title {
+  margin: 6px 0 0 -4px;
+  color: #bbcfe7;
+  font-size: 88px;
+  font-weight: 800;
+  line-height: 88px;
+  letter-spacing: -4.4px;
+  white-space: pre-line;
+}
+
+.hor-hero__title-accent {
+  color: #ffffff;
+}
+
+.hor-hero__copy {
+  width: 470px;
+  margin-top: 20px;
+  color: #c3d6ed;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 02] 호르몬 균형과 전신 리듬 (y: 820)
+============================================================== */
+.hor-sec2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 136px;
+  width: 1440px;
+}
+
+.hor-sec2__lead2 {
+  margin: 50px 0 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.hor-sec2__diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.hor-sec2__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 266px;
+  height: 266px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: -1.75px;
+  text-align: center;
+}
+
+.hor-sec2__circle--dark {
+  background: var(--hor-navy);
+}
+
+.hor-sec2__circle--blue {
+  background: var(--hor-blue);
+}
+
+.hor-sec2__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 471px;
+  height: 266px;
+  border-radius: 133px;
+  background: var(--hor-soft-blue);
+  color: var(--hor-navy);
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.hor-sec2__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==============================================================
+   [섹션 03] 호르몬 불균형 비만이 생기는 원인 (y: 1841)
+============================================================== */
+.hor-sec3 {
+  width: 1440px;
+  margin-top: 146px;
+  padding: 136px 44px 150px;
+  background: var(--hor-card-gray);
+  box-sizing: border-box;
+}
+
+.hor-sec3__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 67px;
+}
+
+.hor-sec3__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1352px;
+  height: 202px;
+  margin: 0 auto;
+  padding: 40px 53px;
+  background: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.hor-sec3__card-title {
+  margin: 0;
+  color: var(--hor-navy);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.hor-sec3__card-desc {
+  margin: 9px 0 0;
+  color: var(--hor-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+}
+
+/* ==============================================================
+   [섹션 04] 주요 증상 12개 POINT 카드 (y: 3586)
+============================================================== */
+.hor-sec4 {
+  width: 1440px;
+  margin-top: 146px;
+}
+
+.hor-sec4__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 347px);
+  gap: 17px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.hor-sec4__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 347px;
+  height: 630px;
+  padding: 24px 14px 20px;
+  background: var(--hor-card-gray);
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hor-sec4__card-img {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+}
+
+.hor-sec4__card-point {
+  margin-top: 34px;
+  color: var(--hor-navy);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+}
+
+.hor-sec4__card-title {
+  margin: 6px 0 0;
+  color: var(--hor-charcoal);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 45px;
+  letter-spacing: -1.9px;
+  white-space: pre-line;
+}
+
+.hor-sec4__card-desc {
+  margin: 12px 0 0;
+  color: var(--hor-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1.75px;
+}
+
+.hor-highlight {
+  display: inline;
+  background: linear-gradient(to top, #fff2b1 0%, #fff2b1 32%, transparent 32%, transparent 100%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 2px;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.hor-sec4__summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1440px;
+  height: 230px;
+  margin-top: 76px;
+  background: #ffffff;
+  border: 2px solid var(--hor-navy);
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hor-sec4__summary-title {
+  margin: 0;
+  color: var(--hor-navy);
+  font-size: 45px;
+  font-weight: 600;
+  letter-spacing: -2.25px;
+}
+
+.hor-sec4__summary-copy {
+  margin: 14px 0 0;
+  color: var(--hor-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 05] 기혈과 자율신경 연결 (y: 6180)
+============================================================== */
+.hor-sec5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1440px;
+  margin-top: 146px;
+}
+
+.hor-sec5__callout {
+  margin: 23px 0 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -1.75px;
+  text-align: center;
+}
+
+.hor-sec5__kicker {
+  margin: 40px 0 0;
+  color: #000;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -2.5px;
+  text-align: center;
+}
+
+.hor-sec5__center-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  width: 1147px;
+  height: 284px;
+  margin-top: 36px;
+  background: #f2f2f2;
+  border-radius: 142px;
+  box-sizing: border-box;
+}
+
+.hor-sec5__center-img {
+  width: 284px;
+  height: 284px;
+  object-fit: contain;
+}
+
+.hor-sec5__center-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hor-sec5__badge {
+  font-size: 50px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -2.5px;
+}
+
+.hor-sec5__center-title {
+  margin: 8px 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  color: #000;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+}
+
+.hor-sec5__branch {
+  width: 726px;
+  height: 90px;
+  margin-top: 0;
+}
+
+.hor-sec5__branch-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hor-sec5__cards {
+  display: flex;
+  gap: 34px;
+  margin-top: -6px;
+}
+
+.hor-sec5__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 680px;
+  height: 644px;
+  padding: 38px 31px 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.hor-sec5__card--left {
+  background: var(--hor-soft-blue);
+}
+
+.hor-sec5__card--right {
+  background: var(--hor-navy);
+}
+
+.hor-sec5__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.hor-sec5__card-name {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: -2.5px;
+}
+
+.hor-sec5__card--left .hor-sec5__card-name {
+  color: #000;
+}
+
+.hor-sec5__card--right .hor-sec5__card-name {
+  color: #fff;
+}
+
+.hor-sec5__card-tag {
+  display: block;
+  margin-top: 6px;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -1.75px;
+}
+
+.hor-sec5__card--left .hor-sec5__card-tag {
+  color: #000;
+}
+
+.hor-sec5__card--right .hor-sec5__card-tag {
+  color: #fff;
+}
+
+.hor-sec5__card-icon {
+  object-fit: contain;
+}
+
+.hor-sec5__inner-box {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: flex-start;
+  width: 618px;
+  height: 324px;
+  margin: 0 auto;
+  padding: 36px 32px;
+  background: #fff;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.hor-sec5__inner-sub {
+  color: var(--hor-charcoal);
+  font-size: 45px;
+  font-weight: 600;
+  letter-spacing: -2.25px;
+  line-height: 48px;
+}
+
+.hor-sec5__inner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hor-sec5__inner-list li {
+  color: var(--hor-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -1.75px;
+}
+
+.hor-sec5__bottom-text {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.hor-sec5__card--left .hor-sec5__bottom-text {
+  color: var(--hor-charcoal);
+}
+
+.hor-sec5__card--right .hor-sec5__bottom-text {
+  color: #fff;
+}
+
+/* ==============================================================
+   [섹션 06] 3대 유형 균형 (y: 7982)
+============================================================== */
+.hor-sec6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1440px;
+  margin-top: 136px;
+}
+
+.hor-sec6__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 66px;
+}
+
+.hor-sec6__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 444px;
+  height: 938px;
+  padding: 18px 24px 30px;
+  background: var(--hor-card-gray);
+  border-radius: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hor-sec6__card--center {
+  width: 534px;
+  height: 938px;
+  padding: 18px 24px 30px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.hor-sec6__img {
+  width: 334px;
+  height: 334px;
+  object-fit: contain;
+}
+
+.hor-sec6__img--center {
+  width: 389px;
+  height: 389px;
+  margin-top: 43px;
+  object-fit: contain;
+}
+
+.hor-sec6__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 59px;
+  padding: 0 32px;
+  border-radius: 30px;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  white-space: nowrap;
+}
+
+.hor-sec6__badge--blue {
+  margin-top: 15px;
+  background: var(--hor-soft-blue);
+  color: var(--hor-navy);
+}
+
+.hor-sec6__badge--navy {
+  margin-top: 61px;
+  background: var(--hor-navy);
+  color: #fff;
+}
+
+.hor-sec6__lead {
+  margin: 18px 0 0;
+  color: var(--hor-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+  min-height: 100px;
+}
+
+.hor-sec6__lead--center {
+  min-height: 100px;
+}
+
+.hor-sec6__inner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 386px;
+  height: 289px;
+  margin-top: auto;
+  padding: 20px 22px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.hor-sec6__inner-box--gray {
+  width: 486px;
+  height: 178px;
+  padding: 20px 24px;
+  background: var(--hor-bg-gray);
+  border-radius: 10px;
+}
+
+.hor-sec6__inner-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hor-sec6__inner-box li {
+  color: var(--hor-charcoal);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.5px;
+}
+
+.hor-sec6__card:first-child .hor-sec6__inner-box ul {
+  gap: 10px;
+}
+
+.hor-sec6__card:first-child .hor-sec6__inner-box li {
+  line-height: 46px;
+}
+
+.hor-sec6__card:last-child .hor-sec6__inner-box ul {
+  gap: 5px;
+}
+
+.hor-sec6__card:last-child .hor-sec6__inner-box li {
+  line-height: 38px;
+  padding-left: 24.4px;
+  text-indent: -24.4px;
+}
+
+.hor-sec6__arrow-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 87px;
+  height: 87px;
+  margin: 0 -43.5px;
+  background: var(--hor-navy);
+  border-radius: 50%;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+/* ==============================================================
+   [섹션 07] 대표 한약재 4종 (y: 9512)
+============================================================== */
+.hor-sec7 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1440px;
+  margin-top: 156px;
+  padding: 136px 0 140px;
+  background: #f8f8f8;
+}
+
+.hor-sec7__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 602px);
+  gap: 44px;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.hor-sec7__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 602px;
+  height: 843px;
+  padding: 48px 21px 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hor-sec7__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 195px;
+  height: 55px;
+  background: var(--hor-navy);
+  border-radius: 28px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  transform: translateY(-12px);
+}
+
+.hor-sec7__photo-wrap {
+  width: 560px;
+  height: 394px;
+  margin-top: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hor-sec7__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hor-sec7__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 560px;
+  margin: 38px 0 0;
+  padding: 0 0 0 20px;
+  list-style: none;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.hor-sec7__list-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--hor-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -1.75px;
+}
+
+.hor-check-icon {
+  flex-shrink: 0;
+}
+
+.hor-sec7__summary {
+  margin: auto 0 0;
+  color: var(--hor-navy);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: -2px;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 08] 진한의원 맞춤 치료 4종 (y: 11939)
+============================================================== */
+.hor-sec8 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1440px;
+  margin-top: 151px;
+  padding-bottom: 170px;
+}
+
+.hor-sec8__list {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  width: 1323px;
+  margin-top: 79px;
+}
+
+.hor-sec8__row {
+  display: grid;
+  grid-template-columns: 565px 1fr;
+  gap: 45px;
+  align-items: center;
+  width: 100%;
+  min-height: 395px;
+}
+
+.hor-sec8__photo-wrap {
+  width: 565px;
+  height: 395px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hor-sec8__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hor-sec8__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hor-sec8__item-title {
+  margin: 0;
+  color: #000;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -2.5px;
+}
+
+.hor-sec8__item-desc {
+  margin: 24px 0 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [모바일 반응형 (< 1024px)]
+============================================================== */
+@media (max-width: 1023px) {
+  .hor-page__heading {
+    width: 100%;
+    height: auto;
+    padding: 18px 16px 12px;
+  }
+
+  .hor-page__heading h1 {
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
+
+  .hor-page__divider {
+    width: 100%;
+  }
+
+  .hor-section-title {
+    font-size: 36px;
+    line-height: 46px;
+    letter-spacing: -1.5px;
+    padding: 0 16px;
+  }
+
+  .hor-section-desc {
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 0 16px;
+  }
+
+  .hor-hero {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+  }
+
+  .hor-hero__visual {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 852 / 588;
+  }
+
+  .hor-hero__visual::before {
+    background: radial-gradient(ellipse 180px 70px at 0 0, rgba(232, 222, 217, 0.95) 0%, rgba(232, 222, 217, 0.55) 55%, transparent 100%);
+  }
+
+  .hor-hero__logo {
+    top: 12px;
+    left: 12px;
+    width: 160px;
+    height: auto;
+  }
+
+  .hor-hero__panel {
+    width: 100%;
+    height: auto;
+    padding: 36px 20px;
+  }
+
+  .hor-hero__kicker {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .hor-hero__title {
+    margin: 8px 0 0;
+    font-size: 42px;
+    line-height: 48px;
+  }
+
+  .hor-hero__copy {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .hor-sec2 {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 16px;
+  }
+
+  .hor-sec2__diagram {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .hor-sec2__circle {
+    width: 180px;
+    height: 180px;
+    font-size: 22px;
+  }
+
+  .hor-sec2__box {
+    width: 100%;
+    max-width: 320px;
+    height: 160px;
+    border-radius: 80px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .hor-sec2__arrow svg {
+    transform: rotate(90deg);
+    width: 32px;
+    height: 32px;
+  }
+
+  .hor-sec2__lead2 {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .hor-sec3 {
+    width: 100%;
+    margin-top: 60px;
+    padding: 50px 16px;
+  }
+
+  .hor-sec3__list {
+    margin-top: 32px;
+    gap: 12px;
+  }
+
+  .hor-sec3__card {
+    width: 100%;
+    height: auto;
+    padding: 24px 18px;
+  }
+
+  .hor-sec3__card-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .hor-sec3__card-desc {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .hor-sec4 {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 16px;
+  }
+
+  .hor-sec4__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .hor-sec4__card {
+    width: 100%;
+    height: auto;
+    padding: 16px 12px 18px;
+  }
+
+  .hor-sec4__card-img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .hor-sec4__card-point {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .hor-sec4__card-title {
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .hor-sec4__card-desc {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .hor-sec4__summary {
+    width: 100%;
+    height: auto;
+    margin-top: 36px;
+    padding: 28px 16px;
+  }
+
+  .hor-sec4__summary-title {
+    font-size: 24px;
+  }
+
+  .hor-sec4__summary-copy {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .hor-sec5 {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 16px;
+  }
+
+  .hor-sec5__callout {
+    font-size: 17px;
+  }
+
+  .hor-sec5__kicker {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .hor-sec5__center-box {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .hor-sec5__center-info {
+    align-items: center;
+  }
+
+  .hor-sec5__center-img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hor-sec5__center-title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .hor-sec5__branch {
+    display: none;
+  }
+
+  .hor-sec5__cards {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .hor-sec5__card {
+    width: 100%;
+    height: auto;
+    padding: 24px 16px;
+  }
+
+  .hor-sec5__card-name {
+    font-size: 32px;
+  }
+
+  .hor-sec5__card-tag {
+    font-size: 20px;
+  }
+
+  .hor-sec5__card-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hor-sec5__inner-box {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+    padding: 20px 16px;
+    margin-top: 16px;
+    gap: 12px;
+  }
+
+  .hor-sec5__inner-sub {
+    font-size: 22px;
+  }
+
+  .hor-sec5__inner-list li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hor-sec5__bottom-text {
+    font-size: 20px;
+    margin-top: 16px;
+  }
+
+  .hor-sec6 {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 16px;
+  }
+
+  .hor-sec6__row {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .hor-sec6__arrow-wrap {
+    display: none;
+  }
+
+  .hor-sec6__card,
+  .hor-sec6__card--center {
+    width: 100%;
+    height: auto;
+    padding: 24px 16px;
+  }
+
+  .hor-sec6__img,
+  .hor-sec6__img--center {
+    width: 200px;
+    height: 200px;
+    margin-top: 0;
+  }
+
+  .hor-sec6__badge {
+    font-size: 22px;
+    height: 44px;
+    padding: 0 20px;
+  }
+
+  .hor-sec6__badge--navy {
+    margin-top: 15px;
+  }
+
+  .hor-sec6__lead {
+    font-size: 17px;
+    line-height: 26px;
+    min-height: auto;
+  }
+
+  .hor-sec6__inner-box,
+  .hor-sec6__inner-box--gray {
+    width: 100%;
+    height: auto;
+    padding: 16px 12px;
+    margin-top: 16px;
+  }
+
+  .hor-sec6__inner-box li {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .hor-sec6__card:first-child .hor-sec6__inner-box ul,
+  .hor-sec6__card:last-child .hor-sec6__inner-box ul {
+    gap: 6px;
+  }
+
+  .hor-sec6__card:first-child .hor-sec6__inner-box li,
+  .hor-sec6__card:last-child .hor-sec6__inner-box li {
+    line-height: 22px;
+    padding-left: 0;
+    text-indent: 0;
+  }
+
+  .hor-sec7 {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 16px;
+  }
+
+  .hor-sec7__grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 24px;
+  }
+
+  .hor-sec7__card {
+    width: 100%;
+    height: auto;
+    padding: 24px 16px;
+  }
+
+  .hor-sec7__badge {
+    font-size: 24px;
+    width: 130px;
+    height: 42px;
+    transform: none;
+  }
+
+  .hor-sec7__photo-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 560 / 394;
+    margin-top: 16px;
+  }
+
+  .hor-sec7__list {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  .hor-sec7__list-item {
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .hor-sec7__list-item svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hor-sec7__summary {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 18px;
+  }
+
+  .hor-sec8 {
+    width: 100%;
+    margin-top: 60px;
+    padding: 0 16px;
+  }
+
+  .hor-sec8__list {
+    width: 100%;
+    gap: 28px;
+    margin-top: 36px;
+  }
+
+  .hor-sec8__row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hor-sec8__photo-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 565 / 395;
+  }
+
+  .hor-sec8__item-title {
+    font-size: 26px;
+  }
+
+  .hor-sec8__item-desc {
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 12px;
+  }
+}

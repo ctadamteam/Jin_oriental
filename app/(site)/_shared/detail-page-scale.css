@@ -9,7 +9,9 @@
 .ede-page,
 .ci-page,
 .ped-page,
-.ad-page {
+.ad-page,
+.qb-page,
+.hor-page {
   --detail-pc-scale: 0.6944444444;
 }
 
@@ -21,7 +23,9 @@
   .ede-page__content,
   .ci-page__content,
   .ped-page__content,
-  .ad-page__content {
+  .ad-page__content,
+  .qb-page__content,
+  .hor-page__content {
     width: 1440px;
     max-width: none;
     margin-right: auto;
@@ -38,7 +42,9 @@
   .ede-page__content,
   .ci-page__content,
   .ped-page__content,
-  .ad-page__content {
+  .ad-page__content,
+  .qb-page__content,
+  .hor-page__content {
     width: 100%;
     max-width: none;
     zoom: 1;
