@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-200 pt-12 pb-[calc(5rem+env(safe-area-inset-bottom))]">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">{SITE_CONFIG.name}</h2>
             <div className="mt-4 text-sm text-gray-600 leading-relaxed">
@@ -22,7 +22,7 @@ export function Footer() {
               <li className="text-[21px] text-gray-800 font-bold tracking-tight leading-tight mt-1"><a href="tel:01076860041" className="inline-flex min-h-11 items-center">{SITE_CONFIG.contact.phoneMobile}</a></li>
             </ul>
           </div>
-          <div>
+          <div className="lg:w-[340px]">
             <h3 className="text-[18pt] font-semibold text-gray-900 tracking-wider">진료시간</h3>
             <ul className="mt-4 space-y-2 text-sm text-gray-600">
               <li className="flex justify-between"><span>월/화/수/금</span> <span>{SITE_CONFIG.hours.weekdays}</span></li>

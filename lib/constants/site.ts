@@ -14,9 +14,9 @@ export const SITE_CONFIG = {
   },
   hours: {
     weekdays: "오전9시 30분 ~ 오후6시",
-    thursday: "오전9시 30분 ~ 오후2시 (점심없음)",
+    thursday: "오전9시 30분 ~ 오후2시 (점심시간 없음)",
     weekendLabel: "토 / 대체공휴일",
-    weekend: "오전9시 30분 ~ 오후2시 (점심없음)",
+    weekend: "오전9시 30분 ~ 오후2시 (점심시간 없음)",
     lunch: "오후1시 ~ 오후2시",
     closed: "*일요일은 휴진입니다.",
   }
