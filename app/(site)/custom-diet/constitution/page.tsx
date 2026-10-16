@@ -647,10 +647,16 @@ export default function ConstitutionDietPage() {
           .program-card p{height:auto;min-height:0}
           .program-image{height:auto;aspect-ratio:1.31}
           .acupuncture-section{padding:10px 20px 45px}
-          .acupuncture-content{grid-template-columns:1fr}
-          .acupuncture-content>img{justify-self:center}
-          .ingredient-grid{gap:20px}
+          .acupuncture-content{grid-template-columns:minmax(0,1fr);min-width:0}
+          .acupuncture-content>img{max-width:100%;justify-self:center}
+          .ingredient-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;min-width:0}
+          .ingredient-grid article,.ingredient-grid article>div:last-child{min-width:0}
+          .ingredient-grid p{overflow-wrap:break-word}
           .constitution-footer-cta{margin:54px 0}
+        }
+        @media (max-width:480px){
+          .ingredient-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+          .ingredient-grid article{gap:20px}
         }
       `}</style>
     </div>

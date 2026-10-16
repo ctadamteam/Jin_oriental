@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants/site';
 import { FaLocationDot, FaCamera, FaCalendarCheck, FaClock } from 'react-icons/fa6';
 
-const KakaoTalkBubble = ({ size = 24, className = "" }: any) => {
+const KakaoTalkBubble = ({ size = 24, className = "" }: { size?: number | string; className?: string }) => {
   const scaledSize = typeof size === 'number' ? size * 1.25 : size;
   return (
     <svg width={scaledSize} height={scaledSize} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
@@ -12,7 +12,7 @@ const KakaoTalkBubble = ({ size = 24, className = "" }: any) => {
   );
 };
 
-const NaverBlogIcon = ({ size = 24, className = "" }: any) => {
+const NaverBlogIcon = ({ size = 24, className = "" }: { size?: number | string; className?: string }) => {
   const scaledSize = typeof size === 'number' ? size * 1.15 : size;
   return (
     <svg width={scaledSize} height={scaledSize} viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@ export function SideQuickMenu() {
   ];
 
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col bg-[#083560] shadow-[0_10px_24px_rgba(1,34,61,0.26)] rounded-[20px] overflow-hidden divide-y divide-[rgba(234,240,247,0.20)]">
+    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden 2xl:flex flex-col bg-[#083560] shadow-[0_10px_24px_rgba(1,34,61,0.26)] rounded-[20px] overflow-hidden divide-y divide-[rgba(234,240,247,0.20)]">
       {menus.map((menu, i) => {
         const Icon = menu.Icon;
         const linkClassName = "group flex flex-col items-center justify-center w-[86px] h-[83px] bg-[#083560] hover:bg-[#DAC080] active:bg-[#C5A55E] text-[11px] font-bold text-[#EAF0F7] hover:text-[#083560] active:text-[#083560] text-center transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#EAF0F7]";

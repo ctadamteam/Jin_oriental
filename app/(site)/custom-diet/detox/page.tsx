@@ -1,15 +1,16 @@
 import Image from 'next/image';
+import '../responsive.css';
 
 export default function DetoxDietPage() {
   return (
-    <main className="w-full bg-white font-sans text-gray-800">
+    <main className="detox-page w-full bg-white font-sans text-gray-800">
       <div className="mx-auto w-full max-w-[1000px] overflow-hidden">
       {/* 1. Hero Section (상단 메인 타이틀 - 중년비만 레이아웃 적용) */}
       <header className="py-4 border-b border-dashed border-gray-300 mb-2">
         <h1 className="text-3xl md:text-[38px] font-serif text-gray-900 tracking-tighter leading-none font-normal">해독 다이어트</h1>
       </header>
 
-      <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#123960] text-white mb-8">
+      <section className="diet-responsive-hero w-full grid grid-cols-1 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:grid-cols-[672px_1fr] md:min-h-[365px] lg:h-[365px] overflow-hidden bg-[#123960] text-white mb-8">
         <div className="relative w-full h-[250px] md:h-full overflow-hidden">
           <Image 
             src="/images/personal/detox_title.jpg" 
@@ -39,7 +40,7 @@ export default function DetoxDietPage() {
         
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
           <div className="w-full md:w-[67%]">
-            <h3 className="text-2xl md:text-[38px] font-light text-gray-800 mb-3 leading-tight break-keep tracking-tight whitespace-nowrap lg:whitespace-normal">
+            <h3 className="text-2xl md:text-[38px] font-light text-gray-800 mb-3 leading-tight break-keep tracking-tight">
               한의학에서 말하는 <strong className="font-bold text-gray-900">독소</strong>란 무엇인가요?
             </h3>
             <div className="mb-6">
@@ -465,65 +466,65 @@ export default function DetoxDietPage() {
             </h2>
           </div>
           
-          <div className="relative w-full max-w-[1200px] mx-auto mb-24 md:h-[550px] flex flex-col md:block items-center">
+          <div className="detox-stages relative w-full max-w-[1200px] mx-auto mb-24 lg:h-[550px] flex flex-col lg:block items-center">
             {/* 다이어그램 이미지 및 오버레이 텍스트 */}
-            <div className="relative w-[270px] h-[270px] md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[450px] md:h-[450px] z-0 shrink-0">
+            <div className="relative w-[270px] h-[270px] sm:w-[360px] sm:h-[360px] lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:w-[450px] lg:h-[450px] z-0 shrink-0">
                <Image src="/images/personal/detox_section7_1.png" alt="해독 3단계 프로세스 배경" fill className="object-contain" />
                
                {/* 텍스트 오버레이 (드래그 가능) */}
                {/* 중앙 텍스트 */}
                <div className="absolute top-1/2 left-[53%] -translate-x-1/2 -translate-y-1/2 flex items-center justify-center mt-[-10px]">
-                 <span className="text-[#3a332d] font-black text-[20px] md:text-[20px] tracking-tight">해독 단계</span>
+                 <span className="text-[#3a332d] font-black text-[20px] lg:text-[20px] tracking-tight">해독 단계</span>
                </div>
                
                {/* 01 청소 */}
                <div className="absolute top-[39%] left-[31%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-white">
-                 <span className="font-bold text-[18px] md:text-[18px] leading-none mb-1">01</span>
-                 <span className="font-bold text-[20px] md:text-[20px] leading-none">청소</span>
+                 <span className="font-bold text-[18px] lg:text-[18px] leading-none mb-1">01</span>
+                 <span className="font-bold text-[20px] lg:text-[20px] leading-none">청소</span>
                </div>
                
                {/* 02 재건 */}
                <div className="absolute top-[39%] left-[74%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-white">
-                 <span className="font-bold text-[18px] md:text-[18px] leading-none mb-1">02</span>
-                 <span className="font-bold text-[20px] md:text-[20px] leading-none">재건</span>
+                 <span className="font-bold text-[18px] lg:text-[18px] leading-none mb-1">02</span>
+                 <span className="font-bold text-[20px] lg:text-[20px] leading-none">재건</span>
                </div>
                
                {/* 03 유지 */}
                <div className="absolute top-[72%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 text-white">
-                 <span className="font-bold text-[18px] md:text-[18px]">03</span>
-                 <span className="font-bold text-[20px] md:text-[20px]">유지</span>
+                 <span className="font-bold text-[18px] lg:text-[18px]">03</span>
+                 <span className="font-bold text-[20px] lg:text-[20px]">유지</span>
                </div>
             </div>
 
             {/* 텍스트 요소들 - 컨테이너 */}
-            <div className="w-full mt-12 md:mt-0 flex flex-col gap-10 md:block relative z-10 md:h-full md:w-full pointer-events-none">
+            <div className="w-full mt-12 lg:mt-0 flex flex-col gap-10 lg:block relative z-10 lg:h-full lg:w-full pointer-events-none">
               
               {/* Top Left (청소) */}
-              <div className="md:absolute md:top-[18%] md:left-[15px] md:w-[310px] w-full text-left px-4 md:px-0 pointer-events-auto">
-                <p className="text-gray-800 text-[20px] md:text-[20px] font-semibold leading-snug break-keep border-l-[3px] border-gray-300 pl-4 py-1">
-                  소화기관 및 주요한<br className="hidden md:block" />기관으로부터 <strong className="bg-[#fff4b0] px-1 font-semibold">점액질과독소를<br className="hidden md:block" />청소해내는 단계입니다.</strong>
+              <div className="lg:absolute lg:top-[18%] lg:left-[15px] lg:w-[310px] w-full text-left px-4 lg:px-0 pointer-events-auto">
+                <p className="text-gray-800 text-[20px] lg:text-[20px] font-semibold leading-snug break-keep border-l-[3px] border-gray-300 pl-4 py-1">
+                  소화기관 및 주요한<br className="hidden lg:block" />기관으로부터 <strong className="bg-[#fff4b0] px-1 font-semibold">점액질과독소를<br className="hidden lg:block" />청소해내는 단계입니다.</strong>
                 </p>
               </div>
 
               {/* Top Right (재건) */}
-              <div className="md:absolute md:top-[12%] md:-right-[20px] md:w-[320px] w-full text-left px-4 md:px-0 pointer-events-auto">
+              <div className="lg:absolute lg:top-[12%] lg:-right-[20px] lg:w-[320px] w-full text-left px-4 lg:px-0 pointer-events-auto">
                 <div className="border-l-[3px] border-gray-300 pl-4 py-1">
-                  <p className="text-gray-800 text-[20px] md:text-[20px] font-semibold leading-snug break-keep mb-1">
-                    독소를 청소한 후 <strong className="bg-[#fff4b0] px-1 font-semibold">조직을<br className="hidden md:block" />건강하고 최상의 상태로 만드는<br className="hidden md:block" />단계입니다.</strong>
+                  <p className="text-gray-800 text-[20px] lg:text-[20px] font-semibold leading-snug break-keep mb-1">
+                    독소를 청소한 후 <strong className="bg-[#fff4b0] px-1 font-semibold">조직을<br className="hidden lg:block" />건강하고 최상의 상태로 만드는<br className="hidden lg:block" />단계입니다.</strong>
                   </p>
-                  <p className="text-[18px] md:text-[18px] text-gray-700 break-keep leading-relaxed mt-1.5">
+                  <p className="text-[18px] lg:text-[18px] text-gray-700 break-keep leading-relaxed mt-1.5">
                     재건단계에서는 신선한 음식이나 최소로 조리한 음식을 먹습니다. 지방과 유제품 섭취는 줄이고 튀긴 음식은 금해야 하며. 알코올, 카페인, 설탕, 담배도 멀리하며 해산물을 제외한 육류도 피하는 것이 좋습니다.
                   </p>
                 </div>
               </div>
 
               {/* Bottom Left (유지) */}
-              <div className="md:absolute md:bottom-[2%] md:left-[20px] md:w-[350px] w-full text-left px-4 md:px-0 pointer-events-auto">
+              <div className="lg:absolute lg:bottom-[2%] lg:left-[20px] lg:w-[350px] w-full text-left px-4 lg:px-0 pointer-events-auto">
                 <div className="border-l-[3px] border-gray-300 pl-4 py-1">
-                  <p className="text-gray-800 text-[20px] md:text-[20px] font-semibold leading-snug break-keep mb-1">
+                  <p className="text-gray-800 text-[20px] lg:text-[20px] font-semibold leading-snug break-keep mb-1">
                     해독에 있어서 가장 중요한 단계입니다.
                   </p>
-                  <p className="text-[18px] md:text-[18px] text-gray-700 break-keep leading-relaxed mt-1.5">
+                  <p className="text-[18px] lg:text-[18px] text-gray-700 break-keep leading-relaxed mt-1.5">
                     <strong className="bg-[#fff4b0] px-1 font-normal">생활습관을 조절하여 저항력이 강한 인체를 만들도록 해야 합니다.</strong> 섬유질이 풍부한 건강한 식단과 적당한 운동을 병행하여 독소의 축적을 막는 것이 좋습니다.
                   </p>
                 </div>
@@ -908,7 +909,7 @@ export default function DetoxDietPage() {
       <section className="w-full py-16 md:py-24 bg-white flex justify-center">
         <div className="w-full max-w-5xl px-4 flex flex-col items-center">
            <div className="w-full flex flex-col items-end">
-             <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+             <div className="detox-broadcast relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
                <Image 
                  src="/images/personal/detox_section_10.png" 
                  alt="진한의원 방송 캡처 및 설명 그래픽" 

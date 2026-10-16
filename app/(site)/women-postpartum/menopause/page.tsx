@@ -326,6 +326,42 @@ export default function MenopausePage() {
       <style>{`
         .meno-link-phone{transform:translateX(-40px)}
       `}</style>
+      <style>{`
+        @media(max-width:1023px){
+          .meno-hero{height:auto;min-height:330px}
+          .meno-hero-copy{left:60%;padding:32px 24px}
+          .meno-hero-copy h2{font-size:clamp(36px,5vw,54px);letter-spacing:-2px}
+          .meno-hero-copy p{font-size:14px;letter-spacing:1px;white-space:normal}
+          .meno-hero-copy>span{font-size:15px}
+          .meno-intro-rule{max-width:100%}
+          .meno-beginning{grid-template-columns:minmax(0,205px) minmax(0,1fr);gap:18px}
+          .meno-beginning h2 span{white-space:normal}
+          .meno-treatment>img{max-width:100%;transform:none}
+          .meno-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+          .meno-link-card:nth-child(n){height:260px}
+          .meno-link-phone{width:100%;margin-left:0;transform:none;justify-content:flex-start;font-size:clamp(27px,4vw,38px)!important;letter-spacing:-1.5px!important;white-space:nowrap}
+          .meno-link-card--phone .meno-link-copy{right:20px;left:20px}
+        }
+        @media(max-width:680px){
+          .meno-hero{display:flex;min-height:0;flex-direction:column}
+          .meno-hero>img{height:230px;object-position:left center}
+          .meno-hero-copy{position:relative;inset:auto;padding:32px 24px;text-align:left}
+          .meno-hero-copy h2{font-size:42px;line-height:1.1}
+          .meno-hero-copy p{margin-bottom:16px}
+          .meno-hero-copy>span{margin-top:20px;line-height:1.65}
+          .meno-hero-copy>b{font-size:110px;left:auto;right:18px}
+          .meno-treatment h2{line-height:1.35}
+          .meno-beginning{display:flex;flex-direction:column;gap:12px}
+          .meno-beginning h2 strong{font-size:30px}
+          .meno-symptom-grid article{gap:14px}
+          .meno-symptom-grid p{min-width:0;overflow-wrap:anywhere;line-height:1.6}
+          .meno-check-row{grid-template-columns:100px minmax(0,1fr)}
+          .meno-check-row li{font-size:14px;padding:10px;line-height:1.5}
+          .meno-links{grid-template-columns:minmax(0,1fr)}
+          .meno-link-card:nth-child(n){height:260px}
+          .meno-link-phone{font-size:clamp(30px,9vw,38px)!important}
+        }
+      `}</style>
     </main>
   );
 }

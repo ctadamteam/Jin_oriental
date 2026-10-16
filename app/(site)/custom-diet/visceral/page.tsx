@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import '../responsive.css';
 
 export default function VisceralFatPage() {
   return (
@@ -39,7 +40,7 @@ export default function VisceralFatPage() {
 
 function HeroSection() {
   return (
-    <section className="w-full grid grid-cols-1 md:grid-cols-[672px_1fr] md:h-[365px] overflow-hidden bg-[#123960] text-white mb-0">
+    <section className="diet-responsive-hero w-full grid grid-cols-1 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:grid-cols-[672px_1fr] md:min-h-[365px] lg:h-[365px] overflow-hidden bg-[#123960] text-white mb-0">
       <div className="relative w-full h-[250px] md:h-full overflow-hidden">
         <Image 
           src="/images/personal/visceral_title.jpg" 
@@ -71,10 +72,10 @@ function StatsSection() {
           한 통계에 따르면 <strong className="bg-[#fff4b0] px-1 font-normal text-gray-800">성인 3명 중 한명은 비만</strong>이며, <strong className="bg-[#fff4b0] px-1 font-normal text-gray-800">성인 5명 중 한명은 복부비만</strong>이며 <strong className="bg-[#fff4b0] px-1 font-normal text-gray-800">50대 이상 유병율은 50대 이하에 비해 2배</strong>에 달합니다.
         </p>
         
-        <div className="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-32 mb-16">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-8 lg:gap-32 mb-16">
           {/* 비만 통계 */}
-          <div className="relative flex flex-col items-center">
-             <div className="w-72 h-72 md:w-80 md:h-80 relative flex items-center justify-center mb-4">
+          <div className="relative flex w-full max-w-72 md:max-w-80 flex-col items-center">
+             <div className="w-full aspect-square relative flex items-center justify-center mb-4">
                <Image src="/images/personal/nj_section2_1.png" alt="비만 실루엣" fill className="object-contain" unoptimized={true} />
              </div>
              <div className="absolute top-[26%] left-[calc(25%+40px)] -translate-x-1/2 -translate-y-1/2 scale-90 text-left text-white drop-shadow-md z-10 pointer-events-auto">
@@ -87,8 +88,8 @@ function StatsSection() {
           </div>
           
           {/* 복부비만 통계 */}
-          <div className="relative flex flex-col items-center">
-             <div className="w-72 h-72 md:w-80 md:h-80 relative flex items-center justify-center mb-4">
+          <div className="relative flex w-full max-w-72 md:max-w-80 flex-col items-center">
+             <div className="w-full aspect-square relative flex items-center justify-center mb-4">
                <Image src="/images/personal/nj_section2_2.png" alt="복부비만 실루엣" fill className="object-contain" unoptimized={true} />
              </div>
              <div className="absolute top-[calc(22%+10px)] left-[calc(32%+80px)] -translate-x-1/2 -translate-y-1/2 scale-90 text-left text-white drop-shadow-md z-10 pointer-events-auto">

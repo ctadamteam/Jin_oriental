@@ -1,155 +1,43 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import { Expand } from 'lucide-react';
+import { ImageLightbox } from '../common/ImageLightbox';
+import { BannerControls } from '../common/BannerControls';
+import { useBannerCarousel } from '../common/useBannerCarousel';
 
 const BANNERS = [
-  {
-    id: 1,
-    imageUrl: '/images/main/hero_banner_01.jpg',
-    alt: '진한의원 맞춤 감량 배너',
-    link: '#'
-  },
-  {
-    id: 2,
-    imageUrl: '/images/main/hero_banner_02.jpg',
-    alt: '진한의원 원장님 소개 배너',
-    link: '#'
-  },
-  {
-    id: 3,
-    imageUrl: '/images/main/hero_banner_03.jpg',
-    alt: '진한의원 해독 치료 배너',
-    link: '#'
-  },
-  {
-    id: 4,
-    imageUrl: '/images/main/hero_banner_04.jpg',
-    alt: '진한의원 후기 배너',
-    link: '#'
-  },
-  {
-    id: 5,
-    imageUrl: '/images/main/hero_banner_05.jpg',
-    alt: '진한의원 배너 5',
-    link: '#'
-  },
-  {
-    id: 6,
-    imageUrl: '/images/main/hero_banner_06.jpg',
-    alt: '진한의원 배너 6',
-    link: '#'
-  },
-  {
-    id: 7,
-    imageUrl: '/images/main/hero_banner_07.jpg',
-    alt: '진한의원 배너 7',
-    link: '#'
-  },
-  {
-    id: 8,
-    imageUrl: '/images/main/hero_banner_08.jpg',
-    alt: '진한의원 배너 8',
-    link: '#'
-  },
-  {
-    id: 9,
-    imageUrl: '/images/main/hero_banner_09.jpg',
-    alt: '진한의원 배너 9',
-    link: '#'
-  }
+  { title: '다이어트, 요요가 제일 걱정이시죠?', description: '진한의원 김효진 원장의 체중 유지 이야기' },
+  { title: '한방내과 전문의는 비만을 다르게 진단합니다.', description: '개인의 체질·대사·생활습관까지 함께 살피는 비만 진료' },
+  { title: '진한의원은 찐입니다', description: '진한의원의 후기에는 ‘진심’이 가득 담겨 있습니다.' },
+  { title: '방송과 언론에서 만나는 진한의원', description: 'KNN·BBS 등 방송 및 언론매체 다수 출연' },
+  { title: '3개월, 93.5kg → 76.6kg', description: '진한의원 체중 감량 사례 · 16.9kg 감량' },
+  { title: '3개월, 70.3kg → 56.5kg', description: '진한의원 체중 감량 사례 · 13.8kg 감량' },
+  { title: '4개월, 84.5kg → 60.2kg', description: '진한의원 체중 감량 사례 · 24.3kg 감량' },
+  { title: '3개월, 67.7kg → 56.1kg', description: '진한의원 체중 감량 사례 · 11.6kg 감량' },
+  { title: '4개월, 76.3kg → 55.3kg', description: '진한의원 체중 감량 사례 · 21kg 감량' },
 ];
 
 export function MainHeroSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 5000, stopOnInteraction: false })
-  ]);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const scrollTo = useCallback((index: number) => {
-    if (emblaApi) emblaApi.scrollTo(index);
-  }, [emblaApi]);
-
-  const onInit = useCallback((emblaApi: any) => {
-    setScrollSnaps(emblaApi.scrollSnapList());
-  }, []);
-
-  const onSelect = useCallback((emblaApi: any) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, []);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    
-    onInit(emblaApi);
-    onSelect(emblaApi);
-    emblaApi.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect);
-  }, [emblaApi, onInit, onSelect]);
-
-  return (
-    <section className="relative w-full overflow-hidden bg-gray-50 group">
-      {/* Slider Viewport */}
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex touch-pan-y">
-          {BANNERS.map((banner) => (
-            <div 
-              className="flex-[0_0_100%] min-w-0 relative aspect-[1920/645] w-full"
-              key={banner.id}
-            >
-              <img 
-                src={banner.imageUrl} 
-                alt={banner.alt} 
-                className="w-full h-full object-contain select-none"
-                draggable={false}
-              />
+  const { viewportRef, index: selectedIndex, playing, setPlaying, previous, next } = useBannerCarousel();
+  return <section aria-label="진한의원 주요 안내" aria-roledescription="캐러셀" className="w-full bg-white">
+    <div className="overflow-hidden" ref={viewportRef}>
+      <div className="flex touch-pan-y">
+        {BANNERS.map((banner, index) => {
+          const src = '/images/main/hero_banner_' + String(index + 1).padStart(2, '0') + '.jpg';
+          return <div key={src} className="min-w-0 flex-[0_0_100%]" role="group" aria-label={String(index + 1) + ' / ' + BANNERS.length} inert={index !== selectedIndex}>
+            <ImageLightbox src={src} alt={banner.title} className="relative block w-full text-left">
+              <Image src={src} alt={banner.title} width={1920} height={645} sizes="100vw" priority={index === 0} className="h-auto w-full select-none object-contain" draggable={false} />
+              <span className="absolute bottom-2 right-3 flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 text-[11px] text-slate-700 shadow-sm lg:hidden"><Expand size={12} />크게 보기</span>
+            </ImageLightbox>
+            <div className="px-6 pt-5 lg:hidden">
+              <h2 className="max-w-2xl text-[25px] font-bold leading-[1.35] tracking-tight break-keep text-slate-900 sm:text-3xl">{banner.title}</h2>
+              <p className="mt-2 text-[15px] leading-6 break-keep text-slate-600">{banner.description}</p>
             </div>
-          ))}
-        </div>
+          </div>;
+        })}
       </div>
-
-      {/* Navigation Arrows */}
-      <button 
-        onClick={scrollPrev}
-        className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/10 hover:bg-black/40 text-white rounded-full hidden sm:flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={28} strokeWidth={2.5} />
-      </button>
-      
-      <button 
-        onClick={scrollNext}
-        className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/10 hover:bg-black/40 text-white rounded-full hidden sm:flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
-        aria-label="Next slide"
-      >
-        <ChevronRight size={28} strokeWidth={2.5} />
-      </button>
-
-      {/* Keep controls below the smaller mobile artwork so they do not cover its text. */}
-      <div className="relative flex justify-center gap-2.5 py-3 sm:absolute sm:bottom-6 sm:left-0 sm:right-0 sm:py-0 z-10">
-        {scrollSnaps.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollTo(index)}
-            className={`transition-all duration-300 rounded-full h-2.5 ${
-              index === selectedIndex 
-                ? 'w-6 bg-primary-dark' 
-                : 'w-2.5 bg-primary-dark/20 hover:bg-primary-dark/40 sm:bg-white/60 sm:hover:bg-white/90'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
-    </section>
-  );
+    </div>
+    <BannerControls label="메인 배너" index={selectedIndex} count={BANNERS.length} playing={playing} previous={previous} next={next} onToggle={() => setPlaying(!playing)} />
+  </section>;
 }

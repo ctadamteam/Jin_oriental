@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 py-12">
+    <footer className="bg-gray-50 border-t border-gray-200 pt-12 pb-[calc(5rem+env(safe-area-inset-bottom))]">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
@@ -18,8 +18,8 @@ export function Footer() {
           <div>
             <h3 className="text-[18pt] font-semibold text-gray-900 tracking-wider">연락처</h3>
             <ul className="mt-4">
-              <li className="text-[21px] text-gray-800 font-bold tracking-tight leading-tight">{SITE_CONFIG.contact.phoneMain}</li>
-              <li className="text-[21px] text-gray-800 font-bold tracking-tight leading-tight mt-1">{SITE_CONFIG.contact.phoneMobile}</li>
+              <li className="text-[21px] text-gray-800 font-bold tracking-tight leading-tight"><a href="tel:0517140040" className="inline-flex min-h-11 items-center">{SITE_CONFIG.contact.phoneMain}</a></li>
+              <li className="text-[21px] text-gray-800 font-bold tracking-tight leading-tight mt-1"><a href="tel:01076860041" className="inline-flex min-h-11 items-center">{SITE_CONFIG.contact.phoneMobile}</a></li>
             </ul>
           </div>
           <div>

@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { useBannerCarousel } from '../common/useBannerCarousel';
+import { BannerControls } from '../common/BannerControls';
+import { ReviewMobileCards } from './ReviewMobileCards';
 import { SectionTitle } from '../common/SectionTitle';
 
 export interface ElementStyle {
@@ -1138,43 +1138,16 @@ export const REVIEW_SLIDES: ReviewSlideData[] = [
   },
 ];
 
+const MOBILE_REVIEW_CARDS = REVIEW_SLIDES.flatMap((slide) => slide.cards.map((card, cardIndex) => ({
+  ...card,
+  id: `${slide.id}-${cardIndex}`,
+})));
+
 export function ReviewSection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 5000, stopOnInteraction: false })
-  ]);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const scrollTo = useCallback((index: number) => {
-    if (emblaApi) emblaApi.scrollTo(index);
-  }, [emblaApi]);
-
-  const onInit = useCallback((emblaApi: any) => {
-    setScrollSnaps(emblaApi.scrollSnapList());
-  }, []);
-
-  const onSelect = useCallback((emblaApi: any) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, []);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    
-    onInit(emblaApi);
-    onSelect(emblaApi);
-    emblaApi.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect);
-  }, [emblaApi, onInit, onSelect]);
+  const { viewportRef, index, playing, setPlaying, previous, next } = useBannerCarousel();
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-16 lg:py-24 bg-white overflow-hidden">
       {/* CSS style block to style the text selection highlight: keeps selected text transparent to prevent double-text overlap, but shows the tilted blue highlight box */}
       <style dangerouslySetInnerHTML={{ __html: `
         .review-card-selection-overlay ::selection {
@@ -1200,9 +1173,12 @@ export function ReviewSection() {
           } 
         />
         
-        <div className="relative group max-w-[1320px] mx-auto mt-12">
+        <ReviewMobileCards cards={MOBILE_REVIEW_CARDS} />
+        <div className="hidden lg:block">
+        <div className="relative group max-w-[1320px] mx-auto mt-12" onFocusCapture={() => setPlaying(false)}>
+
           {/* Viewport */}
-          <div className="overflow-hidden" ref={emblaRef}>
+          <div className="overflow-hidden" ref={viewportRef}>
             <div className="flex touch-pan-y">
               {REVIEW_SLIDES.map((review) => (
                 <div 
@@ -1211,7 +1187,10 @@ export function ReviewSection() {
                 >
                   <div className="block w-full bg-gray-50 relative overflow-hidden select-none">
                     {/* Base Slide Background Banner */}
-                    <img 
+                    {/* The desktop artwork is paired with its selectable text layer below. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      loading="lazy"
                       src={review.imageUrl} 
                       alt={review.alt} 
                       className="w-full h-auto block select-none pointer-events-none"
@@ -1368,40 +1347,11 @@ export function ReviewSection() {
             </div>
           </div>
 
-          {/* Navigation Arrows */}
-          <button 
-            onClick={scrollPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/20 hover:bg-black/60 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft size={28} strokeWidth={2.5} />
-          </button>
-          
-          <button 
-            onClick={scrollNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/20 hover:bg-black/60 text-white rounded-full flex items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
-            aria-label="Next slide"
-          >
-            <ChevronRight size={28} strokeWidth={2.5} />
-          </button>
         </div>
-
-        {/* Pagination Indicators */}
-        <div className="flex justify-center gap-2.5 mt-8">
-          {scrollSnaps.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollTo(index)}
-              className={`transition-all duration-300 rounded-full h-2.5 ${
-                index === selectedIndex 
-                  ? 'w-6 bg-primary'
-                  : 'w-2.5 bg-gray-300 hover:bg-gray-400'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+        <div className="mt-6">
+          <BannerControls label="후기 배너" index={index} count={REVIEW_SLIDES.length} playing={playing} previous={previous} next={next} onToggle={() => setPlaying(!playing)} />
         </div>
-        
+        </div>
       </div>
     </section>
   );
