@@ -11,6 +11,7 @@ import { useAccessibleOverlay } from './useAccessibleOverlay';
 
 export function Header() {
   const pathname = usePathname();
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<number | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [expandedMenu, setExpandedMenu] = useState<number | null>(null);
   const mobileRef = useRef<HTMLDivElement>(null);
@@ -31,7 +32,10 @@ export function Header() {
   useEffect(() => {
     const desktop = window.matchMedia('(min-width: 1280px)');
     const closeOnDesktop = () => { if (desktop.matches) setIsMobileOpen(false); };
-    const closeOnHistoryChange = () => setIsMobileOpen(false);
+    const closeOnHistoryChange = () => {
+      setIsMobileOpen(false);
+      setOpenDesktopMenu(null);
+    };
     desktop.addEventListener('change', closeOnDesktop);
     window.addEventListener('popstate', closeOnHistoryChange);
     return () => {
@@ -88,28 +92,61 @@ export function Header() {
             </Link>
           </div>
           <nav aria-label="주 메뉴" className="hidden gap-5 xl:flex 2xl:gap-8">
-            {MENUS.map((menu) => (
-              <div key={menu.title} className="group relative">
-                <Link href={menu.href} className="text-sm font-medium text-gray-700 hover:text-black">
-                  {menu.title}
-                </Link>
-                {/* Dropdown placeholder with safe hover area */}
-                <div className="absolute -left-6 top-full hidden w-48 flex-col pt-2 group-hover:flex group-focus-within:flex">
-                  <div className="flex max-h-[calc(100dvh-7rem)] flex-col overflow-y-auto overscroll-contain rounded-md bg-white p-2 shadow-lg border border-gray-100">
-                    {menu.subMenus.map((sub) => (
-                      <Link
-                        key={sub.title}
-                        href={sub.href}
-                        aria-current={pathname === sub.href ? 'page' : undefined}
-                        className="rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 leading-snug break-keep"
-                      >
-                        {sub.title}
-                      </Link>
-                    ))}
+            {MENUS.map((menu, index) => {
+              const isOpen = openDesktopMenu === index;
+              return (
+                <div
+                  key={menu.title}
+                  className="relative"
+                  onMouseEnter={() => setOpenDesktopMenu(index)}
+                  onMouseLeave={() => setOpenDesktopMenu(null)}
+                  onFocus={(e) => {
+                    if ((e.target as HTMLElement).matches?.(':focus-visible')) {
+                      setOpenDesktopMenu(index);
+                    }
+                  }}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                      setOpenDesktopMenu(null);
+                    }
+                  }}
+                >
+                  <Link
+                    href={menu.href}
+                    onClick={(e) => {
+                      setOpenDesktopMenu(null);
+                      e.currentTarget.blur();
+                    }}
+                    className="text-sm font-medium text-gray-700 hover:text-black"
+                  >
+                    {menu.title}
+                  </Link>
+                  {/* Dropdown placeholder with safe hover area */}
+                  <div
+                    className={`absolute -left-6 top-full w-48 flex-col pt-2 ${
+                      isOpen ? 'flex' : 'hidden'
+                    }`}
+                  >
+                    <div className="flex max-h-[calc(100dvh-7rem)] flex-col overflow-y-auto overscroll-contain rounded-md bg-white p-2 shadow-lg border border-gray-100">
+                      {menu.subMenus.map((sub) => (
+                        <Link
+                          key={sub.title}
+                          href={sub.href}
+                          onClick={(e) => {
+                            setOpenDesktopMenu(null);
+                            e.currentTarget.blur();
+                          }}
+                          aria-current={pathname === sub.href ? 'page' : undefined}
+                          className="rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 leading-snug break-keep"
+                        >
+                          {sub.title}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </nav>
           
           <div className="flex items-center gap-4">
