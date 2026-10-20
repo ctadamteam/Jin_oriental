@@ -1023,14 +1023,15 @@ export function Slide11Mobile() {
         <button
           type="button"
           data-selectable-text
-          className="inline-flex items-center justify-center rounded-full bg-[#5B9FDB] hover:bg-[#498ec9] active:bg-[#3d7eb6] font-semibold text-white shadow-xs transition-colors cursor-pointer"
+          disabled
+          className="inline-flex items-center justify-center rounded-full bg-[#5B9FDB] font-semibold text-white shadow-xs opacity-70 cursor-default"
           style={{
             height: mcqw(34),
             padding: `0 ${mcqw(24)}`,
             fontSize: mcqw(14.5),
           }}
         >
-          더 자세한 답변 바로가기
+          자세한 답변 준비 중
         </button>
       </div>
     </div>

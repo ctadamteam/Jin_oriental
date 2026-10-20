@@ -30,7 +30,7 @@ export function MainHeroSection() {
     setPlaying,
     previous,
     next,
-  } = useBannerCarousel();
+  } = useBannerCarousel({ autoplayOnMobile: true, intervalMs: 5000 });
 
   const totalSlides = SLIDE_LABELS.length;
 

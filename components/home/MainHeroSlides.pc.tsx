@@ -1018,7 +1018,8 @@ export function Slide11Pc() {
         <button
           type="button"
           data-selectable-text
-          className="inline-flex items-center justify-center rounded-full bg-[#5B9FDB] hover:bg-[#498ec9] active:bg-[#3d7eb6] text-white font-['Pretendard'] font-semibold transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
+          disabled
+          className="inline-flex items-center justify-center rounded-full bg-[#5B9FDB] text-white font-['Pretendard'] font-semibold opacity-70 cursor-default"
           style={{
             width: cqw(403),
             height: cqw(59),
@@ -1026,7 +1027,7 @@ export function Slide11Pc() {
             lineHeight: cqw(41.8),
           }}
         >
-          더 자세한 답변 바로가기
+          자세한 답변 준비 중
         </button>
       </div>
     </div>
