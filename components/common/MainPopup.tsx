@@ -6,15 +6,14 @@ import { useAccessibleOverlay } from './useAccessibleOverlay';
 
 export default function MainPopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(3);
   const [isHideToday, setIsHideToday] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
-  // 페이지 마운트 시 로컬 스토리지 확인하여 노출 여부 결정 (모바일은 월별이벤트(3)를 첫 화면으로, PC는 방송안내(0) 유지)
+  // 페이지 마운트 시 로컬 스토리지 확인하여 노출 여부 결정 (PC·모바일 모두 월별이벤트(3)를 첫 화면으로 노출)
   useEffect(() => {
-    const mql = window.matchMedia('(max-width: 1023px)');
     const frame = requestAnimationFrame(() => {
-      setActiveTab(mql.matches ? 3 : 0);
+      setActiveTab(3);
       try {
         const hideUntil = localStorage.getItem('hide_main_popup_until');
         if (!hideUntil || !Number.isFinite(Number(hideUntil)) || Date.now() > Number(hideUntil)) setIsOpen(true);
@@ -23,14 +22,8 @@ export default function MainPopup() {
       }
     });
 
-    const handleMediaChange = (e: MediaQueryListEvent) => {
-      setActiveTab(e.matches ? 3 : 0);
-    };
-    mql.addEventListener('change', handleMediaChange);
-
     return () => {
       cancelAnimationFrame(frame);
-      mql.removeEventListener('change', handleMediaChange);
     };
   }, []);
 
@@ -69,12 +62,12 @@ export default function MainPopup() {
           &times;
         </button>
 
-        {/* 카테고리 바 (모바일: ①월별이벤트 ②방송안내 ③휴진안내 ④비대면 다이어트한약 / 데스크톱: 기존 순서 100% 유지) */}
+        {/* 카테고리 바 (PC·모바일 공통 순서: ①월별이벤트 ②방송안내 ③휴진안내 ④비대면 다이어트한약) */}
         <div className="w-full h-[88px] lg:h-auto lg:w-[240px] bg-primary-popup flex flex-row lg:flex-col justify-between lg:pt-0 lg:pb-6 shrink-0 select-none">
           <div className="w-full h-full lg:h-auto grid grid-cols-2 grid-rows-2 lg:flex lg:flex-col justify-start">
             <button
               onClick={() => setActiveTab(0)} aria-pressed={activeTab === 0} aria-controls="clinic-announcement-content"
-              className={`order-2 lg:order-none pr-12 lg:pr-6 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-b border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
+              className={`order-2 pr-12 lg:pr-6 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-b border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
                 activeTab === 0
                   ? 'bg-[#EEEFF1] text-primary-dark lg:rounded-r-none'
                   : 'text-white/70 hover:text-white'
@@ -84,7 +77,7 @@ export default function MainPopup() {
             </button>
             <button
               onClick={() => setActiveTab(1)} aria-pressed={activeTab === 1} aria-controls="clinic-announcement-content"
-              className={`order-3 lg:order-none h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-r border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
+              className={`order-3 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-r border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
                 activeTab === 1
                   ? 'bg-[#EEEFF1] text-primary-dark lg:rounded-r-none'
                   : 'text-white/70 hover:text-white'
@@ -94,7 +87,7 @@ export default function MainPopup() {
             </button>
             <button
               onClick={() => setActiveTab(2)} aria-pressed={activeTab === 2} aria-controls="clinic-announcement-content"
-              className={`order-4 lg:order-none h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative lg:border-none cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
+              className={`order-4 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative lg:border-none cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
                 activeTab === 2
                   ? 'bg-[#EEEFF1] text-primary-dark lg:rounded-r-none'
                   : 'text-white/70 hover:text-white'
@@ -104,7 +97,7 @@ export default function MainPopup() {
             </button>
             <button
               onClick={() => setActiveTab(3)} aria-pressed={activeTab === 3} aria-controls="clinic-announcement-content"
-              className={`order-1 lg:order-none h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-r border-b border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
+              className={`order-1 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-r border-b border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
                 activeTab === 3
                   ? 'bg-[#EEEFF1] text-primary-dark lg:rounded-r-none'
                   : 'text-white/70 hover:text-white'
