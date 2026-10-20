@@ -4,17 +4,23 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useAccessibleOverlay } from './useAccessibleOverlay';
 
+const TAB_ORDER = [3, 0, 1, 2] as const;
+const AUTO_SLIDE_INTERVAL = 5000;
+const SLIDE_DURATION = 650;
+
 export default function MainPopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(3);
+  const [outgoingTab, setOutgoingTab] = useState<number | null>(null);
+  const [timerResetKey, setTimerResetKey] = useState(0);
   const [isHideToday, setIsHideToday] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
-  // 페이지 마운트 시 로컬 스토리지 확인하여 노출 여부 결정 (모바일은 월별이벤트(3)를 첫 화면으로, PC는 방송안내(0) 유지)
+  // 페이지 마운트 시 로컬 스토리지 확인하여 노출 여부 결정 (PC·모바일 모두 월별이벤트(3)를 첫 화면으로 노출)
   useEffect(() => {
-    const mql = window.matchMedia('(max-width: 1023px)');
     const frame = requestAnimationFrame(() => {
-      setActiveTab(mql.matches ? 3 : 0);
+      setActiveTab(3);
+      setOutgoingTab(null);
       try {
         const hideUntil = localStorage.getItem('hide_main_popup_until');
         if (!hideUntil || !Number.isFinite(Number(hideUntil)) || Date.now() > Number(hideUntil)) setIsOpen(true);
@@ -23,16 +29,60 @@ export default function MainPopup() {
       }
     });
 
-    const handleMediaChange = (e: MediaQueryListEvent) => {
-      setActiveTab(e.matches ? 3 : 0);
-    };
-    mql.addEventListener('change', handleMediaChange);
-
     return () => {
       cancelAnimationFrame(frame);
-      mql.removeEventListener('change', handleMediaChange);
     };
   }, []);
+
+  // 5초마다 다음 카테고리로 자동 전환 (PC·모바일 공통, 마우스 호버와 무관하게 시간 경과 시 전환)
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const timer = window.setTimeout(() => {
+      const currentIndex = TAB_ORDER.indexOf(activeTab as (typeof TAB_ORDER)[number]);
+      const nextIndex = (currentIndex + 1) % TAB_ORDER.length;
+      const nextTab = TAB_ORDER[nextIndex];
+      setOutgoingTab(activeTab);
+      setActiveTab(nextTab);
+    }, AUTO_SLIDE_INTERVAL);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [isOpen, activeTab, timerResetKey]);
+
+  // 슬라이드 이동(650ms) 완료 후 이전 탭을 대기 위치(왼쪽 -100%)로 복귀
+  useEffect(() => {
+    if (outgoingTab === null) return;
+
+    const cleanupTimer = window.setTimeout(() => {
+      setOutgoingTab(null);
+    }, SLIDE_DURATION);
+
+    return () => {
+      window.clearTimeout(cleanupTimer);
+    };
+  }, [outgoingTab, activeTab]);
+
+  const handleSelectTab = (nextTab: number) => {
+    setTimerResetKey((prev) => prev + 1);
+    if (nextTab === activeTab) return;
+    setOutgoingTab(activeTab);
+    setActiveTab(nextTab);
+  };
+
+  const getSlidePanelClass = (tabId: number) => {
+    const baseClass = 'absolute inset-0 overflow-y-auto overscroll-contain flex flex-col will-change-transform';
+    if (tabId === activeTab) {
+      return `${baseClass} z-20 translate-x-0 opacity-100 pointer-events-auto ${
+        outgoingTab !== null ? 'transition-transform duration-[650ms] ease-in-out' : 'transition-none'
+      }`;
+    }
+    if (tabId === outgoingTab) {
+      return `${baseClass} z-10 translate-x-full opacity-100 pointer-events-none transition-transform duration-[650ms] ease-in-out`;
+    }
+    return `${baseClass} z-0 -translate-x-full opacity-0 pointer-events-none select-none transition-none`;
+  };
 
   const handleClose = () => {
     if (isHideToday) {
@@ -40,6 +90,7 @@ export default function MainPopup() {
       const expiry = new Date().getTime() + 24 * 60 * 60 * 1000;
       try { localStorage.setItem('hide_main_popup_until', expiry.toString()); } catch { /* Closing remains available when storage is blocked. */ }
     }
+    setOutgoingTab(null);
     setIsOpen(false);
   };
 
@@ -69,12 +120,12 @@ export default function MainPopup() {
           &times;
         </button>
 
-        {/* 카테고리 바 (모바일: ①월별이벤트 ②방송안내 ③휴진안내 ④비대면 다이어트한약 / 데스크톱: 기존 순서 100% 유지) */}
+        {/* 카테고리 바 (PC·모바일 공통 순서: ①월별이벤트 ②방송안내 ③휴진안내 ④비대면 다이어트한약) */}
         <div className="w-full h-[88px] lg:h-auto lg:w-[240px] bg-primary-popup flex flex-row lg:flex-col justify-between lg:pt-0 lg:pb-6 shrink-0 select-none">
           <div className="w-full h-full lg:h-auto grid grid-cols-2 grid-rows-2 lg:flex lg:flex-col justify-start">
             <button
-              onClick={() => setActiveTab(0)} aria-pressed={activeTab === 0} aria-controls="clinic-announcement-content"
-              className={`order-2 lg:order-none pr-12 lg:pr-6 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-b border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
+              onClick={() => handleSelectTab(0)} aria-pressed={activeTab === 0} aria-controls="clinic-announcement-content"
+              className={`order-2 pr-12 lg:pr-6 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-b border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
                 activeTab === 0
                   ? 'bg-[#EEEFF1] text-primary-dark lg:rounded-r-none'
                   : 'text-white/70 hover:text-white'
@@ -83,8 +134,8 @@ export default function MainPopup() {
               방송안내
             </button>
             <button
-              onClick={() => setActiveTab(1)} aria-pressed={activeTab === 1} aria-controls="clinic-announcement-content"
-              className={`order-3 lg:order-none h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-r border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
+              onClick={() => handleSelectTab(1)} aria-pressed={activeTab === 1} aria-controls="clinic-announcement-content"
+              className={`order-3 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-r border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
                 activeTab === 1
                   ? 'bg-[#EEEFF1] text-primary-dark lg:rounded-r-none'
                   : 'text-white/70 hover:text-white'
@@ -93,8 +144,8 @@ export default function MainPopup() {
               휴진안내
             </button>
             <button
-              onClick={() => setActiveTab(2)} aria-pressed={activeTab === 2} aria-controls="clinic-announcement-content"
-              className={`order-4 lg:order-none h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative lg:border-none cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
+              onClick={() => handleSelectTab(2)} aria-pressed={activeTab === 2} aria-controls="clinic-announcement-content"
+              className={`order-4 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative lg:border-none cursor-pointer whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
                 activeTab === 2
                   ? 'bg-[#EEEFF1] text-primary-dark lg:rounded-r-none'
                   : 'text-white/70 hover:text-white'
@@ -103,8 +154,8 @@ export default function MainPopup() {
               비대면 다이어트한약
             </button>
             <button
-              onClick={() => setActiveTab(3)} aria-pressed={activeTab === 3} aria-controls="clinic-announcement-content"
-              className={`order-1 lg:order-none h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-r border-b border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
+              onClick={() => handleSelectTab(3)} aria-pressed={activeTab === 3} aria-controls="clinic-announcement-content"
+              className={`order-1 h-full lg:h-auto lg:py-5 px-2 lg:px-6 flex items-center justify-center lg:block text-center lg:text-left text-xs lg:text-sm xl:text-base font-bold tracking-tight lg:tracking-normal transition-all relative border-r border-b border-white/10 lg:border-none cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${
                 activeTab === 3
                   ? 'bg-[#EEEFF1] text-primary-dark lg:rounded-r-none'
                   : 'text-white/70 hover:text-white'
@@ -129,98 +180,79 @@ export default function MainPopup() {
         <div className="min-h-0 min-w-0 flex-1 flex flex-col overflow-hidden">
 
           {/* 작은 화면에서도 콘텐츠와 하단 닫기 버튼에 접근할 수 있도록 내부 스크롤 허용 */}
-          <div id="clinic-announcement-content" className="min-h-0 flex-1 relative overflow-y-auto overscroll-contain flex flex-col">
+          <div id="clinic-announcement-content" className="min-h-0 flex-1 relative overflow-hidden">
 
             {/* ============================================================
                 1. 방송안내 탭
                ============================================================ */}
-            {activeTab === 0 && (
+            <div className={getSlidePanelClass(0)} aria-hidden={activeTab !== 0}>
               <>
-                {/* [PC 전용] 기존 레이아웃 100% 그대로 유지 */}
-                <div className="hidden lg:flex shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] lg:p-8 xl:p-9 text-white flex-row items-center justify-between relative overflow-hidden select-text">
+                {/* [PC 전용] 좌측 컬럼 상단 슬로건 통합 + 우측 인물 무자막 노출 (시안 B) */}
+                <div className="hidden lg:flex shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] lg:p-8 xl:p-9 text-white flex-row items-center justify-between relative overflow-hidden select-text bg-[#39322E]">
                   <div
-                    className="absolute inset-0 bg-cover bg-center pointer-events-none select-none"
-                    style={{ backgroundImage: "url('/images/main/popup/popup_bg_1_clean.jpg')" }}
+                    className="absolute inset-0 bg-cover bg-no-repeat bg-[position:56%_center] pointer-events-none select-none"
+                    style={{ backgroundImage: "url('/images/main/popup/261020_popup3_w.png')" }}
                   />
                   <div
                     className="absolute inset-0 pointer-events-none select-none"
                     style={{
                       backgroundImage:
-                        'linear-gradient(90deg, rgba(57, 50, 46, 0.90) 0%, rgba(57, 50, 46, 0.78) 22%, rgba(57, 50, 46, 0.48) 39%, rgba(57, 50, 46, 0.18) 52%, rgba(57, 50, 46, 0) 64%)',
+                        'linear-gradient(90deg, rgba(46, 39, 35, 0.92) 0%, rgba(46, 39, 35, 0.78) 22%, rgba(46, 39, 35, 0.35) 33%, rgba(46, 39, 35, 0.08) 40%, rgba(46, 39, 35, 0) 45%)',
                     }}
                   />
 
-                  <div className="max-w-[50%] relative z-10 flex flex-col justify-center [text-shadow:0_1px_2px_rgba(0,0,0,0.28)]">
-                    <div className="flex items-center gap-2 mb-2 flex-wrap">
-                      <span className="font-paperlogy font-extrabold italic tracking-tight bg-[#ED193A] px-2 py-0.5 rounded text-xs">
-                        KNN
-                      </span>
-                      <span className="text-xs text-blue-200/90 font-medium tracking-tight">
-                        부산경남 대표방송 메디컬 24시 닥터스
-                      </span>
-                    </div>
-
-                    <h3 className="text-2xl xl:text-[28px] font-extrabold leading-tight mb-2 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)]">
-                      김효진 대표원장 방송출연
-                    </h3>
-                    <div className="space-y-3 mb-4">
-                      <p className="flex items-center flex-wrap gap-x-2 gap-y-1 text-sm xl:text-[15px] font-bold leading-relaxed">
-                        <span className="inline-flex w-[64px] justify-center rounded-full bg-white px-2.5 py-px text-[#08325C]">주&nbsp;&nbsp;&nbsp;제</span>
-                        <span className="text-white">중년비만, 부종비만, 갱년기</span>
+                  <div className="h-full max-w-[50%] relative z-10 flex flex-col pt-6 [text-shadow:0_1px_4px_rgba(0,0,0,0.65)]">
+                    <div className="pb-3.5 border-b border-white/20">
+                      <p className="font-paperlogy font-normal text-[#E5DAC9] text-[18.5px] leading-[1.3] tracking-[-0.04em] mb-1.5">
+                        식욕억제 단계만 나눠진
+                        <br />
+                        기성한약이 아닌
                       </p>
-                      <p className="flex items-center flex-wrap gap-x-2 gap-y-1 text-sm xl:text-[15px] font-bold leading-relaxed">
-                        <span className="inline-flex w-[64px] justify-center rounded-full bg-white px-2.5 py-px text-[#08325C]">본방송</span>
-                        <span className="text-white">2024년 7월 1일(월요일) ~ 7월 5일(금요일) 오후 5시 50분</span>
+                      <p className="font-paperlogy font-extrabold text-[28px] leading-[1.2] tracking-[-0.04em]">
+                        <span className="text-[#94B8FF]">
+                          개인별 / 원인별
+                          <br />
+                          일대일 맞춤한약만
+                        </span>
+                        <span className="text-white">
+                          을
+                          <br />
+                          고집합니다
+                        </span>
                       </p>
                     </div>
 
-                    <div className="max-w-[460px] space-y-2 text-[13px] xl:text-sm leading-relaxed text-white/95 mb-5 font-normal">
-                      <p>
-                        #KNN웰빙라이프 녹음을 하고 왔습니다.
-                        <br />
-                        2024년 7월 1일 월요일부터 5일 금요일까지
-                        <br />
-                        오후 5시 50분 방송이 된다고 하네요 😘
-                      </p>
-                      <p>
-                        #중년비만 #부종비만 #갱년기에 대해
-                        <br />
-                        이야기하는 시간을 가질 수 있어서 너무 즐거운 녹음이었습니다.
-                      </p>
-                      <p className="font-semibold text-[#A4B7CC]">#진한의원 #knn주치의 #김효진원장</p>
-                    </div>
+                    <div className="mt-6 flex flex-col items-start">
+                      <div className="mb-2.5">
+                        <span className="inline-block font-paperlogy font-extrabold italic tracking-tight bg-[#ED193A] px-2 py-0.5 rounded text-xs">
+                          KNN
+                        </span>
+                      </div>
 
-                    <div>
-                      <Link
-                        href="/#jin-story"
-                        onClick={handleClose}
-                        className="inline-flex min-h-11 items-center justify-center bg-white text-blue-900 font-bold px-6 py-2.5 rounded-full text-sm shadow-md transition-all hover:scale-[1.03] cursor-pointer"
-                      >
-                        방송 바로보기
-                      </Link>
-                    </div>
-                  </div>
+                      <p className="text-[15px] xl:text-[16px] font-medium text-white/85 leading-[1.35] tracking-[-0.02em] mb-1.5">
+                        2026년 5월 21일
+                      </p>
 
-                  <div className="relative z-10 self-center text-right">
-                    <p className="font-paperlogy font-normal text-[#212121] text-[20px] xl:text-[25px] leading-[1.22] tracking-[-0.05em] mb-3">
-                      식욕억제 단계만
-                      <br />
-                      나눠진 기성한약이 아닌
-                    </p>
-                    <p className="font-paperlogy font-extrabold text-[32px] xl:text-[40px] leading-[1.13] tracking-[-0.05em]">
-                      <span className="text-[#263976]">
-                        개인별 / 원인별
+                      <h3 className="text-[38px] xl:text-[40px] font-extrabold leading-[1.2] tracking-[-0.03em] mb-2.5 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)]">
+                        KNN 닥터스
+                      </h3>
+
+                      <p className="text-[19px] xl:text-[20px] font-bold text-white/95 leading-[1.38] tracking-[-0.03em] mb-7">
+                        30대부터 60대까지
                         <br />
-                        일대일
-                        <br />
-                        맞춤한약만
-                      </span>
-                      <span className="text-[#212121]">
-                        을
-                        <br />
-                        고집합니다
-                      </span>
-                    </p>
+                        생애주기별 '순환다이어트'
+                      </p>
+
+                      <div>
+                        <Link
+                          href="/#jin-story"
+                          onClick={handleClose}
+                          className="inline-flex min-h-11 items-center justify-center bg-white text-blue-900 font-bold px-6 py-2.5 rounded-full text-sm [text-shadow:none] transition-all hover:scale-[1.03] cursor-pointer"
+                        >
+                          방송 바로보기
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -228,33 +260,33 @@ export default function MainPopup() {
                 <div className="flex lg:hidden shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] flex-col justify-between relative overflow-hidden select-text bg-[#2A2421]">
                   {/* 인물 배경 이미지 (중단 우측에 얼굴이 온전히 보이도록 배치하고 하단은 그라데이션 안으로 완전히 수렴) */}
                   <div
-                    className="absolute inset-x-0 top-[52px] h-[340px] bg-cover bg-[position:55%_10%] pointer-events-none select-none"
-                    style={{ backgroundImage: "url('/images/main/popup/popup_bg_1_clean.jpg')" }}
+                    className="absolute inset-x-0 top-0 h-[460px] bg-[length:100%_auto] bg-no-repeat bg-[position:center_-34px] pointer-events-none select-none"
+                    style={{ backgroundImage: "url('/images/main/popup/261020_popup3_h.png')" }}
                   />
-                  {/* 상단 베이지톤 소프트 연결 그라데이션 */}
+                  {/* 상단 벽지 색상(#A89182) 소프트 연결 그라데이션 */}
                   <div
-                    className="absolute inset-x-0 top-0 h-[125px] pointer-events-none select-none"
+                    className="absolute inset-x-0 top-0 h-[100px] pointer-events-none select-none"
                     style={{
                       backgroundImage:
-                        'linear-gradient(180deg, #DFD6C7 0%, #DFD6C7 48%, rgba(223, 214, 199, 0.85) 75%, rgba(223, 214, 199, 0) 100%)',
+                        'linear-gradient(180deg, #A89182 0%, rgba(168, 145, 130, 0.88) 58%, rgba(168, 145, 130, 0.45) 82%, rgba(168, 145, 130, 0) 100%)',
                     }}
                   />
-                  {/* 하단 다크 브라운 그라데이션 (들뜸 없이 바닥 #2A2421에 100% 솔리드로 밀착) */}
+                  {/* 하단 다크 브라운 그라데이션 (높이 축소 및 농도 완화) */}
                   <div
-                    className="absolute inset-x-0 bottom-0 h-[295px] pointer-events-none select-none"
+                    className="absolute inset-x-0 bottom-0 h-[210px] pointer-events-none select-none"
                     style={{
                       backgroundImage:
-                        'linear-gradient(180deg, rgba(42, 36, 33, 0) 0%, rgba(42, 36, 33, 0.15) 10%, rgba(42, 36, 33, 0.62) 22%, rgba(42, 36, 33, 0.86) 36%, rgba(42, 36, 33, 0.96) 52%, #2A2421 70%, #2A2421 100%)',
+                        'linear-gradient(180deg, rgba(42, 36, 33, 0) 0%, rgba(42, 36, 33, 0.28) 18%, rgba(42, 36, 33, 0.62) 38%, rgba(42, 36, 33, 0.82) 60%, rgba(42, 36, 33, 0.92) 82%, #2A2421 100%)',
                     }}
                   />
 
                   {/* 상단: 베이지톤 위 3줄 홍보 문구 (가운데 정렬 + 크기 확대) */}
-                  <div className="relative z-10 px-3 pt-3.5 text-center">
+                  <div className="relative z-10 px-3 pt-[18px] text-center">
                     <p className="font-paperlogy font-normal text-[#212121] text-[13px] min-[360px]:text-[13.5px] leading-[1.28] tracking-[-0.05em] mb-1">
                       식욕억제 단계만 나눠진 기성한약이 아닌
                     </p>
                     <p className="font-paperlogy font-extrabold text-[18.5px] min-[360px]:text-[20px] leading-[1.18] tracking-[-0.05em]">
-                      <span className="text-[#263976]">
+                      <span className="text-[#123960]">
                         개인별 / 원인별
                         <br />
                         일대일 맞춤한약만
@@ -263,53 +295,31 @@ export default function MainPopup() {
                     </p>
                   </div>
 
-                  {/* 하단: 기존 방송정보 문구 + 버튼 (100% 보존, 얼굴 겹침 없음) */}
-                  <div className="relative z-10 px-4 pb-3.5 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.35)]">
-                    <div className="flex items-center gap-1.5 mb-1 flex-wrap">
-                      <span className="font-paperlogy font-extrabold italic tracking-tight bg-[#ED193A] px-1.5 py-0.5 rounded text-[10px] shadow-sm">
+                  {/* 하단: 신규 방송정보 문구 + 버튼 */}
+                  <div className="relative z-10 px-4 pb-4 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.35)]">
+                    <div className="mb-2">
+                      <span className="inline-block font-paperlogy font-extrabold italic tracking-tight bg-[#ED193A] px-1.5 py-0.5 rounded text-[10px] shadow-sm">
                         KNN
                       </span>
-                      <span className="text-[10px] text-white/95 font-semibold tracking-tight [text-shadow:0_1px_4px_rgba(0,0,0,0.85)]">
-                        부산경남 대표방송 메디컬 24시 닥터스
-                      </span>
                     </div>
 
-                    <h3 className="text-[17px] min-[360px]:text-[18px] font-extrabold leading-tight mb-1.5 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
-                      김효진 대표원장 방송출연
+                    <p className="text-[12.5px] min-[360px]:text-[13px] font-medium text-white/85 leading-[1.3] tracking-[-0.02em] mb-1">
+                      2026년 5월 21일
+                    </p>
+
+                    <h3 className="text-[33px] min-[360px]:text-[34px] font-extrabold leading-[1.2] tracking-[-0.03em] mb-1.5 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+                      KNN 닥터스
                     </h3>
 
-                    <div className="space-y-1 mb-2">
-                      <p className="flex items-center flex-wrap gap-x-1.5 gap-y-0.5 text-[11px] min-[360px]:text-[11.5px] font-bold leading-snug">
-                        <span className="inline-flex w-[48px] justify-center rounded-full bg-white px-2 py-px text-[10px] text-[#08325C]">주&nbsp;&nbsp;&nbsp;제</span>
-                        <span className="text-white">중년비만, 부종비만, 갱년기</span>
-                      </p>
-                      <p className="flex items-center flex-wrap gap-x-1.5 gap-y-0.5 text-[10.5px] min-[360px]:text-[11px] font-bold leading-snug tracking-tight">
-                        <span className="inline-flex w-[48px] justify-center rounded-full bg-white px-2 py-px text-[10px] text-[#08325C]">본방송</span>
-                        <span className="text-white">2024년 7월 1일(월요일) ~ 7월 5일(금요일) 오후 5시 50분</span>
-                      </p>
-                    </div>
-
-                    <div className="space-y-1 text-[10.5px] min-[360px]:text-[11px] leading-[1.36] text-white/95 mb-2.5 font-normal">
-                      <p>
-                        #KNN웰빙라이프 녹음을 하고 왔습니다.
-                        <br />
-                        2024년 7월 1일 월요일부터 5일 금요일까지
-                        <br />
-                        오후 5시 50분 방송이 된다고 하네요 😘
-                      </p>
-                      <p>
-                        #중년비만 #부종비만 #갱년기에 대해
-                        <br />
-                        이야기하는 시간을 가질 수 있어서 너무 즐거운 녹음이었습니다.
-                      </p>
-                      <p className="font-semibold text-[#B8CCE0]">#진한의원 #knn주치의 #김효진원장</p>
-                    </div>
+                    <p className="text-[15.5px] min-[360px]:text-[16px] font-bold text-white/95 leading-[1.38] tracking-[-0.03em] whitespace-nowrap mb-4">
+                      30대부터 60대까지 생애주기별 '순환다이어트'
+                    </p>
 
                     <div>
                       <Link
                         href="/#jin-story"
                         onClick={handleClose}
-                        className="inline-flex min-h-11 items-center justify-center bg-white text-blue-900 font-bold px-5 py-1.5 rounded-full text-xs shadow-md transition-all hover:scale-[1.03] cursor-pointer"
+                        className="inline-flex min-h-11 items-center justify-center bg-white text-blue-900 font-bold px-5 py-1.5 rounded-full text-xs [text-shadow:none] transition-all hover:scale-[1.03] cursor-pointer"
                       >
                         방송 바로보기
                       </Link>
@@ -317,12 +327,12 @@ export default function MainPopup() {
                   </div>
                 </div>
               </>
-            )}
+            </div>
 
             {/* ============================================================
                 2. 휴진안내 탭
                ============================================================ */}
-            {activeTab === 1 && (
+            <div className={getSlidePanelClass(1)} aria-hidden={activeTab !== 1}>
               <div className="shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] px-3.5 lg:px-10 py-3.5 lg:py-8 relative overflow-hidden select-text bg-[#F2ECE1] lg:bg-[#F5F2EA] flex flex-col items-center justify-center lg:justify-between gap-2.5 lg:gap-0">
                 {/* [PC 전용] 기존 전체 배경 100% 유지 */}
                 <div
@@ -447,12 +457,12 @@ export default function MainPopup() {
                   진료 및 예약에 착오없으시길 바랍니다.
                 </p>
               </div>
-            )}
+            </div>
 
             {/* ============================================================
                 3. 비대면 다이어트한약 탭
                ============================================================ */}
-            {activeTab === 2 && (
+            <div className={getSlidePanelClass(2)} aria-hidden={activeTab !== 2}>
               <>
                 {/* [PC 전용] 기존 레이아웃 100% 그대로 유지 */}
                 <div className="hidden lg:flex shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] lg:p-8 xl:p-9 text-white flex-col justify-between relative overflow-hidden select-text">
@@ -513,7 +523,7 @@ export default function MainPopup() {
                     <div>
                       <Link
                         href="/reservation" onClick={handleClose}
-                        className="inline-flex min-h-11 items-center justify-center bg-white text-[#08325C] font-bold px-6 py-2.5 rounded-full text-sm shadow-md transition-all hover:scale-[1.03] cursor-pointer"
+                        className="inline-flex min-h-11 items-center justify-center bg-white text-[#08325C] font-bold px-6 py-2.5 rounded-full text-sm [text-shadow:none] transition-all hover:scale-[1.03] cursor-pointer"
                       >
                         비대면 설문지 작성하기
                       </Link>
@@ -582,7 +592,7 @@ export default function MainPopup() {
                     <div>
                       <Link
                         href="/reservation" onClick={handleClose}
-                        className="inline-flex min-h-11 items-center justify-center bg-white text-[#08325C] font-bold px-5 py-2 rounded-full text-xs shadow-md transition-all hover:scale-[1.03] cursor-pointer"
+                        className="inline-flex min-h-11 items-center justify-center bg-white text-[#08325C] font-bold px-5 py-2 rounded-full text-xs [text-shadow:none] transition-all hover:scale-[1.03] cursor-pointer"
                       >
                         비대면 설문지 작성하기
                       </Link>
@@ -590,12 +600,12 @@ export default function MainPopup() {
                   </div>
                 </div>
               </>
-            )}
+            </div>
 
             {/* ============================================================
                 4. 월별이벤트 - 가을이벤트 탭
                ============================================================ */}
-            {activeTab === 3 && (
+            <div className={getSlidePanelClass(3)} aria-hidden={activeTab !== 3}>
               <div className="shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] px-4 py-8 lg:p-10 relative overflow-hidden select-text bg-[#EAE0CC] flex flex-col items-center justify-center">
                 {/* [PC 전용] 기존 전체 배경 에셋 100% 유지 */}
                 <div
@@ -678,7 +688,7 @@ export default function MainPopup() {
                   </Link>
                 </div>
               </div>
-            )}
+            </div>
 
           </div>
 
