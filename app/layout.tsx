@@ -10,6 +10,11 @@ import { SITE_CONFIG } from "@/lib/constants/site";
 export const metadata: Metadata = {
   title: SITE_CONFIG.name,
   description: SITE_CONFIG.description,
+  verification: {
+    other: {
+      "naver-site-verification": "050aeba4061526fce2a67a81d24748bbf840c140",
+    },
+  },
 };
 
 export default function RootLayout({
