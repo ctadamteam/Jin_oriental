@@ -184,6 +184,129 @@ export const SLIDE_LABELS = [
  * - 모바일: 화면 폭에 맞춰 2줄로 자연스럽게 줄바꿈되면서 드래그·복사 100% 작동
  */
 export function Banner2HandwritingTitle({ isMobile = false }: { isMobile?: boolean }) {
+  if (isMobile) {
+    const h = 45;
+    const scale = h / 89;
+    return (
+      <h2
+        data-selectable-text
+        aria-label="한방내과 전문의는 비만을 다르게 진단합니다."
+        className="w-full flex flex-col items-center select-text cursor-text"
+        style={{ rowGap: mcqw(6) }}
+      >
+        {/* 1줄: 한방내과 전문의는 비만을 */}
+        <span
+          className="inline-flex items-center justify-center select-text cursor-text"
+          style={{ columnGap: mcqw(8) }}
+        >
+          {/* 한방내과 전문의는 (464x89) */}
+          <span
+            className="relative inline-flex items-center select-text cursor-text shrink-0"
+            style={{ width: mcqw(464 * scale), height: mcqw(h) }}
+          >
+            <img
+              src="/images/main/banners/b2_title_1.svg"
+              alt=""
+              aria-hidden="true"
+              width={464}
+              height={89}
+              draggable={false}
+              className="w-full h-full pointer-events-none select-none block"
+            />
+            <span
+              data-selectable-text
+              className="absolute inset-0 flex items-center text-transparent selection:bg-[#08325D]/20 selection:text-transparent select-text cursor-text font-bold whitespace-pre leading-none overflow-hidden"
+              style={{ fontSize: mcqw(34), letterSpacing: '-0.05em' }}
+            >
+              {'한방내과 전문의는 '}
+            </span>
+          </span>
+
+          {/* 비만을 (b2_title_2.svg 좌측 0~118 구간 클리핑) */}
+          <span
+            className="relative inline-flex items-center overflow-hidden select-text cursor-text shrink-0"
+            style={{ width: mcqw(118 * scale), height: mcqw(h) }}
+          >
+            <img
+              src="/images/main/banners/b2_title_2.svg"
+              alt=""
+              aria-hidden="true"
+              width={256}
+              height={89}
+              draggable={false}
+              className="absolute left-0 top-0 max-w-none pointer-events-none select-none block"
+              style={{ width: mcqw(256 * scale), height: mcqw(h) }}
+            />
+            <span
+              data-selectable-text
+              className="absolute inset-0 flex items-center text-transparent selection:bg-[#08325D]/20 selection:text-transparent select-text cursor-text font-bold whitespace-pre leading-none overflow-hidden"
+              style={{ fontSize: mcqw(34), letterSpacing: '-0.05em' }}
+            >
+              {'비만을 '}
+            </span>
+          </span>
+        </span>
+
+        {/* 2줄: 다르게 진단합니다. */}
+        <span
+          className="inline-flex items-center justify-center select-text cursor-text"
+          style={{ columnGap: mcqw(8) }}
+        >
+          {/* 다르게 (b2_title_2.svg 우측 120~256 구간 클리핑) */}
+          <span
+            className="relative inline-flex items-center overflow-hidden select-text cursor-text shrink-0"
+            style={{ width: mcqw(136 * scale), height: mcqw(h) }}
+          >
+            <img
+              src="/images/main/banners/b2_title_2.svg"
+              alt=""
+              aria-hidden="true"
+              width={256}
+              height={89}
+              draggable={false}
+              className="absolute top-0 max-w-none pointer-events-none select-none block"
+              style={{
+                left: mcqw(-120 * scale),
+                width: mcqw(256 * scale),
+                height: mcqw(h),
+              }}
+            />
+            <span
+              data-selectable-text
+              className="absolute inset-0 flex items-center text-transparent selection:bg-[#08325D]/20 selection:text-transparent select-text cursor-text font-bold whitespace-pre leading-none overflow-hidden"
+              style={{ fontSize: mcqw(34), letterSpacing: '-0.05em' }}
+            >
+              {'다르게 '}
+            </span>
+          </span>
+
+          {/* 진단합니다. (262x89) */}
+          <span
+            className="relative inline-flex items-center select-text cursor-text shrink-0"
+            style={{ width: mcqw(262 * scale), height: mcqw(h) }}
+          >
+            <img
+              src="/images/main/banners/b2_title_3.svg"
+              alt=""
+              aria-hidden="true"
+              width={262}
+              height={89}
+              draggable={false}
+              className="w-full h-full pointer-events-none select-none block"
+            />
+            <span
+              data-selectable-text
+              className="absolute inset-0 flex items-center text-transparent selection:bg-[#08325D]/20 selection:text-transparent select-text cursor-text font-bold whitespace-pre leading-none overflow-hidden"
+              style={{ fontSize: mcqw(34), letterSpacing: '-0.05em' }}
+            >
+              {'진단합니다.'}
+            </span>
+          </span>
+        </span>
+      </h2>
+    );
+  }
+
   const chunks = [
     {
       svg: '/images/main/banners/b2_title_1.svg',
@@ -209,16 +332,8 @@ export function Banner2HandwritingTitle({ isMobile = false }: { isMobile?: boole
     <h2
       data-selectable-text
       aria-label="한방내과 전문의는 비만을 다르게 진단합니다."
-      className={
-        isMobile
-          ? 'flex flex-wrap items-center select-text cursor-text'
-          : 'flex flex-nowrap items-center select-text cursor-text'
-      }
-      style={
-        isMobile
-          ? { columnGap: mcqw(8), rowGap: mcqw(6) }
-          : { gap: cqw(10) }
-      }
+      className="flex flex-nowrap items-center select-text cursor-text"
+      style={{ gap: cqw(10) }}
     >
       {chunks.map((chunk, i) => (
         <span key={i} className="relative inline-flex items-center select-text cursor-text">
@@ -230,13 +345,13 @@ export function Banner2HandwritingTitle({ isMobile = false }: { isMobile?: boole
             height={chunk.height}
             draggable={false}
             className="w-auto pointer-events-none select-none block"
-            style={{ height: isMobile ? mcqw(36) : cqw(89) }}
+            style={{ height: cqw(89) }}
           />
           <span
             data-selectable-text
             className="absolute inset-0 flex items-center text-transparent selection:bg-[#08325D]/20 selection:text-transparent select-text cursor-text font-bold whitespace-pre leading-none overflow-hidden"
             style={{
-              fontSize: isMobile ? mcqw(28) : cqw(64),
+              fontSize: cqw(64),
               letterSpacing: '-0.05em',
             }}
           >

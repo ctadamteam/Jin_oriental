@@ -725,75 +725,102 @@ export function Slide10Pc() {
         className="absolute flex flex-col"
         style={{
           left: '35.417%',
-          top: '27.442%',
+          top: '25.581%',
           width: cqw(1012),
           gap: cqw(15),
         }}
       >
-        {DETOX_STEPS.map((step) => (
-          <div
-            key={step.num}
-            data-selectable-text
-            className="flex overflow-hidden bg-white shadow-xs select-text cursor-text"
-            style={{
-              height: cqw(step.heightPx),
-              borderRadius: cqw(12),
-            }}
-          >
-            {/* 좌측 단계 헤더 박스 (245px) */}
-            <div
-              className="relative shrink-0 text-white font-['Pretendard'] flex items-center justify-center"
-              style={{
-                width: cqw(245),
-                backgroundColor: step.bg,
-              }}
-            >
-              <span
-                className="absolute font-semibold"
-                style={{
-                  left: cqw(19),
-                  top: cqw(16),
-                  fontSize: cqw(30),
-                  lineHeight: cqw(40),
-                  letterSpacing: cqw(-1.5),
-                }}
-              >
-                {step.num}
-              </span>
-              <h3
-                className="font-semibold text-center whitespace-pre-line"
-                style={{
-                  fontSize: cqw(25),
-                  lineHeight: cqw(36),
-                  letterSpacing: cqw(-1.25),
-                  paddingLeft: cqw(20),
-                }}
-              >
-                {step.title}
-              </h3>
-            </div>
+        {DETOX_STEPS.map((step) => {
+          const pcHeightPx = step.num === '03' ? 174 : step.heightPx;
+          const pcStep3Bullets = [
+            '감량된 몸무게를 꾸준히 편안하게 유지할 수 있도록 유지환 처방',
+            '체중 세트 포인트 정착을 위한 밀착관리',
+            '피부탄력저하ㆍ탈모ㆍ현기증ㆍ체력저하ㆍ무기력감 등을 예방하고 회복을\n도와드림.',
+          ];
 
-            {/* 우측 상세 설명 */}
+          return (
             <div
-              className="flex-1 flex items-center"
+              key={step.num}
+              data-selectable-text
+              className="flex overflow-hidden bg-white shadow-xs select-text cursor-text"
               style={{
-                paddingLeft: cqw(26),
-                paddingRight: cqw(20),
+                height: cqw(pcHeightPx),
+                borderRadius: cqw(12),
               }}
             >
-              <p
-                className="font-['Pretendard'] font-normal text-black whitespace-pre-line"
+              {/* 좌측 단계 헤더 박스 (245px) */}
+              <div
+                className="relative shrink-0 text-white font-['Pretendard'] flex items-center justify-center"
                 style={{
-                  fontSize: cqw(24),
-                  lineHeight: cqw(33),
-                  letterSpacing: cqw(-1.2),
+                  width: cqw(245),
+                  backgroundColor: step.bg,
                 }}
               >
-                {step.desc}
-              </p>
+                <span
+                  className="absolute font-semibold opacity-50"
+                  style={{
+                    left: cqw(19),
+                    top: cqw(16),
+                    fontSize: cqw(30),
+                    lineHeight: cqw(40),
+                    letterSpacing: cqw(-1.5),
+                  }}
+                >
+                  {step.num}
+                </span>
+                <h3
+                  className="font-semibold text-center whitespace-pre-line"
+                  style={{
+                    fontSize: cqw(25),
+                    lineHeight: cqw(36),
+                    letterSpacing: cqw(-1.25),
+                    paddingLeft: cqw(20),
+                  }}
+                >
+                  {step.title}
+                </h3>
+              </div>
+
+              {/* 우측 상세 설명 */}
+              <div
+                className="flex-1 flex items-center"
+                style={{
+                  paddingLeft: cqw(26),
+                  paddingRight: cqw(20),
+                }}
+              >
+                {step.num === '03' ? (
+                  <div
+                    className="w-full flex flex-col font-['Pretendard'] font-normal text-black"
+                    style={{
+                      fontSize: cqw(24),
+                      lineHeight: cqw(33),
+                      letterSpacing: cqw(-1.2),
+                    }}
+                  >
+                    {pcStep3Bullets.map((bullet, bulletIdx) => (
+                      <div key={bulletIdx} className="flex items-start">
+                        <span className="shrink-0 whitespace-pre">{'- '}</span>
+                        <span className="flex-1 whitespace-pre-line">{bullet}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p
+                    className="font-['Pretendard'] font-normal text-black whitespace-pre-line"
+                    style={{
+                      fontSize: cqw(24),
+                      lineHeight: cqw(33),
+                      letterSpacing: cqw(-1.2),
+                    }}
+                  >
+                    {step.desc}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -961,14 +988,14 @@ export function Slide11Pc() {
             </div>
           ))}
 
-          {/* 우측 하단 3D Q&A 채팅 아이콘 (571:372 @(4362, 1972) 217x173) */}
+          {/* 우측 하단 3D Q&A 채팅 아이콘 (흰색 박스 내부 우측 하단 배치) */}
           <div
             className="pointer-events-none select-none absolute"
             style={{
-              right: cqw(-8),
-              bottom: cqw(-12),
-              width: cqw(217),
-              height: cqw(173),
+              right: cqw(22),
+              bottom: cqw(18),
+              width: cqw(195),
+              height: cqw(155),
             }}
           >
             <Image

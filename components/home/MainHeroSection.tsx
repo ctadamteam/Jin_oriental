@@ -1,6 +1,6 @@
 'use client';
 
-import { Pause, Play } from 'lucide-react';
+import { BannerControls } from '../common/BannerControls';
 import { useBannerCarousel } from '../common/useBannerCarousel';
 import { CASE_BANNERS, SLIDE_LABELS } from './MainHeroShared';
 import {
@@ -28,7 +28,8 @@ export function MainHeroSection() {
     index: selectedIndex,
     playing,
     setPlaying,
-    scrollTo,
+    previous,
+    next,
   } = useBannerCarousel();
 
   const totalSlides = SLIDE_LABELS.length;
@@ -134,42 +135,16 @@ export function MainHeroSection() {
       </div>
 
       {/* 배너 하단 외부 독립 페이징 바 (이미지·문구·버튼과 1px도 겹치지 않는 깔끔한 화이트 바) */}
-      <div
-        role="group"
-        aria-label="메인 배너 페이지네이션"
-        className="w-full bg-white py-3 flex items-center justify-center"
-      >
-        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-4 py-1">
-          {SLIDE_LABELS.map((label, idx) => {
-            const isActive = idx === selectedIndex;
-            return (
-              <button
-                key={label}
-                type="button"
-                onClick={() => scrollTo(idx)}
-                aria-label={`${label} 이동`}
-                aria-current={isActive ? 'true' : undefined}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  isActive
-                    ? 'w-7 bg-[#083560]'
-                    : 'w-2.5 bg-slate-300 hover:bg-slate-400'
-                }`}
-              />
-            );
-          })}
-
-          <span aria-hidden="true" className="mx-1 h-3.5 w-px bg-slate-200" />
-
-          <button
-            type="button"
-            onClick={() => setPlaying(!playing)}
-            aria-label={playing ? '메인 배너 자동 넘김 일시정지' : '메인 배너 자동 넘김 재생'}
-            aria-pressed={!playing}
-            className="w-6 h-6 inline-flex items-center justify-center rounded-full text-slate-600 hover:text-[#083560] hover:bg-slate-100 transition-colors cursor-pointer"
-          >
-            {playing ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-          </button>
-        </div>
+      <div className="w-full bg-white py-1">
+        <BannerControls
+          label="메인 배너"
+          index={selectedIndex}
+          count={totalSlides}
+          playing={playing}
+          previous={previous}
+          next={next}
+          onToggle={() => setPlaying(!playing)}
+        />
       </div>
     </section>
   );
