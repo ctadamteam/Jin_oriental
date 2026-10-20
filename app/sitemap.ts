@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { EVENT_ITEMS } from '@/lib/constants/events';
 
 const SITE_ORIGIN = 'https://jinclinic.co.kr';
 
@@ -29,10 +30,15 @@ const PUBLISHED_PATHS = [
   '/skin-clinic/lifting',
   '/immunity-tonic/thyroid',
   '/reservation',
+  '/events',
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return PUBLISHED_PATHS.map((path) => ({
+  const paths = [
+    ...PUBLISHED_PATHS,
+    ...EVENT_ITEMS.map((event) => `/events/${event.slug}`),
+  ];
+  return paths.map((path) => ({
     url: `${SITE_ORIGIN}${path}`,
   }));
 }
