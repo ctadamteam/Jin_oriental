@@ -13,8 +13,6 @@ export default function MainPopup() {
   const [activeTab, setActiveTab] = useState(3);
   const [outgoingTab, setOutgoingTab] = useState<number | null>(null);
   const [timerResetKey, setTimerResetKey] = useState(0);
-  const [isAutoSlidePaused, setIsAutoSlidePaused] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(true);
   const [isHideToday, setIsHideToday] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -36,23 +34,11 @@ export default function MainPopup() {
     };
   }, []);
 
+  // 5초마다 다음 카테고리로 자동 전환 (PC·모바일 공통, 마우스 호버와 무관하게 시간 경과 시 전환)
   useEffect(() => {
-    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const update = () => setReducedMotion(motion.matches);
-    update();
-    motion.addEventListener('change', update);
-    return () => motion.removeEventListener('change', update);
-  }, []);
-
-  // 직접 조작하거나 모션 줄이기를 선택한 경우에는 자동 전환을 멈춥니다.
-  useEffect(() => {
-    if (!isOpen || isAutoSlidePaused || reducedMotion) return;
+    if (!isOpen) return;
 
     const timer = window.setTimeout(() => {
-      if (document.visibilityState !== 'visible') {
-        setTimerResetKey((prev) => prev + 1);
-        return;
-      }
       const currentIndex = TAB_ORDER.indexOf(activeTab as (typeof TAB_ORDER)[number]);
       const nextIndex = (currentIndex + 1) % TAB_ORDER.length;
       const nextTab = TAB_ORDER[nextIndex];
@@ -63,7 +49,7 @@ export default function MainPopup() {
     return () => {
       window.clearTimeout(timer);
     };
-  }, [isOpen, activeTab, timerResetKey, isAutoSlidePaused, reducedMotion]);
+  }, [isOpen, activeTab, timerResetKey]);
 
   // 슬라이드 이동(650ms) 완료 후 이전 탭을 대기 위치(왼쪽 -100%)로 복귀
   useEffect(() => {
@@ -86,7 +72,7 @@ export default function MainPopup() {
   };
 
   const getSlidePanelClass = (tabId: number) => {
-    const baseClass = 'absolute inset-0 overflow-y-auto overscroll-contain flex flex-col will-change-transform motion-reduce:transition-none';
+    const baseClass = 'absolute inset-0 overflow-y-auto overscroll-contain flex flex-col will-change-transform';
     if (tabId === activeTab) {
       return `${baseClass} z-20 translate-x-0 opacity-100 pointer-events-auto ${
         outgoingTab !== null ? 'transition-transform duration-[650ms] ease-in-out' : 'transition-none'
@@ -117,7 +103,7 @@ export default function MainPopup() {
   if (!isOpen) return null;
 
   return (
-    <div ref={popupRef} role="dialog" aria-modal="true" aria-label="진한의원 안내" tabIndex={-1} onPointerDownCapture={() => setIsAutoSlidePaused(true)} onKeyDownCapture={() => setIsAutoSlidePaused(true)} className="fixed inset-0 z-[90] flex items-center justify-center bg-black/65 backdrop-blur-[3px] p-3 sm:p-4 animate-fade-in motion-reduce:animate-none">
+    <div ref={popupRef} role="dialog" aria-modal="true" aria-label="진한의원 안내" tabIndex={-1} className="fixed inset-0 z-[90] flex items-center justify-center bg-black/65 backdrop-blur-[3px] p-3 sm:p-4 animate-fade-in">
       {/* 팝업 카드: 모바일 디자인을 유지하고 화면 높이에 맞춰 내부 스크롤 */}
       <div className="main-popup-root relative w-[min(360px,calc(100vw-24px))] h-[min(600px,calc(100dvh-24px))] lg:w-full lg:max-w-[1080px] lg:h-[min(600px,calc(100dvh-32px))] bg-primary-popup rounded-none overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.35)] flex flex-col lg:flex-row">
 
@@ -199,7 +185,7 @@ export default function MainPopup() {
             {/* ============================================================
                 1. 방송안내 탭
                ============================================================ */}
-            <div className={getSlidePanelClass(0)} aria-hidden={activeTab !== 0} inert={activeTab !== 0}>
+            <div className={getSlidePanelClass(0)} aria-hidden={activeTab !== 0}>
               <>
                 {/* [PC 전용] 좌측 컬럼 상단 슬로건 통합 + 우측 인물 무자막 노출 (시안 B) */}
                 <div className="hidden lg:flex shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] lg:p-8 xl:p-9 text-white flex-row items-center justify-between relative overflow-hidden select-text bg-[#39322E]">
@@ -254,7 +240,7 @@ export default function MainPopup() {
                       <p className="text-[19px] xl:text-[20px] font-bold text-white/95 leading-[1.38] tracking-[-0.03em] mb-7">
                         30대부터 60대까지
                         <br />
-                        생애주기별 &apos;순환다이어트&apos;
+                        생애주기별 '순환다이어트'
                       </p>
 
                       <div>
@@ -326,7 +312,7 @@ export default function MainPopup() {
                     </h3>
 
                     <p className="text-[15.5px] min-[360px]:text-[16px] font-bold text-white/95 leading-[1.38] tracking-[-0.03em] whitespace-nowrap mb-4">
-                      30대부터 60대까지 생애주기별 &apos;순환다이어트&apos;
+                      30대부터 60대까지 생애주기별 '순환다이어트'
                     </p>
 
                     <div>
@@ -346,7 +332,7 @@ export default function MainPopup() {
             {/* ============================================================
                 2. 휴진안내 탭
                ============================================================ */}
-            <div className={getSlidePanelClass(1)} aria-hidden={activeTab !== 1} inert={activeTab !== 1}>
+            <div className={getSlidePanelClass(1)} aria-hidden={activeTab !== 1}>
               <div className="shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] px-3.5 lg:px-10 py-3.5 lg:py-8 relative overflow-hidden select-text bg-[#F2ECE1] lg:bg-[#F5F2EA] flex flex-col items-center justify-center lg:justify-between gap-2.5 lg:gap-0">
                 {/* [PC 전용] 기존 전체 배경 100% 유지 */}
                 <div
@@ -476,7 +462,7 @@ export default function MainPopup() {
             {/* ============================================================
                 3. 비대면 다이어트한약 탭
                ============================================================ */}
-            <div className={getSlidePanelClass(2)} aria-hidden={activeTab !== 2} inert={activeTab !== 2}>
+            <div className={getSlidePanelClass(2)} aria-hidden={activeTab !== 2}>
               <>
                 {/* [PC 전용] 기존 레이아웃 100% 그대로 유지 */}
                 <div className="hidden lg:flex shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] lg:p-8 xl:p-9 text-white flex-col justify-between relative overflow-hidden select-text">
@@ -619,7 +605,7 @@ export default function MainPopup() {
             {/* ============================================================
                 4. 월별이벤트 - 가을이벤트 탭
                ============================================================ */}
-            <div className={getSlidePanelClass(3)} aria-hidden={activeTab !== 3} inert={activeTab !== 3}>
+            <div className={getSlidePanelClass(3)} aria-hidden={activeTab !== 3}>
               <div className="shrink-0 flex-1 w-full h-full min-h-[460px] lg:min-h-[548px] px-4 py-8 lg:p-10 relative overflow-hidden select-text bg-[#EAE0CC] flex flex-col items-center justify-center">
                 {/* [PC 전용] 기존 전체 배경 에셋 100% 유지 */}
                 <div
