@@ -480,7 +480,32 @@ export function Slide4Pc() {
  * 5~9번 배너 PC — PNG 기반 이미지 + 정밀 좌표 HTML 텍스트 선택/복사 오버레이
  */
 export function SlideCaseOverlayPc({ data }: { data: CaseBannerData }) {
-  const pcMetricTops = ['24.2%', '39.5%', '54.8%', '70.1%'];
+  const isSlide5 = data.id === 5;
+  const isSlide7Or9 = data.id === 7 || data.id === 9;
+
+  const badgeStyle = isSlide5
+    ? { left: '73.4%', width: '10.5%', top: '24.5%', height: '26.3%' }
+    : isSlide7Or9
+      ? { left: '72.1%', width: '9.8%', top: '25.3%', height: '24.5%' }
+      : { left: '71.7%', width: '10.4%', top: '28.2%', height: '26.2%' };
+
+  const periodStyle = isSlide5
+    ? { left: '73.4%', width: '10.5%', top: '51.5%', height: '4.2%' }
+    : isSlide7Or9
+      ? { left: '72.1%', width: '9.8%', top: '50.2%', height: '4.0%' }
+      : { left: '71.7%', width: '10.4%', top: '54.6%', height: '4.0%' };
+
+  const capsuleBox = isSlide5
+    ? { left: '71.3%', width: '14.7%', height: '5.8%' }
+    : isSlide7Or9
+      ? { left: '69.8%', width: '14.5%', height: '5.8%' }
+      : { left: '69.5%', width: '14.8%', height: '5.8%' };
+
+  const pcMetricTops = isSlide5
+    ? ['56.7%', '63.9%', '71.2%', '78.6%']
+    : isSlide7Or9
+      ? ['54.8%', '61.8%', '68.8%', '76.0%']
+      : ['59.2%', '66.3%', '73.5%', '80.7%'];
 
   return (
     <div
@@ -492,6 +517,7 @@ export function SlideCaseOverlayPc({ data }: { data: CaseBannerData }) {
         alt={`${data.title} ${data.weightLoss} 감량 사례`}
         fill
         sizes="100vw"
+        unoptimized
         draggable={false}
         className="object-contain select-none pointer-events-none"
       />
@@ -502,90 +528,132 @@ export function SlideCaseOverlayPc({ data }: { data: CaseBannerData }) {
           aria-hidden="true"
           className="pointer-events-none absolute rounded-full bg-white"
           style={{
-            left: '86.43%',
-            top: '30.55%',
-            width: cqw(5.5),
-            height: cqw(5.5),
+            left: '81.93%',
+            top: '63.45%',
+            width: cqw(3.5),
+            height: cqw(3.5),
           }}
         />
       )}
 
-      {/* 좌측 상단 서브 타이틀 & 메인 타이틀 선택 오버레이 */}
+      {/* ① 좌측 상단 서브 타이틀 ('眞' 직인 우측 손글씨 영역) */}
       <div
         data-selectable-text
-        className="absolute select-text cursor-text"
+        className="absolute flex items-center select-text cursor-text"
         style={{
-          left: '6.2%',
-          top: '19.5%',
-          width: '28%',
+          left: '19.2%',
+          top: '29.5%',
+          width: '31.0%',
+          height: '9.0%',
         }}
       >
         <p
-          className="text-transparent selection:bg-[#08325D]/20 selection:text-transparent font-medium leading-tight"
-          style={{ fontSize: cqw(24) }}
+          className="text-transparent selection:bg-[#08325D]/20 selection:text-transparent font-medium leading-none whitespace-nowrap"
+          style={{ fontSize: cqw(36) }}
         >
           {data.subTitle}
         </p>
+      </div>
+
+      {/* ② 좌측 메인 타이틀 (대형 청록색 타이틀 영역) */}
+      <div
+        data-selectable-text
+        className="absolute flex items-center select-text cursor-text"
+        style={{
+          left: '8.0%',
+          top: '50.5%',
+          width: '49.5%',
+          height: '21.5%',
+        }}
+      >
         <h2
-          className="mt-1 text-transparent selection:bg-[#08325D]/20 selection:text-transparent font-extrabold leading-[1.15]"
-          style={{ fontSize: cqw(64) }}
+          className="text-transparent selection:bg-[#08325D]/20 selection:text-transparent font-extrabold leading-none whitespace-nowrap"
+          style={{ fontSize: cqw(108), letterSpacing: '-0.04em' }}
         >
           {data.title}
         </h2>
       </div>
 
-      {/* 중앙 우측 원형 감량 배지 (-24.3kg / 감량 기간 4개월) 선택 오버레이 */}
+      {/* ③ 우측 사진 카드 상단 Before / After 라벨 */}
+      <span
+        data-selectable-text
+        className="absolute left-[61.0%] top-[13.0%] text-transparent selection:bg-white/35 selection:text-transparent font-bold italic leading-none select-text cursor-text"
+        style={{ fontSize: cqw(34) }}
+      >
+        Before
+      </span>
+      <span
+        data-selectable-text
+        className="absolute left-[87.8%] top-[13.0%] text-transparent selection:bg-white/35 selection:text-transparent font-bold italic leading-none select-text cursor-text"
+        style={{ fontSize: cqw(34) }}
+      >
+        After
+      </span>
+
+      {/* ④ 원형 감량 배지 수치 (-24.3kg 등) */}
       <div
         data-selectable-text
-        className="absolute flex flex-col items-center justify-center text-center select-text cursor-text"
-        style={{
-          left: '55.4%',
-          top: '33.5%',
-          width: '11.2%',
-          height: '33%',
-        }}
+        className="absolute flex items-center justify-center text-center select-text cursor-text"
+        style={badgeStyle}
       >
         <strong
-          className="text-transparent selection:bg-white/35 selection:text-transparent font-extrabold leading-none"
-          style={{ fontSize: cqw(46) }}
+          className="text-transparent selection:bg-white/35 selection:text-transparent font-extrabold leading-none whitespace-nowrap"
+          style={{ fontSize: cqw(44) }}
         >
           {data.weightLoss}
         </strong>
+      </div>
+
+      {/* ⑤ 감량 기간 (감량 기간 4개월 등) */}
+      <div
+        data-selectable-text
+        className="absolute flex items-center justify-center text-center select-text cursor-text"
+        style={periodStyle}
+      >
         <span
-          className="mt-2 text-transparent selection:bg-white/35 selection:text-transparent font-semibold leading-tight"
+          className="text-transparent selection:bg-white/35 selection:text-transparent font-bold leading-none whitespace-nowrap"
           style={{ fontSize: cqw(22) }}
         >
           {data.period}
         </span>
       </div>
 
-      {/* 우측 4개 체성분 수치 캡슐 선택 오버레이 */}
-      {data.metrics.map((m, idx) => (
-        <div
-          key={m.label}
-          data-selectable-text
-          className="absolute flex items-center justify-between px-4 select-text cursor-text"
-          style={{
-            left: '67.5%',
-            top: pcMetricTops[idx],
-            width: '23.2%',
-            height: '11.5%',
-          }}
-        >
-          <span
-            className="text-transparent selection:bg-white/35 selection:text-transparent font-medium"
-            style={{ fontSize: cqw(22) }}
+      {/* ⑥ 우측 사진 하단 4개 체성분 수치 캡슐 ([Before] [항목명] [After] 3열 매핑) */}
+      {data.metrics.map((m, idx) => {
+        const cleanLabel = m.label.replace(/\(.*\)/, '');
+        return (
+          <div
+            key={m.label}
+            data-selectable-text
+            className="absolute grid grid-cols-3 items-center px-[0.9%] select-text cursor-text"
+            style={{
+              left: capsuleBox.left,
+              width: capsuleBox.width,
+              height: capsuleBox.height,
+              top: pcMetricTops[idx],
+            }}
           >
-            {m.label}{' '}
-          </span>
-          <span
-            className="text-transparent selection:bg-white/35 selection:text-transparent font-bold"
-            style={{ fontSize: cqw(30) }}
-          >
-            {m.before} → {m.after}
-          </span>
-        </div>
-      ))}
+            <span
+              className="text-left text-transparent selection:bg-white/35 selection:text-transparent font-semibold leading-none whitespace-nowrap"
+              style={{ fontSize: cqw(22) }}
+            >
+              {m.before}{' '}
+            </span>
+            <span
+              className="text-center text-transparent selection:bg-white/35 selection:text-transparent font-medium leading-none whitespace-nowrap"
+              style={{ fontSize: cqw(18) }}
+            >
+              {cleanLabel}{' '}
+            </span>
+            <span
+              className="text-right text-transparent selection:bg-white/35 selection:text-transparent font-bold leading-none whitespace-nowrap"
+              style={{ fontSize: cqw(23) }}
+            >
+              {m.after}
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 }

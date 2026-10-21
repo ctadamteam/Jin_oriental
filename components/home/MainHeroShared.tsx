@@ -33,8 +33,8 @@ export type CaseBannerData = {
 export const CASE_BANNERS: CaseBannerData[] = [
   {
     id: 5,
-    pcImg: '/images/main/banners/b5_pc.png',
-    moImg: '/images/main/banners/b5_mo.png',
+    pcImg: '/images/main/banners/b5_pc.png?v=20261021',
+    moImg: '/images/main/banners/b5_mo.png?v=20261021',
     subTitle: '진한의원의 진짜 사례만 모아모아',
     title: '고도비만다이어트',
     weightLoss: '-24.3kg',

@@ -280,6 +280,19 @@ export function Slide3Mobile() {
         padding: mcqw(20),
       }}
     >
+      {/* 미세 선명화(Unsharp Mask) 필터 정의 */}
+      <svg className="pointer-events-none absolute w-0 h-0 opacity-0" aria-hidden="true">
+        <defs>
+          <filter id="b3-mo-sharpen" colorInterpolationFilters="sRGB">
+            <feConvolveMatrix
+              order="3"
+              kernelMatrix="0 -0.25 0 -0.25 2.0 -0.25 0 -0.25 0"
+              preserveAlpha="true"
+            />
+          </filter>
+        </defs>
+      </svg>
+
       <div
         className="pointer-events-none select-none absolute inset-x-0 bottom-0"
         style={{ top: mcqw(-10) }}
@@ -289,11 +302,16 @@ export function Slide3Mobile() {
           alt="진한의원 후기 배경"
           fill
           sizes="100vw"
+          unoptimized
           draggable={false}
           className="object-cover select-none pointer-events-none"
-          style={{ objectPosition: `calc(69% - ${mcqw(10)}) 0%` }}
+          style={{
+            objectPosition: `calc(69% - ${mcqw(10)}) 0%`,
+            filter: 'url(#b3-mo-sharpen) brightness(1.13) contrast(1.08)',
+          }}
         />
       </div>
+
       <div className="relative z-10 flex flex-col items-center text-center">
         <h2
           data-selectable-text
@@ -524,20 +542,20 @@ export function SlideCaseOverlayMobile({ data }: { data: CaseBannerData }) {
 
   // 배너별 원형 감량 배지 및 기간 위치 (1024x1536 원본 실측 비율)
   const badgeStyle = isSlide5
-    ? { left: '54.0%', width: '28.0%', top: '48.2%', height: '17.0%' }
+    ? { left: '36.8%', width: '26.4%', top: '48.4%', height: '17.0%' }
     : isSlide7Or9
       ? { left: '37.2%', width: '25.6%', top: '49.5%', height: '16.0%' }
       : { left: '37.2%', width: '25.6%', top: '51.2%', height: '16.0%' };
 
   const periodStyle = isSlide5
-    ? { left: '54.0%', width: '28.0%', top: '65.2%', height: '3.0%' }
+    ? { left: '36.8%', width: '26.4%', top: '65.2%', height: '3.0%' }
     : isSlide7Or9
       ? { left: '37.2%', width: '25.6%', top: '63.8%', height: '2.8%' }
       : { left: '37.2%', width: '25.6%', top: '67.3%', height: '2.8%' };
 
   // 배너별 하단 4개 체성분 캡슐 위치
   const capsuleBox = isSlide5
-    ? { left: '48.0%', width: '42.2%', height: '4.0%' }
+    ? { left: '29.2%', width: '41.6%', height: '4.0%' }
     : { left: '30.2%', width: '39.6%', height: '3.9%' };
 
   const moMetricTops = isSlide5
@@ -556,6 +574,7 @@ export function SlideCaseOverlayMobile({ data }: { data: CaseBannerData }) {
         alt={`${data.title} ${data.weightLoss} 감량 사례`}
         fill
         sizes="100vw"
+        unoptimized
         draggable={false}
         className="object-cover select-none pointer-events-none"
       />
