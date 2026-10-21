@@ -4,7 +4,15 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 type WatchDragOption = NonNullable<Parameters<typeof useEmblaCarousel>[0]>['watchDrag'];
 
-export function useBannerCarousel() {
+type BannerCarouselOptions = {
+  autoplayOnMobile?: boolean;
+  intervalMs?: number;
+};
+
+export function useBannerCarousel({
+  autoplayOnMobile = false,
+  intervalMs = 6000,
+}: BannerCarouselOptions = {}) {
   const watchDrag = useCallback< Extract<WatchDragOption, (...args: never[]) => unknown> >((_emblaApi, evt) => {
     const target = evt.target as HTMLElement | null;
     if (!target) return true;
@@ -39,30 +47,52 @@ export function useBannerCarousel() {
     watchDrag,
   });
   const [index, setIndex] = useState(0);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const update = () => setPlaying((autoplayOnMobile || desktop.matches) && !motion.matches);
+    update();
+    motion.addEventListener('change', update);
+    desktop.addEventListener('change', update);
+    return () => {
+      motion.removeEventListener('change', update);
+      desktop.removeEventListener('change', update);
+    };
+  }, [autoplayOnMobile]);
 
   useEffect(() => {
     if (!api) return;
     const select = () => setIndex(api.selectedScrollSnap());
+    const stop = () => setPlaying(false);
+    const viewport = api.rootNode();
     select();
-    api.on('select', select).on('reInit', select);
+    api.on('select', select).on('reInit', select).on('pointerDown', stop);
+    viewport.addEventListener('focusin', stop);
     return () => {
-      api.off('select', select).off('reInit', select);
+      api.off('select', select).off('reInit', select).off('pointerDown', stop);
+      viewport.removeEventListener('focusin', stop);
     };
   }, [api]);
 
-  // PC·모바일 공통 5초 자동 슬라이드 (슬라이드 이동 시 타이머가 리셋되어 자연스럽게 다음 배너로 진행)
+  // Restart the configured interval after navigation and pause behind overlays.
   useEffect(() => {
     if (!api || !playing) return;
     const timer = window.setInterval(() => {
       const selection = window.getSelection();
       const hasSelectedText = Boolean(selection && selection.toString().trim().length > 0);
-      if (document.visibilityState === 'visible' && !hasSelectedText) {
+      if (
+        document.visibilityState === 'visible' &&
+        document.body.style.overflow !== 'hidden' &&
+        !api.rootNode().closest('[inert]') &&
+        !hasSelectedText
+      ) {
         api.scrollNext();
       }
-    }, 5000);
+    }, intervalMs);
     return () => window.clearInterval(timer);
-  }, [api, playing, index]);
+  }, [api, playing, index, intervalMs]);
 
   return {
     viewportRef,
@@ -70,14 +100,16 @@ export function useBannerCarousel() {
     playing,
     setPlaying,
     previous: () => {
+      setPlaying(false);
       api?.scrollPrev();
     },
     next: () => {
+      setPlaying(false);
       api?.scrollNext();
     },
     scrollTo: (targetIndex: number) => {
+      setPlaying(false);
       api?.scrollTo(targetIndex);
     },
   };
 }
-
