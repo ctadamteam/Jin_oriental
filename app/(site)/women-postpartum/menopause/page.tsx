@@ -1,3 +1,4 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 
 const symptomGroups = [
@@ -82,6 +83,8 @@ const quickLinks = [
     phone: true,
   },
 ];
+
+export const metadata = getPageMetadata('/women-postpartum/menopause');
 
 export default function MenopausePage() {
   return (

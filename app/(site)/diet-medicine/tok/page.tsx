@@ -1,13 +1,10 @@
+import { getPageMetadata } from '@/lib/seo';
 import React from 'react';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import './tok-page.css';
 import '../../_shared/detail-page-scale.css';
 
-export const metadata: Metadata = {
-  title: '슬림톡ㆍ삭뺀다정ㆍ블랙정 | 진한의원',
-  description: '100% 순수 한약 농축 원액을 사용한 고농축 다이어트 한약. 슬림톡, 삭뺀다정, 블랙정(빼빼정) 상세 안내.',
-};
+export const metadata = getPageMetadata('/diet-medicine/tok');
 
 const ASSET_PATH = '/images/diet-medicine/tok';
 

@@ -1,13 +1,10 @@
+import { getPageMetadata } from '@/lib/seo';
 import React from 'react';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import './injection-page.css';
 import '../../_shared/detail-page-scale.css';
 
-export const metadata: Metadata = {
-  title: '지방분해시술 | 진한의원',
-  description: '셀룰라이트와 저항성 지방을 집중 관리하는 진한의원 지방분해 시술. 전기지방분해침, 체형매선, 지방분해약침, 샤인모드, 심부온열, 심부장기EMS 맞춤 안내.',
-};
+export const metadata = getPageMetadata('/diet-medicine/injection-discomfort');
 
 const ASSET_PATH = '/images/diet-medicine/injection-discomfort';
 

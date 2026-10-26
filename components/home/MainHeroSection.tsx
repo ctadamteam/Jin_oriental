@@ -40,6 +40,7 @@ export function MainHeroSection() {
       aria-roledescription="캐러셀"
       className="relative w-full bg-white"
     >
+      <h1 className="sr-only">부산 해운대 진한의원</h1>
       <div className="overflow-hidden" ref={viewportRef}>
         <div className="flex touch-pan-y">
           {/* 1번 배너 */}

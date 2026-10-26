@@ -1,14 +1,11 @@
+import { getPageMetadata } from '@/lib/seo';
 import React from 'react';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import EdemaChecklist from './EdemaChecklist';
 import './edema.css';
 import '../../_shared/detail-page-scale.css';
 
-export const metadata: Metadata = {
-  title: '부종형 비만 | 진한의원',
-  description: '몸속 수분 정체와 순환 관리. 부종과 비만의 차이, 한의학에서 바라보는 수독 치료부터 체질 맞춤 한방 치료까지 진한의원 부종형 비만 클리닉 안내.',
-};
+export const metadata = getPageMetadata('/custom-diet/edema');
 
 const ASSET_PATH = '/images/custom-diet/edema';
 

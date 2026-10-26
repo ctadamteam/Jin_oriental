@@ -1,13 +1,10 @@
+import { getPageMetadata } from '@/lib/seo';
 import React from 'react';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import './zero-page.css';
 import '../../_shared/detail-page-scale.css';
 
-export const metadata: Metadata = {
-  title: '붓기제로ㆍ배사라정 | 진한의원',
-  description: '슬림환과 함께 챙기는 붓기제로와 배사라정. 순환장애 개선을 통한 붓기 감소와 과식·회식 뱃살 관리를 위한 진한의원 다이어트 한약.',
-};
+export const metadata = getPageMetadata('/diet-medicine/zero');
 
 const ASSET_PATH = '/images/diet-medicine/zero';
 

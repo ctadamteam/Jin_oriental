@@ -1,3 +1,4 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 import '../responsive.css';
 import type { ReactNode } from 'react';
@@ -78,6 +79,8 @@ function Chat({ doctor = false, woman = false, children }: { doctor?: boolean; w
 function DecorativeTitle({ children }: { children: ReactNode }) {
   return <div className="mid-deco-title-wrap"><h2 className="mid-deco-title">{children}<span aria-hidden="true" /></h2></div>;
 }
+
+export const metadata = getPageMetadata('/custom-diet/middle-age');
 
 export default function MiddleAgeDietPage() {
   return (

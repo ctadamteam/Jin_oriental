@@ -1,12 +1,9 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import './qi-blood.css';
 import '../../_shared/detail-page-scale.css';
 
-export const metadata: Metadata = {
-  title: '기혈부족형 비만 | 진한의원',
-  description: '기혈부족형 비만의 원인과 주요 증상, 대표 한약재 및 맞춤 치료를 안내합니다.',
-};
+export const metadata = getPageMetadata('/custom-diet/qi-blood');
 
 const ASSET_PATH = '/images/custom-diet/qi-blood';
 

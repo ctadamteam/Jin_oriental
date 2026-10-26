@@ -1,3 +1,4 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 
 const programmes = [
@@ -68,6 +69,8 @@ function ProgrammeDescription({ title, description }: { title: string; descripti
   }
   return description;
 }
+
+export const metadata = getPageMetadata('/skin-clinic/lifting');
 
 export default function LiftingPage() {
   return (

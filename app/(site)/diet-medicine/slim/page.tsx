@@ -1,3 +1,4 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 import './slim-page.css';
 import '../../_shared/detail-page-scale.css';
@@ -56,6 +57,8 @@ function FeatureSprite({ variant }: { variant: SpriteVariant }) {
     </span>
   );
 }
+
+export const metadata = getPageMetadata('/diet-medicine/slim');
 
 export default function SlimDietMedicinePage() {
   return (

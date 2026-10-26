@@ -1,13 +1,9 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import './autonomic.css';
 import '../../_shared/detail-page-scale.css';
 
-export const metadata: Metadata = {
-  title: '자율신경실조형 비만 | 진한의원',
-  description:
-    '스트레스와 수면, 소화, 대사 균형을 함께 살피는 진한의원 자율신경실조형 비만 관리 안내.',
-};
+export const metadata = getPageMetadata('/custom-diet/autonomic');
 
 const ASSET_PATH = '/images/custom-diet/autonomic';
 

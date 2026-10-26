@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, ChevronDown, ChevronUp, List, ZoomIn } from 'lucide-react';
@@ -7,18 +8,50 @@ import { ImageLightbox } from '@/components/common/ImageLightbox';
 import { SubPageHero } from '@/components/subpage/SubPageHero';
 import { Breadcrumb } from '@/components/subpage/Breadcrumb';
 import { ContentSection } from '@/components/subpage/ContentSection';
+import { createPageMetadata, getPageMetadata } from '@/lib/seo';
 
-const PLACEHOLDER_SUBMENUS: Record<string, string> = {
-  notices: '공지사항',
-  'treatment-cases': '치료사례',
-  interviews: '환자인터뷰',
-};
+const PLACEHOLDER_SUBMENUS = new Map([
+  ['notices', '공지사항'],
+  ['treatment-cases', '치료사례'],
+  ['interviews', '환자인터뷰'],
+]);
 
 export function generateStaticParams() {
   return [
     ...EVENT_ITEMS.map((item) => ({ slug: item.slug })),
-    ...Object.keys(PLACEHOLDER_SUBMENUS).map((slug) => ({ slug })),
+    ...Array.from(PLACEHOLDER_SUBMENUS.keys(), (slug) => ({ slug })),
   ];
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const event = getEventBySlug(slug);
+
+  if (event) {
+    return getPageMetadata(`/events/${event.slug}`);
+  }
+
+  const placeholderTitle = PLACEHOLDER_SUBMENUS.get(slug);
+  if (placeholderTitle) {
+    return {
+      ...createPageMetadata({
+        title: `${placeholderTitle} | 진한의원`,
+        description: `진한의원 ${placeholderTitle} 콘텐츠를 준비하고 있습니다.`,
+        path: `/events/${slug}`,
+      }),
+      robots: {
+        index: false,
+        follow: true,
+        googleBot: { index: false, follow: true },
+      },
+    };
+  }
+
+  notFound();
 }
 
 export default async function EventDetailPage({
@@ -31,7 +64,7 @@ export default async function EventDetailPage({
 
   // GNB 하위 예정 메뉴(공지사항/치료사례/환자인터뷰) 접근 시 기존 준비중 화면 유지
   if (!event) {
-    const placeholderTitle = PLACEHOLDER_SUBMENUS[slug];
+    const placeholderTitle = PLACEHOLDER_SUBMENUS.get(slug);
     if (placeholderTitle) {
       return (
         <>
@@ -51,7 +84,7 @@ export default async function EventDetailPage({
   const { prev, next } = getAdjacentEvents(slug);
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <article className="mx-auto max-w-[1040px] px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         {/* 1. 상단 타이틀 / 카테고리 헤더 */}
         <header className="border-b border-gray-200 pb-6 sm:pb-8">
@@ -95,7 +128,41 @@ export default async function EventDetailPage({
           </p>
         </div>
 
-        {/* 3. 하단 이전/다음 이벤트 이동 바 & 목록보기 버튼 */}
+        <section aria-labelledby="event-details-heading" className="mx-auto mb-10 max-w-[860px] rounded-2xl border border-gray-200 bg-slate-50/60 px-5 py-6 sm:mb-14 sm:px-8 sm:py-8">
+          <h2 id="event-details-heading" className="text-xl font-bold tracking-tight text-[#08325C] sm:text-2xl">
+            프로그램 구성과 금액
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-gray-600">
+            이벤트 진행 여부와 적용 조건은 문의해 주세요.
+          </p>
+          <div className="mt-6 space-y-7">
+            {event.detailSections.map((section) => (
+              <section key={section.heading}>
+                <h3 className="mb-3 text-base font-bold text-gray-900 sm:text-lg">
+                  {section.heading}
+                </h3>
+                <dl className="divide-y divide-gray-200 border-y border-gray-200">
+                  {section.items.map((item) => (
+                    <div key={item.label} className="grid gap-1.5 py-3.5 sm:grid-cols-[minmax(0,180px)_minmax(0,1fr)] sm:gap-6">
+                      <dt className="text-sm font-semibold leading-relaxed text-gray-700 break-keep">{item.label}</dt>
+                      <dd className="min-w-0 text-sm leading-relaxed text-gray-800 break-keep [overflow-wrap:anywhere] sm:text-base">{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ))}
+          </div>
+          {event.detailNotes && (
+            <ul className="mt-5 list-disc space-y-1 pl-5 text-sm leading-relaxed text-gray-600">
+              {event.detailNotes.map((note) => <li key={note}>{note}</li>)}
+            </ul>
+          )}
+          <a href="tel:0517140040" className="mt-6 inline-flex min-h-11 items-center text-sm font-semibold text-[#08325C] underline underline-offset-4">
+            진한의원 문의 051-714-0040
+          </a>
+        </section>
+
+        {/* 하단 이전/다음 이벤트 이동 바 & 목록보기 버튼 */}
         <div className="border-t border-gray-200 pt-8 sm:pt-10">
           {/* [PC / 태블릿 가로 2분할 텍스트 네비게이션 바] */}
           <nav
@@ -221,6 +288,6 @@ export default async function EventDetailPage({
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

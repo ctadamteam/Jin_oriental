@@ -1,3 +1,4 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 
 const symptoms = [
@@ -52,6 +53,8 @@ const quickLinks = [
   { image: 'USH_24.png', title: ['온라인예약'], description: ['예약을 하시면 보다', '빠르고 편리하게', '진료를 받으실 수 있습니다.'] },
   { image: 'USH_25.png', title: ['문의및상담'], description: [], phone: true },
 ];
+
+export const metadata = getPageMetadata('/women-postpartum/miscarriage');
 
 export default function MiscarriageCarePage() {
   return (

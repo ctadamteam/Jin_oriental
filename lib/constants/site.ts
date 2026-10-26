@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   name: "진한의원",
-  description: "상호: 진한의원 / 대표원장: 김효진\n사업자등록번호: 617-36-50253",
+  description: "부산 해운대 장산역 인근 진한의원. 다이어트 한약, 개인별 맞춤 다이어트, 여성·산후, 피부, 면역·보약 진료와 진료시간·오시는 길을 안내합니다.",
   contact: {
     phoneMain: "051.714.0040",
     phoneMobile: "010.7686.0041",

@@ -1,3 +1,4 @@
+import { getPageMetadata } from '@/lib/seo';
 import { MainHeroSection } from '@/components/home/MainHeroSection';
 import { DoctorProfileSection } from '@/components/home/DoctorProfileSection';
 import { ReviewSection } from '@/components/home/ReviewSection';
@@ -10,6 +11,9 @@ import { PrescriptionCheckSection } from '@/components/home/PrescriptionCheckSec
 import { InformationSection } from '@/components/home/InformationSection';
 import MainPopup from '@/components/common/MainPopup';
 import { HomeColorScope } from '@/components/home/HomeColorScope';
+import { ClinicQuestionsSection } from '@/components/home/ClinicQuestionsSection';
+
+export const metadata = getPageMetadata('/');
 
 export default function Home() {
   return (
@@ -23,6 +27,7 @@ export default function Home() {
       {/* <BeforeAfterSection /> */}
       <JinStorySection />
       <InformationSection />
+      <ClinicQuestionsSection />
       {/* <EventMenuSection /> */}
       {/* <PrescriptionCheckSection /> */}
     </HomeColorScope>
