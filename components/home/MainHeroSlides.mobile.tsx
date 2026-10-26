@@ -481,7 +481,7 @@ export function Slide4Mobile() {
           >
             <li className="flex items-start">
               <span className="shrink-0">ㆍ</span>
-              <span>임상 20년차 한방내과 전문의</span>
+              <span>임상 19년차 한방내과 전문의</span>
             </li>
             <li className="flex items-start">
               <span className="shrink-0">ㆍ</span>
