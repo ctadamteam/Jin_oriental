@@ -1,4 +1,7 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
+
+export const metadata = getPageMetadata('/about/story');
 
 export default function StoryPage() {
   return (
@@ -6,7 +9,7 @@ export default function StoryPage() {
       {/* 1. 상단 인트로 섹션 */}
       <section className="w-full max-w-5xl mx-auto px-4 pt-20 pb-10">
         <div className="flex flex-col items-center">
-          <h2 className="text-2xl md:text-3xl font-light mb-4 text-center">나의 행복이 주변 모두의 행복으로 퍼져나가는</h2>
+          <h1 className="text-2xl md:text-3xl font-light mb-4 text-center"><span className="sr-only">진한의원 소개: </span>나의 행복이 주변 모두의 행복으로 퍼져나가는</h1>
           <div className="text-3xl md:text-4xl font-bold flex items-center mb-8">
             <span className="bg-[#08325C] text-white px-2 py-1 mr-1">행복한 진효과</span>를 아시나요?
           </div>

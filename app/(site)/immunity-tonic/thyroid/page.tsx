@@ -1,3 +1,4 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 import thyGmpImage from '../../../../img/THYROID/THY_14.png';
 import thyHerbImage from '../../../../img/THYROID/THY_15.jpg';
@@ -54,6 +55,8 @@ const causes = [
 function Dialogue({ question, answer, last = false }: { question: string; answer: React.ReactNode; last?: boolean }) {
   return <article className={`thy-dialogue ${last ? 'thy-dialogue--last' : ''}`}><Image className="thy-patient" src="/images/thyroid/THY_03.png" alt="상담 환자" width={101} height={104} unoptimized /><div className="thy-dialogue-copy"><p className="thy-question"><b>Q.</b> {question}</p><div className="thy-answer-row"><p className="thy-answer"><b>A.</b> {answer}</p><Image className="thy-doctor" src="/images/thyroid/THY_04.png" alt="진한의원 의료진" width={100} height={102} unoptimized /></div></div></article>;
 }
+
+export const metadata = getPageMetadata('/immunity-tonic/thyroid');
 
 export default function ThyroidPage() {
   return (

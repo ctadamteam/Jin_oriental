@@ -1,14 +1,11 @@
+import { getPageMetadata } from '@/lib/seo';
 import React from 'react';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import PediatricChecklist from './PediatricChecklist';
 import './pediatric.css';
 import '../../_shared/detail-page-scale.css';
 
-export const metadata: Metadata = {
-  title: '소아/청소년 비만 | 진한의원',
-  description: '성장까지 생각한 체중 관리. 소아비만 원인 분석부터 담음과 적취 개선, 성장 한약재 처방까지 진한의원 소아/청소년 맞춤 한방 관리 안내.',
-};
+export const metadata = getPageMetadata('/custom-diet/pediatric');
 
 const ASSET_PATH = '/images/custom-diet/pediatric';
 

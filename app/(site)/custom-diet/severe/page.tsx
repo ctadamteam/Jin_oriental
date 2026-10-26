@@ -1,5 +1,8 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 import '../responsive.css';
+
+export const metadata = getPageMetadata('/custom-diet/severe');
 
 export default function SevereObesityDietPage() {
   return (
@@ -368,10 +371,10 @@ function ProgramHeaderSection() {
       
       <div className="relative z-10 w-full px-6 lg:px-16">
         <h2 className="text-2xl lg:text-[35px] font-medium leading-none text-white mb-0 tracking-tight">진한의원 단계별</h2>
-        <h1 className="text-3xl font-bold text-white mb-12 tracking-tight leading-[0.92]">
+        <h2 className="text-3xl font-bold text-white mb-12 tracking-tight leading-[0.92]">
           <span className="relative top-px text-[#A4B7CC] text-4xl lg:text-[38px]">고도비만</span><br/>
           <span className="text-2xl lg:text-[35px] font-medium">다이어트 프로그램</span>
-        </h1>
+        </h2>
       
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row px-4 lg:px-8 justify-center drop-shadow-2xl">
           <div className="relative flex-1 bg-[#f0ece1] text-gray-900 flex flex-col items-center justify-center py-10 lg:py-8 lg:pl-6 lg:pr-10 [clip-path:polygon(0_0,100%_0,100%_calc(100%_-_24px),50%_100%,0_calc(100%_-_24px))] lg:[clip-path:polygon(0_0,calc(100%_-_24px)_0,100%_50%,calc(100%_-_24px)_100%,0_100%)]">

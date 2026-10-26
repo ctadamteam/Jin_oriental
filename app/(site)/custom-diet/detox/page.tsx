@@ -1,5 +1,8 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 import '../responsive.css';
+
+export const metadata = getPageMetadata('/custom-diet/detox');
 
 export default function DetoxDietPage() {
   return (

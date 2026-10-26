@@ -1,14 +1,10 @@
+import { getPageMetadata } from '@/lib/seo';
 import React from 'react';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import './hormone.css';
 import '../../_shared/detail-page-scale.css';
 
-export const metadata: Metadata = {
-  title: '호르몬 불균형 비만 | 진한의원',
-  description:
-    '호르몬 변화로 인한 비만, 자율신경과 기혈실조 개선을 통한 진한의원 호르몬 불균형 비만 맞춤 한방 치료 안내.',
-};
+export const metadata = getPageMetadata('/custom-diet/hormone');
 
 const ASSET_PATH = '/images/custom-diet/hormone';
 

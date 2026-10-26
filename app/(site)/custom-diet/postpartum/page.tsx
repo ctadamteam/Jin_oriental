@@ -1,3 +1,4 @@
+import { getPageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 import { ImageLightbox } from '@/components/common/ImageLightbox';
 import '../responsive.css';
@@ -94,6 +95,8 @@ function renderLifestyleRule(number: string, text: string) {
   if (number === '03') return <Emphasis>저녁 7시 이후로는 섭취한 음식이 거의 단순지방이 되고 부종과 역류성 식도염을 유발하므로 음식 섭취를 자제해주시는 것이 좋습니다.</Emphasis>;
   return text;
 }
+
+export const metadata = getPageMetadata('/custom-diet/postpartum');
 
 export default function PostpartumDietPage() {
   return (

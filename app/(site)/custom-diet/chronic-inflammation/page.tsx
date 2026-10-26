@@ -1,14 +1,11 @@
+import { getPageMetadata } from '@/lib/seo';
 import React from 'react';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import SelfTestGrid from './SelfTestGrid';
 import './chronic-inflammation.css';
 import '../../_shared/detail-page-scale.css';
 
-export const metadata: Metadata = {
-  title: '만성염증형 비만 | 진한의원',
-  description: '몸속에 쌓인 만성 염증 관리. 체지방 증가와 부종, 혈당 스파이크와 장누수에서 시작되는 만성 염증형 비만을 위한 진한의원 맞춤 한방 관리 안내.',
-};
+export const metadata = getPageMetadata('/custom-diet/chronic-inflammation');
 
 const ASSET_PATH = '/images/custom-diet/chronic-inflammation';
 
