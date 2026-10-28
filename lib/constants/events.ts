@@ -14,6 +14,28 @@ export const EVENTS_PER_PAGE = 9;
 
 export const EVENT_ITEMS: EventItem[] = [
   {
+    id: 8,
+    slug: 'fat-allkill-capsule',
+    title: "출시 기념 이벤트 — 농축 '지방올킬 캡슐'",
+    summary: '식욕 억제 · 체지방 연소 · 부종 개선 · 내장지방 감소 맞춤형 A/B안 특가',
+    category: 'EVENT · 다이어트',
+    image: '/images/events/event08.png',
+    width: 922,
+    height: 1382,
+    bgColor: '#DFB6FE',
+  },
+  {
+    id: 9,
+    slug: 'seasonal-immunity-kit',
+    title: '진한의원 환절기 면역키트 10+1 이벤트',
+    summary: '청폐경옥고 · 쌍화탕 · 은교산 츄어블 · 온후차 4종 구성 환절기 집중 면역 케어',
+    category: 'EVENT · 면역/보약',
+    image: '/images/events/event09.jpg',
+    width: 1086,
+    height: 1448,
+    bgColor: '#FBF3E6',
+  },
+  {
     id: 1,
     slug: 'autumn-diet',
     title: '가을시즌 맞춤 다이어트 프로그램',

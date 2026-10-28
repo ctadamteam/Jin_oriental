@@ -19,6 +19,7 @@ type InbodyCase = {
   visceralLabel: string;
   visceralDescription?: string;
   concerns: string[];
+  treatment: string;
   imageUrl: string;
   imagePositionY: number;
   markerBeforeX: number;
@@ -42,6 +43,7 @@ const INBODY_CASES: InbodyCase[] = [
     visceralLabel: '복부비만',
     visceralDescription: '내장지방레벨',
     concerns: ['소아비만', '초고도비만', '무월경', '다낭성난소증후군', '우울감'],
+    treatment: '해독프로그램 + 슬림삼총사 + 자궁미인',
     imageUrl: '/images/home/inbody/display/case-01-before-after.png',
     imagePositionY: 70,
     markerBeforeX: 46.8,
@@ -61,6 +63,7 @@ const INBODY_CASES: InbodyCase[] = [
     visceralLabel: '복부비만',
     visceralDescription: '내장지방레벨',
     concerns: ['고혈압', '고지혈증', '통풍', '3교대 근무', '과민성대장증후군'],
+    treatment: '해독프로그램 + 습담탕 + 청혈정',
     imageUrl: '/images/home/inbody/display/case-02-before-after.png',
     imagePositionY: 90,
     markerBeforeX: 37.3,
@@ -79,6 +82,7 @@ const INBODY_CASES: InbodyCase[] = [
     visceralLabel: '복부비만',
     visceralDescription: '내장지방레벨',
     concerns: ['갱년기증상(상열감, 두근거림, 안면홍조)', '갑상선기능저하증', '목디스크', '허리디스크 질환', '얼굴/손/발 부종이 심하다', '만성방광염', '자궁근종', '소화불량'],
+    treatment: '올인원 + 붓기제로 + 갱년기SOS',
     imageUrl: '/images/home/inbody/display/case-03-before-after.png',
     imagePositionY: 90,
     markerBeforeX: 31.9,
@@ -100,6 +104,7 @@ const INBODY_CASES: InbodyCase[] = [
     visceralLabel: '복부비만',
     visceralDescription: '내장지방레벨',
     concerns: ['양약/한약 다이어트 시도 경험 다수', '불면증', '대상포진', '변비', '갱년기증상(가슴 답답하고 얼굴, 상체로 땀나는 증상)', '발시림', '다리저림'],
+    treatment: '해독프로그램 + 지방올킬캡슐 + 꿀잠정',
     imageUrl: '/images/home/inbody/display/case-04-before-after.png',
     imagePositionY: 95,
     markerBeforeX: 41.5,
@@ -119,6 +124,7 @@ const INBODY_CASES: InbodyCase[] = [
     visceralLabel: '복부비만',
     visceralDescription: '내장지방레벨',
     concerns: ['소아비만', '고도비만', '생리통', '생리불순', '빈혈', '여드름', '과민성대장증후군'],
+    treatment: '슬림환 + 자궁미인 + 보기활력정',
     imageUrl: '/images/home/inbody/display/case-05-before-after.png',
     imagePositionY: 100,
     markerBeforeX: 37.4,
@@ -140,6 +146,7 @@ const INBODY_CASES: InbodyCase[] = [
     visceralLabel: '복부비만',
     visceralDescription: '내장지방레벨',
     concerns: ['지방간', '고혈압', '역류성식도염', '만성피로', '변비', '두통'],
+    treatment: '해독프로그램 + 슬림삼총사 + 공진단 + 배사라정',
     imageUrl: '/images/home/inbody/display/case-06-before-after.png',
     imagePositionY: 100,
     markerBeforeX: 33.3,
@@ -257,11 +264,22 @@ function InbodyCaseCard({ item }: { item: InbodyCase }) {
         </div>
       </div>
 
-      <div className="px-4 pb-5 pt-5 sm:px-6 sm:pb-6 xl:px-7 xl:pb-7">
+      <div className="flex flex-1 flex-col px-4 pb-5 pt-5 sm:px-6 sm:pb-6 xl:px-7 xl:pb-7">
         <p className="text-sm font-semibold text-[#123960]">내원 당시 증상</p>
         <p className="mt-1.5 break-keep text-sm font-medium leading-6 text-slate-700 [overflow-wrap:anywhere]">
-          {item.concerns.join(' · ')}
+          <span className="bg-[linear-gradient(to_top,#FFF2B1_55%,transparent_55%)] px-1 py-0.5 [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
+            {item.concerns.join(' · ')}
+          </span>
         </p>
+
+        <div className="mt-auto pt-3">
+          <div className="rounded-lg border border-[#D6EAF5] bg-[#EAF5FC] px-3 py-2 sm:px-3.5 sm:py-2">
+            <p className="text-sm font-semibold text-[#123960]">치료방법</p>
+            <p className="mt-[3px] break-keep text-sm font-medium leading-6 text-[#234B67] [overflow-wrap:anywhere]">
+              {item.treatment}
+            </p>
+          </div>
+        </div>
       </div>
     </article>
   );
@@ -298,7 +316,7 @@ export function InbodyCasesSection() {
           개인별 감량 기간과 체성분 변화를 확인해 보세요.
         </p>
 
-        <div className="mx-auto mt-12 hidden max-w-[1320px] grid-cols-2 gap-x-6 gap-y-7 md:grid xl:grid-cols-3">
+        <div className="mx-auto mt-12 hidden max-w-[1320px] auto-rows-fr grid-cols-2 gap-x-6 gap-y-7 md:grid xl:grid-cols-3">
           {INBODY_CASES.map((item) => <InbodyCaseCard key={item.id} item={item} />)}
         </div>
 
@@ -309,7 +327,7 @@ export function InbodyCasesSection() {
             className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {INBODY_CASES.map((item) => (
-              <div key={item.id} className="w-full min-w-0 shrink-0 snap-start">
+              <div key={item.id} className="flex w-full min-w-0 shrink-0 snap-start">
                 <InbodyCaseCard item={item} />
               </div>
             ))}

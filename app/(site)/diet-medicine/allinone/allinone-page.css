@@ -1,0 +1,1628 @@
+.allinone-page {
+  --aio-navy: #083560;
+  --aio-light-blue: #bcd0e8;
+  --aio-pale-blue: #c3d6ed;
+  --aio-soft-blue: #bbcfe7;
+  --aio-charcoal: #161616;
+  --aio-yellow: #fff2b1;
+  --aio-red: #e13835;
+  width: 100%;
+  overflow: clip;
+  background: #ffffff;
+  color: #161616;
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.allinone-page__content {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ==============================================================
+   [섹션 0] 상단 서브 헤딩 & 구분선 (Figma 616:435 & 616:434)
+============================================================== */
+.allinone-page__heading {
+  position: relative;
+  height: 84px;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+
+.allinone-page__heading h1 {
+  margin: 0;
+  color: #000000;
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.allinone-page__divider {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+}
+
+/* ==============================================================
+   [섹션 1] 상단 히어로 배너 (Figma 616:458 - 1440px x 588px)
+============================================================== */
+.allinone-hero {
+  position: relative;
+  width: 100%;
+  height: 588px;
+  margin-top: 12px;
+  overflow: hidden;
+  background: var(--aio-light-blue);
+}
+
+.allinone-hero__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 873px;
+  height: 588px;
+  overflow: hidden;
+}
+
+.allinone-hero__logo {
+  position: absolute;
+  top: 0;
+  left: -51px;
+  width: 310px;
+  height: 104px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.allinone-hero__photo-img {
+  width: 873px;
+  height: 588px;
+  object-fit: cover;
+  display: block;
+}
+
+.allinone-hero__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 588px;
+  height: 588px;
+  padding: 63px 68px 0 78px;
+  box-sizing: border-box;
+  background: var(--aio-navy);
+}
+
+.allinone-hero__sub {
+  margin: 0 0 6px 4px;
+  color: var(--aio-pale-blue);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 45.3px;
+  letter-spacing: -1.9px;
+}
+
+.allinone-hero__title {
+  margin: 0;
+  color: var(--aio-soft-blue);
+  font-size: 70px;
+  font-weight: 800;
+  line-height: 80px;
+  letter-spacing: -3.5px;
+}
+
+.allinone-hero__title-en {
+  font-size: 55px;
+  color: var(--aio-soft-blue);
+}
+
+.allinone-hero__title-accent {
+  display: block;
+  color: #ffffff;
+}
+
+.allinone-hero__desc {
+  margin: 35px 0 0 4px;
+  color: var(--aio-pale-blue);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+  white-space: pre-line;
+}
+
+/* ==============================================================
+   [섹션 2] 추천 대상 안내 영역 (Figma 621:470 - 1248px x 479px)
+============================================================== */
+.allinone-recommend {
+  width: 1248px;
+  margin: 165px auto 0;
+  text-align: center;
+}
+
+.allinone-recommend__title {
+  margin: 0;
+  color: #000000;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+}
+
+.allinone-recommend__title strong {
+  font-weight: 700;
+}
+
+.allinone-recommend__box {
+  width: 1248px;
+  min-height: 277px;
+  margin-top: 70px;
+  padding: 38px 43px;
+  box-sizing: border-box;
+  border: 2px solid var(--aio-navy);
+  text-align: left;
+}
+
+.allinone-recommend__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.allinone-recommend__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #000000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+}
+
+.allinone-recommend__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--aio-navy);
+  flex-shrink: 0;
+}
+
+.allinone-recommend__notice {
+  margin: 26px 0 0;
+  color: #6b6b6b;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -1.1px;
+  text-align: center;
+}
+
+/* ==============================================================
+   [섹션 3] 올인원 다이어트 캡슐 소개 & TIP 영역 (Figma 616:355 - 1440px x 1785px)
+============================================================== */
+.allinone-intro {
+  position: relative;
+  width: 1440px;
+  height: 1785px;
+  margin-top: 165px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.allinone-intro__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1568px;
+}
+
+.allinone-intro__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.allinone-intro__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1599px;
+  background: linear-gradient(
+    180deg,
+    #fafafa 13.26%,
+    rgba(250, 250, 250, 0.565) 41%,
+    rgba(250, 250, 250, 0) 69.26%
+  );
+  pointer-events: none;
+}
+
+.allinone-intro__copy {
+  position: relative;
+  z-index: 2;
+  padding-top: 133px;
+  text-align: center;
+}
+
+.allinone-intro__headline {
+  margin: 0;
+  color: var(--aio-charcoal);
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 85px;
+  letter-spacing: -3.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.allinone-intro__headline-line {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.allinone-intro__underline {
+  display: block;
+  height: 5px;
+  background: var(--aio-charcoal);
+  margin-top: 2px;
+}
+
+.allinone-intro__underline--1 {
+  width: 344px;
+}
+
+.allinone-intro__underline--2 {
+  width: 483px;
+}
+
+.allinone-intro__title {
+  margin: 26px 0 0;
+  color: var(--aio-navy);
+  font-size: 155px;
+  font-weight: 800;
+  line-height: 155px;
+  letter-spacing: -7.75px;
+  white-space: nowrap;
+}
+
+.allinone-intro__desc {
+  margin: 52px 0 0;
+  color: var(--aio-charcoal);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: -2px;
+  white-space: pre-line;
+}
+
+.allinone-intro__tip-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1440px;
+  height: 217px;
+  background: var(--aio-navy);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  padding: 0 52px;
+  box-sizing: border-box;
+}
+
+.allinone-intro__tip-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.allinone-intro__tip-badge {
+  width: 90px;
+  height: 50px;
+  border-radius: 25px;
+  background: var(--aio-soft-blue);
+  color: var(--aio-navy);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.allinone-intro__tip-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+  text-align: left;
+}
+
+/* ==============================================================
+   [섹션 4 & 5 공통] 진 올인원 캡슐 / 올인원 POWER 캡슐 프로그램
+============================================================== */
+.allinone-program {
+  width: 1440px;
+  margin-top: 144px;
+}
+
+.allinone-program--power {
+  margin-top: 157px;
+}
+
+.allinone-program__header {
+  text-align: center;
+}
+
+.allinone-program__title {
+  margin: 0;
+  color: #000000;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  white-space: pre-line;
+}
+
+.allinone-program__title strong {
+  display: block;
+  font-weight: 700;
+}
+
+.allinone-program__subtitle-wrap {
+  position: relative;
+  display: inline-block;
+  margin-top: 49px;
+}
+
+.allinone-program__highlight {
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transform: translateX(-50%);
+  height: 35px;
+  background: var(--aio-yellow);
+  z-index: 0;
+}
+
+.allinone-program__highlight--basic {
+  width: 748px;
+}
+
+.allinone-program__highlight--power {
+  width: 867px;
+}
+
+.allinone-program__subtitle {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #000000;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -2.5px;
+}
+
+.allinone-program__subtitle strong {
+  font-weight: 700;
+}
+
+/* 아침·점심·저녁 복용 비주얼 (1147px x 372px) */
+.allinone-dosage {
+  position: relative;
+  width: 1147px;
+  height: 372px;
+  margin: 33px auto 0;
+}
+
+.allinone-dosage__img {
+  width: 1147px;
+  height: 372px;
+  display: block;
+}
+
+.allinone-dosage__badge {
+  position: absolute;
+  width: 112px;
+  height: 48px;
+  border-radius: 24px;
+  background: var(--aio-navy);
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: -1.5px;
+  text-align: center;
+}
+
+/* 섹션 4 복용 뱃지 위치 */
+.allinone-dosage--basic .allinone-dosage__badge {
+  top: 279px;
+}
+.allinone-dosage--basic .allinone-dosage__badge--morning {
+  left: 220px;
+}
+.allinone-dosage--basic .allinone-dosage__badge--lunch {
+  left: 519px;
+}
+.allinone-dosage--basic .allinone-dosage__badge--dinner {
+  left: 826px;
+}
+
+/* 섹션 5 POWER 복용 뱃지 위치 */
+.allinone-dosage--power .allinone-dosage__badge {
+  top: 257px;
+}
+.allinone-dosage--power .allinone-dosage__badge--morning {
+  left: 190px;
+}
+.allinone-dosage--power .allinone-dosage__badge--lunch {
+  left: 519px;
+}
+.allinone-dosage--power .allinone-dosage__badge--dinner {
+  left: 856px;
+}
+
+/* 구성 약재 그리드 (섹션 4: 4종 / 섹션 5: 상단 2종 + 하단 3종) */
+.allinone-pills-stage {
+  position: relative;
+  width: 1440px;
+  height: 650px;
+  margin-top: 0;
+}
+
+.allinone-pill-item {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+}
+
+.allinone-pill-item__thumb {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+}
+
+.allinone-pill-item__circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #f6f6f6;
+}
+
+.allinone-pill-item__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: drop-shadow(3px 5px 1px rgba(0, 0, 0, 0.22));
+}
+
+.allinone-pill-item__img--slimtok {
+  width: 256px;
+  height: 256px;
+}
+
+.allinone-pill-item__img--immun119 {
+  width: 233px;
+  height: 233px;
+}
+
+.allinone-pill-item__img--zero {
+  width: 262px;
+  height: 262px;
+}
+
+.allinone-pill-item__img--baesara {
+  width: 231px;
+  height: 231px;
+}
+
+.allinone-pill-item__img--ikgi {
+  width: 298px;
+  height: 298px;
+}
+
+.allinone-pill-item__img--soksiwon {
+  width: 217px;
+  height: 217px;
+}
+
+.allinone-pill-item__new-badge {
+  position: absolute;
+  top: -8px;
+  left: -28px;
+  width: 91px;
+  height: 91px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allinone-pill-item__new-badge--soksiwon {
+  top: -2px;
+  left: -18px;
+}
+
+.allinone-pill-item__new-badge img {
+  position: absolute;
+  inset: 0;
+  width: 91px;
+  height: 91px;
+}
+
+.allinone-pill-item__new-badge span {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -1.5px;
+}
+
+.allinone-pill-item__info {
+  margin-left: 28px;
+  padding-top: 46px;
+  text-align: left;
+}
+
+.allinone-pill-item__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 22px;
+  border-radius: 28.5px;
+  background: var(--aio-navy);
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.allinone-pill-item__badge--slimtok {
+  min-width: 193px;
+}
+
+.allinone-pill-item__badge--default {
+  min-width: 161px;
+}
+
+.allinone-pill-item__desc {
+  margin: 14px 0 0 16px;
+  color: #000000;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  white-space: pre-line;
+}
+
+/* 섹션 4 약재 4종 좌표 (기준: dosage 하단 y=4104에서 시작) */
+.allinone-pill-item--basic-slimtok {
+  left: 118px;
+  top: 69px;
+}
+.allinone-pill-item--basic-immun119 {
+  left: 807px;
+  top: 69px;
+}
+.allinone-pill-item--basic-zero {
+  left: 118px;
+  top: 350px;
+}
+.allinone-pill-item--basic-baesara {
+  left: 807px;
+  top: 350px;
+}
+
+/* 섹션 5 약재 5종 좌표 */
+.allinone-pill-item--power-slimtok {
+  left: 118px;
+  top: 69px;
+}
+.allinone-pill-item--power-ikgi {
+  left: 807px;
+  top: 69px;
+}
+.allinone-pill-item--power-zero {
+  left: 10px;
+  top: 350px;
+}
+.allinone-pill-item--power-baesara {
+  left: 459px;
+  top: 350px;
+}
+.allinone-pill-item--power-soksiwon {
+  left: 992px;
+  top: 350px;
+}
+
+/* ==============================================================
+   [섹션 4-4 & 5-4] 이런 분들에게 추천합니다! (Figma 627:96 & 627:354)
+============================================================== */
+.allinone-target {
+  position: relative;
+  width: 1440px;
+  background: #f8f8f8;
+  padding: 48px 0 95px;
+  box-sizing: border-box;
+}
+
+.allinone-target__pill-header {
+  position: relative;
+  z-index: 2;
+  width: 581px;
+  height: 91px;
+  margin: 0 auto;
+  border-radius: 45.5px;
+  background: var(--aio-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allinone-target__pill-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: -2.5px;
+}
+
+.allinone-target__pill-title span {
+  color: var(--aio-soft-blue);
+}
+
+.allinone-target__card {
+  position: relative;
+  width: 1198px;
+  margin: -38px auto 0;
+  padding: 60px 60px 44px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 18px;
+}
+
+.allinone-target__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.allinone-target__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+}
+
+.allinone-target__upgrade {
+  position: absolute;
+  left: -153px;
+  top: -5px;
+  width: 139px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allinone-target__upgrade-pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 33.5px;
+  background: var(--aio-red);
+}
+
+.allinone-target__upgrade-tail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+}
+
+.allinone-target__upgrade-text {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -1.5px;
+}
+
+.allinone-target__num {
+  width: 52px;
+  color: var(--aio-navy);
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.allinone-target__text {
+  color: var(--aio-charcoal);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  text-align: left;
+}
+
+/* ==============================================================
+   [섹션 4-5 & 5-5] 올인원 캡슐 복용 기간별 비용안내 (Figma 627:126 & 627:382)
+============================================================== */
+.allinone-pricing {
+  width: 1440px;
+  min-height: 1048px;
+  background: var(--aio-navy);
+  padding: 108px 0 80px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.allinone-pricing__pill-header {
+  width: 707px;
+  height: 91px;
+  margin: 0 auto;
+  border-radius: 45.5px;
+  background: var(--aio-soft-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allinone-pricing__pill-title {
+  margin: 0;
+  color: var(--aio-navy);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: -2.5px;
+}
+
+.allinone-pricing__table {
+  width: 1174px;
+  margin: 99px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.allinone-pricing__row {
+  display: grid;
+  grid-template-columns: 336px 414px 414px;
+  column-gap: 5px;
+}
+
+.allinone-pricing__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.allinone-pricing__row--head .allinone-pricing__cell {
+  height: 98px;
+  background: var(--aio-soft-blue);
+  color: var(--aio-navy);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -2px;
+}
+
+.allinone-pricing__row--body .allinone-pricing__cell {
+  height: 151px;
+}
+
+.allinone-pricing__cell--period {
+  background: var(--aio-soft-blue);
+  color: var(--aio-navy);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -2px;
+}
+
+.allinone-pricing__cell--price {
+  background: #ffffff;
+  padding: 0 18px 0 28px;
+}
+
+.allinone-price-simple {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  color: var(--aio-charcoal);
+}
+
+.allinone-price-num {
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -2.5px;
+  color: var(--aio-charcoal);
+}
+
+.allinone-price-unit {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -1.75px;
+  color: var(--aio-charcoal);
+  margin-left: 4px;
+}
+
+.allinone-price-packs {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -1.75px;
+  color: var(--aio-charcoal);
+  margin-left: 4px;
+}
+
+.allinone-price-discount-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.allinone-price-discount-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.allinone-price-origin {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 21px 0 9px;
+  color: #b3b3b3;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -1.5px;
+  margin-bottom: 2px;
+}
+
+.allinone-price-strike-svg {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 92px;
+  height: 26px;
+  pointer-events: none;
+}
+
+.allinone-price-current {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.allinone-price-badge {
+  width: 94px;
+  height: 94px;
+  border-radius: 19.5px;
+  background: var(--aio-navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.allinone-price-badge__amount {
+  color: var(--aio-soft-blue);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -1.25px;
+}
+
+.allinone-price-badge__label {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -1.25px;
+}
+
+.allinone-pricing__notice {
+  margin: 18px 0 0;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -1.4px;
+  text-align: center;
+}
+
+/* ==============================================================
+   [반응형 대응 - Tablet & Mobile (1023px 이하)]
+============================================================== */
+@media (max-width: 1023px) {
+  .allinone-page__heading {
+    padding: 20px 20px 0;
+    height: 76px;
+  }
+
+  .allinone-hero {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .allinone-hero__photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 873 / 588;
+  }
+
+  .allinone-hero__photo-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .allinone-hero__logo {
+    left: -20px;
+    width: 220px;
+    height: auto;
+  }
+
+  .allinone-hero__panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 44px 32px 52px;
+  }
+
+  .allinone-recommend {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-top: 90px;
+  }
+
+  .allinone-recommend__box {
+    width: 100%;
+    min-height: auto;
+    margin-top: 40px;
+    padding: 28px 24px;
+  }
+
+  .allinone-intro {
+    width: 100%;
+    height: auto;
+    margin-top: 90px;
+  }
+
+  .allinone-intro__bg {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1440 / 1568;
+  }
+
+  .allinone-intro__gradient {
+    width: 100%;
+    height: 75%;
+  }
+
+  .allinone-intro__copy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 60px 20px 0;
+  }
+
+  .allinone-intro__title {
+    font-size: clamp(44px, 9.5vw, 96px);
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+  }
+
+  .allinone-intro__tip-bar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 28px 24px;
+  }
+
+  .allinone-program {
+    width: 100%;
+    margin-top: 90px;
+  }
+
+  .allinone-program__header {
+    padding: 0 20px;
+  }
+
+  .allinone-program__highlight--basic,
+  .allinone-program__highlight--power {
+    width: 102%;
+  }
+
+  .allinone-dosage {
+    width: calc(100% - 32px);
+    max-width: 900px;
+    height: auto;
+  }
+
+  .allinone-dosage__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .allinone-dosage--basic .allinone-dosage__badge,
+  .allinone-dosage--power .allinone-dosage__badge {
+    top: auto;
+    bottom: 11%;
+    transform: translateX(-50%);
+  }
+
+  .allinone-dosage--basic .allinone-dosage__badge--morning,
+  .allinone-dosage--power .allinone-dosage__badge--morning {
+    left: 23%;
+  }
+
+  .allinone-dosage--basic .allinone-dosage__badge--lunch,
+  .allinone-dosage--power .allinone-dosage__badge--lunch {
+    left: 50%;
+  }
+
+  .allinone-dosage--basic .allinone-dosage__badge--dinner,
+  .allinone-dosage--power .allinone-dosage__badge--dinner {
+    left: 77%;
+  }
+
+  .allinone-pills-stage {
+    width: 100%;
+    height: auto;
+    padding: 40px 24px 48px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+
+  .allinone-pill-item {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    align-items: center;
+  }
+
+  .allinone-pill-item__info {
+    padding-top: 0;
+  }
+
+  .allinone-target {
+    width: 100%;
+    padding: 48px 20px 64px;
+  }
+
+  .allinone-target__card {
+    width: 100%;
+    padding: 56px 32px 36px;
+  }
+
+  .allinone-target__upgrade {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  .allinone-pricing {
+    width: 100%;
+    min-height: auto;
+    padding: 64px 20px 56px;
+  }
+
+  .allinone-pricing__table {
+    width: 100%;
+    margin-top: 48px;
+  }
+
+  .allinone-pricing__row {
+    grid-template-columns: 24% 38% 38%;
+    column-gap: 4px;
+  }
+}
+
+/* ==============================================================
+   [모바일 전용 반응형 (767px 이하)]
+============================================================== */
+@media (max-width: 767px) {
+  .allinone-page__heading {
+    height: 60px;
+    padding: 14px 16px 0;
+  }
+
+  .allinone-page__heading h1 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
+
+  .allinone-hero__logo {
+    left: -12px;
+    width: 150px;
+  }
+
+  .allinone-hero__panel {
+    padding: 28px 20px 34px;
+  }
+
+  .allinone-hero__sub {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.9px;
+  }
+
+  .allinone-hero__title {
+    font-size: 34px;
+    line-height: 42px;
+    letter-spacing: -1.7px;
+  }
+
+  .allinone-hero__title-en {
+    font-size: 26px;
+  }
+
+  .allinone-hero__desc {
+    margin: 18px 0 0 0;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -0.6px;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  /* 섹션 2 추천 대상 */
+  .allinone-recommend {
+    margin-top: 56px;
+    padding: 0 16px;
+  }
+
+  .allinone-recommend__title {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .allinone-recommend__box {
+    margin-top: 24px;
+    padding: 20px 18px;
+  }
+
+  .allinone-recommend__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .allinone-recommend__item {
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+    word-break: keep-all;
+  }
+
+  .allinone-recommend__dot {
+    margin-top: 9px;
+  }
+
+  .allinone-recommend__notice {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+
+  /* 섹션 3 소개 & TIP */
+  .allinone-intro {
+    margin-top: 56px;
+  }
+
+  .allinone-intro__copy {
+    padding: 28px 16px 0;
+  }
+
+  .allinone-intro__headline {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1.2px;
+  }
+
+  .allinone-intro__underline {
+    height: 3px;
+  }
+
+  .allinone-intro__underline--1 {
+    width: 124px;
+  }
+
+  .allinone-intro__underline--2 {
+    width: 172px;
+  }
+
+  .allinone-intro__title {
+    margin-top: 12px;
+    font-size: clamp(32px, 9.2vw, 48px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+  }
+
+  .allinone-intro__desc {
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.7px;
+  }
+
+  .allinone-intro__tip-bar {
+    padding: 20px 16px;
+  }
+
+  .allinone-intro__tip-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .allinone-intro__tip-badge {
+    width: 56px;
+    height: 28px;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: -0.8px;
+  }
+
+  .allinone-intro__tip-text {
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: -0.7px;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  /* 섹션 4 & 5 프로그램 */
+  .allinone-program {
+    margin-top: 64px;
+  }
+
+  .allinone-program__header {
+    padding: 0 16px;
+  }
+
+  .allinone-program__title {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -1.4px;
+    word-break: keep-all;
+  }
+
+  .allinone-program__subtitle-wrap {
+    margin-top: 18px;
+  }
+
+  .allinone-program__highlight {
+    height: 14px;
+    bottom: -2px;
+  }
+
+  .allinone-program__subtitle {
+    font-size: 19px;
+    line-height: 26px;
+    letter-spacing: -0.9px;
+  }
+
+  .allinone-dosage {
+    width: calc(100% - 24px);
+    margin-top: 20px;
+  }
+
+  .allinone-dosage__badge {
+    width: 54px;
+    height: 24px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .allinone-pills-stage {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 20px 36px;
+  }
+
+  .allinone-pill-item__thumb {
+    width: 104px;
+    height: 104px;
+  }
+
+  .allinone-pill-item__circle {
+    width: 104px;
+    height: 104px;
+  }
+
+  .allinone-pill-item__img--slimtok,
+  .allinone-pill-item__img--zero {
+    width: 120px;
+    height: 120px;
+  }
+
+  .allinone-pill-item__img--immun119,
+  .allinone-pill-item__img--baesara,
+  .allinone-pill-item__img--soksiwon {
+    width: 108px;
+    height: 108px;
+  }
+
+  .allinone-pill-item__img--ikgi {
+    width: 136px;
+    height: 136px;
+  }
+
+  .allinone-pill-item__new-badge {
+    top: -4px;
+    left: -10px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .allinone-pill-item__new-badge img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .allinone-pill-item__new-badge span {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .allinone-pill-item__info {
+    margin-left: 18px;
+  }
+
+  .allinone-pill-item__badge {
+    height: 32px;
+    min-width: auto !important;
+    padding: 0 14px;
+    font-size: 17px;
+    line-height: 32px;
+    letter-spacing: -0.8px;
+  }
+
+  .allinone-pill-item__desc {
+    margin: 6px 0 0 4px;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.8px;
+  }
+
+  /* 섹션 4-4 & 5-4 추천 대상 카드 */
+  .allinone-target {
+    padding: 36px 16px 44px;
+  }
+
+  .allinone-target__pill-header {
+    width: min(100%, 300px);
+    height: 48px;
+  }
+
+  .allinone-target__pill-title {
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: -1px;
+  }
+
+  .allinone-target__card {
+    margin-top: -20px;
+    padding: 36px 18px 24px;
+    border-radius: 14px;
+  }
+
+  .allinone-target__list {
+    gap: 12px;
+  }
+
+  .allinone-target__item {
+    flex-wrap: wrap;
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .allinone-target__upgrade {
+    width: 68px;
+    height: 26px;
+    margin-right: 8px;
+    margin-top: 1px;
+  }
+
+  .allinone-target__upgrade-tail {
+    width: 26px;
+    height: 26px;
+  }
+
+  .allinone-target__upgrade-text {
+    font-size: 13px;
+    line-height: 26px;
+    letter-spacing: -0.5px;
+  }
+
+  .allinone-target__num {
+    width: 28px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+  }
+
+  .allinone-target__text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+    word-break: keep-all;
+  }
+
+  /* 섹션 4-5 & 5-5 비용 안내 표 */
+  .allinone-pricing {
+    padding: 44px 12px 44px;
+  }
+
+  .allinone-pricing__pill-header {
+    width: min(100%, 320px);
+    height: 48px;
+  }
+
+  .allinone-pricing__pill-title {
+    font-size: 21px;
+    line-height: 28px;
+    letter-spacing: -1px;
+  }
+
+  .allinone-pricing__table {
+    margin-top: 24px;
+    gap: 4px;
+  }
+
+  .allinone-pricing__row {
+    grid-template-columns: 20% 40% 40%;
+    column-gap: 3px;
+  }
+
+  .allinone-pricing__row--head .allinone-pricing__cell {
+    height: 46px;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.8px;
+  }
+
+  .allinone-pricing__row--body .allinone-pricing__cell {
+    height: auto;
+    min-height: 86px;
+    padding: 10px 6px;
+  }
+
+  .allinone-pricing__cell--period {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.8px;
+  }
+
+  .allinone-price-simple {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .allinone-price-num {
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -1px;
+  }
+
+  .allinone-price-unit,
+  .allinone-price-packs {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.6px;
+    margin-left: 2px;
+  }
+
+  .allinone-price-discount-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .allinone-price-discount-left {
+    align-items: center;
+  }
+
+  .allinone-price-origin {
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: -0.5px;
+    padding: 0 11px 0 4px;
+  }
+
+  .allinone-price-strike-svg {
+    width: 48px;
+    height: 14px;
+    top: 8px;
+  }
+
+  .allinone-price-current {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .allinone-price-badge {
+    width: auto;
+    height: auto;
+    padding: 3px 8px;
+    border-radius: 8px;
+    flex-direction: row;
+    gap: 3px;
+  }
+
+  .allinone-price-badge__amount,
+  .allinone-price-badge__label {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .allinone-pricing__notice {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.6px;
+    word-break: keep-all;
+  }
+}

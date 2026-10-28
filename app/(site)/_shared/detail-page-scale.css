@@ -11,8 +11,15 @@
 .ped-page,
 .ad-page,
 .qb-page,
-.hor-page {
+.hor-page,
+.allinone-page,
+.rb-page {
   --detail-pc-scale: 0.6944444444;
+}
+
+.diet-system-page {
+  /* Figma 실제 카드/콘텐츠 가로폭(1348px)을 PC 화면에서 정확히 1000px로 축소 */
+  --detail-pc-scale: 0.7418397626;
 }
 
 @media (min-width: 1024px) {
@@ -25,8 +32,18 @@
   .ped-page__content,
   .ad-page__content,
   .qb-page__content,
-  .hor-page__content {
+  .hor-page__content,
+  .allinone-page__content,
+  .rb-page__content {
     width: 1440px;
+    max-width: none;
+    margin-right: auto;
+    margin-left: auto;
+    zoom: var(--detail-pc-scale);
+  }
+
+  .diet-system-page__content {
+    width: 1348px;
     max-width: none;
     margin-right: auto;
     margin-left: auto;
@@ -44,7 +61,10 @@
   .ped-page__content,
   .ad-page__content,
   .qb-page__content,
-  .hor-page__content {
+  .hor-page__content,
+  .allinone-page__content,
+  .rb-page__content,
+  .diet-system-page__content {
     width: 100%;
     max-width: none;
     zoom: 1;

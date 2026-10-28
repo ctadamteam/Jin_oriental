@@ -1,0 +1,1777 @@
+.rb-page {
+  width: 100%;
+  overflow-x: clip;
+  background-color: #ffffff;
+  color: #161616;
+  font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system,
+    BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+}
+
+.rb-page__content {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  position: relative;
+}
+
+.rb-page *,
+.rb-page *::before,
+.rb-page *::after {
+  box-sizing: border-box;
+}
+
+.rb-page svg text {
+  font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system,
+    BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   상단 페이지 타이틀 및 구분선 (632:841, 632:840)
+   ========================================================================== */
+.rb-top-heading {
+  width: 1440px;
+  height: 84px;
+  padding-top: 22px;
+  position: relative;
+}
+
+.rb-top-heading__title {
+  margin: 0;
+  font-family: "Nanum Myeongjo", "Noto Serif KR", serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #000000;
+  text-align: left;
+}
+
+.rb-top-heading__divider {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  display: block;
+}
+
+/* ==========================================================================
+   SECTION 01 — 요요방지한약 히어로 영역 (632:507)
+   ========================================================================== */
+.rb-hero {
+  position: relative;
+  width: 1440px;
+  height: 588px;
+  margin-top: 12px;
+  background-color: #bcd0e8;
+  overflow: hidden;
+}
+
+.rb-hero__visual {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 948px;
+  height: 588px;
+}
+
+.rb-hero__photo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 948px;
+  height: 588px;
+  object-fit: cover;
+  display: block;
+}
+
+.rb-hero__overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 790px;
+  height: 588px;
+  background: linear-gradient(
+    130.7deg,
+    #d5bfb3 6.5%,
+    rgba(232, 222, 217, 0) 31.5%
+  );
+  pointer-events: none;
+}
+
+.rb-hero__logo {
+  position: absolute;
+  left: -51px;
+  top: 0;
+  width: 310px;
+  height: 104px;
+  object-fit: contain;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rb-hero__panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 588px;
+  height: 588px;
+  background-color: #083560;
+}
+
+.rb-hero__subtitle {
+  position: absolute;
+  left: 82px;
+  top: 61px;
+  margin: 0;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 45.35px;
+  letter-spacing: -1.9px;
+  color: #c3d6ed;
+  white-space: nowrap;
+}
+
+.rb-hero__title {
+  position: absolute;
+  left: 78px;
+  top: 112px;
+  margin: 0;
+  font-size: 88px;
+  font-weight: 800;
+  line-height: 88px;
+  letter-spacing: -4.4px;
+  white-space: nowrap;
+}
+
+.rb-hero__title-accent {
+  color: #bbcfe7;
+}
+
+.rb-hero__title-main {
+  color: #ffffff;
+}
+
+.rb-hero__desc {
+  position: absolute;
+  left: 82px;
+  top: 308px;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+  color: #c3d6ed;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   SECTION 02 — 이런 고민이 반복된다면? (639:38)
+   ========================================================================== */
+.rb-worry {
+  width: 1440px;
+  margin-top: 136px;
+}
+
+.rb-worry__title {
+  margin: 0;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+  text-align: center;
+}
+
+.rb-worry__title-bold {
+  font-weight: 700;
+}
+
+.rb-worry__grid {
+  width: 1425px;
+  margin-top: 69px;
+  margin-left: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 695px);
+  column-gap: 35px;
+  row-gap: 34px;
+}
+
+.rb-worry__card {
+  position: relative;
+  width: 695px;
+  height: 281px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+}
+
+.rb-worry__quote-svg {
+  position: absolute;
+  left: 61px;
+  top: 60px;
+  width: 66px;
+  height: 52px;
+  display: block;
+  pointer-events: none;
+}
+
+.rb-worry__text {
+  position: absolute;
+  left: 61px;
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+.rb-worry__card--multi .rb-worry__text {
+  top: 132px;
+}
+
+.rb-worry__card--single .rb-worry__text {
+  top: 172px;
+}
+
+.rb-worry__footer {
+  margin: 88px 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  text-align: center;
+}
+
+/* ==========================================================================
+   SECTION 03 — 식욕 조절부터 체중 유지까지 / 5가지 주요 특징 (643:250)
+   ========================================================================== */
+.rb-features {
+  position: relative;
+  width: 1440px;
+  height: 2237px;
+  margin-top: 156px;
+}
+
+.rb-features__visual {
+  position: relative;
+  width: 1440px;
+  height: 1657px;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+.rb-features__bg-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1439px;
+  height: 1657px;
+  object-fit: cover;
+  display: block;
+}
+
+.rb-features__wash {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1440px;
+  height: 1805px;
+  opacity: 0.7;
+  background: linear-gradient(
+    180deg,
+    #fafafa 39.06%,
+    rgba(250, 250, 250, 0.565) 66.85%,
+    rgba(250, 250, 250, 0) 86.7%
+  );
+  pointer-events: none;
+}
+
+.rb-features__copy {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.rb-features__kicker-wrap {
+  position: absolute;
+  left: 540px;
+  top: 133px;
+  width: 360px;
+}
+
+.rb-features__kicker {
+  margin: 0;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 78px;
+  letter-spacing: -3.5px;
+  color: #161616;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.rb-features__kicker-row {
+  display: block;
+  width: 360px;
+  padding-bottom: 4px;
+  border-bottom: 5px solid #161616;
+}
+
+.rb-features__kicker-row + .rb-features__kicker-row {
+  margin-top: 4px;
+}
+
+.rb-features__brand-title {
+  position: absolute;
+  left: 332px;
+  top: 331px;
+  width: 777px;
+  margin: 0;
+  font-size: 155px;
+  font-weight: 800;
+  line-height: 155px;
+  letter-spacing: -7.75px;
+  color: #083560;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.rb-features__subcopy {
+  position: absolute;
+  left: 317px;
+  top: 714px;
+  width: 807px;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: -2px;
+  color: #161616;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.rb-features__bar {
+  position: relative;
+  width: 1440px;
+  height: 580px;
+  background-color: #083560;
+  z-index: 3;
+}
+
+.rb-features__badge {
+  position: absolute;
+  left: 398px;
+  top: -35px;
+  width: 641px;
+  height: 81px;
+  border-radius: 43.5px;
+  background-color: #083560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rb-features__badge-text {
+  margin: 0;
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -2.25px;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.rb-features__badge-accent {
+  font-weight: 600;
+  color: #bbcfe7;
+}
+
+.rb-features__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 1440px;
+  height: 580px;
+}
+
+.rb-features__item {
+  position: static;
+}
+
+.rb-features__icon-box {
+  position: static;
+}
+
+.rb-features__circle {
+  position: absolute;
+  left: var(--rb-circle-left);
+  top: 95px;
+  width: 234px;
+  height: 234px;
+  border-radius: 50%;
+  background-color: #102942;
+  display: block;
+}
+
+.rb-features__icon {
+  position: absolute;
+  left: var(--rb-icon-left);
+  top: 65px;
+  width: var(--rb-icon-width);
+  height: 285px;
+  object-fit: contain;
+  display: block;
+  z-index: 1;
+}
+
+.rb-features__label {
+  position: absolute;
+  left: var(--rb-text-left);
+  top: 368px;
+  width: var(--rb-text-width);
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   SECTION 04 — 하루 한 번 유지환을 반드시 복용해야 하는 경우 (632:532)
+   ========================================================================== */
+.rb-setpoint {
+  position: relative;
+  width: 1440px;
+  height: 1649px;
+  background-color: #f4f4f4;
+  padding-top: 136px;
+}
+
+.rb-setpoint__title {
+  margin: 0;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+  text-align: center;
+}
+
+.rb-setpoint__title-bold {
+  font-weight: 700;
+}
+
+.rb-setpoint__top-card {
+  position: relative;
+  width: 1352px;
+  height: 686px;
+  margin: 66px 0 0 45px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.rb-setpoint__graphs {
+  position: static;
+}
+
+.rb-setpoint__graph-item {
+  position: absolute;
+  left: 53px;
+  width: 637px;
+  height: 261px;
+}
+
+.rb-setpoint__graph-item--top {
+  top: 72px;
+}
+
+.rb-setpoint__graph-item--bottom {
+  top: 361px;
+}
+
+.rb-setpoint__graph-svg {
+  width: 637px;
+  height: 261px;
+  display: block;
+  overflow: visible;
+}
+
+.rb-setpoint__info {
+  position: static;
+}
+
+.rb-setpoint__brain-img {
+  position: absolute;
+  left: 904px;
+  top: 54px;
+  width: 412px;
+  height: 387px;
+  object-fit: contain;
+  display: block;
+}
+
+.rb-setpoint__caption {
+  position: absolute;
+  left: 744px;
+  top: 80px;
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.rb-setpoint__caption-bold {
+  font-weight: 700;
+  color: #083560;
+}
+
+.rb-setpoint__pointer {
+  position: absolute;
+  left: 960px;
+  top: 99px;
+  width: 130px;
+  height: 110px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.rb-setpoint__checkpoint-badge {
+  position: absolute;
+  left: 740px;
+  top: 415px;
+  width: 211px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #083560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #ffffff;
+}
+
+.rb-setpoint__checkpoint-text {
+  position: absolute;
+  left: 744px;
+  top: 478px;
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+  white-space: nowrap;
+}
+
+.rb-setpoint__checkpoint-bold {
+  font-weight: 700;
+}
+
+.rb-setpoint__bottom-card {
+  position: relative;
+  width: 1352px;
+  height: 405px;
+  margin: 23px 0 0 45px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.rb-setpoint__need-badge {
+  position: absolute;
+  left: 434px;
+  top: 44px;
+  width: 481px;
+  height: 75px;
+  border-radius: 37.5px;
+  background-color: #083560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rb-setpoint__need-badge-text {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.rb-setpoint__need-badge-accent {
+  color: #bbcfe7;
+}
+
+.rb-setpoint__checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 56px;
+  top: 152px;
+}
+
+.rb-setpoint__check-item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.rb-setpoint__check-icon {
+  width: 37px;
+  height: 37px;
+  margin-right: 11px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
+.rb-setpoint__check-text {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   SECTION 05 — 급속 감량과 단계적 감량, 무엇이 다를까요? (632:555)
+   ========================================================================== */
+.rb-compare {
+  width: 1312px;
+  margin: 140px auto 0;
+}
+
+.rb-compare__title {
+  margin: 0;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+  text-align: center;
+}
+
+.rb-compare__title-bold {
+  font-weight: 700;
+}
+
+.rb-compare__box {
+  position: relative;
+  width: 1312px;
+  border-radius: 14px;
+  background-color: #f4f4f4;
+  padding-top: 50px;
+}
+
+.rb-compare__box--pt1 {
+  height: 1123px;
+  margin-top: 68px;
+}
+
+.rb-compare__box--pt2 {
+  height: 1291px;
+  margin-top: 31px;
+}
+
+.rb-compare__point-label {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -1.5px;
+  color: #083560;
+  text-align: center;
+}
+
+.rb-compare__point-title {
+  margin: 7px 0 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #000000;
+  text-align: center;
+}
+
+.rb-compare__point-accent {
+  color: #083560;
+}
+
+.rb-compare__graph-card {
+  width: 1202px;
+  height: 566px;
+  margin: 44px auto 0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.rb-compare__graph-svg {
+  width: 1202px;
+  height: 566px;
+  display: block;
+}
+
+.rb-compare__lead {
+  margin: 47px 0 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 55px;
+  letter-spacing: -2px;
+  color: #000000;
+  text-align: center;
+}
+
+.rb-compare__desc {
+  margin: 20px 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  text-align: center;
+}
+
+.rb-compare__desc--pt2 {
+  margin-top: 31px;
+}
+
+.rb-hl {
+  background: linear-gradient(
+    transparent 54%,
+    #fff2b1 54%,
+    #fff2b1 94%,
+    transparent 94%
+  );
+  padding: 0 7px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.rb-compare__closing {
+  margin: 63px 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  text-align: center;
+}
+
+/* ==========================================================================
+   SECTION 06 — 감량한 체중을 지키기 위한 3가지 관리 원칙 (646:300)
+   ========================================================================== */
+.rb-principles {
+  width: 1440px;
+  height: 1340px;
+  margin-top: 148px;
+  padding-top: 136px;
+  background-color: #f4f4f4;
+}
+
+.rb-principles__title {
+  margin: 0;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+  text-align: center;
+}
+
+.rb-principles__title-bold {
+  font-weight: 700;
+}
+
+.rb-principles__list {
+  width: 1352px;
+  margin: 68px 0 0 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.rb-principles__card {
+  position: relative;
+  width: 1352px;
+  height: 257px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.rb-principles__header {
+  position: static;
+}
+
+.rb-principles__badge {
+  position: absolute;
+  left: 50px;
+  top: 45px;
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  background-color: #083560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #ffffff;
+}
+
+.rb-principles__card-title {
+  position: absolute;
+  left: 127px;
+  top: 49px;
+  margin: 0;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -2.25px;
+  color: #083560;
+}
+
+.rb-principles__card-desc {
+  position: absolute;
+  left: 128px;
+  top: 119px;
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+/* ==========================================================================
+   TABLET & MOBILE RESPONSIVE (<= 1023px)
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .rb-page {
+    padding: 0;
+  }
+
+  .rb-page__content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .rb-top-heading {
+    width: 100%;
+    height: 76px;
+    padding: 20px 20px 0;
+  }
+
+  .rb-top-heading__title {
+    font-size: clamp(28px, 4.5vw, 36px);
+    line-height: 1.3;
+    letter-spacing: -1.4px;
+    text-align: left;
+  }
+
+  .rb-top-heading__divider {
+    width: 100%;
+  }
+
+  /* Section 01 — 직각(border-radius: 0) 풀폭 유지 */
+  .rb-hero {
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rb-hero__visual {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 852 / 588;
+  }
+
+  .rb-hero__photo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .rb-hero__overlay {
+    width: 100%;
+    height: 100%;
+  }
+
+  .rb-hero__logo {
+    left: -20px;
+    top: 0;
+    width: 220px;
+    height: auto;
+  }
+
+  .rb-hero__panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 44px 32px 52px;
+  }
+
+  .rb-hero__subtitle {
+    position: static;
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: -1px;
+    white-space: normal;
+  }
+
+  .rb-hero__title {
+    position: static;
+    margin-top: 8px;
+    font-size: clamp(42px, 8vw, 60px);
+    line-height: 1.12;
+    letter-spacing: -2.2px;
+    white-space: normal;
+  }
+
+  .rb-hero__desc {
+    position: static;
+    margin-top: 22px;
+    font-size: 17px;
+    line-height: 1.65;
+    letter-spacing: -0.7px;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  /* Section 02 */
+  .rb-worry {
+    width: 100%;
+    margin-top: 72px;
+    padding: 0 20px;
+  }
+
+  .rb-worry__title {
+    font-size: clamp(32px, 6vw, 46px);
+    line-height: 1.25;
+    letter-spacing: -1.6px;
+  }
+
+  .rb-worry__grid {
+    width: 100%;
+    margin: 36px 0 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .rb-worry__card {
+    width: 100%;
+    height: auto;
+    min-height: 156px;
+    padding: 26px 24px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .rb-worry__quote-svg {
+    position: static;
+    width: 42px;
+    height: auto;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+
+  .rb-worry__text,
+  .rb-worry__card--multi .rb-worry__text,
+  .rb-worry__card--single .rb-worry__text {
+    position: static;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.8px;
+    word-break: keep-all;
+  }
+
+  .rb-worry__footer {
+    margin-top: 40px;
+    font-size: 18px;
+    line-height: 1.65;
+    letter-spacing: -0.8px;
+    word-break: keep-all;
+  }
+
+  /* Section 03 — 직각(border-radius: 0) 풀폭 유지 */
+  .rb-features {
+    width: 100%;
+    height: auto;
+    margin-top: 76px;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .rb-features__visual {
+    width: 100%;
+    height: auto;
+    min-height: 560px;
+    padding: 52px 20px 280px;
+  }
+
+  .rb-features__bg-img {
+    width: 100%;
+    height: 100%;
+    object-position: center bottom;
+  }
+
+  .rb-features__wash {
+    width: 100%;
+    height: 100%;
+  }
+
+  .rb-features__kicker-wrap {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .rb-features__kicker {
+    font-size: clamp(28px, 5.5vw, 42px);
+    line-height: 1.25;
+    letter-spacing: -1.5px;
+  }
+
+  .rb-features__kicker-row {
+    width: 100%;
+    padding-bottom: 3px;
+    border-bottom: 3px solid #161616;
+  }
+
+  .rb-features__kicker-row + .rb-features__kicker-row {
+    margin-top: 4px;
+  }
+
+  .rb-features__brand-title {
+    position: static;
+    width: 100%;
+    margin-top: 18px;
+    font-size: clamp(52px, 10vw, 80px);
+    line-height: 1.08;
+    letter-spacing: -2.6px;
+  }
+
+  .rb-features__subcopy {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: -0.8px;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  .rb-features__bar {
+    width: 100%;
+    height: auto;
+    padding: 58px 20px 44px;
+  }
+
+  .rb-features__badge {
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 390px;
+    height: 50px;
+  }
+
+  .rb-features__badge-text {
+    font-size: 21px;
+    line-height: 1.3;
+    letter-spacing: -0.9px;
+  }
+
+  .rb-features__list {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 16px;
+  }
+
+  .rb-features__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rb-features__icon-box {
+    position: relative;
+    width: 130px;
+    height: 146px;
+  }
+
+  .rb-features__circle {
+    left: 50%;
+    top: 18px;
+    transform: translateX(-50%);
+    width: 112px;
+    height: 112px;
+  }
+
+  .rb-features__icon {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: auto;
+    height: 136px;
+  }
+
+  .rb-features__label {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16.5px;
+    line-height: 1.45;
+    letter-spacing: -0.7px;
+    white-space: normal;
+  }
+
+  /* Section 04 — 외곽 배경 직각(border-radius: 0) 풀폭 유지, 내부 카드만 10px 라운드 */
+  .rb-setpoint {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    padding: 60px 20px;
+    border-radius: 0;
+  }
+
+  .rb-setpoint__title {
+    font-size: clamp(30px, 6vw, 44px);
+    line-height: 1.28;
+    letter-spacing: -1.6px;
+  }
+
+  .rb-setpoint__top-card {
+    width: 100%;
+    height: auto;
+    margin: 36px 0 0;
+    padding: 28px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .rb-setpoint__graphs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .rb-setpoint__graph-item {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .rb-setpoint__graph-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .rb-setpoint__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .rb-setpoint__brain-img {
+    position: static;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+  }
+
+  .rb-setpoint__caption {
+    position: static;
+    margin-top: 12px;
+    font-size: 19px;
+    line-height: 1.4;
+    letter-spacing: -0.8px;
+  }
+
+  .rb-setpoint__pointer {
+    display: none;
+  }
+
+  .rb-setpoint__checkpoint-badge {
+    position: static;
+    margin-top: 20px;
+    width: auto;
+    height: 38px;
+    padding: 0 22px;
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: -0.7px;
+  }
+
+  .rb-setpoint__checkpoint-text {
+    position: static;
+    margin-top: 12px;
+    font-size: 17.5px;
+    line-height: 1.55;
+    letter-spacing: -0.7px;
+    white-space: normal;
+  }
+
+  .rb-setpoint__bottom-card {
+    width: 100%;
+    height: auto;
+    margin: 20px 0 0;
+    padding: 32px 22px;
+    border-radius: 10px;
+  }
+
+  .rb-setpoint__need-badge {
+    position: static;
+    width: 100%;
+    max-width: 320px;
+    height: 48px;
+    margin: 0 auto 24px;
+  }
+
+  .rb-setpoint__need-badge-text {
+    font-size: 21px;
+    line-height: 1.3;
+    letter-spacing: -0.9px;
+  }
+
+  .rb-setpoint__checklist {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .rb-setpoint__check-item {
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .rb-setpoint__check-icon {
+    width: 22px;
+    height: 22px;
+    margin-top: 3px;
+    margin-right: 10px;
+  }
+
+  .rb-setpoint__check-text {
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.7px;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  /* Section 05 */
+  .rb-compare {
+    width: 100%;
+    margin-top: 72px;
+    padding: 0 20px;
+  }
+
+  .rb-compare__title {
+    font-size: clamp(30px, 6vw, 44px);
+    line-height: 1.28;
+    letter-spacing: -1.6px;
+  }
+
+  .rb-compare__box,
+  .rb-compare__box--pt1,
+  .rb-compare__box--pt2 {
+    width: 100%;
+    height: auto;
+    margin-top: 28px;
+    padding: 32px 20px 36px;
+    border-radius: 14px;
+  }
+
+  .rb-compare__point-label {
+    font-size: 17px;
+    line-height: 1.3;
+    letter-spacing: -0.7px;
+  }
+
+  .rb-compare__point-title {
+    margin-top: 6px;
+    font-size: clamp(22px, 4.8vw, 28px);
+    line-height: 1.35;
+    letter-spacing: -1px;
+    word-break: keep-all;
+  }
+
+  .rb-compare__graph-card {
+    width: 100%;
+    height: auto;
+    margin-top: 22px;
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .rb-compare__graph-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .rb-compare__lead {
+    margin-top: 24px;
+    font-size: 19.5px;
+    line-height: 1.55;
+    letter-spacing: -0.8px;
+    word-break: keep-all;
+  }
+
+  .rb-compare__desc,
+  .rb-compare__desc--pt2 {
+    margin-top: 16px;
+    font-size: 17px;
+    line-height: 1.68;
+    letter-spacing: -0.7px;
+    word-break: keep-all;
+  }
+
+  .rb-compare__closing {
+    margin-top: 36px;
+    font-size: 17px;
+    line-height: 1.68;
+    letter-spacing: -0.7px;
+    word-break: keep-all;
+  }
+
+  /* Section 06 — 외곽 배경 직각(border-radius: 0) 풀폭 유지, 내부 카드만 10px 라운드 */
+  .rb-principles {
+    width: 100%;
+    height: auto;
+    margin-top: 72px;
+    padding: 60px 20px;
+    border-radius: 0;
+  }
+
+  .rb-principles__title {
+    font-size: clamp(30px, 6vw, 44px);
+    line-height: 1.28;
+    letter-spacing: -1.6px;
+  }
+
+  .rb-principles__list {
+    width: 100%;
+    margin: 36px 0 0;
+    gap: 16px;
+  }
+
+  .rb-principles__card {
+    width: 100%;
+    height: auto;
+    padding: 26px 22px;
+    border-radius: 10px;
+  }
+
+  .rb-principles__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .rb-principles__badge {
+    position: static;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    font-size: 19px;
+    line-height: 1;
+    letter-spacing: -0.8px;
+    flex-shrink: 0;
+  }
+
+  .rb-principles__card-title {
+    position: static;
+    font-size: 22px;
+    line-height: 1.35;
+    letter-spacing: -1px;
+  }
+
+  .rb-principles__card-desc {
+    position: static;
+    margin-top: 12px;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: -0.7px;
+    word-break: keep-all;
+  }
+}
+
+/* ==========================================================================
+   MOBILE PHONE BREAKPOINT (<= 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .rb-page {
+    padding: 0;
+  }
+
+  .rb-top-heading {
+    height: 60px;
+    padding: 14px 16px 0;
+  }
+
+  .rb-top-heading__title {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1px;
+  }
+
+  .rb-hero__logo {
+    left: -12px;
+    width: 150px;
+  }
+
+  .rb-hero__panel {
+    padding: 28px 20px 34px;
+  }
+
+  .rb-hero__subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.9px;
+  }
+
+  .rb-hero__title {
+    margin-top: 6px;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -1.8px;
+  }
+
+  .rb-hero__desc {
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -0.6px;
+  }
+
+  .rb-hero__desc br {
+    display: none;
+  }
+
+  /* Section 02 */
+  .rb-worry {
+    margin-top: 56px;
+    padding: 0 16px;
+  }
+
+  .rb-worry__title {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .rb-worry__grid {
+    margin-top: 24px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .rb-worry__card {
+    min-height: 0;
+    padding: 22px 20px;
+  }
+
+  .rb-worry__quote-svg {
+    width: 34px;
+    margin-bottom: 12px;
+  }
+
+  .rb-worry__text,
+  .rb-worry__card--multi .rb-worry__text,
+  .rb-worry__card--single .rb-worry__text {
+    font-size: 16.5px;
+    line-height: 24px;
+    letter-spacing: -0.7px;
+  }
+
+  .rb-worry__footer {
+    margin-top: 28px;
+    font-size: 15.5px;
+    line-height: 25px;
+    letter-spacing: -0.7px;
+  }
+
+  .rb-worry__footer br {
+    display: none;
+  }
+
+  /* Section 03 */
+  .rb-features {
+    margin-top: 56px;
+  }
+
+  .rb-features__visual {
+    min-height: 440px;
+    padding: 40px 16px 220px;
+  }
+
+  .rb-features__kicker {
+    font-size: clamp(24px, 6.4vw, 32px);
+    line-height: 1.25;
+  }
+
+  .rb-features__kicker-row {
+    border-bottom-width: 2.5px;
+  }
+
+  .rb-features__brand-title {
+    margin-top: 14px;
+    font-size: clamp(44px, 11.5vw, 58px);
+  }
+
+  .rb-features__subcopy {
+    margin-top: 14px;
+    font-size: 15.5px;
+    line-height: 24px;
+  }
+
+  .rb-features__bar {
+    padding: 48px 16px 36px;
+  }
+
+  .rb-features__badge {
+    top: -22px;
+    height: 44px;
+    max-width: 310px;
+  }
+
+  .rb-features__badge-text {
+    font-size: 18px;
+  }
+
+  .rb-features__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+
+  .rb-features__item--5 {
+    grid-column: 1 / -1;
+  }
+
+  .rb-features__icon-box {
+    width: 112px;
+    height: 126px;
+  }
+
+  .rb-features__circle {
+    top: 16px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .rb-features__icon {
+    height: 116px;
+  }
+
+  .rb-features__label {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  /* Section 04 */
+  .rb-setpoint {
+    padding: 48px 16px;
+  }
+
+  .rb-setpoint__title {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .rb-setpoint__top-card {
+    margin-top: 24px;
+    padding: 22px 14px;
+    gap: 24px;
+  }
+
+  .rb-setpoint__brain-img {
+    max-width: 210px;
+  }
+
+  .rb-setpoint__caption {
+    font-size: 17px;
+  }
+
+  .rb-setpoint__checkpoint-badge {
+    height: 34px;
+    padding: 0 18px;
+    font-size: 15.5px;
+  }
+
+  .rb-setpoint__checkpoint-text {
+    font-size: 15.5px;
+    line-height: 24px;
+  }
+
+  .rb-setpoint__bottom-card {
+    padding: 26px 16px;
+  }
+
+  .rb-setpoint__need-badge {
+    height: 44px;
+    max-width: 270px;
+    margin-bottom: 18px;
+  }
+
+  .rb-setpoint__need-badge-text {
+    font-size: 18px;
+  }
+
+  .rb-setpoint__check-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .rb-setpoint__check-text {
+    font-size: 15.5px;
+    line-height: 24px;
+  }
+
+  /* Section 05 */
+  .rb-compare {
+    margin-top: 56px;
+    padding: 0 16px;
+  }
+
+  .rb-compare__title {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .rb-compare__box,
+  .rb-compare__box--pt1,
+  .rb-compare__box--pt2 {
+    margin-top: 24px;
+    padding: 26px 14px 30px;
+  }
+
+  .rb-compare__point-label {
+    font-size: 15px;
+  }
+
+  .rb-compare__point-title {
+    font-size: clamp(19px, 5vw, 23px);
+  }
+
+  .rb-compare__graph-card {
+    margin-top: 16px;
+    padding: 4px;
+  }
+
+  .rb-compare__lead {
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .rb-compare__lead br {
+    display: none;
+  }
+
+  .rb-compare__desc,
+  .rb-compare__desc--pt2 {
+    margin-top: 14px;
+    font-size: 15.5px;
+    line-height: 25px;
+  }
+
+  .rb-hl {
+    padding: 0 3px;
+  }
+
+  .rb-compare__closing {
+    margin-top: 28px;
+    font-size: 15.5px;
+    line-height: 25px;
+  }
+
+  .rb-compare__closing br {
+    display: none;
+  }
+
+  /* Section 06 */
+  .rb-principles {
+    margin-top: 56px;
+    padding: 48px 16px;
+  }
+
+  .rb-principles__title {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .rb-principles__list {
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .rb-principles__card {
+    padding: 22px 18px;
+  }
+
+  .rb-principles__badge {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .rb-principles__card-title {
+    font-size: 19px;
+  }
+
+  .rb-principles__card-desc {
+    margin-top: 10px;
+    font-size: 15.5px;
+    line-height: 24px;
+  }
+
+  .rb-principles__card-desc br {
+    display: none;
+  }
+}

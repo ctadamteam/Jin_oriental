@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   Banner10ArrowsOverlay,
   Banner2HandwritingTitle,
@@ -343,6 +344,16 @@ export function Slide4Pc() {
     { src: '/images/main/banners/b4_thumb_3.png', alt: '방송 및 언론 출연 장면 3' },
   ];
 
+  const mediaHistoryCols = [
+    ['KNN 공개클리닉 웰', '100세시대 건강하이소', '메디컬24시 닥터스', '건강 365'],
+    [
+      '라디오 KNN 웰빙라이프',
+      'BBS 불교방송',
+      '네이버 상담주치의',
+      '하이닥 건강ㆍ의학 위촉상담의',
+    ],
+  ];
+
   return (
     <div
       className="hidden lg:block relative w-full aspect-[1920/645] bg-[#121212] overflow-hidden"
@@ -446,12 +457,46 @@ export function Slide4Pc() {
         </p>
       </div>
 
-      {/* 하단 3개 방송 이미지 (569:41 @(206, 420) 713x140) */}
+      {/* 좌측 하단 방송·언론매체 활동 이력 2열 × 4행 + 연노랑 세로선 */}
+      <div
+        data-selectable-text
+        className="absolute flex items-start select-text cursor-text"
+        style={{
+          left: '10.573%',
+          top: '68.217%',
+          columnGap: cqw(52),
+        }}
+      >
+        {mediaHistoryCols.map((col, colIdx) => (
+          <ul
+            key={colIdx}
+            className="relative flex flex-col font-['Pretendard'] font-normal text-white/95 whitespace-nowrap"
+            style={{
+              paddingLeft: cqw(16),
+              fontSize: cqw(23),
+              lineHeight: cqw(28),
+              rowGap: cqw(10),
+              letterSpacing: cqw(-0.9),
+            }}
+          >
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute left-0 top-[2px] bottom-[2px] bg-[#E8CF8B]"
+              style={{ width: cqw(2.5) }}
+            />
+            {col.map((item, itemIdx) => (
+              <li key={itemIdx}>{item}</li>
+            ))}
+          </ul>
+        ))}
+      </div>
+
+      {/* 우측 하단 3개 방송 이미지 */}
       <div
         className="absolute flex items-center"
         style={{
-          left: '10.729%',
-          top: '65.116%',
+          left: '56.771%',
+          top: '72.093%',
           gap: cqw(10),
         }}
       >
@@ -459,7 +504,7 @@ export function Slide4Pc() {
           <div
             key={idx}
             className="relative overflow-hidden bg-[#D9D9D9] select-none pointer-events-none"
-            style={{ width: cqw(231), height: cqw(140) }}
+            style={{ width: cqw(224), height: cqw(136) }}
           >
             <Image
               src={thumb.src}
@@ -1083,8 +1128,8 @@ export function Slide11Pc() {
         className="absolute inset-x-0 flex justify-center"
         style={{ top: '86.822%' }}
       >
-        <button
-          type="button"
+        <Link
+          href="/about/diet-system#qa-section"
           data-selectable-text
           className="inline-flex items-center justify-center rounded-full bg-[#5B9FDB] hover:bg-[#498ec9] active:bg-[#3d7eb6] text-white font-['Pretendard'] font-semibold transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
           style={{
@@ -1095,7 +1140,7 @@ export function Slide11Pc() {
           }}
         >
           더 자세한 답변 바로가기
-        </button>
+        </Link>
       </div>
     </div>
   );
