@@ -13,6 +13,21 @@ export interface PageMetadataInput {
 
 const STATIC_PAGES: readonly PageMetadataInput[] = [
   {
+    "path": "/about/diet-system",
+    "title": "진 다이어트 시스템 | 진한의원",
+    "description": "진한의원의 개인별 맞춤 다이어트 진료 시스템을 소개합니다. 비우기·태우기·채우기 3단계 프로그램, 진료 과정과 자주 묻는 질문을 확인하세요."
+  },
+  {
+    "path": "/diet-medicine/allinone",
+    "title": "진 올인원 캡슐 | 진한의원",
+    "description": "진한의원 올인원 다이어트 캡슐을 소개합니다. 기본형·파워형의 구성, 개인별 상담과 처방 및 복용 안내를 확인하세요."
+  },
+  {
+    "path": "/diet-medicine/rebound-prevention",
+    "title": "요요방지한약·유지환 | 진한의원",
+    "description": "감량 이후 체중 유지를 위한 진한의원 요요방지한약과 유지환 안내입니다. 유지 관리의 단계, 개인별 처방 및 생활습관 관리 내용을 확인하세요."
+  },
+  {
     path: '/',
     title: '진한의원 | 부산 해운대 한의원',
     description: '부산 해운대 진한의원입니다. 개인별 맞춤 다이어트와 한약, 여성·산후 관리, 피부 및 면역·보약 진료와 함께 의료진의 진료 철학, 진료시간과 오시는 길을 안내합니다.',

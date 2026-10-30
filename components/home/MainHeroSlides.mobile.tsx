@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   Banner10ArrowsOverlay,
   Banner2HandwritingTitle,
@@ -368,19 +369,29 @@ export function Slide4Mobile() {
     { src: '/images/main/banners/b4_thumb_3.png', alt: '방송 및 언론 출연 장면 3' },
   ];
 
+  const mediaHistoryCols = [
+    ['KNN 공개클리닉 웰', '100세시대 건강하이소', '메디컬24시 닥터스', '건강 365'],
+    [
+      '라디오 KNN 웰빙라이프',
+      'BBS 불교방송',
+      '네이버 상담주치의',
+      '하이닥 건강ㆍ의학 위촉상담의',
+    ],
+  ];
+
   return (
     <div
       className="lg:hidden relative w-full aspect-[2/3] bg-[#121212] text-white overflow-hidden flex flex-col justify-between"
       style={{
         containerType: 'inline-size',
-        padding: `${mcqw(42)} ${mcqw(10)} ${mcqw(30)}`,
+        padding: `${mcqw(22)} ${mcqw(10)} ${mcqw(20)}`,
       }}
     >
-      {/* 중단~하단: 10% 축소 및 좌측 10px 이동한 배경형 진료실 촬영 비주얼 */}
+      {/* 중단~하단: 배경형 진료실 촬영 비주얼 (좌측 위아래 2단 이력과 우측 원장님 분리) */}
       <div
         className="pointer-events-none select-none absolute inset-x-0 bottom-0 z-0 overflow-hidden"
         style={{
-          height: mcqw(374),
+          height: mcqw(348),
         }}
       >
         <div
@@ -405,7 +416,7 @@ export function Slide4Mobile() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'linear-gradient(180deg, #121212 0%, rgba(18,18,18,0.42) 8%, rgba(18,18,18,0) 18%)',
+              'linear-gradient(180deg, #121212 0%, rgba(18,18,18,0.48) 10%, rgba(18,18,18,0) 20%)',
           }}
         />
       </div>
@@ -472,10 +483,10 @@ export function Slide4Mobile() {
             className="relative font-['Pretendard'] text-white/95 text-left inline-flex flex-col items-start whitespace-nowrap select-text cursor-text drop-shadow-[0_1px_6px_rgba(0,0,0,0.75)]"
             style={{
               left: mcqw(-2),
-              marginTop: mcqw(15),
-              fontSize: mcqw(16.5),
-              lineHeight: mcqw(21),
-              gap: mcqw(8),
+              marginTop: mcqw(24),
+              fontSize: mcqw(15),
+              lineHeight: mcqw(19.5),
+              gap: mcqw(5.5),
               letterSpacing: '-0.04em',
             }}
           >
@@ -500,6 +511,39 @@ export function Slide4Mobile() {
               </span>
             </li>
           </ul>
+
+          {/* 방송·언론매체 활동 이력 위아래 2단 (상단 4개 + 하단 4개) + 연노랑 세로선 */}
+          <div
+            data-selectable-text
+            className="flex flex-col items-start text-left select-text cursor-text drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]"
+            style={{
+              marginTop: mcqw(15),
+              rowGap: mcqw(12),
+            }}
+          >
+            {mediaHistoryCols.map((col, colIdx) => (
+              <ul
+                key={colIdx}
+                className="relative flex flex-col font-['Pretendard'] font-normal text-white/95 whitespace-nowrap"
+                style={{
+                  paddingLeft: mcqw(10),
+                  fontSize: mcqw(15),
+                  lineHeight: mcqw(19.5),
+                  rowGap: mcqw(4),
+                  letterSpacing: '-0.04em',
+                }}
+              >
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute left-0 top-[2px] bottom-[2px] bg-[#E8CF8B]"
+                  style={{ width: mcqw(2.2) }}
+                />
+                {col.map((item, itemIdx) => (
+                  <li key={itemIdx}>{item}</li>
+                ))}
+              </ul>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -1039,8 +1083,8 @@ export function Slide11Mobile() {
 
       {/* 모바일 하단 버튼 (살짝 확대 및 위로 이동) */}
       <div className="w-full flex items-center justify-center shrink-0">
-        <button
-          type="button"
+        <Link
+          href="/about/diet-system#qa-section"
           data-selectable-text
           className="inline-flex items-center justify-center rounded-full bg-[#5B9FDB] hover:bg-[#498ec9] active:bg-[#3d7eb6] font-semibold text-white shadow-xs transition-colors cursor-pointer"
           style={{
@@ -1050,7 +1094,7 @@ export function Slide11Mobile() {
           }}
         >
           더 자세한 답변 바로가기
-        </button>
+        </Link>
       </div>
     </div>
   );

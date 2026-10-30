@@ -4,6 +4,7 @@ export const MENUS = [
     href: "/about/story",
     subMenus: [
       { title: "진한의원 story", href: "/about/story" },
+      { title: "진 다이어트 시스템(개인별 맞춤치료/3단계 프로그램)", href: "/about/diet-system" },
     ],
   },
   {
