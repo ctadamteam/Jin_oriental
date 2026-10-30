@@ -1,11 +1,22 @@
 import type { MetadataRoute } from 'next';
 import { PUBLISHED_PAGES, SITE_URL } from '@/lib/seo';
 
+const UPDATED_PATHS = new Set([
+  "/",
+  "/events",
+  "/about/diet-system",
+  "/diet-medicine/allinone",
+  "/diet-medicine/rebound-prevention",
+  "/events/fat-allkill-capsule",
+  "/events/seasonal-immunity-kit",
+  "/events/belly-fat-edema-capsule",
+  "/events/power-tolerance-slim-hwan"
+]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return PUBLISHED_PAGES.map(({ path }) => ({
     url: new URL(path, SITE_URL).href,
-    // Metadata and clinic structured data were revised on this date.
-    // Change this only when published content/metadata changes, never per build.
-    lastModified: '2026-10-26',
+    // Use the verified content revision date, never the build time.
+    lastModified: UPDATED_PATHS.has(path) ? '2026-10-30' : '2026-10-26',
   }));
 }

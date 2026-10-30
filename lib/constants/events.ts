@@ -21,32 +21,277 @@ export const EVENTS_PER_PAGE = 9;
 
 export const EVENT_ITEMS: EventItem[] = [
   {
-    id: 1,
-    slug: 'autumn-diet',
-    title: '가을시즌 맞춤 다이어트 프로그램',
-    summary: '슬림 삼총사 · 면역/뱃살/성인병 맞춤 패키지 · 샤인모드 · 침치료 패키지',
+    id: 11,
+    slug: 'power-tolerance-slim-hwan',
+    title: "내성 다이어트 초고농축환 '파워내성슬림환' 이벤트",
+    summary: '체지방 감소 · 장건강 개선 · 식욕억제 · 대사활동 촉진 · 1·3·6개월 단계별 혜택',
     category: 'EVENT · 다이어트',
-    image: '/images/events/event01.png',
-    width: 1086,
-    height: 1448,
-    bgColor: '#FDF0D5',
+    image: '/images/events/event11.jpg',
+    width: 1084,
+    height: 1451,
+    bgColor: '#C56B6C',
     detailSections: [
       {
-        heading: '슬림 삼총사와 맞춤 패키지',
+        "heading": "파워내성슬림환 기간별 금액",
+        "items": [
+          {
+            "label": "1개월",
+            "value": "250,000원"
+          },
+          {
+            "label": "3개월",
+            "value": "690,000원 (월 230,000원)"
+          },
+          {
+            "label": "6개월",
+            "value": "1,260,000원 (월 210,000원)"
+          }
+        ]
+      }
+    ],
+  },
+  {
+    id: 10,
+    slug: 'belly-fat-edema-capsule',
+    title: "출시 기념 이벤트 — '뱃살 부종캡슐'",
+    summary: '뱃살 지방량 감소 · 부종 개선 천연 한약재 캡슐 · 1통 15만원 / 2+1통 30만원 특가',
+    category: 'EVENT · 다이어트',
+    image: '/images/events/event10.jpg',
+    width: 1136,
+    height: 1385,
+    bgColor: '#FDF0F5',
+    detailSections: [
+      {
+        "heading": "뱃살 부종캡슐 구성과 금액",
+        "items": [
+          {
+            "label": "제품 구성",
+            "value": "총 180정"
+          },
+          {
+            "label": "1통",
+            "value": "150,000원"
+          },
+          {
+            "label": "2+1통",
+            "value": "300,000원"
+          }
+        ]
+      }
+    ],
+  },
+  {
+    id: 9,
+    slug: 'seasonal-immunity-kit',
+    title: '진한의원 환절기 면역키트 10+1 이벤트',
+    summary: '청폐경옥고 · 쌍화탕 · 은교산 츄어블 · 온후차 4종 구성 환절기 집중 면역 케어',
+    category: 'EVENT · 면역/보약',
+    image: '/images/events/event09.jpg',
+    width: 1086,
+    height: 1448,
+    bgColor: '#FBF3E6',
+    detailSections: [
+      {
+        "heading": "환절기 면역키트 구성",
+        "items": [
+          {
+            "label": "구성",
+            "value": "청폐경옥고 · 쌍화탕 · 은교산 · 온후차"
+          },
+          {
+            "label": "이벤트 안내",
+            "value": "10+1 · 16,000원"
+          }
+        ]
+      }
+    ],
+  },
+  {
+    id: 8,
+    slug: 'fat-allkill-capsule',
+    title: "출시 기념 이벤트 — 농축 '지방올킬 캡슐'",
+    summary: '식욕 억제 · 체지방 연소 · 부종 개선 · 내장지방 감소 맞춤형 A/B안 특가',
+    category: 'EVENT · 다이어트',
+    image: '/images/events/event08.png',
+    width: 922,
+    height: 1382,
+    bgColor: '#DFB6FE',
+    detailSections: [
+      {
+        "heading": "A안 · 농축 지방올킬만으로 조제",
+        "items": [
+          {
+            "label": "1개월",
+            "value": "230,000원"
+          },
+          {
+            "label": "3개월",
+            "value": "600,000원 (월 200,000원)"
+          },
+          {
+            "label": "4개월",
+            "value": "720,000원 (월 180,000원)"
+          }
+        ]
+      },
+      {
+        "heading": "B안 · 여러 성분을 섞어서 조제",
+        "items": [
+          {
+            "label": "1개월",
+            "value": "210,000원"
+          },
+          {
+            "label": "3개월",
+            "value": "570,000원 (월 190,000원)"
+          },
+          {
+            "label": "4개월",
+            "value": "680,000원 (월 170,000원)"
+          }
+        ]
+      }
+    ],
+  },
+  {
+    id: 7,
+    slug: 'jin-allinone-capsule',
+    title: "면역과 다이어트 한번에! '진 올인원 캡슐'",
+    summary: '슬림톡 캡슐 + 면역119 + 붓기제로 + 배사라정 집중 처방 프로그램',
+    category: 'EVENT · 다이어트',
+    image: '/images/events/event07.jpg',
+    width: 800,
+    height: 1200,
+    bgColor: '#F6B97F',
+    detailSections: [
+      {
+        heading: '진 올인원 캡슐 구성',
         items: [
-          { label: '슬림 삼총사 1개월', value: '390,000원' },
-          { label: '슬림 삼총사 3개월', value: '994,500원' },
-          { label: '면역집중 다이어트', value: '삼총사 3개월 + 해독탕 1회 + 수독환 1회 + 한방맞춤선식 1통 + 공진단 시럽 2통 · 1,170,000원' },
-          { label: '뱃살·부종 다이어트', value: '1,320,000원 · 세부 구성은 위 포스터에서 확인하실 수 있습니다.' },
-          { label: '성인병 집중 면역 다이어트', value: '삼총사 3개월 + 해독탕 1회 + 수독환 1회 + 한방맞춤선식 1통 + 공진단 시럽 2통 + 청혈정 1통 + 꿀잠정 1통 + 배사라정 1통 · 1,383,000원' },
+          { label: '구성 안내', value: '슬림톡 캡슐, 면역119, 붓기제로, 배사라정' },
         ],
       },
       {
-        heading: '샤인모드와 침치료 패키지',
+        heading: '1일 2회 구성',
         items: [
-          { label: '페이스 FX + 포마', value: '1회 100,000원 / 5회 450,000원' },
-          { label: '바디 샤인 FX', value: '1회 100,000원 / 5회 325,000원 / 10회 590,000원' },
-          { label: '다이어트 침치료 패키지', value: '지방분해침 3회 + 버섯목(거북목) 약침 + 뱃살 약침 · 2회분 120,000원' },
+          { label: '1개월', value: '60포 · 170,000원' },
+          { label: '3개월', value: '180포 · 470,000원' },
+          { label: '4개월', value: '240포 · 590,000원' },
+        ],
+      },
+      {
+        heading: '1일 3회 구성',
+        items: [
+          { label: '1개월', value: '90포 · 210,000원' },
+          { label: '3개월', value: '270포 · 570,000원' },
+          { label: '4개월', value: '360포 · 680,000원' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    slug: 'ppaeppae-black',
+    title: "출시 기념 이벤트 — 빼빼정 블랙 (다이어트 프리미엄 4알)",
+    summary: '농축 100% 순수 한약재 · 더 강한 식욕 조절 · 1개월/3개월/4개월 특가',
+    category: 'EVENT · 다이어트',
+    image: '/images/events/event06.png',
+    width: 2480,
+    height: 3508,
+    bgColor: '#111111',
+    detailSections: [
+      {
+        heading: '빼빼정 블랙 기간별 구성',
+        items: [
+          { label: '1개월', value: '90포 · 230,000원' },
+          { label: '3개월', value: '270포 · 600,000원 (90포당 200,000원)' },
+          { label: '4개월', value: '360포 · 720,000원 (90포당 180,000원)' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    slug: 'deer-antler-tonic',
+    title: '진한의원 녹용 & 면역 증강 탕약 이벤트',
+    summary: '최상급 러시아산 녹용 분골 탕약 · 면역 증강 탕약 1·3개월 할인 혜택',
+    category: 'EVENT · 면역/보약',
+    image: '/images/events/event05.jpg',
+    width: 794,
+    height: 1123,
+    bgColor: '#E3DBD1',
+    detailSections: [
+      {
+        heading: '녹용 탕약',
+        items: [
+          { label: '녹용 구성', value: '러시아산 녹용 분골 사용' },
+          { label: '1개월', value: '550,000원' },
+          { label: '3개월', value: '1,500,000원 (1개월 500,000원)' },
+        ],
+      },
+      {
+        heading: '면역 증강 탕약',
+        items: [
+          { label: '1개월', value: '400,000원' },
+          { label: '3개월', value: '1,080,000원 (1개월 360,000원)' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    slug: 'mochaewum-scalp',
+    title: '건강한 두피, 다시 풍성하게! 모채움 프로그램',
+    summary: '약물 스케일링 · 줄기세포 엑소좀 MTS · 물리치료 · 두피침&약침 4단계 관리',
+    category: 'EVENT · 두피·탈모',
+    image: '/images/events/event04.jpg',
+    width: 1145,
+    height: 1374,
+    bgColor: '#FDF5F6',
+    detailSections: [
+      {
+        heading: '모채움 4단계 관리',
+        items: [
+          { label: '1단계', value: '약물 스케일링' },
+          { label: '2단계', value: '줄기세포 엑소좀 MTS' },
+          { label: '3단계', value: '물리치료 (ICT)' },
+          { label: '4단계', value: '두피침 & 모채움 약침' },
+        ],
+      },
+      {
+        heading: '횟수별 금액',
+        items: [
+          { label: '1회', value: '120,000원' },
+          { label: '4회', value: '400,000원 (1회당 100,000원)' },
+          { label: '12회', value: '1,080,000원 (1회당 90,000원)' },
+        ],
+      },
+    ],
+    detailNotes: ['부가세 10% 별도입니다.'],
+  },
+  {
+    id: 3,
+    slug: 'jin-slim-hwan',
+    title: "진한의원 다이어트환 '진슬림환' 수독환 증정 이벤트",
+    summary: '가을맞이 기념 수독환 2회 증정 · 1개월/3개월/4개월 단계별 혜택',
+    category: 'EVENT · 다이어트',
+    image: '/images/events/event03.png',
+    width: 1086,
+    height: 1448,
+    bgColor: '#FBE8D5',
+    detailSections: [
+      {
+        heading: '진슬림환 기간별 구성',
+        items: [
+          { label: '1개월분', value: '90포 · 210,000원' },
+          { label: '3개월분', value: '270포 · 570,000원 (1개월분 190,000원)' },
+          { label: '4개월분', value: '360포 · 680,000원 (1개월분 170,000원)' },
+        ],
+      },
+      {
+        heading: '증정 및 조제 안내',
+        items: [
+          { label: '가을맞이 증정', value: '수독환 2회 증정 · 다른 약으로 전환 불가' },
+          { label: '조제 구성', value: '숙변환 포함 조제 가능' },
         ],
       },
     ],
@@ -86,144 +331,32 @@ export const EVENT_ITEMS: EventItem[] = [
     detailNotes: ['부가세 별도입니다.', '기간에는 연도가 표시되어 있지 않습니다. 현재 적용 여부는 문의해 주세요.'],
   },
   {
-    id: 3,
-    slug: 'jin-slim-hwan',
-    title: "진한의원 다이어트환 '진슬림환' 수독환 증정 이벤트",
-    summary: '가을맞이 기념 수독환 2회 증정 · 1개월/3개월/4개월 단계별 혜택',
+    id: 1,
+    slug: 'autumn-diet',
+    title: '가을시즌 맞춤 다이어트 프로그램',
+    summary: '슬림 삼총사 · 면역/뱃살/성인병 맞춤 패키지 · 샤인모드 · 침치료 패키지',
     category: 'EVENT · 다이어트',
-    image: '/images/events/event03.png',
+    image: '/images/events/event01.png',
     width: 1086,
     height: 1448,
-    bgColor: '#FBE8D5',
+    bgColor: '#FDF0D5',
     detailSections: [
       {
-        heading: '진슬림환 기간별 구성',
+        heading: '슬림 삼총사와 맞춤 패키지',
         items: [
-          { label: '1개월분', value: '90포 · 210,000원' },
-          { label: '3개월분', value: '270포 · 570,000원 (1개월분 190,000원)' },
-          { label: '4개월분', value: '360포 · 680,000원 (1개월분 170,000원)' },
+          { label: '슬림 삼총사 1개월', value: '390,000원' },
+          { label: '슬림 삼총사 3개월', value: '994,500원' },
+          { label: '면역집중 다이어트', value: '삼총사 3개월 + 해독탕 1회 + 수독환 1회 + 한방맞춤선식 1통 + 공진단 시럽 2통 · 1,170,000원' },
+          { label: '뱃살·부종 다이어트', value: '1,320,000원 · 세부 구성은 위 포스터에서 확인하실 수 있습니다.' },
+          { label: '성인병 집중 면역 다이어트', value: '삼총사 3개월 + 해독탕 1회 + 수독환 1회 + 한방맞춤선식 1통 + 공진단 시럽 2통 + 청혈정 1통 + 꿀잠정 1통 + 배사라정 1통 · 1,383,000원' },
         ],
       },
       {
-        heading: '증정 및 조제 안내',
+        heading: '샤인모드와 침치료 패키지',
         items: [
-          { label: '가을맞이 증정', value: '수독환 2회 증정 · 다른 약으로 전환 불가' },
-          { label: '조제 구성', value: '숙변환 포함 조제 가능' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 4,
-    slug: 'mochaewum-scalp',
-    title: '건강한 두피, 다시 풍성하게! 모채움 프로그램',
-    summary: '약물 스케일링 · 줄기세포 엑소좀 MTS · 물리치료 · 두피침&약침 4단계 관리',
-    category: 'EVENT · 두피·탈모',
-    image: '/images/events/event04.jpg',
-    width: 1145,
-    height: 1374,
-    bgColor: '#FDF5F6',
-    detailSections: [
-      {
-        heading: '모채움 4단계 관리',
-        items: [
-          { label: '1단계', value: '약물 스케일링' },
-          { label: '2단계', value: '줄기세포 엑소좀 MTS' },
-          { label: '3단계', value: '물리치료 (ICT)' },
-          { label: '4단계', value: '두피침 & 모채움 약침' },
-        ],
-      },
-      {
-        heading: '횟수별 금액',
-        items: [
-          { label: '1회', value: '120,000원' },
-          { label: '4회', value: '400,000원 (1회당 100,000원)' },
-          { label: '12회', value: '1,080,000원 (1회당 90,000원)' },
-        ],
-      },
-    ],
-    detailNotes: ['부가세 10% 별도입니다.'],
-  },
-  {
-    id: 5,
-    slug: 'deer-antler-tonic',
-    title: '진한의원 녹용 & 면역 증강 탕약 이벤트',
-    summary: '최상급 러시아산 녹용 분골 탕약 · 면역 증강 탕약 1·3개월 할인 혜택',
-    category: 'EVENT · 면역/보약',
-    image: '/images/events/event05.jpg',
-    width: 794,
-    height: 1123,
-    bgColor: '#E3DBD1',
-    detailSections: [
-      {
-        heading: '녹용 탕약',
-        items: [
-          { label: '녹용 구성', value: '러시아산 녹용 분골 사용' },
-          { label: '1개월', value: '550,000원' },
-          { label: '3개월', value: '1,500,000원 (1개월 500,000원)' },
-        ],
-      },
-      {
-        heading: '면역 증강 탕약',
-        items: [
-          { label: '1개월', value: '400,000원' },
-          { label: '3개월', value: '1,080,000원 (1개월 360,000원)' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 6,
-    slug: 'ppaeppae-black',
-    title: "출시 기념 이벤트 — 빼빼정 블랙 (다이어트 프리미엄 4알)",
-    summary: '농축 100% 순수 한약재 · 더 강한 식욕 조절 · 1개월/3개월/4개월 특가',
-    category: 'EVENT · 다이어트',
-    image: '/images/events/event06.png',
-    width: 2480,
-    height: 3508,
-    bgColor: '#111111',
-    detailSections: [
-      {
-        heading: '빼빼정 블랙 기간별 구성',
-        items: [
-          { label: '1개월', value: '90포 · 230,000원' },
-          { label: '3개월', value: '270포 · 600,000원 (90포당 200,000원)' },
-          { label: '4개월', value: '360포 · 720,000원 (90포당 180,000원)' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 7,
-    slug: 'jin-allinone-capsule',
-    title: "면역과 다이어트 한번에! '진 올인원 캡슐'",
-    summary: '슬림톡 캡슐 + 면역119 + 붓기제로 + 배사라정 집중 처방 프로그램',
-    category: 'EVENT · 다이어트',
-    image: '/images/events/event07.jpg',
-    width: 800,
-    height: 1200,
-    bgColor: '#F6B97F',
-    detailSections: [
-      {
-        heading: '진 올인원 캡슐 구성',
-        items: [
-          { label: '구성 안내', value: '슬림톡 캡슐, 면역119, 붓기제로, 배사라정' },
-        ],
-      },
-      {
-        heading: '1일 2회 구성',
-        items: [
-          { label: '1개월', value: '60포 · 170,000원' },
-          { label: '3개월', value: '180포 · 470,000원' },
-          { label: '4개월', value: '240포 · 590,000원' },
-        ],
-      },
-      {
-        heading: '1일 3회 구성',
-        items: [
-          { label: '1개월', value: '90포 · 210,000원' },
-          { label: '3개월', value: '270포 · 570,000원' },
-          { label: '4개월', value: '360포 · 680,000원' },
+          { label: '페이스 FX + 포마', value: '1회 100,000원 / 5회 450,000원' },
+          { label: '바디 샤인 FX', value: '1회 100,000원 / 5회 325,000원 / 10회 590,000원' },
+          { label: '다이어트 침치료 패키지', value: '지방분해침 3회 + 버섯목(거북목) 약침 + 뱃살 약침 · 2회분 120,000원' },
         ],
       },
     ],

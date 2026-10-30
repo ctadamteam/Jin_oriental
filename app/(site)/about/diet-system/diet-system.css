@@ -1,0 +1,2258 @@
+/* ==========================================================================
+   진 다이어트 시스템 상세페이지 (/about/diet-system)
+   Figma Frame: 653:308 (진다이어트프로그램_1_pc, 1920 x 18564px)
+   PC Container: 1348px -> 1000px proportional scale (0.7418397626) via detail-page-scale.css
+   ========================================================================== */
+
+.diet-system-page {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #161616;
+  background-color: #FFFFFF;
+}
+
+.diet-system-page *,
+.diet-system-page *::before,
+.diet-system-page *::after {
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   공통 섹션 헤더 (x=280 -> 1348px 컨테이너 기준 left: -6px)
+   -------------------------------------------------------------------------- */
+.ds-section-header {
+  margin: 0 0 0 -6px;
+}
+
+.ds-section-header__eyebrow {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26.3px;
+  letter-spacing: 4.4px;
+  color: #174A3C;
+}
+
+.ds-section-header__eyebrow--lime {
+  color: #BACF50;
+}
+
+.ds-section-header__title {
+  margin: 9px 0 0;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 83.5px;
+  letter-spacing: -3.5px;
+  color: #000000;
+  word-break: keep-all;
+}
+
+.ds-section-header__accent {
+  font-weight: 700;
+  color: #174A3C;
+}
+
+.ds-section-header__title--green {
+  font-weight: 700;
+  color: #174A3C;
+}
+
+.ds-section-header__title--white {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   SECTION 01: 히어로 및 진한의원 약력 바 (653:309)
+   ========================================================================== */
+.ds-sec-hero {
+  width: 100%;
+}
+
+.ds-sec-hero__upper {
+  width: 100%;
+  background-color: #EDF0E7;
+}
+
+.ds-sec-hero__inner {
+  position: relative;
+  min-height: 866px;
+  padding: 121px 0 60px;
+}
+
+.ds-sec-hero__left {
+  position: relative;
+  z-index: 2;
+  max-width: 630px;
+}
+
+.ds-sec-hero__eyebrow {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 5px;
+  color: #174A3C;
+}
+
+.ds-sec-hero__title {
+  margin: 44px 0 0;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 90px;
+  letter-spacing: -4px;
+}
+
+.ds-sec-hero__title-dark {
+  color: #173E35;
+}
+
+.ds-sec-hero__title-sage {
+  color: #5D806E;
+}
+
+.ds-sec-hero__divider {
+  width: 623px;
+  height: 1px;
+  background-color: rgba(23, 62, 53, 0.2);
+  margin: 26px 0 19px -6px;
+}
+
+.ds-sec-hero__desc {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.25px;
+  color: #173E35;
+}
+
+.ds-sec-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  margin-top: 17px;
+}
+
+.ds-sec-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-radius: 30.5px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -1.25px;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ds-sec-hero__btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.ds-sec-hero__btn--primary {
+  width: 254px;
+  background-color: #174A3C;
+  color: #FFFFFF;
+}
+
+.ds-sec-hero__btn--secondary {
+  width: 190px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(23, 74, 60, 0.1);
+  color: #174A3C;
+}
+
+.ds-sec-hero__notice {
+  margin: 26px 0 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -0.9px;
+  color: #648D82;
+}
+
+/* 히어로 우측 원형 인포그래픽 (653:326, pos: 996 - 286 = 710) */
+.ds-sec-hero__diagram {
+  position: absolute;
+  left: 710px;
+  top: 228px;
+  width: 647px;
+  height: 430px;
+}
+
+.ds-hero-circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ds-hero-circle--outer {
+  left: 127px;
+  top: 0;
+  width: 430px;
+  height: 430px;
+  border: 2px solid #5D806E;
+  opacity: 0.1;
+}
+
+.ds-hero-circle--middle {
+  left: 149px;
+  top: 22px;
+  width: 386px;
+  height: 386px;
+  background-color: #5D806E;
+  opacity: 0.1;
+}
+
+.ds-hero-circle--inner {
+  left: 194px;
+  top: 67px;
+  width: 296px;
+  height: 296px;
+  background-color: #BACF50;
+}
+
+.ds-hero-circle__icon {
+  position: absolute;
+  left: 68px;
+  top: 39px;
+  width: 160px;
+  height: 183px;
+  object-fit: contain;
+}
+
+.ds-hero-circle__label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 211px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -1.25px;
+  color: #1B4E38;
+  text-align: center;
+}
+
+.ds-hero-pill {
+  position: absolute;
+  width: 239px;
+  height: 72px;
+  background-color: #FFFFFF;
+  border-radius: 49px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  gap: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.ds-hero-pill--1 {
+  left: 408px;
+  top: 95px;
+}
+
+.ds-hero-pill--2 {
+  left: 326px;
+  top: 336px;
+}
+
+.ds-hero-pill--3 {
+  left: 0;
+  top: 221px;
+}
+
+.ds-hero-pill--4 {
+  left: 127px;
+  top: 31px;
+}
+
+.ds-hero-pill__num {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #5D806E;
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ds-hero-pill__text {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.25px;
+  color: #161616;
+  white-space: nowrap;
+}
+
+/* 히어로 하단 약력 바 (653:352) */
+.ds-sec-hero__history {
+  width: 100%;
+  background-color: #174A3C;
+}
+
+.ds-sec-hero__history-inner {
+  position: relative;
+  min-height: 162px;
+  display: flex;
+  align-items: center;
+  padding: 35px 0 32px;
+}
+
+.ds-sec-hero__history-brand {
+  width: 148px;
+  margin-left: -17px;
+  flex-shrink: 0;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -1.15px;
+  color: #EDF0E7;
+}
+
+.ds-sec-hero__history-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ds-sec-hero__history-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  column-gap: 30px;
+  row-gap: 6px;
+}
+
+.ds-sec-hero__history-row--2 {
+  column-gap: 34px;
+}
+
+.ds-sec-hero__history-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.15px;
+  color: #EDF0E7;
+  white-space: nowrap;
+}
+
+.ds-sec-hero__history-star {
+  color: #BACF50;
+  font-weight: 500;
+  transform: translateY(2px);
+}
+
+/* ==========================================================================
+   SECTION 02: 식욕과 진료 원칙 (653:373)
+   ========================================================================== */
+.ds-sec-principles {
+  width: 100%;
+  background-color: #FFFEF9;
+}
+
+.ds-sec-principles__inner {
+  min-height: 1764px;
+  padding: 143px 0 170px;
+}
+
+.ds-sec-principles__lead {
+  margin: 55px 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+.ds-principle-list {
+  margin: 39px 0 0;
+  width: 1346px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ds-principle-card {
+  width: 1346px;
+  border-radius: 10px;
+}
+
+.ds-principle-card--filled {
+  min-height: 214px;
+  background-color: #EDF0E7;
+  padding: 44px 42px 36px;
+}
+
+.ds-principle-card--outlined {
+  min-height: 209px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(23, 74, 60, 0.1);
+  box-shadow: 4px 4px 10px #C8CFBA;
+  padding: 40px 41px 32px;
+}
+
+.ds-principle-card--tall {
+  min-height: 277px;
+}
+
+.ds-principle-card__title {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: -1.75px;
+  color: #174A3C;
+}
+
+.ds-principle-card--filled .ds-principle-card__title {
+  line-height: 35px;
+}
+
+.ds-principle-card__divider {
+  width: 1263px;
+  height: 1px;
+  background-color: rgba(23, 74, 60, 0.2);
+  margin: 17px 0 16px;
+}
+
+.ds-principle-card__body-wrap {
+  position: relative;
+  margin-top: 19px;
+}
+
+.ds-principle-card__hl {
+  position: absolute;
+  left: -6px;
+  top: 20px;
+  width: 1063px;
+  height: 20px;
+  background-color: #FFF2B1;
+  z-index: 0;
+}
+
+.ds-principle-card__desc {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.5px;
+  color: #161616;
+}
+
+/* ==========================================================================
+   SECTION 03: 나는 왜 살이 찔까요? - 7가지 비만 유형 (653:400)
+   ========================================================================== */
+.ds-sec-types {
+  width: 100%;
+  background-color: #F2F2E9;
+}
+
+.ds-sec-types__inner {
+  min-height: 2100px;
+  padding: 159px 0 150px;
+}
+
+.ds-sec-types__lead {
+  margin: 52px 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+.ds-types-grid {
+  margin: 28px 0 0;
+  width: 1347px;
+  display: grid;
+  grid-template-columns: repeat(3, 437px);
+  column-gap: 18px;
+  row-gap: 22px;
+}
+
+.ds-type-card {
+  position: relative;
+  width: 437px;
+  height: 466px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFEF9 100%);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ds-type-card__num {
+  position: absolute;
+  top: 22px;
+  right: 29px;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 70px;
+  letter-spacing: -2.5px;
+  color: #EAEAD5;
+}
+
+.ds-type-card__head {
+  position: absolute;
+  left: 47px;
+  top: 56px;
+}
+
+.ds-type-card__hl {
+  position: absolute;
+  left: -4px;
+  height: 27px;
+  background-color: #FFF2B1;
+  z-index: 0;
+}
+
+.ds-type-card__hl--1 {
+  top: 23px;
+}
+
+.ds-type-card__hl--2 {
+  top: 68px;
+}
+
+.ds-type-card__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: -2px;
+  color: #174A3C;
+}
+
+.ds-type-card__desc {
+  position: absolute;
+  left: 47px;
+  bottom: 107px;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: -1.25px;
+  color: #161616;
+}
+
+.ds-type-card__btn {
+  position: absolute;
+  left: 44px;
+  bottom: 47px;
+  width: 348px;
+  height: 47px;
+  border-radius: 23.5px;
+  background-color: #174A3C;
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: -1.1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ds-type-card__btn:hover {
+  background-color: #11382d;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   SECTION 04: 진료 프로세스 (653:464)
+   ========================================================================== */
+.ds-sec-process {
+  width: 100%;
+  background-color: #E2E2CC;
+}
+
+.ds-sec-process__inner {
+  min-height: 2192px;
+  padding: 138px 0 125px;
+}
+
+.ds-sec-process__top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-right: 1px;
+}
+
+.ds-sec-process__duration {
+  position: relative;
+  margin-bottom: -8px;
+}
+
+.ds-sec-process__duration-hl {
+  position: absolute;
+  left: -5px;
+  top: 26px;
+  width: 309px;
+  height: 27px;
+  background-color: #FFF2B1;
+  z-index: 0;
+}
+
+.ds-sec-process__duration-text {
+  position: relative;
+  z-index: 1;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #174A3C;
+}
+
+.ds-process-list {
+  margin: 52px 0 0;
+  width: 1347px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.ds-process-card {
+  position: relative;
+  width: 1347px;
+  height: 271px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 0 55px;
+}
+
+.ds-process-card__text {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  padding-top: 44px;
+}
+
+.ds-process-card__step {
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -1.35px;
+  color: #174A3C;
+}
+
+.ds-process-card__title {
+  margin: -2px 0 0;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: -2px;
+  color: #161616;
+}
+
+.ds-process-card__img-wrap {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-process-card__img {
+  object-fit: contain;
+}
+
+.ds-sec-process__notice {
+  margin: 27px 0 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.25px;
+  color: #648D82;
+  text-align: center;
+}
+
+/* ==========================================================================
+   SECTION 05: 진한의원 3단계 다이어트 프로그램 (653:527)
+   ========================================================================== */
+.ds-sec-program {
+  width: 100%;
+  background-color: #F2F2E9;
+}
+
+.ds-sec-program__inner {
+  min-height: 2848px;
+  padding: 138px 0 166px;
+}
+
+.ds-sec-program__top {
+  position: relative;
+  min-height: 599px;
+}
+
+.ds-sec-program__intro {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.ds-program-summary {
+  list-style: none;
+  margin: 108px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ds-program-summary__item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ds-program-summary__badge {
+  width: 127px;
+  height: 44px;
+  border-radius: 42px;
+  background-color: #184F41;
+  color: #FFFFFF;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 44px;
+  letter-spacing: -1.35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ds-program-summary__label {
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #184F41;
+}
+
+/* 우측 3단계 원형 다이어그램 (653:532, pos: 962 - 286 = 676) */
+.ds-program-wheel {
+  position: absolute;
+  left: 676px;
+  top: -73px;
+  width: 699px;
+  height: 624px;
+}
+
+.ds-program-wheel__img {
+  position: absolute;
+  left: 59px;
+  top: 32px;
+  width: 583px;
+  height: 593px;
+  object-fit: contain;
+}
+
+.ds-program-wheel__arrow {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Figma absoluteRenderBounds 기준 정확한 좌표 */
+.ds-program-wheel__arrow--1 {
+  left: 79px;
+  top: 56px;
+  width: 270px;
+  height: 406px;
+}
+
+.ds-program-wheel__arrow--2 {
+  left: 353px;
+  top: 69px;
+  width: 266px;
+  height: 396px;
+}
+
+.ds-program-wheel__arrow--3 {
+  left: 117px;
+  top: 472px;
+  width: 462px;
+  height: 136px;
+}
+
+.ds-wheel-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ds-wheel-node--1 {
+  left: 172px;
+  top: 208px;
+  width: 114px;
+}
+
+.ds-wheel-node--2 {
+  left: 408px;
+  top: 167px;
+  width: 124px;
+}
+
+.ds-wheel-node--3 {
+  left: 253px;
+  top: 416px;
+  width: 195px;
+}
+
+.ds-wheel-node__badge {
+  width: 67px;
+  height: 30px;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -1.1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-wheel-node__badge--1 {
+  background-color: #185043;
+  color: #B9CA51;
+}
+
+.ds-wheel-node__badge--2 {
+  background-color: #BBCB52;
+  color: #185041;
+}
+
+.ds-wheel-node__badge--3 {
+  background-color: #B9CB52;
+  color: #5F6730;
+}
+
+.ds-wheel-node__title {
+  margin-top: 3px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+}
+
+.ds-wheel-node__title--1 {
+  color: #185043;
+}
+
+.ds-wheel-node__title--2 {
+  color: #BBCA51;
+}
+
+.ds-wheel-node__title--3 {
+  color: #B9CC54;
+}
+
+.ds-wheel-node__sub {
+  margin-top: 7px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: -1.1px;
+}
+
+.ds-wheel-node__sub--1 {
+  color: #185043;
+}
+
+.ds-wheel-node__sub--2 {
+  color: #BBCA51;
+}
+
+.ds-wheel-node__sub--3 {
+  color: #B9CB52;
+}
+
+/* 3단계 상세 카드 3종 */
+.ds-program-cards {
+  margin: 0;
+  width: 1348px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.ds-program-card {
+  position: relative;
+  width: 1348px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F7F5EE 100%);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 67px 30px 60px 62px;
+}
+
+.ds-program-card--01 {
+  min-height: 729px;
+}
+
+.ds-program-card--02 {
+  min-height: 613px;
+}
+
+.ds-program-card--03 {
+  min-height: 557px;
+}
+
+.ds-program-card__ribbon {
+  position: absolute;
+  right: 0;
+  top: 38px;
+  width: 140px;
+  height: 46px;
+  border-radius: 47.5px 0 0 47.5px;
+  background-color: #174A3C;
+  color: #FFFFFF;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: -1.35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-program-card__head {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.ds-program-card__title {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -2.5px;
+  color: #174A3C;
+}
+
+.ds-program-card__subtitle {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #888888;
+}
+
+.ds-program-card__kicker {
+  margin: 53px 0 0 4px;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #174A3C;
+}
+
+.ds-program-card__p {
+  margin: 0 0 0 4px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+  word-break: keep-all;
+}
+
+.ds-program-card--01 .ds-program-card__p--1 {
+  margin-top: 14px;
+}
+
+.ds-program-card--01 .ds-program-card__p--2 {
+  margin-top: 33px;
+}
+
+.ds-program-card--02 .ds-program-card__p--1 {
+  margin-top: 53px;
+}
+
+.ds-program-card--02 .ds-program-card__p--2 {
+  margin-top: 29px;
+}
+
+.ds-program-card--03 .ds-program-card__p--1 {
+  margin-top: 53px;
+}
+
+.ds-program-card--03 .ds-program-card__p--2 {
+  margin-top: 29px;
+}
+
+/* ==========================================================================
+   SECTION 06: 감량 후 유지 관리 (653:592)
+   ========================================================================== */
+.ds-sec-after {
+  width: 100%;
+  background-color: #E9E9D3;
+}
+
+.ds-sec-after__inner {
+  min-height: 1078px;
+  padding: 152px 0 176px;
+}
+
+.ds-sec-after__lead {
+  margin: 60px 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+.ds-sec-after__box {
+  margin: 33px 0 0;
+  width: 1348px;
+  min-height: 304px;
+  border-radius: 10px;
+  background-color: #D5DAB9;
+  padding: 44px 51px 38px 44px;
+}
+
+.ds-sec-after__box-lead {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 55px;
+  letter-spacing: -2px;
+  color: #174A3C;
+}
+
+.ds-sec-after__box-text {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 55px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+/* ==========================================================================
+   SECTION 07: 이런 분께 권합니다 (653:602)
+   ========================================================================== */
+.ds-sec-recommend {
+  width: 100%;
+  background-color: #FFFEF9;
+}
+
+.ds-sec-recommend__inner {
+  min-height: 1702px;
+  padding: 152px 0 133px;
+}
+
+.ds-recommend-list {
+  list-style: none;
+  margin: 64px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ds-recommend-list__item {
+  display: flex;
+  align-items: flex-start;
+  min-height: 50px;
+}
+
+.ds-recommend-list__num {
+  width: 61px;
+  flex-shrink: 0;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #174A3C;
+}
+
+.ds-recommend-list__text {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+.ds-sec-recommend__notice {
+  margin: 30px 0 0;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -1.25px;
+  color: #648D82;
+  text-align: center;
+}
+
+/* ==========================================================================
+   SECTION 08: 자주 묻는 질문 Q&A (653:663)
+   ========================================================================== */
+.ds-sec-qa {
+  width: 100%;
+  background-color: #174A3C;
+  scroll-margin-top: 80px;
+}
+
+.ds-sec-qa__inner {
+  min-height: 4512px;
+  padding: 152px 0 155px;
+}
+
+.ds-sec-qa__sub {
+  margin: 59px 0 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #FFFFFF;
+}
+
+.ds-qa-list {
+  margin: 43px 0 0;
+  width: 1348px;
+  border-top: 1px solid #FFFFFF;
+}
+
+.ds-qa-item {
+  width: 1348px;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 47px 0 44px;
+}
+
+.ds-qa-item__q-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.ds-qa-item__mark {
+  width: 49px;
+  flex-shrink: 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #BACF50;
+}
+
+.ds-qa-item__q {
+  margin: 1px 0 0;
+  font-size: 37px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -1.85px;
+  color: #FFFFFF;
+}
+
+.ds-qa-item__a-row {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 22px;
+}
+
+.ds-qa-item__a {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: -1.75px;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   SECTION 09: 오시는 길 · 진료 안내 (653:747)
+   ========================================================================== */
+.ds-sec-visit {
+  width: 100%;
+  background-color: #EAF0E8;
+}
+
+.ds-sec-visit__inner {
+  min-height: 1340px;
+  padding: 138px 0 152px;
+}
+
+.ds-visit-top-grid {
+  margin: 76px 0 0;
+  width: 1348px;
+  display: grid;
+  grid-template-columns: repeat(2, 656px);
+  column-gap: 36px;
+}
+
+.ds-visit-card {
+  width: 656px;
+  min-height: 447px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 67px 60px 50px 62px;
+}
+
+.ds-visit-card__title {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -2.5px;
+  color: #174A3C;
+}
+
+.ds-visit-card__address {
+  margin: 23px 0 0 4px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+.ds-visit-card__phones {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.ds-visit-card__phone {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -2.5px;
+  color: #174A3C;
+  text-decoration: none;
+}
+
+.ds-visit-card__phone:hover {
+  text-decoration: underline;
+}
+
+.ds-visit-card__head {
+  display: flex;
+  align-items: baseline;
+  gap: 19px;
+}
+
+.ds-visit-card__closed-note {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -1px;
+  color: #174A3C;
+}
+
+.ds-hours-table {
+  margin: 23px 0 0 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-hours-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+}
+
+.ds-hours-row--with-note {
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 2px;
+}
+
+.ds-hours-row__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+}
+
+.ds-hours-row__day {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+.ds-hours-row__time {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+  text-align: right;
+}
+
+.ds-hours-row__note {
+  margin-top: -4px;
+  margin-bottom: 2px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -1px;
+  color: #828282;
+  text-align: right;
+}
+
+/* 하단 카드: 오시는 방법 (653:772) */
+.ds-visit-transport {
+  margin: 31px 0 0;
+  width: 1348px;
+  min-height: 377px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 63px 58px 58px 62px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.ds-visit-transport__title {
+  margin: 4px 0 0;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -2.5px;
+  color: #174A3C;
+  flex-shrink: 0;
+}
+
+.ds-visit-transport__list {
+  width: 890px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ds-transport-row {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+}
+
+.ds-transport-row--car {
+  align-items: flex-start;
+}
+
+.ds-transport-row__icon-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #174A3C;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ds-transport-row__icon {
+  object-fit: contain;
+}
+
+.ds-transport-row__label {
+  width: 146px;
+  margin-left: 14px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #161616;
+  flex-shrink: 0;
+}
+
+.ds-transport-row--car .ds-transport-row__label {
+  margin-top: 4px;
+}
+
+.ds-transport-row__desc {
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+}
+
+.ds-transport-row--car .ds-transport-row__desc {
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   태블릿 및 모바일 반응형 (<= 1023px)
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .ds-pc-br {
+    display: none;
+  }
+
+  .ds-section-header {
+    margin-left: 0;
+  }
+
+  .ds-section-header__eyebrow {
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 2.5px;
+  }
+
+  .ds-section-header__title {
+    margin-top: 6px;
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.25;
+    letter-spacing: -1.5px;
+  }
+
+  /* SECTION 01 */
+  .ds-sec-hero__inner {
+    min-height: auto;
+    padding: 56px 24px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+  }
+
+  .ds-sec-hero__left {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .ds-sec-hero__eyebrow {
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 2.8px;
+  }
+
+  .ds-sec-hero__title {
+    margin-top: 18px;
+    font-size: clamp(34px, 6.5vw, 52px);
+    line-height: 1.2;
+    letter-spacing: -2px;
+  }
+
+  .ds-sec-hero__divider {
+    width: 100%;
+    margin: 20px 0 16px;
+  }
+
+  .ds-sec-hero__desc {
+    font-size: 16px;
+    line-height: 1.65;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+
+  .ds-sec-hero__actions {
+    margin-top: 22px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .ds-sec-hero__btn {
+    height: 46px;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    padding: 0 22px;
+  }
+
+  .ds-sec-hero__btn--primary,
+  .ds-sec-hero__btn--secondary {
+    width: auto;
+  }
+
+  .ds-sec-hero__notice {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .ds-sec-hero__diagram {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0 auto;
+    transform-origin: top center;
+  }
+
+  .ds-sec-hero__history-inner {
+    min-height: auto;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .ds-sec-hero__history-brand {
+    width: auto;
+    margin-left: 0;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .ds-sec-hero__history-brand br {
+    display: none;
+  }
+
+  .ds-sec-hero__history-rows {
+    gap: 6px;
+  }
+
+  .ds-sec-hero__history-row {
+    column-gap: 18px;
+    row-gap: 4px;
+  }
+
+  .ds-sec-hero__history-item {
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: -0.5px;
+    white-space: normal;
+  }
+
+  /* SECTION 02 */
+  .ds-sec-principles__inner {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  .ds-sec-principles__lead {
+    margin: 24px 0 0;
+    font-size: 17px;
+    line-height: 1.65;
+    letter-spacing: -0.6px;
+    word-break: keep-all;
+  }
+
+  .ds-principle-list {
+    margin: 28px 0 0;
+    width: 100%;
+    gap: 14px;
+  }
+
+  .ds-principle-card,
+  .ds-principle-card--filled,
+  .ds-principle-card--outlined,
+  .ds-principle-card--tall {
+    width: 100%;
+    min-height: auto;
+    padding: 24px 22px;
+  }
+
+  .ds-principle-card__title {
+    font-size: 20px;
+    line-height: 1.35;
+    letter-spacing: -0.8px;
+  }
+
+  .ds-principle-card__divider {
+    width: 100%;
+    margin: 12px 0;
+  }
+
+  .ds-principle-card__body-wrap {
+    margin-top: 12px;
+  }
+
+  .ds-principle-card__hl {
+    display: none;
+  }
+
+  .ds-principle-card__desc-hl {
+    background: linear-gradient(transparent 60%, #FFF2B1 60%);
+    display: inline;
+  }
+
+  .ds-principle-card__desc {
+    font-size: 15px;
+    line-height: 1.65;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+
+  /* SECTION 03 */
+  .ds-sec-types__inner {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  .ds-sec-types__lead {
+    margin: 24px 0 0;
+    font-size: 17px;
+    line-height: 1.65;
+    letter-spacing: -0.6px;
+    word-break: keep-all;
+  }
+
+  .ds-types-grid {
+    margin: 28px 0 0;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .ds-type-card {
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+    padding: 28px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .ds-type-card__num {
+    top: 16px;
+    right: 20px;
+    font-size: 34px;
+    line-height: 1;
+  }
+
+  .ds-type-card__head {
+    position: relative;
+    left: auto;
+    top: auto;
+    padding-right: 48px;
+  }
+
+  .ds-type-card__hl {
+    display: none;
+  }
+
+  .ds-type-card__title {
+    font-size: 22px;
+    line-height: 1.35;
+    letter-spacing: -1px;
+    display: inline;
+    background: linear-gradient(transparent 58%, #FFF2B1 58%);
+  }
+
+  .ds-type-card__desc {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 18px 0 22px;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+
+  .ds-type-card__btn {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    height: 42px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  /* SECTION 04 */
+  .ds-sec-process__inner {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  .ds-sec-process__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .ds-sec-process__duration {
+    margin-bottom: 0;
+  }
+
+  .ds-sec-process__duration-hl {
+    left: -4px;
+    top: 14px;
+    width: calc(100% + 8px);
+    height: 16px;
+  }
+
+  .ds-sec-process__duration-text {
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.8px;
+  }
+
+  .ds-process-list {
+    margin: 28px 0 0;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .ds-process-card {
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+    padding: 22px 24px;
+    gap: 16px;
+  }
+
+  .ds-process-card__text {
+    padding-top: 0;
+  }
+
+  .ds-process-card__step {
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+  }
+
+  .ds-process-card__title {
+    margin-top: 4px;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.8px;
+    word-break: keep-all;
+  }
+
+  .ds-process-card__img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .ds-sec-process__notice {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* SECTION 05 */
+  .ds-sec-program__inner {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  .ds-sec-program__top {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .ds-program-summary {
+    margin: 24px 0 0;
+    gap: 10px;
+  }
+
+  .ds-program-summary__badge {
+    width: 92px;
+    height: 34px;
+    font-size: 15px;
+    line-height: 34px;
+  }
+
+  .ds-program-summary__label {
+    font-size: 19px;
+    line-height: 1.4;
+    letter-spacing: -0.8px;
+  }
+
+  .ds-program-wheel {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0 auto;
+  }
+
+  .ds-program-cards {
+    margin: 36px 0 0;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .ds-program-card,
+  .ds-program-card--01,
+  .ds-program-card--02,
+  .ds-program-card--03 {
+    width: 100%;
+    min-height: auto;
+    padding: 36px 24px 28px;
+  }
+
+  .ds-program-card__ribbon {
+    top: 20px;
+    width: 96px;
+    height: 32px;
+    border-radius: 32px 0 0 32px;
+    font-size: 15px;
+    line-height: 32px;
+  }
+
+  .ds-program-card__head {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-right: 90px;
+  }
+
+  .ds-program-card__title {
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+  }
+
+  .ds-program-card__subtitle {
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: -0.8px;
+  }
+
+  .ds-program-card__kicker {
+    margin: 20px 0 0;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.8px;
+    word-break: keep-all;
+  }
+
+  .ds-program-card__p,
+  .ds-program-card--01 .ds-program-card__p--1,
+  .ds-program-card--01 .ds-program-card__p--2,
+  .ds-program-card--02 .ds-program-card__p--1,
+  .ds-program-card--02 .ds-program-card__p--2,
+  .ds-program-card--03 .ds-program-card__p--1,
+  .ds-program-card--03 .ds-program-card__p--2 {
+    margin: 14px 0 0;
+    font-size: 16px;
+    line-height: 1.65;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+
+  /* SECTION 06 */
+  .ds-sec-after__inner {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  .ds-sec-after__lead {
+    margin: 24px 0 0;
+    font-size: 17px;
+    line-height: 1.65;
+    letter-spacing: -0.6px;
+    word-break: keep-all;
+  }
+
+  .ds-sec-after__box {
+    margin: 24px 0 0;
+    width: 100%;
+    min-height: auto;
+    padding: 24px 22px;
+  }
+
+  .ds-sec-after__box-lead {
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: -0.6px;
+    margin-bottom: 6px;
+    word-break: keep-all;
+  }
+
+  .ds-sec-after__box-text {
+    font-size: 16px;
+    line-height: 1.65;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+
+  /* SECTION 07 */
+  .ds-sec-recommend__inner {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  .ds-recommend-list {
+    margin: 28px 0 0;
+    gap: 12px;
+  }
+
+  .ds-recommend-list__item {
+    min-height: auto;
+  }
+
+  .ds-recommend-list__num {
+    width: 34px;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: -0.5px;
+  }
+
+  .ds-recommend-list__text {
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+
+  .ds-sec-recommend__notice {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* SECTION 08 */
+  .ds-sec-qa {
+    scroll-margin-top: 64px;
+  }
+
+  .ds-sec-qa__inner {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  .ds-sec-qa__sub {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+  }
+
+  .ds-qa-list {
+    margin: 28px 0 0;
+    width: 100%;
+  }
+
+  .ds-qa-item {
+    width: 100%;
+    padding: 24px 0;
+  }
+
+  .ds-qa-item__mark {
+    width: 28px;
+    font-size: 20px;
+    line-height: 1.45;
+    letter-spacing: -0.8px;
+  }
+
+  .ds-qa-item__q {
+    margin-top: 0;
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.6px;
+    word-break: keep-all;
+  }
+
+  .ds-qa-item__a-row {
+    margin-top: 12px;
+  }
+
+  .ds-qa-item__a {
+    font-size: 15px;
+    line-height: 1.65;
+    letter-spacing: -0.4px;
+    word-break: keep-all;
+  }
+
+  /* SECTION 09 */
+  .ds-sec-visit__inner {
+    min-height: auto;
+    padding: 64px 24px;
+  }
+
+  .ds-visit-top-grid {
+    margin: 28px 0 0;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ds-visit-card {
+    width: 100%;
+    min-height: auto;
+    padding: 28px 24px;
+  }
+
+  .ds-visit-card__title,
+  .ds-visit-transport__title {
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: -1px;
+  }
+
+  .ds-visit-card__address {
+    margin: 14px 0 0;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.5px;
+  }
+
+  .ds-visit-card__phones {
+    margin-top: 16px;
+    gap: 8px;
+  }
+
+  .ds-visit-card__phone {
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -1px;
+  }
+
+  .ds-visit-card__head {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .ds-visit-card__closed-note {
+    font-size: 13px;
+  }
+
+  .ds-hours-table {
+    margin: 14px 0 0;
+    gap: 6px;
+  }
+
+  .ds-hours-row,
+  .ds-hours-row__main {
+    min-height: 34px;
+  }
+
+  .ds-hours-row__day,
+  .ds-hours-row__time {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+  }
+
+  .ds-hours-row__note {
+    font-size: 12px;
+  }
+
+  .ds-visit-transport {
+    margin: 16px 0 0;
+    width: 100%;
+    min-height: auto;
+    padding: 28px 24px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ds-visit-transport__list {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .ds-transport-row {
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .ds-transport-row__icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ds-transport-row__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .ds-transport-row__label {
+    width: 78px;
+    margin-left: 12px;
+    margin-top: 6px;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: -0.8px;
+  }
+
+  .ds-transport-row__desc {
+    margin-top: 7px;
+    font-size: 15px;
+    line-height: 1.55;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+}
+
+/* ==========================================================================
+   모바일 전용 세부 조정 (<= 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .ds-sec-hero__diagram {
+    width: 336px;
+    height: 224px;
+  }
+
+  .ds-hero-circle--outer {
+    left: 66px;
+    width: 224px;
+    height: 224px;
+  }
+
+  .ds-hero-circle--middle {
+    left: 77px;
+    top: 11px;
+    width: 201px;
+    height: 201px;
+  }
+
+  .ds-hero-circle--inner {
+    left: 101px;
+    top: 35px;
+    width: 154px;
+    height: 154px;
+  }
+
+  .ds-hero-circle__icon {
+    left: 35px;
+    top: 20px;
+    width: 83px;
+    height: 95px;
+  }
+
+  .ds-hero-circle__label {
+    top: 110px;
+    font-size: 13px;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+  }
+
+  .ds-hero-pill {
+    width: 128px;
+    height: 38px;
+    padding-left: 5px;
+    gap: 7px;
+  }
+
+  .ds-hero-pill--1 {
+    left: 208px;
+    top: 49px;
+  }
+
+  .ds-hero-pill--2 {
+    left: 168px;
+    top: 175px;
+  }
+
+  .ds-hero-pill--3 {
+    left: 0;
+    top: 115px;
+  }
+
+  .ds-hero-pill--4 {
+    left: 66px;
+    top: 16px;
+  }
+
+  .ds-hero-pill__num {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+    line-height: 28px;
+  }
+
+  .ds-hero-pill__text {
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -0.6px;
+  }
+
+  .ds-types-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-program-wheel {
+    width: 336px;
+    height: 300px;
+  }
+
+  .ds-program-wheel__img {
+    left: 28px;
+    top: 15px;
+    width: 280px;
+    height: 285px;
+  }
+
+  .ds-program-wheel__arrow--1 {
+    left: 38px;
+    top: 27px;
+    width: 130px;
+    height: 195px;
+  }
+
+  .ds-program-wheel__arrow--2 {
+    left: 170px;
+    top: 33px;
+    width: 128px;
+    height: 191px;
+  }
+
+  .ds-program-wheel__arrow--3 {
+    left: 56px;
+    top: 227px;
+    width: 222px;
+    height: 65px;
+  }
+
+  .ds-wheel-node--1 {
+    left: 82px;
+    top: 100px;
+    width: 64px;
+  }
+
+  .ds-wheel-node--2 {
+    left: 194px;
+    top: 80px;
+    width: 72px;
+  }
+
+  .ds-wheel-node--3 {
+    left: 118px;
+    top: 200px;
+    width: 102px;
+  }
+
+  .ds-wheel-node__badge {
+    width: 38px;
+    height: 18px;
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  .ds-wheel-node__title {
+    margin-top: 2px;
+    font-size: 19px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+
+  .ds-wheel-node__sub {
+    margin-top: 3px;
+    font-size: 11px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+}

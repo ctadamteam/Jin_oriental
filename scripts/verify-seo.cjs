@@ -6,7 +6,7 @@
 const EXPECTED_ORIGIN = 'https://jinclinic.co.kr';
 const EXPECTED_IMAGE = `${EXPECTED_ORIGIN}/images/seo/jinclinic-og.png`;
 const EXPECTED_LOGO = `${EXPECTED_ORIGIN}/images/logo_black.png`;
-const EXPECTED_PAGE_COUNT = 32;
+const EXPECTED_PAGE_COUNT = 39;
 const args = process.argv.slice(2);
 const warningsOnlyForH1 = args.includes('--warn-h1');
 const positional = args.filter((arg) => !arg.startsWith('--'));
@@ -292,7 +292,7 @@ async function main() {
     check(response.status === 200 && (response.headers.get('content-type') || '').startsWith('image/'), 'Clinic logo', 'Logo must return HTTP 200 and an image content type.');
   });
 
-  const placeholders = ['/diet-medicine/allinone', '/skin-clinic/mijuran', '/events/notices', '/women-postpartum/menstruation'];
+  const placeholders = ['/diet-medicine/resistance-recovery', '/skin-clinic/mijuran', '/events/notices', '/women-postpartum/menstruation'];
   await parallel(placeholders, async (path) => {
     const response = await get(path);
     check(response.status === 200, path, `Expected existing preparation page HTTP 200, received ${response.status}.`);
@@ -302,7 +302,7 @@ async function main() {
   });
 
   const unknown = [
-    ...['diet-medicine', 'custom-diet', 'women-postpartum', 'skin-clinic', 'immunity-tonic'].map((category) => `/${category}/seo-audit-nonexistent-20261026`),
+    ...['about', 'diet-medicine', 'custom-diet', 'women-postpartum', 'skin-clinic', 'immunity-tonic'].map((category) => `/${category}/seo-audit-nonexistent-20261026`),
     '/events/unknown', '/events/__proto__', '/events/constructor', '/about/notices/123',
   ];
   await parallel(unknown, async (path) => {
