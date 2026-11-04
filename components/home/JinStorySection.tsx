@@ -7,37 +7,37 @@ export function JinStorySection() {
     {
       id: 1,
       title: '한방 다이어트의 모든 것!',
-      thumbnailUrl: 'https://i.ytimg.com/vi/jw-MfFAtVlY/hqdefault.jpg',
+      thumbnailUrl: '/images/home/jin-story/thumb_01.png',
       videoUrl: 'https://youtu.be/jw-MfFAtVlY',
     },
     {
       id: 2,
       title: '한방 해독치료 대박 비법 공개!',
-      thumbnailUrl: 'https://i.ytimg.com/vi/jIitb2gBDL8/hqdefault.jpg',
+      thumbnailUrl: '/images/home/jin-story/thumb_02.png',
       videoUrl: 'https://youtu.be/jIitb2gBDL8',
     },
     {
       id: 3,
       title: '다이어트 적. 부종을 잡아라',
-      thumbnailUrl: 'https://i.ytimg.com/vi/e0Hq1HGTyL4/hqdefault.jpg',
+      thumbnailUrl: '/images/home/jin-story/thumb_03.png',
       videoUrl: 'https://youtu.be/e0Hq1HGTyL4',
     },
     {
       id: 4,
       title: '한방해독 다이어트',
-      thumbnailUrl: 'https://i.ytimg.com/vi/esw_t4jduI8/hqdefault.jpg',
+      thumbnailUrl: '/images/home/jin-story/thumb_04.png',
       videoUrl: 'https://youtu.be/esw_t4jduI8',
     },
     {
       id: 5,
       title: '중년의 비만. 뱃살은 해독이 필요하다',
-      thumbnailUrl: 'https://i.ytimg.com/vi/LFM_nLK1tps/hqdefault.jpg',
+      thumbnailUrl: '/images/home/jin-story/thumb_05.png',
       videoUrl: 'https://youtu.be/LFM_nLK1tps',
     },
     {
       id: 6,
       title: '생애주기별 다이어트',
-      thumbnailUrl: 'https://i.ytimg.com/vi/hVHHpD-LN24/hqdefault.jpg',
+      thumbnailUrl: '/images/home/jin-story/thumb_06.png',
       videoUrl: 'https://youtu.be/hVHHpD-LN24',
     },
   ];
