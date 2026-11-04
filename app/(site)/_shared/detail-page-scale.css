@@ -13,7 +13,8 @@
 .qb-page,
 .hor-page,
 .allinone-page,
-.rb-page {
+.rb-page,
+.rr-page {
   --detail-pc-scale: 0.6944444444;
 }
 
@@ -34,7 +35,8 @@
   .qb-page__content,
   .hor-page__content,
   .allinone-page__content,
-  .rb-page__content {
+  .rb-page__content,
+  .rr-page__content {
     width: 1440px;
     max-width: none;
     margin-right: auto;
@@ -64,6 +66,7 @@
   .hor-page__content,
   .allinone-page__content,
   .rb-page__content,
+  .rr-page__content,
   .diet-system-page__content {
     width: 100%;
     max-width: none;

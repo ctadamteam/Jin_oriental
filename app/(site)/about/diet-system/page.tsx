@@ -39,68 +39,59 @@ interface ObesityTypeCard {
   desc: string;
   href: string;
   cardMod: string;
-  hlWidth: number;
-  hlWidth2?: number;
 }
 
 const OBESITY_TYPES: ObesityTypeCard[] = [
   {
     num: '01',
-    title: '독소형 비만',
+    title: '해독 다이어트',
     desc: '붓기나 배변 불편, 몸이 무겁게\n느껴지는 증상과 함께 체중 관리가\n어려운 경우.',
     href: '/custom-diet/detox',
     cardMod: 'ds-type-card--01',
-    hlWidth: 182,
   },
   {
     num: '02',
-    title: '내장지방형 비만',
+    title: '내장지방 다이어트',
     desc: '복부 둘레가 늘거나 건강검진에서\n복부지방이 확인된 경우, 고지혈증·\n고혈압·지방간·당뇨와 같은 성인병이\n동반되어 체중 관리가 필요한 경우.',
     href: '/custom-diet/visceral',
     cardMod: 'ds-type-card--02',
-    hlWidth: 247,
   },
   {
     num: '03',
-    title: '호르몬 불균형 비만',
+    title: '갱년기 다이어트',
     desc: '갱년기 전후의 변화, 수면장애, 식욕\n변화, 갑상선 질환 또는 갑상선전절제·\n부분절제 이력이 있고 이전보다 복부\n지방이 늘거나 체중 관리가 어려운 경우.',
     href: '/custom-diet/hormone',
     cardMod: 'ds-type-card--03',
-    hlWidth: 284,
   },
   {
     num: '04',
-    title: '자율신경실조형 비만',
-    subtitle: '(스트레스성 비만)',
+    title: '자율신경안정',
+    subtitle: '다이어트',
     desc: '스트레스가 많고 잠을 잘 못 자며 단 음식\n이나 야식이 자주 당기고 쉽게 피로해\n지는 경우. 심장이 두근거리거나 숨이\n차고, 자주 깨거나 얕은 잠을 자며, 평소\n신경쇠약감과 불안 성향이 있는 경우.',
     href: '/custom-diet/autonomic',
     cardMod: 'ds-type-card--04',
-    hlWidth: 307,
-    hlWidth2: 274,
   },
   {
     num: '05',
-    title: '기혈부족형 비만',
+    title: '보약 다이어트,',
+    subtitle: '면역 다이어트',
     desc: '쉽게 지치고 무기력하며 식사량이\n많지 않은데도 활동량이 줄면서 체중\n관리가 어려운 경우.',
     href: '/custom-diet/qi-blood',
     cardMod: 'ds-type-card--05',
-    hlWidth: 249,
   },
   {
     num: '06',
-    title: '부종형 비만',
+    title: '부종 다이어트',
     desc: '얼굴이나 손발이 자주 붓고\n저녁이 되면 다리가 무거우며 체중\n변동이 큰 경우.',
     href: '/custom-diet/edema',
     cardMod: 'ds-type-card--06',
-    hlWidth: 181,
   },
   {
     num: '07',
-    title: '염증성 비만',
+    title: '만성염증 다이어트',
     desc: '피부 트러블이 반복되거나 피부가\n자주 가렵고, 몸 여기저기가 아프며\n장 컨디션이 좋지 않은 경우.',
     href: '/custom-diet/chronic-inflammation',
     cardMod: 'ds-type-card--07',
-    hlWidth: 181,
   },
 ];
 
@@ -408,24 +399,12 @@ export default function DietSystemPage() {
               <article key={item.num} className={`ds-type-card ${item.cardMod}`}>
                 <span className="ds-type-card__num">{item.num}</span>
                 <div className="ds-type-card__head">
-                  <span
-                    className="ds-type-card__hl ds-type-card__hl--1"
-                    style={{ width: `${item.hlWidth}px` }}
-                    aria-hidden="true"
-                  />
-                  {item.hlWidth2 && (
-                    <span
-                      className="ds-type-card__hl ds-type-card__hl--2"
-                      style={{ width: `${item.hlWidth2}px` }}
-                      aria-hidden="true"
-                    />
-                  )}
                   <h3 className="ds-type-card__title">
-                    {item.title}
+                    <span className="ds-type-card__title-line">{item.title}</span>
                     {item.subtitle && (
                       <>
                         <br />
-                        {item.subtitle}
+                        <span className="ds-type-card__title-line">{item.subtitle}</span>
                       </>
                     )}
                   </h3>
