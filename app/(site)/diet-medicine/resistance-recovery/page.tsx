@@ -440,11 +440,201 @@ export default function ResistanceRecoveryPage() {
 
           {/* 카드 01: 약 강도와 식단 관계 다이어그램 (659:328 / 687:17) */}
           <article className="rr-white-card rr-c01__card01">
-            <img
-              src="/images/diet-medicine/resistance-recovery/sec03-card01-diagram.png"
-              alt="01 다이어트 약 강도가 올라간다고 해서 살이 더 빨리, 더 많이 빠지는 것은 아닙니다 — 약 강도와 식단 및 신진대사 관계 안내"
-              className="rr-c01__card01-img"
-            />
+            <div className="rr-c01__card01-diagram">
+              <img
+                src="/images/diet-medicine/resistance-recovery/sec03-card01-diagram.png"
+                alt="다이어트 환, 계속 강하게만 복용해도 될까요? — 강도 조절과 체질별 맞춤 비교 안내"
+                draggable={false}
+                className="rr-c01__card01-img"
+              />
+
+              {/* 메인 5번 배너 방식: 이미지 위 정밀 좌표 투명 HTML 텍스트 선택/복사 오버레이 */}
+              <div className="rr-c01__diagram-overlay" data-selectable-text>
+                {/* ① 상단 메인 타이틀 */}
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "29.05%", top: "5.44%", width: "42.93%", height: "7.11%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "8.10cqw", fontWeight: 800, letterSpacing: "-0.04em" }}>
+                    다이어트 환,
+                  </p>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "11.29%", top: "14.08%", width: "80.17%", height: "5.51%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "6.12cqw", fontWeight: 800, letterSpacing: "-0.04em" }}>
+                    계속 강하게만 복용해도 될까요?
+                  </p>
+                </div>
+
+                {/* ② 중간 강조 문구 */}
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "13.19%", top: "25.99%", width: "73.62%", height: "4.32%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "4.74cqw", fontWeight: 700, letterSpacing: "-0.04em" }}>
+                    강도 조절과 체질별 맞춤은 다릅니다
+                  </p>
+                </div>
+
+                {/* ③ 좌측 강도 조절 영역 */}
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "16.98%", top: "37.49%", width: "17.50%", height: "3.41%" }}
+                >
+                  <h4 className="rr-c01__ov-text" style={{ fontSize: "3.97cqw", fontWeight: 700, letterSpacing: "-0.03em" }}>
+                    강도 조절
+                  </h4>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--between"
+                  style={{ left: "6.90%", top: "50.59%", width: "35.00%", height: "1.46%" }}
+                >
+                  <span className="rr-c01__ov-text" style={{ fontSize: "1.72cqw", fontWeight: 500 }}>1단계 </span>
+                  <span className="rr-c01__ov-text" style={{ fontSize: "1.72cqw", fontWeight: 500 }}>2단계 </span>
+                  <span className="rr-c01__ov-text" style={{ fontSize: "1.72cqw", fontWeight: 500 }}>3단계 </span>
+                  <span className="rr-c01__ov-text" style={{ fontSize: "1.72cqw", fontWeight: 500 }}>4단계 </span>
+                  <span className="rr-c01__ov-text" style={{ fontSize: "1.72cqw", fontWeight: 500 }}>5단계</span>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "8.53%", top: "54.84%", width: "33.02%", height: "1.67%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "1.90cqw", fontWeight: 700, letterSpacing: "-0.03em" }}>
+                    라이트 · 베이직 · 플러스 · 프리미엄
+                  </p>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--left"
+                  style={{ left: "11.12%", top: "61.25%", width: "28.45%", height: "2.16%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "2.50cqw", fontWeight: 600, letterSpacing: "-0.04em" }}>
+                    약의 강도 · 복용량을 조절
+                  </p>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--left"
+                  style={{ left: "11.12%", top: "65.78%", width: "32.16%", height: "2.23%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "2.50cqw", fontWeight: 600, letterSpacing: "-0.04em" }}>
+                    세기만 낮추거나 높이는 방식
+                  </p>
+                </div>
+
+                {/* ④ 중앙 비교 영역 (VS) */}
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "47.24%", top: "53.31%", width: "6.72%", height: "3.41%" }}
+                >
+                  <span className="rr-c01__ov-text" style={{ fontSize: "3.88cqw", fontWeight: 700 }}>
+                    VS
+                  </span>
+                </div>
+
+                {/* ⑤ 우측 체질별 맞춤 영역 */}
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "64.22%", top: "37.35%", width: "20.95%", height: "3.55%" }}
+                >
+                  <h4 className="rr-c01__ov-text" style={{ fontSize: "3.97cqw", fontWeight: 800, letterSpacing: "-0.03em" }}>
+                    체질별 맞춤
+                  </h4>
+                </div>
+                {/* 오행 한자 (木 / 水 / 火 / 金 / 土) */}
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "73.02%", top: "44.32%", width: "2.93%", height: "2.44%" }}
+                >
+                  <span className="rr-c01__ov-text" style={{ fontSize: "2.67cqw", fontWeight: 700 }}>木</span>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "62.07%", top: "50.10%", width: "2.76%", height: "2.37%" }}
+                >
+                  <span className="rr-c01__ov-text" style={{ fontSize: "2.67cqw", fontWeight: 700 }}>水</span>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "83.97%", top: "50.10%", width: "2.84%", height: "2.37%" }}
+                >
+                  <span className="rr-c01__ov-text" style={{ fontSize: "2.67cqw", fontWeight: 700 }}>火</span>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "64.05%", top: "59.02%", width: "2.84%", height: "2.30%" }}
+                >
+                  <span className="rr-c01__ov-text" style={{ fontSize: "2.67cqw", fontWeight: 700 }}>金</span>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "81.90%", top: "59.09%", width: "2.84%", height: "2.23%" }}
+                >
+                  <span className="rr-c01__ov-text" style={{ fontSize: "2.67cqw", fontWeight: 700 }}>土</span>
+                </div>
+
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--left"
+                  style={{ left: "60.52%", top: "65.64%", width: "23.62%", height: "2.23%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "2.50cqw", fontWeight: 600, letterSpacing: "-0.04em" }}>
+                    강도 맞춤은 기본이고
+                  </p>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--left"
+                  style={{ left: "60.09%", top: "69.55%", width: "29.40%", height: "2.16%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "2.50cqw", fontWeight: 600, letterSpacing: "-0.04em" }}>
+                    체질과 현재 몸 상태를 살펴
+                  </p>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--left"
+                  style={{ left: "60.09%", top: "73.31%", width: "33.97%", height: "2.23%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "2.50cqw", fontWeight: 600, letterSpacing: "-0.04em" }}>
+                    처방의 방향과 구성을 정합니다
+                  </p>
+                </div>
+
+                {/* ⑥ 하단 강조 문구 */}
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "27.59%", top: "81.05%", width: "44.57%", height: "3.48%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "3.88cqw", fontWeight: 700, letterSpacing: "-0.04em" }}>
+                    중요한 건 몇 단계인지보다,
+                  </p>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "18.10%", top: "85.85%", width: "63.88%", height: "3.97%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "4.14cqw", fontWeight: 800, letterSpacing: "-0.04em" }}>
+                    내 체질과 건강 상태, 치료 방향입니다.
+                  </p>
+                </div>
+
+                {/* ⑦ 하단 안내 영역 */}
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--center"
+                  style={{ left: "46.12%", top: "93.87%", width: "7.76%", height: "1.46%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "1.64cqw", fontWeight: 600, letterSpacing: "0.08em" }}>
+                    진한의원
+                  </p>
+                </div>
+                <div
+                  className="rr-c01__ov-item rr-c01__ov-item--left"
+                  style={{ left: "34.48%", top: "96.38%", width: "33.45%", height: "2.02%" }}
+                >
+                  <p className="rr-c01__ov-text" style={{ fontSize: "1.64cqw", fontWeight: 500, letterSpacing: "-0.04em" }}>
+                    복용 중 불편한 증상이 있으면 의료진과 상담하세요.
+                  </p>
+                </div>
+              </div>
+            </div>
           </article>
 
           {/* 카드 02: 다이어트 약, 강도만 계속 올리면 생길 수 있는 문제 (659:329) */}

@@ -471,14 +471,73 @@
   height: 1554px;
 }
 
-.rr-c01__card01-img {
+.rr-c01__card01-diagram {
   position: absolute;
   left: 54px;
   top: 59px;
   width: 1160px;
   height: 1435px;
   border-radius: 10px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.rr-c01__card01-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
   display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.rr-c01__diagram-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.rr-c01__ov-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
+.rr-c01__ov-item--center {
+  justify-content: center;
+  text-align: center;
+}
+
+.rr-c01__ov-item--left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.rr-c01__ov-item--between {
+  justify-content: space-between;
+  text-align: center;
+}
+
+.rr-c01__ov-text {
+  margin: 0;
+  color: transparent;
+  line-height: 1;
+  white-space: nowrap;
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
+.rr-c01__ov-text::selection,
+.rr-c01__diagram-overlay *::selection {
+  background-color: rgba(43, 102, 217, 0.28);
+  color: transparent;
 }
 
 /* 카드 02 (659:329) */
@@ -1570,10 +1629,19 @@
     white-space: normal;
   }
 
+  .rr-c01__card01-diagram {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1160 / 1435;
+  }
+
   .rr-c01__card01-img {
     position: static;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 
   .rr-c01__symptoms {
