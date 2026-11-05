@@ -158,6 +158,15 @@ function getCaseLabel(id: number) {
   return `CASE ${String(id).padStart(2, '0')}`;
 }
 
+function formatLossDurationAndWeight(item: InbodyCase) {
+  const duration = item.period.replace(/\s*감량$/, ' 간');
+  return `${duration} ${item.totalLoss}kg 감량`;
+}
+
+function formatMaintenance(maintenance: string) {
+  return maintenance.replace(/째?\s*유지(?:\s*중)?$/, ' 유지');
+}
+
 function WeightHighlight({
   beforeX,
   afterX,
@@ -187,25 +196,15 @@ function InbodyCaseCard({ item }: { item: InbodyCase }) {
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_24px_rgba(8,53,96,0.07)]">
-      <div className="flex items-start justify-between gap-3 px-4 pt-5 sm:px-6 sm:pt-6 xl:px-7 xl:pt-7">
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-base font-extrabold tracking-[0.12em] text-[#123960]">{caseLabel}</span>
-            <span className="flex flex-wrap gap-x-1.5 gap-y-0.5 rounded-md bg-[#EAF0F7] px-2.5 py-1 text-xs font-bold leading-5 text-[#083560]">
-              <span className="whitespace-nowrap">{item.period}</span>
-              {item.maintenance && <span className="whitespace-nowrap">· {item.maintenance}</span>}
-            </span>
-          </div>
-          <p className="mt-1.5 break-keep text-sm font-semibold leading-6 text-slate-700">{item.profile}</p>
-        </div>
-
-        <div className="relative z-10 flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-full bg-[#083560] text-white shadow-[0_8px_20px_rgba(8,53,96,0.28)] xl:h-[96px] xl:w-[96px]">
-          <div className="flex items-baseline justify-center">
-            <span className="text-[21px] font-black leading-none tracking-tight xl:text-[24px]">-{item.totalLoss}</span>
-            <span className="ml-0.5 text-[13px] font-bold text-slate-200 xl:text-[15px]">kg</span>
-          </div>
-          <span className="mt-0.5 text-[13px] font-bold tracking-wider text-[#D7C28D]">감량</span>
-        </div>
+      <div className="px-4 pt-5 sm:px-6 sm:pt-6 xl:px-7 xl:pt-7">
+        <p className="text-base font-extrabold tracking-[0.12em] text-[#123960]">{caseLabel}</p>
+        <p className="mt-1.5 break-keep text-sm font-semibold leading-6 text-slate-700">{item.profile}</p>
+        <p className="mt-1 break-keep text-[17px] font-semibold leading-6 text-[#083560] sm:text-lg sm:leading-7">
+          <span>{formatLossDurationAndWeight(item)}</span>
+          {item.maintenance && (
+            <span className="whitespace-nowrap"> / {formatMaintenance(item.maintenance)}</span>
+          )}
+        </p>
       </div>
 
       <figure className="relative mx-4 mt-5 overflow-hidden rounded-xl border border-[#D7E1EB] bg-[#F7F9FC] sm:mx-6 xl:mx-7">

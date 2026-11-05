@@ -13,6 +13,11 @@ export interface PageMetadataInput {
 
 const STATIC_PAGES: readonly PageMetadataInput[] = [
   {
+    path: '/diet-medicine/resistance-recovery',
+    title: '내성극복 다이어트 | 진한의원',
+    description: '반복되는 감량 정체와 요요, 다이어트 약물 내성에 관한 진한의원 안내입니다. 감량 방식과 생활습관, 체질별 상담 및 치료 구성을 확인하세요.',
+  },
+  {
     "path": "/about/diet-system",
     "title": "진 다이어트 시스템 | 진한의원",
     "description": "진한의원의 개인별 맞춤 다이어트 진료 시스템을 소개합니다. 비우기·태우기·채우기 3단계 프로그램, 진료 과정과 자주 묻는 질문을 확인하세요."
@@ -64,52 +69,52 @@ const STATIC_PAGES: readonly PageMetadataInput[] = [
   },
   {
     path: '/custom-diet/visceral',
-    title: '내장지방형 비만 | 진한의원',
+    title: '내장지방 다이어트 | 진한의원',
     description: '내장지방형 비만과 복부비만의 특징을 알아보세요. 진한의원에서 안내하는 원인과 동반 건강 문제, 개인별 진단 및 한방 관리 과정을 소개합니다.',
   },
   {
     path: '/custom-diet/edema',
-    title: '부종형 비만 | 진한의원',
+    title: '부종 다이어트 | 진한의원',
     description: '부종과 비만의 차이, 수분 정체와 순환에 관한 정보를 안내합니다. 진한의원 부종형 비만 관리에서 확인하는 증상과 체질별 한방 프로그램을 살펴보세요.',
   },
   {
     path: '/custom-diet/chronic-inflammation',
-    title: '만성염증형 비만 | 진한의원',
+    title: '만성염증 다이어트 | 진한의원',
     description: '만성염증과 체중 관리에서 살펴볼 증상 및 생활 요인을 소개합니다. 진한의원의 자가 점검 항목과 개인별 한방 관리 프로그램을 확인하세요.',
   },
   {
     path: '/custom-diet/pediatric',
-    title: '소아·청소년 비만 | 진한의원',
+    title: '소아·청소년 다이어트 | 진한의원',
     description: '성장과 생활습관을 함께 살피는 소아·청소년 체중 관리 안내입니다. 비만의 원인, 점검 항목, 성장기 상담과 진한의원의 맞춤 한방 프로그램을 소개합니다.',
   },
   {
     path: '/custom-diet/autonomic',
-    title: '자율신경실조형 비만 | 진한의원',
+    title: '자율신경안정 다이어트 | 진한의원',
     description: '스트레스와 수면, 소화, 대사 균형을 함께 살피는 진한의원 자율신경실조형 비만 관리 안내입니다. 관련 증상과 상담 및 한방 프로그램을 확인하세요.',
   },
   {
     path: '/custom-diet/qi-blood',
-    title: '기혈부족형 비만 | 진한의원',
+    title: '보약 다이어트·면역 다이어트 | 진한의원',
     description: '기혈부족형 비만의 주요 증상과 체중 관리 시 살펴볼 사항을 안내합니다. 진한의원의 원인 설명, 대표 한약재 및 개인별 한방 프로그램을 확인하세요.',
   },
   {
     path: '/custom-diet/hormone',
-    title: '호르몬 불균형 비만 | 진한의원',
+    title: '갱년기 다이어트 | 진한의원',
     description: '호르몬 변화와 체중 관리의 관계를 소개합니다. 진한의원에서 살펴보는 여성호르몬, 스트레스, 자율신경 및 기혈 상태와 맞춤 한방 프로그램을 안내합니다.',
   },
   {
     path: '/custom-diet/middle-age',
-    title: '중년 비만 | 진한의원',
+    title: '중년 다이어트 | 진한의원',
     description: '중년의 신체 변화와 생활습관을 함께 살피는 체중 관리 안내입니다. 진한의원의 중년 비만 상담, 한약과 시술 프로그램 및 관리 과정을 소개합니다.',
   },
   {
     path: '/custom-diet/severe',
-    title: '고도비만 | 진한의원',
+    title: '고도 다이어트 | 진한의원',
     description: '고도비만의 원인과 동반 건강 문제, 생활습관 관리의 중요성을 안내합니다. 진한의원의 단계적 감량과 유지, 체질별 상담 및 한방 프로그램을 확인하세요.',
   },
   {
     path: '/custom-diet/postpartum',
-    title: '산후 비만 | 진한의원',
+    title: '산후 다이어트 | 진한의원',
     description: '출산 후 회복과 체중 관리를 함께 살펴보세요. 진한의원의 산후 비만 원인 안내, 생활 관리 및 개인 상태에 따른 한약과 관리 프로그램을 소개합니다.',
   },
   {
