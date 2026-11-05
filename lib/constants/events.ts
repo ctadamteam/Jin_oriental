@@ -113,8 +113,8 @@ export const EVENT_ITEMS: EventItem[] = [
     summary: '식욕 억제 · 체지방 연소 · 부종 개선 · 내장지방 감소 맞춤형 A/B안 특가',
     category: 'EVENT · 다이어트',
     image: '/images/events/event08.png',
-    width: 922,
-    height: 1382,
+    width: 1024,
+    height: 1535,
     bgColor: '#DFB6FE',
     detailSections: [
       {

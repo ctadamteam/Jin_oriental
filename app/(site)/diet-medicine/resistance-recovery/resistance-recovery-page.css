@@ -1,0 +1,2036 @@
+/* 내성극복 다이어트 상세페이지 (Figma 657:5 / 657:6 원본 1440px 기준, PC zoom 0.6944444444 → 1000px) */
+
+.rr-page {
+  font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: #161616;
+  overflow-x: hidden;
+  padding-bottom: 0;
+}
+
+.rr-page svg text {
+  font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.rr-fw-700 {
+  font-weight: 700;
+}
+
+/* 상단 페이지 제목 및 점선 구분선 (657:251, 657:250) */
+.rr-top-header {
+  position: relative;
+  width: 1440px;
+  height: 84px;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+
+.rr-top-header__title {
+  margin: 0;
+  font-family: "Nanum Myeongjo", "Noto Serif KR", serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #000000;
+  text-align: left;
+}
+
+.rr-top-header__divider {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 1440px;
+  height: 1px;
+  margin: 0;
+}
+
+/* =========================================================
+   SECTION 01 — 내성극복 다이어트 히어로 (657:7)
+   ========================================================= */
+.rr-hero {
+  position: relative;
+  width: 1440px;
+  height: 588px;
+  margin-top: 12px;
+  display: flex;
+  overflow: hidden;
+}
+
+.rr-hero__photo-wrap {
+  width: 852px;
+  height: 588px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.rr-hero__photo {
+  display: block;
+  width: 852px;
+  height: 588px;
+  object-fit: cover;
+}
+
+.rr-hero__panel {
+  position: relative;
+  width: 588px;
+  height: 588px;
+  flex-shrink: 0;
+  background-color: #083560;
+}
+
+.rr-hero__kicker {
+  position: absolute;
+  left: 94px;
+  top: 63px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47.73px;
+  letter-spacing: -2px;
+  color: #c3d6ed;
+  white-space: nowrap;
+}
+
+.rr-hero__title {
+  position: absolute;
+  left: 94px;
+  top: 113px;
+  margin: 0;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 70px;
+  letter-spacing: -3px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.rr-hero__title-accent {
+  color: #bbcfe7;
+}
+
+.rr-hero__desc {
+  position: absolute;
+  left: 94px;
+  top: 342px;
+  width: 444px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 38px;
+  letter-spacing: -1.25px;
+  color: #c3d6ed;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SECTION 02 — 다이어트 실패의 7가지 이유 소개 (657:14)
+   ========================================================= */
+.rr-intro {
+  width: 970px;
+  height: 406px;
+  margin: 136px auto 134px;
+  text-align: center;
+}
+
+.rr-intro__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 83.54px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.rr-intro__p1 {
+  margin: 49px 0 0;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+}
+
+.rr-intro__p2 {
+  margin: 23px auto 0;
+  width: 856px;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+}
+
+/* =========================================================
+   공통 CAUSE 섹션 베이스 (SECTION 03 ~ 09)
+   ========================================================= */
+.rr-cause {
+  position: relative;
+  width: 1440px;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+.rr-cause + .rr-cause {
+  margin-top: 22px;
+}
+
+.rr-cause__label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 132px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 41.77px;
+  letter-spacing: -1.75px;
+  color: #083560;
+  text-align: center;
+}
+
+.rr-cause__title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 190px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 83.54px;
+  letter-spacing: -3.5px;
+  color: #000000;
+  text-align: center;
+  z-index: 1;
+}
+
+.rr-cause__desc {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 타이틀 형광펜 하이라이트 (#FFF2B1, height: 39px, Figma 절대좌표 666:129~142) */
+.rr-cause__hl-bar {
+  position: absolute;
+  height: 39px;
+  background-color: #fff2b1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rr-cause__hl-bar--c01 {
+  left: 382px;
+  top: 238px;
+  width: 672px;
+}
+
+.rr-cause__hl-bar--c02 {
+  left: 248px;
+  top: 238px;
+  width: 253px;
+}
+
+.rr-cause__hl-bar--c03-1 {
+  left: 689px;
+  top: 238px;
+  width: 500px;
+}
+
+.rr-cause__hl-bar--c03-2 {
+  left: 341px;
+  top: 319px;
+  width: 245px;
+}
+
+.rr-cause__hl-bar--c04 {
+  left: 152px;
+  top: 317px;
+  width: 1133px;
+}
+
+.rr-cause__hl-bar--c05 {
+  left: 145px;
+  top: 238px;
+  width: 623px;
+}
+
+.rr-cause__hl-bar--c06 {
+  left: 318px;
+  top: 238px;
+  width: 410px;
+}
+
+.rr-cause__hl-bar--c07 {
+  left: 312px;
+  top: 238px;
+  width: 686px;
+}
+
+.rr-cause__title--c04 {
+  height: 154px;
+}
+
+.rr-hl-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.rr-hl-title::before {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 48px;
+  height: 39px;
+  background-color: #fff2b1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.rr-hl-title--c04 {
+  font-size: 60px;
+  line-height: 71.6px;
+  letter-spacing: -3px;
+}
+
+/* 본문 형광펜 하이라이트 (#FFF2B1, height: 20px, Figma 카드 내 절대좌표 659:490~492, 659:567~568) */
+.rr-c02__hl-bar {
+  position: absolute;
+  height: 20px;
+  background-color: #fff2b1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rr-c02__hl-bar--1 {
+  left: 258px;
+  top: 422px;
+  width: 748px;
+}
+
+.rr-c02__hl-bar--2 {
+  left: 312px;
+  top: 473px;
+  width: 640px;
+}
+
+.rr-c02__hl-bar--3 {
+  left: 274px;
+  top: 525px;
+  width: 718px;
+}
+
+.rr-c02__hl-bar--4 {
+  left: 286px;
+  top: 488px;
+  width: 696px;
+}
+
+.rr-c02__hl-bar--5 {
+  left: 238px;
+  top: 540px;
+  width: 792px;
+}
+
+.rr-hl-body {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.rr-hl-body::before {
+  content: "";
+  display: none;
+  position: absolute;
+  left: -12px;
+  right: -12px;
+  top: 30px;
+  height: 20px;
+  background-color: #fff2b1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 공통 흰색 카드 & 원형 번호 배지 */
+.rr-white-card {
+  position: absolute;
+  left: 86px;
+  width: 1266px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+.rr-num-badge {
+  position: absolute;
+  left: 593px;
+  top: 61px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #083560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 50px;
+  letter-spacing: -2.5px;
+  color: #ffffff;
+}
+
+.rr-card-heading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 170px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 50px;
+  letter-spacing: -2.5px;
+  color: #000000;
+  text-align: center;
+}
+
+/* =========================================================
+   SECTION 03 — CAUSE 01 (657:53, h: 4450)
+   ========================================================= */
+.rr-cause--01 {
+  height: 4450px;
+}
+
+.rr-c01__p1 {
+  top: 409px;
+  width: 1234px;
+}
+
+.rr-c01__p2 {
+  top: 692px;
+  width: 885px;
+}
+
+/* TIP 박스 (658:262) */
+.rr-c01__tip {
+  position: absolute;
+  left: 86px;
+  top: 829px;
+  width: 1266px;
+  height: 212px;
+  border: 2px solid #083560;
+  box-sizing: border-box;
+}
+
+.rr-c01__tip-badge {
+  position: absolute;
+  left: 29px;
+  top: 29px;
+  width: 87px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #083560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #ffffff;
+}
+
+.rr-c01__tip-text {
+  position: absolute;
+  left: 145px;
+  top: 28px;
+  width: 1063px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* 카드 01 (659:328) */
+.rr-c01__card01 {
+  top: 1076px;
+  height: 1554px;
+}
+
+.rr-c01__card01-diagram {
+  position: absolute;
+  left: 54px;
+  top: 59px;
+  width: 1160px;
+  height: 1435px;
+  border-radius: 10px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.rr-c01__card01-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.rr-c01__diagram-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.rr-c01__ov-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
+.rr-c01__ov-item--center {
+  justify-content: center;
+  text-align: center;
+}
+
+.rr-c01__ov-item--left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.rr-c01__ov-item--between {
+  justify-content: space-between;
+  text-align: center;
+}
+
+.rr-c01__ov-text {
+  margin: 0;
+  color: transparent;
+  line-height: 1;
+  white-space: nowrap;
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
+.rr-c01__ov-text::selection,
+.rr-c01__diagram-overlay *::selection {
+  background-color: rgba(43, 102, 217, 0.28);
+  color: transparent;
+}
+
+/* 카드 02 (659:329) */
+.rr-c01__card02 {
+  top: 2660px;
+  height: 1585px;
+}
+
+.rr-c01__symptom-circle {
+  position: absolute;
+  left: 92px;
+  width: 176px;
+  height: 176px;
+  border-radius: 50%;
+  background-color: #bbcfe7;
+}
+
+.rr-c01__symptom-icon {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.rr-c01__symptom-title {
+  position: absolute;
+  left: 305px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #083560;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.rr-c01__symptom-desc {
+  position: absolute;
+  left: 305px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  color: #161616;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.rr-c01__bottom-bar {
+  position: absolute;
+  left: 90px;
+  top: 1412px;
+  width: 1088px;
+  height: 82px;
+  border-radius: 10px;
+  background-color: #083560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rr-c01__bottom-bar-text {
+  margin: 0;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.rr-c01__bottom-bar-accent {
+  font-weight: 700;
+  color: #bbcfe7;
+}
+
+.rr-c01__footnote {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4273px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 50px;
+  letter-spacing: -1.25px;
+  color: #808080;
+  text-align: center;
+}
+
+/* =========================================================
+   SECTION 04 — CAUSE 02 (659:399, h: 3330)
+   ========================================================= */
+.rr-cause--02 {
+  height: 3330px;
+}
+
+.rr-c02__p1 {
+  top: 330px;
+}
+
+.rr-c02__p2 {
+  top: 408px;
+}
+
+.rr-c02__card01 {
+  top: 653px;
+  height: 1177px;
+}
+
+.rr-c02__card02 {
+  top: 1858px;
+  height: 1316px;
+}
+
+.rr-c02__card-lead {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 265px;
+  margin: 0;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 55px;
+  letter-spacing: -2px;
+  color: #000000;
+  text-align: center;
+  z-index: 1;
+}
+
+.rr-c02__card-desc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  text-align: center;
+  z-index: 1;
+}
+
+.rr-c02__card-desc--01 {
+  top: 395px;
+}
+
+.rr-c02__card-desc--02 {
+  top: 462px;
+}
+
+.rr-c02__graph-wrap {
+  position: absolute;
+  width: 1202px;
+  height: 566px;
+}
+
+.rr-c02__graph-wrap--01 {
+  left: 30.5px;
+  top: 587px;
+}
+
+.rr-c02__graph-wrap--02 {
+  left: 33.5px;
+  top: 716px;
+}
+
+.rr-c02__graph-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   SECTION 05 — CAUSE 03 (659:679, h: 1638)
+   ========================================================= */
+.rr-cause--03 {
+  height: 1638px;
+}
+
+.rr-c03__p1 {
+  top: 409px;
+}
+
+.rr-c03__card {
+  top: 610px;
+  height: 848px;
+}
+
+.rr-c03__graph-wrap {
+  position: absolute;
+  left: 86px;
+  top: 80px;
+  width: 1091px;
+  height: 708px;
+}
+
+.rr-c03__graph-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* =========================================================
+   SECTION 06 — CAUSE 04 (659:852, h: 1116)
+   ========================================================= */
+.rr-cause--04 {
+  height: 1116px;
+}
+
+.rr-c04__p1 {
+  top: 409px;
+}
+
+.rr-c04__p2 {
+  top: 651px;
+}
+
+.rr-c04__p3 {
+  top: 893px;
+}
+
+/* =========================================================
+   SECTION 07 — CAUSE 05 (659:899, h: 1928)
+   ========================================================= */
+.rr-cause--05 {
+  height: 1928px;
+}
+
+.rr-c05__p1 {
+  top: 330px;
+}
+
+.rr-c05__p2 {
+  top: 516px;
+}
+
+.rr-c05__card {
+  top: 672px;
+  height: 1100px;
+}
+
+.rr-c05__photo-wrap {
+  position: absolute;
+  left: 60px;
+  top: 57px;
+  width: 1147px;
+  height: 975px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rr-c05__photo {
+  display: block;
+  width: 1147px;
+  height: 975px;
+  object-fit: cover;
+}
+
+.rr-c05__formula {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.rr-c05__formula-label {
+  position: absolute;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+  white-space: nowrap;
+}
+
+.rr-c05__formula-label--1 {
+  left: 136px;
+  top: 896px;
+}
+
+.rr-c05__formula-label--2 {
+  left: 769px;
+  top: 894px;
+}
+
+.rr-c05__formula-val {
+  position: absolute;
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 70px;
+  letter-spacing: -3.5px;
+  color: #083560;
+  white-space: nowrap;
+}
+
+.rr-c05__formula-val--1 {
+  left: 204px;
+  top: 878px;
+}
+
+.rr-c05__formula-val--2 {
+  left: 395px;
+  top: 884px;
+}
+
+.rr-c05__formula-val--3 {
+  left: 933px;
+  top: 884px;
+}
+
+.rr-c05__formula-eq {
+  position: absolute;
+  top: 902px;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-color: #bbcfe7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #ffffff;
+}
+
+.rr-c05__formula-eq--1 {
+  left: 331px;
+}
+
+.rr-c05__formula-eq--2 {
+  left: 704px;
+}
+
+/* =========================================================
+   SECTION 08 — CAUSE 06 (662:20, h: 2092)
+   ========================================================= */
+.rr-cause--06 {
+  height: 2092px;
+}
+
+.rr-c06__p1 {
+  top: 330px;
+}
+
+.rr-c06__p2 {
+  top: 563px;
+}
+
+.rr-c06__card {
+  top: 726px;
+  height: 1212px;
+}
+
+.rr-c06__photo-wrap {
+  position: absolute;
+  left: 60px;
+  top: 57px;
+  width: 1147px;
+  height: 874px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rr-c06__photo {
+  display: block;
+  width: 1147px;
+  height: 874px;
+  object-fit: cover;
+}
+
+.rr-c06__card-desc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 998px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #161616;
+  text-align: center;
+}
+
+/* =========================================================
+   SECTION 09 — CAUSE 07 (663:48, h: 1858)
+   ========================================================= */
+.rr-cause--07 {
+  height: 1858px;
+}
+
+.rr-c07__p1 {
+  top: 330px;
+}
+
+.rr-c07__p2 {
+  top: 556px;
+}
+
+.rr-c07__p3 {
+  top: 682px;
+}
+
+.rr-c07__card {
+  top: 838px;
+  height: 854px;
+}
+
+.rr-c07__box {
+  position: absolute;
+  top: 57px;
+  width: 558px;
+  height: 441px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.rr-c07__box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.rr-c07__box--normal {
+  left: 60px;
+}
+
+.rr-c07__box--normal::after {
+  border: 3px solid #bbcfe7;
+}
+
+.rr-c07__box--obese {
+  left: 650px;
+}
+
+.rr-c07__box--obese::after {
+  border: 3px solid #083560;
+}
+
+.rr-c07__stomach-img {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+}
+
+.rr-c07__stomach-img--normal {
+  left: 120px;
+  top: 33px;
+  width: 292px;
+  height: 315px;
+}
+
+.rr-c07__stomach-img--obese {
+  left: 108px;
+  top: 20px;
+  width: 335px;
+  height: 341px;
+}
+
+.rr-c07__pct {
+  position: absolute;
+  font-weight: 700;
+  color: #c91e1e;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.rr-c07__pct--normal {
+  left: 130px;
+  top: 123px;
+  font-size: 40px;
+  letter-spacing: -2px;
+}
+
+.rr-c07__pct--obese {
+  left: 105px;
+  top: 98px;
+  font-size: 50px;
+  letter-spacing: -2.5px;
+}
+
+.rr-c07__pct-sub {
+  position: absolute;
+  left: 84px;
+  top: 144px;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #c91e1e;
+  white-space: nowrap;
+}
+
+.rr-c07__brain-signal {
+  position: absolute;
+  left: 393px;
+  top: 33px;
+  width: 129px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 35px;
+  letter-spacing: -1.25px;
+  color: #083560;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.rr-c07__box-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 558px;
+  height: 74px;
+  z-index: 1;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  text-align: center;
+}
+
+.rr-c07__box-bar-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 11px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.rr-c07__box-bar--normal {
+  background-color: #bbcfe7;
+  color: #161616;
+}
+
+.rr-c07__box-bar--obese {
+  background-color: #083560;
+  color: #ffffff;
+}
+
+.rr-c07__arrow-badge {
+  position: absolute;
+  left: 588px;
+  top: 191px;
+  width: 87px;
+  height: 87px;
+  border-radius: 50%;
+  background-color: #083560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.rr-c07__arrow-img {
+  width: 60.89px;
+  height: 54px;
+  display: block;
+  object-fit: contain;
+}
+
+.rr-c07__arrow-caption {
+  position: absolute;
+  left: 537px;
+  top: 299px;
+  width: 194px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 35px;
+  letter-spacing: -1.25px;
+  color: #083560;
+  text-align: center;
+  z-index: 10;
+  -webkit-text-stroke: 10px #ffffff;
+  paint-order: stroke fill;
+  stroke-linejoin: round;
+  text-shadow:
+    -5px 0 0 #ffffff,
+    5px 0 0 #ffffff,
+    0 -5px 0 #ffffff,
+    0 5px 0 #ffffff,
+    -3.5px -3.5px 0 #ffffff,
+    3.5px -3.5px 0 #ffffff,
+    -3.5px 3.5px 0 #ffffff,
+    3.5px 3.5px 0 #ffffff;
+}
+
+.rr-c07__caption-col--left {
+  position: absolute;
+  left: 73px;
+  top: 530px;
+  width: 533px;
+  text-align: center;
+}
+
+.rr-c07__caption-col--right {
+  position: absolute;
+  left: 691px;
+  top: 530px;
+  width: 477px;
+  text-align: center;
+}
+
+.rr-c07__caption-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #083560;
+  white-space: nowrap;
+}
+
+.rr-c07__caption-desc {
+  margin: 6px 0 0;
+  font-weight: 400;
+  font-size: 33px;
+  line-height: 50px;
+  letter-spacing: -1.65px;
+  color: #161616;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SECTION 10 — 반복된 다이어트, 내성이 생겼다면? (666:144)
+   ========================================================= */
+.rr-points {
+  width: 1312px;
+  height: 760px;
+  margin: 144px auto 0;
+}
+
+.rr-points__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 83.54px;
+  letter-spacing: -3.5px;
+  color: #000000;
+  text-align: center;
+}
+
+.rr-points__grid {
+  margin-top: 75px;
+  display: flex;
+  gap: 26px;
+}
+
+.rr-points__card {
+  position: relative;
+  width: 420px;
+  height: 518px;
+  border-radius: 14px;
+  background-color: #f4f4f4;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.rr-points__img {
+  position: absolute;
+  top: 34px;
+  height: 334px;
+  display: block;
+  object-fit: contain;
+}
+
+.rr-points__label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 378px;
+  height: 30px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: -1.5px;
+  color: #083560;
+  text-align: center;
+}
+
+.rr-points__card-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 415px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: -2px;
+  color: #000000;
+  text-align: center;
+}
+
+/* =========================================================
+   SECTION 11 — 내성극복 다이어트 소개 (669:26)
+   ========================================================= */
+.rr-overview {
+  width: 1069px;
+  height: 337px;
+  margin: 144px auto;
+  text-align: center;
+}
+
+.rr-overview__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 83.54px;
+  letter-spacing: -3.5px;
+  color: #000000;
+}
+
+.rr-overview__desc {
+  margin: 53px 0 0;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SECTION 12 — 내성극복다이어트 치료 구성 (669:43)
+   ========================================================= */
+.rr-treatment {
+  position: relative;
+  width: 1440px;
+  height: 1779px;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+.rr-treatment__title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 126px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 83.54px;
+  letter-spacing: -3.5px;
+  color: #000000;
+  text-align: center;
+}
+
+.rr-treatment__pill {
+  position: absolute;
+  height: 68px;
+  border-radius: 34px;
+  background-color: #083560;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 50px;
+  letter-spacing: -1.75px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.rr-treatment__pill--top {
+  left: 325px;
+  top: 285px;
+  width: 792px;
+}
+
+.rr-treatment__pill--bottom {
+  left: 592px;
+  top: 1011px;
+  width: 256px;
+}
+
+.rr-treatment__row-top {
+  position: absolute;
+  left: 96px;
+  top: 386px;
+  display: flex;
+  gap: 42px;
+}
+
+.rr-treatment__row-bottom {
+  position: absolute;
+  left: 96px;
+  top: 1112px;
+  display: flex;
+  gap: 28px;
+}
+
+.rr-treatment__card {
+  position: relative;
+  border-radius: 14px;
+  background-color: #ffffff;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.125);
+  flex-shrink: 0;
+}
+
+.rr-treatment__card--top {
+  width: 388px;
+  height: 554px;
+}
+
+.rr-treatment__card--bottom {
+  width: 610px;
+  height: 508px;
+}
+
+.rr-treatment__card-img {
+  position: absolute;
+  top: 21px;
+  height: 394px;
+  border-radius: 14px;
+  display: block;
+  object-fit: cover;
+}
+
+.rr-treatment__card-img--top {
+  left: 14px;
+  width: 360px;
+}
+
+.rr-treatment__card-img--bottom {
+  left: 22px;
+  width: 566px;
+}
+
+.rr-treatment__card-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  font-weight: 600;
+  font-size: 35px;
+  letter-spacing: -1.75px;
+  color: #000000;
+  text-align: center;
+}
+
+.rr-treatment__card-title--single {
+  top: 462px;
+  line-height: 50px;
+}
+
+.rr-treatment__card-title--multi {
+  top: 442px;
+  line-height: 45px;
+}
+
+.rr-treatment__card-title--bottom {
+  top: 435px;
+  line-height: 50px;
+}
+
+/* =========================================================
+   태블릿 / 모바일 반응형 (<= 1023px)
+   ========================================================= */
+@media (max-width: 1023px) {
+  .rr-page {
+    padding-bottom: 0;
+  }
+
+  .rr-top-header {
+    width: 100%;
+    height: auto;
+    padding: 16px 20px 0;
+  }
+
+  .rr-top-header__title {
+    font-size: clamp(20px, 4.8vw, 28px);
+    line-height: 1.35;
+    letter-spacing: -1px;
+  }
+
+  .rr-top-header__divider {
+    position: static;
+    width: 100%;
+    height: 1px;
+    margin-top: 10px;
+  }
+
+  /* 히어로 모바일 1열 스택 */
+  .rr-hero {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .rr-hero__photo-wrap,
+  .rr-hero__photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 852 / 588;
+  }
+
+  .rr-hero__panel {
+    width: 100%;
+    height: auto;
+    padding: 36px 24px 40px;
+  }
+
+  .rr-hero__kicker {
+    position: static;
+    font-size: clamp(18px, 4.2vw, 24px);
+    line-height: 1.35;
+    letter-spacing: -0.8px;
+    white-space: normal;
+  }
+
+  .rr-hero__title {
+    position: static;
+    margin-top: 10px;
+    font-size: clamp(28px, 6.8vw, 40px);
+    line-height: 1.25;
+    letter-spacing: -1.5px;
+    white-space: normal;
+  }
+
+  .rr-hero__desc {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+    font-size: clamp(15px, 3.6vw, 18px);
+    line-height: 1.6;
+    letter-spacing: -0.6px;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  .rr-hero__desc br {
+    display: none;
+  }
+
+  /* SECTION 02 소개 모바일 */
+  .rr-intro {
+    width: 100%;
+    height: auto;
+    margin: 56px auto;
+    padding: 0 20px;
+  }
+
+  .rr-intro__title {
+    font-size: clamp(28px, 6.8vw, 42px);
+    line-height: 1.28;
+    letter-spacing: -1.5px;
+  }
+
+  .rr-intro__p1,
+  .rr-intro__p2 {
+    width: 100%;
+    margin-top: 20px;
+    font-size: clamp(16px, 3.8vw, 22px);
+    line-height: 1.6;
+    letter-spacing: -0.8px;
+  }
+
+  /* 공통 CAUSE 섹션 모바일 */
+  .rr-cause {
+    width: 100%;
+    height: auto !important;
+    padding: 52px 20px 56px;
+  }
+
+  .rr-cause__label {
+    position: static;
+    font-size: clamp(16px, 3.8vw, 22px);
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+  }
+
+  .rr-cause__title {
+    position: static;
+    margin-top: 12px;
+    font-size: clamp(24px, 6vw, 38px);
+    line-height: 1.32;
+    letter-spacing: -1.2px;
+    word-break: keep-all;
+  }
+
+  .rr-cause__title--c04 {
+    height: auto;
+  }
+
+  .rr-cause__hl-bar,
+  .rr-c02__hl-bar {
+    display: none;
+  }
+
+  .rr-hl-title--c04 {
+    font-size: clamp(20px, 5vw, 32px);
+    line-height: 1.35;
+    letter-spacing: -1px;
+  }
+
+  .rr-hl-title,
+  .rr-hl-body {
+    display: inline;
+    padding: 0 4px;
+    background-image: linear-gradient(to top, #fff2b1 45%, transparent 45%);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .rr-hl-title::before,
+  .rr-hl-body::before {
+    display: none !important;
+  }
+
+  .rr-cause__desc {
+    position: static;
+    transform: none;
+    width: 100% !important;
+    margin-top: 20px;
+    font-size: clamp(15px, 3.6vw, 20px);
+    line-height: 1.6;
+    letter-spacing: -0.7px;
+    white-space: normal;
+  }
+
+  .rr-white-card {
+    position: static;
+    width: 100%;
+    height: auto !important;
+    margin-top: 28px;
+    padding: 28px 18px 32px;
+  }
+
+  .rr-num-badge {
+    position: static;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .rr-card-heading {
+    position: static;
+    margin-top: 14px;
+    font-size: clamp(20px, 5vw, 30px);
+    line-height: 1.35;
+    letter-spacing: -1px;
+  }
+
+  /* SECTION 03 모바일 */
+  .rr-c01__tip {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 28px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .rr-c01__tip-badge {
+    position: static;
+    width: 64px;
+    height: 34px;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .rr-c01__tip-text {
+    position: static;
+    width: 100%;
+    font-size: clamp(15px, 3.6vw, 20px);
+    line-height: 1.55;
+    letter-spacing: -0.7px;
+    white-space: normal;
+  }
+
+  .rr-c01__card01-diagram {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1160 / 1435;
+  }
+
+  .rr-c01__card01-img {
+    position: static;
+    width: 100%;
+    height: 100%;
+  }
+
+  .rr-c01__symptoms {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .rr-c01__symptom-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .rr-c01__symptom-circle {
+    display: none;
+  }
+
+  .rr-c01__symptom-icon {
+    position: static !important;
+    width: 72px !important;
+    height: 96px !important;
+    flex-shrink: 0;
+  }
+
+  .rr-c01__symptom-text-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rr-c01__symptom-title {
+    position: static;
+    font-size: clamp(18px, 4.4vw, 24px);
+    line-height: 1.35;
+    letter-spacing: -0.8px;
+    white-space: normal;
+  }
+
+  .rr-c01__symptom-desc {
+    position: static;
+    margin-top: 4px;
+    font-size: clamp(14px, 3.4vw, 18px);
+    line-height: 1.5;
+    white-space: normal;
+  }
+
+  .rr-c01__bottom-bar {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 28px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .rr-c01__bottom-bar-text {
+    font-size: clamp(16px, 3.8vw, 22px);
+    line-height: 1.45;
+    letter-spacing: -0.8px;
+    white-space: normal;
+  }
+
+  .rr-c01__footnote {
+    position: static;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* SECTION 04 모바일 */
+  .rr-c02__card-lead {
+    position: static;
+    margin-top: 18px;
+    font-size: clamp(17px, 4vw, 24px);
+    line-height: 1.45;
+    letter-spacing: -0.8px;
+  }
+
+  .rr-c02__card-desc {
+    position: static;
+    margin-top: 14px;
+    font-size: clamp(14px, 3.4vw, 19px);
+    line-height: 1.6;
+    letter-spacing: -0.6px;
+  }
+
+  .rr-c02__graph-wrap {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1202 / 566;
+    margin-top: 20px;
+  }
+
+  /* SECTION 05 모바일 */
+  .rr-c03__graph-wrap {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1091 / 708;
+  }
+
+  /* SECTION 07 모바일 */
+  .rr-c05__photo-wrap,
+  .rr-c05__photo {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .rr-c05__formula {
+    position: static;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 10px;
+  }
+
+  .rr-c05__formula-label,
+  .rr-c05__formula-val,
+  .rr-c05__formula-eq {
+    position: static;
+  }
+
+  .rr-c05__formula-label {
+    font-size: clamp(16px, 3.8vw, 22px);
+    line-height: 1.3;
+  }
+
+  .rr-c05__formula-val {
+    font-size: clamp(24px, 5.8vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+  }
+
+  .rr-c05__formula-eq {
+    width: 26px;
+    height: 26px;
+    font-size: 20px;
+  }
+
+  /* SECTION 08 모바일 */
+  .rr-c06__photo-wrap,
+  .rr-c06__photo {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .rr-c06__card-desc {
+    position: static;
+    margin-top: 20px;
+    font-size: clamp(15px, 3.6vw, 20px);
+    line-height: 1.6;
+    letter-spacing: -0.7px;
+  }
+
+  /* SECTION 09 모바일 */
+  .rr-c07__compare {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .rr-c07__box {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    padding: 20px 16px 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rr-c07__stomach-img {
+    position: static;
+    width: 200px;
+    height: auto;
+  }
+
+  .rr-c07__pct,
+  .rr-c07__pct-sub,
+  .rr-c07__brain-signal {
+    position: static;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .rr-c07__box-bar {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(18px, 4.2vw, 24px);
+  }
+
+  .rr-c07__box-bar-text {
+    position: static;
+    height: auto;
+    line-height: 1.3;
+  }
+
+  .rr-c07__arrow-badge {
+    position: static;
+    width: 56px;
+    height: 56px;
+    transform: rotate(90deg);
+  }
+
+  .rr-c07__arrow-img {
+    width: 38px;
+    height: auto;
+  }
+
+  .rr-c07__arrow-caption {
+    position: static;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .rr-c07__captions {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .rr-c07__caption-col--left,
+  .rr-c07__caption-col--right {
+    position: static;
+    width: 100%;
+  }
+
+  .rr-c07__caption-title {
+    font-size: clamp(17px, 4vw, 22px);
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .rr-c07__caption-desc {
+    font-size: clamp(14px, 3.4vw, 18px);
+    line-height: 1.55;
+    white-space: normal;
+  }
+
+  /* SECTION 10 모바일 */
+  .rr-points {
+    width: 100%;
+    height: auto;
+    margin-top: 64px;
+    padding: 0 20px;
+  }
+
+  .rr-points__title {
+    font-size: clamp(26px, 6.4vw, 40px);
+    line-height: 1.3;
+    letter-spacing: -1.5px;
+  }
+
+  .rr-points__grid {
+    margin-top: 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .rr-points__card {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    padding: 24px 20px 28px;
+    text-align: center;
+  }
+
+  .rr-points__img {
+    position: static;
+    width: 220px !important;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .rr-points__label {
+    position: static;
+    height: auto;
+    margin-top: 16px;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .rr-points__card-title {
+    position: static;
+    margin-top: 6px;
+    font-size: clamp(22px, 5vw, 28px);
+    line-height: 1.35;
+  }
+
+  /* SECTION 11 모바일 */
+  .rr-overview {
+    width: 100%;
+    height: auto;
+    margin: 64px auto;
+    padding: 0 20px;
+  }
+
+  .rr-overview__title {
+    font-size: clamp(28px, 6.8vw, 42px);
+    line-height: 1.28;
+    letter-spacing: -1.5px;
+  }
+
+  .rr-overview__desc {
+    margin-top: 20px;
+    font-size: clamp(15px, 3.6vw, 20px);
+    line-height: 1.6;
+    letter-spacing: -0.7px;
+    white-space: normal;
+  }
+
+  /* SECTION 12 모바일 */
+  .rr-treatment {
+    width: 100%;
+    height: auto;
+    padding: 56px 20px 64px;
+  }
+
+  .rr-treatment__title {
+    position: static;
+    font-size: clamp(26px, 6.4vw, 40px);
+    line-height: 1.3;
+    letter-spacing: -1.5px;
+  }
+
+  .rr-treatment__pill {
+    position: static;
+    width: 100% !important;
+    max-width: 520px;
+    height: auto;
+    min-height: 48px;
+    margin: 28px auto 0;
+    padding: 10px 18px;
+    font-size: clamp(15px, 3.6vw, 20px);
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .rr-treatment__row-top,
+  .rr-treatment__row-bottom {
+    position: static;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .rr-treatment__card--top,
+  .rr-treatment__card--bottom {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    padding: 16px 16px 24px;
+  }
+
+  .rr-treatment__card-img {
+    position: static;
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: 360 / 394;
+  }
+
+  .rr-treatment__card-img--bottom {
+    aspect-ratio: 566 / 394;
+  }
+
+  .rr-treatment__card-title {
+    position: static;
+    margin-top: 16px;
+    font-size: clamp(20px, 4.8vw, 26px);
+    line-height: 1.35 !important;
+  }
+}
