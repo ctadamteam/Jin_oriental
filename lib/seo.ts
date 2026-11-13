@@ -13,6 +13,11 @@ export interface PageMetadataInput {
 
 const STATIC_PAGES: readonly PageMetadataInput[] = [
   {
+    path: '/diet-medicine/injection-maintenance',
+    title: '비만주사제, 식욕억제제 복용 후 유지관리 | 진한의원',
+    description: 'GLP-1·GIP 비만주사제(마운자로·위고비 등) 및 식욕억제제 중단 후 나타날 수 있는 식욕·체중 변화를 살펴보고, 요요현상을 최소화하는 단약 후 유지 관리 한약 처방을 안내합니다.',
+  },
+  {
     path: '/diet-medicine/resistance-recovery',
     title: '내성극복 다이어트 | 진한의원',
     description: '반복되는 감량 정체와 요요, 다이어트 약물 내성에 관한 진한의원 안내입니다. 감량 방식과 생활습관, 체질별 상담 및 치료 구성을 확인하세요.',
@@ -109,7 +114,7 @@ const STATIC_PAGES: readonly PageMetadataInput[] = [
   },
   {
     path: '/custom-diet/severe',
-    title: '고도 다이어트 | 진한의원',
+    title: '고도비만 다이어트 | 진한의원',
     description: '고도비만의 원인과 동반 건강 문제, 생활습관 관리의 중요성을 안내합니다. 진한의원의 단계적 감량과 유지, 체질별 상담 및 한방 프로그램을 확인하세요.',
   },
   {
