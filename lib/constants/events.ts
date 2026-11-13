@@ -21,6 +21,124 @@ export const EVENTS_PER_PAGE = 9;
 
 export const EVENT_ITEMS: EventItem[] = [
   {
+    id: 15,
+    slug: 'silk-neck-lifting',
+    title: "십년 젊어지는 목선 케어 '실크넥 리프팅' 이벤트",
+    summary: '01 이중턱 · 02 목세로주름 · 03 목가로주름 부위별 맞춤 매선 & 부스터 특가',
+    category: 'EVENT · 피부클리닉',
+    image: '/images/events/event15.jpg',
+    width: 922,
+    height: 1382,
+    bgColor: '#FDFCFA',
+    detailSections: [
+      {
+        heading: '이중턱 · 샤인모드 + 탄력밀착매선 50가닥',
+        items: [
+          { label: '1회', value: '390,000원' },
+          { label: '2회', value: '700,000원' },
+        ],
+      },
+      {
+        heading: '목세로주름 · 코그실 6가닥 1회 + 탄력볼륨매선 50가닥',
+        items: [
+          { label: '1회', value: '590,000원' },
+          { label: '2회', value: '1,100,000원' },
+        ],
+      },
+      {
+        heading: '목가로주름 · 목주름채움 부스터',
+        items: [
+          { label: '1회', value: '350,000원' },
+          { label: '4회', value: '1,050,000원' },
+        ],
+      },
+    ],
+    detailNotes: ['부가세 10% 별도입니다.', '개인의 피부 상태에 따라 시술 효과와 유지기간은 차이가 있을 수 있습니다.'],
+  },
+  {
+    id: 14,
+    slug: 'allijin-thread-lifting',
+    title: "탄력·주름·라인 개선 '올리진 매선(리프팅)' 패키지",
+    summary: '가시매선 + 볼륨매선 + 밀착매선 복합 구성 · 1·2·3회 단계별 리프팅 패키지',
+    category: 'EVENT · 피부클리닉',
+    image: '/images/events/event14.jpg',
+    width: 921,
+    height: 1383,
+    bgColor: '#F4EFEC',
+    detailSections: [
+      {
+        heading: '올리진 매선(리프팅) 패키지',
+        items: [
+          { label: '1회 패키지', value: '가시매선 4가닥 + 볼륨매선 + 밀착매선 50가닥 · 550,000원' },
+          { label: '2회 패키지', value: '가시매선 12가닥 + 볼륨매선 + 밀착매선 100가닥 · 1,000,000원' },
+          { label: '3회 패키지', value: '가시매선 18가닥 + 볼륨매선 + 밀착매선 150가닥 · 1,400,000원' },
+        ],
+      },
+    ],
+    detailNotes: ['부가세 10% 별도 / 매선 갯수 차감', '매선은 시술자의 숙련도에도 따라 효과 차이가 납니다.'],
+  },
+  {
+    id: 13,
+    slug: 'skin-care-thread-package',
+    title: "진한의원 피부 관리 '주름탄력 매선 패키지' 4종 이벤트",
+    summary: '주름탄력 매선 · 윤곽 라인 매선 · 산삼윤곽약침 · 부위별 볼륨매선 최대 42% 혜택',
+    category: 'EVENT · 피부클리닉',
+    image: '/images/events/event13.jpg',
+    width: 1086,
+    height: 1448,
+    bgColor: '#FDFDFD',
+    detailSections: [
+      {
+        heading: 'EVENT 01 · 주름탄력 매선 패키지',
+        items: [
+          { label: '1회 패키지', value: '가시매선 4가닥 + 볼륨매선 + 밀착매선 50가닥 · 550,000원' },
+          { label: '2회 패키지', value: '가시매선 12가닥 + 볼륨매선 + 밀착매선 100가닥 · 1,000,000원' },
+          { label: '3회 패키지', value: '가시매선 18가닥 + 볼륨매선 + 밀착매선 150가닥 · 1,400,000원' },
+        ],
+      },
+      {
+        heading: 'EVENT 02 · 라인 매선',
+        items: [{ label: '구성과 금액', value: '윤곽매선 22가닥 + 산삼윤곽약침 + 사각턱약침 · 204,000원' }],
+      },
+      {
+        heading: 'EVENT 03 · 볼라인 관리',
+        items: [{ label: '구성과 금액', value: '가시매선 6가닥 + 볼륨매선 30가닥 + 산삼윤곽약침 · 498,800원' }],
+      },
+      {
+        heading: 'EVENT 04 · 부위별 볼륨 매선',
+        items: [
+          { label: '관리 부위', value: '눈가, 팔자, 턱선, 심술보, 목주름' },
+          { label: '볼륨매선 60가닥', value: '480,000원' },
+          { label: '볼륨매선 140가닥', value: '882,000원' },
+          { label: '볼륨매선 300가닥', value: '1,770,000원' },
+        ],
+      },
+    ],
+    detailNotes: ['부가세 별도입니다.'],
+  },
+  {
+    id: 12,
+    slug: 'real-collagen-bellacoll',
+    title: "리얼 콜라겐 부스터 '벨라콜(Bellacoll)' 출시 이벤트",
+    summary: '피부 속부터 채우는 콜라겐 솔루션 · 1회 35만원 / 3+1회 105만원(48% 할인) + 진정관리팩 증정',
+    category: 'EVENT · 피부클리닉',
+    image: '/images/events/event12.jpg',
+    width: 922,
+    height: 1382,
+    bgColor: '#000F22',
+    detailSections: [
+      {
+        heading: '벨라콜 출시 이벤트',
+        items: [
+          { label: '1회', value: '350,000원' },
+          { label: '3+1회', value: '1,050,000원' },
+          { label: '서비스', value: '진정관리팩 1회 서비스 · 1:1 맞춤 상담' },
+        ],
+      },
+    ],
+    detailNotes: ['부가세 10% 별도입니다.'],
+  },
+  {
     id: 11,
     slug: 'power-tolerance-slim-hwan',
     title: "내성 다이어트 초고농축환 '파워내성슬림환' 이벤트",

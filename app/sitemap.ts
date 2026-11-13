@@ -31,11 +31,24 @@ const NOVEMBER_UPDATED_PATHS = new Set([
   '/custom-diet/postpartum',
 ]);
 
+const NOVEMBER_13_UPDATED_PATHS = new Set([
+  '/',
+  '/diet-medicine/injection-maintenance',
+  '/custom-diet/severe',
+  '/events',
+  '/events/real-collagen-bellacoll',
+  '/events/skin-care-thread-package',
+  '/events/allijin-thread-lifting',
+  '/events/silk-neck-lifting',
+]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return PUBLISHED_PAGES.map(({ path }) => ({
     url: new URL(path, SITE_URL).href,
     // Use the verified content revision date, never the build time.
-    lastModified: NOVEMBER_UPDATED_PATHS.has(path)
+    lastModified: NOVEMBER_13_UPDATED_PATHS.has(path)
+      ? '2026-11-13'
+      : NOVEMBER_UPDATED_PATHS.has(path)
       ? '2026-11-05'
       : UPDATED_PATHS.has(path) ? '2026-10-30' : '2026-10-26',
   }));

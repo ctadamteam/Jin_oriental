@@ -1,0 +1,1249 @@
+/*
+ * 비만주사제, 식욕억제제 복용 후 유지관리 상세페이지 전용 스타일
+ * Figma 원본: 701:5 / 701:6 (주요 콘텐츠 1440px → 홈페이지 적용 1000px)
+ * 원칙: CSS zoom / transform: scale() 미사용 — 모든 요소의 실제 CSS 치수를 69.4444%(1000/1440)로 직접 계산 적용
+ */
+
+.im-page {
+  --im-u: calc(1000px / 1440);
+  width: 100%;
+  background-color: #ffffff;
+  color: #161616;
+  font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  overflow-x: clip;
+}
+
+.im-page *,
+.im-page *::before,
+.im-page *::after {
+  box-sizing: border-box;
+}
+
+.im-page__content {
+  width: 1000px;
+  margin: 0 auto;
+  padding-bottom: calc(155 * var(--im-u));
+}
+
+.im-fw-600 {
+  font-weight: 600;
+}
+
+.im-fw-700 {
+  font-weight: 700;
+}
+
+.im-pc-br {
+  display: inline;
+}
+
+/* =========================================================
+   상단 페이지 헤더 (701:359, 701:358)
+   ========================================================= */
+.im-top-header {
+  position: relative;
+  width: 100%;
+  height: calc(84 * var(--im-u));
+  padding-top: calc(22 * var(--im-u));
+}
+
+.im-top-header__title {
+  margin: 0;
+  font-family: "Nanum Myeongjo", "Noto Serif KR", serif;
+  font-weight: 400;
+  font-size: calc(40 * var(--im-u));
+  line-height: calc(50 * var(--im-u));
+  letter-spacing: calc(-2 * var(--im-u));
+  color: #000000;
+  text-align: left;
+}
+
+.im-top-header__divider {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  opacity: 0.5;
+}
+
+/* =========================================================
+   공통 타이포그래피 & 배지 (A안: 69.44% 비례 축소)
+   ========================================================= */
+.im-sec-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(70 * var(--im-u));
+  line-height: calc(83.535 * var(--im-u));
+  letter-spacing: calc(-3.5 * var(--im-u));
+  color: #000000;
+  text-align: center;
+}
+
+.im-body-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(35 * var(--im-u));
+  line-height: calc(50 * var(--im-u));
+  letter-spacing: calc(-1.75 * var(--im-u));
+  color: #161616;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.im-pill-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(486 * var(--im-u));
+  height: calc(66 * var(--im-u));
+  margin: 0 auto;
+  border-radius: calc(33 * var(--im-u));
+  background-color: #083560;
+  font-weight: 500;
+  font-size: calc(35 * var(--im-u));
+  line-height: calc(50 * var(--im-u));
+  letter-spacing: calc(-1.75 * var(--im-u));
+  color: #ffffff;
+  text-align: center;
+}
+
+.im-pill-badge__accent {
+  font-weight: 700;
+  color: #bbcfe7;
+}
+
+.im-footnote {
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(22 * var(--im-u));
+  line-height: calc(30 * var(--im-u));
+  letter-spacing: calc(-1.1 * var(--im-u));
+  color: #7b7b7b;
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* =========================================================
+   SECTION 01 — 감량보다 중요한 유지 관리 (701:7)
+   ========================================================= */
+.im-hero {
+  position: relative;
+  width: 100%;
+  height: calc(588 * var(--im-u));
+  margin-top: calc(12 * var(--im-u));
+  background-color: #bcd0e8;
+  overflow: hidden;
+}
+
+.im-hero__photo-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(945 * var(--im-u));
+  height: calc(588 * var(--im-u));
+  overflow: hidden;
+}
+
+.im-hero__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.im-hero__panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  width: calc(588 * var(--im-u));
+  height: calc(588 * var(--im-u));
+  background-color: #083560;
+}
+
+.im-hero__kicker {
+  position: absolute;
+  left: calc(94 * var(--im-u));
+  top: calc(44 * var(--im-u));
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(40 * var(--im-u));
+  line-height: calc(47.734 * var(--im-u));
+  letter-spacing: calc(-2 * var(--im-u));
+  color: #c3d6ed;
+  white-space: nowrap;
+}
+
+.im-hero__title {
+  position: absolute;
+  left: calc(94 * var(--im-u));
+  top: calc(94 * var(--im-u));
+  margin: 0;
+  font-weight: 800;
+  font-size: calc(60 * var(--im-u));
+  line-height: calc(70 * var(--im-u));
+  letter-spacing: calc(-3 * var(--im-u));
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.im-hero__title-accent {
+  color: #bbcfe7;
+}
+
+.im-hero__desc {
+  position: absolute;
+  left: calc(94 * var(--im-u));
+  top: calc(329 * var(--im-u));
+  width: calc(419 * var(--im-u));
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(25 * var(--im-u));
+  line-height: calc(38 * var(--im-u));
+  letter-spacing: calc(-1.25 * var(--im-u));
+  color: #c3d6ed;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SECTION 02 — 주사제 중단 후 체중 변화 및 임상시험 그래프 (701:14)
+   ========================================================= */
+.im-sec02 {
+  margin-top: calc(136 * var(--im-u));
+}
+
+.im-sec02__p1 {
+  margin-top: calc(55 * var(--im-u));
+}
+
+.im-sec02__p2 {
+  margin-top: calc(25 * var(--im-u));
+}
+
+.im-sec02__card {
+  width: calc(1268 * var(--im-u));
+  min-height: calc(1217 * var(--im-u));
+  margin: calc(27 * var(--im-u)) auto 0;
+  padding: calc(53 * var(--im-u)) 0 calc(56 * var(--im-u));
+  background-color: #f8f8f8;
+  border-radius: calc(10 * var(--im-u));
+}
+
+.im-sec02__card-lead {
+  margin-top: calc(36 * var(--im-u));
+}
+
+/* SURMOUNT-4 그래프 (702:423, 원본 1152x628 → 1000px 기준 800x436.11) */
+.im-graph {
+  --im-gu: var(--im-u);
+  position: relative;
+  width: calc(1152 * var(--im-u));
+  aspect-ratio: 1152 / 628;
+  margin: calc(43 * var(--im-u)) auto 0;
+}
+
+.im-graph__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.im-graph__y-unit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(124 / 1152 * 100%);
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(30 * var(--im-gu));
+  line-height: calc(35 * var(--im-gu));
+  letter-spacing: calc(-1.5 * var(--im-gu));
+  color: #161616;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.im-graph__phase {
+  position: absolute;
+  top: calc(15 / 628 * 100%);
+  margin: 0;
+  font-weight: 500;
+  font-size: calc(30 * var(--im-gu));
+  line-height: calc(35 * var(--im-gu));
+  letter-spacing: calc(-1.5 * var(--im-gu));
+  color: #161616;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.im-graph__phase--left {
+  left: calc(167 / 1152 * 100%);
+  width: calc(398 / 1152 * 100%);
+}
+
+.im-graph__phase--right {
+  left: calc(615 / 1152 * 100%);
+  width: calc(480 / 1152 * 100%);
+}
+
+.im-graph__y-tick {
+  position: absolute;
+  left: 0;
+  width: calc(103 / 1152 * 100%);
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(30 * var(--im-gu));
+  line-height: calc(35 * var(--im-gu));
+  letter-spacing: calc(-1.5 * var(--im-gu));
+  color: #161616;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.im-graph__y-tick--0 {
+  top: calc(118 / 628 * 100%);
+}
+
+.im-graph__y-tick--10 {
+  top: calc(251 / 628 * 100%);
+}
+
+.im-graph__y-tick--20 {
+  top: calc(384 / 628 * 100%);
+}
+
+.im-graph__y-tick--30 {
+  top: calc(517 / 628 * 100%);
+}
+
+.im-graph__x-tick {
+  position: absolute;
+  top: calc(558 / 628 * 100%);
+  transform: translateX(-50%);
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(30 * var(--im-gu));
+  line-height: calc(35 * var(--im-gu));
+  letter-spacing: calc(-1.5 * var(--im-gu));
+  color: #161616;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.im-graph__x-tick--0w {
+  left: calc(166 / 1152 * 100%);
+}
+
+.im-graph__x-tick--36w {
+  left: calc(543 / 1152 * 100%);
+}
+
+.im-graph__x-tick--88w {
+  left: calc(969 / 1152 * 100%);
+}
+
+/* 그래프 내 수치 말풍선 텍스트 레이어 */
+.im-graph__callout {
+  position: absolute;
+  height: calc(93 / 628 * 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.im-graph__callout--36w {
+  left: calc(354 / 1152 * 100%);
+  top: calc(254 / 628 * 100%);
+  width: calc(198 / 1152 * 100%);
+}
+
+.im-graph__callout--placebo {
+  left: calc(687 / 1152 * 100%);
+  top: calc(147 / 628 * 100%);
+  width: calc(240 / 1152 * 100%);
+}
+
+.im-graph__callout--continued {
+  left: calc(890 / 1152 * 100%);
+  top: calc(324 / 628 * 100%);
+  width: calc(245 / 1152 * 100%);
+}
+
+.im-graph__callout-label {
+  display: block;
+  font-weight: 400;
+  font-size: calc(20 * var(--im-gu));
+  line-height: calc(28 * var(--im-gu));
+  letter-spacing: calc(-1 * var(--im-gu));
+  color: #161616;
+}
+
+.im-graph__callout-value-row {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: calc(5 * var(--im-gu));
+  margin-top: calc(2 * var(--im-gu));
+}
+
+.im-graph__callout-num {
+  font-weight: 700;
+  font-size: calc(40 * var(--im-gu));
+  line-height: 1;
+  letter-spacing: calc(-2 * var(--im-gu));
+}
+
+.im-graph__callout-sub {
+  font-weight: 700;
+  font-size: calc(20 * var(--im-gu));
+  line-height: 1;
+  letter-spacing: calc(-1 * var(--im-gu));
+}
+
+.im-graph__callout--36w .im-graph__callout-num,
+.im-graph__callout--continued .im-graph__callout-num,
+.im-graph__callout--continued .im-graph__callout-sub {
+  color: #083560;
+}
+
+.im-graph__callout--placebo .im-graph__callout-num,
+.im-graph__callout--placebo .im-graph__callout-sub {
+  color: #608abc;
+}
+
+/* 그래프 하단 요약 리스트 3줄 (702:431) */
+.im-sec02__summary {
+  list-style: none;
+  margin: calc(45 * var(--im-u)) 0 0 calc(85 * var(--im-u));
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(20 * var(--im-u));
+}
+
+.im-sec02__summary-item {
+  display: flex;
+  align-items: center;
+  gap: calc(15 * var(--im-u));
+}
+
+.im-sec02__check-icon {
+  display: block;
+  width: calc(43 * var(--im-u));
+  height: calc(43 * var(--im-u));
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.im-sec02__summary-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(35 * var(--im-u));
+  line-height: calc(50 * var(--im-u));
+  letter-spacing: calc(-1.75 * var(--im-u));
+  color: #161616;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.im-sec02__footnote {
+  margin-top: calc(30 * var(--im-u));
+}
+
+/* =========================================================
+   SECTION 03 — 단약 후 나타날 수 있는 변화 5가지 (716:2)
+   ========================================================= */
+.im-sec03 {
+  margin-top: calc(135 * var(--im-u));
+}
+
+.im-sec03__intro {
+  margin-top: calc(61 * var(--im-u));
+}
+
+.im-sec03__badge {
+  margin-top: calc(61 * var(--im-u));
+}
+
+.im-sec03__grid {
+  list-style: none;
+  margin: calc(61 * var(--im-u)) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, calc(260 * var(--im-u)));
+  gap: calc(35 * var(--im-u));
+}
+
+.im-point-card {
+  position: relative;
+  width: calc(260 * var(--im-u));
+  height: calc(447 * var(--im-u));
+  background-color: #f4f4f4;
+  border-radius: calc(14 * var(--im-u));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.im-point-card__icon-box {
+  width: 100%;
+  height: calc(263 * var(--im-u));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: calc(26 * var(--im-u));
+}
+
+.im-point-card__icon {
+  display: block;
+  object-fit: contain;
+}
+
+.im-point-card__icon--01,
+.im-point-card__icon--03 {
+  width: calc(211 * var(--im-u));
+  height: calc(213 * var(--im-u));
+}
+
+.im-point-card__icon--02 {
+  width: calc(185 * var(--im-u));
+  height: calc(213 * var(--im-u));
+  transform: translateX(calc(12 * var(--im-u)));
+}
+
+.im-point-card__icon--04,
+.im-point-card__icon--05 {
+  width: calc(211 * var(--im-u));
+  height: calc(181 * var(--im-u));
+}
+
+.im-point-card__num {
+  margin: calc(10 * var(--im-u)) 0 0;
+  font-weight: 600;
+  font-size: calc(30 * var(--im-u));
+  line-height: 1;
+  letter-spacing: calc(-1.5 * var(--im-u));
+  color: #083560;
+  text-align: center;
+}
+
+.im-point-card__title {
+  margin: calc(19 * var(--im-u)) 0 0;
+  font-weight: 600;
+  font-size: calc(35 * var(--im-u));
+  line-height: calc(45 * var(--im-u));
+  letter-spacing: calc(-1.75 * var(--im-u));
+  color: #000000;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.im-point-card__title-tight {
+  letter-spacing: calc(-2.8 * var(--im-u));
+}
+
+.im-sec03__caution {
+  margin-top: calc(34 * var(--im-u));
+}
+
+.im-sec03__outro {
+  margin-top: calc(69 * var(--im-u));
+}
+
+/* =========================================================
+   SECTION 04 — 마운자로 단약 관리 및 테이퍼링 설명 (718:128)
+   ========================================================= */
+.im-sec04 {
+  margin-top: calc(145 * var(--im-u));
+  width: 100%;
+  min-height: calc(1363 * var(--im-u));
+  padding: calc(136 * var(--im-u)) 0 calc(175 * var(--im-u));
+  background-color: #f4f4f4;
+}
+
+.im-sec04__title-wrap {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.im-sec04__star {
+  position: absolute;
+  left: 100%;
+  top: calc(63 * var(--im-u));
+  width: calc(67 * var(--im-u));
+  height: calc(61 * var(--im-u));
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.im-sec04__p1 {
+  margin-top: calc(59 * var(--im-u));
+}
+
+.im-red-underline {
+  font-weight: 700;
+  background-image: linear-gradient(
+    to top,
+    #df2f2f 0,
+    #df2f2f calc(5 * var(--im-u)),
+    transparent calc(5 * var(--im-u))
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: calc(3 * var(--im-u));
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.im-sec04__p2 {
+  margin-top: calc(38 * var(--im-u));
+}
+
+.im-tapering-card {
+  width: calc(1352 * var(--im-u));
+  min-height: calc(487 * var(--im-u));
+  margin: calc(50 * var(--im-u)) auto 0;
+  padding: calc(57 * var(--im-u)) 0 calc(53 * var(--im-u));
+  background-color: #ffffff;
+  border-radius: calc(10 * var(--im-u));
+  box-shadow: calc(4 * var(--im-u)) calc(4 * var(--im-u)) calc(10 * var(--im-u)) rgba(0, 0, 0, 0.06);
+}
+
+.im-tapering-card__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(441 * var(--im-u));
+  height: calc(75 * var(--im-u));
+  margin: 0 auto;
+  border-radius: calc(37.5 * var(--im-u));
+  background-color: #083560;
+  font-weight: 700;
+  font-size: calc(40 * var(--im-u));
+  line-height: calc(50 * var(--im-u));
+  letter-spacing: calc(-2 * var(--im-u));
+  color: #ffffff;
+}
+
+.im-tapering-card__badge-accent {
+  color: #bbcfe7;
+}
+
+.im-tapering-card__def {
+  margin-top: calc(43 * var(--im-u));
+}
+
+.im-tapering-card__divider {
+  width: calc(1222 * var(--im-u));
+  height: 0;
+  margin: calc(15 * var(--im-u)) auto 0;
+  border: 0;
+  border-top: 1px solid #161616;
+}
+
+.im-tapering-card__list {
+  list-style: none;
+  margin: calc(25 * var(--im-u)) 0 0 calc(58 * var(--im-u));
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(18 * var(--im-u));
+}
+
+.im-tapering-card__item {
+  display: flex;
+  align-items: center;
+}
+
+.im-tapering-card__label-group {
+  display: flex;
+  align-items: center;
+  gap: calc(11 * var(--im-u));
+  width: calc(564 * var(--im-u));
+  flex-shrink: 0;
+}
+
+.im-tapering-card__icon {
+  display: block;
+  width: calc(37 * var(--im-u));
+  height: calc(37 * var(--im-u));
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.im-tapering-card__term {
+  font-weight: 600;
+  font-size: calc(35 * var(--im-u));
+  line-height: calc(50 * var(--im-u));
+  letter-spacing: calc(-1.75 * var(--im-u));
+  color: #161616;
+}
+
+.im-tapering-card__desc {
+  margin: 0;
+  font-weight: 400;
+  font-size: calc(35 * var(--im-u));
+  line-height: calc(50 * var(--im-u));
+  letter-spacing: calc(-1.75 * var(--im-u));
+  color: #161616;
+}
+
+/* =========================================================
+   SECTION 05 — 감량 이후에도 이어지는 다이어트 한약 처방 (718:198)
+   ========================================================= */
+.im-sec05 {
+  margin-top: calc(144 * var(--im-u));
+}
+
+.im-sec05__intro {
+  margin-top: calc(57 * var(--im-u));
+}
+
+.im-sec05__list {
+  list-style: none;
+  margin: calc(37 * var(--im-u)) 0 0;
+  padding: 0 0 0 calc(59 * var(--im-u));
+  display: flex;
+  flex-direction: column;
+  gap: calc(23 * var(--im-u));
+}
+
+.im-medicine-row {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(41 * var(--im-u));
+}
+
+.im-medicine-row__thumb {
+  width: calc(565 * var(--im-u));
+  height: calc(395 * var(--im-u));
+  flex-shrink: 0;
+  border-radius: calc(10 * var(--im-u));
+  background-color: #d9d9d9;
+  overflow: hidden;
+}
+
+.im-medicine-row__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.im-medicine-row__body {
+  flex: 1;
+  min-width: 0;
+  padding-top: calc(48 * var(--im-u));
+}
+
+.im-medicine-row--allkill .im-medicine-row__body {
+  padding-top: calc(50 * var(--im-u));
+}
+
+.im-medicine-row__name {
+  margin: 0;
+  font-weight: 600;
+  font-size: calc(50 * var(--im-u));
+  line-height: calc(59.668 * var(--im-u));
+  letter-spacing: calc(-2.5 * var(--im-u));
+  color: #000000;
+  text-align: left;
+}
+
+.im-medicine-row__desc {
+  margin: calc(43 * var(--im-u)) 0 0;
+  font-weight: 400;
+  font-size: calc(35 * var(--im-u));
+  line-height: calc(50 * var(--im-u));
+  letter-spacing: calc(-1.75 * var(--im-u));
+  color: #000000;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.im-medicine-row--allinone .im-medicine-row__desc {
+  margin-top: calc(42 * var(--im-u));
+}
+
+.im-medicine-row--allkill .im-medicine-row__desc {
+  margin-top: calc(36 * var(--im-u));
+}
+
+.im-medicine-row__tight-line {
+  letter-spacing: calc(-2.45 * var(--im-u));
+}
+
+/* =========================================================
+   모바일 & 태블릿 반응형 (@media max-width: 1023px)
+   원칙: 외곽 배경 영역(상단 점선·히어로·SECTION 04)은 직각(0px) 100% 풀폭,
+        본문 섹션만 내부 패딩 적용, 내부 카드만 Figma 원본 곡률(10px) 유지
+   ========================================================= */
+@media (max-width: 1023px) {
+  .im-page__content {
+    width: 100%;
+    max-width: none;
+    padding: 0 0 64px;
+  }
+
+  .im-pc-br {
+    display: none;
+  }
+
+  .im-top-header {
+    width: 100%;
+    height: auto;
+    padding: 18px 20px 14px;
+  }
+
+  .im-top-header__title {
+    font-size: clamp(20px, 5vw, 26px);
+    line-height: 1.35;
+    letter-spacing: -0.9px;
+  }
+
+  .im-sec-title {
+    font-size: clamp(26px, 6.8vw, 38px);
+    line-height: 1.3;
+    letter-spacing: -1.3px;
+  }
+
+  .im-body-text {
+    font-size: clamp(15px, 3.8vw, 19px);
+    line-height: 1.62;
+    letter-spacing: -0.6px;
+  }
+
+  .im-pill-badge {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: clamp(15px, 3.9vw, 20px);
+    line-height: 1.35;
+    letter-spacing: -0.7px;
+  }
+
+  .im-footnote {
+    font-size: clamp(12.5px, 3.2vw, 14px);
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+  }
+
+  /* SECTION 01 모바일 — 외곽 직각(border-radius: 0) 풀폭 유지 */
+  .im-hero {
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .im-hero__photo-wrap {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 852 / 588;
+  }
+
+  .im-hero__panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 32px 24px 36px;
+  }
+
+  .im-hero__kicker {
+    position: static;
+    font-size: clamp(17px, 4.4vw, 23px);
+    line-height: 1.3;
+    letter-spacing: -0.8px;
+    white-space: normal;
+  }
+
+  .im-hero__title {
+    position: static;
+    margin-top: 8px;
+    font-size: clamp(28px, 7.2vw, 38px);
+    line-height: 1.24;
+    letter-spacing: -1.4px;
+    white-space: normal;
+  }
+
+  .im-hero__desc {
+    position: static;
+    width: 100%;
+    margin-top: 18px;
+    font-size: clamp(14.5px, 3.7vw, 17px);
+    line-height: 1.6;
+    letter-spacing: -0.5px;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  /* SECTION 02 모바일 — 본문 섹션 내부 패딩 + 내부 그래프 카드 Figma 원본 10px 라운드 */
+  .im-sec02 {
+    width: 100%;
+    margin-top: 64px;
+    padding: 0 20px;
+  }
+
+  .im-sec02__p1 {
+    margin-top: 24px;
+  }
+
+  .im-sec02__p2 {
+    margin-top: 16px;
+  }
+
+  .im-sec02__card {
+    width: 100%;
+    min-height: 0;
+    margin-top: 24px;
+    padding: 28px 14px 30px;
+    border-radius: 10px;
+  }
+
+  .im-sec02__card-lead {
+    margin-top: 18px;
+    padding: 0 4px;
+  }
+
+  /* 모바일 그래프 방식 ①: 화면 폭 100% 한눈에 보기 + 말풍선 가독성 보정 */
+  .im-graph {
+    --im-gu: calc((100vw - 68px) / 1152);
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .im-graph__y-unit,
+  .im-graph__y-tick,
+  .im-graph__x-tick {
+    font-size: clamp(10px, calc(31 * var(--im-gu)), 17px);
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+  }
+
+  .im-graph__phase {
+    font-size: clamp(9.5px, calc(29 * var(--im-gu)), 17px);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .im-graph__callout-label {
+    font-size: clamp(9px, calc(22 * var(--im-gu)), 13px);
+    line-height: 1.15;
+    letter-spacing: -0.4px;
+  }
+
+  .im-graph__callout-num {
+    font-size: clamp(13px, calc(40 * var(--im-gu)), 24px);
+    letter-spacing: -0.6px;
+  }
+
+  .im-graph__callout-sub {
+    font-size: clamp(8.5px, calc(20 * var(--im-gu)), 12px);
+    letter-spacing: -0.3px;
+  }
+
+  .im-sec02__summary {
+    margin: 28px 4px 0;
+    gap: 12px;
+  }
+
+  .im-sec02__summary-item {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .im-sec02__check-icon {
+    width: 22px;
+    height: 22px;
+    margin-top: 3px;
+  }
+
+  .im-sec02__summary-text {
+    font-size: clamp(14.5px, 3.7vw, 18px);
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+  }
+
+  .im-sec02__footnote {
+    margin-top: 16px;
+  }
+
+  /* SECTION 03 모바일 — 본문 섹션 내부 패딩 + 내부 포인트 카드 10px 라운드 */
+  .im-sec03 {
+    width: 100%;
+    margin-top: 64px;
+    padding: 0 20px;
+  }
+
+  .im-sec03__intro {
+    margin-top: 24px;
+  }
+
+  .im-sec03__badge {
+    margin-top: 28px;
+  }
+
+  .im-sec03__grid {
+    margin-top: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .im-point-card {
+    width: 100%;
+    height: auto;
+    padding: 20px 12px 22px;
+    border-radius: 10px;
+  }
+
+  .im-point-card:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 6px);
+    justify-self: center;
+  }
+
+  .im-point-card__icon-box {
+    height: 112px;
+    padding-bottom: 8px;
+  }
+
+  .im-point-card__icon--01,
+  .im-point-card__icon--03 {
+    width: 96px;
+    height: 98px;
+  }
+
+  .im-point-card__icon--02 {
+    width: 86px;
+    height: 98px;
+    transform: translateX(4px);
+  }
+
+  .im-point-card__icon--04,
+  .im-point-card__icon--05 {
+    width: 96px;
+    height: 84px;
+  }
+
+  .im-point-card__num {
+    margin-top: 6px;
+    font-size: clamp(14px, 3.6vw, 17px);
+    letter-spacing: -0.5px;
+  }
+
+  .im-point-card__title {
+    margin-top: 8px;
+    font-size: clamp(15.5px, 4vw, 19px);
+    line-height: 1.35;
+    letter-spacing: -0.7px;
+  }
+
+  .im-point-card__title-tight {
+    letter-spacing: -0.9px;
+  }
+
+  .im-sec03__caution {
+    margin-top: 18px;
+  }
+
+  .im-sec03__outro {
+    margin-top: 28px;
+  }
+
+  /* SECTION 04 모바일 — 외곽 회색 배경(#F4F4F4) 직각 풀폭, 내부 흰색 카드만 10px 라운드 */
+  .im-sec04 {
+    width: 100%;
+    margin-top: 64px;
+    min-height: 0;
+    padding: 56px 20px 60px;
+    border-radius: 0;
+  }
+
+  .im-sec04__star {
+    width: 30px;
+    height: 28px;
+    left: calc(100% + 2px);
+    top: auto;
+    bottom: 6px;
+  }
+
+  .im-sec04__p1 {
+    margin-top: 24px;
+  }
+
+  .im-red-underline {
+    background-image: linear-gradient(to top, #df2f2f 0, #df2f2f 2.5px, transparent 2.5px);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding-bottom: 2px;
+  }
+
+  .im-sec04__p2 {
+    margin-top: 18px;
+  }
+
+  .im-tapering-card {
+    width: 100%;
+    min-height: 0;
+    margin-top: 28px;
+    padding: 28px 18px 30px;
+    border-radius: 10px;
+  }
+
+  .im-tapering-card__badge {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: clamp(16px, 4.2vw, 21px);
+    line-height: 1.35;
+    letter-spacing: -0.8px;
+  }
+
+  .im-tapering-card__def {
+    margin-top: 18px;
+  }
+
+  .im-tapering-card__divider {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .im-tapering-card__list {
+    margin: 20px 0 0;
+    gap: 16px;
+  }
+
+  .im-tapering-card__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .im-tapering-card__label-group {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .im-tapering-card__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .im-tapering-card__term {
+    font-size: clamp(15.5px, 4vw, 19px);
+    line-height: 1.4;
+    letter-spacing: -0.6px;
+  }
+
+  .im-tapering-card__desc {
+    padding-left: 28px;
+    font-size: clamp(14.5px, 3.7vw, 17.5px);
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    color: #333333;
+  }
+
+  /* SECTION 05 모바일 — 본문 섹션 내부 패딩 + 제품 썸네일 Figma 원본 10px 라운드 */
+  .im-sec05 {
+    width: 100%;
+    margin-top: 64px;
+    padding: 0 20px;
+  }
+
+  .im-sec05__intro {
+    margin-top: 22px;
+  }
+
+  .im-sec05__list {
+    margin-top: 28px;
+    padding-left: 0;
+    gap: 32px;
+  }
+
+  .im-medicine-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .im-medicine-row__thumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 565 / 395;
+    border-radius: 10px;
+  }
+
+  .im-medicine-row__body,
+  .im-medicine-row--allkill .im-medicine-row__body {
+    padding-top: 0;
+  }
+
+  .im-medicine-row__name {
+    font-size: clamp(22px, 5.6vw, 28px);
+    line-height: 1.3;
+    letter-spacing: -1px;
+  }
+
+  .im-medicine-row__desc,
+  .im-medicine-row--allinone .im-medicine-row__desc,
+  .im-medicine-row--allkill .im-medicine-row__desc {
+    margin-top: 10px;
+    font-size: clamp(15px, 3.8vw, 18px);
+    line-height: 1.6;
+    letter-spacing: -0.6px;
+  }
+
+  .im-medicine-row__tight-line {
+    letter-spacing: -0.6px;
+  }
+}
+
+/* =========================================================
+   모바일 소형 해상도 미세 패딩 보정 (@media max-width: 767px)
+   ========================================================= */
+@media (max-width: 767px) {
+  .im-top-header {
+    padding: 14px 16px 12px;
+  }
+
+  .im-hero__panel {
+    padding: 28px 20px 32px;
+  }
+
+  .im-sec02 {
+    padding: 0 16px;
+  }
+
+  .im-sec02__card {
+    padding: 24px 12px 28px;
+  }
+
+  .im-graph {
+    --im-gu: calc((100vw - 56px) / 1152);
+  }
+
+  .im-sec03 {
+    padding: 0 16px;
+  }
+
+  .im-sec04 {
+    padding: 52px 16px 56px;
+  }
+
+  .im-sec05 {
+    padding: 0 16px;
+  }
+}
