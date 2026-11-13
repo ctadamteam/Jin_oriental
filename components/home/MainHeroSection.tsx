@@ -90,9 +90,33 @@ export function MainHeroSection() {
             <Slide4Mobile />
           </div>
 
-          {/* 5~9번 배너 */}
+          {/* 5번 배너: 진 해독 다이어트 3단계 프로그램 */}
+          <div
+            className="min-w-0 flex-[0_0_100%]"
+            role="group"
+            aria-roledescription="슬라이드"
+            aria-label={`5 / ${totalSlides}: ${SLIDE_LABELS[4]}`}
+            inert={selectedIndex !== 4}
+          >
+            <Slide10Pc />
+            <Slide10Mobile />
+          </div>
+
+          {/* 6번 배너: 자주 묻는 질문 (Q&A) */}
+          <div
+            className="min-w-0 flex-[0_0_100%]"
+            role="group"
+            aria-roledescription="슬라이드"
+            aria-label={`6 / ${totalSlides}: ${SLIDE_LABELS[5]}`}
+            inert={selectedIndex !== 5}
+          >
+            <Slide11Pc />
+            <Slide11Mobile />
+          </div>
+
+          {/* 7~11번 배너: 감량 사례 5종 */}
           {CASE_BANNERS.map((caseBanner, idx) => {
-            const slideIdx = 4 + idx;
+            const slideIdx = 6 + idx;
             return (
               <div
                 key={caseBanner.id}
@@ -107,30 +131,6 @@ export function MainHeroSection() {
               </div>
             );
           })}
-
-          {/* 10번 배너 */}
-          <div
-            className="min-w-0 flex-[0_0_100%]"
-            role="group"
-            aria-roledescription="슬라이드"
-            aria-label={`10 / ${totalSlides}: ${SLIDE_LABELS[9]}`}
-            inert={selectedIndex !== 9}
-          >
-            <Slide10Pc />
-            <Slide10Mobile />
-          </div>
-
-          {/* 11번 배너 */}
-          <div
-            className="min-w-0 flex-[0_0_100%]"
-            role="group"
-            aria-roledescription="슬라이드"
-            aria-label={`11 / ${totalSlides}: ${SLIDE_LABELS[10]}`}
-            inert={selectedIndex !== 10}
-          >
-            <Slide11Pc />
-            <Slide11Mobile />
-          </div>
         </div>
       </div>
 

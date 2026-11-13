@@ -76,9 +76,14 @@ export function JinStorySection() {
           ))}
         </div>
         <div className="mt-8 md:mt-12 text-center">
-          <Link href="/about/story" className="jin-story-more-button inline-flex min-h-11 items-center justify-center rounded-md border-2 px-12 font-medium transition-colors">
-            더보기
-          </Link>
+          <a
+            href="https://www.youtube.com/results?search_query=knn+%EC%A7%84%ED%95%9C%EC%9D%98%EC%9B%90"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="jin-story-more-button inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-md border-2 px-12 font-medium transition-colors"
+          >
+            더 많은 방송보기
+          </a>
         </div>
       </div>
     </section>

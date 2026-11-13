@@ -35,7 +35,7 @@ export const MENUS = [
       { title: "소아·청소년 다이어트", href: "/custom-diet/pediatric" },
       { title: "산후 다이어트", href: "/custom-diet/postpartum" },
       { title: "중년 다이어트", href: "/custom-diet/middle-age" },
-      { title: "고도 다이어트", href: "/custom-diet/severe" },
+      { title: "고도비만 다이어트", href: "/custom-diet/severe" },
       { title: "체질별 다이어트", href: "/custom-diet/constitution" },
     ],
   },
