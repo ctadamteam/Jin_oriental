@@ -266,20 +266,49 @@ export function Slide2Pc() {
 
 /**
  * 3번 배너 PC — 진한의원 후기 (Figma 569:70)
+ * - 원본 무블러 27개 후기 타일 합성 배경(b3_bg_pc_clean.png) + 저블러(0.65px) + 모바일과 통일된 밝은 스카이블루 톤
+ * - 중앙 국소 라디얼 스크림 + 2단 딥네이비 그림자 + 소제목 시인성 보강으로 글자 가독성 확보
  */
 export function Slide3Pc() {
+  const whiteTitleShadow = {
+    textShadow: `0 ${cqw(2)} ${cqw(8)} rgba(8, 50, 93, 0.56), 0 ${cqw(6)} ${cqw(20)} rgba(8, 50, 93, 0.34)`,
+  };
+
   return (
     <div
-      className="hidden lg:block relative w-full aspect-[1920/645] bg-[#A4B7CC] overflow-hidden"
+      className="hidden lg:block relative w-full aspect-[1920/645] bg-[#DCE7F3] overflow-hidden"
       style={{ containerType: 'inline-size' }}
     >
       <Image
-        src="/images/main/banners/b3_bg.png"
+        src="/images/main/banners/b3_bg_pc_clean.png"
         alt="진한의원 후기 배경"
         fill
         sizes="100vw"
+        unoptimized
         draggable={false}
-        className="object-cover object-center select-none pointer-events-none"
+        className="object-cover object-center select-none pointer-events-none scale-[1.008]"
+        style={{
+          filter: 'blur(0.65px) brightness(1.02) contrast(1.03)',
+        }}
+      />
+
+      {/* 전체 밝은 스카이블루 톤 워시 (모바일 3번 배너의 환한 톤과 통일) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute inset-0"
+        style={{
+          backgroundColor: 'rgba(170, 195, 222, 0.36)',
+        }}
+      />
+
+      {/* 중앙 글자 영역 국소 소프트 스크림 (좌우 외곽 선명도 유지 + 중앙 흰색 타이틀 대비 확보) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 56% 52% at 50% 50%, rgba(145, 172, 202, 0.34) 0%, rgba(164, 187, 212, 0.14) 54%, rgba(164, 187, 212, 0) 82%)',
+        }}
       />
 
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center">
@@ -294,7 +323,7 @@ export function Slide3Pc() {
           <span className="text-[#08325D]" style={{ fontSize: cqw(150) }}>
             진
           </span>
-          <span className="text-white drop-shadow-[0_4px_12px_rgba(8,50,93,0.28)]">
+          <span className="text-white" style={whiteTitleShadow}>
             한의원은{' '}
           </span>
           <span
@@ -312,19 +341,20 @@ export function Slide3Pc() {
               }}
             />
           </span>
-          <span className="text-white drop-shadow-[0_4px_12px_rgba(8,50,93,0.28)]">
+          <span className="text-white" style={whiteTitleShadow}>
             입니다
           </span>
         </h2>
 
         <p
           data-selectable-text
-          className="font-['Pretendard'] font-normal text-black select-text cursor-text"
+          className="font-['Pretendard'] font-medium text-[#081A2C] select-text cursor-text"
           style={{
             marginTop: cqw(22),
             fontSize: cqw(40),
             lineHeight: cqw(40),
             letterSpacing: cqw(-2),
+            textShadow: `0 0 ${cqw(12)} rgba(255, 255, 255, 0.92), 0 ${cqw(1)} ${cqw(4)} rgba(255, 255, 255, 0.85)`,
           }}
         >
           진한의원의 후기에는 ‘진심’이 가득 담겨 있습니다
