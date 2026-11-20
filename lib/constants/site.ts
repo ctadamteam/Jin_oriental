@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   contact: {
     phoneMain: "051.714.0040",
     phoneMobile: "010.7686.0041",
-    address: "부산광역시 해운대구 좌동 1473-2 엘리움 빌딩 6층",
+    address: "부산광역시 해운대구 해운대로 794 엘리움 빌딩 6층",
   },
   links: {
     kakao: "https://pf.kakao.com/_xgPxeWV",
