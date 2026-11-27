@@ -22,7 +22,7 @@ export function SiteStructuredData() {
             telephone: '+82-51-714-0040',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: '좌동 1473-2 엘리움 빌딩 6층',
+              streetAddress: '해운대로 794 엘리움 빌딩 6층',
               addressLocality: '해운대구',
               addressRegion: '부산광역시',
               addressCountry: 'KR',

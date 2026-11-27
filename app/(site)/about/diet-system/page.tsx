@@ -760,7 +760,7 @@ export default function DietSystemPage() {
             <article className="ds-visit-card ds-visit-card--address">
               <h3 className="ds-visit-card__title">주소 및 연락처</h3>
               <p className="ds-visit-card__address">
-                부산광역시 해운대구 좌동 1473-2
+                부산광역시 해운대구 해운대로 794
                 <br />
                 엘리움 빌딩 6층
               </p>
@@ -837,7 +837,7 @@ export default function DietSystemPage() {
                   />
                 </span>
                 <strong className="ds-transport-row__label">시내버스</strong>
-                <span className="ds-transport-row__desc">36, 38, 115-1, 180, 1001, 1006번</span>
+                <span className="ds-transport-row__desc">38, 115-1, 185, 200, 3006번</span>
               </div>
 
               <div className="ds-transport-row ds-transport-row--car">
@@ -852,9 +852,9 @@ export default function DietSystemPage() {
                 </span>
                 <strong className="ds-transport-row__label">자가용</strong>
                 <span className="ds-transport-row__desc">
-                  내비게이션에 부산광역시 해운대구 좌동 1473-2
+                  네비게이션에 부산광역시 해운대구 해운대로 794
                   <br />
-                  엘리움 6층 입력
+                  엘리움 빌딩 6층 입력
                 </span>
               </div>
             </div>
