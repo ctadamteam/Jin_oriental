@@ -180,7 +180,7 @@ function checkSchema(page, scope) {
     check(clinic.url === EXPECTED_ORIGIN || clinic.url === `${EXPECTED_ORIGIN}/`, scope, 'MedicalClinic URL mismatch.');
     check(clinic.telephone === '+82-51-714-0040', scope, 'MedicalClinic telephone mismatch.');
     check(address['@type'] === 'PostalAddress'
-      && address.streetAddress === '좌동 1473-2 엘리움 빌딩 6층'
+      && address.streetAddress === '해운대로 794 엘리움 빌딩 6층'
       && address.addressLocality === '해운대구'
       && address.addressRegion === '부산광역시'
       && address.addressCountry === 'KR', scope, 'MedicalClinic address mismatch.');
